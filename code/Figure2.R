@@ -12,7 +12,7 @@ pdf("../results_figs/figure2.pdf")
 par(mfrow=c(2,1), mar=c(3,3,1,1), oma=c(2,1,1,1))
 fig2 <- simsPlot(mudif=-0.8, delta=0.8, sigma=5, end=1000) # r_woATA = 0.098, r = -0.0373, [E||C] = -0.1354
 dev.off()
-save(fig2, file="../results_numeric/fig2data.rda")
+save(fig2, file="../results_numeric/fig2data.RData")
 
 
 png("../results_figs/figure2.PNG", width=1000, height=600, pointsize=15) 
