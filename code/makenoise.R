@@ -1,5 +1,15 @@
 source("./makenoise_fxn.R")
 
+numeric_results_loc <- "../results_numeric"
+
+if(dir.exists(numeric_results_loc)==FALSE){
+  dir.create(numeric_results_loc)
+}
+
+noise_loc <- paste(numeric_results_loc, "/noise.RData", sep = "")
+M_loc <- paste(numeric_results_loc, "/M.RDS", sep = "")
+rho_loc <- paste(numeric_results_loc, "/rho.RDS", sep = "")
+
 M <- 1000000
 b_tilde <- makenoise(M)
 u_tilde <- rnorm(M)
@@ -8,10 +18,8 @@ rho <- cor(b_tilde$l)[1,2]
 
 cat("M=",M, " rho=", rho)
 
-if(dir.exists("../results_numeric")==FALSE){
-  dir.create("../results_numeric")
-}
 
-save(b_tilde,u_tilde, file = "../results_numeric/noise_etc.RData")
-save(M, file="../results_numeric/M.rda")
-save(rho, file="../results_numeric/rho.rda")
+save(b_tilde,u_tilde, file = noise_loc)
+save(M, file=M_loc)
+save(rho, file=rho_loc)
+
