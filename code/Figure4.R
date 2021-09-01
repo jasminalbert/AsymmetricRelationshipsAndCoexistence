@@ -1,6 +1,22 @@
 source("./decomp2_plotting.R")
+
+numeric_results_loc <- "../results_numeric"
+if(dir.exists(numeric_results_loc)==FALSE){
+  dir.create(numeric_results_loc)
+}
+params_loc <- paste(numeric_results_loc, "/params.RData", sep="")
+noise_loc <- paste(numeric_results_loc, "/noise.RData", sep = "")
+
+fig_loc <- "../results_figs/"
+if(dir.exists(fig_loc)==FALSE){
+  dir.create(fig_loc)
+}
+fig4_loc <- paste(fig_loc,"fig4.pdf",sep="")
+
+load(params_loc)
+
 mudif = seq(0.0, -4.5, length.out = 100)
-load("../results_numeric/params.RData")
+
 #FIGURE 4# 
 #plotting IGR and IGR-ATA to find ATA exclusion and ATA rescue in trait space (plot against mudif)
 #for different sigma and delta
@@ -15,7 +31,7 @@ midx <- (pw*(nd/2))/sum(wd) #middle of figure panels; horizontal
 midy <- (ph*(ns/2))/sum(ht) #middle of figure panels; vertical 
 
 #########################################################################################
-pdf("../results_figs/fig4.2.pdf")
+pdf(fig4.pdf)
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
 
@@ -54,7 +70,6 @@ for (s in 1:ns){
     }
     if(m==12){
       abline(v=-0.8, col="red", lty=2)
-      #lines(rep(-0.8,2), c(-1.5, 1),col="red", lty=2)
     }
     m <- m+1
   }
@@ -66,7 +81,8 @@ mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
 mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
-fig4.2maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
-cat("maximum standard error in figure four is", fig4.2maxse, "\n(M=", M, ")\n")
-saveRDS(fig4.2maxse, file="../results_numeric/fig4.2maxse.RDS")
+fig4maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
+cat("maximum standard error in figure four is", fig4maxse, "\n(M=", M, ")\n")
+fig4maxse_loc <- paste(numeric_results_loc, "/fig4maxse.RDS", sep="")
+saveRDS(fig4.2maxse, file=fig4maxse_loc)
 Sys.time()
