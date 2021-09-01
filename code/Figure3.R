@@ -1,7 +1,22 @@
-load("../results_numeric/params.RData")
 source("./decomp1_plotting.R")
-mudif <- c(0, -0.5, -2, -4)
-#FIGURE 3#
+
+numeric_results_loc <- "../results_numeric"
+if(dir.exists(numeric_results_loc)==FALSE){
+  dir.create(numeric_results_loc)
+}
+params_loc <- paste(numeric_results_loc, "/params.RData", sep="")
+noise_loc <- paste(numeric_results_loc, "/noise.RData", sep = "")
+
+fig_loc <- "../results_figs/"
+if(dir.exists(fig_loc)==FALSE){
+  dir.create(fig_loc)
+}
+fig3_loc <- paste(fig_loc,"fig3.pdf",sep="")
+fig3qij_loc <- paste(fig_loc,"fig3_qij.pdf",sep="")
+
+load(params_loc)
+
+##FIGURE 3##
 #plotting decomposed mechanisms contributions against sigma
 #for different deltas and mu1-mu2
 
@@ -15,7 +30,7 @@ midx <- (pw*(nd/2))/sum(wd) #middle of figure panels; horizontal
 midy <- (ph*(nm/2))/sum(ht) #middle of figure panels; vertical 
 
 #########################################################################################
-pdf("../results_figs/fig3.2.pdf")
+pdf(fig3_loc)
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
 
@@ -25,9 +40,7 @@ layout(matrix(c(2,3,4,5,1,
                 14,15,16,17,1,
                 18,19,20,21,1), ncol=5, byrow=TRUE), 
        heights=ht, widths=wd)
-#layout.show(n=25)
 
-#plot(0, bty="n")
 plot.new() #1
 legend("topright", 
        legend=c(expression(Delta[i]^0), expression(Delta[i]^E),
@@ -47,7 +60,7 @@ res <- vector(mode='list',length=1)
 n <- 1
 for (m in 1:nm){
   for (d in 1:nd){
-    res <- append(res,dePlot1(mudif[m], delta[d], xaxt="n"))
+    res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], xaxt="n"))
     axis(1, labels=ifelse(n>12, yes=TRUE, no=FALSE), tick=TRUE)
     mtext(LETTERS[n], side=3, line=-1.45, at=0.5)
     
@@ -67,12 +80,13 @@ mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
 mtext(expression(sigma), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
-fig3.2maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
-cat("maximum standard error in figure three is", fig3.2maxse, "\n(M=", M, ")\n")
-saveRDS(fig3.2maxse, file="../results_numeric/fig3.2maxse.RDS")
+fig3maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
+cat("maximum standard error in figure three is", fig3maxse, "\n(M=", M, ")\n")
+fig3maxse_loc <- paste(numeric_results_loc, "fig3maxse.RDS", sep="")
+saveRDS(fig3.2maxse, file=fig3maxse_loc)
 #Sys.time()
 #####################################################################################
-pdf("../results_figs/fig3.2_qij.pdf")
+pdf(fig3qij_loc)
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2))
 
@@ -82,9 +96,7 @@ layout(matrix(c(2,3,4,5,1,
                 14,15,16,17,1,
                 18,19,20,21,1), ncol=5, byrow=TRUE), 
        heights=ht, widths=wd)
-#layout.show(n=25)
 
-#plot(0, bty="n")
 plot.new() #1
 legend("topright", 
        legend=c(expression(Delta[i]^0), expression(Delta[i]^E),
@@ -104,7 +116,7 @@ res <- vector(mode='list',length=1)
 n <- 1
 for (m in 1:nm){
   for (d in 1:nd){
-    res <- append(res,dePlot1(mudif[m], delta[d], qij=TRUE, xaxt="n"))
+    res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], qij=TRUE, xaxt="n"))
     axis(1, labels=ifelse(n>12, yes=TRUE, no=FALSE), tick=TRUE)
     mtext(LETTERS[n], side=3, line=-1.45, at=0.5)
     
@@ -124,7 +136,8 @@ mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
 mtext(expression(sigma), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
-fig3.2qijmaxse <- max(unlist(lapply(res, function(X){X$Dq_se})), na.rm = TRUE)
-cat("maximum standard error in figure three (qij) is", fig3.2qijmaxse, "\n(M=", M, ")\n")
-saveRDS(fig3.2qijmaxse, file="../results_numeric/fig3.2qijmaxse.RDS")
+fig3qijmaxse <- max(unlist(lapply(res, function(X){X$Dq_se})), na.rm = TRUE)
+cat("maximum standard error in figure three (qij) is", fig3qijmaxse, "\n(M=", M, ")\n")
+fig3qijmaxse_loc <- paste(numeric_results_loc, "fig3maxse.RDS", sep="")
+saveRDS(fig3qijmaxse, file=fig3maxse_loc)
 #Sys.time()
