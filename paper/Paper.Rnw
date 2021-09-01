@@ -583,6 +583,7 @@ $\mu_1 - \mu_2$ for all combinations of $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4
 %Para on how it's usually negative, whereas \Delta_[EC] is positive, so except when \delta=1, ATA effects tend to weaken storage effects
 %Note that when mu1-mu2=2, we are in the case where only storage effects allow for coexistence
 
+%***DAN: drop the delta =1 case from here
 %Para on when delta=1 (annual species) - in this case, coexistence is only possible when mu1-mu2 is close to 0, and in that case the only
 %thing allowing for coexistence at all is storage effects. Interetingly (and this is the topic sentence), "the rest" of storage effects are
 %negative, and it's the ATA component of storage effects which are allowing the species to coexist. Suggests the possibility that for 
@@ -591,6 +592,9 @@ $\mu_1 - \mu_2$ for all combinations of $\delta=0.5, 0.8, 1.0$ and $\sigma=2.0,4
 %effects in the lotery model actually don't opperate, and there is no coexistence. That sounds weird to me. Can we get some independent
 %verification of that? Why would annual species be different in this respect? There must be some delta between 0.8 and 1 where \Delta^[EC]
 %switches from positive to negative. 
+
+%***DAN: consider possile para on mu1-mu2=0 case
+%***DAN: For discussion: is it true that ATA always weakens storage effects? Same as saying the ATA terms is always negative? The actual question is, for what models are ATA effects negative, versus positive?
 
 
 %***DAN: Jasmin, you computed standard errors of everything, but they are not currently reported. The best way to handle this would
@@ -613,6 +617,12 @@ To acheive G3, we assessed the effect of ATA by comparing and plotting (Figure 4
 
 
 \section{Discussion}\label{section:discussion}
+
+I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
+where there are atas. Could have a discussion para on it, if it does not make the results. Or both. BTW, ATA exclusion has a 
+similar thing going on - a species excluded by ATAs (and competition) can only live on the portions of the landscape where
+there are no ATAs. Could also describe the temporal way of it - the ATA specialist can only survive in a era/epoch for which there
+are ATAs in its local, otherwise it'll have to go dormant or move elsewhere.
 
 Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
 via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
