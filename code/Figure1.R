@@ -1,4 +1,4 @@
-noise_loc <- "../results_numeric/noise_etc.RData"
+noise_loc <- "../results_numeric/noise.RData"
 fig_loc <- "../results_figs/"
 
 if(dir.exists(fig_loc)==FALSE){
