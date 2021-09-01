@@ -1,6 +1,6 @@
 source("./decomp2_plotting.R")
 mudif = seq(0.0, -4.5, length.out = 100)
-load("results_numeric/params.RData")
+load("../results_numeric/params.RData")
 #FIGURE 4# 
 #plotting IGR and IGR-ATA to find ATA exclusion and ATA rescue in trait space (plot against mudif)
 #for different sigma and delta
@@ -15,7 +15,7 @@ midx <- (pw*(nd/2))/sum(wd) #middle of figure panels; horizontal
 midy <- (ph*(ns/2))/sum(ht) #middle of figure panels; vertical 
 
 #########################################################################################
-pdf("results_figs/fig4.2.pdf")
+pdf("../results_figs/fig4.2.pdf")
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
 
@@ -68,5 +68,5 @@ mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 dev.off()
 fig4.2maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
 cat("maximum standard error in figure four is", fig4.2maxse, "\n(M=", M, ")\n")
-saveRDS(fig4.2maxse, file="results_numeric/fig4.2maxse.RDS")
+saveRDS(fig4.2maxse, file="../results_numeric/fig4.2maxse.RDS")
 Sys.time()

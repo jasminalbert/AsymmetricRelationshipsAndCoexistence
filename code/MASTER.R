@@ -1,4 +1,6 @@
-#MASTER
+#MASTER - assumes the R working directory is the directory this file is in
+
+rm(list=ls())
 
 source("./makenoise.R") #make standard noise, change M here 
 
@@ -9,9 +11,9 @@ source("./Figure1.R")
 #FIGURE 2
 source("./Figure2.R")
 #FIGURE 3
-source("./Figure3.R")
+source("./Figure3.2.R")
 #FIGURE 4
-source("/Figure4.R")
+source("./Figure4.2.R")
 
 #source("./parameter_loop.R") #loop through parameters to get results #see section 4
 

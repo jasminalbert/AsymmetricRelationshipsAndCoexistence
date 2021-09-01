@@ -1,4 +1,4 @@
-load("results_numeric/noise_etc.RData")
+load("../results_numeric/noise_etc.RData")
 
 
 P <- c(cor(b_tilde$l, method='pearson')[1,2], cor(b_tilde$s, method='pearson')[1,2], cor(b_tilde$r, method='pearson')[1,2])
@@ -8,7 +8,7 @@ PL <- round(P[1],4)
 #col2rgb("darkblue")
 blue <- rgb(0,0,0.545,0.3)
 
-pdf("results_figs/fig1.pdf", width=7, height=3)
+pdf("../results_figs/fig1.pdf", width=7, height=3)
 #png("fig1.png", height=560, width=1600,pointsize=22)
 par(mar=c(0.5,0.5,0,0), oma=c(5,5,2,2))
 layout(matrix(c(4,10,10,6,11,11,8,12,
@@ -56,7 +56,7 @@ plot(d$y, d$x, xlab=NA, ylab=NA, sub=NA, main=NA, bty='n', type='l',xaxt='n', ya
 dev.off()
 
 
-pdf("results_figs/fig1_vertical.pdf", width=2.8, height=7)
+pdf("../results_figs/fig1_vertical.pdf", width=2.8, height=7)
 
 par(mar=c(0.5,0.5,0,0), oma=c(5,5,2,2))
 

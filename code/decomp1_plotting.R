@@ -2,7 +2,7 @@
 source("./decomposition_fxn.R")
 
 dePlot1 <- function(mudif, delta, qij=FALSE, legend=FALSE,...){
-  load("results_numeric/noise_etc.RData")
+  load("../results_numeric/noise_etc.RData")
   store <- vector(mode='list', length=7)
   sigma <- seq(0,7,1)
   

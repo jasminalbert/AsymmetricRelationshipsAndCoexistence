@@ -41,7 +41,7 @@ co.pPlot <- function(co.p, pop, start, end,...){
 }
 
 simsPlot <- function(mudif, delta, sigma, start=1, end=500){
-  load("results_numeric/noise_etc.RData")
+  load("../results_numeric/noise_etc.RData")
   
   #noise
   n <- transform(b_tilde, u_tilde, rho, sigma=sigma, mudif=mudif, b_s=T)

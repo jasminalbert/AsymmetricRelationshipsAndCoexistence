@@ -106,8 +106,6 @@
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
-\SweaveOpts{concordance=TRUE}
-\SweaveOpts{concordance=TRUE}
 
 %The following is where you load in the numeric results that will be embedded in the text
 
@@ -117,11 +115,11 @@
 #place R code here for loading in necessary variables from Results
 #ordinarily this would be a readRDS command, but I'm just defining a variable here for now
 #allregres<-matrix(rnorm(10),2,5)
-fig2data <- load(file="../results_numeric/fig2data.rda")
-M <- load(file="../results_numeric/M.rda")
-rho <- load(file="../results_numeric/rho.rda")
-se3 <- readRDS(file="../results_numeric/fig3maxse.RDS")
-se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
+#fig2data <- load(file="../results_numeric/fig2data.rda")
+#M <- load(file="../results_numeric/M.rda")
+#rho <- load(file="../results_numeric/rho.rda")
+#se3 <- readRDS(file="../results_numeric/fig3maxse.RDS")
+#se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
 @
 
 \maketitle
@@ -670,7 +668,7 @@ to be occurring, might. Should also mention this second point in the Discussion 
 \newpage
 
 \begin{figure}
-%\includegraphics[width=\textwidth]{"../results_figs/fig1.pdf"}
+\includegraphics[width=\textwidth]{"../results_figs/fig1_vertical.pdf"}
 \caption{
 %Figure displaying the noise. Three panels, left-, symmetric, and right-tail assoc noise. Use standard normal marginals.Explain in caption that alternatives for $(b_1,b_2)$ are obtained by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.Jasmin to make and insert the figure here using the includegraphics command, and then draft a caption along the lines described here.
 Simple example of bivariate noise with standard normal marginals. A) is left-tail associated, B) is symmetric, and C) is right-tail associated. All three cases have the same Pearson correlation up to sampling variation, yet show different symmetry of tail associaton. Asymmetrically tail associated cases are perfectly correlated in the lower (A)  or upper (C) halfs of the distribution. The variables $(b_1,b_2)$ are transformed by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.
@@ -678,20 +676,20 @@ Simple example of bivariate noise with standard normal marginals. A) is left-tai
 \end{figure}
 
 \begin{figure}
-%\includegraphics[width=\textwidth]{"../results_figs/figure2.pdf"}
+\includegraphics[width=\textwidth]{"../results_figs/figure2.pdf"}
 \caption{%Pedagogical figure somehow displaying the different outcomes of competition in ATA and symmetric cases for an example. This will be cited from the Intro, so needs to be understandable to someone who does not know any of the ideas we introduce yet. So in particular you cannot use IGR as your metric of coexistence, you need to use something more intuitive. You will pick model parameter values and do two sims, one with ATA noise and one with symmtric noise, and show different outcomes. We should discuss and possibly take several iterations to get this figure right since it's a pedagogically important figure - if the reader is not convinced in the Intro that we are studying something that makes a difference, they are not going to slog through the Theory section, which is inevitably going to be tough going for many readers.
 Populations inlfuenced by asymmetric tail association recover from low densities less often/ spend more time on average under one-species dominance. The top panel, A, is a simulation over time of a population within a two species lottery model whose environmental response and competition is influenced by symmetric bivariate noise defined by $\mu_1-\mu_2 = \Sexpr{fig2$params[1]}$, $\delta = \Sexpr{fig2$params[2]}$, and $\sigma = \Sexpr{fig2$params[3]}$. The bottom panel, B, is like A, but the population is influenced by bivariate noise with left-tailed asymmetric association defined by the same parameters. Both simulations were ran for total time of \Sexpr{M}. Noticeable population density was defined at a threshold of 0.95 of total community space. Periods of noticable coexistence are marked in grey. The community in A had mean noticable coexistence time of \Sexpr{fig2$coSym} and a mean one-species dominance time of \Sexpr{fig2$domSym}. The community in B had mean noticable coexistence time of \Sexpr{fig2$coATA} and a mean one-species dominance time of \Sexpr{fig2$domATA}. While mean periods of coexistence are more similar, community B had much longer mean periods of one-species dominace. The population in B also recovered from low densities less often and thus has a lower ability to recover when rare and thus that community has lower coexistence.     
 \label{fig:pedagog}}
 \end{figure}
 
 \begin{figure}
-%\includegraphics[width=\textwidth]{"../results_figs/fig3.pdf"}
+\includegraphics[width=\textwidth]{"../results_figs/fig3.2.pdf"}
 \caption{The contribution of ATA is non-negligible. All panels show the breakdown of contributing mechanisms of coexistence in accordance to \cite{Ellner_2019} new decomposition method, against increasing $\sigma$. Each panel is defined by a unique set of parameters $\mu_1-\mu_2$ and $\delta$. The cases where $\delta=1$ are not shown because they are mathematically straighforward to see that IGR $=\mu_1 - \mu_2$ and is influenced by $\sigma$ (see SupMat). In most cases, the contribution of ATA (red) is negatively; however when $\delta=1$, ATA contribution is positive. The contribution of ATA is non-negligible and in special cases result in a sign change of IGR (orange). Standard error was computed but not displayed because the maximum standard error of all computations was \Sexpr{round(se3,5)}. 
 \label{fig:fig3}}
 \end{figure}
 
 \begin{figure}
-%\includegraphics[width=\textwidth]{"../results_figs/fig4.pdf"}
+\includegraphics[width=\textwidth]{"../results_figs/fig4.2.pdf"}
 \caption{ATA rescue and ATA exclusion can be defined within subsets species trait difference spaces. 
 IGR (ATA included; yellow) and IGR without ATA (violet) are plotted against species trait difference 
 $\mu_1-\mu_2$ in order to demonstrate ATA rescue and ATA exclusion. The red line, $\Delta_i^{[E \nat C]}$, 

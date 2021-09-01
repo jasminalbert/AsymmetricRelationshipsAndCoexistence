@@ -19,9 +19,9 @@ delta <- c(0.2, 0.4, 0.6, 0.8)
 sigma <- c(2, 4, 5, 6)
 mudif <- c(0.0, -0.3, -0.6, -0.8)
 
-if(dir.exists("results_numeric")==FALSE){
-  dir.create("results_numeric")
+if(dir.exists("../results_numeric")==FALSE){
+  dir.create("../results_numeric")
 }
 
 
-save(delta, mu, mudif, sigma, file = "results_numeric/params.RData")
+save(delta, mu, mudif, sigma, file = "../results_numeric/params.RData")

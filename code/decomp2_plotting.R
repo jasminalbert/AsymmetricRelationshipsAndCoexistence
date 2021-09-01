@@ -9,7 +9,7 @@ source("./decomposition_fxn.R")
 #delta  an integer value of delta
 
 dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend=FALSE,...){
-  load("results_numeric/noise_etc.RData")
+  load("../results_numeric/noise_etc.RData")
 
   store <- vector(mode='list', length=length(mudif))
   
