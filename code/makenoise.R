@@ -20,6 +20,6 @@ cat("M=",M, " rho=", rho)
 
 
 save(b_tilde,u_tilde, file = noise_loc)
-save(M, file=M_loc)
-save(rho, file=rho_loc)
+saveRDS(M, file=M_loc)
+saveRDS(rho, file=rho_loc)
 
