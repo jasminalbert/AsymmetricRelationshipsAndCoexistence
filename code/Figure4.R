@@ -31,7 +31,7 @@ midx <- (pw*(nd/2))/sum(wd) #middle of figure panels; horizontal
 midy <- (ph*(ns/2))/sum(ht) #middle of figure panels; vertical 
 
 #########################################################################################
-pdf(fig4.pdf)
+pdf(fig4_loc)
 
 par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
 
@@ -58,7 +58,7 @@ res <- vector(mode='list',length=1)
 m <- 1
 for (s in 1:ns){
   for (d in 1:nd){
-    res <- append(res,dePlot2(mudif,sigma[s], delta[d], xaxt="n"))
+    res <- append(res,dePlot2(noise_loc, mudif_4,sigma[s], delta[d], xaxt="n"))
     axis(1, labels=ifelse(m>12, yes=TRUE, no=FALSE), tick=TRUE)
     mtext(LETTERS[m], side=3, line=-1.45, at=-4.5, adj=1)
     
@@ -84,5 +84,5 @@ dev.off()
 fig4maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
 cat("maximum standard error in figure four is", fig4maxse, "\n(M=", M, ")\n")
 fig4maxse_loc <- paste(numeric_results_loc, "/fig4maxse.RDS", sep="")
-saveRDS(fig4.2maxse, file=fig4maxse_loc)
+saveRDS(fig4maxse, file=fig4maxse_loc)
 Sys.time()
