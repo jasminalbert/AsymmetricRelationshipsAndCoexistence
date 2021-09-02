@@ -9,6 +9,8 @@ if(dir.exists(numeric_results_loc)==FALSE){
 noise_loc <- paste(numeric_results_loc, "/noise.RData", sep = "")
 M_loc <- paste(numeric_results_loc, "/M.RDS", sep = "")
 rho_loc <- paste(numeric_results_loc, "/rho.RDS", sep = "")
+#-----------------------------------------------------------------#
+set.seed(1360)
 
 M <- 1000000
 b_tilde <- makenoise(M)
