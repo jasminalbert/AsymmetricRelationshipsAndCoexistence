@@ -15,7 +15,7 @@ fig4_loc <- paste(fig_loc,"fig4.pdf",sep="")
 
 load(params_loc)
 
-mudif = seq(0.0, -4.5, length.out = 100)
+mudif_4 = seq(range(mudif)[2], range(mudif)[1]-0.5, length.out = 100)
 
 #FIGURE 4# 
 #plotting IGR and IGR-ATA to find ATA exclusion and ATA rescue in trait space (plot against mudif)
