@@ -8,8 +8,8 @@ source("./decomposition_fxn.R")
 #sigma  an integer value of sigma
 #delta  an integer value of delta
 
-dePlot2 <- function(mudif = seq(0, -0.8, -0.01), sigma, delta, qij=FALSE, legend=FALSE,...){
-  load("../results_numeric/noise_etc.RData")
+dePlot2 <- function(noise_loc, mudif, sigma, delta, qij=FALSE, legend=FALSE,...){
+  load(noise_loc)
 
   store <- vector(mode='list', length=length(mudif))
   
