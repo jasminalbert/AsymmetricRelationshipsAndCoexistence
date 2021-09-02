@@ -161,8 +161,7 @@ differentiation, in spite of the conclusions drawn for idealized scenarios by th
 MCT breaks down coexistence into the contributions of various mechanisms, with name such as `relative nonlinearity
 in competition' and `storage effects' \citep{Chesson_1994} which will be familiar to many readers. The MCT has been
 applied to quite a few empirical systems, including annual plants \citep{Angert_2009, Hallett_2019}, perennial plants \citep{Adler_2010, Adler_2006}, tropical trees \citep{Usinowicz_2012}, plankton \citep{Narawani_2013, Caceres_1997}, and corals \citep{}, 
-%***DAN: Jasmin, fill in Y and Y with names of systems, and accompanying reference(s), 
-%in a similar way to how I filled in the Angert example.
+%***DAN: 
 %Please also read the abstract of the Angert reference to make sure it is appropriate to cite it in this way (and so that
 %you become aware of that reference). One place to look for more references to put in for Y and Z is the top of the 
 %right column on the first page of the Barabas review (Ecol Monogr, 2018).
@@ -191,22 +190,22 @@ Every ecological discipline involves the study of relationships among biological
 but standard methods for examining the association between variables provide only a small portion of the overall information content contained in the
 relationship \citep{Ghosh_2020_AER,Ghosh_2020_Eco,Ghosh_2020_ecolevol,Ghosh_2021}. For instance, 
 the three pairs of variables in figure \ref{fig:noise} all have the same
-Pearson correlation; and likewise have the same Spearman correlation. 
-%***DAN: Jasmin, when you make the figure, please display the Pearson and Spearman correlations on each panel, as in 
-%Fig. 1 of Ghosh et al (2020, Ecology and Evolution).
+Pearson correlation. 
+%*** 
+  
 But each panel of figure \ref{fig:noise} nevertheless
 depicts a very different type of association. Other metrics of association are used, in addition to correlations
 (e.g., various common forms of regression), but correlations are extremely common, and other common
 methods also provide only a small portion of the available information \citep{Nelsen2006}.
 The variables in figure \ref{fig:noise}A,C 
-%***DAN: Jasmin, when you make the figure, put the two asymmetric cases in A and C and put the symmetric case in B, in the middle.
+%***
 exhibit what we have previously referred to as ``asymmetric tail association'' [ATA; \cite{Ghosh_2020_AER}], i.e., 
 they are more strongly related to each
 other in the left (figure \ref{fig:noise}A, termed ``left-tail association'') or right (figure \ref{fig:noise}C,
 termed `right-tail association') portions of the variables' distributions. Although ATAs and related ideas had previously been very seldom 
 considered in ecology and related areas (but see \citep{Anderson_2019, deValpine_2014, Popovic_2019}), 
-%***DAN: Jasmin, please insert bib entries for the references Anderson et al., 2018; de Valpine et al., 2014; Popovic et al., 2019
-%from the Ghosh et al (2020; Adv Ecol Res) paper, and cite them here.
+%***
+%
 our recent work has shown that, in fact, ATAs are extremely common in ecology \citep{Ghosh_2020_AER}, and can be mechanistically important for 
 many ecological phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
 synchrony, and the temporal stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Ghosh_2021}.
@@ -220,11 +219,11 @@ why ATAs may influence one mechanism of coexistence, in particular: storage effe
 why ATAs may be relevant to them.
 %***DAN: I have inserted some comments below that might help.
 Storage effects allow for species to fluctuate over time while escaping extinction, continously recovering from low densities. 
-In order for storage effects to contribute as a stabilizing mechanism to coexistence, there must first be covariation between competitive pressures and environmental fluctuations [EC covariance \citep{Chesson_1994, Barabas_2018} ].
+In order for storage effects to contribute as a stabilizing mechanism to coexistence, there must first be covariation between competitive pressures and environmental fluctuations [EC covariance \citep{Chesson_1994, Barabas_2018}].
 %Because the contributive value of storage effects relies on the relationship between environment and competition \citep{Chesson_1994, Barabas_2018}, it reasonably follows to suspect the contribution of storage effectsto be altered by an association between environment and competition that is asymmetric, i.e., ATAs between environment and competition.
 The reliance of storage effect's magnitude on the degree of relationship between environment and competition indicate that storage effects involve environment-coexistence associations, and hence there is potential for ATAs to influence storage effects. 
 In addition to EC covariance, functioning temporal storage effects also require that heterospecific populations respond differently to environmental fluctuations, and different life stages must also vary in responses \citep{}. 
-In a simple two species system, differences in environmental response allow for one species to grow to high densities in its favorable environemnt while the other is very low. 
+In a simple two species system, differences in environmental response allow for one species to grow to high densities in its favorable environemnt while the other is very low. %**JAS: should we introduce invader analysis or terminology here?
 Growth is stable for the high density species due to positive EC covariance -- high intraspecific competition limits its growth rate in a favorable environment. 
 Conversely, EC covariance is lesser for the low density species, leading to large fluctuations in population growth rate in both directions. 
 Although, this may appear like a scenario for extiction, it can, in fact, be advantageous due to differences between life stages, buffering species against extinction by limiting negative growth rates, but not positive ones. 
@@ -240,8 +239,8 @@ Given that storage effect depends on the relationship between E and C, we questi
 %other mechanisms are influenced. I think instead it's enough to just explain, as laid out in 
 %new, proposed topic sentence above, that storage effects are influenced by ATAs. That justifies the study, and then the reader can 
 %discover later that only storage effects are influenced. If a referee complains, I think we will be able to effectively respond after the fact. 
-%For clarification, we explain the how storage effects operate in maintaining biodiversity and the conditions that are required for it to do so.
-%***DAN: the above sentence will be superceded by the new topic sentence, above, of the combined paragraph, so you can cut this.
+%
+%***
 %We emphasize that although this paper focuses on storage effects, we do consider other mechanisms of modern coexistence theory, though we quickly realize the importance of ATAs is solely for storage effects; hence, it is still a paper generally about the importance of ATAs for coexistence because.
 %***DAN: Protesting too much, sounds defensive. Maybe we can return to this in the Discussion, after we've made our points, but it 
 %currently seems to me even that won't be necessary. We can just point out in the first para of the Discussion something like "We have learned
@@ -255,13 +254,13 @@ Given that storage effect depends on the relationship between E and C, we questi
 %[As we know], anthropogenic climate change threatens almost all aspects of life including via extreme climatic events, which have only become more extreme - increasing in magnitude and frequency - and have contributed to both the increase in global means as well as an increase in environmental variability (citation). 
 %There are many studies on the influence of environmental extremes and variability on competition and coexistence \citep{Adler_2006,  Parepa_2013, Diez_2012}; however, the study of the influence of relationships and interactions between drivers in their extremes on competition and coexistence, is lacking in the scientific literature.
 %;we review these studies here  In one of the first empirical tests for storage effect and its requirements, \cite{Adler_2006} showed that climate variability - including extreme events - promoted the coexistence of grass species in Kansas prairie, specifically their ability to recover from low densities. Moreover, in studies on the invasibility of plants, the density and competitive balance of invasive Japanese knotweed increases as resource and thus climate variability increased.\citep{Parepa_2013} 
-Environmental fluctuations are becoming more influenced by extreme climatic events (Hansen et al 2012) as extreme events increase in frequency, duration, and intensity \citep{Meehl_2004, Ummenhofer_2017}. Extreme events (heat-waves, floods, hurricanes, etc.) alter the means and variation of environmental fluctuations, and thus have implications for coexistence and competition. Competitive output and community composition of grassland plants has been shown to be impacted by heat-waves and extreme drought \citep{White_2000, White_2001, Hoover_2014}. Studies on the direct effect of extreme events on competing species are slim (but see above); however, the consequences of change in environmental means, which may be due to extreme events or gradual climate change in general, on coexistence is more commonly studied.  \cite{Descombes_2020}, through experimental manipulation, found that range shifts, as a product of climate change, favored coexistence between alpine plants while \cite{Usinowicz_2021} predict increases in competitive pressures as the climate change induced range shifts lead populations to interact with new conspecifics. Similarly, \cite{diPaola_2012} predict the collapse of coexistence between Mediterranean tree species as rainfall levels are forecasted to decrease. Extreme events constitute large disturbances, quantitatively amounting to large fluctuations in environmental drivers and their ecological responses \citep{Smith_2011}. Increased variability of environmental fluctuations is a newer consideration for studying environmental changes in comparison to changes in means; however, environmental variability has been analytically shown to be important for classical coexistence \citep{Chesson_1981, Warner_1985}. Moreover, increased variability has been found to promote coexistence in plants communities \citep{Adler_2006,  Angert_2009}, but disrupt coexistence in birds \citep{Stenseth_2002, Stenseth_2015}. This present study has applications to extreme events and climate change as we consider relationships in their extremes, potentially caused by extreme events, and their implications for competition and coexistence. 
+Environmental fluctuations are becoming more influenced by extreme climatic events \citep{Hansen_2012} as extreme events increase in frequency, duration, and intensity \citep{Meehl_2004, Ummenhofer_2017}. Extreme events (heat-waves, floods, hurricanes, etc.) alter the means and variation of environmental fluctuations, and thus have implications for coexistence and competition. Competitive output and community composition of grassland plants has been shown to be impacted by heat-waves and extreme drought \citep{White_2000, White_2001, Hoover_2014}. Studies on the direct effect of extreme events on competing species are slim (but see above); however, the consequences of change in environmental means, which may be due to extreme events or gradual climate change in general, on coexistence is more commonly studied.  \cite{Descombes_2020}, through experimental manipulation, found that range shifts, as a product of climate change, favored coexistence between alpine plants while \cite{Usinowicz_2021} predict increases in competitive pressures as the climate change induced range shifts lead populations to interact with new conspecifics. Similarly, \cite{diPaola_2012} predict the collapse of coexistence between Mediterranean tree species as rainfall levels are forecasted to decrease. Extreme events constitute large disturbances, quantitatively amounting to large fluctuations in environmental drivers and their ecological responses \citep{Smith_2011}. Increased variability of environmental fluctuations is a newer consideration for studying environmental changes in comparison to changes in means (vitation); however, environmental variability has been analytically shown to be important for classical coexistence \citep{Chesson_1981, Warner_1985}. Moreover, increased variability has been found to promote coexistence in plants communities \citep{Adler_2006,  Angert_2009}, but disrupt coexistence in birds \citep{Stenseth_2002, Stenseth_2015}. This present study has applications to extreme events and climate change as we consider relationships in their extremes, potentially caused by extreme events, and their implications for competition and coexistence. 
 
 Extreme events can have important ecological impacts for controphic competing communities where species growth and the maintenance of biodiversity depends on distinct temporal events/dynamics. If extreme events are more temporally extensive (last longer, have higher duration) than moderate disturbances, then it is more likely that two species will be influenced by the same events. Both species may become more alike (similar, correlated), an important consideration for competition and coexistence. For example, an extreme flood event that lasts across the growth season of two different species and increases recruitment in both species will cause recruitment of the two species to become more correlated in the upper tail end of the distribution. This is a change in ATA not just from the event alone, but from the relationship between species. Though previous literature considers impacts of extreme events, change in means, and increased variability on species coexistence and competition and community dynamics in gerneral (see above), they do not directly consider ATA between species response caused by environment (but see Ghosh for impact of ATA on community aggregate properties).
 
-To demonstrate plausibility of ATA altering coexistence between species, we carried out long time scale simulations using a simple two-species lottery model. Environmental variability has been classically shown to promote coexistence via storage mechanisms in a temporal lottery model of competition \citep{Chesson_1981, Warner_1985}, hence we continue/move forward with this simple model to examine the effect of extreme relationships between environmental responses on the contribution of storage effects to coexistence. We simulated two different communites up to 100,000 time steps to hopefully make it clear to the reader than ATA makes a difference (see figure 2). The only distinction between the two simulations is that one depends on asymmterically tail associated temporal dynamics and one does not. Markedly, the simulation with ATA has longer periods of one-species dominance than the simulation without, almost seven times as much....    
+To demonstrate plausibility of ATA altering coexistence between species, we carried out long time scale simulations using a simple two-species lottery model. Environmental variability has been classically shown to promote coexistence via storage mechanisms in a temporal lottery model of competition \citep{Chesson_1981, Warner_1985}, hence we continue/move forward with this simple model to examine the effect of extreme relationships between environmental responses on the contribution of storage effects to coexistence. We simulated two different communites up to \Sexpr{M} time steps to hopefully make it clear to the reader than ATA makes a difference (see figure \ref{fig:pedagog}). The only distinction between the two simulations is that one depends on asymmterically tail associated temporal dynamics and one does not. Markedly, the simulation with ATA has longer periods of one-species dominance than the simulation without, almost X times as much....    
 
-To contextualize idea of how ATA in environmental response might manifest and modfiy the outcome of coexistence, we introduce an example of a two species grass-forb plant community (inspired by \cite{Chesson_2012}). The community follows the criteria required for temporal storage effects to operate. The forb dominates and has high fecundity when a sufficient threhold of rain is reached in the early season. The grass dominates and has high fecundity when there is sufficeint rain in the late season. Competition is influenced by resource comsumption of growing juvenile plants. Dormant seeds are unaffected by competiton and can persist in the community in an unfavorable environment. When rain fall dynamics temporally fluctuate from year to year, relative abundance and dominance of the grass-forb community also fluctuate year to year. The result is a relationship between the grass's and forb's environmental responses (fecundity) that is symmetrically associated. However, if environmental responses become asymmetrically associated by, say, extreme rainfall events coexistence can be altered. If the community is disturbed by frequent and long floods with some years of normalcy, the grass-forb environmental relationship may become more correlated in the higher values or right-tail associated. Conversely, if the community is disturbed by frequent and long drought with some years of normalcy, the grass-forb environmental response relationship may become more correlated in the lower values or left tail associated. We see the possible consequences of ATA in Figure 2. In simulating their populations,  ATA can cause species to have longer periods of extreme dominance and lower growth rates overall.   
+To contextualize idea of how ATA in environmental response might manifest and modfiy the outcome of coexistence, we introduce an example of a two species grass-forb plant community (inspired by \cite{Chesson_2012}). The community follows the criteria required for temporal storage effects to operate. The forb dominates and has high fecundity when a sufficient threhold of rain is reached in the early season. The grass dominates and has high fecundity when there is sufficeint rain in the late season. Competition is influenced by resource comsumption of growing juvenile plants. Dormant seeds are unaffected by competiton and can persist in the community in an unfavorable environment. When rain fall dynamics temporally fluctuate from year to year, relative abundance and dominance of the grass-forb community also fluctuate year to year. The result is a relationship between the grass's and forb's environmental responses (fecundity) that is symmetrically associated. However, if environmental responses become asymmetrically associated by, say, extreme rainfall events, coexistence can be altered. If the community is disturbed by frequent and long floods with some years of normalcy, the grass-forb environmental relationship may become more correlated in the higher values or right-tail associated. Conversely, if the community is disturbed by frequent and long drought with some years of normalcy, the grass-forb environmental response relationship may become more correlated in the lower values or left tail associated. We see the possible consequences of ATA in Figure \ref{fig:pedagog}. In simulating their populations,  ATA can cause species to have longer periods of extreme dominance and lower growth rates overall.   
 
 
 %Interacting environmental drivers can be asymmetrically related in the extreme values (as shown in \cite{Ghosh_2020_AER}). 
@@ -307,7 +306,7 @@ and a means for understanding its importance for real systems.
 
 We here pursue goal G1 from the Introduction, to augment the MTC to show how ATA
 plays a role.
-%***DAN: make sure you define MTC and ATA once (probably in the Intro) and then use the abbreviations onle after that.
+
 For pedgogical clarity, we develop each step of the theory in general and for a simple example model, the lottery model. 
 
 The lottery model is as follows. 
@@ -328,7 +327,7 @@ bivariate normal distribution. We will consider various distributions of $\left(
 properties, corresponding to various tail association cases. Note that $N$ is constant through time.
 
 Modern coexistence theory \citep{Chesson_2000} and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
-%***DAN: Search for REF and replace all with appropriate citations
+
 quantify the contributions of 
 different mechanisms to species coexistence. But we show below
 that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
@@ -357,7 +356,7 @@ Specifically, storage effects for species $i$ are
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
 \end{equation}
-where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' (IGR) of species $i$, that is, the mean growth rate of 
+where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' [IGR] of species $i$, that is, the mean growth rate of 
 species $i$ when it is at negligible abundance and species $j$ (the other species) is at stochastic steady state;
 $\olr_{j \bs i}$ refers to the mean steady-state 
 growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
