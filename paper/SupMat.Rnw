@@ -445,7 +445,7 @@ independent of each other. Continuing,
 \begin{align}
 \olep_j^{(EC)} &= \E[r_j(E_j,C_{j \bs i})]-\E[r_j(E_j^\shp , C_{j \bs i}^\shp)] \\
 &= -\E[r_j(E_j^\shp , C_{j \bs i}^\shp)] \\
-&= -\E[\ln(1-\delta+\delta \exp(\sigma (\tilde{b}_j^\shp - \tilde{b}_j)))],
+&= -\E[\ln(1-\delta+\delta \exp(\sigma (\tilde{b}_j^\shp - \tilde{b}_j)))],\label{eq:decomp:j:pECp}
 \end{align}
 these results obtained from (\ref{eq:decomp:j:EC}) and (\ref{eq:decomp:j:EshpC}). Again, $\tilde{b}_j$ and 
 $\tilde{b}_j^\shp$ are standard normally distributed and independent. Continuing,
@@ -524,6 +524,97 @@ $(b_1^{(l)},b_2^{(l)})$. But then we have
 which completes the proof that $\olep_i^{[E \nat C]}$ is independent of left- versus right-tail associated noise.
 For the terms of the decomposition (\ref{eq:decomp_overall_rjbsi}), it suffices to look at the equations for those terms, 
 above, in this section, and note that all those terms depend only on marginals. 
+
+\section{The $\delta=1$ case}\label{sect:delta1}
+
+%The i terms
+Setting $\delta=1$ in (\ref{eq:decomp:baseline}) gives 
+\begin{equation}
+\epsilon_i^0 = \mu_i - \mu_j.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_E}) gives
+\begin{align}
+\olep_i^E &= \mu_i-\mu_j-\sigma^2/2-\epsilon_i^0 \\
+&= -\sigma^2/2.
+\end{align}
+Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_C}) gives
+\begin{align}
+\olep_i^C &= \mu_i - \mu_j + \sigma^2/2 -\epsilon_i^0 \\
+&= \sigma^2/2.
+\end{align}
+Setting $\delta=1$ in (\ref{eq:decomp:last_term_primary}) gives
+\begin{align}
+\olep_i^{EC} &= \mu_i - \mu_j -\olep_i^E - \olep_i^C - \epsilon_i^0 \\
+&= 0.
+\end{align}
+Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_EC_var_per_se}) gives
+\begin{align}
+\olep_i^{(E \shp C)} &= \mu_i - \mu_j -\olep_i^E - \olep_i^C - \epsilon_i^0 \\
+&= 0.
+\end{align}
+Setting $\delta=1$ in (\ref{eq:decomp:storage_effects}) gives
+\begin{align}
+\olep_i^{(EC)} &= \mu_i - \mu_j - (\mu_i -\mu_j) \\
+&= 0.
+\end{align}
+Setting $\delta=1$ in (\ref{eq:decomp:contrib_ATA_2}) gives
+\begin{equation}
+\olep_i^{[E \nat C]}=0.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:contrib_EC}) gives
+\begin{equation}
+\olep_i^{[EC]}=0.
+\end{equation}
+%The j terms
+Setting $\delta=1$ in (\ref{eq:decomp:baseline_j}) gives
+\begin{equation}
+\epsilon_j^0 = 0.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_E_j}) gives
+\begin{equation}
+\olep_j^E = -\sigma^2/2.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_C_j}) gives
+\begin{equation}
+\olep_j^C = \sigma^2/2.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:j:EC}) gives
+\begin{equation}
+\olep_j^{EC} = 0.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:j:EshpC}) gives
+\begin{equation}
+\olep_j^{(E \shp C)} = 0.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:j:pECp}) gives
+\begin{equation}
+\olep_j^{(EC)} = 0.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:j:EnatC}) gives
+\begin{equation}
+\olep_j^{[E \nat C]} = 0.
+\end{equation}
+Setting $\delta=1$ in (\ref{eq:decomp:j:EChard}) gives
+\begin{equation}
+\olep_j^{[EC]}=0.
+\end{equation}
+
+For $\delta=1$, the second value of $q_{ij}$ we considered, namely
+$q_{ij}=\frac{\exp(\mu_i)}{(1-\delta)\exp(\mu_j)+\delta \exp(\mu_i)}$, equals $1$, so both the
+options we considered for $q_{ij}$ are $1$ in this case. Combining the above 
+equations using $q_{ij}=1$ gives
+\begin{align}
+\Delta_i^0 &= \mu_i - \mu_j \\
+\Delta_i^E &= 0  \\
+\Delta_i^C &= 0  \\
+\Delta_i^{(E \shp C)} &=  0 \\
+\Delta_i^{[E \nat C]} &= 0  \\
+\Delta_i^{[EC]} &=  0. 
+\end{align}
+Thus the only contribution to coexistence for the $\delta=1$ case is $\Delta_i^0 = \mu_i - \mu_j$,
+which does not depend on $\sigma$ and which is non-positive whenever $\mu_i \leq \mu_j$ (which we assumed,
+without loss of generality).
+So there is no robust coexistence in the $\delta=1$ case for our simple model.
 
 \section{Efficient computation}\label{sect:efficient_computation}
 
