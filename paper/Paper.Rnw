@@ -291,7 +291,7 @@ are likely to be negligible or meaningfully large.
 %***DAN: This is a good additional goal. We will either have to have already defined the "ATA rescue and ATA exlusion sets of trait space"
 %or else readers won't understand this as it was written, above (now commented). These are complex concepts, so it may be better to 
 %save formal definitions for later and reword this. Here's a try at rewording: 
-G3) To explore, using our simple model, the likelihood that species can coexist with
+G3) To explore, using our simple model, whether species can coexist with
 ATAs but not without, or vice versa. This is to begin to illuminate whether ATA contributions to biodiversity maintenance 
 may be negligible or meaninfully large.
 G4) To provide an empirical example of species coexistence, and to highlight the role ATAs play in coexistence for the example.
@@ -581,23 +581,39 @@ magnitude comparable to the magnitudes of other terms of the extended MTC decomp
 Magnitudes of $\Delta_i^{[E \nat C]}$ tended to be larger, relative to the magnitudes of the 
 other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between $\mu_1$ and 
 $\mu_2$, i.e., for closer-to-equal competitors. 
+In the $\mu_1=\mu_2$ case (panels A-D), for which the two species were equal 
+competitors, storage effects (blue plus red
+lines on Fig. \ref{fig:fig3}) were the only means by which coexisitence could occur, and ATA effects
+tended to be negative, weakening total storage effects.
+
+%G3
+Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
+can coexist with ATAs, but not without, or vice versa), our results show that ATAs can, indeed, sometimes
+make the difference between coexistence and exclusion: both ``ATA rescue'' and ``ATA
+exclusion'' (see Methods) are possible.
 For some of the panels on Fig. \ref{fig:fig3}, the IGR line falls between the ATA
 line and the $x$ axis for some values of $\sigma$, e.g., see panel H. 
 Such cases correspond to parameter combinations
 for which the presence or absence of ATAs determine whether the species coexist or not. In the 
-case of panel H, species 1 is excluded with ATA but the species can coexist without them. 
-In the $\mu_1=\mu_2$ case (panels A-D), for which the two species were equal 
-competitors, storage effects (blue plus red
-lines on Fig. \ref{fig:fig3}) were the only means by which coexisitence could occur, and ATA effects
-tended to be negative, weakening total storage effects. 
+case of panel H, for values of $\sigma$ around $4$, 
+species 1 is excluded with ATAs but the two species can coexist without ATAs. 
+Fig. \ref{fig:fig4} highlights additional examples. Orange lines on Fig. \ref{fig:fig4}
+indicate the IGR when the effects of ATAs are included, and blue lines are the IGR when
+the effects of ATAs are neglected. These two lines frequently crossed the $x$ axis in 
+different places, showing that both ATA rescue space and ATA exclusion space could be non-empty
+subsets of our trait-difference space (see Methods). For the parameters we considered, 
+both ATA rescue and exclusion were more common for larger values of $\sigma$.
+ATA rescue appeared more likely for smaller $\delta$, whereas ATA exclusion appeared
+more common for larger $\delta$. Although bands of ATA rescue or exlusion on Fig.
+\ref{fig:fig4} appear narrow, they nevertheless do occur,  
 
-%G3
 
-While the contribution of ATA is definitively not absent, in most cases it does not make a difference for coexistence or comepetitive exclusion. In most panels of Figure 3, the magnitude of negative contribution from ATA does not effect the sign of the IGR. The absense of ATA contribution will increase IGR in those cases, but the outcome of coexistence would likely not be different. %maybe move or expand more on this point in discussion 
-%cite sources that say the sign of IGR matter more than the magnitude 
-However, there are cases where ATA makes a difference for coexistence or competitive exclusion where the maginitude of $\Delta_i^{[E \nat C]}$ is large and other mechanisms do not counteract resulting in a sign change for IGR. We call these cases ATA rescue or ATA exclusion, the exploration of which is at the core of G3. 
-
-To acheive G3, we assessed the effect of ATA by comparing and plotting (Figure 4) the IGR computed for G2 and the IGR if there were no ATA (IGR - $\Delta_i^{[E \nat C]}$). To find areas of ATA exclusion or ATA rescue we looked at where these line cross y=0 and highlighted and color coded ATA exclusion trait space and ATA rescue trait space (see Methods). In these spaces, contribution of ATA is the mechanism soley responsible for a positive or negative IGR. Occurence of ATA rescue is slim and only occurs when $\delta=1$ and species traits are extremely similar or identical. Other $\delta$ values are more indicative of ATA exclusion events.  When $\delta<1$ ATA exlusion space increase in range and magnitude as $\sigma$ increases. There is indication that ATA exlcusion space also increases in magnitude as $\delta$ decreases, however changes in range have a more complex trend. Range increases across decreasing $\delta$ for all $\sigma$ values except $\sigma=6$. Here, the range is limited by an increasing $\Delta_i^{[E \nat C]}$ as trait space increases and the two IGR's are close to converging.         
+Althoug ATA rescue or exclusion
+occurs only for the minority of parameter combinations considered, this does not mean
+ATAs are unimportant for species coexistance and biodiversity maintenance - the same is
+probably also true of 
+ 
+ Occurence of ATA rescue is slim and only occurs when $\delta=1$ and species traits are extremely similar or identical. Other $\delta$ values are more indicative of ATA exclusion events.  When $\delta<1$ ATA exlusion space increase in range and magnitude as $\sigma$ increases. There is indication that ATA exlcusion space also increases in magnitude as $\delta$ decreases, however changes in range have a more complex trend. Range increases across decreasing $\delta$ for all $\sigma$ values except $\sigma=6$. Here, the range is limited by an increasing $\Delta_i^{[E \nat C]}$ as trait space increases and the two IGR's are close to converging.         
 
 
 
@@ -689,33 +705,33 @@ has magnitude comparable to other components, indicating that ATAs can contribut
 to species coexistence or failure to coexist. In some instances, the IGR line (orange) falls 
 betweed the ATA line (red)
 and the $x$ axis, indicating that, for those parameter values, ATAs make the difference between species
-coexistence and exclusion of the weaker competitor. Standard error was never greater than
-\Sexpr{round(se3,5)}, a small value compared to y axis extents and comparisons between lines,
-so standard errors were not displayed. \label{fig:fig3}}
+coexistence and exclusion of the weaker competitor. Standard errors of plotted quantities 
+were never greater than \Sexpr{round(se3,5)}, so are not displayed. \label{fig:fig3}}
 \end{figure}
 %***DAN: Dan has edited this caption
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig4.pdf}
-\caption{ATA rescue and ATA exclusion can be defined within subsets species trait difference spaces. 
-IGR (ATA included; yellow) and IGR without ATA (violet) are plotted against species trait difference 
-$\mu_1-\mu_2$ in order to demonstrate ATA rescue and ATA exclusion. The red line, $\Delta_i^{[E || C]}$, 
-%***DAN: I would normally have used \nat instead of ||, above, but \nat seems to not work in figure captions for some reason,
-%it crashes the latex on my machine at least. If we can fix this, we should, but it's not the end of the world if we can't.
-%Jasmin, could you compile on your machine when || above was \nat?
-is the difference between the two IGR's. Each panel is defined by a unique set of parameters $\sigma$ 
-and $\delta$. ATA rescue is marked by regions in the panels where IGR wihtout ATA contribution is less 
-than IGR at zero, denoted by regions of dotted yellow. ATA exclusion is marked by regions where IGR 
-without ATA contribution is greater than IGR at zero, denoted by regions of dotted pink. ATA rescue 
-is only seen in cases where $\delta=1$ (left column). All other cases shown here have subsets of 
-species trait difference space where ATA exclusion occurs. Despite panels in the top row not 
-containing the color coded region, these cases still contain ATA exlusion spaces; however, the space 
-is too small to appropriately denote while still maintaining consistent x-axes across all panels. 
-For $\delta<1$, ATA exclusion space increases down rows as $\sigma$ increases. ATA exclusion space also 
-seems to increase across columns as $\delta$ decreases; however this trend is broken in the last row, 
-indicating a more compex relationship between ATA exclusion space, $\delta$, and $\sigma$. Standard error was computed but not displayed because the maximum standard error of all computations was \Sexpr{round(se4,5)}.  
-}\label{fig:fig4}
+\caption{ATAs can sometimes make the difference between species coexistence and exclusion of the weaker
+competitor; both ``ATA rescue'' and ``ATA exclusion'' (see Methods) are possible. 
+All panels show the IGR, the ATA term of the extended MCT [$\Delta_i^{[E || C]}$ in equation 
+(\ref{eq:full_decomp})], and the difference of these quantities. 
+For each panel, $\delta$ and $\sigma$ are fixed at values specified in the 
+margins, and the three quantities are plotted against $\mu_1-\mu_2$ to isolate points in the
+``trait-difference space'' corresponding to ATA rescue 
+($\psi_{\text{ATA}}(\delta,\sigma) \setminus \psi_{\lnot\text{ATA}}(\delta,\sigma)$) 
+or ATA exclusion ($\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$; 
+see Methods). Values of $\mu_1-\mu_2$ for which the IGR is positive but 
+$\text{IGR}-\Delta_i^{[E || C]}$ is negative correspond to ATA rescue (shaded yellow), whereas
+values of $\mu_1-\mu_2$ for which the IGR is negative but $\text{IGR}-\Delta_i^{[E || C]}$ is positive 
+correspond to ATA exclusion (shaded violet). Top panels also include domains
+of ATA rescue or exclusion, but they were too narrow to be highlighted by shading and are
+probably of minimal practical importance. 
+Standard errors of plotted quantities were never greater than \Sexpr{round(se4,5)}, 
+so are not displayed. The dashed red line on panel L corresponds to the parameters
+used for Fig. \ref{fig:pedagog}. This plot uses $q_{ij}=1$. An analogous plot was generated 
+using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it looked exactly the same, by mathematical necessity (see SI section ).}\label{fig:fig4}
 \end{figure}
-
+%***DAN: Dan has edited this caption
 
 \end{document}
