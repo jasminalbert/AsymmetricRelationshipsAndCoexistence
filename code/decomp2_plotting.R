@@ -8,13 +8,20 @@ source("./decomposition_fxn.R")
 #sigma  an integer value of sigma
 #delta  an integer value of delta
 
-dePlot2 <- function(noise_loc, mudif, sigma, delta, qij=FALSE, legend=FALSE,...){
+dePlot2 <- function(noise_loc, data_exist=TRUE, data_loc, mudif, sigma, delta, qij=FALSE, legend=FALSE,...){
   load(noise_loc)
-
-  store <- vector(mode='list', length=length(mudif))
   
-  for (i in 1:length(mudif)){
-    store[[i]] <- decompose(mudif[i],sigma,delta,b_tilde,u=u_tilde)
+  if (data_exist==FALSE){ #if data_loc =0, create the data
+    cat("\ncomputing results with M=", length(u_tilde),"\nthis make take awhile...")
+    store <- vector(mode='list', length=length(mudif))
+    for (i in 1:length(mudif)){
+      store[[i]] <- decompose(mudif[i],sigma,delta,b_tilde,u=u_tilde)
+    }
+    saveRDS(store, data_loc)
+    cat("\n\nresults computed and saved as", data_loc)
+  } else {
+    cat("\nresults loaded from", data_loc)
+    store <- readRDS(data_loc)
   }
   
   range <- range(unlist(lapply(store, function(X){(X$D[6:8])})))
@@ -61,7 +68,6 @@ dePlot2 <- function(noise_loc, mudif, sigma, delta, qij=FALSE, legend=FALSE,...)
 #dePlot2(mudif, 4,0.5)
 #dePlot2(mudif, 5,0.5)
 #dePlot2(mudif, 6,0.5)
-mudif = seq(0.0, -2.5, length.out = 50)
 
 
 
