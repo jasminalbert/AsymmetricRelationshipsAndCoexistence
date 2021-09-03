@@ -8,20 +8,20 @@ source("./decomposition_fxn.R")
 #sigma  an integer value of sigma
 #delta  an integer value of delta
 
-dePlot2 <- function(noise_loc, data_exist=TRUE, data_loc, mudif, sigma, delta, qij=FALSE, legend=FALSE,...){
+dePlot2 <- function(noise_loc, res_exist=TRUE, res_loc, mudif, sigma, delta, qij=FALSE, legend=FALSE,...){
   load(noise_loc)
   
-  if (data_exist==FALSE){ #if data_loc =0, create the data
-    cat("\ncomputing results with M=", length(u_tilde),"\nthis make take awhile...")
+  if (res_exist==FALSE){ #if data_loc =0, create the data
+    cat("\n\ncomputing results with M=", length(u_tilde),"\nthis make take awhile...")
     store <- vector(mode='list', length=length(mudif))
     for (i in 1:length(mudif)){
       store[[i]] <- decompose(mudif[i],sigma,delta,b_tilde,u=u_tilde)
     }
-    saveRDS(store, data_loc)
-    cat("\n\nresults computed and saved as", data_loc)
+    saveRDS(store, res_loc)
+    cat("...results computed and saved as", res_loc)
   } else {
-    cat("\nresults loaded from", data_loc)
-    store <- readRDS(data_loc)
+    cat("\nresults loaded from", res_loc)
+    store <- readRDS(res_loc)
   }
   
   range <- range(unlist(lapply(store, function(X){(X$D[6:8])})))

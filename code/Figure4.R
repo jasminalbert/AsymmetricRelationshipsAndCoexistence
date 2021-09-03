@@ -6,7 +6,7 @@ if(dir.exists(numeric_results_loc)==FALSE){
 }
 params_loc <- paste(numeric_results_loc, "/params.RData", sep="")
 noise_loc <- paste(numeric_results_loc, "/noise.RData", sep = "")
-fig4numres_loc <- paste(numeric_results_loc, "/fig4numres.RDS", sep="")
+fig4numres_loc <- paste(numeric_results_loc, "/fig4numres_", sep="")
 
 fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
@@ -59,7 +59,8 @@ res <- vector(mode='list',length=1)
 m <- 1
 for (s in 1:ns){
   for (d in 1:nd){
-    res <- append(res, dePlot2(noise_loc, data_exist=ifelse(file.exists(fig4numres_loc), yes=TRUE, no=FALSE), data_loc=fig4numres_loc, mudif_4,sigma[s], delta[d], xaxt="n"))
+    res_loc <- paste(fig4numres_loc,m,".RDS", sep="")
+    res <- append(res, list(dePlot2(noise_loc, res_exist=ifelse(file.exists(res_loc), yes=TRUE, no=FALSE), res_loc=res_loc, mudif_4,sigma[s], delta[d], xaxt="n")))
     axis(1, labels=ifelse(m>12, yes=TRUE, no=FALSE), tick=TRUE)
     mtext(LETTERS[m], side=3, line=-1.45, at=-4.5, adj=1)
     
@@ -82,8 +83,9 @@ mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
 mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
 
 dev.off()
-fig4maxse <- max(unlist(lapply(res, function(X){X$D_se})), na.rm = TRUE)
-cat("maximum standard error in figure four is", fig4maxse, "\n(M=", M, ")\n")
+
+fig4maxse <- max(unlist(lapply(res[-1], function(Y){lapply(Y, function(X){X$D_se})})), na.rm=TRUE)
+cat("\nmaximum standard error in figure four is", fig4maxse, "\n(M=", M, ")\n")
 fig4maxse_loc <- paste(numeric_results_loc, "/fig4maxse.RDS", sep="")
 saveRDS(fig4maxse, file=fig4maxse_loc)
 Sys.time()
