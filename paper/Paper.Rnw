@@ -499,18 +499,15 @@ the magnitude of the new ATA term in this expression, $\Delta_i^{[E \nat C]}$, r
 
 \section{Methods}\label{section:methods}
 
-%G2) To explore, using a simple model, the relative magnitudes of the contributions to coexistence that come
-%from ATAs compared to other mechanisms. This is to help illuminate whether ATA contributions to coexistence 
-%are likely to be negligible or meaningfully large. 
-
+%G2
 Left- or right-tail associated noise $(b_1,b_2)$, with $b_i$ normally distributed with mean $\mu_i$ and standard deviation 
 $\sigma$, was generated as pictured in Fig. \ref{fig:noise}, with details in SI section \ref{SI-sect:noise}.
 To achieve goal G2 from the Introduction, i.e., to explore using a simple model the relative magnitudes of the contributions 
 to coexistence that come from ATA versus other mechanisms, we plotted the terms $\Delta_i^0$, $\Delta_i^E$, $\Delta_i^C$, 
 $\Delta_i^{(E\shp C)}$, $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ [see (\ref{eq:full_decomp})] for the lottery model
-% and $r_1-q_{12}r_2$?
 against the independent parameters of the model, $\mu_1$, $\mu_2$, $\sigma$ and $\delta$; and then we compared their
-values on the plots. Some mathematical shortcuts, summarized here, greatly simplified this plotting. First, we showed that, for the 
+values on the plots. Some mathematical shortcuts, summarized here, greatly simplified this plotting. First, we showed 
+that, for the 
 lottery model, none of the components in (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
 instead they all depend only on the difference $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). So we only plotted 
 against $\mu_1 - \mu_2$. Second, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
@@ -528,10 +525,7 @@ The simulation methods of \cite{Ellner_2019} were used to compute the components
 Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
 SI section \ref{SI-sect:efficient_computation}.
 
-%G3) To explore, using our simple model, the likelihood that species can coexist with
-%ATAs but not without, or vice versa. This is to begin to illuminate whether ATA contributions biodiversity maintenance 
-%may be negligible or meaninfully large.
-
+%G3
 To acheive goal G3 from the Introduction i.e., to explore, using the lottery model, the likelihood that species can coexist with
 ATAs but not without, or vice versa, we plotted the IGR, $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
 as well as the
@@ -561,16 +555,13 @@ $\mu_1 - \mu_2$ for all combinations of $\delta=0.2, 0.4, 0.6, 0.8$ and $\sigma=
 
 %***DAN: Methods paras here for G4, if we accomplish G4
 
-%***DAN: Some version of the below text ought to go in the figure caption, do that later, Dan
-%The spaces in between the lines where they intersect the x-axis at y=0, indicate either an ATA rescue trait space or an ATA exclusion trait space. If the line plotting IGR is to the left of the line plotting IGR without ATA, then this space is an ATA rescue trait space. If the line plotting IGR is to the right of the line plotting IGR without ATA, then this space is an ATA exclusion trait space. 
-
 %Ideas while driving to pick up Max:
 %1) In this paper with Jasmin you need to cite the two papers you just got from the professor at University of Massachusetts, Lowell. I mean the papers about changes in the special extent of heat waves: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL087097 and https://iopscience.iop.org/article/10.1088/1748-9326/ab4b41
 %2) Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. Probably real environmental variables are actually related to vital rates in a non-linear and probably often threshold-like way. Threshold relationships can produce tail association, as we showed elsewhere. Changes in the means of true environmental variables may change where those distributions of environmental variables are compared to thresholds, which may change the nature of tail associations between the effects of those environmental variables.
 
 \section{Results}\label{section:results}
 
-%G2 and related side results
+%G2 
 Fulfilling goal G2 of the Introduction (to explore, using the lottery model, the relative magnitudes 
 of the contributions to coexistence that come from ATAs compared to other mechanisms), Fig.
 \ref{fig:fig3} shows that the ATA term of (\ref{eq:full_decomp}) sometimes, but not always, has 
@@ -586,7 +577,7 @@ tended to be negative, weakening total storage effects.
 %G3
 Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
 can coexist with ATAs, but not without, or vice versa), our results show that ATAs can, indeed, sometimes
-make the difference between coexistence and exclusion: both ``ATA rescue'' and ``ATA
+make the difference between coexistence and exclusion; both ``ATA rescue'' and ``ATA
 exclusion'' (see Methods) are possible.
 For some of the panels on Fig. \ref{fig:fig3}, the IGR line falls between the ATA
 line and the $x$ axis for some values of $\sigma$, e.g., see panel H. 
@@ -595,25 +586,15 @@ for which the presence or absence of ATAs determine whether the species coexist 
 case of panel H, for values of $\sigma$ around $4$, 
 species 1 is excluded with ATAs but the two species can coexist without ATAs. 
 Fig. \ref{fig:fig4} highlights additional examples. Orange lines on Fig. \ref{fig:fig4}
-indicate the IGR when the effects of ATAs are included, and blue lines are the IGR when
-the effects of ATAs are neglected. These two lines frequently crossed the $x$ axis in 
-different places, showing that both ATA rescue space and ATA exclusion space could be non-empty
+represent the IGR when the effects of ATAs are included, and blue lines are the IGR when
+the effects of ATAs are removed. These two lines frequently crossed the $x$ axis in 
+different places, showing that both ATA rescue space and ATA exclusion space can be non-empty
 subsets of our trait-difference space (see Methods). For the parameters we considered, 
 both ATA rescue and exclusion were more common for larger values of $\sigma$.
 ATA rescue appeared more likely for smaller $\delta$, whereas ATA exclusion appeared
 more common for larger $\delta$. Although bands of ATA rescue or exlusion on Fig.
-\ref{fig:fig4} appear narrow, they nevertheless do occur,  
-
-
-Althoug ATA rescue or exclusion
-occurs only for the minority of parameter combinations considered, this does not mean
-ATAs are unimportant for species coexistance and biodiversity maintenance - the same is
-probably also true of 
- 
- Occurence of ATA rescue is slim and only occurs when $\delta=1$ and species traits are extremely similar or identical. Other $\delta$ values are more indicative of ATA exclusion events.  When $\delta<1$ ATA exlusion space increase in range and magnitude as $\sigma$ increases. There is indication that ATA exlcusion space also increases in magnitude as $\delta$ decreases, however changes in range have a more complex trend. Range increases across decreasing $\delta$ for all $\sigma$ values except $\sigma=6$. Here, the range is limited by an increasing $\Delta_i^{[E \nat C]}$ as trait space increases and the two IGR's are close to converging.         
-
-
-
+\ref{fig:fig4} appear narrow, they nevertheless do occur, which means ATAs can mean the 
+difference between coexistence and extirpation of one species in some cases.
 
 \section{Discussion}\label{section:discussion}
 
@@ -706,7 +687,7 @@ coexistence and exclusion of the weaker competitor. Standard errors of plotted q
 were never greater than \Sexpr{round(se3,5)}, so are not displayed. This plot uses $q_{ij}=1$. An 
 analogous plot (SI Fig. \ref{SI-fig:fig3_alt}) was generated 
 using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. Though results differed
-in detail, main conclusions were the same. \label{fig:fig3}}
+in some details, main conclusions were the same. \label{fig:fig3}}
 \end{figure}
 %***DAN: Dan has edited this caption
 
