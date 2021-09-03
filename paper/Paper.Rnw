@@ -573,36 +573,23 @@ $\mu_1 - \mu_2$ for all combinations of $\delta=0.2, 0.4, 0.6, 0.8$ and $\sigma=
 
 \section{Results}\label{section:results}
 
-%G2
-
-%Para on the main goal, whether the ATA contribution is meaningfully large
-%ATA effects tend to oppose "the rest" of storage effects
-
-
-%Para on how it's usually negative, whereas \Delta_[EC] is positive, so except when \delta=1, ATA effects tend to weaken storage effects
-%Note that when mu1-mu2=2, we are in the case where only storage effects allow for coexistence
-
-%***DAN: drop the delta =1 case from here
-%Para on when delta=1 (annual species) - in this case, coexistence is only possible when mu1-mu2 is close to 0, and in that case the only
-%thing allowing for coexistence at all is storage effects. Interetingly (and this is the topic sentence), "the rest" of storage effects are
-%negative, and it's the ATA component of storage effects which are allowing the species to coexist. Suggests the possibility that for 
-%annual species whcih are close competitors, ATAs might be especially important? Jasmin ought to check on this to make sure it's accurate.
-%What I'm suspicious about is that for annual species which are close competitors (say, mu1-mu2=0), and in the symmetric case, storage
-%effects in the lotery model actually don't opperate, and there is no coexistence. That sounds weird to me. Can we get some independent
-%verification of that? Why would annual species be different in this respect? There must be some delta between 0.8 and 1 where \Delta^[EC]
-%switches from positive to negative. 
-
-%***DAN: consider possile para on mu1-mu2=0 case
-%***DAN: For discussion: is it true that ATA always weakens storage effects? Same as saying the ATA terms is always negative? The actual question is, for what models are ATA effects negative, versus positive?
-
-
-%***DAN: Jasmin, you computed standard errors of everything, but they are not currently reported. The best way to handle this would
-%be if we could say in captions in appropriate places "standard errors were always less than xyz", where xyz is some extremely 
-%small number. Standard errors are smalled for larger 
-
-%from methods : Relative importance of contributions was judged from the plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to the contributions of other mechanisms.
-To explore the relative magnitudes of the contributions to coexistence that come from ATA versus other mechanisms in our simple two-species lottery model (G2), we plotted the decomposing mechanisms against increasing $\sigma$ for various values of $\mu_1 - \mu_2$ and $\delta$ (Figure 3). When species are the same, $\mu_1 - \mu_2=0$, only storage effect mechanisms contribute to IGR and other mechanisms (in black) stay at zero. When $\delta=1$, other mechanisms stay relatively more stable with $\Delta_i^0$ set at a negative value and other non-storage effect values being at zero or extremely close to zero. Otherwise, all mechanisms tend to increase in magnitude as $\sigma$ increases. The contribution of ATA captured by $\Delta_i^{[E \nat C]}$ (red) is not small. In almost all cases, aside from when $\delta=1$, ATA contributes negatively to coexistence while symmetric associations, $\Delta_i^{[EC]}$ (blue) contribute postively, and the former decreases with $\sigma$ while the latter increases with $\sigma$. We see the opposite when $\delta=1$, where the contribution of ATA are positve and the contribution of symmetric association are negative and the trends are reversed. 
-
+%G2 and related side results
+Fulfilling goal G2 of the Introduction (to explore, using the lottery model, the relative magnitudes 
+of the contributions to coexistence that come from ATAs compared to other mechanisms), Fig.
+\ref{fig:fig3} shows that the ATA term of (\ref{eq:full_decomp}) sometimes, but not always, has 
+magnitude comparable to the magnitudes of other terms of the extended MTC decomposition. 
+Magnitudes of $\Delta_i^{[E \nat C]}$ tended to be larger, relative to the magnitudes of the 
+other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between $\mu_1$ and 
+$\mu_2$, i.e., for closer-to-equal competitors. 
+For some of the panels on Fig. \ref{fig:fig3}, the IGR line falls between the ATA
+line and the $x$ axis for some values of $\sigma$, e.g., see panel H. 
+Such cases correspond to parameter combinations
+for which the presence or absence of ATAs determine whether the species coexist or not. In the 
+case of panel H, species 1 is excluded with ATA but the species can coexist without them. 
+In the $\mu_1=\mu_2$ case (panels A-D), for which the two species were equal 
+competitors, storage effects (blue plus red
+lines on Fig. \ref{fig:fig3}) were the only means by which coexisitence could occur, and ATA effects
+tended to be negative, weakening total storage effects. 
 
 %G3
 
@@ -670,10 +657,17 @@ to be occurring, might. Should also mention this second point in the Discussion 
 
 \begin{figure}
 \includegraphics[width=.25\textwidth]{../results_figs/fig1_vertical.pdf}
-\caption{
-%Figure displaying the noise. Three panels, left-, symmetric, and right-tail assoc noise. Use standard normal marginals.Explain in caption that alternatives for $(b_1,b_2)$ are obtained by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.Jasmin to make and insert the figure here using the includegraphics command, and then draft a caption along the lines described here.
-Simple example of bivariate noise with standard normal marginals. A) is left-tail associated, B) is symmetric, and C) is right-tail associated. All three cases have the same Pearson correlation up to sampling variation, yet show different symmetry of tail associaton. Asymmetrically tail associated cases are perfectly correlated in the lower (A)  or upper (C) halfs of the distribution. The variables $(b_1,b_2)$ are transformed by multipling by $\sigma$ and then adding $(\mu_1,\mu_2)$.\label{fig:noise}}
+\caption{Simple example of bivariate noise with standard normal marginals. A) is left-tail 
+associated, B) is symmetric, and C) is right-tail associated noise. All three cases have 
+the same Pearson correlation, up to sampling variation, yet show different very different 
+patterns of association. We used asymmetrically tail associated cases which are perfectly 
+correlated in the lower (A)  or upper (C) halfs of the distributions, though it is also 
+possible to generate asymmetrically tail associated noise with imperfect correlations in 
+both halves of the distributions. The variables $(b_1,b_2)$ were obtianed by generating 
+noise as pictured and then multipling by $\sigma$ and adding $(\mu_1,\mu_2)$ (SI 
+section \ref{SI-sect:noise}).\label{fig:noise}}
 \end{figure}
+%***DAN: Dan has edited this caption at least once.
 
 \begin{figure}
 \includegraphics[width=.75\textwidth]{../results_figs/fig2.pdf}
@@ -681,12 +675,25 @@ Simple example of bivariate noise with standard normal marginals. A) is left-tai
 Populations inlfuenced by asymmetric tail association recover from low densities less often spend more time on average under one-species dominance. The top panel, A, is a simulation over time of a population within a two species lottery model whose environmental response and competition is influenced by symmetric bivariate noise defined by $\mu_1-\mu_2 = \Sexpr{fig2$params[1]}$, $\delta = \Sexpr{fig2$params[2]}$, and $\sigma = \Sexpr{fig2$params[3]}$. The bottom panel, B, is like A, but the population is influenced by bivariate noise with left-tailed asymmetric association defined by the same parameters. Both simulations were ran for total time of \Sexpr{M}. Noticeable population density was defined at a threshold of 0.95 of total community space. Periods of noticable coexistence are marked in grey. The community in A had mean noticable coexistence time of \Sexpr{fig2$coSym} and a mean one-species dominance time of \Sexpr{fig2$domSym}. The community in B had mean noticable coexistence time of \Sexpr{fig2$coATA} and a mean one-species dominance time of \Sexpr{fig2$domATA}. While mean periods of coexistence are more similar, community B had much longer mean periods of one-species dominace. The population in B also recovered from low densities less often and thus has a lower ability to recover when rare and thus that community has lower coexistence.     
 \label{fig:pedagog}}
 \end{figure}
+%***DAN: Dan has not yet edited this caption, will do so when it is time to edit the Intro 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig3.pdf}
-\caption{The contribution of ATA is non-negligible. All panels show the breakdown of contributing mechanisms of coexistence in accordance to \cite{Ellner_2019} new decomposition method, against increasing $\sigma$. Each panel is defined by a unique set of parameters $\mu_1-\mu_2$ and $\delta$. The cases where $\delta=1$ are not shown because they are mathematically straighforward to see that IGR $=\mu_1 - \mu_2$ and is influenced by $\sigma$ (see SupMat). In most cases, the contribution of ATA (red) is negatively; however when $\delta=1$, ATA contribution is positive. The contribution of ATA is non-negligible and in special cases result in a sign change of IGR (orange). Standard error was computed but not displayed because the maximum standard error of all computations was \Sexpr{round(se3,5)}. 
-\label{fig:fig3}}
+\caption{The contribution of ATAs to species coexistence is meaningfully large compared to 
+other components of the MTC decomposition. All panels show the IGR and the decomposition of
+the IGR provided by the extended MTC, equation (\ref{eq:full_decomp}). For each panel, 
+$\delta$ and $\mu_1-\mu_2$ 
+are fixed at values specified in the margins, and the IGR and components of the decomposition
+are plotted against $\sigma$. The contribution of ATAs (red line) frequently 
+has magnitude comparable to other components, indicating that ATAs can contribute meaningfully
+to species coexistence or failure to coexist. In some instances, the IGR line (orange) falls 
+betweed the ATA line (red)
+and the $x$ axis, indicating that, for those parameter values, ATAs make the difference between species
+coexistence and exclusion of the weaker competitor. Standard error was never greater than
+\Sexpr{round(se3,5)}, a small value compared to y axis extents and comparisons between lines,
+so standard errors were not displayed. \label{fig:fig3}}
 \end{figure}
+%***DAN: Dan has edited this caption
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig4.pdf}
