@@ -3,7 +3,7 @@
 %packages
 \usepackage{amsfonts}
 \usepackage{graphicx}
-\usepackage[left=2cm,top=2cm,right=2cm,bottom=2cm,head=.5cm,foot=.5cm]{geometry}
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=1.5cm,head=.5cm,foot=.5cm]{geometry}
 \usepackage{url}
 \usepackage{multirow}
 \usepackage{longtable}
@@ -305,10 +305,8 @@ and a means for understanding its importance for real systems.
 \section{Theory}\label{section:theory}
 
 We here pursue goal G1 from the Introduction, to augment the MTC to show how ATA
-plays a role.
-
-For pedgogical clarity, we develop each step of the theory in general and for a simple example model, the lottery model. 
-
+plays a role. For pedgogical clarity, we develop each step of the theory in general and for 
+a simple example model, the lottery model. 
 The lottery model is as follows. 
 %***DAN: Note the inclusion of the model here means we will have to edit the "Model" section of sup mat, since we don't need to intro the model twice. Do later.
 Letting $N_i(t)$ denote the population density of species $i=1,2$ at time $t$, and defining $N = N_1(t)+N_2(t)$,
@@ -327,13 +325,12 @@ bivariate normal distribution. We will consider various distributions of $\left(
 properties, corresponding to various tail association cases. Note that $N$ is constant through time.
 
 Modern coexistence theory \citep{Chesson_2000} and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
-
 quantify the contributions of 
 different mechanisms to species coexistence. But we show below
 that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
 We now define storage effects for a general two species model, and specifically 
 for the lottery model, using an approach and notation
-similar to those of \cite{Ellner_2016;Ellner_2019}; see those papers for additional details.  
+similar to those of \cite{Ellner_2016,Ellner_2019}; see those papers for additional details.  
 
 For a general model, it is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
@@ -695,7 +692,7 @@ Populations inlfuenced by asymmetric tail association recover from low densities
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig3.pdf}
-\caption{The contribution of ATAs to species coexistence is meaningfully large compared to 
+\caption{The contribution of ATAs to species coexistence is often meaningfully large compared to 
 other components of the MTC decomposition. All panels show the IGR and the decomposition of
 the IGR provided by the extended MTC, equation (\ref{eq:full_decomp}). For each panel, 
 $\delta$ and $\mu_1-\mu_2$ 
@@ -706,7 +703,10 @@ to species coexistence or failure to coexist. In some instances, the IGR line (o
 betweed the ATA line (red)
 and the $x$ axis, indicating that, for those parameter values, ATAs make the difference between species
 coexistence and exclusion of the weaker competitor. Standard errors of plotted quantities 
-were never greater than \Sexpr{round(se3,5)}, so are not displayed. \label{fig:fig3}}
+were never greater than \Sexpr{round(se3,5)}, so are not displayed. This plot uses $q_{ij}=1$. An 
+analogous plot (SI Fig. \ref{SI-fig:fig3_alt}) was generated 
+using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. Though results differed
+in detail, main conclusions were the same. \label{fig:fig3}}
 \end{figure}
 %***DAN: Dan has edited this caption
 
@@ -730,7 +730,7 @@ probably of minimal practical importance.
 Standard errors of plotted quantities were never greater than \Sexpr{round(se4,5)}, 
 so are not displayed. The dashed red line on panel L corresponds to the parameters
 used for Fig. \ref{fig:pedagog}. This plot uses $q_{ij}=1$. An analogous plot was generated 
-using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it looked exactly the same, by mathematical necessity (see SI section ).}\label{fig:fig4}
+using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it looked exactly the same, by mathematical necessity (see SI section \ref{SI-sect:F4andqij}).}\label{fig:fig4}
 \end{figure}
 %***DAN: Dan has edited this caption
 

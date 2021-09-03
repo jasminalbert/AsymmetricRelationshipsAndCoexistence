@@ -90,7 +90,6 @@
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
-\SweaveOpts{concordance=TRUE}
 
 %The following is where you load in the numeric results that will be embedded in the text
 <<eval=T,echo=F,message=F,warning=F>>=
@@ -104,6 +103,9 @@ rho <- readRDS(file="../results_numeric/rho.RDS")
 @
 
 \maketitle
+
+\tableofcontents
+\listoffigures
 
 %probably want table of contents, figure and table lists
 
@@ -741,7 +743,22 @@ since $\olr_{j \bs i}=0$.
 As for (\ref{eq:decomp_overall_IGR}) and (\ref{eq:decomp_overall_rjbsi}), it is again the case that (\ref{eq:decomp_overall_delta})
 applies for the estimators as well as for the quantities being estimated.
 
+\section{Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
 
+%***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
+
+\clearpage
+\newpage
+
+\begin{figure}
+\includegraphics[width=\textwidth]{../results_figs/fig3_qij.pdf}
+\caption[Analogous to Fig. \ref{MT-fig:fig3} but making a different choice for $q_{ij}$]
+{Analogous to Fig. \ref{MT-fig:fig3} of the main text, but using 
+$q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. See the caption of
+that figure for details. \label{fig:fig3_alt}}
+\end{figure}
+%***DAN: Jasmin, in the caption of Fig. 3 in the main text there is a statment about standard
+%error. We need another such statement here, but for the standard errors that applied here.
 
 \clearpage
 \newpage
@@ -749,10 +766,5 @@ applies for the estimators as well as for the quantities being estimated.
 %you store your bibliographic info in refs.bib, see that file
 \bibliographystyle{ecology_letters2}
 \bibliography{refs}
-
-
-
-
-
 
 \end{document}
