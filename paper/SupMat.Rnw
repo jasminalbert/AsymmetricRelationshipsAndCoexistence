@@ -100,6 +100,7 @@
 #allregres<-matrix(rnorm(10),2,5)
 M <- readRDS(file="../results_numeric/M.RDS")
 rho <- readRDS(file="../results_numeric/rho.RDS")
+se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
 @
 
 \maketitle
@@ -747,6 +748,37 @@ applies for the estimators as well as for the quantities being estimated.
 
 %***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
 
+In fig \ref{fig:fig4} we plot IGR , $\Delta_i^{[E \nat C]$, and IGR $-\Delta_i^{[E \nat C]$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
+
+From section \ref{sect:math_simplifications}, 
+\begin{align}
+\olr_{j \bs i} &= \E[\ln(1-\delta+E_j/C_{j \bs i})] \\
+&= \E[\ln(1-\delta+\delta B_j/B_j)] \\
+&= 0,
+\end{align}
+and
+\begin{align}
+\olep_j^{[E \nat C]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
+&= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
+&= 0. %\label{eq:decomp:j:EnatC}
+\end{align}
+
+Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[E \nat C]$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$ are zero so 
+\begin{equation}
+\olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\olr_{i \bs i}
+\end{equation}
+and 
+\begin{equation}
+\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}=\olep_i^{[E \nat C]}
+\end{equation}
+
+Similarly for IGR $-\Delta_i^{[E \nat C]$, 
+\begin{equation}
+(\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]} = \olr_{i \bs i}-\olep_i^{[E \nat C]}.
+\end{equation}
+
+Thus $q_{ij}$ does not matter for anything computed for Figure \ref{fig:fig4}. 
+
 \clearpage
 \newpage
 
@@ -755,7 +787,8 @@ applies for the estimators as well as for the quantities being estimated.
 \caption[Analogous to Fig. \ref{MT-fig:fig3} but making a different choice for $q_{ij}$]
 {Analogous to Fig. \ref{MT-fig:fig3} of the main text, but using 
 $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. See the caption of
-that figure for details. \label{fig:fig3_alt}}
+that figure for details. Standard errors of plotted quantities 
+were never greater than \Sexpr{round(se3qij,5)}, so are not displayed. \label{fig:fig3_alt}}
 \end{figure}
 %***DAN: Jasmin, in the caption of Fig. 3 in the main text there is a statment about standard
 %error. We need another such statement here, but for the standard errors that applied here.
