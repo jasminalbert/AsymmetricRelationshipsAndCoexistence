@@ -748,8 +748,7 @@ applies for the estimators as well as for the quantities being estimated.
 
 %***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
 
-In fig \ref{fig:fig4} we plot IGR , $\Delta_i^{[E \nat C]$, and IGR $-\Delta_i^{[E \nat C]$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
-
+In fig \ref{MT-fig:fig4} we plot IGR , $\Delta_i^{[E \nat C]}$, and IGR $-\Delta_i^{[E \nat C]}$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
 From section \ref{sect:math_simplifications}, 
 \begin{align}
 \olr_{j \bs i} &= \E[\ln(1-\delta+E_j/C_{j \bs i})] \\
@@ -762,8 +761,7 @@ and
 &= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
 &= 0. %\label{eq:decomp:j:EnatC}
 \end{align}
-
-Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[E \nat C]$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$ are zero so 
+Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[E \nat C]}$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$ are zero so 
 \begin{equation}
 \olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\olr_{i \bs i}
 \end{equation}
@@ -771,13 +769,11 @@ and
 \begin{equation}
 \Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}=\olep_i^{[E \nat C]}
 \end{equation}
-
-Similarly for IGR $-\Delta_i^{[E \nat C]$, 
+Similarly for IGR $-\Delta_i^{[E \nat C]}$, 
 \begin{equation}
 (\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]} = \olr_{i \bs i}-\olep_i^{[E \nat C]}.
 \end{equation}
-
-Thus $q_{ij}$ does not matter for anything computed for Figure \ref{fig:fig4}. 
+Thus $q_{ij}$ does not matter for anything computed for Figure \ref{MT-fig:fig4}. 
 
 \clearpage
 \newpage
