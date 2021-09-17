@@ -230,6 +230,7 @@ between between E and C may mediate the strength of storage effects.
 %***JAS: I am trying to relay the message that climate change and specifically extreme events have consequences for coexistence and competition
 % Maybe a better way to start this paragraph is:
 % EC covariance, and thus the storage effect, may be altered by changes in the environment. 
+% need an indication that we are more interested in increased variance and extreme events because we are looking we are looking for changes in a co-varying relationship??
 Environmental fluctuations are directly impacted by climate change through changes in means and increased variance \citep{Hansen_2012}, influenced by extreme climatic events as they increase in frequency, intensity, duration, and extent \citep{Meehl_2004, Ummenhofer_2017}. 
 Thus, the rampage of extreme events such as heat-waves, floods, hurricanes, fires, etc. implications for coexistence and competition. 
 Changes in means can be attributed to extreme events; however changes in means are more-so a result of gradual shifts over time, whereas increased variance is more likely a product of extreme events as they push environmental variables to their extremes.
