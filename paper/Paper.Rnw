@@ -212,7 +212,7 @@ between between E and C may mediate the strength of storage effects.
 %in a comment right under this one?
 % Extreme events can have important ecological impacts for storage effect and coexistence by introducing ATAs. 
 Furthermore, an additional driving reason to quantify the significance of ATAs for species coexistence is the potential for climate change to alter ATAs of environmental variables implicated in coexistence, as follows. 
-The consequence of climate change that has the most potential to influence ATAs in the environment the increase in intensity, duration, extent, and frequency of extreme climatic events, i.e., heat-waves, floods, hurricanes, fires, etc. 
+The consequence of climate change that has the most potential to influence ATAs in the environment the increase in intensity, duration, extent, and frequency of extreme climatic events \citep{Meehl_2004, Ummenhofer_2017}, i.e., heat-waves, floods, hurricanes, fires, etc. 
 Temporally extensive extreme events can have important ecological impacts for
 competing populations where species growth and the maintenance of biodiversity is dependent of phenologically separated environmental signals. A temporally extensive event can equalize the phenologically separated environmental signals, making those phenological signals more correlated. For example, consider two precipitations signals, one in early spring and one in late summer. If a long flood occurs, it's likely that both signals will be close to equal in that year. If extreme floods occur in more years than not, then the two signal will become more correlated in higher precipitation values, a right-tailed ATA. Similarly, if extreme droughts occur in more years than not, then the signals will be more correlated in the lower values, a left-tailed ATA. The same can be said about spatially separated signals and more spatially extensive extreme events. ATA of environmental signals can then introduce or change ATAs in the fitness or traits of species that depend on the signals and potentially affect their coexistence.
 %***DAN:
@@ -244,11 +244,16 @@ Though previous literature considers impacts of extreme events, change in means,
 %the importance for coexistence of other aspects of climate change, including changes in means and variability of environmental variables, 
 %have been studied in several systems. 
 %***DAN: Do it like you have it but shorter.
-Environmental fluctuations are directly impacted by climate change through changes in means and increased variance \citep{Hansen_2012}, influenced by extreme climatic events as they increase in frequency, intensity, duration, and extent \citep{Meehl_2004, Ummenhofer_2017}. 
-Thus, the rampage of extreme events such as heat-waves, floods, hurricanes, fires, etc. implications for coexistence and competition. 
+Although, to our knowledge, the potential importance of climatic changes in ATAs on coexistence has not been studied, the importance for coexistence of other aspects of climate change, including changes in means and variability of environmental variables, have been studied in several systems.  
+Environmental fluctuations are directly impacted by climate change through changes in means and increased variance, both of which can be attributed to extreme events \citep{Hansen_2012}.
+Currently, effects on competition and coexistence due to climate change are more widely researched through studying changes in the mean of environmental variables. 
+Increased variance is less studied. 
+% thus less likely to be a result of extreme events. 
+%influenced by extreme climatic events as they increase in frequency, intensity, duration, and extent \citep{Meehl_2004, Ummenhofer_2017}. 
+%Thus, the rampage of extreme events such as heat-waves, floods, hurricanes, fires, etc. implications for coexistence and competition. 
 %Jasmin tried to split this para up into effects on coexistence of changes in mean, starting here... 
 Changes in means can be attributed to extreme events; however changes in means are more-so a result of gradual shifts over time, whereas increased variance is more likely a product of extreme events as they push environmental variables to their extremes.
-Currently, effects on competition and coexistence due to climate change are more widely researched through studying changes in the mean of environmental variables, thus less likely to be a result of extreme events. 
+
 For example, decreased mean growth season precipitation can decrease the competitive ability of dominant forest tree species \citep{Clark_2011}. This may be detrimental if the dominant species is crucial to the ecosystem or it may not be as rare species can increase in diversity while dominant species become excluded \citep{Mariotte_2013}. Conversely, changes in environmental means can increase fitness of a dominant species and in turn reduce community diversity, typical of invasive species \citep{Vitousek_1997}. \cite{Descombes_2020}, through experimental manipulation, found that range shifts, as a product of climate change, favored coexistence between alpine plants while \cite{Usinowicz_2021} predict increases in competitive pressures as the climate change induced range shifts lead populations to interact with new conspecifics. Similarly, \cite{diPaola_2012} predict the collapse of coexistence between Mediterranean tree species as mean rainfall levels are forecasted to decrease.    
 %...and variance...
 In contrast, increased environmental variance has been less commonly studied; however, more research on the effect of increased variance has been urged and received recent focus through the study of extreme climatic events \citep{Jentsch_2007, Smith_2011}. Extreme drought and heat waves impact competitive output and community composition of grassland plants\citep{White_2000, White_2001, Hoover_2014}. However, complete exclusion of dominant species due to extreme events is uncommon \citep{Lloret_2012}. Moreover, in regard to invasive species, increased climate and resource variability allowed for greater success of invasive plants in terms of density and competitive equilibrium \citep{Parepa_2013}. 
@@ -258,12 +263,29 @@ Extreme events constitute large disturbances, quantitatively amounting to large 
 %(means, varinace, and extreme events). 
 
 %Move up the lottery model para from Theory to here, suture up the rift that this will produce in theory
-To further demonstrate plausibility of ATA altering coexistence between species, we carried out simulations using a simple two-species model, the lottery model.  We introduce the lottery model and describe simulations based on it that clearly show that ATAs can influence 
+To further demonstrate plausibility of ATA altering coexistence between species, we carried out simulations using a simple two-species model, the lottery model. 
+Environmental variability has been classically shown to promote coexistence via storage mechanisms in a temporal lottery model of competition \citep{Chesson_1981, Warner_1985}, 
+hence we move forward with this simple model to examine the effect of extreme relationships between environmental responses on the contribution of storage effects to coexistence. 
+We introduce the lottery model and describe simulations based on it that clearly show that ATAs can influence 
 species coexistence, though the details of this influence are the subject of the rest of the paper.
-%Lotetry model intro
+The lottery model is as follows.
+Letting $N_i(t)$ denote the population density of species $i=1,2$ at time $t$, and defining $N = N_1(t)+N_2(t)$,
+model equations are
+\begin{equation}
+N_i(t+1)=(1-\delta)N_i(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)}  \label{model_eq}
+\end{equation}
+for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundity of species $i$ at time $t$. 
+The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles 
+in proportion to the reproductive outputs of the two species that year.
+For each $i$, we assume the random variables $B_i(t)$ are independent and identically distributed (iid) through
+time. We let $B_i = \exp(b_i)$, where $\left(b_1, b_2\right)$ is some bivariate random variable with the property 
+that $b_i$ is normally distributed with mean $\mu_i$ and variance $\sigma^2$. 
+However, we do \emph{not} assume that $\left(b_1, b_2\right)$ is a 
+bivariate normal distribution. We will consider various distributions of $\left(b_1, b_2\right)$ with the above 
+properties, corresponding to various tail association cases. Note that $N$ is constant through time.
 %very succinct description of sims you do (mostly it's in the figure caption)
 %1-2 sentences on the differences observed
-lottery model, and below (in the next paragraph), we describe a hypothetical example. Environmental variability has been classically shown to promote coexistence via storage mechanisms in a temporal lottery model of competition \citep{Chesson_1981, Warner_1985}, hence we move forward with this simple model to examine the effect of extreme relationships between environmental responses on the contribution of storage effects to coexistence. We simulated two different communites up to \Sexpr{M} time steps to hopefully make it clear to the reader that ATA makes a difference for competition and coexistence between species (see Figure \ref{fig:pedagog}). The only distinction between the two simulations is that one depends on asymmterically tail associated temporal dynamics and one does not. Markedly, the simulation with ATA has longer periods of one-species dominance than the simulation without, implying less recoverablility when rare and thus less coexistence \citep{Chesson_2000} when environmentally dependent variables are asymmetrically tail associated.     
+We simulated two different communities up to \Sexpr{M} time steps to hopefully make it clear to the reader that ATA makes a difference for competition and coexistence between species (see Figure \ref{fig:pedagog}). The only distinction between the two simulations is that one depends on asymmetrically tail associated temporal dynamics and one does not. Markedly, the simulation with ATA has longer periods of one-species dominance than the simulation without, implying less recoverability when rare and thus less coexistence \citep{Chesson_2000} when environmentally dependent variables are asymmetrically tail associated.     
 
 
 %Goal para
@@ -293,23 +315,10 @@ and a means for understanding its importance for real systems. This is not a goo
 
 We here pursue goal G1 from the Introduction, to augment the MTC to show how ATA
 plays a role. For pedgogical clarity, we develop each step of the theory in general and for 
-a simple example model, the lottery model. 
-The lottery model is as follows. 
+a simple example model, the lottery model (see \ref{section:introduction}). 
+ 
 %***DAN: Note the inclusion of the model here means we will have to edit the "Model" section of sup mat, since we don't need to intro the model twice. Do later.
-Letting $N_i(t)$ denote the population density of species $i=1,2$ at time $t$, and defining $N = N_1(t)+N_2(t)$,
-model equations are
-\begin{equation}
-N_i(t+1)=(1-\delta)N_i(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)}  \label{model_eq}
-\end{equation}
-for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundity of species $i$ at time $t$. 
-The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles 
-in proportion to the reproductive outputs of the two species that year.
-For each $i$, we assume the random variables $B_i(t)$ are independent and identically distributed (iid) through
-time. We let $B_i = \exp(b_i)$, where $\left(b_1, b_2\right)$ is some bivariate random variable with the property 
-that $b_i$ is normally distributed with mean $\mu_i$ and variance $\sigma^2$. 
-However, we do \emph{not} assume that $\left(b_1, b_2\right)$ is a 
-bivariate normal distribution. We will consider various distributions of $\left(b_1, b_2\right)$ with the above 
-properties, corresponding to various tail association cases. Note that $N$ is constant through time.
+
 
 Modern coexistence theory \citep{Chesson_2000} and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
@@ -631,6 +640,8 @@ to be occurring, might. Should also mention this second point in the Discussion 
 %in the extremes influence coexistence, but probably worth studying (or cite papers if it's been done) how changes
 %in the commonness and extremeness of extreme events themselves influence coexistence, and for that you'd have
 %to also look at the other mechanisms. May still need a sup mat laying out all the math.
+
+Although environmental fluctuations is helpful for coexistence and storage effect, unusual extreme fluctuations can be a hinderance on coexistence by introducing or changing ATAs between environmental variables. 
 
 
 \clearpage
