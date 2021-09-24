@@ -225,25 +225,22 @@ ATA of environmental signals can then introduce or change ATAs in the fitness or
 %***DAN:
 %1) Topic sentence: 
 
-To make the above ideas more concrete, we review a relevant example from the literature that may be
-influenced as previously described. 
-We introduce a simplified example of an Arizona desert annual plant community from \cite{Chesson_2012}. 
-%2) Make it concrete - name the system, name the organisms, name the seasons. 
-The community follows the criteria required for temporal storage effects to operate. 
-Different species dominate and have high germination rates depending on rainfall timing. 
-For example, Baileya multiradiata dominates if sufficient rainfall is reached in the early germination season. Eriogonum abertianum dominates if sufficient rainfall is reached in the late germination season. Competition is influenced by resource consumption of seed-producing adult plants. Dormant seeds are unaffected by competition and can persist in the community in an unfavorable environment. When rain fall dynamics temporally fluctuate from year to year, relative abundance and dominance of the desert annual community also fluctuate year to year. The result is a relationship between the desert annuals' environmental responses (germination) that is symmetrically associated... 
-
-To make the above ideas more concrete, we review a relevant example from the literature that may be
-influenced as previously described. 
-We introduce a hypothetical example of the commonly studied two species grass-forb plant community \citep{Chesson_2012, Hallett_2019}.
-The community follows the criteria required for temporal storage effects to operate. The forb dominates and has high fecundity when a sufficient threshold of rain is reached in the early season. The grass dominates and has high fecundity when there is sufficient rain in the late season. Competition is influenced by resource consumption of growing juvenile plants. Dormant seeds are unaffected by competition and can persist in the community in an unfavorable environment. When rain fall dynamics temporally fluctuate from year to year, relative abundance and dominance of the grass-forb community also fluctuate year to year. The result is a relationship between the grass's and forb's environmental responses (fecundity) that is symmetrically associated, and the species persist in coexistence... 
-
-However, if environmental responses become asymmetrically associated by, say, extreme rainfall events, coexistence can be altered. If the community is disturbed by frequent and long floods with some years of normalcy, the grass-forb/desert annual 
-environmental response relationship may become more correlated in the higher values, a right-tailed ATA (figure \ref{fig:noise}C). Conversely, if the community is disturbed by frequent and long drought with some years of normalcy, the grass-forb/desert annual environmental response relationship may become more correlated in the lower values, a left-tailed ATA (figure \ref{fig:noise}A). 
+To make the above ideas more concrete, we review a relevant example that may be influenced as previously described. 
+Imagine a community where different species fitness depended on phenologically separated environmental signals. For instance, \cite{Chesson_2012}, provides two examples: an Australian two species grass-forb community and an Arizona desert community of multiple desert annual species. 
+The communities follow the criteria required for temporal storage effects to operate. In both examples, species have different periods of germination, competition is influenced by resource consumption, and growth is buffered by overlapping generations or via seed banks in the annual case. 
+Temporal differences in germination rates suggest the possibility that competition and growth may be influenced by a temporally fluctuating environmental variable, such as rainfall, 
+such that germination of different species is contingent on rainfall signals at different times during a growth season, 
+and the timing of a rainfall event predicts maximal germination and dominance of one species. 
+If that is the case, one might expect that when rain fall dynamics temporally fluctuate from year to year, relative abundance and dominance of the communities also fluctuate year to year. 
+The result is a relationship between the species' environmental responses (germination) that is symmetrically associated, and the species persist in coexistence. 
+However, if environmental responses become asymmetrically associated by extreme rainfall events, coexistence can be altered. 
+If the community is disturbed by frequent and long floods with some years of normalcy, the environmental response relationship may become more correlated in the higher values, a right-tailed ATA (figure \ref{fig:noise}C). 
+Conversely, if the community is disturbed by frequent and long drought with some years of normalcy, the environmental response relationship may become more correlated in the lower values, a left-tailed ATA (figure \ref{fig:noise}A). 
 The subsequent potential changes in competitive ability and coexistence is not just attributed to the extreme event alone, but from the resulting extreme relationship between species (ATA). 
 
+
+
 %***JAS: I am trying to relay the message that climate change and specifically extreme events have consequences for coexistence and competition
-% Maybe a better way to start this paragraph is:
 % EC covariance, and thus the storage effect, may be altered by changes in the environment. 
 % need an indication that we are more interested in increased variance and extreme events because we are looking we are looking for changes in a co-varying relationship??
 
@@ -257,6 +254,7 @@ However, impacts on competition and coexistence of climate change have been more
 Decreased mean growth season precipitation, for instance, can decrease the competitive ability of dominant forest tree species \citep{Clark_2011}, and coexistence is predicted to collapse between Mediterranean tree species in accordance to forecasted mean rainfall level decrease \cite{diPaola_2012}. 
 Alternatively, dominant species exclusion may be beneficial as rare species can increase in diversity \citep{Mariotte_2013}, while an increase in dominant species fitness can reduce community diversity, typical of invasive species \citep{Vitousek_1997}. 
 As a product of changing means, range shifts can favor plant coexistence by introducing new herbivores \cite{Descombes_2020} or disfavor coexistence through increased competition \cite{Usinowicz_2021}.  
+
 %...and variance...
 Although, the body of literature on the impact of increased environmental variability has expanded, event-based studies accounted for only one-fifth of experimental climate change research as of 2006 \citep{Jentsch_2007}, the most commonly manipulated extremes being temperature and rainfall. Extreme drought and heat waves have shown to impact competitive output, rearranging species composition and dominance of grass-forb communities \citep{White_2000, White_2001, Hoover_2014}; although, complete exclusion of dominant species is uncommon \citep{Lloret_2012}. \cite{Fay_2003} experimentally manipulated rainfall for more frequent and intense precipitation while keeping constant the total volume of rain over Kansas tallgrass prairie and found that while some species had reduced fitness, overall community structure remained the same. For invasive species, increased climate and resource variability allowed for greater success of invasibility in terms of density and competitive equilibrium \citep{Parepa_2013}. 
 %...and extreme events (though this blends together with changes in variance)
