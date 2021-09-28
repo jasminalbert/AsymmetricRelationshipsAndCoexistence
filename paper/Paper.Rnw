@@ -234,7 +234,7 @@ consumption, and population growth is buffered by overlapping generations or via
 Temporal differences between species in germination rates suggest the possibility that 
 population growth of distinct species may be driven by rainfall signals in distinct parts
 of the growing season. Thus all the ingredients seem to be present by which climatic changes may
-alter ATAs between environmental variables which are relevant for the coexistence (or not)
+alter ATAs between environmental variables which are relevant for the coexistence
 of species, motivating our efforts, here, to perform a detailed study of how ATAs can influence competition.
 
 
@@ -245,13 +245,24 @@ of species, motivating our efforts, here, to perform a detailed study of how ATA
 %***DAN: Do it like you have it but shorter.
 %the RAMPAGE of extreme events such as heat-waves, floods, hurricanes, fires, etc. implications for coexistence and competition. 
 %***DAN: Possible topic sentence like thing after talking to Jasmin on 9/17: 
-Although, to our knowledge, the potential importance of climatic changes in ATAs on coexistence has not been studied, the importance for coexistence of other aspects of climate change, including changes in means and variability of environmental variables, have been studied in several systems.  
+
+
+Although, to our knowledge, the potential importance of climatic changes in ATAs for species coexistence has 
+not been studied, the importance for coexistence of other aspects of climate change, including changes 
+in means and variability of environmental variables, has been studied in several systems, so we briefly 
+review some of that related literature.
+For instance, decreased growth season precipitation can decrease the competitive ability of dominant 
+forest tree species \citep{Clark_2011}, and coexistence is predicted to collapse between Mediterranean 
+tree species under forecasted mean rainfall scenarios \cite{diPaola_2012}.
+
+Alternatively, dominant species exclusion may be beneficial as rare species can increase in diversity \citep{Mariotte_2013}, while an increase in dominant species fitness can reduce community diversity, typical of invasive species \citep{Vitousek_1997}. 
+
+As a product of changing means, range shifts can favor plant coexistence by introducing new herbivores \cite{Descombes_2020} or disfavor coexistence through increased competition \cite{Usinowicz_2021}.  
+
+
 Environmental fluctuations are directly impacted by climate change through changes in means and increased variance \citep{Hansen_2012}. While both changes can be attributed to extreme events, shifts in mean are more-so a result of gradual trend effects, and increased variance is a result of extreme event effects \citep{Jentsch_2007}.
 However, impacts on competition and coexistence of climate change have been more commonly researched via studying changes in the mean of environmental variables. 
 %Jasmin tried to split this para up into effects on coexistence of changes in mean, starting here...
-Decreased mean growth season precipitation, for instance, can decrease the competitive ability of dominant forest tree species \citep{Clark_2011}, and coexistence is predicted to collapse between Mediterranean tree species in accordance to forecasted mean rainfall level decrease \cite{diPaola_2012}. 
-Alternatively, dominant species exclusion may be beneficial as rare species can increase in diversity \citep{Mariotte_2013}, while an increase in dominant species fitness can reduce community diversity, typical of invasive species \citep{Vitousek_1997}. 
-As a product of changing means, range shifts can favor plant coexistence by introducing new herbivores \cite{Descombes_2020} or disfavor coexistence through increased competition \cite{Usinowicz_2021}.  
 
 %...and variance...
 While the body of literature on the impact of increased environmental variability has expanded, event-based studies accounted for only one-fifth of experimental climate change research as of 2006 \citep{Jentsch_2007}, the most commonly manipulated extremes being temperature and rainfall.
