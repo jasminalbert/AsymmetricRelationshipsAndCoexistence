@@ -300,7 +300,7 @@ We previously demonstrated \citep{Ghosh_2020_AER} that ATAs exist and are common
 that it is plausible both that climate change may alter environmental ATAs, and that ATAs may influence species 
 coexistence. Thus we seek to explore the consequences of ATAs for competition, coexistence, and the maintenance of 
 biodiversity, by means of the following specific goals. 
-G1) To augment MCT to show formally how ATAs plays a role in coexistence. 
+G1) To augment MCT to show formally how ATA plays a role in coexistence. 
 MCT decomposes a measure of coexistence into components due to each of several mechanisms. 
 We address how ATA contributes to these components. 
 We here examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; spatial variation can be considered in future work.
@@ -319,7 +319,7 @@ and a means of understanding its theoretical importance and its importance for r
 \section{Theory}\label{section:theory}
 
 We here pursue goal G1 from the Introduction: to augment MCT to illuminate how ATA
-plays a role in coexistence. For pedgogical clarity, we develop each step of our new theory for a general 
+plays a role in coexistence. For pedagogical clarity, we develop each step of our new theory for a general 
 two-species model, and for the lottery model (Introduction).
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
@@ -332,7 +332,7 @@ that of \cite{Ellner_2016,Ellner_2019}.
 For a general model, it is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
 an environment-dependent factor $E_i(t)$ and as a decreasing function of a quantity representing
-competitive pressure on species $i$, $C_i(t)$. As for the lottery model example (Introduction), we here assume, for simpicity, 
+competitive pressure on species $i$, $C_i(t)$. As for the lottery model example (Introduction), we here assume, for simplicity, 
 that the $E_i(t)$ are iid through time, and likewise for the
 $C_i(t)$. Though this assumption can be circumvented, we make the assumption because it simplifies the
 presentation of new ideas. 
@@ -423,12 +423,12 @@ The new symbol should correspondingly be pronounced ``partial sharp''.
 The term $\Delta_i^{[EC]}$ is the component of storage effects due to $EC$ correlation \emph{per se}, remaining after 
 having removed the effects of ATAs.
 The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
-(\ref{eq:storage_effects_further}) is a decompostion within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
+(\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
 of storage effects, which are themselves a term within the decomposition provided by MCT \citep{Ellner_2019} -- see 
 below for additional details.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
-correlation unchanged? We assume, for simplicity, that the cummulative distribution functions (CDFs) of $E_i$ and 
+correlation unchanged? We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
 $C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively, are strictly monotonic and continuous. 
 Letting $\varphi$ be the CDF of a standard normal distribution, we consider the random variables
 $\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
@@ -444,7 +444,7 @@ $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetric
 described in the Introduction.
 %***DAN: This means you have to introduce this well, and explain why the way we define tail assoc is
 %the *right* way
-For those familar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
+For those familiar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
 we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
@@ -522,13 +522,13 @@ Computationally efficient means of carrying out these simulations, for the lotte
 SI section \ref{SI-sect:efficient_computation}.
 
 %G3
-To acheive goal G3 from the Introduction i.e., to explore, using the lottery model, the likelihood that species can coexist with
+To achieve goal G3 from the Introduction i.e., to explore, using the lottery model, the likelihood that species can coexist with
 ATAs but not without, or vice versa, we plotted the IGR, $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
 as well as the
 IGR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$. 
 For fixed values of $\sigma$ and $\delta$ and for left-tail associated noise, 
 we were interested in the values of $\mu_1-\mu_2$ for which one of these
-quantities is positive and the other is negative; this set of value characterizes the species which can coexist
+quantities is positive and the other is negative; this set of values characterizes the species which can coexist
 with ATAs, but not without, or vice versa. The one dimensional space of values $\mu$ is a species trait space,
 and $\mu_1$ and $\mu_2$ can be regarded as two points in it. But we instead define the ``trait-difference space'' of values $\mu_1-\mu_2$. 
 Points of the trait-difference space characterize possible combinations of traits of the two competing species in our model. For fixed values of 
