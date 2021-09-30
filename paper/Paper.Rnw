@@ -571,12 +571,12 @@ other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between
 $\mu_2$, i.e., for closer-to-equal competitors. 
 In the $\mu_1=\mu_2$ case (panels A-D), for which the two species were equal 
 competitors, storage effects (blue plus red
-lines on Fig. \ref{fig:fig3}) were the only means by which coexisitence could occur, and ATA effects
+lines on Fig. \ref{fig:fig3}) were the only means by which coexistence could occur, and ATA effects
 tended to be negative, weakening total storage effects.
 
 %G3
 Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
-can coexist with ATAs, but not without, or vice versa), our results show that ATAs can, indeed, sometimes
+can coexist with ATAs, but not without, or vice versa), our results show that ATA can, indeed, sometimes
 make the difference between coexistence and exclusion; both ``ATA rescue'' and ``ATA
 exclusion'' (see Methods) are possible.
 For some of the panels on Fig. \ref{fig:fig3}, the IGR line falls between the ATA
@@ -592,7 +592,7 @@ different places, showing that both ATA rescue space and ATA exclusion space can
 subsets of our trait-difference space (see Methods). For the parameters we considered, 
 both ATA rescue and exclusion were more common for larger values of $\sigma$.
 ATA rescue appeared more likely for smaller $\delta$, whereas ATA exclusion appeared
-more common for larger $\delta$. Although bands of ATA rescue or exlusion on Fig.
+more common for larger $\delta$. Although bands of ATA rescue or exclusion on Fig.
 \ref{fig:fig4} appear narrow, they nevertheless do occur, which means ATAs can mean the 
 difference between coexistence and extirpation of one species in some cases.
 
@@ -645,6 +645,11 @@ difference between coexistence and extirpation of one species in some cases.
 %to also look at the other mechanisms. May still need a sup mat laying out all the math.
 
 %Although environmental fluctuations is helpful for coexistence and storage effect, unusual extreme fluctuations can be a hinderance on coexistence by introducing or changing ATAs between environmental variables. 
+
+%Higher sigma means a more fluctuating and variable environment. Then, if environmental fluctuations become more variable, the effect of ATAs becomes more important and non-negligible (rescue or exclusion). 
+%Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
+
+%Knowledge of stochastic structure (Shoemaker et al 2020)
 
 \section{Acknowledgments}
 
