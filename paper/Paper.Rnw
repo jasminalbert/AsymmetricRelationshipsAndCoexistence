@@ -117,7 +117,6 @@
 #allregres<-matrix(rnorm(10),2,5)
 fig2 <- readRDS(file="../results_numeric/fig2data.RDS")
 M <- readRDS(file="../results_numeric/M.RDS")
-rho <- readRDS(file="../results_numeric/rho.RDS")
 se3 <- readRDS(file="../results_numeric/fig3maxse.RDS")
 se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
 @
@@ -677,7 +676,7 @@ Wildlife Delta Science Program.
 \caption{Simple example of bivariate random variables with standard normal marginals showing
 alternative patterns of association in the tails. A) is ``left-tail 
 associated,'' B) is symmetric, and C) is ``right-tail associated'' noise. All three cases have 
-the same Pearson correlation, $\rho = \Sexpr{rho}$, up to sampling variation, yet show very different 
+the same Pearson correlation, $\rho$, up to sampling variation, yet show very different 
 patterns of association. We used asymmetrically tail associated cases which are perfectly 
 correlated in the lower (A)  or upper (C) halves of the distributions, though it is also 
 possible to generate asymmetrically tail associated noise with imperfect correlations in 
