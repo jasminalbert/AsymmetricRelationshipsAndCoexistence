@@ -677,7 +677,7 @@ Wildlife Delta Science Program.
 \caption{Simple example of bivariate random variables with standard normal marginals showing
 alternative patterns of association in the tails. A) is ``left-tail 
 associated,'' B) is symmetric, and C) is ``right-tail associated'' noise. All three cases have 
-the same Pearson correlation, $\rho$, up to sampling variation, yet show very different 
+the same Pearson correlation, $\rho = \Sexpr{rho}$, up to sampling variation, yet show very different 
 patterns of association. We used asymmetrically tail associated cases which are perfectly 
 correlated in the lower (A)  or upper (C) halves of the distributions, though it is also 
 possible to generate asymmetrically tail associated noise with imperfect correlations in 
@@ -696,16 +696,12 @@ model subject to environmental noise with symmetric tail associations (Fig. \ref
 same model with the same parameters, but subject to noise with left-tail association (Fig. \ref{fig:noise}A).
 Both simulations were run for \Sexpr{M} time steps, though only the first $1000$ are shown. Periods of 
 ``noticeable coexistence'' of the species, defined to be periods when both species each comprise at least $5\%$ of 
-total abundance, are marked in grey. The average duration of periods of noticiable coexistence 
+total abundance, are marked in grey. The average duration of periods of noticeable coexistence 
 was \Sexpr{fig2$coSym} time steps for panel A and \Sexpr{fig2$coATA} for panel B, over the full length of the simulations; 
 whereas the average duration of periods of
 one-species dominance was \Sexpr{fig2$domSym} time steps for panel A and \Sexpr{fig2$domATA} for B. Thus, while periods of 
 noticeable coexistence were of similar duration for the two scenarios, periods of one-species dominance were much longer,
-on average, for the ATA case. Parameters were $\mu_1-\mu_2 = \Sexpr{fig2$params[1]}$, 
-%***DAN: Jasmin, at this point of the ms, the reader does not know that only the difference mu1-mu2 matters, so this
-%will confuse them. Please replace the above specfication of mu1-mu2 by a specification of which values of both
-%mu1 and mu2 were actually used for this simulation. 
-$\delta = \Sexpr{fig2$params[2]}$, and $\sigma = \Sexpr{fig2$params[3]}$. See Introduction for model details. 
+on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1]} + \Sexpr{fig2$params[1]}$ and $\mu_2 = \Sexpr{-(fig2$params[1])}$, $\delta = \Sexpr{fig2$params[2]}$, and $\sigma = \Sexpr{fig2$params[3]}$. See Introduction for model details. 
 \label{fig:pedagog}}
 \end{figure}
 %***DAN: Dan has edited this caption
@@ -720,7 +716,7 @@ are fixed at values specified in the margins, and the IGR and components of the 
 are plotted against $\sigma$. The contribution of ATAs (red line) frequently 
 has magnitude comparable to other components, indicating that ATAs can contribute meaningfully
 to species coexistence or failure to coexist. In some instances, the IGR line (orange) falls 
-betweed the ATA line (red)
+between the ATA line (red)
 and the $x$ axis, indicating that, for those parameter values, ATAs make the difference between species
 coexistence and exclusion of the weaker competitor. Standard errors of plotted quantities 
 were never greater than \Sexpr{round(se3,5)}, so are not displayed. This plot uses $q_{ij}=1$. An 
