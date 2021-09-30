@@ -654,7 +654,7 @@ difference between coexistence and extirpation of one species in some cases.
 \section{Acknowledgments}
 
 The authors thank Shyamolina Ghosh for initially suggesting the research problem, and Lawrence Sheppard, Max Castorani,
-Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Steve Ellner, and Robin Snyder for helpful discussions. 
+Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, Steve Ellner, and Robin Snyder for helpful discussions. 
 The authors were partly supported by US National
 Science Foundation grants 1714195 and 2023474, the James S McDonnell Foundation, and the California Department of Fish and
 Wildlife Delta Science Program. 
