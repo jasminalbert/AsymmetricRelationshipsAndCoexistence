@@ -157,7 +157,7 @@ relationship \citep{Ghosh_2020_AER,Ghosh_2020_Eco,Ghosh_2020_ecolevol,Ghosh_2021
 the three pairs of variables in Fig. \ref{fig:noise} all have the same
 Pearson correlation, but nevertheless demonstrate very different types of association. Other metrics 
 of association are also often used, in addition to correlations
-(e.g., various forms of regression), but correlations are extremely common, and other common
+(e.g., various forms of regression), but correlations are extremely common, and other
 methods also reveal only a small portion of the information content of the relationship between variables \citep{Nelsen2006}.
 The variables in Fig. \ref{fig:noise}A,C 
 exhibit what we have previously referred to as ``asymmetric tail association'' [ATA; \cite{Ghosh_2020_AER}], i.e., 
@@ -266,7 +266,7 @@ herbivores at high altitudes can inflate species richness by reducing dominant p
 in favor of subordinates. Contrastingly, \cite{Usinowicz_2021} concluded, also for
 alpine plants, that upward range expansion under warming trends would be good for the growth and survival of 
 all species they considered, but that changes in competition would more than offset these direct benefits,
-and, as a result, some species would be extirpated. Numerous studies also take an ``event-focussed'' 
+and, as a result, some species would be extirpated. Numerous studies also take an ``event-focused'' 
 perspective \citep{Jentsch_2007}, examining how increased climatic variability, in the
 form of extreme weather events, can alter competitive interactions. For instance, 
 \cite{White_2001} showed that single extreme heating events can alter competition 
@@ -300,7 +300,7 @@ We previously demonstrated \citep{Ghosh_2020_AER} that ATAs exist and are common
 that it is plausible both that climate change may alter environmental ATAs, and that ATAs may influence species 
 coexistence. Thus we seek to explore the consequences of ATAs for competition, coexistence, and the maintenance of 
 biodiversity, by means of the following specific goals. 
-G1) To augment MCT to show formally how ATA plays a role in coexistence. 
+G1) To augment MCT to show formally how ATAs plays a role in coexistence. 
 MCT decomposes a measure of coexistence into components due to each of several mechanisms. 
 We address how ATA contributes to these components. 
 We here examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; spatial variation can be considered in future work.
@@ -309,12 +309,12 @@ from ATAs compared to other, known mechanisms of coexistence. This is to help il
 are likely to be negligible or meaningfully large. 
 G3) To explore, using our simple model, whether species can coexist with
 ATAs but not without, or vice versa. This is to begin to illuminate whether ATA contributions to biodiversity maintenance 
-may be negligible or meaninfully large.
+may be negligible or meaningfully large.
 G4) To provide an empirical example of species coexistence which highlights the role ATAs can play.
 In the Discussion, we revisit the possibility that climate change will alter
 ATAs of environmental variables and thereby influence competition and species coexistence.
 Overall, our study presents a new mechanism of species coexistence which may be influenced by climate change, 
-and a means of understanding its theoretical and importance and its importance for real ecosystems.
+and a means of understanding its theoretical importance and its importance for real ecosystems.
 
 \section{Theory}\label{section:theory}
 
