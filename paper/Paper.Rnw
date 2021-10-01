@@ -132,7 +132,7 @@ in environmental and competitive pressures on species populations. However, such
 have typically been measured using covariance methods, which do not account for 
 the possibility that environmental and competitive influences may be more correlated
 when these influences are strong than when they are weak, or vice versa. 
-Recent work showed that such `asymmetric tail associations' (ATA) are extremely common
+Recent work showed that such `asymmetric tail associations' (ATAs) are extremely common
 between ecological variables, and are important for a wide range of phenomena including 
 extinction risk and the stability of ecosystem functioning. 
 Here we extend the MCT to take into account the influence of ATAs. Storage
