@@ -83,7 +83,7 @@
 \author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
 
-\affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research and Kansas Biological Survey, University of Kansas}
+\affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
 \affil[b]{Laboratory of Populations, Rockefeller University}
 
 %***Need to indicate corresponding authors

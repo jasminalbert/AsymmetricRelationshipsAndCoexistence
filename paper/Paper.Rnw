@@ -99,7 +99,7 @@
 \author[a]{Pimsupa Jasmin Albert}
 \author[a,b]{Daniel C. Reuman}
 
-\affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research and Kansas Biological Survey, University of Kansas}
+\affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
 \affil[b]{Laboratory of Populations, Rockefeller University}
 
 %***Need to indicate corresponding authors
@@ -124,7 +124,27 @@ se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
 \maketitle
 
 \begin{abstract}
-Place abstract here
+\noindent Understanding the coexistence of competing species is a topic of very broad 
+interest in ecology. The modern coexistence
+theory (MCT) of Chesson identifies several mechanisms of species coexistence,
+one of which, storage effects, hinges on relationships between fluctuations
+in environmental and competitive pressures on species populations. However, such relationships
+have typically been measured using covariance methods, which do not account for 
+the possibility that environmental and competitive influences may be more correlated
+when these influences are strong than when they are weak, or vice versa. 
+Recent work showed that such `asymmetric tail associations' (ATA) are extremely common
+between ecological variables, and are important for a wide range of phenomena including 
+extinction risk and the stability of ecosystem functioning. 
+Here we extend the MCT to take into account the influence of ATAs. Storage
+effects can be decomposed into two components, one of which quantifies the
+influence of ATAs on species coexistence, and is a novel contribution of this study; and 
+the other of which represents
+the influence of environment-competition correlation \emph{per se}, without 
+the influence of ATAs. Simulations of a simple model
+%and an empirical example
+illustrate that ATA influences on coexistence can be comparable in magnitude to other
+mechanisms of coexistence, and that the presence or absence of ATAs can make the 
+difference between species coexisting and competitive exclusion. 
 \end{abstract}
 
 %***Add to these
