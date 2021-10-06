@@ -360,22 +360,25 @@ $(\tilde{b}_i,\tilde{b}_j)=\left(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigm
 $\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normal and independent. Continuing,
 %contrib of ATA
 \begin{equation}
-\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))],\label{eq:decomp:contrib_ATA_1}
+\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))] - \E[\ln(1-\delta+\delta\exp(b_i^\shp-b_j^\shp))],\label{eq:decomp:contrib_EC_1}
 \end{equation}
 where $(\ddot{b}_i,\ddot{b}_j)$ have the same (normal) marginals and covariance as $(b_i,b_j)$ but are 
 bivariate normal. Thus
 \begin{equation}
-\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i-\tilde{b}_j)+\mu_i-\mu_j))]-
-\E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))], \label{eq:decomp:contrib_ATA_2}
+\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))] - 
+\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))]
+, \label{eq:decomp:contrib_EC}
+\end{equation}
+where $(\tilde{b}_i,\tilde{b}_j)=\left( \frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$ and 
+$(\tilde{\ddot{b}}_i,\tilde{\ddot{b}}_j)=\left( \frac{\ddot{b}_i-\mu_i}{\sigma},\frac{\ddot{b}_j-\mu_j}{\sigma} \right)$ and $\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent.
+Continuing, $\olep_i^{[EC]}=\olep_i^{(EC)}-\olep_i^{[E \nat C]}$ is available by subtracting expression (\ref{eq:decomp:contrib_EC})
+from expression (\ref{eq:decomp:storage_effects}), i.e., 
+\begin{equation}
+\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i-\tilde{b}_j)+\mu_i-\mu_j))]-
+\E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))],\label{eq:decomp:contrib_ATA_2}
 \end{equation}
 where $(\tilde{b}_i,\tilde{b}_j)=\left( \frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$ and 
 $(\tilde{\ddot{b}}_i,\tilde{\ddot{b}}_j)=\left( \frac{\ddot{b}_i-\mu_i}{\sigma},\frac{\ddot{b}_j-\mu_j}{\sigma} \right)$.
-Continuing, $\olep_i^{[EC]}=\olep_i^{(EC)}-\olep_i^{[E \nat C]}$ is available by subtracting expression (\ref{eq:decomp:contrib_ATA_2})
-from expression (\ref{eq:decomp:storage_effects}), i.e., 
-\begin{equation}
-\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))] - 
-\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))].\label{eq:decomp:contrib_EC}
-\end{equation}
 This completes the calculation of all the terms of the decomposition (\ref{eq:decomp_overall_IGR})  of $\olr_{i \bs i}$ for the lottery model.
 
 We next decompose $\olr_{j \bs i}$ for the lottery model. We have 
@@ -455,17 +458,21 @@ independent of each other. Continuing,
 these results obtained from (\ref{eq:decomp:j:EC}) and (\ref{eq:decomp:j:EshpC}). Again, $\tilde{b}_j$ and 
 $\tilde{b}_j^\shp$ are standard normally distributed and independent. Continuing,
 \begin{align}
-\olep_j^{[E \nat C]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
+\olep_j^{[E \nat C]} &= \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] - \E[r_j(E_j^\shp , C_{j \bs i}^\shp)]\\
+&= -\E[r_j(E_j^\shp , C_{j \bs i}^\shp)] \\
+&= -\E[\ln(1-\delta+\delta \exp(\sigma (\tilde{b}_j^\shp - \tilde{b}_j)))],
+\label{eq:decomp:j:EChard}
+\end{align}
+where again $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent of each other.
+Continuing,
+\begin{align}
+\olep_j^{[EC]} &= \olep_j^{(EC)} - \olep_j^{[E \nat C]} \\
+&= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)]
 &= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
 &= 0 \label{eq:decomp:j:EnatC}
 \end{align}
 because we showed in the Theory section of the main text that $\olr_{j \bs i}^\nat = \olr_{j \bs i}$ due to the fact that
-$E_j$ and $C_{j \bs i}$ are perfectly linearly related to each other. Continuing,
-\begin{align}
-\olep_j^{[EC]} &= \olep_j^{(EC)} - \olep_j^{[E \nat C]} \\
-&= - \E[\ln(1-\delta+\delta \exp(\sigma(\tilde{b}_j^\shp - \tilde{b}_j)))],\label{eq:decomp:j:EChard}
-\end{align}
-where again $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent of each other.
+$E_j$ and $C_{j \bs i}$ are perfectly linearly related to each other.
 This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$ for the lottery model.
 
 Using the above formulas, we observe that all the terms of the decomposition of $\olr_{i \bs i}$ depend on 
@@ -499,7 +506,7 @@ $(b_i,b_j)$. The alternative value $q_{ij}=1$ is constant, so also takes the sam
 left- and right-tail association noise cases. It is also easy to see from the definitions of $\epsilon_i^0$, 
 $\olep_i^E$, $\olep_i^C$, and $\olep_i^{(E \shp C)}$ that these quantities only depend on marginals.
 
-Whereas $\olep_i^{[EC]} = \E[r_i(E_i^\nat , C_{i \bs i}^\nat )]-\E[r_i(E_i^\shp ,C_{i \bs i}^\shp)]$ depends on
+Whereas $\olep_i^{[E \nat C]} = \E[r_i(E_i^\nat , C_{i \bs i}^\nat )]-\E[r_i(E_i^\shp ,C_{i \bs i}^\shp)]$ depends on
 more than just marginals, this quantity is still independent of the choice between our left- and right-tail-association 
 cases because the bivariate random variables $(E_i^\nat , C_{i \bs i}^\nat )$ and 
 $(E_i^\shp ,C_{i \bs i}^\shp)$ have had their tail association removed, and the only differences 
@@ -508,9 +515,9 @@ properties (i.e., these two bivariate distributions have the same marginals and 
 In other words, $(E_i^\nat , C_{i \bs i}^\nat )$ is distributed in the same way for the left- and right-tail-association cases,
 as is $(E_i^\shp ,C_{i \bs i}^\shp)$. 
 
-We now examine $\olep_i^{[E \nat C ]}$, which, by (\ref{eq:decomp:contrib_ATA_1}), equals 
+We now examine $\olep_i^{[EC ]}$, which, by (\ref{eq:decomp:contrib_ATA_2}), equals 
 \begin{equation}
-\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))].\label{eq:rep1}
+\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))].\label{eq:rep1}
 \end{equation}
 But $(\ddot{b}_i,\ddot{b}_j)$ is a bivariate normal random variable constructed to have the same marginals and 
 covariance as $(b_i,b_j)$, and the marginals and covariance of $(b_i^{(l)},b_j^{(l)})$ are the same as those of
@@ -526,7 +533,7 @@ $(b_1^{(l)},b_2^{(l)})$. But then we have
 &= \E[\ln(1-\delta+\delta\exp(\beta_i^{(l)}-\beta_j^{(l)}))] \\
 &= \E[\ln(1-\delta+\delta\exp(b_i^{(r)}-b_j^{(r)}))], 
 \end{align}
-which completes the proof that $\olep_i^{[E \nat C]}$ is independent of left- versus right-tail associated noise.
+which completes the proof that $\olep_i^{[EC]}$ is independent of left- versus right-tail associated noise.
 For the terms of the decomposition (\ref{eq:decomp_overall_rjbsi}), it suffices to look at the equations for those terms, 
 above, in this section, and note that all those terms depend only on marginals. 
 
