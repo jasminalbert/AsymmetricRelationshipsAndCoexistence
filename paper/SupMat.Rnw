@@ -237,37 +237,37 @@ As in the main text, we can now define the tertiary decomposition
 \begin{align}
 \olep_i^{(EC)} &= \E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\shp,C_{i \bs i}^\shp)] \\
 &= \left[ \E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\nat,C_{i \bs i}^\nat)] \right]+\left[ \E[r_i(E_i^\nat,C_{i \bs i}^\nat)]-\E[r_i(E_i^\shp,C_{i \bs i}^\shp)] \right] \\
-&= \olep_i^{[E \nat C]}+\olep_i^{[EC]}.
+&= \olep_i^{[EC]}+\olep_i^{[E \nat C]}.
 \end{align}
 The brackets in the superscripts of $\olep_i^{[EC]}$ and $\olep_i^{[E \nat C]}$ indicate that we are talking about a term in the
 tertiary decomposition, i.e., in the decomposition of $\olep_i^{(EC)}$. 
-The term $\olep_i^{[E \nat C]}$ quantifies the influence of asymmetric tail associations of $E_i$ and $C_{i \bs i}$ on the invasion growth rate,
-and the the term $\olep_i^{[EC]}$ corresponds to $EC$ correlations \emph{per se}, after the removal of asymmetries of tail association.
+The term $\olep_i^{[EC]}$ quantifies the influence of asymmetric tail associations of $E_i$ and $C_{i \bs i}$ on the invasion growth rate,
+and the the term $\olep_i^{[E \nat C]}$ corresponds to $EC$ correlations \emph{per se}, after the removal of asymmetries of tail association.
 The symbol $\nat$ denotes the removal of asymmetries of tail association. We therefore have 
 \begin{equation}
-\olr_{i \bs i} = \epsilon_i^0 + \olep_i^E + \olep_i^C + \olep_i^{(E\shp C)}+\olep_i^{[EC]}+\olep_i^{[E \nat C]},\label{eq:decomp_overall_IGR}
+\olr_{i \bs i} = \epsilon_i^0 + \olep_i^E + \olep_i^C + \olep_i^{(E\shp C)}+\olep_i^{[E \nat C]}+\olep_i^{[EC]},\label{eq:decomp_overall_IGR}
 \end{equation}
 our overall decompsition of $r_{i \bs i}$.
 The same derivation also applies to provide 
 \begin{equation}
-\olr_{j \bs i} = \epsilon_j^0 + \olep_j^E + \olep_j^C + \olep_j^{(E\shp C)}+\olep_j^{[EC]}+\olep_j^{[E \nat C]},\label{eq:decomp_overall_rjbsi}
+\olr_{j \bs i} = \epsilon_j^0 + \olep_j^E + \olep_j^C + \olep_j^{(E\shp C)}+\olep_j^{[E \nat C]}+\olep_j^{[EC]},\label{eq:decomp_overall_rjbsi}
 \end{equation}
 an analogous decomposition of $\olr_{j \bs i}$.
 
 Combining the decompositions of $\olr_{i \bs i}$ and $\olr_{j \bs i}$ and assuming without loss of generality that $\mu_i \leq \mu_j$ so that
 species $i$ is the weaker competitor and $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ can be regarded as a coexistence metric, we have
 \begin{equation}
-\olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[EC]}+\Delta_i^{[E\nat C]},\label{eq:decomp_overall_delta}
+\olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]}+\Delta_i^{[EC]},\label{eq:decomp_overall_delta}
 \end{equation}
 where $\Delta_i^0=\epsilon_i^0- q_{ij} \epsilon_j^0$;
 $\Delta_i^E=\olep_i^E -q_{ij}\olep_j^E$ is the contribution to coexistence of environmental variation;
 $\Delta_i^C=\olep_i^C -q_{ij}\olep_j^C$ is the contribution to coexistence of variation in competitive pressure;
 $\Delta_i^{(E\shp C)}=\olep_i^{(E\shp C)} - q_{ij}\olep_j^{(E\shp C)}$ is the contribution to coexistence of 
 variation \emph{per se} in both environment and competition, not including the effects of covariation of these quantities;
-$\Delta_i^{[EC]}=\olep_i^{[EC]} - q_{ij} \olep_j^{[EC]}$ is the contribution to coexistence of $EC$ covariation \emph{per se},
+ $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$is the contribution to coexistence of $EC$ covariation \emph{per se},
 not including the effects of asymmetric tail associations between environment and competition;
-and $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$ is the contribution to coexistence of 
-asymmetric tail assocations. The subscript $i$ on all these newly defined quantities $\Delta_i$ refers to species $i$.
+and $\Delta_i^{[EC]}=\olep_i^{[EC]} - q_{ij} \olep_j^{[EC]}$ is the contribution to coexistence of 
+asymmetric tail associations. The subscript $i$ on all these newly defined quantities $\Delta_i$ refers to species $i$.
 
 \section{Noise} \label{sect:noise}
 
