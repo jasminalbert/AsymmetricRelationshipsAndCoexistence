@@ -45,7 +45,7 @@ layout(matrix(c(2,3,4,5,1,
 
 plot.new() #1
 legend("topright", 
-       legend=c(expression(IGR),expression(IGR-Delta[i]^"[E||C]"), expression(Delta[i]^"[E||C]")),
+       legend=c(expression(IGR),expression(IGR-Delta[i]^"[EC]"), expression(Delta[i]^"[EC]")),
        col = c("orange","navy", "red"),
        lty = c(1,1,1), bty="n", cex=1.5, inset=c(-0.25,-0.042),
        y.intersp = 1.25, x.intersp = 0.1, seg.len=1)

@@ -45,7 +45,7 @@ plot.new() #1
 legend("topright", 
        legend=c(expression(Delta[i]^0), expression(Delta[i]^E),
                 expression(Delta[i]^C), expression(Delta[i]^"(E#C)"),
-                expression(Delta[i]^"[EC]"), expression(Delta[i]^"[E||C]")
+                expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]")
                 ,expression(IGR)), 
        col = c("black","black","black","black","blue","red","orange"),
        lty = c(1,2,4,3,1,1,1), bty="n", cex=1.5, inset=c(0.1,-0.042),
@@ -101,7 +101,7 @@ plot.new() #1
 legend("topright", 
        legend=c(expression(Delta[i]^0), expression(Delta[i]^E),
                 expression(Delta[i]^C), expression(Delta[i]^"(E#C)"),
-                expression(Delta[i]^"[EC]"), expression(Delta[i]^"[E||C]")
+                expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]")
                 ,expression(IGR)), 
        col = c("black","black","black","black","blue","red","orange"),
        lty = c(1,2,4,3,1,1,1), bty="n", cex=1.5, inset=c(0.1,-0.025),
