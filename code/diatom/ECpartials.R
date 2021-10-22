@@ -3,7 +3,7 @@ library(edfun)
 library(MASS)
 
 #phi as in theory of main text
-phi <- function(x){pnorm(x)} #normal cdf
+phi <- function(x){pnorm(x)} 	 #normal cdf
 phi_inv <- function(x){qnorm(x)} #normal inverse cdf 
 
 cdfTran <- function(x){ 		#transforms var by its cdf 
