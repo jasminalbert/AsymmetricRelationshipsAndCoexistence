@@ -360,25 +360,22 @@ $(\tilde{b}_i,\tilde{b}_j)=\left(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigm
 $\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normal and independent. Continuing,
 %contrib of ATA
 \begin{equation}
-\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))] - \E[\ln(1-\delta+\delta\exp(b_i^\shp-b_j^\shp))],\label{eq:decomp:contrib_EC_1}
+\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))],\label{eq:decomp:contrib_ATA_1}
 \end{equation}
 where $(\ddot{b}_i,\ddot{b}_j)$ have the same (normal) marginals and covariance as $(b_i,b_j)$ but are 
 bivariate normal. Thus
 \begin{equation}
-\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))] - 
-\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))]
-, \label{eq:decomp:contrib_EC}
-\end{equation}
-where $(\tilde{b}_i,\tilde{b}_j)=\left( \frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$ and 
-$(\tilde{\ddot{b}}_i,\tilde{\ddot{b}}_j)=\left( \frac{\ddot{b}_i-\mu_i}{\sigma},\frac{\ddot{b}_j-\mu_j}{\sigma} \right)$ and $\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent.
-Continuing, $\olep_i^{[EC]}=\olep_i^{(EC)}-\olep_i^{[E \nat C]}$ is available by subtracting expression (\ref{eq:decomp:contrib_EC})
-from expression (\ref{eq:decomp:storage_effects}), i.e., 
-\begin{equation}
 \olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i-\tilde{b}_j)+\mu_i-\mu_j))]-
-\E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))],\label{eq:decomp:contrib_ATA_2}
+\E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))], \label{eq:decomp:contrib_ATA_2}
 \end{equation}
 where $(\tilde{b}_i,\tilde{b}_j)=\left( \frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$ and 
 $(\tilde{\ddot{b}}_i,\tilde{\ddot{b}}_j)=\left( \frac{\ddot{b}_i-\mu_i}{\sigma},\frac{\ddot{b}_j-\mu_j}{\sigma} \right)$.
+Continuing, $\olep_i^{[E \nat C]}=\olep_i^{(EC)}-\olep_i^{[EC]}$ is available by subtracting expression (\ref{eq:decomp:contrib_ATA_2})
+from expression (\ref{eq:decomp:storage_effects}), i.e., 
+\begin{equation}
+\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))] - 
+\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))].\label{eq:decomp:contrib_EC}
+\end{equation}
 This completes the calculation of all the terms of the decomposition (\ref{eq:decomp_overall_IGR})  of $\olr_{i \bs i}$ for the lottery model.
 
 We next decompose $\olr_{j \bs i}$ for the lottery model. We have 
@@ -458,21 +455,19 @@ independent of each other. Continuing,
 these results obtained from (\ref{eq:decomp:j:EC}) and (\ref{eq:decomp:j:EshpC}). Again, $\tilde{b}_j$ and 
 $\tilde{b}_j^\shp$ are standard normally distributed and independent. Continuing,
 \begin{align}
-\olep_j^{[E \nat C]} &= \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] - \E[r_j(E_j^\shp , C_{j \bs i}^\shp)]\\
-&= -\E[r_j(E_j^\shp , C_{j \bs i}^\shp)] \\
-&= -\E[\ln(1-\delta+\delta \exp(\sigma (\tilde{b}_j^\shp - \tilde{b}_j)))],
-\label{eq:decomp:j:EChard}
-\end{align}
-where again $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent of each other.
-Continuing,
-\begin{align}
-\olep_j^{[EC]} &= \olep_j^{(EC)} - \olep_j^{[E \nat C]} \\
-&= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)]
+\olep_j^{[EC]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
 &= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
 &= 0 \label{eq:decomp:j:EnatC}
 \end{align}
 because we showed in the Theory section of the main text that $\olr_{j \bs i}^\nat = \olr_{j \bs i}$ due to the fact that
-$E_j$ and $C_{j \bs i}$ are perfectly linearly related to each other.
+$E_j$ and $C_{j \bs i}$ are perfectly linearly related to each other. Continuing,
+\begin{align}
+\olep_j^{[E \nat C]} &= \olep_j^{(EC)} - \olep_j^{[EC]} \\
+&= - \E[\ln(1-\delta+\delta \exp(\sigma(\tilde{b}_j^\shp - \tilde{b}_j)))],\label{eq:decomp:j:EChard}
+\end{align}
+where again $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent of each other.
+
+
 This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$ for the lottery model.
 
 Using the above formulas, we observe that all the terms of the decomposition of $\olr_{i \bs i}$ depend on 
@@ -515,7 +510,7 @@ properties (i.e., these two bivariate distributions have the same marginals and 
 In other words, $(E_i^\nat , C_{i \bs i}^\nat )$ is distributed in the same way for the left- and right-tail-association cases,
 as is $(E_i^\shp ,C_{i \bs i}^\shp)$. 
 
-We now examine $\olep_i^{[EC ]}$, which, by (\ref{eq:decomp:contrib_ATA_2}), equals 
+We now examine $\olep_i^{[EC]}$, which, by (\ref{eq:decomp:contrib_ATA_1}), equals 
 \begin{equation}
 \olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))].\label{eq:rep1}
 \end{equation}
@@ -665,21 +660,21 @@ as $\widehat{\olep_i^{(E \shp C)}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2
 $\se \left( \widehat{\olep_i^{(E \shp C)}} \right) = \sd_k [\ln(1-\delta+\delta\exp(\sigma \sqrt{2} u^{(k)}+\mu_i-\mu_j))-
 \ln(1-\delta+\delta\exp(\sigma u^{(k)}+\mu_i-\mu_j-\sigma^2/2))-
 \ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\mu_i-\mu_j+\sigma^2/2))]/\sqrt{M}$. 
-\item Estimate $\olep_i^{[EC]}$, following (\ref{eq:decomp:contrib_EC}), as
-$\widehat{\olep_i^{[EC]}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]-\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]$. The standard error of this expression is 
-$\se \left( \widehat{\olep_i^{[EC]}} \right) = \sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k [\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}$
+\item Estimate $\olep_i^{[E \nat C]}$, following (\ref{eq:decomp:contrib_EC}), as
+$\widehat{\olep_i^{[E \nat C]}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]-\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]$. The standard error of this expression is 
+$\se \left( \widehat{\olep_i^{[E \nat C]}} \right) = \sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k [\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}$
 and $s_2=\sd_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]/\sqrt{M}$.
-\item Estimate $\olep_i^{[E \nat C]}$, following (\ref{eq:decomp:contrib_ATA_2}), as 
-$\widehat{\olep_i^{[E \nat C]}} = \mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))]-
+\item Estimate $\olep_i^{[EC]}$, following (\ref{eq:decomp:contrib_ATA_2}), as 
+$\widehat{\olep_i^{[EC]}} = \mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))]-
 \mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))].$ The standard
-error of this expression is $\se \left( \widehat{\olep_i^{[E \nat C]}} \right)=\sqrt{s_3^2+s_1^2}$, where
+error of this expression is $\se \left( \widehat{\olep_i^{[EC]}} \right)=\sqrt{s_3^2+s_1^2}$, where
 $s_1$ is as above, and $s_3=\sd_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}.$
 \item Finally, estimate $\olr_{i \bs i}$, following (\ref{eq:base_IGR}), as 
 $\widehat{\olr_{i \bs i}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))],$
 which has standard error $s_3$ from above.
 \end{enumerate}
 It is easy to see that $\widehat{\olr_{i \bs i}}=\epsilon_i^0+\widehat{\olep_i^E}+\widehat{\olep_i^C}+\widehat{\olep_i^{(E \shp C)}}+
-\widehat{\olep_i^{[EC]}}+\widehat{\olep_i^{[E \nat C]}},$ i.e., the decomposition (\ref{eq:decomp_overall_IGR}) applies 
+\widehat{\olep_i^{[E \nat C]}}+\widehat{\olep_i^{[EC]}},$ i.e., the decomposition (\ref{eq:decomp_overall_IGR}) applies 
 at the level of the estimators, as well
 
 Next, proceed as follows to get estimates of the terms in the decomposition (\ref{eq:decomp_overall_rjbsi}). 
@@ -698,8 +693,8 @@ $\widehat{\olep_j^{(E \shp C)}} = \mean_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2
 The standard error of this expression is $\se \left(  \widehat{\olep_j^{(E \shp C)}} \right) = 
 \sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))-\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))-
 \ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
-\item Estimate $\olep_j^{[EC]}$, following (\ref{eq:decomp:j:EChard}), as $\widehat{\olep_j^{[EC]}}=\mean_k [-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))],$ which has $\se \left( \widehat{\olep_j^{[EC]}} \right) = \sd_k[-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))]/\sqrt{M}$.
-\item Use $\olep_j^{[E \nat C]}=0$, following (\ref{eq:decomp:j:EnatC}). This is exact.
+\item Estimate $\olep_j^{[E \nat C]}$, following (\ref{eq:decomp:j:EChard}), as $\widehat{\olep_j^{[E \nat C]}}=\mean_k [-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))],$ which has $\se \left( \widehat{\olep_j^{[E \nat C]}} \right) = \sd_k[-\ln(1-\delta+\delta \exp(\sigma \sqrt{2} u^{(k)}))]/\sqrt{M}$.
+\item Use $\olep_j^{[EC]}=0$, following (\ref{eq:decomp:j:EnatC}). This is exact.
 \item Finally, use $\olr_{j \bs i} = 0$, again exact. 
 \end{enumerate}
 As for (\ref{eq:decomp_overall_IGR}), it is again easy to see that (\ref{eq:decomp_overall_rjbsi}) applies for the 
@@ -737,14 +732,14 @@ $\se \left( \widehat{\Delta_i^{(E \shp C)}} \right) =
 q_{ij}\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))+
 q_{ij}\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))+
 q_{ij}\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
-\item Estimate $\Delta_i^{[EC]}$ as $\widehat{\Delta_i^{[EC]}}=\widehat{\olep_i^{[EC]}}-q_{ij}\widehat{\olep_j^{[EC]}}=
+\item Estimate $\Delta_i^{[E \nat C]}$ as $\widehat{\Delta_i^{[E \nat C]}}=\widehat{\olep_i^{[E \nat C]}}-q_{ij}\widehat{\olep_j^{[E \nat C]}}=
 \mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]-
 \mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]+
 q_{ij}\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))],$ which one can straightforwardly show has standard error
 $\sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}$ 
 and $s_2=\sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))-q_{ij}\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))]/\sqrt{M}$.
-\item For $\Delta_i^{[E \nat C]}$, we recall that $\olep_j^{[E \nat C]}=0$, so $\Delta_i^{[E \nat C]}=\olep_i^{[E \nat C]}$. So we use
-$\widehat{\olep_i^{[E \nat C]}}$ for $\widehat{\Delta_i^{[E \nat C]}}$.
+\item For $\Delta_i^{[EC]}$, we recall that $\olep_j^{[EC]}=0$, so $\Delta_i^{[EC]}=\olep_i^{[EC]}$. So we use
+$\widehat{\olep_i^{[EC]}}$ for $\widehat{\Delta_i^{[EC]}}$.
 \item Finally, we can also estimate $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ simply as $\widehat{\olr_{i \bs i}}$
 since $\olr_{j \bs i}=0$.
 \end{enumerate}
@@ -755,7 +750,7 @@ applies for the estimators as well as for the quantities being estimated.
 
 %***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
 
-In fig \ref{MT-fig:fig4} we plot IGR , $\Delta_i^{[E \nat C]}$, and IGR $-\Delta_i^{[E \nat C]}$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
+In Fig. \ref{MT-fig:fig4} we plot IGR , $\Delta_i^{[EC]}$, and IGR $-\Delta_i^{[EC]}$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
 From section \ref{sect:math_simplifications}, 
 \begin{align}
 \olr_{j \bs i} &= \E[\ln(1-\delta+E_j/C_{j \bs i})] \\
@@ -764,23 +759,23 @@ From section \ref{sect:math_simplifications},
 \end{align}
 and
 \begin{align}
-\olep_j^{[E \nat C]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
+\olep_j^{[EC]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
 &= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
 &= 0. %\label{eq:decomp:j:EnatC}
 \end{align}
-Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[E \nat C]}$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}$ are zero so 
+Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[EC]}$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}$ are zero so 
 \begin{equation}
 \olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\olr_{i \bs i}
 \end{equation}
 and 
 \begin{equation}
-\Delta_i^{[E\nat C]}=\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]}=\olep_i^{[E \nat C]}
+\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}=\olep_i^{[EC]}
 \end{equation}
-Similarly for IGR $-\Delta_i^{[E \nat C]}$, 
+Similarly for IGR $-\Delta_i^{[EC]}$, 
 \begin{equation}
-(\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-\olep_i^{[E \nat C]}-q_{ij} \olep_j^{[E \nat C]} = \olr_{i \bs i}-\olep_i^{[E \nat C]}.
+(\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-(\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}) = \olr_{i \bs i}-\olep_i^{[EC]}.
 \end{equation}
-Thus $q_{ij}$ does not matter for anything computed for Figure \ref{MT-fig:fig4}. 
+Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}. 
 
 \clearpage
 \newpage
