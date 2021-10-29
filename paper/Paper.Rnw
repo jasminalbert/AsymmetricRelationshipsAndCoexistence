@@ -139,8 +139,8 @@ Here we extend the MCT to take into account the influence of ATAs. Storage
 effects can be decomposed into two components, one of which quantifies the
 influence of ATAs on species coexistence, and is a novel contribution of this study; and 
 the other of which represents
-the influence of environment-competition correlation \emph{per se}, without 
-the influence of ATAs. Simulations of a simple model
+the influence of environment-competition correlation \emph{per se}, 
+without the influence of ATAs. Simulations of a simple model
 %and an empirical example
 illustrate that ATA influences on coexistence can be comparable in magnitude to other
 mechanisms of coexistence, and that the presence or absence of ATAs can make the 
