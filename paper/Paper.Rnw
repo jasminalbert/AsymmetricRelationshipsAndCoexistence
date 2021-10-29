@@ -132,7 +132,7 @@ in environmental and competitive pressures on species populations. However, such
 have typically been measured using covariance methods, which do not account for 
 the possibility that environmental and competitive influences may be more correlated
 when these influences are strong than when they are weak, or vice versa. 
-Recent work showed that such `asymmetric tail associations' (ATA) are extremely common
+Recent work showed that such `asymmetric tail associations' (ATAs) are extremely common
 between ecological variables, and are important for a wide range of phenomena including 
 extinction risk and the stability of ecosystem functioning. 
 Here we extend the MCT to take into account the influence of ATAs. Storage
@@ -432,15 +432,15 @@ and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition
 \begin{align}
 \Delta_i^{(EC)} &= [(\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})]+
 [(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i})] \label{eq:storage_effects_further1}\\
-&= \Delta_i^{[E \nat C]} + \Delta_i^{[EC]}.\label{eq:storage_effects_further}
+&= \Delta_i^{[EC]} + \Delta_i^{[E \nat C]}.\label{eq:storage_effects_further}
 \end{align}
-The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to 
+The term $\Delta_i^{[EC]}$ is the component of storage effects due to 
 ATAs between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$.
+The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to $EC$ 
+correlation \emph{per se}, remaining after having removed the effects of ATAs.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
 corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
 The new symbol should correspondingly be pronounced ``partial sharp''.
-The term $\Delta_i^{[EC]}$ is the component of storage effects due to $EC$ correlation \emph{per se}, remaining after 
-having removed the effects of ATAs.
 The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
 of storage effects, which are themselves a term within the decomposition provided by MCT \citep{Ellner_2019} -- see 
@@ -510,7 +510,7 @@ so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is st
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
 \end{equation}
 which is the extension of MCT which was goal G1 of the Introduction. To pursue goal G2, below, will quantify
-the magnitude of the new ATA term in this expression, $\Delta_i^{[E \nat C]}$, relative to the magnitudes of the other terms. 
+the magnitude of the new ATA term in this expression, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms. 
 
 \section{Methods}\label{section:methods}
 
@@ -544,7 +544,7 @@ SI section \ref{SI-sect:efficient_computation}.
 To achieve goal G3 from the Introduction i.e., to explore, using the lottery model, the likelihood that species can coexist with
 ATAs but not without, or vice versa, we plotted the IGR, $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
 as well as the
-IGR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$. 
+IGR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[EC]}$. 
 For fixed values of $\sigma$ and $\delta$ and for left-tail associated noise, 
 we were interested in the values of $\mu_1-\mu_2$ for which one of these
 quantities is positive and the other is negative; this set of values characterizes the species which can coexist
@@ -555,7 +555,7 @@ $\delta$ and $\sigma$, we defined the subset, $\psi_{\text{ATA}}(\delta,\sigma)$
 values $\mu_1 - \mu_2$ for which the the IGR, $\olr_{i \bs i}$, is positive. This 
 is the subspace for which the two species in the lottery model coexist in the presence of ATAs.
 We also defined the subset, $\psi_{\lnot\text{ATA}}(\delta,\sigma)$, of trait-difference space to be the set of values
-$\mu_1 - \mu_2$ for which the metric $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$ is positive.
+$\mu_1 - \mu_2$ for which the metric $\olr_{i \bs i} -\Delta_i^{[EC]}$ is positive.
 This is the subspace for which the two species in the lottery model coexist in the absence of 
 ATAs. The symbol $\lnot$ denotes logical negation, so $\lnot \text{ATA}$ is intended to indicate the
 absence of ATAs. We defined the ``ATA rescue space" associated with given values of $\delta$ and $\sigma$ to be the 
@@ -564,7 +564,7 @@ values $\mu_1 - \mu_2$ for which species coexist in the presence of ATAs, but no
 Similarly, we define ``ATA exclusion space'' to be the set difference 
 $\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$,
 i.e., $\mu_1 - \mu_2$ values for which coexistence occurs in the absence, but not the presence, of ATAs.
-On plots of $\olr_{i \bs i}$ and $\olr_{i \bs i} -\Delta_i^{[E \nat C]}$
+On plots of $\olr_{i \bs i}$ and $\olr_{i \bs i} -\Delta_i^{[EC]}$
 against $\mu_1 - \mu_2$, we highlighted the ATA rescue and exclusion spaces. We plotted against
 $\mu_1 - \mu_2$ for all combinations of $\delta=0.2, 0.4, 0.6, 0.8$ and $\sigma=2,4,5,6$. 
 
@@ -585,7 +585,7 @@ Fulfilling goal G2 of the Introduction (to explore, using the lottery model, the
 of the contributions to coexistence that come from ATAs compared to other mechanisms), Fig.
 \ref{fig:fig3} shows that the ATA term of (\ref{eq:full_decomp}) often, but not always, has 
 magnitude comparable to the magnitudes of other terms of the extended MCT decomposition. 
-Magnitudes of $\Delta_i^{[E \nat C]}$ tended to be larger, relative to the magnitudes of the 
+Magnitudes of $\Delta_i^{[EC]}$ tended to be larger, relative to the magnitudes of the 
 other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between $\mu_1$ and 
 $\mu_2$, i.e., for closer-to-equal competitors. 
 In the $\mu_1=\mu_2$ case (panels A-D), for which the two species were equal 
@@ -617,17 +617,59 @@ difference between coexistence and extirpation of one species in some cases.
 
 \section{Discussion}\label{section:discussion}
 
-%Need something like the following, maybe
-%Previously, storage effects were described as the contribution of covariance between the environment and competition to coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019}. 
-%However, the description of storage effects as the covariance between drivers is a (potentially dangerous) misnomer in terminology, and we argue that storage effects, instead, should be described as the contribution of the relationship between drivers. 
-%All aspects and contributing values of the relationship between environmental response and competitive pressure are not fully captured by only the covariance between them because a measure of covariance does not capture the strucutre of associativity throuhgout the distribution of the relationship and any asymmetries there may be. 
-%Thus, aligning with the decomposition presented in \cite{Ellner_2019}, we propose storage effect can be broken down further into the contribution of ATA [to storage effect/coexistence] and the contribution of symmetric association [to storage effect/coexistence].
+Outline 
 
+\underline{Paragraph summarizing results of G1 and how it compares and builds on prior theory.} 
+We provided a farther tertiary decomposition to MCT, 
+extending the framework put forward by \citep{Ellner_2019}. 
+We decompose the storage effect into two new terms, 
+$\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, the contribution of correlation \emph{per se}. 
+Previously, storage effects were described as the contribution
+of covariance between the environment and competition to coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019}. 
+However, the description of storage effects as the covariance between drivers
+is a misnomer in terminology, and we propose that storage effects, instead, 
+should be described as the contribution of the relationship between drivers. 
+All aspects and of the relationship between environmental response and competitive pressure are not fully captured by only the covariance between them because a measure of covariance does not capture the structure of associativity throughout the distribution of the relationship and any asymmetries there may be. 
+Thus, it is misleading to describe the contribution of the whole EC relationship 
+as the contribution of EC covariance.
+In addressing this inconsistency, we have separated the mechanisms of storage effect into the contribution of ATA [to storage effect/coexistence] and the contribution of correlation \emph{per se} [to storage effect/coexistence].
+
+\underline{paragraph summarizing results of G2 and how it compares and builds on prior theory}
+Furthermore, we have shown not only that is it possible to decompose storage effect into the effect of correlation \emph{per se} and the effect of ATAs, but this new term that holds the contribution of not only the correlation but the structure of the correlation is a non-negligible term, in the lottery model. Our result adds coexistence to the list of ecological theory/phenomena that ATAs have been found to be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}. Seemingly consistent with fluctuation dependent mechanisms, as \sigma increased, so did the the magnitudes of $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$.
+%Higher sigma means a more fluctuating and variable environment. Then, if environmental fluctuations become more variable, the effect of ATAs becomes more important and non-negligible (rescue or exclusion). 
+%Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
+
+\underline{paragraph summarizing results of G3 and how it compares and builds on prior theory}
+Not only is the contribution of ATA non-neglible but in some cases the presence of absence of ATA can mediate the result of competition between species, i.e., coexistence or extirpation. 
+Our investigation is a simple one; 
+the ATA present is a perfect correlation is exactly one half of the relationship, 
+but varying degrees of ATA may produce a similar result as well. 
+%maybe the above sentence should go in caveats/assumptions paragraph 
+ATA specialist? Does this go in this paragraph
 %I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
 %where there are atas. Could have a discussion para on it, if it does not make the results. Or both. BTW, ATA exclusion has a 
 %similar thing going on - a species excluded by ATAs (and competition) can only live on the portions of the landscape where
 %there are no ATAs. Could also describe the temporal way of it - the ATA specialist can only survive in a era/epoch for which there
 %are ATAs in its local, otherwise it'll have to go dormant or move elsewhere.
+
+
+\underline{paragraph summarizing results of G4 and how it compares and builds on prior theory}
+
+\underline{how results apply to or inform patterns or management questions in real life}
+ATA specialists?
+climate change and ATA
+
+\underline{caveats/assumptions that could change result}
+
+\underline{conclude: how ur work answers/informs the broad question from the intro and lay out 2-3 key priorities for next research on this question}
+We provided another showcase of the importance of ATAs in ecology, 
+building on previous studies.
+ATAs clearly have implications for coexistence and competition;
+though more research is needed in exploring more complex models 
+including spatiotemporal and multispecies models.
+Hope to see this tertiary decomposition of MCT be applied to empirical research.
+More investigations should be done to explore implications of ATAs 
+to other ecological theories. 
 
 %Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
 %via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
@@ -665,8 +707,7 @@ difference between coexistence and extirpation of one species in some cases.
 
 %Although environmental fluctuations is helpful for coexistence and storage effect, unusual extreme fluctuations can be a hinderance on coexistence by introducing or changing ATAs between environmental variables. 
 
-%Higher sigma means a more fluctuating and variable environment. Then, if environmental fluctuations become more variable, the effect of ATAs becomes more important and non-negligible (rescue or exclusion). 
-%Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
+
 
 %Knowledge of stochastic structure (Shoemaker et al 2020)
 
@@ -720,7 +761,7 @@ was \Sexpr{fig2$coSym} time steps for panel A and \Sexpr{fig2$coATA} for panel B
 whereas the average duration of periods of
 one-species dominance was \Sexpr{fig2$domSym} time steps for panel A and \Sexpr{fig2$domATA} for B. Thus, while periods of 
 noticeable coexistence were of similar duration for the two scenarios, periods of one-species dominance were much longer,
-on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1]} + \Sexpr{fig2$params[1]}$ and $\mu_2 = \Sexpr{-(fig2$params[1])}$, $\delta = \Sexpr{fig2$params[2]}$, and $\sigma = \Sexpr{fig2$params[3]}$. See Introduction for model details. 
+on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1] + fig2$params[1]}$ and $\mu_2 = \Sexpr{-(fig2$params[1])}$, $\sigma = \Sexpr{fig2$params[2]}$, and $\delta = \Sexpr{fig2$params[3]}$. See Introduction for model details. 
 \label{fig:pedagog}}
 \end{figure}
 %***DAN: Dan has edited this caption
