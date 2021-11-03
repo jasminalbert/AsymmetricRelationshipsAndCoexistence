@@ -1,19 +1,3 @@
-
-# E(t) -pobs-> r(E(t)) -> qnorm(r(E(t))) --> rho_umlaut
-
-# rho_umlaut -rmvnorm (mvtnorm)-> e(t) -> pnorm(e) -aligned ranks-> 
-
-# -> symmetric E and C
-# compute correlations of E and C partials acorss differrent simulations, look at distributions across simulations
-# compare to histograms of pereason and spearman correlation of original E and C
-# write function called normcor (normalized correlation)
-# should be same up to sampling variation
-# normcor(x,y)
-# return (cor(qnorm(pobs(x), qnorm(pobs(y)))))
-# take norm cor of E and C and norm cor of E partial and C partial
-# if norm cor is in the distribution proceede to look at peearson and spearman 
-# use partial sharps to calculate partial sharp will get a distribution of IGR 
-# fix notation first!
 source("align_ranks.R")
 source("ForcedChemo_Chesson-C.R")
 require(copula)
@@ -26,56 +10,67 @@ normcor <- function(X,Y){
 	return(rho)
 }
 
-norm <- normcor(E, C1)
-pear <- cor(E, C1, method='pearson')
-kend <- cor(E, C1, method='kendall')
-spear <- cor(E, C1, method='spearman')
-rho <- c(norm, pear, kend, spear)
+rho <- c(normcor(E, C1), normcor(E, C2))
 
-dat<- cbind(sort(E), sort(C1))
-Sigma <- matrix(c(1, rho[1], rho[1], 1), nrow=2)
+dat1<- cbind(sort(E), sort(C1))
+dat2<- cbind(sort(E), sort(C2))
+Sigma <- list(	matrix(c(1, rho[1], rho[1], 1), nrow=2),
+				matrix(c(1, rho[2], rho[2], 1), nrow=2))
 
 reps <- 500
-res <- array(NA, dim=c(dim(dat),reps))
-normcorSims <- NA
-pearsonSims <- NA
-spearmanSims <- NA
+res1 <- array(NA, dim=c(dim(dat1),reps))
+res2 <- res1
+normcorSims1 <- NA
+normcorSims2 <- NA
+r1psharpsims <- NA
+r2psharpsims <- NA
+
 
 for (i in 1:reps){
 	
-	sims<-rmvnorm(n=length(E), sigma=Sigma)
-	res[,,i]<-alignranks(dat,sims)
-	normcorSims[i] <- normcor(res[,1,i],res[,2,i])
-	pearsonSims[i] <- cor(res[,,i])[1,2]
-	spearmanSims[i] <- cor(res[,,i], method = 'spearman')[1,2]
+	sims1<-rmvnorm(n=length(E), sigma=Sigma[[1]])
+	res1[,,i]<-alignranks(dat1,sims1)
+	normcorSims1[i] <- normcor(res1[,1,i],res1[,2,i])
+	
+	r1psharpsims[i] <- mean(r1C(res1[,1,i],res1[,2,i],parms))
+	
+
+	sims2<-rmvnorm(n=length(E), sigma=Sigma[[2]])
+	res2[,,i]<-alignranks(dat2,sims2)
+	normcorSims2[i] <- normcor(res2[,1,i],res2[,2,i])
+	
+	r2psharpsims[i] <- mean(r2C(res2[,1,i],res2[,2,i],parms))
 
 	if (i%%50==0){print(i)}
 }
 #check
-hist(normcorSims, main='histogram of normcor')
+hist(normcorSims1, main='histogram of normcor1')
 abline(v=rho[1], col='red') #good
+hist(normcorSims2, main='histogram of normcor2')
+abline(v=rho[2], col='red')
 
-hist(spearmanSims, xlim=c(-1,-0.5),main='histogram of Scor')
-abline(v=rho[4], col='red') #bad
-
-hist(pearsonSims, xlim=c(-1,-0.5), main='histogram of Pcor')
-abline(v=rho[2], col='red') #bad
-
-r1psharpsims <- NA
-
-for (i in 1:reps){
-	r1psharpsims[i] <- mean(r1C(res[,1,i],res[,2,i],parms))
-	#r2psharp[i] <- mean(r2C())
-}
 
 hist(r1psharpsims)
+hist(r2psharpsims)
 
 r1psharp <- median(r1psharpsims)
+r2psharp <- median(r2psharpsims)
+
+r1bar - r1sharp # = epsilon(EC)
+epsilon1.ATA <- r1bar - r1psharp # = epsilon[EC]
+epsilon1.cor <- r1psharp - r1sharp # = epsilon[E||C]
+(r1bar - r1psharp) + (r1psharp - r1sharp) # = epsilon(EC)
+
+r2bar - r2sharp # = epsilon(EC)
+epsilon2.ATA <- r2bar - r2psharp # = epsilon[EC]
+epsilon2.cor <- r2psharp - r2sharp # = epsilon[E||C]
+(r2bar - r2psharp) + (r2psharp - r2sharp) # = epsilon(EC)
 
 
-
-
-
+(r1bar - r1sharp) - (r2bar - r2sharp) #storage effect, Delta(EC)
+epsilon1.ATA - epsilon2.ATA #Delta[EC], contribution of ATA
+epsilon1.cor - epsilon2.cor #Delta[E||C], correlation per se
+(epsilon1.ATA - epsilon2.ATA) + (epsilon1.cor - epsilon2.cor)
 
 
 
