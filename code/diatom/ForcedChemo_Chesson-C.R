@@ -15,11 +15,11 @@
 #
 # Species 1 is Fragillaria, species 2 is Cyclotella 
 #####################################################################################
-rm(list=ls(all=TRUE))
-graphics.off(); 
+#rm(list=ls(all=TRUE))
+#graphics.off(); 
 
-root=ifelse(.Platform$OS.type=="windows","c:/repos","~/ipm"); # modify as needed
-setwd(paste0(root,"/drivers/Manuscripts/Partitioning/Chemostat")); # modify as needed 
+#root=ifelse(.Platform$OS.type=="windows","c:/repos","~/ipm"); # modify as needed
+#setwd(paste0(root,"/drivers/Manuscripts/Partitioning/Chemostat")); # modify as needed 
 
 require(deSolve); 
 source("ForcedChemoSubs.R"); rm(r1); rm(r2); 
