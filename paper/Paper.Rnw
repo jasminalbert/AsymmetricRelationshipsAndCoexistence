@@ -569,6 +569,18 @@ against $\mu_1 - \mu_2$, we highlighted the ATA rescue and exclusion spaces. We 
 $\mu_1 - \mu_2$ for all combinations of $\delta=0.2, 0.4, 0.6, 0.8$ and $\sigma=2,4,5,6$. 
 
 %***DAN: Methods paras here for G4, if we accomplish G4
+To achieve goal G4 from the Introduction, i.e., to provide an empirical example of species coexistence which highlights the role ATAs can play, we consider the coexistence of diatom species in chemostat batch experiments by Descamps-Julien & Ganzalez 2005. In their experiments, measurements of growth of Cyclotella pseudostelligera and Fragilaria crotonensis over a range of temperatures was used to parametrize a competitive resource model as follows:
+put model here
+Descamps-Julien & Gonzalez used simulations to show that coexistence occurs with oscillating temperature fluctuations with parameters $\theta_0 = 18, a = 6, P = 60$d) and Ellner 2016 and 2018 broke down their coexistence into the contrirbuting mechanisms. Here, we consider varying parameters of temperature fluctuations and further decompose the coexistence of C. pseudostelligera and F. crotonensis to account for contributions of ATAs and ATA effects as described above. 
+
+Like for G2, we first plotted the terms of equation \ref{eq:full_decomp} for the chemostat model with $E=$ and $C=$ against independent parameters of temperature oscillation, $\theta_0, a$, and $P$, a total of three plots. For each plot, we set two of the parameters constant at the original parameters which coexistence was found in Descamps-Julien & Gonzalez, and let the remaining temperature parameter vary. %say which scenario this is in Ellner 2018
+We let $\theta_0$ vary between $[x,y]$, $a$ vary between $[x,y]$, and $P$ vary between $[x,y]$. 
+Relative importance of contributions was judged from the 
+plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
+the contributions of other mechanisms. 
+The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
+
+To further explore the parameter space, we generated 2 dimensional surface plots which reveal the subsets of parameter space where coexistence is possible with ranging degrees of ATA contributions and where ATA rescue occurs. We evaluated coexistence under two varying parameters and indicated $\Delta_i^{[EC]}/IGR$, a ratio of ATA contribution to total IGR, with a color bar and contour lines. Positive values of $\Delta_i^{[EC]}/IGR$ indicate coexistence and negative values indicate failure of coexistence. Greater magnitudes of $\Delta_i^{[EC]}/IGR$ and higher color intensity indicate greater contribution of ATAs to the IGR and positive cases where $\Delta_i^{[EC]}>IGR$ indicate ATA rescue. 
 
 All computations were done in R on an ordinary laptop. Complete computer codes for the project are stored at
 \url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence.git}.
@@ -809,5 +821,25 @@ used for Fig. \ref{fig:pedagog}. This plot uses $q_{ij}=1$. An analogous plot wa
 using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it looked exactly the same, by mathematical necessity (see SI section \ref{SI-sect:F4andqij}).}\label{fig:fig4}
 \end{figure}
 %***DAN: Dan has edited this caption
+
+\begin{figure}
+\includegraphics[width=\textwidth]{../results_figs/fig5.pdf}
+\caption{The contribution of ATAs to diatom coexistence is meaningfully large compared to 
+other components of the MCT decomposition. All panels show the IGR and the decomposition of
+the IGR provided by the extended MCT, equation (\ref{eq:full_decomp}). For each panel, 
+two of the three parameters defining temperature oscillation, amplitude, period, and mean, 
+is fixed at the original coexistence values found by Descamps-Julien & Gonzalez ($a=6, P=60, Tbar=18$). The IGR and components of the decomposition
+are plotted against one varying parameter. The original value of the varying parameter and coexistence quantities at that value is indicated by the vertical dashed magenta lines. The contribution of ATAs (red line)
+has magnitude comparable to other components and, in these parameters, is always positive, indicating that ATAs can contribute meaningfully
+to diatom coexistence. In some instances, the IGR line (orange) falls 
+between the ATA line (red)
+and the $x$ axis, indicating that, for those parameter values, ATAs make the difference between species
+coexistence and exclusion of the weaker competitor. Standard errors of plotted quantities ?.  \label{fig:fig5}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{../results_figs/fig6.pdf}
+\caption{} \label{fig:fig6}
+\end{figure}
 
 \end{document}
