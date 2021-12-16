@@ -18,7 +18,7 @@ maps <- lapply(datlist, FUN=cmMap)
 
 
 pdf(fig6, height=15, width=5)
-par(mfrow=c(1,1), oma=c(3,0,3,0), mar=c(2,3,1,3), bty='n', xpd=T)
+par(mfrow=c(1,1), oma=c(3,0,3,0), mar=c(2,3,1,1), bty='n', xpd=T)
 layout(matrix(c(1,2,3,4), byrow=T), heights=c(1,1,1,0.1))
 for (i in 1:length(maps)){
 	cmContour(maps[[i]], colkey=F, xaxt='n', yaxt='n')
