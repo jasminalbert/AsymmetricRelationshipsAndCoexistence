@@ -627,6 +627,17 @@ more common for larger $\delta$. Although bands of ATA rescue or exclusion on Fi
 \ref{fig:fig4} appear narrow, they nevertheless do occur, which means ATAs can mean the 
 difference between coexistence and extirpation of one species in some cases.
 
+%G4
+Fulfilling goal G4 of the Introduction (to provide an empirical example of species coexistence which highlights the role ATAs can play), Fig. \ref{fig:fig5} and Fig. \ref{fig:fig6} 
+show that the ATA contributions have magnitude comparable to the 
+magnitudes of other terms of the extended MCT decomposition and 
+parameters subspaces exist where ATA rescue occurs. 
+Within the investigated parameters of Fig.\ref{fig:fig5}, ATA contribution, $\Delta_i^{[EC]}$, 
+is always positive, even in cases where IGR is negative, and is almost always second to 
+the contribution of varying environment, $\Delta_i^{E}$, 
+including for the original coexistence parameters specified in Gonzalez Decamps.  
+Fig.\ref{fig:fig5} plots the various contributions of coexistence (see eq. \ref{eq:full_decomp}) for different varying parameters with two of the three parameters set constant in each plot. Increasing amplitude and mean temperature showed increasing trends in the IGR and decomposed quantities, while increasing periods showed less change. 
+
 \section{Discussion}\label{section:discussion}
 
 Outline 
@@ -810,8 +821,8 @@ margins, and the three quantities are plotted against $\mu_1-\mu_2$ to isolate p
 ($\psi_{\text{ATA}}(\delta,\sigma) \setminus \psi_{\lnot\text{ATA}}(\delta,\sigma)$) 
 or ATA exclusion ($\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$; 
 see Methods). Values of $\mu_1-\mu_2$ for which the IGR is positive but 
-$\text{IGR}-\Delta_i^{[E || C]}$ is negative correspond to ATA rescue (shaded yellow), whereas
-values of $\mu_1-\mu_2$ for which the IGR is negative but $\text{IGR}-\Delta_i^{[E || C]}$ is positive 
+$\text{IGR}-\Delta_i^{[EC]}$ is negative correspond to ATA rescue (shaded yellow), whereas
+values of $\mu_1-\mu_2$ for which the IGR is negative but $\text{IGR}-\Delta_i^{[EC]}$ is positive 
 correspond to ATA exclusion (shaded violet). Top panels also include domains
 of ATA rescue or exclusion, but they were too narrow to be highlighted by shading and are
 probably of minimal practical importance. 
@@ -839,7 +850,7 @@ coexistence and exclusion of the weaker competitor. Standard errors of plotted q
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig6.pdf}
-\caption{} \label{fig:fig6}
+\caption{The degree of ATA contribution to the IGR change with parameters of temperature oscillation. The ratio $\Delta_i^{[EC]}/IGR$ constitutes the degree of ATA contribution to thee IGR with larger magnitudes signifying larger ATA contributions. In this model, for the plotted parameters, positive $\Delta_i^{[EC]}/IGR$ only result from positive $\Delta_i^{[EC]}$ and positive $IGR$ and negative $\Delta_i^{[EC]}/IGR$ only result from positive $\Delta_i^{[EC]}$ and negative $IGR$. Thus, cyan areas indicate failure to coexist and magenta areas indicate coexistence with ATA contribution increasing with color intensity. The most intense areas of magenta indicate parameter subspaces where ATA rescue occurs. For simplicity and readability magnitudes of $\Delta_i^{[EC]}/IGR$ >1 are capped at $\abs{1}$. } \label{fig:fig6}
 \end{figure}
 
 \end{document}
