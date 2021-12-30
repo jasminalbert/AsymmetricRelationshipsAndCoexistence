@@ -571,16 +571,16 @@ $\mu_1 - \mu_2$ for all combinations of $\delta=0.2, 0.4, 0.6, 0.8$ and $\sigma=
 %***DAN: Methods paras here for G4, if we accomplish G4
 To achieve goal G4 from the Introduction, i.e., to provide an empirical example of species coexistence which highlights the role ATAs can play, we consider the coexistence of diatom species in chemostat batch experiments by \cite{Descamps_2005}. In their experiments, measurements of growth of \emph{Cyclotella pseudostelligera} and \emph{Fragilaria crotonensis} over a range of temperatures was used to parametrize a competitive resource model as follows:
 put model here
-\cite{Descamps_2005} used simulations to show that coexistence occurs with oscillating temperature fluctuations with parameters $\theta_0 = 18, a = 6, P = 60$d) and \cite{Ellner_2016, Ellner_2019} broke down their coexistence into the contrirbuting mechanisms. Here, we consider varying parameters of temperature fluctuations and further decompose the coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} to account for contributions of ATAs and ATA effects as described above, using decomposition defined by $E=...$ and $C=...$. 
+\cite{Descamps_2005} used simulations to show that coexistence occurs with oscillating temperature fluctuations with parameters $\theta_0 = 18, a = 6, P = 60$d and \cite{Ellner_2016, Ellner_2019} broke down their coexistence into the contrirbuting mechanisms. Here, we consider varying parameters of temperature fluctuations and further decompose the coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} to account for contributions of ATAs and ATA effects as described above. Our decomposition is defined by $E(t)=\theta(t)$, $C_j(t)=(K_j(t)+S(t))/S(t)$ and $r_j(E_j,C_j)=\frac{V_j(E)}{C_j} -D$. We first considered the scenario where \emph{F. crotonensis} is the invader and emph{C. pseudostelligera} is the resident to compute the coexistence decomposition for \emph{F. crotonensis}. 
 
-Like for G2, we first plotted the terms of equation \ref{eq:full_decomp} for the chemostat model with $E=$ and $C=$ against independent parameters of temperature oscillation, $\theta_0, a$, and $P$, a total of three plots. For each plot, we set two of the parameters constant at the original parameters which coexistence was found in \cite{Descamps_2005}, and let the remaining temperature parameter vary. %say which scenario this is in Ellner 2018
-We let $\theta_0$ vary between $[x,y]$, $a$ vary between $[x,y]$, and $P$ vary between $[x,y]$. 
+Like for G2, we first plotted the terms of equation \ref{eq:full_decomp} for the chemostat model against independent parameters defining temperature oscillation, $\theta_0, a$, and $P$, a total of three plots. For each plot, we set two of the parameters constant at the original parameters which coexistence was experimentally found in \cite{Descamps_2005}, and let the remaining temperature parameter vary. 
+We let $\theta_0$ vary in $[16,19]$, $a$ vary in $[1,6]$, and $P$ vary in $[20,120]$. 
 Relative importance of contributions was judged from the 
 plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
 the contributions of other mechanisms. 
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 
-To further explore the parameter space, we generated 2 dimensional surface plots which reveal the subsets of parameter space where coexistence is possible with ranging degrees of ATA contributions and where ATA rescue occurs. We evaluated coexistence under two varying parameters and indicated $\Delta_i^{[EC]}/\text{IGR}$, a ratio of ATA contribution to total IGR, with a color bar and contour lines. Positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values indicate failure of coexistence. Greater magnitudes of $\Delta_i^{[EC]}/IGR$ and higher color intensity indicate greater contribution of ATAs to the IGR and positive cases where $\Delta_i^{[EC]}>IGR$ indicate ATA rescue. 
+To further explore the parameter space, we generated two dimensional surface plots which reveal the subsets of parameter space where coexistence is possible with ranging degrees of ATA contributions and where ATA rescue occurs. We evaluated coexistence under two varying parameters and indicated $\Delta_i^{[EC]}/\text{IGR}$, a ratio of ATA contribution to total IGR, with a color bar and contour lines. Positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values indicate failure of coexistence. Greater magnitudes of $\Delta_i^{[EC]}/IGR$ and higher color intensity indicate greater contribution of ATAs to the IGR and positive cases where $\Delta_i^{[EC]}>IGR$ indicate ATA rescue. 
 
 All computations were done in R on an ordinary laptop. Complete computer codes for the project are stored at
 \url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence.git}.
@@ -658,7 +658,7 @@ as the contribution of EC covariance.
 In addressing this inconsistency, we have separated the mechanisms of storage effect into the contribution of ATA [to storage effect/coexistence] and the contribution of correlation \emph{per se} [to storage effect/coexistence].
 
 \underline{paragraph summarizing results of G2 and how it compares and builds on prior theory}
-Furthermore, we have shown not only that is it possible to decompose storage effect into the effect of correlation \emph{per se} and the effect of ATAs, but this new term that holds the contribution of not only the correlation but the structure of the correlation is a non-negligible term, in the lottery model. Our result adds coexistence to the list of ecological theory/phenomena that ATAs have been found to be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}. Seemingly consistent with fluctuation dependent mechanisms, as $\sigma$ increased, so did the the magnitudes of $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$.
+Furthermore, we have shown not only that is it possible to decompose storage effect into the effect of correlation \emph{per se} and the effect of ATAs, but this new term that holds the contribution of not only the correlation but the structure of the correlation is a non-negligible term, in a simple lottery model. Our result amends coexistence to the list of ecological theory and phenomena that ATAs have been found to be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}. Seemingly consistent with fluctuation dependent mechanisms, as $\sigma$ increased, so did the the magnitudes of $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$.
 %Higher sigma means a more fluctuating and variable environment. Then, if environmental fluctuations become more variable, the effect of ATAs becomes more important and non-negligible (rescue or exclusion). 
 %Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
 
@@ -669,6 +669,9 @@ the ATA present is a perfect correlation is exactly one half of the relationship
 but varying degrees of ATA may produce a similar result as well. 
 %maybe the above sentence should go in caveats/assumptions paragraph 
 ATA specialist? Does this go in this paragraph
+
+
+The parameter subspaces of ATA rescue and ATA exclusion suggest that some species may be ATA specialists  - only persisting in habitat patches where ATAs contribute to its coexistence. 
 %I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
 %where there are atas. Could have a discussion para on it, if it does not make the results. Or both. BTW, ATA exclusion has a 
 %similar thing going on - a species excluded by ATAs (and competition) can only live on the portions of the landscape where
@@ -677,6 +680,9 @@ ATA specialist? Does this go in this paragraph
 
 
 \underline{paragraph summarizing results of G4 and how it compares and builds on prior theory}
+The example case exapanding upon coexistence decompositions of the \cite{Descamps_2005} chemostat experiment support our earlier findings that ATA contributions are not only non-zero, but are non-neglible and contribute meaningfully to coexistence. 
+
+Our expansion allows for the parsing of storage effects into contribution from a pure symmetrical correlation and structures beyond symmetric correlation. Previous studies report storage effect as a contribution to coexistence of EC covariance; yet compute it as the contribution of the EC relationship (covariance and beyond; symmetric and asymmetric). 
 
 \underline{how results apply to or inform patterns or management questions in real life}
 ATA specialists?
