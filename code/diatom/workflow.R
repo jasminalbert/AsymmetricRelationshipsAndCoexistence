@@ -1,3 +1,4 @@
+setwd("~/Documents/AsymmetricRelationshipsAndCoexistence/code")
 source("diatom/DataAndVKQfuns.R")
 source("diatom/partialSharp_fxns.R")
 require(deSolve)
@@ -62,8 +63,9 @@ getDelt <- function(a, P, Tbar, time, sims){
 	ep1 <- getep3(a, P, Tbar, time, reps=sims, sp=1)
 	ep2 <- getep3(a, P, Tbar, time, reps=sims, sp=2)
 	Delta1 <- ep1-ep2
-	Delta1$IGR <- sum(Delta1)
+	Delta1$IGR <- sum(Delta1[,-7])
 	Delta1$map <- Delta1$epsECbrk/Delta1$IGR
+	Delta1$time <- ep1$time
 	return(Delta1)
 }
 
@@ -86,7 +88,7 @@ mapspace <- function(parmlist, sims, time){
 			for (k in 1:length(Tb)){
 				Delta1 <- getDelt(a[i], P[j], Tb[k], time, sims)
 				
-				res[r,] <- c(a[i], P[j], Tb[k], sum(Delta1), Delta1$epsECbrk, Delta1$time)
+				res[r,] <- c(a[i], P[j], Tb[k], Delta1$IGR, Delta1$epsECbrk, Delta1$time)
 				print(c(r,i,j,k))
 				r <- r+1
 			}	
