@@ -571,8 +571,9 @@ $\mu_1 - \mu_2$ for all combinations of $\delta=0.2, 0.4, 0.6, 0.8$ and $\sigma=
 %***DAN: Methods paras here for G4, if we accomplish G4
 To achieve goal G4 from the Introduction, i.e., to provide an empirical example of species coexistence which highlights the role ATAs can play, we consider the coexistence of diatom species established by chemostat batch experiments \citep{Descamps_2005}. \citep{Descamps_2005} used measurements of growth of \emph{Cyclotella pseudostelligera} and \emph{Fragilaria crotonensis} over a range of temperatures to parametrize a competitive resource model as follows:
 put model here
-Via simulations, \cite{Descamps_2005} showed that coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} occurs with oscillating temperature fluctuations, $\theta(t)=\theta_0 (t) +  a\sin(2\pi t/P)$, defined by parameters $\theta_0 = 18, a = 6, P = 60$d. \cite{Ellner_2016, Ellner_2019} broke down their coexistence into the contrirbuting mechanisms, and here, we consider varying parameters of temperature fluctuations and further decompose the coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} to account for contributions of ATAs and ATA effects as described above. Our decomposition is defined by $E(t)=\theta(t)$, $C_j(t)=(K_j(t)+S(t))/S(t)$ and $r_j(E_j,C_j)=\frac{V_j(E)}{C_j} -D$. We first considered the scenario where \emph{F. crotonensis} is the invader and emph{C. pseudostelligera} is the resident to compute the coexistence decomposition for \emph{F. crotonensis}. 
+Via simulations, \cite{Descamps_2005} showed that coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} occurs with oscillating temperature fluctuations, $\theta(t)=\theta_0 (t) +  a\sin(2\pi t/P)$, defined by parameters $\theta_0 = 18, a = 6, P = 60$d. \cite{Ellner_2016, Ellner_2019} broke down their coexistence into the contrirbuting mechanisms, and here, we consider varying parameters of temperature fluctuations and further decompose the coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} to account for contributions of ATAs and ATA effects as described above. Our decomposition is defined by $E(t)=\theta(t)$, $C_j(t)=(K_j(t)+S(t))/S(t)$ and $r_j(E_j,C_j)=\frac{V_j(E)}{C_j} -D$. Thus in our exploration, environmental fluctuation is temperature fluctuation. We first considered the scenario where \emph{F. crotonensis} is the invader and emph{C. pseudostelligera} is the resident to compute the coexistence decomposition for \emph{F. crotonensis}. 
 %put reverse in sup mat?
+%do we need to explain how we separated the asymmetries using the sims??
 Like for G2, we first plotted the terms of equation \ref{eq:full_decomp} for the chemostat model against independent parameters defining temperature oscillation, $\theta_0, a$, and $P$, a total of three plots. For each plot, we set two of the parameters constant at the original parameters which coexistence was experimentally found in \cite{Descamps_2005}, and let the remaining temperature parameter vary. 
 We let $\theta_0$ vary in $[16,19]$, $a$ vary in $[1,6]$, and $P$ vary in $[20,120]$. 
 Relative importance of contributions was judged from the 
@@ -638,14 +639,14 @@ the contribution of varying environment, $\Delta_i^{E}$,
 including for the original coexistence parameters specified in Gonzalez Decamps.  
 Fig.\ref{fig:fig5} plots the various contributions of coexistence (see eq. \ref{eq:full_decomp}) for different varying parameters with two of the three parameters set constant in each plot. Increasing amplitude and mean temperature showed increasing trends in the IGR and decomposed quantities, while increasing periods showed less change. 
 
-Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>IGR$. To preserve simplicity and readibility of the plots, |$\Delta_i^{[EC]}/\text{IGR}$>1| were capped at |1|. 
+Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>IGR$. To preserve simplicity and readibility of the plots, $|\Delta_i^{[EC]}/\text{IGR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ tended to occur as the IGR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig.\ref{fig:fig5}, we see in Fig.\ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{IGR}$ changes from negative to positive. The effect of varying periodicity of environmental fluctuations is... 
 
 \section{Discussion}\label{section:discussion}
 
 Outline 
 
 \underline{Paragraph summarizing results of G1 and how it compares and builds on prior theory.} 
-We provided a farther tertiary decomposition to MCT, 
+We provided a further tertiary decomposition to MCT, 
 extending the framework put forward by \citep{Ellner_2019}. 
 We decompose the storage effect into two new terms, 
 $\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, the contribution of correlation \emph{per se}. 
@@ -658,10 +659,29 @@ All aspects and of the relationship between environmental response and competiti
 Thus, it is misleading to describe the contribution of the whole EC relationship 
 as the contribution of EC covariance.
 In addressing this inconsistency, we have separated the mechanisms of storage effect into the contribution of ATA [to storage effect/coexistence] and the contribution of correlation \emph{per se} [to storage effect/coexistence].
+%Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
+%via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
+%study this new term in the decomp. Need to study a bit to substantiate this properly, or get Steve Ellner help.
+
+%Need a para about multi-species models - how would things change? One difference is there are more different
+%things that might have asymmetric tail association patterns. See the section "General Theory" of Ellner et al 2019 - might
+%just want write a short para saying it seems like it should be possible to generalize what we've done along those lines.
+We note that our expansion, like the decomposition of \cite{Ellner_2019} is generalizable to multi-species and multi-driver models. Because asymmetric tail associations exist in many ecological variables \citep{Ghosh_2020_AER}, the more specified approach of considering unique drivers of coexistence rather than E and C and the ability to consider more than two drivers, could produce interesting results?? 
 
 \underline{paragraph summarizing results of G2 and how it compares and builds on prior theory}
-Furthermore, we have shown not only that is it possible to decompose storage effect into the effect of correlation \emph{per se} and the effect of ATAs, but this new term that holds the contribution of not only the correlation but the structure of the correlation is a non-negligible term, in a simple lottery model. Our result amends coexistence to the list of ecological theory and phenomena that ATAs have been found to be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}. Seemingly consistent with fluctuation dependent mechanisms, as $\sigma$ increased, so did the the magnitudes of $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$.
-%Higher sigma means a more fluctuating and variable environment. Then, if environmental fluctuations become more variable, the effect of ATAs becomes more important and non-negligible (rescue or exclusion). 
+Furthermore, we have shown not only that is it possible to decompose storage effect into the effect of correlation \emph{per se} and the effect of ATAs, but this new term that holds the contribution of not only the correlation but the structure of the correlation is a non-negligible term, in a simple lottery model. Our result amends coexistence to the list of ecological theory and phenomena that ATAs have been found to be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}. 
+
+Seemingly consistent with fluctuation dependent mechanisms, 
+as $\sigma$, the variation in the environment, increased, 
+so did the the magnitudes of $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$.
+This may suggest that, if environmental fluctuations become more variable, 
+the effect of ATAs becomes more important and non-negligible (rescue or exclusion). 
+{Might be interesting to study how tail associations of environmental variables are changing and how this might 
+alter competition, coexistence, and the maintenance of biodiversity generally.} 
+%This would be a whole potential 
+%research program which presumably would start with a more detailed study of how tail associations of environmental
+%variables may be changing under global change.
+
 %Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
 
 \underline{paragraph summarizing results of G3 and how it compares and builds on prior theory}
@@ -691,6 +711,8 @@ ATA specialists?
 climate change and ATA
 
 \underline{caveats/assumptions that could change result}
+We used the most extreme version of asymmetric noise, i.e., perfect correlation changing to very low correlation at exactly the half point of the distribution, and a simple lottery model.  
+
 
 \underline{conclude: how ur work answers/informs the broad question from the intro and lay out 2-3 key priorities for next research on this question}
 We provided another showcase of the importance of ATAs in ecology, 
@@ -702,18 +724,9 @@ Hope to see this tertiary decomposition of MCT be applied to empirical research.
 More investigations should be done to explore implications of ATAs 
 to other ecological theories. 
 
-%Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
-%via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
-%study this new term in the decomp. Need to study a bit to substantiate this properly, or get Steve Ellner help.
 
-%Need a para about multi-species models - how would things change? One difference is there are more different
-%things that might have asymmetric tail association patterns. See the section "General Theory" of Ellner et al 2019 - might
-%just want write a short para saying it seems like it should be possible to generalize what we've done along those lines.
 
-%Might be interesting to study how tail associations of environmental variables are changing and how this might 
-%alter competition, coexistence, and the maintenance of biodiversity generally. This would be a whole potential 
-%research program which presumably would start with a more detailed study of how tail associations of environmental
-%variables may be changing under global change.
+
 
 %Search for comments in the rest of the text indicating things that need to be done in the Discussion
 
