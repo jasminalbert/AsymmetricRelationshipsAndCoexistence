@@ -643,22 +643,56 @@ Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which co
 
 \section{Discussion}\label{section:discussion}
 
-Outline 
-
-\underline{Paragraph summarizing results of G1 and how it compares and builds on prior theory.} 
-We provided a further tertiary decomposition to MCT, 
+We produced and applied a mathematical extension to MCT that, for the first time, 
+considers ATAs for the coexistence of species and maintenance of biodiversity. 
+The results of our application to a simple lottery model and 
+to a competitive diatom model show that the contribution of ATAs to coexistence 
+is non-negligible and meaningfully contributes to the coexistence of species. 
+For some parameters, the contribution of ATAs was the driving mechanism of 
+coexistence – the IGR would be negative without it – deeming the scenario a case of 
+ATA rescue. For other parameter values ATA exclusion occurs where ATAs are the 
+driving mechanism of the failure of coexistence and the lack of ATAs would result in 
+a positive IGR. 
+Subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists}.
+Our results reinforce that common methods of correlation fail to reflect and include 
+important information on the structure of the relationship between variables and amends
+ coexistence to the list of ecological theory and phenomena that ATAs have been found to 
+ be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}.  
+ 
+ We provided a further tertiary decomposition to MCT, 
 extending the framework put forward by \citep{Ellner_2019}. 
 We decompose the storage effect into two new terms, 
-$\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, the contribution of correlation \emph{per se}. 
+$\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, 
+the contribution of correlation \emph{per se}. 
 Previously, storage effects were described as the contribution
-of covariance between the environment and competition to coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019}. 
+of covariance between the environment and competition to 
+coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019}. 
 However, the description of storage effects as the covariance between drivers
 is a misnomer in terminology, and we propose that storage effects, instead, 
 should be described as the contribution of the relationship between drivers. 
-All aspects and of the relationship between environmental response and competitive pressure are not fully captured by only the covariance between them because a measure of covariance does not capture the structure of associativity throughout the distribution of the relationship and any asymmetries there may be. 
+All aspects and of the relationship between environmental response and competitive pressure 
+are not fully captured by only the covariance between them because a measure of covariance 
+does not capture the structure of associativity throughout the distribution of the relationship 
+and any asymmetries there may be. 
 Thus, it is misleading to describe the contribution of the whole EC relationship 
 as the contribution of EC covariance.
-In addressing this inconsistency, we have separated the mechanisms of storage effect into the contribution of ATA [to storage effect/coexistence] and the contribution of correlation \emph{per se} [to storage effect/coexistence].
+In addressing this inconsistency, we have separated the mechanisms of storage effect 
+into the contribution of ATA [to storage effect/coexistence] and the contribution of 
+correlation \emph{per se} [to storage effect/coexistence].
+
+Consistent with the mechanisms of biodiversity maintenance and specifically 
+fluctuation-dependent mechanisms (cite chesson), higher values of environmental fluctuation 
+resulted in higher IGR’s. Both of our new terms, $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$ 
+also increased in magnitude with increased environmental fluctuation. Increased environmental 
+fluctuation is reflected in increased $\sigma$ in the lottery model and increased $a$ in the 
+competitive diatom model.   mean temp and period? 
+
+Distinct increase in contribution of ATAs to coexistence as environmental fluctuations increase may suggest that ATAs may become more important to consider for coexistence and possibly other ecological phenomena as the environment becomes more variable, a consequence of climate change and extreme climatic events. 
+
+Outline 
+
+\underline{Paragraph summarizing results of G1 and how it compares and builds on prior theory.} 
+
 %Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
 %via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
 %study this new term in the decomp. Need to study a bit to substantiate this properly, or get Steve Ellner help.
@@ -669,7 +703,7 @@ In addressing this inconsistency, we have separated the mechanisms of storage ef
 We note that our expansion, like the decomposition of \cite{Ellner_2019} is generalizable to multi-species and multi-driver models. Because asymmetric tail associations exist in many ecological variables \citep{Ghosh_2020_AER}, the more specified approach of considering unique drivers of coexistence rather than E and C and the ability to consider more than two drivers, could produce interesting results?? 
 
 \underline{paragraph summarizing results of G2 and how it compares and builds on prior theory}
-Furthermore, we have shown not only that is it possible to decompose storage effect into the effect of correlation \emph{per se} and the effect of ATAs, but this new term that holds the contribution of not only the correlation but the structure of the correlation is a non-negligible term, in a simple lottery model. Our result amends coexistence to the list of ecological theory and phenomena that ATAs have been found to be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}. 
+Furthermore, we have shown not only that is it possible to decompose storage effect into the effect of correlation \emph{per se} and the effect of ATAs, but this new term that holds the contribution of not only the correlation but the structure of the correlation is a non-negligible term, in a simple lottery model. 
 
 Seemingly consistent with fluctuation dependent mechanisms, 
 as $\sigma$, the variation in the environment, increased, 
