@@ -163,6 +163,7 @@ MCT breaks down coexistence into the contributions of various mechanisms, with n
 in competition'' and ``storage effects'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2010, Adler_2006}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Narawani_2013, Descamps_2005, Caceres_1997}, and corals \citep{Alvarez-Noriega_2020}. 
+%***DAN: Jasmin, Descamps_2005 does not appear in refs.bib, I think. Please add it there or subtract the callout here, whatever is most appropriate.
 Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
 
 %Intro to ATAs
@@ -175,10 +176,10 @@ Pearson correlation, but nevertheless demonstrate very different types of associ
 of association are also often used, in addition to correlations
 (e.g., various forms of regression), but correlations are extremely common, and other
 methods also reveal only a small portion of the information content of the relationship between variables \citep{Nelsen2006}.
-The variables in Fig. \ref{fig:noise}A,C 
+The variables in Fig. \ref{fig:noise}a,c 
 exhibit what we have previously referred to as ``asymmetric tail association'' [ATA; \cite{Ghosh_2020_AER}], i.e., 
 they are more strongly related to each
-other in the left (Fig. \ref{fig:noise}A, termed ``left-tail association'') or right (Fig. \ref{fig:noise}C,
+other in the left (Fig. \ref{fig:noise}a, termed ``left-tail association'') or right (Fig. \ref{fig:noise}c,
 termed ``right-tail association'') portions of the variables' distributions. Although ATAs 
 and related ideas had previously been seldom 
 considered in ecology (but see \citealp{Anderson_2019, deValpine_2014, Popovic_2019}), 
@@ -202,7 +203,7 @@ Second, growth responses to the environment must be species-specific, so that di
 same environmental conditions to be optimal. Third, a buffering mechanism must exist whereby species limit the influence of competition
 in times when the environment is poor. Dormant stages such as seed banks are an
 example buffering mechanism \citep{Chesson_2012}. 
-When present, these three factors combine so that EC covariance provides a relative benefit to whatever species is currently rare.
+When present, these three factors combine so that EC covariance provides a relative benefit to whatever species are currently rare.
 Importantly, storage effects can be quantified by measuring to what extent EC covariance contributes to differences between 
 invader and resident growth rates \citep{Chesson_1994,Ellner_2016}.
 Thus ATAs may, in principle, influence storage effects simply because storage effects hinge on EC covariation, and ATAs, when they 
@@ -235,8 +236,8 @@ simulations and shows that ATAs substantially influenced aspects of species coex
 %Climate change may alter ATAs of coexistence-relevant ATAs
 An additional motivation for quantifying the importance of ATAs for species coexistence is that there is reason to believe climate change may
 alter ATAs of environmental variables which impact coexistence, as follows.
-It is well known that climate change can or may alter the intensity, duration, extent and frequency of extreme environmental events, including
-heat waves, floods, hurricanes and fires \citep{Jentsch_2007, Meehl_2004, Ummenhofer_2017}.  
+It is well known that climate change can alter the intensity, duration, extent and frequency of extreme environmental events, including
+heat waves, floods, hurricanes and fires \citep{Jentsch_2007, Meehl_2004, Ummenhofer_2017, Lyon2019, Keelings2020}.  
 If extreme events are also longer lasting, then the nature of the covariation between phenologically separated environmental signals 
 may be modified by changes in extreme climatic events; in particular, ATAs between such variables may be altered. 
 For instance, imagine a case in which early spring precipitation influences the growth of a plant species, A,
@@ -265,6 +266,8 @@ population growth of distinct species may be driven by rainfall signals in disti
 of the growing season. Thus all the ingredients seem to be present by which climatic changes may
 alter ATAs between environmental variables which are relevant for the coexistence
 of the example species, motivating our efforts, here, to perform a detailed study of how ATAs can influence competition.
+
+%***DAN: Dan made it to here on 2022 01 09 editing, continue tomorrow.
 
 %Review of lit on changes in means and variances of climate signals and associated impacts on coexistence
 Although, to our knowledge, the potential importance of climatic changes in ATAs for species coexistence has 
@@ -636,7 +639,7 @@ the contribution of varying environment, $\Delta_i^{E}$,
 including for the original coexistence parameters specified in Gonzalez Decamps.  
 Fig.\ref{fig:fig5} plots the various contributions of coexistence (see eq. \ref{eq:full_decomp}) for different varying parameters with two of the three parameters set constant in each plot. Increasing amplitude and mean temperature showed increasing trends in the IGR and decomposed quantities, while increasing periods showed less change. 
 
-Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>IGR$. To preserve simplicity and readibility of the plots, $|\Delta_i^{[EC]}/\text{IGR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ tended to occur as the IGR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig.\ref{fig:fig5}, we see in Fig.\ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{IGR}$ changes from negative to positive. The effect of varying periodicity of environmental fluctuations is... 
+Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>IGR$. To preserve simplicity and readibility of the plots, $|\Delta_i^{[EC]}/\text{IGR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ tended to occur as the IGR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig. \ref{fig:fig5}, we see in Fig. \ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{IGR}$ changes from negative to positive. The effect of varying periodicity of environmental fluctuations is... 
 
 \section{Discussion}\label{section:discussion}
 
@@ -810,36 +813,47 @@ Wildlife Delta Science Program.
 \begin{figure}
 \includegraphics[width=.25\textwidth]{../results_figs/fig1_vertical.pdf}
 \caption{Simple example of bivariate random variables with standard normal marginals showing
-alternative patterns of association in the tails. A) is ``left-tail 
-associated,'' B) is symmetric, and C) is ``right-tail associated'' noise. All three cases have 
-the same Pearson correlation, $\rho$, up to sampling variation, yet show very different 
-patterns of association. We used asymmetrically tail associated cases which are perfectly 
-correlated in the lower (A)  or upper (C) halves of the distributions, though it is also 
+alternative patterns of association in the tails. The varables in (a) are ``left-tail 
+associated,'' those in (b) are symmetrically associated, and those in (c) are ``right-tail associated''. All three cases have 
+the same Pearson correlation, $\rho$, up to sampling variation, so Pearson correlation does not identify these very different 
+patterns of association. We used asymmetrically tail associated cases (a, c) which are perfectly 
+correlated in the lower or upper halves of the distributions, though it is also 
 possible to generate asymmetrically tail associated noise with imperfect correlations in 
 both halves of the distributions \citep{Ghosh_2020_AER,Nelsen2006}. The variables $(b_1,b_2)$ described in
 the Introduction and Methods were obtained by generating 
 noise as pictured and then multipling by $\sigma$ and adding $(\mu_1,\mu_2)$.\label{fig:noise}}
 \end{figure}
-%***DAN: Dan has edited this caption at least once.
+%***DAN: Jasmin, I appologize for the following pedantic request, I explain below why it is necessary. Can you please change panel
+%labels on this and all figure from the format "A", "B", "C" to the format "(a)", "(b)", "(c)" (i.e., lower case panel labels
+%with parentheses around them). The reason for this is that this is Ecology Letters style. If we do not follow their style then their
+%copy editors will make the change for us. I would prefer not to have copy editors messing around with our figures. Though Ecology Letters
+%copy editors are usually pretty good, I have had many bad experiences with copy editors, generally, and I have had at least a few bad
+%experiences with Ecology Letters copy editors. What happens is, they introduce errors into a paper while typesetting it, and one has to
+%check their work very carefully to avoid those mistakes going to press. It's hard to blame them since it must be the most boring job 
+%in the world, but anyway we do not want to have errors in our published paper as a result. The best way to prevent them introducing 
+%errors into our figures is to not given them any reason to make any changes at all to our figures. The same change has to be 
+%made to all main text and sup mat figures, and then all callouts to figures have to also be so changed, please. I will do these
+%as much as possible while I edit, but if you could please also check it will help, and I am relying on you to change the panel labels
+%in the figured themselves. I am sorry again for the tedium, here. Maybe some day they will improve the publication process so we do not 
+%have to worry about nonsense like this.
 
 \begin{figure}
 \includegraphics[width=.75\textwidth]{../results_figs/fig2.pdf}
 \caption{Our simulated lottery-model populations influenced by asymmetric tail associations (ATAs) recovered from low densities less often and 
 spent more time in a state of one-species dominance, demonstrating that ATAs can influence aspects of 
-species coexistence. Panel A shows species 1, from the lottery 
-model subject to environmental noise with symmetric tail associations (Fig. \ref{fig:noise}B). Panel B shows species 1 from the 
-same model with the same parameters, but subject to noise with left-tail association (Fig. \ref{fig:noise}A).
+species coexistence. Panel (a) shows species 1, from the lottery 
+model subject to environmental noise with symmetric tail associations (Fig. \ref{fig:noise}b). Panel (b) shows species 1 from the 
+same model with the same parameters, but subject to noise with left-tail association (Fig. \ref{fig:noise}a).
 Both simulations were run for \Sexpr{M} time steps, though only the first $1000$ are shown. Periods of 
 ``noticeable coexistence'' of the species, defined to be periods when both species each comprise at least $5\%$ of 
 total abundance, are marked in grey. The average duration of periods of noticeable coexistence 
-was \Sexpr{fig2$coSym} time steps for panel A and \Sexpr{fig2$coATA} for panel B, over the full length of the simulations; 
+was \Sexpr{fig2$coSym} time steps for panel (a) and \Sexpr{fig2$coATA} for panel (b), over the full length of the simulations; 
 whereas the average duration of periods of
-one-species dominance was \Sexpr{fig2$domSym} time steps for panel A and \Sexpr{fig2$domATA} for B. Thus, while periods of 
+one-species dominance was \Sexpr{fig2$domSym} time steps for panel (a) and \Sexpr{fig2$domATA} for (b). Thus, while periods of 
 noticeable coexistence were of similar duration for the two scenarios, periods of one-species dominance were much longer,
-on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1] + fig2$params[1]}$ and $\mu_2 = \Sexpr{-(fig2$params[1])}$, $\sigma = \Sexpr{fig2$params[2]}$, and $\delta = \Sexpr{fig2$params[3]}$. See Introduction for model details. 
+on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1] + fig2$params[1]}$ and $\mu_2 = \Sexpr{-(fig2$params[1])}$, $\sigma = \Sexpr{fig2$params[2]}$, and $\delta = \Sexpr{fig2$params[3]}$. See Introduction and Fig. \ref{fig:noise} caption for model details. 
 \label{fig:pedagog}}
 \end{figure}
-%***DAN: Dan has edited this caption
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig3.pdf}
@@ -859,7 +873,6 @@ analogous plot (SI Fig. \ref{SI-fig:fig3_alt}) was generated
 using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. Though results differed
 in some details, main conclusions were the same. \label{fig:fig3}}
 \end{figure}
-%***DAN: Dan has edited this caption
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig4.pdf}
