@@ -123,32 +123,29 @@ se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
 
 \maketitle
 
+%Currently 148 of an allowed 150 words for Ecology Letters
 \begin{abstract}
-\noindent Understanding the coexistence of competing species is a topic of very broad 
-interest in ecology. The modern coexistence
-theory (MCT) of Chesson identifies several mechanisms of species coexistence,
+\noindent Species coexistence attracts wide 
+interest in ecology. Modern coexistence
+theory (MCT) identifies mechanisms of coexistence,
 one of which, storage effects, hinges on relationships between fluctuations
-in environmental and competitive pressures on species populations. However, such relationships
-have typically been measured using covariance methods, which do not account for 
-the possibility that environmental and competitive influences may be more correlated
-when these influences are strong than when they are weak, or vice versa. 
-Recent work showed that such `asymmetric tail associations' (ATAs) are extremely common
-between ecological variables, and are important for a wide range of phenomena including 
-extinction risk and the stability of ecosystem functioning. 
-Here we extend the MCT to take into account the influence of ATAs. Storage
-effects can be decomposed into two components, one of which quantifies the
-influence of ATAs on species coexistence, and is a novel contribution of this study; and 
-the other of which represents
-the influence of environment-competition correlation \emph{per se}, 
-without the influence of ATAs. Simulations of a simple model
-%and an empirical example
-illustrate that ATA influences on coexistence can be comparable in magnitude to other
-mechanisms of coexistence, and that the presence or absence of ATAs can make the 
-difference between species coexisting and competitive exclusion. 
+in environmental and competitive pressures. However, such relationships
+are typically measured using covariance, which does not account for 
+the possibility that environmental and competitive influences may be more related to each other
+when they are strong than when weak, or vice versa. 
+Recent work showed that such `asymmetric tail associations' (ATAs) are common
+between ecological variables, and are important for 
+extinction risk, ecosystem stability, and other phenomena. 
+We extend the MCT to account for ATAs. Storage
+effects are decomposed to show the influence of ATAs. Simulations of a simple model
+and an empirical example using diatoms
+illustrate that ATA influences can be comparable in magnitude to other
+mechanisms of coexistence, and that ATAs can make the 
+difference between species coexistence and competitive exclusion. 
 \end{abstract}
 
 %***Add to these
-\keywords{asymmetric tail association, biodiversity, coexistence, competition, modern coexistence theory, storage effects}
+\keywords{asymmetric tail association, biodiversity, coexistence, competition, competitive exclusion, modern coexistence theory, niche differentiation, storage effects}
 
 \section{Introduction}\label{section:introduction}
 
