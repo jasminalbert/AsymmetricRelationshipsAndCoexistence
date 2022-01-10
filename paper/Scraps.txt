@@ -1,6 +1,8 @@
 To do list, not cmprehensive:
 1) add line numbers to both docs
-
+2) update the readme
+3) make a sepaarate clone and make sure it all runs in that clone
+4) check through the new parts of Jasmin's code, for G4
 
 
 %[As we know], anthropogenic climate change threatens almost all aspects of life including via extreme climatic events, which have only become more extreme - increasing in magnitude and frequency - and have contributed to both the increase in global means as well as an increase in environmental variability (citation). 
