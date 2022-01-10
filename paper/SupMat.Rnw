@@ -138,7 +138,7 @@ For the lottery model, for $i \neq j$, we have
 \end{align}
 Both $\sC_{i \bs i}$ and $\sC_{j \bs i}$ are strictly monotonic functions of $B_j$, so the function
 $B_j \mapsto \sC_{j \bs i}$ is invertible, and using its inverse provides an expression of $\sC_{i \bs i}$ 
-in terms of $\sC_{j \bs i}$. One could write this expression explicitly and then differentiate it calculate $q_{ij}$,
+in terms of $\sC_{j \bs i}$. One could write this expression explicitly and then differentiate it to calculate $q_{ij}$,
 but we instead compute $q_{ij}$ through implicit differentiation:
 \begin{align}
 \frac{\partial \sC_{i \bs i}}{\partial \sC_{j \bs i}} &= \left. \frac{\partial \sC_{i \bs i}}{\partial B_j} \middle/ \frac{\partial \sC_{j \bs i}}{\partial B_j} \right. \\
@@ -151,12 +151,13 @@ q_{ij} &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{\overline{B}_j}}{1
 \end{align}
 as stated in the main text. 
 
-%***DAN: Change the below paragraph if needed. Some reasons it might be needed: Steve joins as a coauthor;
+%***DAN: Change the below paragraph if needed. Some reasons it might be needed: Steve joins as a coauthor - easy
+%just means a change in wording at the top bit;
 %Steve reads this and thinks it makes sense to change it because something is factually or presentationally 
 %sub-optimal; or Dan or Jasmin actually develops a more rigorous understanding of scaling factors and based
 %on that thinks something here is sub-optimal. Anyway, the "do both" approach seems like it can't go wrong,
 %especially if Steve's prediction is correct that it won't make much difference.
-%***DAN: You probably need to spend a bit more time with the cited papers to better understand this. 
+%***DAN: Dan, you probably need to spend a bit more time with the cited papers to better understand this. 
 We also use $q_{ij}=1$ as an alternative value, based on communication with Steve Ellner, for the following reasons.
 First, as discussed in the supporting information of \cite{Ellner_2016}, and as further elaborated by 
 \cite{Barabas_2018}, it takes very special circumstances for the scaling factors to exist and be unique, 
@@ -466,8 +467,6 @@ $E_j$ and $C_{j \bs i}$ are perfectly linearly related to each other. Continuing
 &= - \E[\ln(1-\delta+\delta \exp(\sigma(\tilde{b}_j^\shp - \tilde{b}_j)))],\label{eq:decomp:j:EChard}
 \end{align}
 where again $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent of each other.
-
-
 This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$ for the lottery model.
 
 Using the above formulas, we observe that all the terms of the decomposition of $\olr_{i \bs i}$ depend on 
