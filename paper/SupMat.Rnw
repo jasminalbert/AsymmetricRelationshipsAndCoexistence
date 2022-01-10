@@ -20,6 +20,13 @@
 \usepackage{tikz}
 \usepackage{accents}
 
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{section}{0}
+\renewcommand{\thesection}{S\arabic{section}}
+
 %new commands and so on
 \DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
 
@@ -37,7 +44,7 @@
 \newcommand{\sC}{\mathscr{C}} %for a script C like Ellner et al (2016), Ecol Lett
 \newcommand{\bs}{\backslash}
 
-%attempt 3 at nat and sharp (see Paper.Rnw for attempts 1 and 2, which I decide not to use)
+%attempt 3 at nat and sharp (see Paper.Rnw for attempts 1 and 2, which I decided not to use)
 \newcommand{\nat}{%
 \text{\hspace{-1.5pt}
 \begin{tikzpicture}[scale=1.8]%
