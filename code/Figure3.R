@@ -62,7 +62,7 @@ for (m in 1:nm){
   for (d in 1:nd){
     res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], xaxt="n"))
     axis(1, labels=ifelse(n>12, yes=TRUE, no=FALSE), tick=TRUE)
-    mtext(LETTERS[n], side=3, line=-1.45, at=0.5)
+    mtext(paste0("(", letters[n],")"), side=3, line=-1.45, at=0.7)
     
     if(n<5){
       mtext(paste(delta[d]), side=3, line=0.75, font=2, cex=0.8)
@@ -118,7 +118,7 @@ for (m in 1:nm){
   for (d in 1:nd){
     res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], qij=TRUE, xaxt="n"))
     axis(1, labels=ifelse(n>12, yes=TRUE, no=FALSE), tick=TRUE)
-    mtext(LETTERS[n], side=3, line=-1.45, at=0.5)
+    mtext(paste0("(", letters[n],")"), side=3, line=-1.45, at=0.7)
     
     if(n<5){
       mtext(paste(delta[d]), side=3, line=0.75, font=2, cex=0.8)

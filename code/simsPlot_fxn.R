@@ -54,11 +54,11 @@ simsPlot <- function(noise_loc, mudif, delta, sigma, start=1, end=500){
     
   co.pPlot(copS, popS, start, end)
   title(main="without ATA", line=0)   
-  mtext("A", side=3, line = -.85, at=-16)
+  mtext("(a)", side=3, line = -.85, at=-16)
   
   co.pPlot(copA, popA, start, end)
   title(main="with ATA", line=0)
-  mtext("B", side=3, line = -.85, at=-16)
+  mtext("(b)", side=3, line = -.85, at=-16)
   
   title(xlab="time", ylab="population of species 1", outer=T, line=-0.5)
   

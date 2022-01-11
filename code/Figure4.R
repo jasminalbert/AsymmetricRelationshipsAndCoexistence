@@ -62,7 +62,7 @@ for (s in 1:ns){
     res_loc <- paste(fig4numres_loc,m,".RDS", sep="")
     res <- append(res, list(dePlot2(noise_loc, res_exist=ifelse(file.exists(res_loc), yes=TRUE, no=FALSE), res_loc=res_loc, mudif_4,sigma[s], delta[d], xaxt="n")))
     axis(1, labels=ifelse(m>12, yes=TRUE, no=FALSE), tick=TRUE)
-    mtext(LETTERS[m], side=3, line=-1.45, at=-4.5, adj=1)
+    mtext(paste0("(", letters[m],")"), side=3, line=-1.45, at=-4.5, adj=1)
     
     if(m<5){
       mtext(paste(delta[d]), side=3, line=0.75, font=2, cex=0.8)

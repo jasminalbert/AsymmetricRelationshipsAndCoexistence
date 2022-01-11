@@ -11,7 +11,7 @@ load(noise_loc)
 
 nt <- c("l", "s", "r") #nt = noise type
 blue <- rgb(0,0,0.545,0.3) #col2rgb("darkblue")
-
+labels <- c("(a)","(b)", "(c)")
 ##############################################################################################
 pdf(fig1_vertical_loc, width=2.8, height=7)
 
@@ -36,7 +36,7 @@ for (panel in 1:3){
   plot(noise[1:800,1], noise[1:800,2], col=blue, 
        ylab=NA, xlab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
   text(x=4,y=-3.8,labels=bquote(~ rho == .(round(P,5))), adj=1)
-  mtext(LETTERS[panel], side=3, line=-1.5, at=-3.7)
+  mtext(labels[panel], side=3, line=-1.6, at=-3.5)
   
   #marginals
   d1 <- density(noise[,1])
@@ -69,7 +69,7 @@ for (panel in 1:3){
   plot(noise[1:800,1], noise[1:800,2], col=blue, 
        ylab=NA, xlab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
   text(x=4,y=-3.8,labels=bquote(~ rho == .(round(P,5))), adj=1)
-  mtext(LETTERS[panel], side=3, line=-1.5, at=-3.7)
+  mtext(labels[panel], side=3, line=-1.6, at=-3.5)
   
   #marginals
   d1 <- density(noise[,1])
