@@ -18,12 +18,11 @@ saveRDS(Delta_a, paste(dat_loc,'varyingAmplitude.RDS',sep=''))
 
 #vary P at a=6
 P <- seq(51,199.5,length.out=100)
-P <- P[1:50]
-DeltaP <- getDelt(6, P[1], 18, 2400, 200)
+DeltaP <- getDelt(6, P[1], 18, 3000, 200)
 
 for (i in 2:length(P)){
   print(paste(i, P[i]))
-  DeltaP[i,] <- getDelt(6, P[i], 18, 2400, 200)
+  DeltaP[i,] <- getDelt(6, P[i], 18, 3000, 200)
 }
 
 DeltaP$P <- P
