@@ -11,8 +11,7 @@ for (i in 2:length(a)){
 }
 
 Delta_a$a <- a
-Delta_aa <- Delta_a[,-c(8,9)]
-saveRDS(Delta1, paste(dat_loc,'varyingAmplitude.RDS',sep=''))
+saveRDS(Delta_a, paste(dat_loc,'varyingAmplitude.RDS',sep=''))
 
 
 #######################################################################
