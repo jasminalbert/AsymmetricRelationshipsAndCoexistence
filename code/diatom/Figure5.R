@@ -4,9 +4,9 @@ fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
-fig5 <- paste(fig_loc,"fig5.pdf",sep="")
+fig5 <- paste(fig_loc,"fig_5.pdf",sep="")
 
-vAmp <- readRDS(paste(dat_loc,'varyingAmplitude.RDS',sep='')) #from explorespace.R
+vAmp <- readRDS(paste(dat_loc,'varyingAmplitude.RDS',sep='')) #from makefig5dat.R
 vPer <- readRDS(paste(dat_loc,'varyingPeriod.RDS',sep=''))
 vTbr <- readRDS(paste(dat_loc,'varyTbar.RDS',sep=''))
 
@@ -42,7 +42,7 @@ for (i in 1:3){
 	abline(v=orig[i], col='magenta', lty=3)
 	
 	#label
-	mtext(LETTERS[i], 3, -1.5, adj=0.985)
+	mtext(paste0("(", letters[i],")"), 3, -1.5, adj=0.985)
 	
 	#legend
 	if (i==1){
