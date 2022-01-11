@@ -7,7 +7,7 @@ if(dir.exists(fig_loc)==FALSE){
 fig5 <- paste(fig_loc,"fig5.pdf",sep="")
 
 vAmp <- readRDS(paste(dat_loc,'varyingAmplitude.RDS',sep='')) #from explorespace.R
-vPer <- readRDS(paste(dat_loc,'varyingPerioda-6.RDS',sep=''))
+vPer <- readRDS(paste(dat_loc,'varyingPeriod.RDS',sep=''))
 vTbr <- readRDS(paste(dat_loc,'varyTbar.RDS',sep=''))
 
 
@@ -27,7 +27,7 @@ for (i in 1:3){
 	vdat <- varylist[[i]]
 	
 	#empty box
-	plot(0, yaxt='n', xlim=range(vdat[,8]), ylim=c(ymin, ymax), col='white', xlab=colnames(varylist[[i]])[8], ylab='', cex.lab=1.3, cex.axis=1.3)
+	plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab=colnames(varylist[[i]])[10], ylab='', cex.lab=1.3, cex.axis=1.3)
 	
 	#axis
 	if (i==1){
@@ -36,7 +36,7 @@ for (i in 1:3){
 	
 	#loop for lines
 	for (j in 1:7){
-		lines(vdat[,8], vdat[,j], col=col[j], lty=line[j])	
+		lines(vdat[,10], vdat[,j], col=col[j], lty=line[j])	
 	}
 	abline(h=0, col="lightgrey") #zero
 	abline(v=orig[i], col='magenta', lty=3)
