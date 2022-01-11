@@ -7,23 +7,26 @@ require(deSolve)
 getep3 <- function(a, P, Tbar, time, reps, sp, invader=1){
 	
 	parms <- c(Tbar=Tbar, a=a, P=P, D=0.09, S=35)
-	time <- round(time/P,0)*P
-	
+	Time <- time 
 	y0 <- c(R=.1,x1=0,x2=20)
-	times <- seq(0,time,by=.1)
+	times <- seq(0,Time,by=.1)
 	out1i <- ode(y0,times,func=forceChemo,parms=parms) 
-	e <- times > max(times-signif(floor(max(times)/2.5),2)) 
-	out1i <- out1i[e,] 
+	cut <- Time*(2/3)
+	burn <- times > Time - round((Time - cut)/P,0)*P #integer multiple of P
+	out1i <- out1i[burn,]
 	temp <- out1i[,5]
 	R <- out1i[,2]
+	
+	if (length(temp)%%P!=0){stop("dims are not an integer multiple of P")}
 	
 	if (sp==2){
 		Vfun <- V2modfun; Kfun <- K2flatfun
 	} else {Vfun <- V1quad; Kfun <- K1flatfun}
 
-	E <- temp
+	
 	r <- function(E, C, parms){Vfun(E)/C - parms["D"]}
 	
+	E <- temp #if after burning, the times is not an integer multiple P, temp is also not
 	C <- (Kfun(temp)+R)/R
 	
 	#special E's and C's
