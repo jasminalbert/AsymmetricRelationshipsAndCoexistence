@@ -1,4 +1,4 @@
-setwd("~/Documents/AsymmetricRelationshipsAndCoexistence/code")
+#setwd("~/Documents/AsymmetricRelationshipsAndCoexistence/code")
 source("diatom/DataAndVKQfuns.R")
 source("diatom/partialSharp_fxns.R")
 require(deSolve)

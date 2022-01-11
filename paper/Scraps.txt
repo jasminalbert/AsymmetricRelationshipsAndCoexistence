@@ -1,3 +1,10 @@
+To do list, not cmprehensive:
+1) add line numbers to both docs
+2) update the readme
+3) make a sepaarate clone and make sure it all runs in that clone
+4) check through the new parts of Jasmin's code, for G4
+
+
 %[As we know], anthropogenic climate change threatens almost all aspects of life including via extreme climatic events, which have only become more extreme - increasing in magnitude and frequency - and have contributed to both the increase in global means as well as an increase in environmental variability (citation). 
 %There are many studies on the influence of environmental extremes and variability on competition and coexistence \citep{Adler_2006,  Parepa_2013, Diez_2012}; however, the study of the influence of relationships and interactions between drivers in their extremes on competition and coexistence, is lacking in the scientific literature.
 %;we review these studies here  In one of the first empirical tests for storage effect and its requirements, \cite{Adler_2006} showed that climate variability - including extreme events - promoted the coexistence of grass species in Kansas prairie, specifically their ability to recover from low densities. Moreover, in studies on the invasibility of plants, the density and competitive balance of invasive Japanese knotweed increases as resource and thus climate variability increased.\citep{Parepa_2013} 
