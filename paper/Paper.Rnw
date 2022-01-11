@@ -584,10 +584,12 @@ put model here
 After using lab experiments to parameterize the model, \cite{Descamps_2005} use simulations to
 show that coexistence of \emph{C. pseudostelligera} 
 and \emph{F. crotonensis} occurs when temperature fluctuates periodically, 
-$\theta(t)=\theta_0 (t) +  a\sin(2\pi t/P)$, 
+$\theta(t)=\theta_0 +  a\sin(2\pi t/P)$, 
 %***DAN: Jasmin, should \theta_0 depend on t? It should not, right? Please fix if I'm right.
+%***JASMIN: You're right, it should not. Corrected
 with parameters $\theta_0 = 18^\circ$C, $a = 6^\circ$C, $P = 60$d. 
 %***DAN: I added units. Please check.
+%***JASMIN: Checked. Done. 
 \cite{Ellner_2016, Ellner_2019} broke down their coexistence into the contributing mechanisms, 
 and here, we consider varying parameters of temperature fluctuations and further decompose the 
 coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} to account for contributions 
@@ -599,8 +601,12 @@ the coexistence decomposition for \emph{F. crotonensis}.
 %put reverse in sup mat?
 %***DAN: Yes, I think that would be a good idea. I forgot about that - we were able to only consider 1 invading 2 for 
 %the lottery model, because of some simplifying assumptions we were able to make, but cannot really do that here, right?
+%***JASMIN: Right. Species in the lottery model only differed in mu but here they differ in they're VKQ functions.
+%*** JASMIN: Note to to run the reverse invader-resident scenario and put in SUpMat!
 %do we need to explain how we separated the asymmetries using the sims??
 %***DAN: I am not sure what you mean by this question, Jasmin
+%***JASMIN: I mean should we explain the methodology of the code we wrote that is implemented to compute the 
+% ATA contribution. The functions alignranks, normcor...  (in partialSharp_fxns.R) 
 As for G2, we first plotted the terms of equation \ref{eq:full_decomp} for the chemostat 
 model against independent parameters defining temperature oscillation, $\theta_0, a$, and 
 $P$, a total of three plots. For each plot, we set two of the parameters constant at the 
@@ -955,6 +961,7 @@ two of the three parameters defining the temperature oscillation (i.e., the ampl
 and mean, $\theta_0$; see Methods) are fixed at the original values used by 
 \cite{Descamps_2005} ($a=6^\circ$C, $P=60$d, $\theta_0=18^\circ$C) and 
 %***DAN: I added units for a  and \theta_0 here, please check these are correct 
+%***JASMIN: Done 
 the IGR and components of the MCT decomposition
 are then plotted against the other parameter. The original value of the varying parameter 
 is indicated by the vertical dashed magenta lines. ATA contributions 
@@ -965,19 +972,31 @@ indicating that ATAs can contribute meaningfully
 to diatom coexistence in this system. In some instances, the IGR line (orange) falls 
 between the ATA line (red)
 and the horizontal axis, indicating that, for those parameter values, ATAs make the difference between species
-coexistence and exclusion of the weaker competitor. 
+coexistence and exclusion of the invader, \emph{F. crotonensis}. 
 %***DAN: Not the weaker competitor, actually, right, but rather whichever competitor was being considered as the invader
 %for these plots? If I'm right about that then please reword accordingly. 
+%***JASMIN: Right, Done. 
 Standard errors of plotted quantities ?.
 %***DAN: Don't forget to fill in the standard error stuff
 %***DAN: Here is where you add a statement citing another figure in the sup mat that takes the other
 %species as the invader.
+An analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
+\emph{F. crotonensis} is the resident.
 }  \label{fig:fig5}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=.38\textwidth]{../results_figs/fig6.pdf}
-\caption{The degree of ATA contribution to the IGR change with parameters of environmental variation, i.e., temperature oscillation. The ratio $\Delta_i^{[EC]}/\text{IGR}$ constitutes the degree of ATA contribution to thee IGR with larger magnitudes signifying larger ATA contributions. In this model, for the plotted parameters, positive $\Delta_i^{[EC]}/\text{IGR}$ only result from positive $\Delta_i^{[EC]}$ and positive IGR and negative $\Delta_i^{[EC]}/\text{IGR}$ only result from positive $\Delta_i^{[EC]}$ and negative IGR. Thus, cyan areas indicate failure to coexist and magenta areas indicate coexistence with ATA contribution increasing with color intensity. The most intense areas of magenta indicate parameter subspaces where ATA rescue occurs. For simplicity and readability magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ >1 were capped at $|1|$. } \label{fig:fig6}
+\caption{The degree of ATA contribution to the IGR change with parameters of environmental variation, i.e., temperature 
+oscillation. The ratio $\Delta_i^{[EC]}/\text{IGR}$ constitutes the degree of ATA contribution to thee IGR with larger 
+magnitudes signifying larger ATA contributions. In this model, for the plotted parameters, positive $\Delta_i^{[EC]}/
+\text{IGR}$ only result from positive $\Delta_i^{[EC]}$ and positive IGR and negative $\Delta_i^{[EC]}/\text{IGR}$ only 
+result from positive $\Delta_i^{[EC]}$ and negative IGR. Thus, cyan areas indicate failure to coexist and magenta areas 
+indicate coexistence with ATA contribution increasing with color intensity. The most intense areas of magenta indicate 
+parameter subspaces where ATA rescue occurs. For simplicity and readability magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ 
+>1 were capped at $|1|$. 
+An analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
+\emph{F. crotonensis} is the resident.} \label{fig:fig6}
 \end{figure}
 
 \end{document}
