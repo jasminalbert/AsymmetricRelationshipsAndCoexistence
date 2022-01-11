@@ -578,9 +578,18 @@ coexistence which highlights the role ATAs can play, we use a laboratory system 
 explored by \cite{Descamps_2005}.
 \citep{Descamps_2005} used measurements of growth of \emph{Cyclotella pseudostelligera} 
 and \emph{Fragilaria crotonensis} over a range of temperatures to parametrize a competitive 
-resource model as follows:
-put model here
+resource model as follows.
+Letting $\frac{dS}{dt}$ and $\frac{dx_j}{dt}$ denote the rates of resource uptake and reproduction for $j=1,2$ the
+model equations are
+\begin{equation}
+\frac{dS}{dt} = D(S_0 - S) - Q_1x_1 \frac{V_1S}{K_1 + S} - Q_2x_2 \frac{V_2S}{K_2 + S}
+ \frac{dx_j}{dt} = x_j \frac{V_jS}{K_j+S}-D_xj, $j=1,2$.
+ \end{equation}
+ Here, $S$ is a extracellular silicate concentration, $S_0$ is the inflow concentration, $D$ is the outflow rate, and $x_j$ 
+ are the diatom densities. The temperature-dependent variables for resource consumption, $Q_j$, reproduction rate, 
+ $V_j$, and half-saturation constant, $K_j$ were obtained by fitting lines and curves to values obtained from the chemostat batch experiments \cite{Descamps_2005, Ellner_2016}. 
 %***DAN: Jasmin, please add the model. Hard to evaluate the text without it.
+%***JASMIN: Done
 After using lab experiments to parameterize the model, \cite{Descamps_2005} use simulations to
 show that coexistence of \emph{C. pseudostelligera} 
 and \emph{F. crotonensis} occurs when temperature fluctuates periodically, 
@@ -949,13 +958,14 @@ using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it loo
 %"A". Make the panel labels bigger, as well as the axis numbers and labels. 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig5.pdf}
-\caption{The contribution of ATAs to species coexistence in the diatom system of \cite{Descamps_2005} 
-is meaningfully large compared to 
+\caption{The contribution of ATAs to species coexistence in the diatom system of \cite{Descamps_2005} when 
+\emph{F. crotonensis} is the invader is meaningfully large compared to 
 other components of the MCT decomposition. All panels show the IGR and the decomposition of
 the IGR provided by the extended MCT, equation (\ref{eq:full_decomp}). 
 %***DAN: This is for one species invading the other, right? Need to specify that, and say which is 
 %invading which, and, at the end of the 
 %caption indicate that the reverse invasion scenario is in sup mat and cite the corresponding figure there.
+%***JASMIN: Done - ish. Need to make sup mat section 
 For each panel, 
 two of the three parameters defining the temperature oscillation (i.e., the amplitude, $a$; period, $P$; 
 and mean, $\theta_0$; see Methods) are fixed at the original values used by 
@@ -978,8 +988,10 @@ coexistence and exclusion of the invader, \emph{F. crotonensis}.
 %***JASMIN: Right, Done. 
 Standard errors of plotted quantities ?.
 %***DAN: Don't forget to fill in the standard error stuff
+
 %***DAN: Here is where you add a statement citing another figure in the sup mat that takes the other
 %species as the invader.
+%***JASMIN: Done
 An analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
 \emph{F. crotonensis} is the resident.
 }  \label{fig:fig5}
