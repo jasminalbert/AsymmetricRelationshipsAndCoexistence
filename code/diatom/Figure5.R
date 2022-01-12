@@ -1,10 +1,14 @@
 # Figure 5
-dat_loc <- "../results_numeric/"
+source("diatom/workflow.R")
+dat_loc <- "../results_numeric/fig5dat/"
+if (dir.exists(dat_loc)==FALSE){
+  source("diatom/makefig5dat.R")
+}
 fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
-fig5 <- paste(fig_loc,"fig_5.pdf",sep="")
+fig5 <- paste(fig_loc,"fig5.pdf",sep="")
 
 vAmp <- readRDS(paste(dat_loc,'varyingAmplitude.RDS',sep='')) #from makefig5dat.R
 vPer <- readRDS(paste(dat_loc,'varyingPeriod.RDS',sep=''))

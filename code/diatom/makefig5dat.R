@@ -1,6 +1,8 @@
 source("diatom/workflow.R")
-dat_loc <- "../results_numeric/"
-
+dat_loc <- "../results_numeric/fig5dat/"
+if(dir.exists(dat_loc)==FALSE){
+  dir.create(dat_loc)
+}
 #amplitude
 a <- seq(1,6,length.out=100)
 Delta_a <- getDelt(a[1], 60, 18, 3000, 200)
@@ -47,11 +49,4 @@ saveRDS(DeltaT, paste(dat_loc,'varyTbar.RDS',sep=''))
 
 #######################################################################
 
-ep1 <- get_epsilons(4.415, 60, "temp", 500, 1)
-ep2 <- get_epsilons(4.415, 60, "temp", 500, 2)
-D <- ep1-ep2
-D <- D[-c(4,6)]
-D[7] <- sum(D)
-D[7]-D[5];D[7]
-#4.29-4.41 have ATA rescue
 
