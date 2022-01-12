@@ -1,21 +1,20 @@
 # Figure 6
-source("diatom/mapping_fxns.R")
-dat_loc <- "../results_numeric/"
+source("diatom/workflow.R")
+dat_loc <- "../results_numeric/fig6dat/"
+if (dir.exists(dat_loc)==FALSE){
+  source("diatom/makefig6dat.R")
+}
 fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
-fig6 <- paste0(fig_loc,"fig6.pdf")
+fig6 <- paste0(fig_loc,"fig_6.pdf")
 
-aP <- readRDS(paste0(dat_loc,'aP.RDS')) #from .R
+aP <- readRDS(paste0(dat_loc,'aP.RDS')) #from makefig6dat.R
 aTbar <- readRDS(paste0(dat_loc,'aTb.RDS'))
 PTbar <- readRDS(paste0(dat_loc,'pTb.RDS'))
 
-datlist <- list(aP, aTbar, PTbar)
-
-#transform dataframes into matrices filled with ratio value
-maps <- lapply(datlist, FUN=cmMap) #usable for 2D plots
-
+maps <- list(aP, aTbar, PTbar)
 
 pdf(fig6, height=15, width=5)
 par(mfrow=c(1,1), oma=c(3,0,1,0), mar=c(2,3,1,1), bty='n', xpd=T)
@@ -24,7 +23,7 @@ for (i in 1:length(maps)){
 	cmContour(maps[[i]], colkey=F, xaxt='n', yaxt='n')
 	axis(side=1, mgp=c(3,0.5,0.2), col='gray50')
 	axis(side=2, mgp=c(3,0.5,0.2), col='gray50')
-	mtext(LETTERS[i], side=3, line=-1.5, adj=0.985)
+	mtext(paste0("(", letters[i],")"), side=3, line=-1.5, adj=0.985)
 }
 colkey(col=cm.colors(51), clim=c(-1,1),side=1, width=10,)
 
