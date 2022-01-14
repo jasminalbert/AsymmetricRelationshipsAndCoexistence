@@ -8,7 +8,7 @@ if(dir.exists(dat_loc)==FALSE){
 
 # amplitude x period
 a <- seq(3.5,6,length.out=100)
-P<- seq(50,220, length.out=100)
+P <- seq(51,199.5,length.out=100)
 Tb <- 18
 
 parmlist <- list(a,P, Tb)
@@ -28,7 +28,7 @@ saveRDS(aTb, paste0(dat_loc,'aTb.RDS'))
 
 # Tbar x period
 a <- 6
-P<- seq(50,220, length.out=100)
+P <- seq(51,199.5,length.out=100)
 Tb <- seq(50, 220, length.out=100)
 
 parmlist <- list(a,P, Tb)
