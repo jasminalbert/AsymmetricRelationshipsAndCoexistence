@@ -15,9 +15,9 @@ source("./Figure3.R")
 #FIGURE 4
 source("./Figure4.R")
 #FIGURE 5
-source(".diatom/Figure5.R")
+source("./diatom/Figure5.R")
 #FIGURE 6
-source(".diatom/Figure6.R")
+source("./diatom/Figure6.R")
 
 
 
