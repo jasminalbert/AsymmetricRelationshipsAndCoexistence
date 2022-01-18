@@ -7,12 +7,12 @@ require(deSolve)
 getep3 <- function(a, P, Tbar, time, reps, sp, invader=1){
 	
 	parms <- c(Tbar=Tbar, a=a, P=P, D=0.09, S=35)
-	Time <- time 
+	#Time <- time 
 	y0 <- c(R=.1,x1=0,x2=20)
-	times <- seq(0,Time,by=.1)
+	times <- seq(0,time,by=.1)
 	out1i <- ode(y0,times,func=forceChemo,parms=parms) 
-	cut <- Time*(2/3)
-	burn <- times > Time - round((Time - cut)/P,0)*P #integer multiple of P
+	cut <- time*(2/3)
+	burn <- times > time - round((time - cut)/P,0)*P #integer multiple of P
 	out1i <- out1i[burn,]
 	temp <- out1i[,5]
 	R <- out1i[,2]
@@ -58,7 +58,7 @@ getep3 <- function(a, P, Tbar, time, reps, sp, invader=1){
 	epsECbrk <- rbar - rpsharp
 	epsEpsharpC <- rpsharp - rsharp
 	
-	return(data.frame(eps0=eps0, epsE=epsE, epsC=epsC, epsEsharpC=epsEsharpC, epsECbrk=epsECbrk, epsEpsharpC=epsEpsharpC, time=time))
+	return(data.frame(eps0=eps0, epsE=epsE, epsC=epsC, epsEsharpC=epsEsharpC, epsECbrk=epsECbrk, epsEpsharpC=epsEpsharpC, time=length(temp)))
 	
 }
 
@@ -73,36 +73,44 @@ getDelt <- function(a, P, Tbar, time, sims){
 	return(Delta1)
 }
 
+wrapDelt <- function(args){
+  Deltas <- getDelt(a=args[1], P=args[2], Tb=args[3], time=args[4], sims=args[5])
+}
+
+require(parallel)
+
 mapspace <- function(parmlist, sims, time){
 	
 	names(parmlist) <- c('a','P','Tbar')
-	len <- unlist(lapply(parmlist, length))
-	varlen <- len[len!=1]
-	
-	rows <- varlen[[1]]*varlen[[2]]
-	res <- matrix(NA, ncol=6, nrow=rows)
-	r <- 1
+	#len <- unlist(lapply(parmlist, length))
+	#varlen <- len[len!=1]
+	#rows <- varlen[[1]]*varlen[[2]]
+	#res <- matrix(NA, ncol=6, nrow=rows)
 	
 	a <- parmlist[[1]]
 	P <- parmlist[[2]]
 	Tb <- parmlist[[3]]
 	
+	argsList <- list()
+	r <- 1
 	for (i in 1:length(a)){
 		for (j in 1:length(P)){
 			for (k in 1:length(Tb)){
-				Delta1 <- getDelt(a[i], P[j], Tb[k], time, sims)
-				
-				res[r,] <- c(a[i], P[j], Tb[k], Delta1$IGR, Delta1$epsECbrk, Delta1$time)
-				print(c(r,i,j,k))
+				#Delta1 <- getDelt(a[i], P[j], Tb[k], time, sims)
+				#res[r,] <- c(a[i], P[j], Tb[k], Delta1$IGR, Delta1$epsECbrk, Delta1$time)
+				#print(c(r,i,j,k))
+			  argsList[[r]] <- c(a[i], P[j], Tb[k], time, sims)
 				r <- r+1
 			}	
 		}
 	}
-	res <- data.frame(res)
-	colnames(res) <- c("a", "P", "Tbar", "IGR", "ATA", "time")
-	res$eff <- res$IGR - res$ATA
-	res$map <- res$ATA/res$IGR
+	#res <- data.frame(res)
+	resList <- mclapply(argsList, wrapDelt, mc.cores=7)
+	resdf <- data.frame(t(sapply(resList, function(X){c(X$IGR, X$epsECbrk, X$time, X$map)})))
+	parmsdf <- data.frame(matrix(unlist(argsList), ncol=5, byrow=T)[,-3:-4])
 	
+	res <- cbind(parmsdf, resdf)
+	colnames(res) <- c("a", "P", "Tbar", "IGR", "ATA", "time", "map")
 	return(res)
 }
 
