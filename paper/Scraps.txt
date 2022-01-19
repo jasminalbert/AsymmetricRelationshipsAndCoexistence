@@ -4,6 +4,31 @@ To do list, not cmprehensive:
 3) make a sepaarate clone and make sure it all runs in that clone
 4) check through the new parts of Jasmin's code, for G4
 
+%Scraps from discussion
+
+We provided a further tertiary decomposition to MCT, 
+extending the framework put forward by \citep{Ellner_2019}. 
+We decompose the storage effect into two new terms, 
+$\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, 
+the contribution of correlation \emph{per se}. 
+Previously, storage effects were described as the contribution
+of covariance between the environment and competition to 
+coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019}. 
+However, the description of storage effects as the covariance between drivers
+is a misnomer in terminology, and we propose that storage effects, instead, 
+should be described as the contribution of the relationship between drivers. 
+All aspects and of the relationship between environmental response and competitive pressure 
+are not fully captured by only the covariance between them because a measure of covariance 
+does not capture the structure of associativity throughout the distribution of the relationship 
+and any asymmetries there may be. 
+Thus, it is misleading to describe the contribution of the whole EC relationship 
+as the contribution of EC covariance.
+In addressing this inconsistency, we have separated the mechanisms of storage effect 
+into the contribution of ATA [to storage effect/coexistence] and the contribution of 
+correlation \emph{per se} [to storage effect/coexistence].
+
+
+
 
 %[As we know], anthropogenic climate change threatens almost all aspects of life including via extreme climatic events, which have only become more extreme - increasing in magnitude and frequency - and have contributed to both the increase in global means as well as an increase in environmental variability (citation). 
 %There are many studies on the influence of environmental extremes and variability on competition and coexistence \citep{Adler_2006,  Parepa_2013, Diez_2012}; however, the study of the influence of relationships and interactions between drivers in their extremes on competition and coexistence, is lacking in the scientific literature.
