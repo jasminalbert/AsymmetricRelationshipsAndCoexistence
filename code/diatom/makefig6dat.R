@@ -20,7 +20,7 @@ saveRDS(aP, paste0(dat_loc,'aP.RDS'))
 a <- seq(3.5,6,length.out=100)
 P<- 60
 Tb <- seq(12, 24, length.out=100)
-parmlist <- list(a[1:5],P, Tb[1:5])
+parmlist <- list(a ,P, Tb)
 
 aTb <- mapspace(parmlist, sims=200, time=3000)
 aTb <- cmMap(aTb)
