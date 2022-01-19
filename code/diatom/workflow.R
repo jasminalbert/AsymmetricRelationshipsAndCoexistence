@@ -82,7 +82,7 @@ require(parallel)
 
 mapspace <- function(parmlist, sims, time){
 	
-	names(parmlist) <- c('a','P','Tbar')
+	#names(parmlist) <- c('a','P','Tbar')
 	#len <- unlist(lapply(parmlist, length))
 	#varlen <- len[len!=1]
 	#rows <- varlen[[1]]*varlen[[2]]
@@ -106,9 +106,9 @@ mapspace <- function(parmlist, sims, time){
 		}
 	}
 	#res <- data.frame(res)
-	resList <- mclapply(argsList, wrapDelt, mc.cores=7)
+	resList <- mclapply(argsList, wrapDelt, mc.cores=7) ###change cores here###
 	resdf <- data.frame(t(sapply(resList, function(X){c(X$IGR, X$epsECbrk, X$time, X$map)})))
-	parmsdf <- data.frame(matrix(unlist(argsList), ncol=5, byrow=T)[,-3:-4])
+	parmsdf <- data.frame(matrix(unlist(argsList), ncol=5, byrow=T)[,-4:-5])
 	
 	res <- cbind(parmsdf, resdf)
 	colnames(res) <- c("a", "P", "Tbar", "IGR", "ATA", "time", "map")
