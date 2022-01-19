@@ -783,6 +783,11 @@ Similarly for IGR $-\Delta_i^{[EC]}$,
 \end{equation}
 Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}. 
 
+\section{Empirical application: decomposing storage effect in data}\label{sect:Empircal_app}
+
+To decompose the storage effect and quantify contributions of ATA in empirical applications...
+many correlation options 
+
 \clearpage
 \newpage
 
