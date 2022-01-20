@@ -632,9 +632,9 @@ To further explore model parameter space, we generated two dimensional surface p
 some subsets of parameter space where coexistence is possible with ranging degrees of ATA 
 contributions and where ATA rescue occurs. We evaluated coexistence under two varying 
 parameters and indicated $\Delta_i^{[EC]}/\text{IGR}$, a ratio of ATA contribution to total 
-IGR, with a color bar and contour lines. Greater magnitudes of $\Delta_i^{[EC]}/IGR$ and 
+IGR, with a color bar and contour lines. Greater magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ and 
 higher color intensity indicate greater contribution of ATAs to the IGR and positive cases 
-where $\Delta_i^{[EC]}>IGR$ indicate ATA rescue. 
+where $\Delta_i^{[EC]}>\text{IGR}$ indicate ATA rescue. 
 
 All computations were done in R on an ordinary laptop running Ubuntu Linux. 
 Complete computer codes for the project are stored at
@@ -689,7 +689,7 @@ the contribution of varying environment, $\Delta_i^{E}$,
 including for the original coexistence parameters specified in Gonzalez Decamps.  
 Fig.\ref{fig:fig5} plots the various contributions of coexistence (see eq. \ref{eq:full_decomp}) for different varying parameters with two of the three parameters set constant in each plot. Increasing amplitude and mean temperature showed increasing trends in the IGR and decomposed quantities, while increasing periods showed less change. 
 
-Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>IGR$. To preserve simplicity and readibility of the plots, $|\Delta_i^{[EC]}/\text{IGR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ tended to occur as the IGR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig. \ref{fig:fig5}, we see in Fig. \ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{IGR}$ changes from negative to positive. The effect of varying periodicity of environmental fluctuations is... 
+Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>\text{IGR}$. To preserve simplicity and readibility of the plots, $|\Delta_i^{[EC]}/\text{IGR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ tended to occur as the IGR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig. \ref{fig:fig5}, we see in Fig. \ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{IGR}$ changes from negative to positive. The effect of varying periodicity of environmental fluctuations is... 
 
 \section{Discussion}\label{section:discussion}
 
