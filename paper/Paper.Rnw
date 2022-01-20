@@ -728,9 +728,8 @@ For some parameters, the contribution of ATAs was the driving mechanism of
 coexistence – the IGR would be negative without it – deeming the scenario a case of 
 ATA rescue. For other parameter values ATA exclusion occurs where ATAs are the 
 driving mechanism of the failure of coexistence and the lack of ATAs would result in 
-a positive IGR. 
-Subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists}.
-The parameter subspaces of ATA rescue and ATA exclusion suggest that some species may be ATA specialists  - only persisting in habitat patches where ATAs contribute to its coexistence. 
+a positive IGR. Parameter
+subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists} - species which only persist in habitat patches where ATAs contribute to its coexistence. 
 %I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
 %where there are atas. Could have a discussion para on it, if it does not make the results. Or both. BTW, ATA exclusion has a 
 %similar thing going on - a species excluded by ATAs (and competition) can only live on the portions of the landscape where
@@ -739,6 +738,33 @@ The parameter subspaces of ATA rescue and ATA exclusion suggest that some specie
 
 
 \underline{future work: study ATAs in environmental variables and how theyre changing - tie in with specialist}
+
+Our study highlights the importance of ATAs for ecological phenomena 
+and specifically for coexistence and the maintenance of biodiversity. 
+The occurence of ATAs among environmental variables themselves, 
+their contribution to coexistence, and their changes through space and time
+can and should be explored further. 
+Distinct increases in the magnitude of ATA contribution with increasing
+environmental fluctuations, as shown in our results and
+figures (Fig. \ref{fig:fig3} - \ref{fig:fig6}), suggests that ATAs and their effects
+may become more important to consider for coexistence and possibly other 
+ecological phenomena as environmental conditions evidently
+become more variable.
+As described in section \ref{section:introduction}, changes in the ATAs between environmental
+variables may occur as the climate becomes more variable and extreme events become more 
+expansive and extensive, causing relationships between separated events to become tighter at one end or another and thus asymmetric. Additionally, 
+if ATA specialist exist, their persistance may
+become at stake as the mechanism driving their coexistence changes with the climate.
+Thus it is of interest to further study how tail associations of environmental variables are changing and how this might 
+alter competition, coexistence, and the maintenance of biodiversity generally.
+Our investigation brings to attention the consequences of such
+possible \emph{relationships} in the extremes; however, 
+simpler changes in extreme events themselves such as
+intensity and frequency and their influence on coexistence also merit future work. 
+Possible changes in tail association
+patterns of environmental variables in nature can
+influence the coexistence of species through the storage effect and not other mechanisms, but
+extreme and changing climate is probable to affect other mechanims in other ways.
 %In the Discussion, I intend to talk about how possible changes in tail association 
 %patterns of env vars in nature may influence coexistence of species. It won't influence the 
 %other mechanisms, though changes in the extreme values of environmental variables, known
@@ -750,19 +776,13 @@ The parameter subspaces of ATA rescue and ATA exclusion suggest that some specie
 %to also look at the other mechanisms. May still need a sup mat laying out all the math.
 
 %Although environmental fluctuations is helpful for coexistence and storage effect, unusual extreme fluctuations can be a hinderance on coexistence by introducing or changing ATAs between environmental variables. 
-Consistent with the mechanisms of biodiversity maintenance and specifically 
-fluctuation-dependent mechanisms (cite chesson), higher values of environmental fluctuation 
-resulted in higher IGR’s. Both of our new terms, $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$ 
-also increased in magnitude with increased environmental fluctuation. Increased environmental 
-fluctuation is reflected in increased $\sigma$ in the lottery model and increased $a$ in the 
-competitive diatom model.   mean temp and period? 
+%onsistent with the mechanisms of biodiversity maintenance and specifically 
+%luctuation-dependent mechanisms (cite chesson), higher values of environmental fluctuation 
+%esulted in higher IGR’s. Both of our new terms, $\Delta_i^{[EC]}$ and $\Delta_i^{[E \nat C]}$ 
+%lso increased in magnitude with increased environmental fluctuation. Increased environmental 
+%luctuation is reflected in increased $\sigma$ in the lottery model and increased $a$ in the 
+%ompetitive diatom model.   mean temp and period? 
 
-Distinct increase in contribution of ATAs to coexistence as environmental fluctuations increase may suggest that ATAs may become more important to consider for coexistence and possibly other ecological phenomena as the environment becomes more variable, a consequence of climate change and extreme climatic events. 
-
-This may suggest that, if environmental fluctuations become more variable, 
-the effect of ATAs becomes more important and non-negligible (rescue or exclusion). 
-{Might be interesting to study how tail associations of environmental variables are changing and how this might 
-alter competition, coexistence, and the maintenance of biodiversity generally.} 
 %This would be a whole potential 
 %research program which presumably would start with a more detailed study of how tail associations of environmental
 %variables may be changing under global change.
@@ -776,12 +796,14 @@ if sigma really small, ATA would not matter?
 %Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
 %via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
 %study this new term in the decomp. Need to study a bit to substantiate this properly, or get Steve Ellner help.
+
 From proposal: 
+
 Classical analytic derivations of MCT using Taylor expansion approximations completely miss out
 on any additions to coexistence beyond simple correlations. 
-In fact, storage effects in analytic MCT is computationally equal to my new term, Δ^([E||C]), 
+In fact, storage effects in analytic MCT is computationally equal to $\Delta^{[E\natC]}$, 
 the contributions of correlation per se. In newer, simulation based MCT, storage effect is 
-the sum of my two new terms, Δ^((EC))=Δ^([E||C])+Δ^([EC]), obscuring the effects of ATAs
+the sum of the two new terms, $\Delta^{(EC)}=\Delta^{[E\natC]}+\Delta^{[EC]}$, obscuring the effects of ATAs.
 
 \underline{multispecies models}
 %Need a para about multi-species models - how would things change? One difference is there are more different
