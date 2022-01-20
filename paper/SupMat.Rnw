@@ -79,6 +79,8 @@
 \newcommand{\olrs}{\overline{r}^{\shp}}
 \newcommand{\olrn}{\overline{r}^{\nat}}
 \newcommand{\olep}{\overline{\epsilon}}
+\newcommand{\olE}{\overline{E}}
+\newcommand{\olC}{\overline{C}}
 
 %external documents
 \externaldocument[MT-]{Paper}
@@ -783,10 +785,23 @@ Similarly for IGR $-\Delta_i^{[EC]}$,
 \end{equation}
 Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}. 
 
-\section{Empirical application: decomposing storage effect in data}\label{sect:Empircal_app}
+\section{Decomposing storage effect in empirical applications}\label{sect:Empircal_app}
 
-To decompose the storage effect and quantify contributions of ATA in empirical applications...
-many correlation options 
+The decomposition of storage effects and quantification of contributions of ATAs depends on 
+the removal of asymmetric tail associations from the relationship between
+coexistence drivers while maintaining their correlation and marginal distributions. 
+In the paper section \ref{MT-section:theory}, we describe analytical methods for generating the partial sharp variables, $E_i^\nat$ and $C_{i \bs i}^\nat$, which are distributed in the same way as the defined $E_i$ and $C_{i \bs i}$, but are symmetric in the tails and have a normal copula structure.
+The protocol for samples of coexistence drivers in empirical applications is as follows.
+Let $\olE_i$ be a sample of a environmental fluctuation and $\olC_{i \bs i}$ be a sample of competitive pressure. Let $\Theta_{\olE}$ and $\Theta_{\olC}$ be standard normal distributions obtained by normalizing the ranks of $\olE_i$ and $\olC_{i \bs i}$, 
+such that $\Theta_{\olE} = \frac{rank(\olE_i)}{n_{\olE_i}+1} \circ \varphi^{-1}$ and $\Theta_{\olC} = \frac{rank(\olC_{i \bs i})}{n_{\olC_{i \bs i}}+1} \circ \varphi^{-1}$, where $\varphi$ is the CDF of a standard normal distribution. The normalized correlation of $\olE_i$ and $\olC_{i \bs i}$, denoted by $r$, is the covariance of $\Theta_{\olE}$ and $\Theta_{\olC}$.  
+We then simulate an $S$ number of bivariate normal distributions $N_s\left(\vec{0}, \Sigma \right)$
+with covariance matrix $\Sigma = \begin{pmatrix} 1&\ddot{\rho} \\ \ddot{\rho}&1\end{pmatrix}$. 
+The columns of $(\olE_{i}, \olC_{i \bs i})$ are permutated and saved $S$ amount of times, 
+such that the rank of each column matches with the rank of each column of $N_s$. 
+To obtain $(\olE_{i}^\nat, \olC_{i \bs i}^\nat)$, the median of the permuations is computed. 
+Here, $\ddot\rho$ can be chosen a number of ways such that the Pearson, Spearman, or Kendall 
+correlation of $(\olE_{i}^\nat, \olC_{i \bs i}^\nat)$ matches that of $(\olE_{i}, \olC_{i \bs i})$
+or such that $\ddot\rho = r$. The code for this protocol is in \url{"diatom/partialSharp_fxns.R"} and was used in our application to the diatom chemostat system.
 
 \clearpage
 \newpage
