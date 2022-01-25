@@ -1000,7 +1000,9 @@ Standard errors of plotted quantities ?.
 %***DAN: Here is where you add a statement citing another figure in the sup mat that takes the other
 %species as the invader.
 %***JASMIN: Done
-An analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
+Coexistence in this system and within 
+our defined parameters only depends on the IGR of \emph{F. crotonensis} so we only 
+show this case; though, an analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
 \emph{F. crotonensis} is the resident.
 }  \label{fig:fig5}
 \end{figure}
@@ -1015,7 +1017,9 @@ result from positive $\Delta_i^{[EC]}$ and negative IGR. Thus, cyan areas indica
 indicate coexistence with ATA contribution increasing with color intensity. The most intense areas of magenta indicate 
 parameter subspaces where ATA rescue occurs. For simplicity and readability magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ 
 >1 were capped at $|1|$. 
-An analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
+Coexistence in this system and within 
+our defined parameters only depends on the IGR of \emph{F. crotonensis} so we only 
+show this case; though, an analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
 \emph{F. crotonensis} is the resident.} \label{fig:fig6}
 \end{figure}
 
