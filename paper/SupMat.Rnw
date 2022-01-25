@@ -836,16 +836,17 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 \section{Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
 
 The decomposition of storage effects and quantification of contributions of ATAs depends on 
-the removal of asymmetric tail associations from the bivariate distribution
-$(E_i,C_{i \bs i})$ while maintaining its correlation and marginal distributions.
-In the Theory section of the main text, we decribed methods for this removal process
+the removal of asymmetric tail associations from the bivariate random variable
+$(E_i,C_{i \bs i})$, while maintaining its correlation and marginal distributions, to produce a new
+random variable $(E_i^\nat,C_{i \bs i}^\nat)$.
+In the Theory section of the main text, we decribed this removal process
 when the distributions of $E_i$ and $C_{i \bs i})$ are explicitly known, but for the 
-diatom example explored for goal G4 of the main text (see also SI section \ref{}), 
-we only have samples of $E_i$ and $C_{i \bs i})$
+diatom example explored for goal G4 of the main text (see also SI section \ref{sect:diatom_model}), 
+we only have samples from $(E_i,C_{i \bs i})$, based on simulations. We here describe how to
+produce a sample from $(E_i^\nat,C_{i \bs i}^\nat)$ in this modified context. 
 
-;
-a modified distribution $E_i^\nat$ and $C_{i \bs i}^\nat$
- 
+
+
 In the paper section \ref{MT-section:theory}, we describe analytical methods for generating the partial sharp variables, $E_i^\nat$ and $C_{i \bs i}^\nat$, which are distributed in the same way as the defined $E_i$ and $C_{i \bs i}$, but are symmetric in the tails and have a normal copula structure.
 The protocol for samples of coexistence drivers in empirical applications is as follows.
 Let $\olE_i$ be a sample of a environmental fluctuation and $\olC_{i \bs i}$ be a sample of competitive pressure. Let $\Theta_{\olE}$ and $\Theta_{\olC}$ be standard normal distributions obtained by normalizing the ranks of $\olE_i$ and $\olC_{i \bs i}$, 
