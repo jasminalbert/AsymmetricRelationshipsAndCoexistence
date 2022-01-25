@@ -810,6 +810,8 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 %You ought to add a bit more exlanation to the text, so one understand why the choice of C make sense
 %and why r is what you've written there.
 
+%3) You need to outline how the quantities E_i and C_i\i were obtained from simulations. 
+
 %***DAN: Some text and notes immediately below were cut and pasted from the main text, in case 
 %having this material helps in writing this new SI section
 %
@@ -831,11 +833,19 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 % ATA contribution. The functions alignranks, normcor...  (in partialSharp_fxns.R) 
 %***DAN: Yes, we are going to have to do that
 
-\section{Decomposing storage effect in empirical applications}\label{sect:Empircal_app}
+\section{Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
 
 The decomposition of storage effects and quantification of contributions of ATAs depends on 
-the removal of asymmetric tail associations from the relationship between
-coexistence drivers while maintaining their correlation and marginal distributions. 
+the removal of asymmetric tail associations from the bivariate distribution
+$(E_i,C_{i \bs i})$ while maintaining its correlation and marginal distributions.
+In the Theory section of the main text, we decribed methods for this removal process
+when the distributions of $E_i$ and $C_{i \bs i})$ are explicitly known, but for the 
+diatom example explored for goal G4 of the main text (see also SI section \ref{}), 
+we only have samples of $E_i$ and $C_{i \bs i})$
+
+;
+a modified distribution $E_i^\nat$ and $C_{i \bs i}^\nat$
+ 
 In the paper section \ref{MT-section:theory}, we describe analytical methods for generating the partial sharp variables, $E_i^\nat$ and $C_{i \bs i}^\nat$, which are distributed in the same way as the defined $E_i$ and $C_{i \bs i}$, but are symmetric in the tails and have a normal copula structure.
 The protocol for samples of coexistence drivers in empirical applications is as follows.
 Let $\olE_i$ be a sample of a environmental fluctuation and $\olC_{i \bs i}$ be a sample of competitive pressure. Let $\Theta_{\olE}$ and $\Theta_{\olC}$ be standard normal distributions obtained by normalizing the ranks of $\olE_i$ and $\olC_{i \bs i}$, 
