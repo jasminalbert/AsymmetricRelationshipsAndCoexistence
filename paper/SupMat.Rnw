@@ -90,12 +90,11 @@
 \date{}
 
 \author[a]{Pimsupa Jasmin Albert}
-\author[a,b]{Daniel C. Reuman}
+\author[a,b,*]{Daniel C. Reuman}
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
 \affil[b]{Laboratory of Populations, Rockefeller University}
-
-%***Need to indicate corresponding authors
+\affil[*]{Corresponding author, reuman@ku.edu}
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
@@ -757,6 +756,7 @@ applies for the estimators as well as for the quantities being estimated.
 \section{Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
 
 %***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
+%It has been added but Dan needs to edit it.
 
 In Fig. \ref{MT-fig:fig4} we plot IGR , $\Delta_i^{[EC]}$, and IGR $-\Delta_i^{[EC]}$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
 From section \ref{sect:math_simplifications}, 
@@ -784,6 +784,52 @@ Similarly for IGR $-\Delta_i^{[EC]}$,
 (\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-(\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}) = \olr_{i \bs i}-\olep_i^{[EC]}.
 \end{equation}
 Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}. 
+
+\section{Details of diatom model setup}\label{sect:diatom_model}
+
+%***DAN: Jasmin, please start on this section when you get a chance. Here are some topics that need
+%to be covered:
+
+%1) Precise delineation of the functions Q_i, V_i, K_i which were used. There are different options considered
+%all over the place in the code and by Ellner et al (2019) and by the original diatom study, so we have to
+%be very clear here. To give one example of the need for care, here, Ellner et al (2019) state on p. 6
+%of their paper that K_1 and K_2 were constant for the range of temperature considered, and they state
+%that they took constant values for these things. However, we used a larger range of temperatures. 
+%Depending on which of K1fun/K2fun versus K1flatfun/K2flatfun (from DDataAndVKQfuns.R) was actually used
+%may make a difference, so we have to specify. Note that even K1flatfun/K2flatfun were not actually flat
+%for the whole temperature range 6-24 degrees C, though they were for the range of temperature Ellner
+%et al considered. We should not say we used flat K1 and K2 functions unless we are sure we only ever
+%used temperatures in the flat ranges of these functions. Better just to describe the functions we
+%actually used, where the best way to describe them *may* be by plotting them. Anyway, what you need to
+%do is make sure you know what versions of each of these 6 functions your code actually used, and then
+%describe the functions precisely in this section.
+
+%2) You need to specify what choices were made for E and C. The text below, which I cut-and-pasted
+%from the main text, does some of this. Please use an edited version of that text here, edited as you
+%see fit if clarity needs to be improved and to fit the text in with the rest of this new section.
+%You ought to add a bit more exlanation to the text, so one understand why the choice of C make sense
+%and why r is what you've written there.
+
+%***DAN: Some text and notes immediately below were cut and pasted from the main text, in case 
+%having this material helps in writing this new SI section
+%
+%and here, we consider varying parameters of temperature fluctuations and further decompose the 
+%coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} to account for contributions 
+%of ATAs and ATA effects as described above. Our decomposition is defined by $E(t)=\theta(t)$, 
+%$C_j(t)=(K_j(t)+S(t))/S(t)$ and $r_j(E_j,C_j)=\frac{V_j(E)}{C_j} -D$. Thus in our exploration, 
+%environmental fluctuation is temperature fluctuation. We first considered the scenario where 
+%\emph{F. crotonensis} is the invader and emph{C. pseudostelligera} is the resident to compute 
+%the coexistence decomposition for \emph{F. crotonensis}. 
+%put reverse in sup mat?
+%***DAN: Yes, I think that would be a good idea. I forgot about that - we were able to only consider 1 invading 2 for 
+%the lottery model, because of some simplifying assumptions we were able to make, but cannot really do that here, right?
+%***JASMIN: Right. Species in the lottery model only differed in mu but here they differ in they're VKQ functions.
+%*** JASMIN: Note to to run the reverse invader-resident scenario and put in SUpMat!
+%do we need to explain how we separated the asymmetries using the sims??
+%***DAN: I am not sure what you mean by this question, Jasmin
+%***JASMIN: I mean should we explain the methodology of the code we wrote that is implemented to compute the 
+% ATA contribution. The functions alignranks, normcor...  (in partialSharp_fxns.R) 
+%***DAN: Yes, we are going to have to do that
 
 \section{Decomposing storage effect in empirical applications}\label{sect:Empircal_app}
 
@@ -814,8 +860,6 @@ $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. See the caption 
 that figure for details. Standard errors of plotted quantities 
 were never greater than \Sexpr{round(se3qij,5)}, so are not displayed. \label{fig:fig3_alt}}
 \end{figure}
-%***DAN: Jasmin, in the caption of Fig. 3 in the main text there is a statment about standard
-%error. We need another such statement here, but for the standard errors that applied here.
 
 \clearpage
 \newpage
