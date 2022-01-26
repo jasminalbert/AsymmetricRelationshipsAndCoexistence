@@ -454,7 +454,8 @@ Letting $\varphi$ be the CDF of a standard normal distribution, we consider the 
 $\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
 distributed, although they are not necessarily jointly bivariate normal.  Let $\rho_i$ be the covariance of
 these random variables. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
-$\var(e_i)=\var(c_{i \bs i})=1$, and we denote $\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$. We define 
+$\E(e_i)=\E(c_{i \bs i})=0$ and $\var(e_i)=\var(c_{i \bs i})=1$, and we denote 
+$\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$. We define 
 $E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
 and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. The value of $\ddot{\rho}_i$ is then determined 
 in one of 
