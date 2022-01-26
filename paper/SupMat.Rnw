@@ -798,8 +798,8 @@ Values of and subsequent function estimations are plotted in Figure \ref{fig:VQK
 \cite{Descamps_2005} obtained estimated values for $Q_i$, $V_i$, and $K_i$ from 
 single species nine-day batch experiments at four different temperatures ($6^\circ$C, 
 $12^\circ$C, $18^\circ$C, $24^\circ$C) (see Table 1 of \cite{Descamps_2005}) and further
-computed a linear interpolation to define temperature dependence 
-functions of $Q_i(t)$, $V_i(t)$, and $K_i(t)$. These values and functions are 
+computed linear interpolations to
+functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$. These values and functions are 
 indicated in Figure \ref{fig:VKQ} by open circles and dashed lines. 
 \cite{Ellne_2016, Ellner_2019} chose to slightly modify some values and functions 
 (to better align model with competition experiments), 
@@ -830,18 +830,20 @@ decompose coexistence.
 %and why r is what you've written there.
 
 Our decomposition is defined by $E(t)=\theta(t)$, 
-$C_j(t)=(K_j(t)+S(t))/S(t)$ and $r_j(E_j,C_j)=\frac{V_j(E)}{C_j} -D$. 
+$C_i(t)=(K_i(t)+S(t))/S(t)$ and $r_i(E_i,C_i)=\frac{V_i(E)}{C_i} -D$. 
 We note that our definition and selection of our "features" of interest are
 options among many and features need not be limited to $E$ and $C$ \citep{Ellner_2019}. 
 For example \cite{Ellner_2019} decomposes coexistence with respect to fluctuation in
 inflow silicate concentration, $S$, and temperature, and \cite{Ellner_2016} decomposes
 coexistence using classical $E$ and $C$ drivers, but define $E=V(t)$. 
+Like \cite{Ellner_2016}, we set $C_i(t)=(K_i(t)+S(t))/S(t)$ to reflect 
+potential versus actual growth of the diatom populations. 
 Choice of drivers and their definitions are up to the investigator,
-but should real variables that influence population growth.
-Thus in our exploration, environmental fluctuation is temperature fluctuation.
+but should refelct real variables that influence population growth.
+
 
 %3) You need to outline how the quantities E_i and C_i\i were obtained from simulations. 
-
+To obtain $E_i$ and $C_{i \bs i}$, the model was simulated for a $T=3600$ number of timesteps, setting initial population size of invader i to be zero and initial population of the resident, $r=20$. 
 
 %***DAN: Some text and notes immediately below were cut and pasted from the main text, in case 
 %having this material helps in writing this new SI section
@@ -898,7 +900,7 @@ This step works as long as there are no ties among the $E_{i,k}$ or among
 the $C_{i \bs i,k}$. There were no ties when we applied these methods to the diatom system. 
 The two permuted ordered sets, here denoted $(E_{i,1}^\nat,E_{i,2}^\nat,\ldots,E_{i,T}^\nat)$
 and $(C_{i \bs i,1}^\nat,C_{i \bs i,2}^\nat,\ldots,C_{i \bs i,T}^\nat)$,
-when combine to make ordered pairs, form the desired sample from 
+when combined to make ordered pairs, form the desired sample from 
 $(E_i^\nat,C_{i \bs i}^\nat)$. Because $(E_{i,1}^\nat,\ldots,E_{i,T}^\nat)$
 is a permutation of $(E_{i,1},\ldots,E_{i,T})$ and 
 $(C_{i \bs i,1}^\nat,\ldots,C_{i \bs i,T}^\nat)$ is a permutation of
