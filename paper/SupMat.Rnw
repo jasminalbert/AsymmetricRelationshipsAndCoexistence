@@ -40,6 +40,8 @@
 \DeclareMathOperator{\se}{se}
 \DeclareMathOperator{\sd}{sd}
 \DeclareMathOperator{\Prob}{P}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\nrk}{nrank}
 
 \newcommand{\sC}{\mathscr{C}} %for a script C like Ellner et al (2016), Ecol Lett
 \newcommand{\bs}{\backslash}
@@ -836,29 +838,49 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 \section{Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
 
 The decomposition of storage effects and quantification of contributions of ATAs depends on 
-the removal of asymmetric tail associations from the bivariate random variable
+removing asymmetric tail associations from the bivariate random variable
 $(E_i,C_{i \bs i})$, while maintaining its correlation and marginal distributions, to produce a new
 random variable $(E_i^\nat,C_{i \bs i}^\nat)$.
 In the Theory section of the main text, we decribed this removal process
-when the distributions of $E_i$ and $C_{i \bs i})$ are explicitly known, but for the 
+when the distributions of $E_i$ and $C_{i \bs i}$ are known exactly, but for the 
 diatom example explored for goal G4 of the main text (see also SI section \ref{sect:diatom_model}), 
-we only have samples from $(E_i,C_{i \bs i})$, based on simulations. We here describe how to
+we only had samples from $(E_i,C_{i \bs i})$, based on simulations. We here describe how to
 produce a sample from $(E_i^\nat,C_{i \bs i}^\nat)$ in this modified context. 
-
-
-
-In the paper section \ref{MT-section:theory}, we describe analytical methods for generating the partial sharp variables, $E_i^\nat$ and $C_{i \bs i}^\nat$, which are distributed in the same way as the defined $E_i$ and $C_{i \bs i}$, but are symmetric in the tails and have a normal copula structure.
-The protocol for samples of coexistence drivers in empirical applications is as follows.
-Let $\olE_i$ be a sample of a environmental fluctuation and $\olC_{i \bs i}$ be a sample of competitive pressure. Let $\Theta_{\olE}$ and $\Theta_{\olC}$ be standard normal distributions obtained by normalizing the ranks of $\olE_i$ and $\olC_{i \bs i}$, 
-such that $\Theta_{\olE} = \frac{rank(\olE_i)}{n_{\olE_i}+1} \circ \varphi^{-1}$ and $\Theta_{\olC} = \frac{rank(\olC_{i \bs i})}{n_{\olC_{i \bs i}}+1} \circ \varphi^{-1}$, where $\varphi$ is the CDF of a standard normal distribution. The normalized correlation of $\olE_i$ and $\olC_{i \bs i}$, denoted by $r$, is the covariance of $\Theta_{\olE}$ and $\Theta_{\olC}$.  
-We then simulate an $S$ number of bivariate normal distributions $N_s\left(\vec{0}, \Sigma \right)$
-with covariance matrix $\Sigma = \begin{pmatrix} 1&\ddot{\rho} \\ \ddot{\rho}&1\end{pmatrix}$. 
-The columns of $(\olE_{i}, \olC_{i \bs i})$ are permutated and saved $S$ amount of times, 
-such that the rank of each column matches with the rank of each column of $N_s$. 
-To obtain $(\olE_{i}^\nat, \olC_{i \bs i}^\nat)$, the median of the permuations is computed. 
-Here, $\ddot\rho$ can be chosen a number of ways such that the Pearson, Spearman, or Kendall 
-correlation of $(\olE_{i}^\nat, \olC_{i \bs i}^\nat)$ matches that of $(\olE_{i}, \olC_{i \bs i})$
-or such that $\ddot\rho = r$. The code for this protocol is in \url{"diatom/partialSharp_fxns.R"} and was used in our application to the diatom chemostat system.
+Let $(E_{i,k},C_{i \bs i,k})$, $k=1,\ldots,T$ denote the samples from $(E_i,C_{i \bs i})$.
+Let $\rk(E_{i,k})$ be the rank of $E_{i,k}$ in the set 
+of $E_{i,k}$, $k=1,\ldots,T$, where the smallest value has rank $1$. Likewise 
+define $\rk(C_{i \bs i,k})$ as the rank of $C_{i \bs i,k}$ in the set
+of $C_{i \bs i,k}$, $k=1,\ldots,T$. Define the ``normalized rank''
+$\nrk(E_{i,k})$ as $\rk(E_{i,k})/(T+1)$, and likewise define 
+$\nrk(C_{i \bs i,k})$ as $\rk(C_{i \bs i,k})/(T+1)$. Letting $\varphi$ be the CDF
+of a standard normal distribution, the samples $\varphi^{-1}(\nrk(E_{i,k}))$, $k=1,\ldots,T$
+are standard normally distributed, as are the samples 
+$\varphi^{-1}(\nrk(C_{i \bs i,k}))$, $k=1,\ldots,T$. Let $\rho_i$ be the covariance 
+of these samples. We then define a bivariate normal random variable 
+$(e_i,c_{i \bs i})$ such that $\E(e_i)=\E(c_{i \bs i})=0$, $\var(e_i)=\var(c_{i \bs i})=1$,
+and we denote $\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$. We used $\ddot{\rho}_i = \rho_i$.
+Generating a sample $(e_{i,k},c_{i \bs i,k})$, $k=1,\ldots,T$ from this distribution,
+we permute the ordered set $(E_{i,1},E_{i,2},\ldots,E_{i,T})$ so that the ranks of the 
+permuted ordered set equal the ranks of the corresponding elements of the ordered
+set $(e_{i,1},e_{i,2},\ldots,e_{i,T})$. We likewise permute the ordered set 
+$(C_{i \bs i,1},C_{i \bs i,2},\ldots,C_{i \bs i,T})$ so the ranks of the permuted result
+match the ranks of $(c_{i \bs i,1},c_{i \bs i,2},\ldots,c_{i \bs i,T})$.
+This step works as long as there are no ties among the $E_{i,k}$ or among
+the $C_{i \bs i,k}$. There were no ties when we applied these methods to the diatom system. 
+The two permuted ordered sets, here denoted $(E_{i,1}^\nat,E_{i,2}^\nat,\ldots,E_{i,T}^\nat)$
+and $(C_{i \bs i,1}^\nat,C_{i \bs i,2}^\nat,\ldots,C_{i \bs i,T}^\nat)$,
+when combine to make ordered pairs, form the desired sample from 
+$(E_i^\nat,C_{i \bs i}^\nat)$. Because $(E_{i,1}^\nat,\ldots,E_{i,T}^\nat)$
+is a permutation of $(E_{i,1},\ldots,E_{i,T})$ and 
+$(C_{i \bs i,1}^\nat,\ldots,C_{i \bs i,T}^\nat)$ is a permutation of
+$(C_{i \bs i,1},\ldots,C_{i \bs i,T})$, marginal distributions of our
+sample from $(E_i^\nat,C_{i \bs i}^\nat)$ were the same as those of our original 
+sample from $(E_i, C_{i \bs i})$. The choice of bivariate normal
+$(e_i,c_{i \bs i})$ ensures that our resulting sample shows symmetric tail association.
+Finally, we caution that sampling variation means any quantity computed from our resulting sample 
+$(E_{i,k}^\nat,C_{i \bs i,k}^\nat)$, $k=1,\ldots,T$ should be recomputed for 
+multiple such samples, all computed via the same process, and a median of 
+the resulting distribution of values should be used.
 
 \clearpage
 \newpage
