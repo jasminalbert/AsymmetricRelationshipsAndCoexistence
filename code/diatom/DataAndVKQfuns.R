@@ -1,12 +1,20 @@
 
 #data
-Tvals <-  c(6,12,18,24); 
-V1data <-  c(0.25,0.4,0.37,0.42);  # Fragiliaria data
-V2data <-  c(0.32,0.36,0.39,0.02); # Cyclotella data 
+#1 = Fragiliaria crotonensis
+#2 = Cyclotella psuedostelligera
 
+#experimental termperature
+Tvals <-  c(6,12,18,24)
+
+#maximum growth rate
+V1data <-  c(0.25,0.4,0.37,0.42) 
+V2data <-  c(0.32,0.36,0.39,0.02)
+
+#half saturation constant
 K1data <-  c(0.06,0.30,0.20,0.25)
 K2data <-  c(0.07,0.13,0.15,NA)
 
+#cell quota
 Q1data <-  c(3.21,1.44,2.03,2.02)
 Q2data <-  c(0.301,0.862,0.619,NA)
 
