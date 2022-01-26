@@ -791,12 +791,26 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 
 %***DAN: Jasmin, please start on this section when you get a chance. Here are some topics that need
 %to be covered:
-Estimations of $Q_i(t)$, $V_i(t)$, and $K_i(t)$, temperature dependence functions for cell quota, reproduction rate, and half saturation, respectively, were used to paramaterize the competing diatom model outline in the paper. 
+Estimations of $Q_i(t)$, $V_i(t)$, and $K_i(t)$, temperature dependence functions for 
+cell quota, reproduction rate, and half saturation, respectively, were used to 
+paramaterize the competing diatom model outline in the paper. 
 Values of and subsequent function estimations are plotted in Figure \ref{fig:VQK}. 
-Descamps and Julien obtained estimated values for $Q_i$, $V_i$, and $K_i$ from single species nine-day batch experiments at four different temperatures (6, 12, 18, 24) (see Table 1 of Descamps and Julien) and further computed a linear interpolation to define temperature dependence functions of $Q_i(t)$, $V_i(t)$, and $K_i(t)$. These values and functions are indicated in Figure \ref{fig:VKQ} by open circles and dashed lines. Ellner 2016 and 2019 chose to slightly modify some values and functions, indicated in Figure \ref{fig:VKQ} by closed circles and solid lines. 
+\cite{Descamps_2005} obtained estimated values for $Q_i$, $V_i$, and $K_i$ from 
+single species nine-day batch experiments at four different temperatures ($6^\circ$C, 
+$12^\circ$C, $18^\circ$C, $24^\circ$C) (see Table 1 of \cite{Descamps_2005}) and further
+computed a linear interpolation to define temperature dependence 
+functions of $Q_i(t)$, $V_i(t)$, and $K_i(t)$. These values and functions are 
+indicated in Figure \ref{fig:VKQ} by open circles and dashed lines. 
+\cite{Ellne_2016, Ellner_2019} chose to slightly modify some values and functions 
+(to better align model with competition experiments), 
+%why did they make K_i's constant and do we need to adjust so that it
+%is constant over the range of temperatures considered 
+indicated in Figure \ref{fig:VKQ} by closed circles and solid lines. 
+These modifications do not result in meaningful differences when evaluating 
+coexistence at the parameter values used by \cite{Descamps_2005}.
+We chose to implement the modified functiones in our methods to quantify and 
+decompose coexistence.
 
-%1) Precise delineation of the functions Q_i, V_i, K_i which were used. There are different options considered
-%all over the place in the code and by Ellner et al (2019) and by the original diatom study, so we have to
 %be very clear here. To give one example of the need for care, here, Ellner et al (2019) state on p. 6
 %of their paper that K_1 and K_2 were constant for the range of temperature considered, and they state
 %that they took constant values for these things. However, we used a larger range of temperatures. 
@@ -814,6 +828,17 @@ Descamps and Julien obtained estimated values for $Q_i$, $V_i$, and $K_i$ from s
 %see fit if clarity needs to be improved and to fit the text in with the rest of this new section.
 %You ought to add a bit more exlanation to the text, so one understand why the choice of C make sense
 %and why r is what you've written there.
+
+Our decomposition is defined by $E(t)=\theta(t)$, 
+$C_j(t)=(K_j(t)+S(t))/S(t)$ and $r_j(E_j,C_j)=\frac{V_j(E)}{C_j} -D$. 
+We note that our definition and selection of our "features" of interest are
+options among many and features need not be limited to $E$ and $C$ \citep{Ellner_2019}. 
+For example \cite{Ellner_2019} decomposes coexistence with respect to fluctuation in
+inflow silicate concentration, $S$, and temperature, and \cite{Ellner_2016} decomposes
+coexistence using classical $E$ and $C$ drivers, but define $E=V(t)$. 
+Choice of drivers and their definitions are up to the investigator,
+but should real variables that influence population growth.
+Thus in our exploration, environmental fluctuation is temperature fluctuation.
 
 %3) You need to outline how the quantities E_i and C_i\i were obtained from simulations. 
 
