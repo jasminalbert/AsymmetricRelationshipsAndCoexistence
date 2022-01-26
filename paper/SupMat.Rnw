@@ -789,6 +789,9 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 
 %***DAN: Jasmin, please start on this section when you get a chance. Here are some topics that need
 %to be covered:
+Estimations of $Q_i(t)$, $V_i(t)$, and $K_i(t)$, temperature dependence functions for cell quota, reproduction rate, and half saturation, respectively, were used to paramaterize the competing diatom model outline in the paper. 
+Values of and subsequent function estimations are plotted in Figure \ref{fig:VQK}. 
+Descamps and Julien obtained estimated values for $Q_i$, $V_i$, and $K_i$ from single species nine-day batch experiments at four different temperatures (6, 12, 18, 24) (see Table 1 of Descamps and Julien) and further computed a linear interpolation to define temperature dependence functions of $Q_i(t)$, $V_i(t)$, and $K_i(t)$. These values and functions are indicated in Figure \ref{fig:VKQ} by open circles and dashed lines. Ellner 2016 and 2019 chose to slightly modify some values and functions, indicated in Figure \ref{fig:VKQ} by closed circles and solid lines. 
 
 %1) Precise delineation of the functions Q_i, V_i, K_i which were used. There are different options considered
 %all over the place in the code and by Ellner et al (2019) and by the original diatom study, so we have to
@@ -811,6 +814,7 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 %and why r is what you've written there.
 
 %3) You need to outline how the quantities E_i and C_i\i were obtained from simulations. 
+
 
 %***DAN: Some text and notes immediately below were cut and pasted from the main text, in case 
 %having this material helps in writing this new SI section
@@ -870,6 +874,12 @@ or such that $\ddot\rho = r$. The code for this protocol is in \url{"diatom/part
 $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. See the caption of
 that figure for details. Standard errors of plotted quantities 
 were never greater than \Sexpr{round(se3qij,5)}, so are not displayed. \label{fig:fig3_alt}}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=.66\textwidth]{../results_figs/VKQfig.pdf}
+\caption[caption]
+{caption \label{fig:VKQ}}
 \end{figure}
 
 \clearpage
