@@ -956,19 +956,13 @@ using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it loo
 %notation represents which quantity. Also, please change panel labels to be of the format "(a)" instead of 
 %"A". Make the panel labels bigger, as well as the axis numbers and labels.
 
-%***JASMIN: 
-% bigger legend text
-% bigger panel labels
-% bigger axis labels
-% bigger axis numbers
-% check ATA color in plot and in legend 
-
 %***DAN: If I interpret correctly that the blue lines on Fig. 5 are the ATA contribution (needs to be 
 %changed because you use a red line on other figs), there are large areas on panels a and c where the 
 %IGR is between the ATA-contribution line and then x axis. Those are areas of ATA rescue (though you only
 %know this after looking at the analogous plot for the other species). I think in 
 %the next version of the figure you should consider highlighting them in a similar way to how you did 
 %in Fig. 4. Those are a couple nice wide zones of ATA rescue! Let me know if you want to talk about this.
+%***JASMIN: Fixed the line colors. Will block in the rescue areas. 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig5.pdf}
 \caption{The contribution of ATAs to species coexistence in the diatom system of \cite{Descamps_2005} when 
