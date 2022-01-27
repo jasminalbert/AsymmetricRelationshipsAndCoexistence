@@ -88,7 +88,7 @@ saveRDS(fig3maxse, file=fig3maxse_loc)
 #####################################################################################
 pdf(fig3qij_loc)
 
-par(mgp=c(3,0.6,0), mar = c(0.5,1,1,1), oma=c(4,4,2,2), xpd=NA)
+par(mgp=c(3,0.6,0), mar = c(0.5,1,1,1), oma=c(4,4,2,2))
 
 layout(matrix(c(2,3,4,5,1,
                 6,7,8,9,1,	
@@ -116,7 +116,7 @@ res <- vector(mode='list',length=1)
 n <- 1
 for (m in 1:nm){
   for (d in 1:nd){
-    res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], qij=TRUE, xaxt="n", cex.axis=1.2))
+    res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], qij=TRUE, xaxt="n", cex.axis=1.2, xpd=T))
     axis(1, labels=ifelse(n>12, yes=TRUE, no=FALSE), tick=TRUE, cex.axis=1.3)
     mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
