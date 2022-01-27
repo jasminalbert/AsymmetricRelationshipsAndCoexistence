@@ -19,6 +19,8 @@ source("./diatom/Figure5.R")
 #FIGURE 6
 source("./diatom/Figure6.R")
 
+#VKQ figure (SI)
+source("./diatom/VKQplots.R")
 
 
 
