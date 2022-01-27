@@ -886,6 +886,7 @@ noise as pictured and then multipling by $\sigma$ and adding $(\mu_1,\mu_2)$.\la
 %as much as possible while I edit, but if you could please also check it will help, and I am relying on you to change the panel labels
 %in the figured themselves. I am sorry again for the tedium, here. Maybe some day they will improve the publication process so we do not 
 %have to worry about nonsense like this.
+%***JASMIN: changed labels of figures. Done. 
 
 \begin{figure}
 \includegraphics[width=.75\textwidth]{../results_figs/fig2.pdf}
@@ -953,7 +954,15 @@ using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it loo
 %but that differs from how you did it in the other figs. Or perhaps the legend is just wrong. Please check and
 %fix so as to be consistent with the rest of the figures in which color represents which quantity and which
 %notation represents which quantity. Also, please change panel labels to be of the format "(a)" instead of 
-%"A". Make the panel labels bigger, as well as the axis numbers and labels. 
+%"A". Make the panel labels bigger, as well as the axis numbers and labels.
+
+%***JASMIN: 
+% bigger legend text
+% bigger panel labels
+% bigger axis labels
+% bigger axis numbers
+% check ATA color in plot and in legend 
+
 %***DAN: If I interpret correctly that the blue lines on Fig. 5 are the ATA contribution (needs to be 
 %changed because you use a red line on other figs), there are large areas on panels a and c where the 
 %IGR is between the ATA-contribution line and then x axis. Those are areas of ATA rescue (though you only
