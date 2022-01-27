@@ -105,7 +105,7 @@ legend("topright",
                 ,expression(IGR)), 
        col = c("black","black","black","black","blue","red","orange"),
        lty = c(1,2,4,3,1,1,1), bty="n", cex=1.8, inset=c(0,-0.05),
-       y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.5)
+       y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.5, xpd=NA)
 #2-5
 for (d in 1:nd){
   plot.new()
@@ -116,7 +116,7 @@ res <- vector(mode='list',length=1)
 n <- 1
 for (m in 1:nm){
   for (d in 1:nd){
-    res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], qij=TRUE, xaxt="n", cex.axis=1.2, xpd=T))
+    res <- append(res,dePlot1(noise_loc, mudif[m], delta[d], qij=TRUE, xaxt="n", cex.axis=1.2))
     axis(1, labels=ifelse(n>12, yes=TRUE, no=FALSE), tick=TRUE, cex.axis=1.3)
     mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
