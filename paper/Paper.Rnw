@@ -607,9 +607,11 @@ SI section \ref{SI-sect:Empircal_app}.
 %***DAN: Jasmin, you had already created and started on the second of these SI sections, but the first one
 %is new, and needs to be filled in. Please make a start at that when you get a chance. I've put some 
 %notes there indicating what the content of that section should be.
+%***JASMIN: Working on filling out diatom model set up section
 
 %***DAN: Jasmin, I edited the below paragraph pretty heavily, please check,
 %especially the quantitative statements at the end.
+%***JASMIN: Good 
 To display results, we plotted the terms of (\ref{eq:full_decomp}) against one of the parameters 
 $\theta_0$, $a$ and $P$ at a time, while keeping the other two fixed at the values
 used by \cite{Descamps_2005}. We also generated two-dimensional plots, where
