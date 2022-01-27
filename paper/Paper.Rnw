@@ -552,7 +552,8 @@ we were interested in the values of $\mu_1-\mu_2$ for which one of these
 quantities is positive and the other is negative; this set of values characterizes the species which can coexist
 with ATAs, but not without, or vice versa. The one dimensional space of values $\mu$ is a species trait space,
 and $\mu_1$ and $\mu_2$ can be regarded as two points in it. But we instead define the ``trait-difference space'' of values $\mu_1-\mu_2$. 
-Points of the trait-difference space characterize possible combinations of traits of the two competing species in our model. For fixed values of 
+Points of the trait-difference space characterize possible combinations of traits of the two 
+competing species in our model. For fixed values of 
 $\delta$ and $\sigma$, we defined the subset, $\psi_{\text{ATA}}(\delta,\sigma)$, of 
 trait-difference space to be the set of 
 values $\mu_1 - \mu_2$ for which the the IGR, $\olr_{i \bs i}$, is positive. This 
@@ -628,7 +629,6 @@ All computations were done in R on an ordinary laptop running Ubuntu Linux.
 Complete computer codes for the project are stored at
 \url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence.git}.
 
-
 \section{Results}\label{section:results}
 
 %G2 
@@ -639,21 +639,21 @@ magnitude comparable to the magnitudes of other terms of the extended MCT decomp
 Magnitudes of $\Delta_i^{[EC]}$ tended to be larger, relative to the magnitudes of the 
 other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between $\mu_1$ and 
 $\mu_2$, i.e., for closer-to-equal competitors. 
-In the $\mu_1=\mu_2$ case (panels A-D), for which the two species were equal 
+In the $\mu_1=\mu_2$ case (panels a-d), for which the two species were equal 
 competitors, storage effects (blue plus red
 lines on Fig. \ref{fig:fig3}) were the only means by which coexistence could occur, and ATA effects
 tended to be negative, weakening total storage effects.
 
 %G3
 Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
-can coexist with ATAs, but not without, or vice versa), our results show that ATA can, indeed, sometimes
-make the difference between coexistence and exclusion; both ``ATA rescue'' and ``ATA
+can coexist with ATAs, but not without, or vice versa), our results show that ATAs can, indeed, sometimes
+make the difference between coexistence and exclusion: both ``ATA rescue'' and ``ATA
 exclusion'' (see Methods) are possible.
 For some of the panels on Fig. \ref{fig:fig3}, the IGR line falls between the ATA
-line and the $x$ axis for some values of $\sigma$, e.g., see panel H. 
+line and the $x$ axis for some values of $\sigma$, e.g., see panel h. 
 Such cases correspond to parameter combinations
 for which the presence or absence of ATAs determine whether the species coexist or not. In the 
-case of panel H, for values of $\sigma$ around $4$, 
+case of panel h, for values of $\sigma$ around $4$, 
 species 1 is excluded with ATAs but the two species can coexist without ATAs. 
 Fig. \ref{fig:fig4} highlights additional examples. Orange lines on Fig. \ref{fig:fig4}
 represent the IGR when the effects of ATAs are included, and blue lines are the IGR when
@@ -662,7 +662,7 @@ different places, showing that both ATA rescue space and ATA exclusion space can
 subsets of our trait-difference space (see Methods). For the parameters we considered, 
 both ATA rescue and exclusion were more common for larger values of $\sigma$.
 ATA rescue appeared more likely for smaller $\delta$, whereas ATA exclusion appeared
-more common for larger $\delta$. Although bands of ATA rescue or exclusion on Fig.
+more common for larger $\delta$. Although some bands of ATA rescue or exclusion on Fig.
 \ref{fig:fig4} appear narrow, they nevertheless do occur, which means ATAs can mean the 
 difference between coexistence and extirpation of one species in some cases.
 
@@ -925,8 +925,8 @@ in some details, main conclusions were the same. \label{fig:fig3}}
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig4.pdf}
 \caption{ATAs can sometimes make the difference between species coexistence and exclusion of the weaker
-competitor; both ``ATA rescue'' and ``ATA exclusion'' (see Methods) are possible. 
-All panels show the IGR, the ATA term of the extended MCT [$\Delta_i^{[E || C]}$ in equation 
+competitor: both ``ATA rescue'' and ``ATA exclusion'' (see Methods) are possible. 
+All panels show the IGR, the ATA term of the extended MCT [$\Delta_i^{[EC]}$ in equation 
 (\ref{eq:full_decomp})], and the difference of these quantities. 
 For each panel, $\delta$ and $\sigma$ are fixed at values specified in the 
 margins, and the three quantities are plotted against $\mu_1-\mu_2$ to isolate points in the
@@ -940,7 +940,7 @@ correspond to ATA exclusion (shaded violet). Top panels also include domains
 of ATA rescue or exclusion, but they were too narrow to be highlighted by shading and are
 probably of minimal practical importance. 
 Standard errors of plotted quantities were never greater than \Sexpr{round(se4,5)}, 
-so are not displayed. The dashed red line on panel L corresponds to the parameters
+so are not displayed. The dashed red line on panel (l) corresponds to the parameters
 used for Fig. \ref{fig:pedagog}. This plot uses $q_{ij}=1$. An analogous plot was generated 
 using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it looked exactly the same, by mathematical necessity (see SI section \ref{SI-sect:F4andqij}).}\label{fig:fig4}
 \end{figure}
@@ -952,6 +952,12 @@ using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it loo
 %fix so as to be consistent with the rest of the figures in which color represents which quantity and which
 %notation represents which quantity. Also, please change panel labels to be of the format "(a)" instead of 
 %"A". Make the panel labels bigger, as well as the axis numbers and labels. 
+%***DAN: If I interpret correctly that the blue lines on Fig. 5 are the ATA contribution (needs to be 
+%changed because you use a red line on other figs), there are large areas on panels a and c where the 
+%IGR is between the ATA-contribution line and then x axis. Those are areas of ATA rescue (though you only
+%know this after looking at the analogous plot for the other species). I think in 
+%the next version of the figure you should consider highlighting them in a similar way to how you did 
+%in Fig. 4. Those are a couple nice wide zones of ATA rescue! Let me know if you want to talk about this.
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig5.pdf}
 \caption{The contribution of ATAs to species coexistence in the diatom system of \cite{Descamps_2005} when 
