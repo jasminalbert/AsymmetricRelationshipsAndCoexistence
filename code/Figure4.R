@@ -34,7 +34,7 @@ midy <- (ph*(ns/2))/sum(ht) #middle of figure panels; vertical
 #########################################################################################
 pdf(fig4_loc)
 
-par(mgp=c(3,0.5,0), mar = c(1,1,1,1), oma=c(3,5,3,2), xpd=TRUE)
+par(mgp=c(3,0.5,0), mar = c(0.5,1,1,1), oma=c(4,4,2,2), xpd=NA)
 
 layout(matrix(c(2,3,4,5,1,
                 6,7,8,9,1,	
@@ -47,8 +47,11 @@ plot.new() #1
 legend("topright", 
        legend=c(expression(IGR),expression(IGR-Delta[i]^"[EC]"), expression(Delta[i]^"[EC]")),
        col = c("orange","navy", "red"),
-       lty = c(1,1,1), bty="n", cex=1.5, inset=c(-0.25,-0.042),
-       y.intersp = 1.25, x.intersp = 0.1, seg.len=1)
+       lty = c(1,1,1), bty="n", cex=1.8, inset=c(-0.51,-0.05),
+       y.intersp = 1.1, x.intersp = 0.05, seg.len=0.8, lwd=1.5)
+legend("topright", legend=c("ATA \nrescue", "ATA \nexclusion"), density=50, fill=c("hotpink2", "darkgoldenrod2"),
+       bty="n", border="white", inset=c(-0.33, 0.09), cex=1.6, y.intersp = 1.6,
+       x.intersp = 0.3)
 #2-5
 for (d in 1:nd){
   plot.new()
@@ -60,27 +63,27 @@ m <- 1
 for (s in 1:ns){
   for (d in 1:nd){
     res_loc <- paste(fig4numres_loc,m,".RDS", sep="")
-    res <- append(res, list(dePlot2(noise_loc, res_exist=ifelse(file.exists(res_loc), yes=TRUE, no=FALSE), res_loc=res_loc, mudif_4,sigma[s], delta[d], xaxt="n")))
-    axis(1, labels=ifelse(m>12, yes=TRUE, no=FALSE), tick=TRUE)
-    mtext(paste0("(", letters[m],")"), side=3, line=-1.45, at=-4.5, adj=1)
+    res <- append(res, list(dePlot2(noise_loc, res_exist=ifelse(file.exists(res_loc), yes=TRUE, no=FALSE), res_loc=res_loc, mudif_4,sigma[s], delta[d], xaxt="n", cex.axis=1.3)))
+    axis(1, labels=ifelse(m>12, yes=TRUE, no=FALSE), tick=TRUE, cex.axis=1.2)
+    mtext(paste0("(", letters[m],")"), side=3, line=-1.7, at=-4.6, adj=1, cex=1.3)
     
     if(m<5){
-      mtext(paste(delta[d]), side=3, line=0.75, font=2, cex=0.8)
+      mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1)
     }
     if(m%%4==0){
-      mtext(paste(sigma[s]), side=4, line=0.75, font=2, cex=0.8)
+      mtext(paste(sigma[s]), side=4, line=0.6, font=2, cex=1.1)
     }
     if(m==12){
-      abline(v=-0.8, col="red", lty=2)
+      abline(v=-0.8, col="red", lty=2, xpd=T)
     }
     m <- m+1
   }
 }
 
-mtext("contribution to coexistence", side=2, outer=TRUE, line=1.5, font=2, cex=1, at=midy)
-mtext(expression(sigma), side=4, outer=TRUE, line=-5, font=2, cex=1.5, at=midy)
-mtext(expression(delta), side=3, outer=TRUE, line=-2, font=2, cex=1.5, at=midx)
-mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=1, cex.lab=1.3, at=midx)
+mtext("contribution to coexistence", side=2, outer=TRUE, line=1.3, font=2, cex=1.3, at=midy-0.005)
+mtext(expression(sigma), side=4, outer=TRUE, line=-5.5, font=2, cex=2, at=midy)
+mtext(expression(delta), side=3, outer=TRUE, line=-2.5, font=2, cex=2, at=midx)
+mtext(expression(mu[1]-mu[2]), outer=TRUE, side=1, line=2, cex=1.5, at=midx)
 
 dev.off()
 
