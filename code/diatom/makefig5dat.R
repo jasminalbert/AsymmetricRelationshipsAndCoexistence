@@ -33,7 +33,7 @@ saveRDS(DeltaP, paste(dat_loc,'varyingPeriod.RDS',sep=''))
 
 #######################################################################
 
-Tbar <- seq(16,18,length.out = 100)
+Tbar <- seq(16,19,length.out = 100)
 
 DeltaT <- getDelt(6, 60, Tbar[1], 3000, 200)
 
@@ -58,9 +58,9 @@ saveRDS(DeltaT, paste(dat_loc,'varyTbar.RDS',sep=''))
 # T_vec
 # len
 
-#parms = c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200)
+#parms = c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=2)
 
-mak5 <- function(dat_loc, a_vec, P_vec, T_vec, parms, len=100){
+mak5 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
   
   if((length(a_vec)==length(P_vec) & length(P_vec)==length(T_vec)) == FALSE){
     paste("vectors are not equal length")
@@ -86,6 +86,11 @@ mak5 <- function(dat_loc, a_vec, P_vec, T_vec, parms, len=100){
     saveRDS(Delta, paste0(dat_loc, "vary", names[p], ".RDS"))
   }
 }
-
-
+################################################################################
+dat_loc <- "../results_numeric/fig5dat2/"
+if(dir.exists(dat_loc)==FALSE){
+  dir.create(dat_loc)
+}
+parms = c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
+mak5(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms=parms)
 
