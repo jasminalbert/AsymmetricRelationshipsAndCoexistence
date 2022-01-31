@@ -96,7 +96,7 @@ getDelt <- function(a, P, Tbar, time, sims, invader=1){
 }
 
 wrapDelt <- function(args){
-  Deltas <- getDelt(a=args[1], P=args[2], Tb=args[3], time=args[4], sims=args[5])
+  Deltas <- getDelt(a=args[1], P=args[2], Tb=args[3], time=args[4], sims=args[5], invader=args[6])
   return(Deltas)
 }
 
