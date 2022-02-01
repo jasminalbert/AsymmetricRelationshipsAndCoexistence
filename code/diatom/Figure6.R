@@ -1,6 +1,4 @@
 # Figure 6
-source("./diatom/workflow.R")
-
 dat_loc <- "../results_numeric/fig6dat/"
 if (dir.exists(dat_loc)==FALSE){
   source("diatom/makefig6dat.R")
