@@ -19,7 +19,7 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   
   parms <- c(Tbar=Tbar, a=a, P=P, D=0.09, S=35)
   #Time <- time 
-  times <- seq(0,Time,by=.1)
+  times <- seq(0,time,by=.1)
   
   y0 <- c(R=.1,x1=0,x2=20)
   if (invader==2){ #simulate with 2 as invader, 1 as resident
@@ -102,7 +102,7 @@ wrapDelt <- function(args){
 
 require(parallel)
 
-mapspace <- function(parmlist, sims, time){
+mapspace <- function(parmlist, sims, time, invader){
 	
 	#names(parmlist) <- c('a','P','Tbar')
 	#len <- unlist(lapply(parmlist, length))
@@ -122,7 +122,7 @@ mapspace <- function(parmlist, sims, time){
 				#Delta1 <- getDelt(a[i], P[j], Tb[k], time, sims)
 				#res[r,] <- c(a[i], P[j], Tb[k], Delta1$IGR, Delta1$epsECbrk, Delta1$time)
 				#print(c(r,i,j,k))
-			  argsList[[r]] <- c(a[i], P[j], Tb[k], time, sims)
+			  argsList[[r]] <- c(a[i], P[j], Tb[k], time, sims, invader)
 				r <- r+1
 			}	
 		}
