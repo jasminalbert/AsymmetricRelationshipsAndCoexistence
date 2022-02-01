@@ -161,7 +161,7 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
 	cm <- cm.colors(ncolor)
 	
 	image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
-	title(xlab=names(x), ylab=names(y), line=-1)
+	title(xlab=names(x), ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=-1)
 	contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
 }
 
