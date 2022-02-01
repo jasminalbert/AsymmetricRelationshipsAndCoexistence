@@ -130,7 +130,7 @@ mapspace <- function(parmlist, sims, time, invader){
 	#res <- data.frame(res)
 	resList <- mclapply(argsList, wrapDelt, mc.cores=7) ###change cores here###
 	resdf <- data.frame(t(sapply(resList, function(X){c(X$IGR, X$epsECbrk, X$time, X$map)})))
-	parmsdf <- data.frame(matrix(unlist(argsList), ncol=5, byrow=T)[,-4:-5])
+	parmsdf <- data.frame(matrix(unlist(argsList), ncol=6, byrow=T)[,-4:-6])
 	
 	res <- cbind(parmsdf, resdf)
 	colnames(res) <- c("a", "P", "Tbar", "IGR", "ATA", "time", "map")
