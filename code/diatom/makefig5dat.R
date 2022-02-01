@@ -48,7 +48,6 @@ DeltaT$Tbar <- Tbar
 saveRDS(DeltaT, paste(dat_loc,'varyTbar.RDS',sep=''))
 
 #######################################################################
-# make into function#
 #make fig 5 dat function
 
 # args
@@ -87,10 +86,5 @@ mak5 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
   }
 }
 ################################################################################
-dat_loc <- "../results_numeric/fig5dat2/"
-if(dir.exists(dat_loc)==FALSE){
-  dir.create(dat_loc)
-}
-parms = c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
-mak5(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms=parms)
+
 
