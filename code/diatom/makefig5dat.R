@@ -48,43 +48,6 @@ DeltaT$Tbar <- Tbar
 saveRDS(DeltaT, paste(dat_loc,'varyTbar.RDS',sep=''))
 
 #######################################################################
-#make fig 5 dat function
 
-# args
-# dat_loc
-# a_vec
-# P_vec
-# T_vec
-# len
-
-#parms = c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=2)
-
-mak5 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
-  
-  if((length(a_vec)==length(P_vec) & length(P_vec)==length(T_vec)) == FALSE){
-    paste("vectors are not equal length")
-  }
-  len <- length(a_vec)
-  
-  names <- c("amplitude","Period","Tbar")
-  
-  plots <- 1:3
-  aPT <- cbind(a_vec, P_vec, T_vec)
-  
-  for (p in plots){
-    Mat <- matrix(parms, nrow=len, ncol=length(parms), byrow=T)
-    Mat[,p] <- aPT[,p]
-    
-    Delta <- wrapDelt(args=Mat[1,])
-    
-    for (i in 2:len){
-      Delta[i,] <- wrapDelt(Mat[i,])
-      print(i)
-    }
-    Delta$var <- aPT[,p]
-    saveRDS(Delta, paste0(dat_loc, "vary", names[p], ".RDS"))
-  }
-}
-################################################################################
 
 
