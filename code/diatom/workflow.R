@@ -160,7 +160,7 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
 	#main <- expression(paste(Delta[i]^"[EC]","/IGR"))
 	cm <- cm.colors(ncolor)
 	
-	if(range(map)!=c(-1,1)){
+	if(all(range(map)!=c(-1,1))){
 	  by <- 2/(ncolor-1)
 	  fullr <- seq(-1,1,by)
 	  fullr <- round(fullr,2)
