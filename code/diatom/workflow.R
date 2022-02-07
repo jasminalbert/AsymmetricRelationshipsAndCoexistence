@@ -180,7 +180,7 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
 	  }
 	  range <- range(map)
 	  crange <- c(roundby(range[1],by), roundby(range[2],by))
-	  cm[match(crange,fullr)]
+	  cm <- cm[match(crange,fullr)]
 	}
 	
 	image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
