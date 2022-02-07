@@ -160,6 +160,29 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
 	#main <- expression(paste(Delta[i]^"[EC]","/IGR"))
 	cm <- cm.colors(ncolor)
 	
+	if(range(map)!=c(-1,1)){
+	  by <- 2/(ncolor-1)
+	  fullr <- seq(-1,1,by)
+	  fullr <- round(fullr,2)
+	  
+	  roundby <- function(x, by){
+	    m <- round(x)
+	    if (m<x){
+	      i <- seq(m, m+1, by)
+	    } else {i <- seq(m, m-1, by)}
+	    
+	    dd <- tail(i[x>i],1)
+	    du <- i[x<i][1]
+	    if (x-dd < du-x){
+	      x <- dd
+	    } else {x <- du}
+	    return(x)
+	  }
+	  range <- range(map)
+	  crange <- c(roundby(range[1],by), roundby(range[2],by))
+	  cm[match(crange,fullr)]
+	}
+	
 	image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
 	title(xlab=names(x), ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=-1)
 	contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
