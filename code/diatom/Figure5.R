@@ -50,17 +50,18 @@ for (i in 1:3){
   mtext(paste0("(", letters[i],")"), 3, -2.5, adj=0.985, cex=1.8)
   
   #legend
-	if (i==1){
-		legend("topleft", legend=c(expression(Delta[i]^0), expression(Delta[i]^E), expression(Delta[i]^C), expression(Delta[i]^"(E#C)"), expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]") ,expression(IGR)), 
-		       col = c(rep("black",4), "blue", "red", "orange"),lty = line, bty="n", cex=1.9, inset=c(-0.02,-0.03), 
-		       y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.8)
-	}
+  if (i==1){
+    legend("topleft", legend=c(expression(Delta[i]^0), expression(Delta[i]^E), expression(Delta[i]^C), expression(Delta[i]^"(E#C)"), expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]") ,expression(IGR)), 
+           col = c(rep("black",4), "blue", "red", "orange"),lty = line, bty="n", cex=1.9, inset=c(-0.02,-0.03), 
+           y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.8)
+  }
 }
 title(ylab="contribution to coexistence", outer=T, line=2.1, cex.lab=2, font.lab=2)
 
 dev.off()
 
-
+#Fig5 <- paste(fig_loc,"fig5.pdf",sep="")
+#fig5(Fig5, dat_loc, invader=1) #
 
 
 
