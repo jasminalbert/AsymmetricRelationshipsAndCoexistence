@@ -64,7 +64,7 @@ fig5 <- function(filename, dat_loc, invader){
   varylist <- list()
   
   for (p in plots){
-    varylist[[p]] <- readRDS(paste0(dat_loc, "vary", names[p],parms["invader"],".RDS"))
+    varylist[[p]] <- readRDS(paste0(dat_loc, "vary", names[p],invader,".RDS"))
   }
   col <- c(rep("black",4), "red", "blue", "orange")
   line <- c(1:4, 1,1,1); lwd <- c(rep(2,6),3)
@@ -92,6 +92,14 @@ fig5 <- function(filename, dat_loc, invader){
     }
     abline(h=0, col="lightgrey") #zero
     abline(v=orig[i], col='magenta', lty=3, lwd=2)
+    
+    #ATA effect blocking
+    resc <- varylist[[i]][varylist[[i]]$epsECbrk>varylist[[i]]$IGR & varylist[[i]]$IGR>0,]
+    rect(resc[1,10], ymin*1.2, tail(resc,1)[1,10], ymax*1.2, col="darkgoldenrod2", border=NA, density=40, lty=3)
+    
+    excl <- varylist[[i]][varylist[[i]]$epsECbrk<varylist[[i]]$IGR & varylist[[i]]$IGR<0,]
+    rect(excl[1,10], ymin, tail(excl,1)[1,10], ymax, col="hotpink2", border=NA, density=40, lty=3)
+    
     #label
     mtext(paste0("(", letters[i],")"), 3, -2.5, adj=0.985, cex=1.8)
     #legend
