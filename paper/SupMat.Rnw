@@ -793,7 +793,7 @@ Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}.
 %to be covered:
 Estimations of $Q_i(t)$, $V_i(t)$, and $K_i(t)$, temperature dependence functions for 
 cell quota, reproduction rate, and half saturation, respectively, were used to 
-paramaterize the competing diatom model outline in the paper. 
+paramaterize the competing diatom model outlined in the paper. 
 Values of and subsequent function estimations are plotted in Figure \ref{fig:VQK}. 
 \cite{Descamps_2005} obtained estimated values for $Q_i$, $V_i$, and $K_i$ from 
 single species nine-day batch experiments at four different temperatures ($6^\circ$C, 
@@ -801,15 +801,12 @@ $12^\circ$C, $18^\circ$C, $24^\circ$C) (see Table 1 of \cite{Descamps_2005}) and
 computed linear interpolations to
 functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$. These values and functions are 
 indicated in Figure \ref{fig:VKQ} by open circles and dashed lines. 
-\cite{Ellne_2016, Ellner_2019} chose to slightly modify some values and functions 
-(to better align model with competition experiments), 
-%why did they make K_i's constant and do we need to adjust so that it
-%is constant over the range of temperatures considered 
-indicated in Figure \ref{fig:VKQ} by closed circles and solid lines. 
-These modifications do not result in meaningful differences when evaluating 
-coexistence at the parameter values used by \cite{Descamps_2005}.
-We chose to implement the modified functiones in our methods to quantify and 
-decompose coexistence.
+\cite{Ellne_2016, Ellner_2019} used slightly modified values and functions,
+indicated in \ref{fig:VQK} by filled circles and solid lines. 
+Our investigation follows that of \cite{Ellne_2016, Ellner_2019} and 
+uses the modified functions of  $Q_i(t)$, $V_i(t)$, and $K_i(t)$ to analyze coexistence.
+
+
 
 %be very clear here. To give one example of the need for care, here, Ellner et al (2019) state on p. 6
 %of their paper that K_1 and K_2 were constant for the range of temperature considered, and they state
@@ -830,20 +827,20 @@ decompose coexistence.
 %and why r is what you've written there.
 
 Our decomposition is defined by $E(t)=\theta(t)$, 
-$C_i(t)=(K_i(t)+S(t))/S(t)$ and $r_i(E_i,C_i)=\frac{V_i(E)}{C_i} -D$. 
+$C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$ and $r_i(E_i,C_{i \bs i})=\frac{V_i(E)}{C_{i \bs i}} -D$. 
 We note that our definition and selection of our "features" of interest are
 options among many and features need not be limited to $E$ and $C$ \citep{Ellner_2019}. 
 For example \cite{Ellner_2019} decomposes coexistence with respect to fluctuation in
 inflow silicate concentration, $S$, and temperature, and \cite{Ellner_2016} decomposes
 coexistence using classical $E$ and $C$ drivers, but define $E=V(t)$. 
-Like \cite{Ellner_2016}, we set $C_i(t)=(K_i(t)+S(t))/S(t)$ to reflect 
+Like \cite{Ellner_2016}, we set $C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$ to reflect 
 potential versus actual growth of the diatom populations. 
 Choice of drivers and their definitions are up to the investigator,
 but should refelct real variables that influence population growth.
 
 
 %3) You need to outline how the quantities E_i and C_i\i were obtained from simulations. 
-To obtain $E_i$ and $C_{i \bs i}$, the model was simulated for a $T=3600$ number of timesteps, setting initial population size of invader i to be zero and initial population of the resident, $r=20$. 
+To obtain $E_i$ and $C_{i \bs i}$, the competiton model was simulated for a $T=3000$ number of timesteps to obtain $S$, the extracellular silicate concentration. The initial population size of invaderwas set at zero and initial population of the resident was set at 20. Environmental temperature fluctuations were defined by the paramters $a$, $P$, and $\theta_0$ for $\theta(t)=asin(2\pi t/P)+\theta_0$. Dilution was set to $D=0.09$ and inflow silicate concentration was set at $S_0=35$. A burn in time of $\frac{2}{3}T$ was cut from the resulting $S$ and $E_i(t)=\theta(t)$. Competitive pressure was calculated using $C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$.
 
 %***DAN: Some text and notes immediately below were cut and pasted from the main text, in case 
 %having this material helps in writing this new SI section
