@@ -924,9 +924,25 @@ were never greater than \Sexpr{round(se3qij,5)}, so are not displayed. \label{fi
 
 \begin{figure}
 \includegraphics[width=.66\textwidth]{../results_figs/VKQfig.pdf}
-\caption[caption]
-{caption \label{fig:VKQ}}
+\caption[Species growth rate, silica uptake, and half sturation responses to changes in temperature.]
+{Species maximum growth rate (a), half saturation constant (b), and silica uptake (c) responses to changes in temperature. Species 1 is \emph{F. crotonensis}, shown in blue, and species 2 is \emph{C. pseudostelligera}, shown in red. Open circles and dashed lines indicate estimated data and interpolations from \cite{Gonzalez_2005} and closed circles and solid lines indicate values and function used in our analysis as defined in \cite{Ellner_2016, Ellner_2019}. \label{fig:VKQ}}
 \end{figure}
+
+%\begin{figure}
+%\includegraphics[width=\textwidth]{../results_figs/fig5_2.pdf}
+%\caption[Analogous to Fig. \ref{MT-fig:fig5} but reverse invader-resident scenario.]
+%{Analogous to Fig. \ref{MT-fig:fig5} but \emph{C. pseudostelligera} is the invader and 
+%\emph{F. crotonensis} is the resident. See the caption of
+%that figure for details. Standard errors..\label{fig:fig5_2}}
+%\end{figure}
+
+%\begin{figure}
+%\includegraphics[width=.38\textwidth]{../results_figs/fig6_2.pdf}
+%\caption[Analogous to Fig. \ref{MT-fig:fig6} but reverse invader-resident scenario.]
+%{Analogous to Fig. \ref{MT-fig:fig6} but \emph{C. pseudostelligera} is the invader and 
+%\emph{F. crotonensis} is the resident. See the caption of
+%that figure for details. Standard errors..\label{fig:fig6_2}}
+%\end{figure}
 
 \clearpage
 \newpage
