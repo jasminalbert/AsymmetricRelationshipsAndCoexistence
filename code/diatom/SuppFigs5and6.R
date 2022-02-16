@@ -13,6 +13,7 @@ parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=2)
 # make data here 
 dat_loc <- "../results_numeric/fig5dat2/"
 if (dir.exists(dat_loc)==FALSE){
+  dir.create(dat_loc)
   a <- seq(1,6,length.out=100)
   Tbar <- seq(16,18,length.out = 100)
   P <- seq(51,199.5,length.out=100)
@@ -29,6 +30,7 @@ fig5(fig5_2, dat_loc, invader=2) #makes figure
 # make data here
 dat_loc <- "../results_numeric/fig6dat2/"
 if (dir.exists(dat_loc)==FALSE){
+  dir.create(dat_loc)
   a <- seq(3.5,6,length.out=100)
   P <- seq(51,199.5,length.out=100)
   Tbar <- seq(16,19,length.out=100)

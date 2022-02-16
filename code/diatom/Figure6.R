@@ -1,7 +1,11 @@
 # Figure 6
 dat_loc <- "../results_numeric/fig6dat/"
 if (dir.exists(dat_loc)==FALSE){
-  source("diatom/makefig6dat.R")
+  #source("diatom/makefig6dat.R")
+  a <- seq(1,6,length.out=100)
+  Tbar <- seq(16,18,length.out = 100)
+  P <- seq(51,199.5,length.out=100)
+  dir.create(dat_loc)
 }
 fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
