@@ -670,14 +670,25 @@ difference between coexistence and extirpation of one species in some cases.
 
 %G4
 Fulfilling goal G4 of the Introduction (to provide an empirical example of species coexistence which highlights the role ATAs can play), Fig. \ref{fig:fig5} and Fig. \ref{fig:fig6} 
-show that the ATA contributions have magnitude comparable to the 
+show that the ATA contributions have magnitudes comparable to the 
 magnitudes of other terms of the extended MCT decomposition and 
 parameters subspaces exist where ATA rescue occurs. 
+Fig.\ref{fig:fig5} plots the importance of various coexistence mechanisms for the 
+persistence of \emph{F. crotonensis} and they're sum, the IGR
+(see eq. \ref{eq:full_decomp}), for different varying temperature parameters 
+($a$, $P$, and $\theta_0$) with two of the three parameters set constant in each plot.
+Increasing amplitude and mean temperature showed increasing trends in the IGR and 
+decomposed coexistence mechanisms, while increasing periodicity showed less change. 
 Within the investigated parameters of Fig.\ref{fig:fig5}, ATA contribution, $\Delta_i^{[EC]}$, 
 is always positive, even in cases where IGR is negative, and is almost always second to 
 the contribution of varying environment, $\Delta_i^{E}$, 
-including for the original coexistence parameters specified in Gonzalez Decamps.  
-Fig.\ref{fig:fig5} plots the various contributions of coexistence (see eq. \ref{eq:full_decomp}) for different varying parameters with two of the three parameters set constant in each plot. Increasing amplitude and mean temperature showed increasing trends in the IGR and decomposed quantities, while increasing periods showed less change. 
+including for the temperature parameters which \emph{F. crotonensis} 
+and \emph{C. pseudostelligera} coexisted \emph{in vitro} ? \cite{Descamps_2005}.  
+ATA rescue is revealed in Fig.\ref{fig:fig5} within parameter subspaces where the absence of 
+ATA contribution would lead to exclusion of \emph{F. crotonensis}.
+IGR decomposition of \emph{C. psuedostelligera} across the same subsets of
+temperature parameters revealed that its IGR is always positive and the ATA contribution is 
+not meaningful (see SI section). %Mean EC shows a rescue effect against variance in E
 
 Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>\text{IGR}$. To preserve simplicity and readibility of the plots, $|\Delta_i^{[EC]}/\text{IGR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ tended to occur as the IGR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig. \ref{fig:fig5}, we see in Fig. \ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{IGR}$ changes from negative to positive. The effect of varying periodicity of environmental fluctuations is... 
 
