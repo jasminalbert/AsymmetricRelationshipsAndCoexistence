@@ -44,7 +44,7 @@ V2modfun <-  approxfun(Tvals,V2dataMod,rule = 2)
 forceChemo <- function(t,y,parms) {
 	temp <- parms["Tbar"] + parms["a"]*sin(2*pi*t/parms["P"]); 
 	V1 <- V1quad(temp); V2<- V2modfun(temp); K1<- K1flatfun(temp); K2 <-  K2flatfun(temp) 
-	#V1 <- V1fun(temp); V2<- V2fun(temp); K1<- K1fun(temp); K2 <-  K2fun(temp) 
+	#V1 <- V1fun(temp); V2<- V2fun(temp); K1<- K1fun(temp); K2 <-  K2fun(temp) #unmodified funs
 	Q1 <- Q1fun(temp); Q2 <-  Q2fun(temp);
 	R <- y[1]; x1<- y[2]; x2<- y[3]; 
 	up1 <- V1*R/(K1 + R); 
