@@ -705,14 +705,14 @@ Implementing new methods of MCT \citep{Ellner_2019, Ellner_2016}, we provided a 
 decomposition to MCT and decompose the storage effect into two new terms, 
 $\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, the contribution of correlation \emph{per se}. 
 The results of our application to a simple lottery model and 
-to a competitive diatom model show that ATA contributions to storage effects
+to a competitive diatom model show that ATA contributions to storage effects and to coexistence
 are non-negligible and meaningfully contribute to the coexistence of species and thus the maintenance of biodiversity. 
 Our results reinforce that common methods of correlation fail to reflect and include 
 important information on the structure of the relationship between variables and amends
 coexistence to the list of ecological theory and phenomena that ATAs have been found to 
 be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}.  
-Futhermore, though storage effects are typically described as the contribution
-of covariance between drivers to coexistence, commonly referred to as \emph{EC covariance},
+Though storage effects are typically described as the contribution
+of covariance between drivers to coexistence, classically \emph{EC covariance},
 \citep{Chesson_2012, Ellner_2016, Ellner_2019}, we suggest that storage effects, instead, 
 be described as the contribution of the \emph{relationship} between the drivers.
 Measures of covariance do not fully capture all aspects of associativity throughout the bivariate 
@@ -721,18 +721,18 @@ EC (or other drivers') relationship as the contribution of EC (or other drivers'
 Accordingly, we have separated the mechanisms of storage effect 
 into contributions of ATAs and contributions of correlation \emph{per se}.
 
-The example case exapanding upon coexistence decompositions of the \cite{Descamps_2005} chemostat experiment support our earlier findings that ATA contributions are not only non-zero, but are non-neglible and contribute meaningfully to coexistence. 
+%The example case exapanding upon coexistence decompositions of the \cite{Descamps_2005} chemostat experiment support our earlier findings that ATA contributions are not only non-zero, but are non-neglible and contribute meaningfully to coexistence. 
 
 Our expansion allows for the parsing of storage effects into contribution from a pure symmetrical correlation and structures beyond symmetric correlation. Previous studies report storage effect as a contribution to coexistence of EC covariance; yet compute it as the contribution of the EC relationship (covariance and beyond; symmetric and asymmetric).
 
 
 \underline{ATA specialization}
-Not only is the contribution of ATA non-neglible but in some cases the presence of absence of ATA 
+Not only is the contribution of ATA non-neglible but in some cases the presence or absence of ATAs 
 can mediate the result of competition between species, i.e., coexistence or extirpation. 
 For some parameters, the contribution of ATAs was the driving mechanism of 
 coexistence – the IGR would be negative without it – deeming the scenario a case of 
-ATA rescue. For other parameter values ATA exclusion occurs where ATAs are the 
-driving mechanism of the failure of coexistence and the lack of ATAs would result in 
+ATA rescue. For other parameter values, ATA exclusion occurs where ATAs are the 
+driving mechanism of the failure to coexist (exclusion) and the lack of ATAs would result in 
 a positive IGR. Parameter
 subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists} - species which only persist in habitat patches where ATAs contribute to its coexistence. 
 %I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
@@ -749,9 +749,9 @@ and specifically for coexistence and the maintenance of biodiversity.
 The occurence of ATAs among environmental variables themselves, 
 their contribution to coexistence, and their changes through space and time
 can and should be explored further. 
-Distinct increases in the magnitude of ATA contribution with increasing
-environmental fluctuations, as shown in our results and
-figures (Fig. \ref{fig:fig3} - \ref{fig:fig6}), suggests that ATAs and their effects
+The coupling of the magnitude of ATA contribution and environmental variability, 
+as shown in our results and figures (Fig. \ref{fig:fig3} - \ref{fig:fig6}), 
+suggests that ATAs and their effects
 may become more important to consider for coexistence and possibly other 
 ecological phenomena as environmental conditions evidently
 become more variable.
@@ -767,7 +767,7 @@ possible \emph{relationships} in the extremes; however,
 simpler changes in extreme events themselves such as
 intensity and frequency and their influence on coexistence also merit future work. 
 Possible changes in tail association
-patterns of environmental variables in nature can
+patterns between environmental variables in nature can
 influence the coexistence of species through the storage effect and not other mechanisms, but
 extreme and changing climate is probable to affect other mechanims in other ways.
 %In the Discussion, I intend to talk about how possible changes in tail association 
@@ -793,7 +793,17 @@ extreme and changing climate is probable to affect other mechanims in other ways
 %variables may be changing under global change.
 
 \underline{E and vital rates}
-%Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. Probably real environmental variables are actually related to vital rates in a non-linear and probably often threshold-like way. Threshold relationships can produce tail association, as we showed elsewhere. Changes in the means of true environmental variables may change where those distributions of environmental variables are compared to thresholds, which may change the nature of tail associations between the effects of those environmental variables.
+We note that \emph{E}, in our investigation and in other investigations within the MCT 
+framework, is not directly a measure of the environment, but is a measure of response to the 
+environment (vital rates). Environment and environmental response may be related linearly
+(like lottery model?); though probably real environmental variables are 
+actually related to vital rates in a non-linear and often threshold-like way. 
+Threshold relationships can produce tail association, as we showed elsewhere. 
+Changes in the means of true environmental variables may change 
+where those distributions of environmental variables are compared to thresholds, 
+which may change the nature of tail associations between the effects of 
+those environmental variables.
+%Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. 
 
 \underline{the new effects are not "weak noise" effects}
 if sigma really small, ATA would not matter?
@@ -801,14 +811,13 @@ if sigma really small, ATA would not matter?
 %Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
 %via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
 %study this new term in the decomp. Need to study a bit to substantiate this properly, or get Steve Ellner help.
-
-From proposal: 
-
 Classical analytic derivations of MCT using Taylor expansion approximations completely miss out
 on any additions to coexistence beyond simple correlations. 
 In fact, storage effects in analytic MCT is computationally equal to $\Delta^{[E \nat C]}$, 
-the contributions of correlation per se. In newer, simulation based MCT, storage effect is 
-the sum of the two new terms, $\Delta^{(EC)}=\Delta^{[E \nat C]}+\Delta^{[EC]}$, obscuring the effects of ATAs.
+the contributions of correlation \emph{per se}. 
+In newer, simulation based MCT, storage effect is 
+the sum of the two new terms, $\Delta^{(EC)}=\Delta^{[E \nat C]}+\Delta^{[EC]}$, 
+obscuring the effects of ATAs.
 
 \underline{multispecies models}
 %Need a para about multi-species models - how would things change? One difference is there are more different
