@@ -14,7 +14,7 @@ fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
-Fig6 <- paste0(fig_loc,"fig_6.pdf")
+Fig6 <- paste0(fig_loc,"fig6.pdf")
 fig6(Fig6, dat_loc, invader=1) 
 
 #aP <- readRDS(paste0(dat_loc,'aP.RDS')) #from makefig6dat.R
