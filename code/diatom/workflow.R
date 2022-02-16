@@ -169,7 +169,7 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
 	    m <- round(x)
 	    if (m<x){
 	      i <- seq(m, m+1, by)
-	    } else {i <- seq(m, m-1, by)}
+	    } else {i <- seq(m, m-1, -by)}
 	    
 	    dd <- tail(i[x>i],1)
 	    du <- i[x<i][1]
