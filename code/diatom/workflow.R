@@ -160,29 +160,34 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
 	#main <- expression(paste(Delta[i]^"[EC]","/IGR"))
 	cm <- cm.colors(ncolor)
 	
-	if(all(range(map)!=c(-1,1))){
-	  by <- 2/(ncolor-1)
-	  fullr <- seq(-1,1,by)
-	  fullr <- round(fullr,2)
+	if(all(range(map)!=c(-1,1))){ #need to match actual range to full range to adj color index
+	  by <- 2/(ncolor-1) 
+	  ran0 <- matrix(seq(-1,1,by)) #full range
+	  ran <- range(map) #actual range
+	  rMatch <- c(round(ran[1]/by)*by, round(ran[2]/by)*by) #round to match 
 	  
-	  roundby <- function(x, by){
-	    m <- round(x)
-	    if (m<x){
-	      i <- seq(m, m+1, by)
-	    } else {i <- seq(m, m-1, -by)}
-	    
-	    dd <- tail(i[x>i],1)
-	    du <- i[x<i][1]
-	    if (x-dd < du-x){
-	      x <- dd
-	    } else {x <- du}
-	    return(x)
-	  }
-	  range <- range(map)
-	  crange <- c(roundby(range[1],by), roundby(range[2],by))
-	  cm <- cm[match(crange,fullr)[1]:match(crange,fullr)[2]]
+	  min <- apply(ran0, 1, function(X){all.equal(X, rMatch[1])}) #why does R have to lie about floats
+	  max <- apply(ran0, 1, function(X){all.equal(X, rMatch[2])}) 
+	  cm <- cm[which(min==TRUE):which(max==TRUE)] #cropped color palette..was there an easier way to do this?
+	  
+	  
+	  #silly function I wrote before I realized the round(a/b)*b trick 
+	  #also match() fucntion doesnt work because R lies about floats
+	  
+	  #roundby <- function(x, by){
+	  #m <- round(x)
+	  #if (m<x){i <- seq(m, m+1, by)
+	  #} else {i <- seq(m, m-1, -by)}
+	  #dd <- tail(i[x>i],1);du <- i[x<i][1]
+	  #if (x-dd < du-x){x <- dd
+	  #} else {x <- du}
+	  #return(x)
+	  #}
+	  #ran <- range(map)
+	  #rMatch <- c(roundby(ran[1],by), roundby(ran[2],by))
+	  #cm <- cm[match(rMatch,ran0)[1]:match(rMatch,ran0)[2]]
 	}
-	
+
 	image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
 	title(xlab=names(x), ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=-1)
 	contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
