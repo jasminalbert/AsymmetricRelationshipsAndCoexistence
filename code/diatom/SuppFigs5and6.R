@@ -38,7 +38,7 @@ fig5(fig5_2, dat_loc, invader=2) #makes figure
 #}
 #fig6_2 <- paste0(fig_loc,"fig6_2.pdf")
 
-fig6(fig6_2, dat_loc, invader=2) #makes figure
+#fig6(fig6_2, dat_loc, invader=2) #makes figure
 
 
 
