@@ -348,40 +348,29 @@ and a means of understanding its theoretical and empirical importance.
 
 \section{Theory}\label{section:theory}
 
-%***DAN: consider sending the lottery model components of this section to sup mat, to reduce length and complexity.
-%Before doing that, make sure you understand what the consequences will be.
-
 We here pursue goal G1 from the Introduction: to augment MCT to illuminate how ATA
-plays a role in coexistence. For pedagogical clarity, we develop each step of our new theory for a general 
-two-species model, and for the lottery model (Introduction).
+plays a role in coexistence. We develop each step of our new theory for a general 
+two-species model, below, and specifically for the lottery model of the Introduction, in SI section \ref{SI-SIsect:TheoryForLottery}.
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
 multiple mechanisms to coexistence. But we show below
 that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
-So we begin by defining storage effects for a general two species model and 
-for the lottery model. Our mathematical notation parallels
-that of \cite{Ellner_2016,Ellner_2019}.  
-
-For a general model, it is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
+So we begin by defining storage effects. Our mathematical notation parallels
+that of \cite{Ellner_2016,Ellner_2019}. 
+It is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
 an environment-dependent factor $E_i(t)$ and as a decreasing function of a quantity representing
-competitive pressure on species $i$, $C_i(t)$. We assume, for simplicity, 
+competitive pressure on species $i$, $C_i(t)$. We also assume, for simplicity, 
 that the $E_i(t)$ are iid through time, and likewise for the
-$C_i(t)$. Though this assumption can be circumvented, we make the assumption because it simplifies the
+$C_i(t)$. Though the iid assumption can be circumvented, we make the assumption because it simplifies the
 presentation of new ideas. 
 
 %***DAN: I think we should replace the terminology "invasion growth rate" and "IGR" by "growth when rare" and "GWR",
 %throughout the paper. Has to be done in the main text and sup mat and the figures themselves (IGR is often labeled on 
-%the figure panels themselves).
+%the figure panels themselves). Need to also search for "invader" since sometimes we use that word. Also think of any 
+%other related terminology that needs to be altered as part of the overall change.
 
-For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
-the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
-divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
-does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
-Species growth rates for the lottery model can then be written 
-$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$.
-
-For a general model, the storage effect for species $i$ is the contribution of covariation between $E$ and 
+The storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between invader and resident mean growth rates, when $i$ is the invader.
 Specifically, storage effects for species $i$ are 
 \begin{equation}
@@ -393,13 +382,12 @@ $\olr_{j \bs i}$ refers to the mean steady-state
 growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
 and $\olrs_{i \bs i}$ and $\olrs_{j \bs i}$ are analogous quantities, but for an alternative modelling scenario, identical except that
 influences of environment and competition on the invader or resident have been rendered independent.  
-Following \cite{Ellner_2016,Ellner_2019}, a subscript 
-$i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
+A subscript $i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
 a subscript $j \bs i$ indicates a quantity computed for $j$ when $i$ is absent.
-The notation $\Delta_i^{(EC)}$ for storage effects also follows \cite{Ellner_2019}.
 The \emph{scaling factor}
 $q_{ij}$ measures the relative sensitivities to competition of the two species, see \cite{Chesson_1994},
-\cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the definition of $q_{ij}$. 
+\cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the two alternative definitions of $q_{ij}$
+that we use. 
 Since it was assumed that $r_i=r_i(E_i,C_i)$, we can write $\olr_{i \bs i}=\E[r_i(E_i,C_{i \bs i})]$, where
 $\E(\cdot)$ denotes expected value just as does an overbar, but we use $\E$ for longer expressions.
 Also, $\olr_{j \bs i}=\E[r_j(E_j,C_{j \bs i})]$.
@@ -407,33 +395,10 @@ An expression for $\olrs_{i \bs i}$ is obtained from $\olr_{i \bs i}$ by replaci
 variable $(E_i,C_{i \bs i})$ by a random variable with the same marginal distributions, but independent components, 
 $(E_i^\shp,C_{i \bs i}^\shp)$, so $\olrs_{i \bs i}=\E[r_i(E_i^\shp,C_{i \bs i}^\shp)]$.
 Likewise, $\olrs_{j \bs i}=\E[r_j(E_j^\shp,C_{j \bs i}^\shp)]$.
-Though some readers may find it slightly confusing to make simultaneous use of the variable 
-$E_i$ and the operator $\E(\cdot)$, both of these notational choices are standard and very common, so it would 
+Though some readers may find it slightly confusing to simultaneously use the variable 
+$E_i$ and the operator $\E(\cdot)$, both of these notational choices are standard, so it would 
 be more confusing to use alternative notation. Like all variables, $E_i$ is rendered in italic; like
 all operators, $\E(\cdot)$ is rendered upright.
-
-For the lottery model, when $i$ is an invader, the competition experienced by either 
-species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$; and likewise to get
-$\olr_{i \bs i}$ from the expression for $r_i$ for the model. Thus 
-$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta$, and 
-$\olr_{i \bs i} = \E[\ln(1-\delta+\delta B_i/B_j)]=\E[\ln(1-\delta+E_i /C_{i \bs i})]$. 
-Likewise, 
-$\olr_{j \bs i} = \E[\ln(1-\delta+\delta B_j/B_j)]=\E[\ln(1-\delta+E_j/C_{j \bs i})]$,
-though we already knew this equals $0$. 
-An expression for $\olrs_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
-by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
-Thus $\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)]$. Likewise,
-$\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we use 
-$(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
-$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
-We show in SI section \ref{SI-SIsect:scaling_factors}
-that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
-Since we assumed log-normally distributed $B_i$, 
-$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
-We alternatively also consider $q_{ij}=1$, for reasons explained in SI section \ref{SI-SIsect:scaling_factors}.
-Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
-to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
-and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into (\ref{eq:storage_effects_gen}).
 
 We now specify how to decompose storage effects into
 contributions due to ATAs and due
@@ -464,9 +429,9 @@ correlation \emph{per se}, remaining after having removed the effects of ATAs.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
 corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
 The new symbol should correspondingly be pronounced ``partial sharp''.
-The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
+The brackets in $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
-of storage effects, which are themselves a term within the decomposition provided by MCT \citep{Ellner_2019} -- see 
+of storage effects, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
 below for additional details.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
@@ -484,27 +449,12 @@ in one of
 four alternative ways: $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
 $E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
 $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
-For those familiar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
+For those familiar with copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
 we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
 $C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
-as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created in an analogous way.  
-
-For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
-$\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
-$\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
-Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
-Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
-$\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
-can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
-is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
-and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
-marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
-$(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
-component $\olrn_{i \bs i}$ of (\ref{eq:storage_effects_further1}) for the lottery model using the simulation 
-approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
-so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
+as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
 
 The other mechanisms in MCT that apply in our modelling context of purely temporal variation
 make no reference to covariation between quantities, whereas ATAs are 

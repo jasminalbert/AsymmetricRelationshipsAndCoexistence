@@ -118,11 +118,53 @@ se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
 \tableofcontents
 \listoffigures
 
-%probably want table of contents, figure and table lists
+\section{Theory for the lottery model}\label{SIsect:TheoryForLottery}
 
-\section{Theory for the lottery model}
+For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
+the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
+divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
+does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
+Species growth rates for the lottery model can then be written 
+$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$, which is an increasing
+function of $E_i$ and decreasing function of $C_i$.
 
+When $i$ is an invader, the competition experienced by either 
+species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$; and likewise to get
+$\olr_{i \bs i}$ from the expression for $r_i$ for the model. Thus 
+$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta$, and 
+$\olr_{i \bs i} = \E[\ln(1-\delta+\delta B_i/B_j)]=\E[\ln(1-\delta+E_i /C_{i \bs i})]$. 
+Likewise, 
+$\olr_{j \bs i} = \E[\ln(1-\delta+\delta B_j/B_j)]=\E[\ln(1-\delta+E_j/C_{j \bs i})]$,
+though we already knew this equals $0$. 
+An expression for $\olrs_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
+by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
+Thus $\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)]$. Likewise,
+$\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we use 
+$(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
+$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
+We show in SI section \ref{SIsect:scaling_factors}
+that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
+Since we assumed log-normally distributed $B_i$, 
+$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
+We alternatively also consider $q_{ij}=1$, for reasons explained in SI section \ref{SIsect:scaling_factors}.
+Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
+to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
+and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into main text equation (\ref{MT-eq:storage_effects_gen}).
 
+For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
+$\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
+$\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
+Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
+Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
+$\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
+can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
+is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
+and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
+marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
+$(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
+component $\olrn_{i \bs i}$ of main text equation (\ref{MT-eq:storage_effects_further1}) for the lottery model using the simulation 
+approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
+so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
 
 \section{Scaling factors}\label{SIsect:scaling_factors}
 
