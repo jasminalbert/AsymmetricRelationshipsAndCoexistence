@@ -120,6 +120,9 @@ se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
 
 %probably want table of contents, figure and table lists
 
+\section{Theory for the lottery model}
+
+
 
 \section{Scaling factors}\label{SIsect:scaling_factors}
 

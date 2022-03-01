@@ -348,7 +348,8 @@ and a means of understanding its theoretical and empirical importance.
 
 \section{Theory}\label{section:theory}
 
-%***DAN: consider sending the lottery model components of this section to sup mat, for length reasons. 
+%***DAN: consider sending the lottery model components of this section to sup mat, to reduce length and complexity.
+%Before doing that, make sure you understand what the consequences will be.
 
 We here pursue goal G1 from the Introduction: to augment MCT to illuminate how ATA
 plays a role in coexistence. For pedagogical clarity, we develop each step of our new theory for a general 
@@ -558,7 +559,7 @@ plots to assess whether and to what extent ATA effects on coexistence were meani
 the contributions of other mechanisms.
 Mathematical simplications for the $\delta=1$ case make it straightforward to see that
 coexistence is impossible and that the case is relatively trivial (SI 
-section \ref{SI-sect:delta1}). So that case is not considered further.  
+section \ref{SI-sect:delta1}), so that case is not considered further.  
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
 SI section \ref{SI-sect:efficient_computation}.
