@@ -159,8 +159,8 @@ Coexistence occurs through stabilizing factors and niche
 differentiation, in spite of the conclusions drawn for idealized scenarios by the competitive exclusion principle. 
 MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``relative nonlinearity
 in competition'' and ``storage effects'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
-applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2010, Adler_2006}, 
-tropical trees \citep{Usinowicz_2012}, plankton \citep{Narawani_2013, Descamps_2005, Caceres_1997}, and corals \citep{Alvarez-Noriega_2020}. 
+applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
+tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Narawani_2013, Descamps_2005}, and corals \citep{Alvarez-Noriega_2020}. 
 Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
 
 %Intro to ATAs
@@ -179,7 +179,7 @@ they are more strongly related to each
 other in the left (Fig. \ref{fig:noise}a, termed ``left-tail association'') or right (Fig. \ref{fig:noise}c,
 termed ``right-tail association'') portions of the variables' distributions. Although ATAs 
 and related ideas had previously been seldom 
-considered in ecology (but see \citealp{Anderson_2019, deValpine_2014, Popovic_2019}), 
+considered in ecology (but see \citealp{deValpine_2014, Anderson_2019, Popovic_2019}), 
 our recent work has shown that, in fact, ATAs are extremely common in ecology \citep{Ghosh_2020_AER}, and can influence 
 many ecological phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
 synchrony, and the temporal stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Ghosh_2021}.
@@ -234,7 +234,7 @@ simulations and shows that ATAs substantially influenced aspects of species coex
 An additional motivation for quantifying the importance of ATAs for species coexistence is that there is reason to believe climate change may
 alter ATAs of environmental variables which impact coexistence, as follows.
 It is well known that climate change can alter the intensity, duration, extent and frequency of extreme environmental events, including
-heat waves, floods, hurricanes and fires \citep{Jentsch_2007, Meehl_2004, Ummenhofer_2017, Lyon2019, Keelings2020}.  
+heat waves, floods, hurricanes and fires \citep{Meehl_2004, Jentsch_2007, Ummenhofer_2017, Lyon2019, Keelings2020}.  
 If extreme events are also longer lasting, then the nature of the covariation between phenologically separated environmental signals 
 may be modified by changes in extreme climatic events; in particular, ATAs between such variables may be altered. 
 For instance, imagine a case in which early spring precipitation influences the growth of a plant species, A,
@@ -462,7 +462,7 @@ in one of
 four alternative ways: $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
 $E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
 $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
-For those familiar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
+For those familiar with the language of copula statistics (see, e.g., \citealp{Genest_2007} and \citealp{Ghosh_2020_AER}), 
 we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
@@ -700,7 +700,7 @@ meaningfully to the coexistence of \emph{F. crotonensis} and \emph{C. psuedostel
 
 We produced and applied a mathematical extension to MCT that, for the first time, 
 considers ATAs for the coexistence of species and maintenance of biodiversity. 
-Implementing new methods of MCT \citep{Ellner_2019, Ellner_2016}, we provided a further tertiary 
+Implementing new methods of MCT \citep{Ellner_2016, Ellner_2019}, we provided a further tertiary 
 decomposition to MCT and decompose the storage effect into two new terms, 
 $\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, the contribution of correlation \emph{per se}. 
 The results of our application to a simple lottery model and 
@@ -904,7 +904,7 @@ the same Pearson correlation, $\rho$, up to sampling variation, so Pearson corre
 patterns of association. We used asymmetrically tail associated cases (a, c) which are perfectly 
 correlated in the lower or upper halves of the distributions, though it is also 
 possible to generate asymmetrically tail associated noise with imperfect correlations in 
-both halves of the distributions \citep{Ghosh_2020_AER,Nelsen2006}. The variables $(b_1,b_2)$ described in
+both halves of the distributions \citep{Nelsen2006,Ghosh_2020_AER}. The variables $(b_1,b_2)$ described in
 the Introduction and Methods were obtained by generating 
 noise as pictured and then multipling by $\sigma$ and adding $(\mu_1,\mu_2)$.\label{fig:noise}}
 \end{figure}
