@@ -122,26 +122,25 @@ se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
 
 \maketitle
 
-%Currently 150 of an allowed 150 words for Ecology Letters
+%Currently 148 of an allowed 150 words for Ecology Letters
 \begin{abstract}
 \noindent Species coexistence attracts wide 
 interest in ecology. Modern coexistence
-theory (MCT) identifies coexistence mechanisms,
+theory (MCT) identifies mechanisms of coexistence,
 one of which, storage effects, hinges on relationships between fluctuations
 in environmental and competitive pressures. However, such relationships
 are typically measured using covariance, which does not account for 
-the possibility that environment and competition may be more related to each other
+the possibility that environmental and competitive influences may be more related to each other
 when they are strong than when weak, or vice versa. 
 Recent work showed that such `asymmetric tail associations' (ATAs) are common
 between ecological variables, and are important for 
 extinction risk, ecosystem stability, and other phenomena. 
-We extend the MCT, decomposing storage
-effects to show the influence of ATAs. Analysis of a simple model
+We extend the MCT to account for ATAs. Storage
+effects are decomposed to show the influence of ATAs. Simulations of a simple model
 and an empirical example using diatoms
 illustrate that ATA influences can be comparable in magnitude to other
 mechanisms of coexistence, and that ATAs can make the 
-difference between species coexistence and competitive exclusion.
-ATA influences are an important new mechanism of coexistence.
+difference between species coexistence and competitive exclusion. 
 \end{abstract}
 
 \keywords{asymmetric tail association, biodiversity, coexistence, competition, competitive exclusion, modern coexistence theory, niche differentiation, storage effects}
@@ -153,13 +152,15 @@ Competition and the maintenance of biodiversity are research topics at the core 
 \citep{MacArthur_1958, Hutchinson_1961, Schmida_1984}.
 The competitive exclusion principle states 
 that two species competing for the same limiting resource cannot coexist at constant densities - one will instead outcompete 
-the other and drive it extinct \citep{Hardin_1960}.
+the other and drive it to extinction \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems. 
+Coexistence occurs through stabilizing factors and niche 
+differentiation, in spite of the conclusions drawn for idealized scenarios by the competitive exclusion principle. 
 MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``relative nonlinearity
 in competition'' and ``storage effects'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
-applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
-tropical trees \citep{Usinowicz_2012}, plankton \citep{Descamps_2005, Caceres_1997, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
+applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2010, Adler_2006}, 
+tropical trees \citep{Usinowicz_2012}, plankton \citep{Narawani_2013, Descamps_2005, Caceres_1997}, and corals \citep{Alvarez-Noriega_2020}. 
 Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
 
 %Intro to ATAs
@@ -178,17 +179,17 @@ they are more strongly related to each
 other in the left (Fig. \ref{fig:noise}a, termed ``left-tail association'') or right (Fig. \ref{fig:noise}c,
 termed ``right-tail association'') portions of the variables' distributions. Although ATAs 
 and related ideas had previously been seldom 
-considered in ecology (but see \citealp{deValpine_2014, Anderson_2019, Popovic_2019}), 
-our recent work shows that ATAs are extremely common \citep{Ghosh_2020_AER}, and can influence 
-many phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
-and stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Ghosh_2021}.
-Although ATAs are now known to be important, the implications of ATAs for competition and species coexistence 
-have, to our knowledge, not previously been considered; doing so is the overarching mission of this study. 
+considered in ecology (but see \citealp{Anderson_2019, deValpine_2014, Popovic_2019}), 
+our recent work has shown that, in fact, ATAs are extremely common in ecology \citep{Ghosh_2020_AER}, and can influence 
+many ecological phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
+synchrony, and the temporal stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Ghosh_2021}.
 
 %Intro to storage effects and why they might be influenced by ATAs
+Although ATAs are now known to be common and important, the implications of ATAs for competition and species coexistence 
+have, to our knowledge, not previously been considered; doing so is the overarching mission of this study. 
 It is straightforward to see, intuitively, 
 why ATAs may influence one mechanism of coexistence in particular: storage effects. We review, conceptually, 
-what storage effects are \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and explain why ATAs may be relevant to them.
+what storage effects are \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and we explain why ATAs may be relevant to them.
 Storage effects allow for species to fluctuate over time while escaping extinction because storage effects provide a relative benefit to
 whichever species is currently rare; this is the characteristic that makes storage effects a so-called \emph{stabilizing} mechanism 
 of coexistence \citep{Chesson_2000}.
@@ -199,14 +200,11 @@ Second, growth responses to the environment must be species-specific, so that di
 same environmental conditions to be optimal. Third, a buffering mechanism must exist whereby species limit the influence of competition
 in times when the environment is poor. Dormant stages such as seed banks are an
 example buffering mechanism \citep{Chesson_2012}. 
-When present, these three factors combine so that EC covariance provides a relative benefit to whatever species is currently rare.
+When present, these three factors combine so that EC covariance provides a relative benefit to whatever species are currently rare.
 Importantly, storage effects can be quantified by measuring to what extent EC covariance contributes to differences between 
 invader and resident growth rates \citep{Chesson_1994,Ellner_2016}.
 Thus ATAs may, in principle, influence storage effects simply because storage effects hinge on EC covariation, and ATAs, when they 
 occur between environment and competition variables, can be an aspect of EC covariation. 
-
-%***DAN: Go though and make sure all citation callouts list papers in date order, olderst to newest,
-%except when multiple pubs by the same first author are listed they are all together.
 
 %Lottery model and results based on it
 To further demonstrate the plausibility of ATAs altering coexistence between species, we carried out 
@@ -236,7 +234,7 @@ simulations and shows that ATAs substantially influenced aspects of species coex
 An additional motivation for quantifying the importance of ATAs for species coexistence is that there is reason to believe climate change may
 alter ATAs of environmental variables which impact coexistence, as follows.
 It is well known that climate change can alter the intensity, duration, extent and frequency of extreme environmental events, including
-heat waves, floods, hurricanes and fires \citep{Meehl_2004, Jentsch_2007, Ummenhofer_2017, Lyon2019, Keelings2020}.  
+heat waves, floods, hurricanes and fires \citep{Jentsch_2007, Meehl_2004, Ummenhofer_2017, Lyon2019, Keelings2020}.  
 If extreme events are also longer lasting, then the nature of the covariation between phenologically separated environmental signals 
 may be modified by changes in extreme climatic events; in particular, ATAs between such variables may be altered. 
 For instance, imagine a case in which early spring precipitation influences the growth of a plant species, A,
@@ -246,67 +244,55 @@ between early and late spring precipitation. Because longer lasting weather even
 to both early and late spring rainfall variables, a tendency for spring rainfall events to become both more extreme and 
 longer lasting increases the degree of right-tail association between early- and late-spring rainfall. 
 Likewise, a tendency for spring droughts to become both more intense and longer lasting can increase
-left-tail association between these variables. 
-As we will show in this study, changes in ATAs can then
-result in different competitive outcomes between species.
-\cite{Chesson_2012} provides examples from an Australian grass-forb community and from an Arizona 
-community of desert annuals that seem to have all the ingredients necessary to make effects of the
-type we describe here a possibility.
-To our knowledge, the potential importance of climatic changes in ATAs for species coexistence has 
-not been studied, but the importance for coexistence of changes 
-in means and variability of environmental variables has been studied in many systems 
-[e.g., \cite{White_2001, Adler_2006, Jentsch_2007, Angert_2009, diPaola_2012, Parepa_2013, Descombes_2020, Usinowicz_2021}]. 
+left-tail association between these variables. As we will show in this study, changes in ATAs can then
+result in different competitive outcomes between species. Although we focus here on temporal coexistence
+mechanisms, ATAs between environmental variables measured in different places may also be altered 
+by climate change, if more intensive climatic events are also more spatially extensive.
+
+%make the above abstract ideas more concrete
+To make the above ideas more concrete, we briefly mention examples from prior work to 
+which the ideas may apply. 
+\cite{Chesson_2012} provides two examples of competitive plant communities in which different species
+are likely influenced differently by phenologically distict environmental variables: an Australian 
+grass-forb community, and an Arizona community of desert annuals. 
+The communities follow the criteria required for temporal storage effects to operate \citep{Chesson_2012}. In both 
+examples, distinct species have different periods of germination, competition is influenced by resource 
+consumption, and population growth is buffered by overlapping generations or via seed banks.
+Temporal differences between species in germination rates suggest the possibility that 
+population growth of distinct species may be driven by rainfall signals in distinct parts
+of the growing season. Thus all the ingredients seem to be present by which climatic changes may
+alter ATAs between environmental variables which are relevant for the coexistence
+of the example species, motivating our efforts, here, to perform a detailed study of how ATAs can influence competition.
+
+%Review of lit on changes in means and variances of climate signals and associated impacts on coexistence
+Although, to our knowledge, the potential importance of climatic changes in ATAs for species coexistence has 
+not been studied, the importance for coexistence of changes 
+in means and variability of environmental variables has been studied in many systems. We briefly 
+review some of that literature.
+\cite{diPaola_2012} concluded that coexistence of drought sensitive,
+flood resistant species with flood sensitive, drought resistant species in 
+Mediteranean coastal swamp forests of central Italy would be jeopardized
+by projected changes in mean rainfall. 
+\cite{Descombes_2020} found that if warming trends promote faster expansion toward 
+higher altitudes of herbivore populations than of plant populations, newly arrived
+herbivores at high altitudes can inflate plant species richness by reducing dominant plant species 
+in favor of subordinates. Contrastingly, \cite{Usinowicz_2021} concluded, also for
+alpine plants, that upward range expansion under warming trends would be good for the growth and survival of 
+all species they considered, but that changes in competition would more than offset these direct benefits. 
+Numerous studies take an ``event-focused'' 
+perspective \citep{Jentsch_2007}, examining how increased climatic variability, in the
+form of extreme weather events, can alter competitive interactions. For instance, 
+\cite{White_2001} showed that single extreme heat events can alter competition 
+between C3 and C4 plants. And \cite{Parepa_2013} showed that extreme variability in soil
+nutrient availability for plants, mediated by soil moisture content, can alter 
+the potential for invasive species to enter an ecosystem and establish, a process that involves
+the invader overcoming competition from resident species. 
+Using MCT, it has been demonstrated that increased variability can promote coexistence in plant 
+communities, via storage effects \citep{Adler_2006,  Angert_2009}.
 Changes in variability and in extreme events are distinct from the changes in ATAs we 
 consider here, because ATAs pertain to \emph{relationships} between environmental and other
 variables in the extremes, which are distinct from and can be altered independently
 of changes in the extremes of the univariate marginal distributions themselves \citep{Nelsen2006,Ghosh_2020_AER}.
-
-%make the above abstract ideas more concrete - 
-%***DAN: This para commented out for length, added a sentence about the systems to the above paragraph to take the place of this text
-%To make the above ideas more concrete, we briefly mention examples from prior work to 
-%which the ideas may apply. 
-%\cite{Chesson_2012} provides two examples of competitive plant communities in which different species
-%are likely influenced differently by phenologically distict environmental variables: an Australian 
-%grass-forb community, and an Arizona community of desert annuals. 
-%The communities follow the criteria required for temporal storage effects to operate \citep{Chesson_2012}. In both 
-%examples, distinct species have different periods of germination, competition is influenced by resource 
-%consumption, and population growth is buffered by overlapping generations or via seed banks.
-%Temporal differences between species in germination rates suggest the possibility that 
-%population growth of distinct species may be driven by rainfall signals in distinct parts
-%of the growing season. Thus all the ingredients seem to be present by which climatic changes may
-%alter ATAs between environmental variables which are relevant for the coexistence
-%of the example species, motivating our efforts, here, to perform a detailed study of how ATAs can influence competition.
-
-%Review of lit on changes in means and variances of climate signals and associated impacts on coexistence  
-%***DAN: this para commented out for length, added a couple of the sentences to an above para to substitute
-%Although, to our knowledge, the potential importance of climatic changes in ATAs for species coexistence has 
-%not been studied, the importance for coexistence of changes 
-%in means and variability of environmental variables has been studied in many systems. We briefly 
-%review some of that literature.
-%\cite{diPaola_2012} concluded that coexistence of drought sensitive,
-%flood resistant species with flood sensitive, drought resistant species in 
-%Mediteranean coastal swamp forests of central Italy would be jeopardized
-%by projected changes in mean rainfall. 
-%\cite{Descombes_2020} found that if warming trends promote faster expansion toward 
-%higher altitudes of herbivore populations than of plant populations, newly arrived
-%herbivores at high altitudes can inflate plant species richness by reducing dominant plant species 
-%in favor of subordinates. Contrastingly, \cite{Usinowicz_2021} concluded, also for
-%alpine plants, that upward range expansion under warming trends would be good for the growth and survival of 
-%all species they considered, but that changes in competition would more than offset these direct benefits. 
-%Numerous studies take an ``event-focused'' 
-%perspective \citep{Jentsch_2007}, examining how increased climatic variability, in the
-%form of extreme weather events, can alter competitive interactions. For instance, 
-%\cite{White_2001} showed that single extreme heat events can alter competition 
-%between C3 and C4 plants. And \cite{Parepa_2013} showed that extreme variability in soil
-%nutrient availability for plants, mediated by soil moisture content, can alter 
-%the potential for invasive species to enter an ecosystem and establish, a process that involves
-%the invader overcoming competition from resident species. 
-%Using MCT, it has been demonstrated that increased variability can promote coexistence in plant 
-%communities, via storage effects \citep{Adler_2006,  Angert_2009}.
-%Changes in variability and in extreme events are distinct from the changes in ATAs we 
-%consider here, because ATAs pertain to \emph{relationships} between environmental and other
-%variables in the extremes, which are distinct from and can be altered independently
-%of changes in the extremes of the univariate marginal distributions themselves \citep{Nelsen2006,Ghosh_2020_AER}.
 
 %***DAN: Jasmin, I commented the below sentence because that body of work is famously 
 %complex and sophisticated, and I did not feel we could do it justice in short space.
@@ -327,9 +313,9 @@ We previously demonstrated \citep{Ghosh_2020_AER} that ATAs are common in nature
 that it is plausible both that climate change may alter environmental ATAs, and that ATAs may influence species 
 coexistence. Thus we seek to explore the consequences of ATAs for competition, coexistence, and the maintenance of 
 biodiversity, by means of the following specific goals. 
-G1) To augment MCT to show formally how ATAs play a role in coexistence. 
+G1) To augment MCT to show formally how ATA plays a role in coexistence. 
 MCT decomposes a measure of coexistence into components due to each of several mechanisms. 
-We address how ATAs contribute to these components. 
+We address how ATA contributes to these components. 
 We here examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; 
 spatial variation can be considered in future work.
 G2) To explore, using the simple lottery model, the relative magnitudes of the contributions to coexistence that come
@@ -342,35 +328,38 @@ may be negligible or meaningfully large.
 G4) To provide an empirical example of species coexistence which highlights the role ATAs can play.
 In the Discussion, we revisit the possibility that climate change will alter
 ATAs of environmental variables and thereby influence competition and species coexistence.
-%***DAN: Make sure we end up having such material in the Discussion
 Overall, our study presents a new mechanism of species coexistence which may be influenced by climate change, 
-and a means of understanding its theoretical and empirical importance.
+and a means of understanding its theoretical importance and its importance for real ecosystems.
 
 \section{Theory}\label{section:theory}
 
 We here pursue goal G1 from the Introduction: to augment MCT to illuminate how ATA
-plays a role in coexistence. We develop each step of our new theory for a general 
-two-species model, below, and specifically for the lottery model of the Introduction, in SI section \ref{SI-SIsect:TheoryForLottery}.
+plays a role in coexistence. For pedagogical clarity, we develop each step of our new theory for a general 
+two-species model, and for the lottery model (Introduction).
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
 multiple mechanisms to coexistence. But we show below
 that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
-So we begin by defining storage effects. Our mathematical notation parallels
-that of \cite{Ellner_2016,Ellner_2019}. 
-It is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
+So we begin by defining storage effects for a general two species model and 
+for the lottery model. Our mathematical notation parallels
+that of \cite{Ellner_2016,Ellner_2019}.  
+
+For a general model, it is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
 an environment-dependent factor $E_i(t)$ and as a decreasing function of a quantity representing
-competitive pressure on species $i$, $C_i(t)$. We also assume, for simplicity, 
+competitive pressure on species $i$, $C_i(t)$. As for the lottery model example (Introduction), we here assume, for simplicity, 
 that the $E_i(t)$ are iid through time, and likewise for the
-$C_i(t)$. Though the iid assumption can be circumvented, we make the assumption because it simplifies the
+$C_i(t)$. Though this assumption can be circumvented, we make the assumption because it simplifies the
 presentation of new ideas. 
 
-%***DAN: I think we should replace the terminology "invasion growth rate" and "IGR" by "growth when rare" and "GWR",
-%throughout the paper. Has to be done in the main text and sup mat and the figures themselves (IGR is often labeled on 
-%the figure panels themselves). Need to also search for "invader" since sometimes we use that word. Also think of any 
-%other related terminology that needs to be altered as part of the overall change.
+For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
+the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
+divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
+does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
+Species growth rates for the lottery model can then be written 
+$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$.
 
-The storage effect for species $i$ is the contribution of covariation between $E$ and 
+For a general model, the storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between invader and resident mean growth rates, when $i$ is the invader.
 Specifically, storage effects for species $i$ are 
 \begin{equation}
@@ -382,12 +371,13 @@ $\olr_{j \bs i}$ refers to the mean steady-state
 growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
 and $\olrs_{i \bs i}$ and $\olrs_{j \bs i}$ are analogous quantities, but for an alternative modelling scenario, identical except that
 influences of environment and competition on the invader or resident have been rendered independent.  
-A subscript $i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
+Following \cite{Ellner_2016,Ellner_2019}, a subscript 
+$i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
 a subscript $j \bs i$ indicates a quantity computed for $j$ when $i$ is absent.
+The notation $\Delta_i^{(EC)}$ for storage effects also follows \cite{Ellner_2019}.
 The \emph{scaling factor}
 $q_{ij}$ measures the relative sensitivities to competition of the two species, see \cite{Chesson_1994},
-\cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the two alternative definitions of $q_{ij}$
-that we use. 
+\cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the definition of $q_{ij}$. 
 Since it was assumed that $r_i=r_i(E_i,C_i)$, we can write $\olr_{i \bs i}=\E[r_i(E_i,C_{i \bs i})]$, where
 $\E(\cdot)$ denotes expected value just as does an overbar, but we use $\E$ for longer expressions.
 Also, $\olr_{j \bs i}=\E[r_j(E_j,C_{j \bs i})]$.
@@ -395,10 +385,33 @@ An expression for $\olrs_{i \bs i}$ is obtained from $\olr_{i \bs i}$ by replaci
 variable $(E_i,C_{i \bs i})$ by a random variable with the same marginal distributions, but independent components, 
 $(E_i^\shp,C_{i \bs i}^\shp)$, so $\olrs_{i \bs i}=\E[r_i(E_i^\shp,C_{i \bs i}^\shp)]$.
 Likewise, $\olrs_{j \bs i}=\E[r_j(E_j^\shp,C_{j \bs i}^\shp)]$.
-Though some readers may find it slightly confusing to simultaneously use the variable 
-$E_i$ and the operator $\E(\cdot)$, both of these notational choices are standard, so it would 
+Though some readers may find it slightly confusing to make simultaneous use of the variable 
+$E_i$ and the operator $\E(\cdot)$, both of these notational choices are standard and very common, so it would 
 be more confusing to use alternative notation. Like all variables, $E_i$ is rendered in italic; like
 all operators, $\E(\cdot)$ is rendered upright.
+
+For the lottery model, when $i$ is an invader, the competition experienced by either 
+species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$; and likewise to get
+$\olr_{i \bs i}$ from the expression for $r_i$ for the model. Thus 
+$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta$, and 
+$\olr_{i \bs i} = \E[\ln(1-\delta+\delta B_i/B_j)]=\E[\ln(1-\delta+E_i /C_{i \bs i})]$. 
+Likewise, 
+$\olr_{j \bs i} = \E[\ln(1-\delta+\delta B_j/B_j)]=\E[\ln(1-\delta+E_j/C_{j \bs i})]$,
+though we already knew this equals $0$. 
+An expression for $\olrs_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
+by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
+Thus $\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)]$. Likewise,
+$\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we use 
+$(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
+$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
+We show in SI section \ref{SI-SIsect:scaling_factors}
+that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
+Since we assumed log-normally distributed $B_i$, 
+$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
+We alternatively also consider $q_{ij}=1$, for reasons explained in SI section \ref{SI-SIsect:scaling_factors}.
+Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
+to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
+and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into (\ref{eq:storage_effects_gen}).
 
 We now specify how to decompose storage effects into
 contributions due to ATAs and due
@@ -429,9 +442,9 @@ correlation \emph{per se}, remaining after having removed the effects of ATAs.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
 corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
 The new symbol should correspondingly be pronounced ``partial sharp''.
-The brackets in $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
+The brackets in the superscripts of $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
-of storage effects, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
+of storage effects, which are themselves a term within the decomposition provided by MCT \citep{Ellner_2019} -- see 
 below for additional details.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
@@ -449,12 +462,27 @@ in one of
 four alternative ways: $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
 $E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
 $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
-For those familiar with copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
+For those familiar with the language of copula statistics (see, e.g., \citealp{Ghosh_2020_AER} and \citealp{Genest_2007}), 
 we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
 $C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
-as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
+as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created in an analogous way.  
+
+For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
+$\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
+$\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
+Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
+Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
+$\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
+can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
+is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
+and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
+marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
+$(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
+component $\olrn_{i \bs i}$ of (\ref{eq:storage_effects_further1}) for the lottery model using the simulation 
+approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
+so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
 
 The other mechanisms in MCT that apply in our modelling context of purely temporal variation
 make no reference to covariation between quantities, whereas ATAs are 
@@ -509,7 +537,7 @@ plots to assess whether and to what extent ATA effects on coexistence were meani
 the contributions of other mechanisms.
 Mathematical simplications for the $\delta=1$ case make it straightforward to see that
 coexistence is impossible and that the case is relatively trivial (SI 
-section \ref{SI-sect:delta1}), so that case is not considered further.  
+section \ref{SI-sect:delta1}). So that case is not considered further.  
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of carrying out these simulations, for the lottery model, are elaborated in 
 SI section \ref{SI-sect:efficient_computation}.
@@ -670,7 +698,6 @@ meaningfully to the coexistence of \emph{F. crotonensis} and \emph{C. psuedostel
 
 \section{Discussion}\label{section:discussion}
 
-\underline{summary - include 1-2 sentences about misnomer}
 We produced and applied a mathematical extension to MCT that, for the first time, 
 considers ATAs for the coexistence of species and maintenance of biodiversity. 
 Implementing new methods of MCT \citep{Ellner_2019, Ellner_2016}, we provided a further tertiary 
@@ -695,10 +722,10 @@ into contributions of ATAs and contributions of correlation \emph{per se}.
 
 %The example case exapanding upon coexistence decompositions of the \cite{Descamps_2005} chemostat experiment support our earlier findings that ATA contributions are not only non-zero, but are non-neglible and contribute meaningfully to coexistence. 
 
-Our expansion allows for the parsing of storage effects into contribution from a pure symmetrical correlation and structures beyond symmetric correlation. Previous studies report storage effect as a contribution to coexistence of EC covariance; yet compute it as the contribution of the EC relationship (covariance and beyond; symmetric and asymmetric).
+%Our expansion allows for the parsing of storage effects into contribution from a pure symmetrical correlation and structures beyond symmetric correlation. Previous studies report storage effect as a contribution to coexistence of EC covariance; yet compute it as the contribution of the EC relationship (covariance and beyond; symmetric and asymmetric).
 
 
-\underline{ATA specialization}
+%\underline{ATA specialization}
 Not only is the contribution of ATA non-neglible but in some cases the presence or absence of ATAs 
 can mediate the result of competition between species, i.e., coexistence or extirpation. 
 For some parameters, the contribution of ATAs was the driving mechanism of 
@@ -707,6 +734,7 @@ ATA rescue. For other parameter values, ATA exclusion occurs where ATAs are the
 driving mechanism of the failure to coexist (exclusion) and the lack of ATAs would result in 
 a positive IGR. Parameter
 subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists} - species which only persist in habitat patches where ATAs contribute to its coexistence. 
+One can imagine a species whose coexistence with others is conditional on the asymmetric relationship between drivers of coexistence and whose populations may become excluded when ATAs erode. 
 %I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
 %where there are atas. Could have a discussion para on it, if it does not make the results. Or both. BTW, ATA exclusion has a 
 %similar thing going on - a species excluded by ATAs (and competition) can only live on the portions of the landscape where
@@ -714,7 +742,7 @@ subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization a
 %are ATAs in its local, otherwise it'll have to go dormant or move elsewhere.
 
 
-\underline{future work: study ATAs in environmental variables and how theyre changing - tie in with specialist}
+%\underline{future work: study ATAs in environmental variables and how theyre changing - tie in with specialist}
 
 Our study highlights the importance of ATAs for ecological phenomena 
 and specifically for coexistence and the maintenance of biodiversity. 
@@ -736,7 +764,7 @@ Thus it is of interest to further study how tail associations of environmental v
 alter competition, coexistence, and the maintenance of biodiversity generally.
 Our investigation brings to attention the consequences of such
 possible \emph{relationships} in the extremes; however, 
-simpler changes in extreme events themselves such as
+simpler changes in [the marginal/ univariate distributions of] extreme events themselves such as
 intensity and frequency and their influence on coexistence also merit future work. 
 Possible changes in tail association
 patterns between environmental variables in nature can
@@ -764,37 +792,48 @@ extreme and changing climate is probable to affect other mechanims in other ways
 %research program which presumably would start with a more detailed study of how tail associations of environmental
 %variables may be changing under global change.
 
-\underline{E and vital rates}
+%\underline{E and vital rates}
 We note that \emph{E}, in our investigation and in other investigations within the MCT 
 framework, is not directly a measure of the environment, but is a measure of response to the 
-environment (vital rates). Environment and environmental response may be related linearly
-(like lottery model?); though probably real environmental variables are 
-actually related to vital rates in a non-linear and often threshold-like way. 
-Threshold relationships can produce tail association, as we showed elsewhere. 
+environment, measured by a population's vital rates. Environment and environmental response may be related linearly
+(like lottery model?); though real environmental variables are probable to 
+actually be related to vital rates in a non-linear and often threshold-like way. 
+Threshold relationships can produce tail association, as we showed elsewhere (explain, ref). 
 Changes in the means of true environmental variables may change 
 where those distributions of environmental variables are compared to thresholds, 
 which may change the nature of tail associations between the effects of 
-those environmental variables.
+those environmental variables. Thus, not only do the possible asymmteric association between 
+environmental variables merit future study, but the relationships between populations'
+vital rates should also be investigated for species coexistence and the maintenacne of biodiversity.
 %Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. 
 
-\underline{the new effects are not "weak noise" effects}
-if sigma really small, ATA would not matter?
+%\underline{the new effects are not "weak noise" effects}
+%if sigma really small, ATA would not matter?
 %go back to emails
 %Maybe have a paragraph about how Chesson's weak noise and other assumptions make it impossible to detect this new effect
 %via that framework. It's only the less-assumption-reliant simulation approach of Ellner et al that makes it possible to 
 %study this new term in the decomp. Need to study a bit to substantiate this properly, or get Steve Ellner help.
-Classical analytic derivations of MCT using Taylor expansion approximations completely miss out
-on any additions to coexistence beyond simple correlations. 
+We parse the storage effect, providing a tertiary decomposition to the simulation-based 
+approach of MCT \citep{Ellner_2016, Ellner_2019}, 
+a new approach which bypasses the mathematical assumptions and obstructions of 
+standard MCT. Classical analytic derivations of MCT using second order Taylor expansion and 
+small-variance approximations completely miss out
+on any additions to coexistence beyond simple correlations and does not include our new term, $\Delta^{[EC]}$ or $\Delta^{(E \shp C)}$ \citep{Chesson_1994, Chesson_2000}. 
 In fact, storage effects in analytic MCT is computationally equal to $\Delta^{[E \nat C]}$, 
 the contributions of correlation \emph{per se}. 
 In newer, simulation based MCT, storage effect is 
 the sum of the two new terms, $\Delta^{(EC)}=\Delta^{[E \nat C]}+\Delta^{[EC]}$, 
-obscuring the effects of ATAs.
+obscuring the effects of ATAs. However, because standard MCT's assumption make it impossible to 
+detect interactions outide of correlation \emph{per se}, simulation-based MCT is required to
+detect ATA contributions, and our new extension to it cleary separates and quantifies the 
+relative contribution and importance of ATAs and pure correlation to the storage effect
+and subsequently species coexistence and the maintenance of biodiversity.
 
 \underline{multispecies models}
 %Need a para about multi-species models - how would things change? One difference is there are more different
 %things that might have asymmetric tail association patterns. See the section "General Theory" of Ellner et al 2019 - might
 %just want write a short para saying it seems like it should be possible to generalize what we've done along those lines.
+   
 We note that our expansion, like the decomposition of \cite{Ellner_2019} is generalizable to multi-species and multi-driver models. Because asymmetric tail associations exist in many ecological variables \citep{Ghosh_2020_AER}, the more specified approach of considering unique drivers of coexistence rather than E and C and the ability to consider more than two drivers, could produce interesting results?? 
 
 \underline{caveats and future directions}
@@ -819,7 +858,7 @@ We used the most extreme version of asymmetric noise, i.e., perfect correlation 
 
 %Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
 
-\underline{conclude: how ur work answers/informs the broad question from the intro and lay out 2-3 key priorities for next research on this question}
+\underline{conclude **NOT NEEDED**: how ur work answers/informs the broad question from the intro and lay out 2-3 key priorities for next research on this question}
 We provided another showcase of the importance of ATAs in ecology, 
 building on previous studies.
 ATAs clearly have implications for coexistence and competition;
@@ -886,22 +925,19 @@ noise as pictured and then multipling by $\sigma$ and adding $(\mu_1,\mu_2)$.\la
 
 \begin{figure}
 \includegraphics[width=.75\textwidth]{../results_figs/fig2.pdf}
-\caption{Our simulated lottery-model populations influenced by asymmetric tail associations (ATAs) recovered 
-from low densities less often and 
+\caption{Our simulated lottery-model populations influenced by asymmetric tail associations (ATAs) recovered from low densities less often and 
 spent more time in a state of one-species dominance, demonstrating that ATAs can influence aspects of 
-species coexistence. Panel (a) shows species 1 from the lottery 
+species coexistence. Panel (a) shows species 1, from the lottery 
 model subject to environmental noise with symmetric tail associations (Fig. \ref{fig:noise}b). Panel (b) shows species 1 from the 
 same model with the same parameters, but subject to noise with left-tail association (Fig. \ref{fig:noise}a).
 Both simulations were run for \Sexpr{M} time steps, though only the first $1000$ are shown. Periods of 
-``noticeable coexistence'' of the species, defined to be periods when each species comprises at least $5\%$ of 
+``noticeable coexistence'' of the species, defined to be periods when both species each comprise at least $5\%$ of 
 total abundance, are marked in grey. The average duration of periods of noticeable coexistence 
 was \Sexpr{fig2$coSym} time steps for panel (a) and \Sexpr{fig2$coATA} for panel (b), over the full length of the simulations; 
 whereas the average duration of periods of
 one-species dominance was \Sexpr{fig2$domSym} time steps for panel (a) and \Sexpr{fig2$domATA} for (b). Thus, while periods of 
 noticeable coexistence were of similar duration for the two scenarios, periods of one-species dominance were much longer,
-on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1] + fig2$params[1]}$, 
-$\mu_2 = \Sexpr{-(fig2$params[1])}$, $\sigma = \Sexpr{fig2$params[2]}$, and $\delta = \Sexpr{fig2$params[3]}$. 
-See Introduction and Fig. \ref{fig:noise} caption for model details. 
+on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1] + fig2$params[1]}$ and $\mu_2 = \Sexpr{-(fig2$params[1])}$, $\sigma = \Sexpr{fig2$params[2]}$, and $\delta = \Sexpr{fig2$params[3]}$. See Introduction and Fig. \ref{fig:noise} caption for model details. 
 \label{fig:pedagog}}
 \end{figure}
 
