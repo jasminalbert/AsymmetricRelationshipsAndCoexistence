@@ -837,6 +837,9 @@ and subsequently species coexistence and the maintenance of biodiversity.
 We note that our expansion, like the decomposition of \cite{Ellner_2019} is generalizable to multi-species and multi-driver models. Because asymmetric tail associations exist in many ecological variables \citep{Ghosh_2020_AER}, the more specified approach of considering unique drivers of coexistence rather than E and C and the ability to consider more than two drivers, could produce interesting results?? 
 
 \underline{caveats and future directions}
+%Realism - we usede simple/extreme ATA, simple model and simple lab system, futurw work needed to assess 
+%how mcuh ATA are important in complex systems, field systems
+%what systems? what env vars?
 %Ellner et al (2016) points out that coexistence is also mediated by other factors that competition: shared enemies, 
 %mutualist, facilitation etc. (these are the exact factors Ellner lists), so future work could explore 
 %the importance of ATA for coexistence mediated by these factors.
@@ -845,28 +848,31 @@ We note that our expansion, like the decomposition of \cite{Ellner_2019} is gene
 %how to say something about how future work may be able to explore the importance of ATA in that context?
 
 %Also need to talk about how this stuff will apply to data.
-we used simple/extreme ATA
-simple model and simple lab system
-future work needed to assess the extent of how much ATA are important for complex field systems
-what systems might be good? suggest systems and their important E vars.
+As an introductory investigation of ATAs within the framework of coexistence theory, 
+we used simple and extreme examples, and future work should include more realism and complexity
+(assess more complex relationships, systems, and models). 
+In our theoretical exploration, we implemented a simple lottery model and assessed 
+the influence of extremely asymmetric associated noise, i.e., the noise was perfectly correlated
+in exactly one half of the distribution. However, more complex models such as structured demographic models
+or integral projection models should be explored and though similar results may be
+produced, varying deegres of ATA, less extremely shaped?/
+more moderately asymmetric / more realistic? relationships should be implemented.
+Moreover, because our empirical application makes use of a simple and controlled lab system, future 
+should be done to assess the extent of how much ATA are important for complex systems and field systems.
 
-Our investigation is a simple one; 
-the ATA present is a perfect correlation is exactly one half of the relationship, 
-but varying degrees of ATA may produce a similar result as well. 
 
-We used the most extreme version of asymmetric noise, i.e., perfect correlation changing to very low correlation at exactly the half point of the distribution, and a simple lottery model.  
 
 %Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
 
-\underline{conclude **NOT NEEDED**: how ur work answers/informs the broad question from the intro and lay out 2-3 key priorities for next research on this question}
-We provided another showcase of the importance of ATAs in ecology, 
-building on previous studies.
-ATAs clearly have implications for coexistence and competition;
-though more research is needed in exploring more complex models 
-including spatiotemporal and multispecies models.
-Hope to see this tertiary decomposition of MCT be applied to empirical research.
-More investigations should be done to explore implications of ATAs 
-to other ecological theories. 
+%\underline{conclude **NOT NEEDED**: how ur work answers/informs the broad question from the intro and lay out 2-3 key priorities for next research on this question}
+%We provided another showcase of the importance of ATAs in ecology, 
+%building on previous studies.
+%ATAs clearly have implications for coexistence and competition;
+%though more research is needed in exploring more complex models 
+%including spatiotemporal and multispecies models.
+%Hope to see this tertiary decomposition of MCT be applied to empirical research.
+%More investigations should be done to explore implications of ATAs 
+%to other ecological theories. 
 
 
 %Search for comments in the rest of the text indicating things that need to be done in the Discussion
