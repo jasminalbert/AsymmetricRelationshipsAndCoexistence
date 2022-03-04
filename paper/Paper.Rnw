@@ -835,6 +835,7 @@ and subsequently species coexistence and the maintenance of biodiversity.
 %just want write a short para saying it seems like it should be possible to generalize what we've done along those lines.
    
 We note that our expansion, like the decomposition of \cite{Ellner_2019} is generalizable to multi-species and multi-driver models. Because asymmetric tail associations exist in many ecological variables \citep{Ghosh_2020_AER}, the more specified approach of considering unique drivers of coexistence rather than E and C and the ability to consider more than two drivers, could produce interesting results?? 
+More species and more drivers= more things that can be related
 
 \underline{caveats and future directions}
 %Realism - we usede simple/extreme ATA, simple model and simple lab system, futurw work needed to assess 
@@ -859,7 +860,9 @@ produced, varying deegres of ATA, less extremely shaped?/
 more moderately asymmetric / more realistic? relationships should be implemented.
 Moreover, because our empirical application makes use of a simple and controlled lab system, future 
 should be done to assess the extent of how much ATA are important for complex systems and field systems.
-
+For example, the ATAs between rainfall timing on the coexistence of grasses and forbs 
+and their dominant years in California grasslands \citep{Hallett_2019} could be a fruitful 
+further investigation of biodiversity maintenance in California grasslands and the effects of extreme rainfall fluctuation. 
 
 
 %Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
