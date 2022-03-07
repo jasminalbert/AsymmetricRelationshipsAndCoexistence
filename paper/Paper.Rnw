@@ -179,13 +179,13 @@ other in the left (Fig. \ref{fig:noise}a, termed ``left-tail association'') or r
 termed ``right-tail association'') portions of the variables' distributions. Although ATAs 
 and related ideas had previously been seldom 
 considered in ecology (but see \citealp{deValpine_2014, Anderson_2019, Popovic_2019}), 
-our recent work has shown that, in fact, ATAs are extremely common in ecology \citep{Ghosh_2020_AER}, and can influence 
-many ecological phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
-synchrony, and the temporal stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Ghosh_2021}.
+our recent work shows that ATAs are extremely common \citep{Ghosh_2020_AER}, and can influence 
+many phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
+synchrony, and stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Ghosh_2021}.
+Although ATAs are now known to be important, the implications of ATAs for competition and species coexistence 
+have, to our knowledge, not previously been considered; doing so is the overarching mission of this study. 
 
 %Intro to storage effects and why they might be influenced by ATAs
-Although ATAs are now known to be common and important, the implications of ATAs for competition and species coexistence 
-have, to our knowledge, not previously been considered; doing so is the overarching mission of this study. 
 It is straightforward to see, intuitively, 
 why ATAs may influence one mechanism of coexistence in particular: storage effects. We review, conceptually, 
 what storage effects are \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and we explain why ATAs may be relevant to them.
