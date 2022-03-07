@@ -122,25 +122,26 @@ se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
 
 \maketitle
 
-%Currently 148 of an allowed 150 words for Ecology Letters
+%Currently 150 of an allowed 150 words for Ecology Letters
 \begin{abstract}
 \noindent Species coexistence attracts wide 
 interest in ecology. Modern coexistence
-theory (MCT) identifies mechanisms of coexistence,
+theory (MCT) identifies coexistence mechanisms,
 one of which, storage effects, hinges on relationships between fluctuations
 in environmental and competitive pressures. However, such relationships
 are typically measured using covariance, which does not account for 
-the possibility that environmental and competitive influences may be more related to each other
+the possibility that environment and competition may be more related to each other
 when they are strong than when weak, or vice versa. 
 Recent work showed that such `asymmetric tail associations' (ATAs) are common
 between ecological variables, and are important for 
 extinction risk, ecosystem stability, and other phenomena. 
-We extend the MCT to account for ATAs. Storage
-effects are decomposed to show the influence of ATAs. Simulations of a simple model
+We extend the MCT, decomposing storage effect to show the influence of ATAs.
+Analysis of a simple model
 and an empirical example using diatoms
 illustrate that ATA influences can be comparable in magnitude to other
 mechanisms of coexistence, and that ATAs can make the 
 difference between species coexistence and competitive exclusion. 
+ATA influences are an important new mechanism of coexistence. 
 \end{abstract}
 
 \keywords{asymmetric tail association, biodiversity, coexistence, competition, competitive exclusion, modern coexistence theory, niche differentiation, storage effects}
@@ -152,15 +153,13 @@ Competition and the maintenance of biodiversity are research topics at the core 
 \citep{MacArthur_1958, Hutchinson_1961, Schmida_1984}.
 The competitive exclusion principle states 
 that two species competing for the same limiting resource cannot coexist at constant densities - one will instead outcompete 
-the other and drive it to extinction \citep{Hardin_1960}.
+the other and drive it extinct \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems. 
-Coexistence occurs through stabilizing factors and niche 
-differentiation, in spite of the conclusions drawn for idealized scenarios by the competitive exclusion principle. 
 MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``relative nonlinearity
 in competition'' and ``storage effects'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
-tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Narawani_2013, Descamps_2005}, and corals \citep{Alvarez-Noriega_2020}. 
+tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
 Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
 
 %Intro to ATAs
@@ -842,6 +841,11 @@ The inclusion of multiple species introduces a multitude of relationships betwee
 environmentally dependent parameters that could possibly be asymmetrically associated. 
 The greater the number of species the greater the possibilities of ATAs being more important 
 to their coexistence. 
+
+# notation in ellner one could also use partial sharp 
+%reread ellner paper 
+%make three different biv dis that are standard normal copula and then pair with a shuffles third
+%use to get rbar and subtract from rbar of XY#Z, 
 
 \underline{caveats and future directions}
 %Realism - we usede simple/extreme ATA, simple model and simple lab system, futurw work needed to assess 
