@@ -201,7 +201,7 @@ in times when the environment is poor. Dormant stages such as seed banks are an
 example buffering mechanism \citep{Chesson_2012}. 
 When present, these three factors combine so that EC covariance provides a relative benefit to whatever species is currently rare.
 Importantly, storage effects can be quantified by measuring to what extent EC covariance contributes to differences between 
-invader and resident growth rates \citep{Chesson_1994,Ellner_2016}.
+rare and common species growth rates \citep{Chesson_1994,Ellner_2016}. %invader and resident 
 Thus ATAs may, in principle, influence storage effects simply because storage effects hinge on EC covariation, and ATAs, when they 
 occur between environment and competition variables, can be an aspect of EC covariation. 
 
@@ -367,17 +367,17 @@ presentation of new ideas.
 % be altered as part of the overall change. 
 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
-$C$ to a difference between invader and resident mean growth rates, when $i$ is the invader.
+$C$ to a difference between rare and common species mean growth rates, when $i$ is the invader.
 Specifically, storage effects for species $i$ are 
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
 \end{equation}
-where: $\olr_{i \bs i}$ refers to the mean ``invasion growth rate'' [IGR] of species $i$, that is, the mean growth rate of 
+where: $\olr_{i \bs i}$ refers to the mean ``growth when rare'' [GWR] of species $i$, that is, the mean growth rate of 
 species $i$ when it is at negligible abundance and species $j$ (the other species) is at stochastic steady state;
 $\olr_{j \bs i}$ refers to the mean steady-state 
 growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
 and $\olrs_{i \bs i}$ and $\olrs_{j \bs i}$ are analogous quantities, but for an alternative modelling scenario, identical except that
-influences of environment and competition on the invader or resident have been rendered independent.  
+influences of environment and competition on the either species have been rendered independent.  
 A subscript 
 $i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
 a subscript $j \bs i$ indicates a quantity computed for $j$ when $i$ is absent.
@@ -401,12 +401,12 @@ We now specify how to decompose storage effects into
 contributions due to ATAs and due
 to $EC$ correlation \emph{per se}. 
 Storage effects for species $i$ were computed by comparing
-differences between invader and resident mean growth rates for the original model and for a 
+differences between rare and common species mean growth rates for the original model and for a 
 modified model for which the components of $(E_i,C_{i \bs i})$ and those of $(E_j,C_{j \bs i})$
 were rendered independent of each other [see (\ref{eq:storage_effects_gen})]. 
 Because these components were rendered 
 completely independent in the modified model, storage effects quantify the contribution of the 
-whole $EC$ relationship, in all its aspects, to the invader/resident growth rate
+whole $EC$ relationship, in all its aspects, to the rare/common species growth rate
 difference. But we can instead consider distributions $(E_i^\nat,C_{i \bs i}^\nat)$ and 
 $(E_j^\nat,C_{j \bs i}^\nat)$ with the same
 marginal distributions, respectively, as $(E_i,C_{i \bs i})$ and $(E_j,C_{j \bs i})$,
@@ -459,7 +459,7 @@ defined in a covariation context. Therefore, storage effects are the only mechan
 for which ATAs are relevant. Mathematical details supporting this claim are in SI section 
 \ref{SI-SIsect:other_mechanisms}, but we here provide a conceptual understanding. \cite{Ellner_2016} and
 \cite{Ellner_2019} provide a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$,
-which equals the IGR. The decomposition, which we use below, is similar to and motivated by the 
+which equals the GWR. The decomposition, which we use below, is similar to and motivated by the 
 original decomposition of \cite{Chesson_1994}; the decomposition is how the mechanisms of 
 coexistence operating in a given case are illuminated. The decomposition is 
 \begin{equation}
@@ -491,7 +491,7 @@ $\Delta_i^{(E\shp C)}$, $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ [see (\ref
 against the independent parameters of the model, $\mu_1$, $\mu_2$, $\sigma$ and $\delta$; and then we compared their
 values on the plots. Some mathematical shortcuts, summarized here, greatly simplified this plotting. 
 First, we assumed, without loss of generality, that $\mu_1 \leq \mu_2$. To understand coexistence, 
-it was then sufficient to decompose the invasion growth rate of the weaker competitor, species 1. 
+it was then sufficient to decompose the growth when rare of the weaker competitor, species 1. 
 Second, we showed that, for the 
 lottery model, none of the components in (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
 instead they all depend only on the difference $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). So we only plotted 
@@ -513,9 +513,9 @@ SI section \ref{SI-sect:efficient_computation}.
 
 %G3
 To achieve goal G3 from the Introduction, i.e., to explore, using the lottery model, the likelihood that species can coexist with
-ATAs but not without, or vice versa, we plotted the IGR, $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
-as well as the
-IGR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[EC]}$, again for species $i=1$, the weaker competitor. 
+ATAs but not without, or vice versa, we plotted GWR, $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
+as well as
+GWR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[EC]}$, again for species $i=1$, the weaker competitor. 
 For fixed values of $\sigma$ and $\delta$ and for left-tail associated noise, 
 we were interested in the values of $\mu_1-\mu_2$ for which one of these
 quantities is positive and the other is negative; this set of values characterizes the species which can coexist
@@ -525,7 +525,7 @@ Points of the trait-difference space characterize possible combinations of trait
 competing species in our model. For fixed values of 
 $\delta$ and $\sigma$, we defined the subset, $\psi_{\text{ATA}}(\delta,\sigma)$, of 
 trait-difference space to be the set of 
-values $\mu_1 - \mu_2$ for which the the IGR, $\olr_{i \bs i}$, is positive. This 
+values $\mu_1 - \mu_2$ for which GWR, $\olr_{i \bs i}$, is positive. This 
 is the subspace for which the two species in the lottery model coexist in the presence of ATAs.
 We also defined the subset, $\psi_{\lnot\text{ATA}}(\delta,\sigma)$, of trait-difference space to be the set of values
 $\mu_1 - \mu_2$ for which the metric $\olr_{i \bs i} -\Delta_i^{[EC]}$ is positive.
@@ -568,7 +568,7 @@ according to (\ref{eq:previous_decomp}) for these same values of
 $\theta_0$, $a$ and $P$. We further decomponse
 coexistence according to (\ref{eq:full_decomp}), and we do so for ranges of values
 of $\theta_0$, $a$ and $P$. In contrast to the lottery model case, for which simplifying assumptions
-made it sufficient to decompose only the invasion growth rate of species 1, for this 
+made it sufficient to decompose only the growth when rare of species 1, for this 
 example we considered $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$ for both $i=1$, $j=2$ and for
 $i=2$, $j=1$. Further details of the model setup are in SI section \ref{SI-sect:diatom_model}
 and specifics of how our decomposition extends to this empirical case are in 
@@ -586,13 +586,13 @@ $\theta_0$, $a$ and $P$ at a time, while keeping the other two fixed at the valu
 used by \cite{Descamps_2005}. We also generated two-dimensional plots, where
 two of the parameters $\theta_0$, $a$ and $P$ were varied and the third was kept fixed
 at the value used by \cite{Descamps_2005}. For the two-dimensional plots, the quantity  
-$\Delta_i^{[EC]}/\text{IGR}$ was displayed using color, to convey the 
-importance of the ATA contribution relative to the whole IGR. Larger magnitudes
+$\Delta_i^{[EC]}/\text{GWR}$ was displayed using color, to convey the 
+importance of the ATA contribution relative to the whole GWR. Larger magnitudes
 of this quantity indicate greater importance of ATAs. The case
-$\Delta_i^{[EC]}>\text{IGR}>0$ (which produces $\Delta_i^{[EC]}/\text{IGR}>1$)
-corresponds to ATA rescue, and the case $\Delta_i^{[EC]}<\text{IGR}<0$
-(which also produces $\Delta_i^{[EC]}/\text{IGR}>1$) corresponds to ATA exclusion.
-The condition $\Delta_i^{[EC]}/\text{IGR}>1$ encompasses the cases for which ATA
+$\Delta_i^{[EC]}>\text{GWR}>0$ (which produces $\Delta_i^{[EC]}/\text{GWR}>1$)
+corresponds to ATA rescue, and the case $\Delta_i^{[EC]}<\text{GWR}<0$
+(which also produces $\Delta_i^{[EC]}/\text{GWR}>1$) corresponds to ATA exclusion.
+The condition $\Delta_i^{[EC]}/\text{GWR}>1$ encompasses the cases for which ATA
 exclusion or rescue occurred, though the condition does not delineate, by itself,
 which of these was the case.
 
@@ -620,14 +620,14 @@ Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whe
 can coexist with ATAs, but not without, or vice versa), our results show that ATAs can, indeed, sometimes
 make the difference between coexistence and exclusion: both ``ATA rescue'' and ``ATA
 exclusion'' (see Methods) are possible.
-For some of the panels on Fig. \ref{fig:fig3}, the IGR line falls between the ATA
+For some of the panels on Fig. \ref{fig:fig3}, the GWR line falls between the ATA
 line and the $x$ axis for some values of $\sigma$, e.g., see panel h. 
 Such cases correspond to parameter combinations
 for which the presence or absence of ATAs determine whether the species coexist or not. In the 
 case of panel h, for values of $\sigma$ around $4$, 
 species 1 is excluded with ATAs but the two species can coexist without ATAs. 
 Fig. \ref{fig:fig4} highlights additional examples. Orange lines on Fig. \ref{fig:fig4}
-represent the IGR when the effects of ATAs are included, and blue lines are the IGR when
+represent GWR when the effects of ATAs are included, and blue lines are GWR when
 the effects of ATAs are removed. These two lines frequently crossed the $x$ axis in 
 different places, showing that both ATA rescue space and ATA exclusion space can be non-empty
 subsets of our trait-difference space (see Methods). For the parameters we considered, 
@@ -643,26 +643,26 @@ show that the ATA contributions have magnitudes comparable to the
 magnitudes of other terms of the extended MCT decomposition and 
 parameters subspaces exist where ATA rescue occurs. 
 Fig.\ref{fig:fig5} plots the importance of various coexistence mechanisms for the 
-persistence of \emph{F. crotonensis} and they're sum, the IGR
+persistence of \emph{F. crotonensis} and they're sum, the GWR
 (see eq. \ref{eq:full_decomp}), for different varying temperature parameters 
 ($a$, $P$, and $\theta_0$) with two of the three parameters set constant in each plot.
-Increasing amplitude and mean temperature showed increasing trends in the IGR and 
+Increasing amplitude and mean temperature showed increasing trends in the GWR and 
 decomposed coexistence mechanisms, while increasing periodicity showed less change. 
 Within the investigated parameters of Fig.\ref{fig:fig5}, ATA contribution, $\Delta_i^{[EC]}$, 
-is always positive, even in cases where IGR is negative, and is almost always second to 
+is always positive, even in cases where GWR is negative, and is almost always second to 
 the contribution of varying environment, $\Delta_i^{E}$, 
 including for the temperature parameters which \emph{F. crotonensis} 
 and \emph{C. pseudostelligera} coexisted \emph{in vitro} ? \cite{Descamps_2005}.  
 ATA rescue is revealed in Fig.\ref{fig:fig5} within parameter subspaces where the absence of 
 ATA contribution would lead to exclusion of \emph{F. crotonensis}.
 
-Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to the IGR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{IGR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{IGR}$ indicate failure of coexistence. Futhermore, ATA exlusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>\text{IGR}$. To preserve simplicity and readibility of the plots, $|\Delta_i^{[EC]}/\text{IGR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ tended to occur as the IGR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig. \ref{fig:fig5}, we see in Fig. \ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence and the effect of periodicity of temperature fluctuation is small. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{IGR}$ changes from negative to positive. 
+Fig.\ref{fig:fig6} displays the subsets of environmental parameters for which coexistence occurs or fails and the degree of ATA contribution to GWR. Specific to this model and parameter ranges, because $\Delta_i^{[EC]}$ is always positive, all positive values of $\Delta_i^{[EC]}/\text{GWR}$ indicate coexistence and negative values of $\Delta_i^{[EC]}/\text{GWR}$ indicate failure of coexistence. Furthermore, ATA exclusion does not occur and ATA rescue occurs in positive cases where $\Delta_i^{[EC]}>\text{GWR}$. To preserve simplicity and readability of the plots, $|\Delta_i^{[EC]}/\text{GWR}>1|$ were capped at $|1|$. Higher magnitudes of $\Delta_i^{[EC]}/\text{GWR}$ tended to occur as GWR became smaller and smaller, thus creating the sharp contrast in the plots where highest intensity positive spaces quickly change into highest intensity negative spaces with decreasing parameters. Like the result of Fig. \ref{fig:fig5}, we see in Fig. \ref{fig:fig6} that amplitude and mean temperature have the most influence on coexistence and the effect of periodicity of temperature fluctuation is small. Coexistence occurs as $\theta_0$ and $a$ increase and $\Delta_i^{[EC]}/\text{GWR}$ changes from negative to positive. 
 
-IGR decomposition of \emph{C. psuedostelligera} across the same subsets of
-temperature parameters revealed that its IGR is always positive; though, the ATA contribution is not meaningful to its persistence (see SI section). %Mean EC shows a rescue effect against variance in E
-Thus, the coexistence of the two diatom species depends only on the persistance of 
-\emph{F. crotonensis} and its ability to invade when rare. Additionally, because ATAs 
-meaningfully contribute to the IGR of \emph{F. crotonensis}, ATAs then also contribute 
+GWR decomposition of \emph{C. psuedostelligera} across the same subsets of
+temperature parameters revealed that its GWR is always positive; though, the ATA contribution is not meaningful to its persistence (see SI section). %Mean EC shows a rescue effect against variance in E
+Thus, the coexistence of the two diatom species depends only on the persistence of 
+\emph{F. crotonensis} and its ability to increase when rare. Additionally, because ATAs 
+meaningfully contribute to GWR of \emph{F. crotonensis}, ATAs then also contribute 
 meaningfully to the coexistence of \emph{F. crotonensis} and \emph{C. psuedostelligera}.
 
 \section{Discussion}\label{section:discussion}
@@ -698,10 +698,10 @@ into contributions of ATAs and contributions of correlation \emph{per se}.
 Not only is the contribution of ATA non-neglible but in some cases the presence or absence of ATAs 
 can mediate the result of competition between species, i.e., coexistence or extirpation. 
 For some parameters, the contribution of ATAs was the driving mechanism of 
-coexistence – the IGR would be negative without it – deeming the scenario a case of 
+coexistence – GWR would be negative without it – deeming the scenario a case of 
 ATA rescue. For other parameter values, ATA exclusion occurs where ATAs are the 
 driving mechanism of the failure to coexist (exclusion) and the lack of ATAs would result in 
-a positive IGR. Parameter
+a positive GWR. Parameter
 subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists} - species which only persist in habitat patches where ATAs contribute to its coexistence. 
 One can imagine a species whose coexistence with others is conditional on the asymmetric relationship between drivers of coexistence and whose populations may become excluded when ATAs erode. 
 %I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
@@ -936,13 +936,13 @@ See Introduction and Fig. \ref{fig:noise} caption for model details.
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig3.pdf}
 \caption{The contribution of ATAs to species coexistence is often meaningfully large compared to 
-other components of the MCT decomposition. All panels show the IGR and the decomposition of
-the IGR provided by the extended MCT, equation (\ref{eq:full_decomp}). For each panel, 
+other components of the MCT decomposition. All panels show GWR and the decomposition of
+GWR provided by the extended MCT, equation (\ref{eq:full_decomp}). For each panel, 
 $\delta$ and $\mu_1-\mu_2$ 
-are fixed at values specified in the margins, and the IGR and components of the decomposition
+are fixed at values specified in the margins, and GWR and components of the decomposition
 are plotted against $\sigma$. The contribution of ATAs (red line) frequently 
 has magnitude comparable to other components, indicating that ATAs can contribute meaningfully
-to species coexistence or failure to coexist. In some instances, the IGR line (orange) falls 
+to species coexistence or failure to coexist. In some instances, the GWR line (orange) falls 
 between the ATA line (red)
 and the $x$ axis, indicating that, for those parameter values, ATAs make the difference between species
 coexistence and exclusion of the weaker competitor. Standard errors of plotted quantities 
@@ -956,16 +956,16 @@ in some details, main conclusions were the same. \label{fig:fig3}}
 \includegraphics[width=\textwidth]{../results_figs/fig4.pdf}
 \caption{ATAs can sometimes make the difference between species coexistence and exclusion of the weaker
 competitor: both ``ATA rescue'' and ``ATA exclusion'' (see Methods) are possible. 
-All panels show the IGR, the ATA term of the extended MCT [$\Delta_i^{[EC]}$ in equation 
+All panels show GWR, the ATA term of the extended MCT [$\Delta_i^{[EC]}$ in equation 
 (\ref{eq:full_decomp})], and the difference of these quantities. 
 For each panel, $\delta$ and $\sigma$ are fixed at values specified in the 
 margins, and the three quantities are plotted against $\mu_1-\mu_2$ to isolate points in the
 ``trait-difference space'' corresponding to ATA rescue 
 ($\psi_{\text{ATA}}(\delta,\sigma) \setminus \psi_{\lnot\text{ATA}}(\delta,\sigma)$) 
 or ATA exclusion ($\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$; 
-see Methods). Values of $\mu_1-\mu_2$ for which the IGR is positive but 
-$\text{IGR}-\Delta_i^{[EC]}$ is negative correspond to ATA rescue (shaded yellow), whereas
-values of $\mu_1-\mu_2$ for which the IGR is negative but $\text{IGR}-\Delta_i^{[EC]}$ is positive 
+see Methods). Values of $\mu_1-\mu_2$ for which GWR is positive but 
+$\text{GWR}-\Delta_i^{[EC]}$ is negative correspond to ATA rescue (shaded yellow), whereas
+values of $\mu_1-\mu_2$ for which GWR is negative but $\text{GWR}-\Delta_i^{[EC]}$ is positive 
 correspond to ATA exclusion (shaded violet). Top panels also include domains
 of ATA rescue or exclusion, but they were too narrow to be highlighted by shading and are
 probably of minimal practical importance. 
@@ -993,9 +993,9 @@ using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it loo
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig5.pdf}
 \caption{The contribution of ATAs to species coexistence in the diatom system of \cite{Descamps_2005} when 
-\emph{F. crotonensis} is the invader is meaningfully large compared to 
-other components of the MCT decomposition. All panels show the IGR and the decomposition of
-the IGR provided by the extended MCT, equation (\ref{eq:full_decomp}). 
+\emph{F. crotonensis} is rare is meaningfully large compared to 
+other components of the MCT decomposition. All panels show GWR and the decomposition of
+GWR provided by the extended MCT, equation (\ref{eq:full_decomp}). 
 %***DAN: This is for one species invading the other, right? Need to specify that, and say which is 
 %invading which, and, at the end of the 
 %caption indicate that the reverse invasion scenario is in sup mat and cite the corresponding figure there.
@@ -1006,17 +1006,17 @@ and mean, $\theta_0$; see Methods) are fixed at the original values used by
 \cite{Descamps_2005} ($a=6^\circ$C, $P=60$d, $\theta_0=18^\circ$C) and 
 %***DAN: I added units for a  and \theta_0 here, please check these are correct 
 %***JASMIN: Done 
-the IGR and components of the MCT decomposition
+GWR and components of the MCT decomposition
 are then plotted against the other parameter. The original value of the varying parameter 
 is indicated by the vertical dashed magenta lines. ATA contributions 
 had magnitude comparable to other components, 
 %***DAN: Make sure this is still true after the correct version of C is put in, and after we
 %resolve the potential problem with the wiggles on the plot. Reword if not.
 indicating that ATAs can contribute meaningfully
-to diatom coexistence in this system. In some instances, the IGR line (orange) falls 
+to diatom coexistence in this system. In some instances, the GWR line (orange) falls 
 between the ATA line (red)
 and the horizontal axis, indicating that, for those parameter values, ATAs make the difference between species
-coexistence and exclusion of the invader, \emph{F. crotonensis}. 
+coexistence and exclusion of the rare species, \emph{F. crotonensis}. 
 %***DAN: Not the weaker competitor, actually, right, but rather whichever competitor was being considered as the invader
 %for these plots? If I'm right about that then please reword accordingly. 
 %***JASMIN: Right, Done. 
@@ -1026,25 +1026,24 @@ Standard errors of plotted quantities ?.
 %species as the invader.
 %***JASMIN: Done
 Coexistence in this system and within 
-our defined parameters only depends on the IGR of \emph{F. crotonensis} so we only 
-show this case; though, an analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
-\emph{F. crotonensis} is the resident.}  \label{fig:fig5}
+our defined parameters only depends on GWR of \emph{F. crotonensis} so we only 
+show this case; though, an analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is rare and 
+\emph{F. crotonensis} is common.}  \label{fig:fig5}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=.38\textwidth]{../results_figs/fig6.pdf}
-\caption{The degree of ATA contribution to the IGR change with parameters of environmental variation, i.e., temperature 
-oscillation. The ratio $\Delta_i^{[EC]}/\text{IGR}$ constitutes the degree of ATA contribution to thee IGR with larger 
+\caption{The degree of ATA contribution to GWR change with parameters of environmental variation, i.e., temperature 
+oscillation. The ratio $\Delta_i^{[EC]}/\text{GWR}$ constitutes the degree of ATA contribution to GWR with larger 
 magnitudes signifying larger ATA contributions. In this model, for the plotted parameters, positive $\Delta_i^{[EC]}/
-\text{IGR}$ only result from positive $\Delta_i^{[EC]}$ and positive IGR and negative $\Delta_i^{[EC]}/\text{IGR}$ only 
-result from positive $\Delta_i^{[EC]}$ and negative IGR. Thus, cyan areas indicate failure to coexist and magenta areas 
+\text{GWR}$ only result from positive $\Delta_i^{[EC]}$ and positive GWR and negative $\Delta_i^{[EC]}/\text{GWR}$ only 
+result from positive $\Delta_i^{[EC]}$ and negative GWR. Thus, cyan areas indicate failure to coexist and magenta areas 
 indicate coexistence with ATA contribution increasing with color intensity. The most intense areas of magenta indicate 
-parameter subspaces where ATA rescue occurs. For simplicity and readability magnitudes of $\Delta_i^{[EC]}/\text{IGR}$ 
+parameter subspaces where ATA rescue occurs. For simplicity and readability magnitudes of $\Delta_i^{[EC]}/\text{GWR}$ 
 >1 were capped at $|1|$. 
 Coexistence in this system and within 
-our defined parameters only depends on the IGR of \emph{F. crotonensis} so we only 
-show this case; though, an analogous plot (SI Fig. ) was generated for the reverse scenario where \emph{C. pseudostelligera} is the invader and 
-\emph{F. crotonensis} is the resident.} \label{fig:fig6}
+our defined parameters only depends on GWR of \emph{F. crotonensis} so we only 
+show this case.} \label{fig:fig6}
 \end{figure}
 
 \end{document}
