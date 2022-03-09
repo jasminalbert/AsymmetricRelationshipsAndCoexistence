@@ -647,6 +647,11 @@ show that ATA contributions to coexistence often have magnitudes comparable to t
 magnitudes of other terms of the extended MCT decomposition (Fig. \ref{fig:fig5}), and that 
 ATA rescue occurs for many combinations of parameters for this system (Fig. \ref{fig:fig5},
 but especially Fig. \ref{fig:fig6}).
+%***DAN: I ended up deciding we do not need sup mat analogues of Figs. 5 and 6, nor do we need 
+%sup mat section S11.
+
+%***DAN: Dan has edited through here and all he figure captions. Still need to do discussion and sup mat
+%8-11.
 
 \section{Discussion}\label{section:discussion}
 
