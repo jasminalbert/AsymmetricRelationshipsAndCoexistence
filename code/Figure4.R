@@ -45,11 +45,11 @@ layout(matrix(c(2,3,4,5,1,
 
 plot.new() #1
 legend("topright", 
-       legend=c(expression(IGR),expression(IGR-Delta[i]^"[EC]"), expression(Delta[i]^"[EC]")),
+       legend=c(expression(GWR),expression(GWR-Delta[i]^"[EC]"), expression(Delta[i]^"[EC]")),
        col = c("orange","navy", "red"),
        lty = c(1,1,1), bty="n", cex=1.8, inset=c(-0.51,-0.05),
        y.intersp = 1.1, x.intersp = 0.05, seg.len=0.8, lwd=1.5)
-legend("topright", legend=c("ATA \nrescue", "ATA \nexclusion"), density=50, fill=c("hotpink2", "darkgoldenrod2"),
+legend("topright", legend=c("ATA \nrescue", "ATA \nexclusion"), density=50, fill=c("darkgoldenrod2","hotpink2"),
        bty="n", border="white", inset=c(-0.33, 0.09), cex=1.6, y.intersp = 1.6,
        x.intersp = 0.3)
 #2-5
