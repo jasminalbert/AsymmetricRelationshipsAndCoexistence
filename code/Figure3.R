@@ -46,7 +46,7 @@ legend("topright",
        legend=c(expression(Delta[i]^0), expression(Delta[i]^E),
                 expression(Delta[i]^C), expression(Delta[i]^"(E#C)"),
                 expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]")
-                ,expression(IGR)), 
+                ,expression(GWR)), 
        col = c("black","black","black","black","blue","red","orange"),
        lty = c(1,2,4,3,1,1,1), bty="n", cex=1.8, inset=c(0,-0.05),
        y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.5)
@@ -102,7 +102,7 @@ legend("topright",
        legend=c(expression(Delta[i]^0), expression(Delta[i]^E),
                 expression(Delta[i]^C), expression(Delta[i]^"(E#C)"),
                 expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]")
-                ,expression(IGR)), 
+                ,expression(GWR)), 
        col = c("black","black","black","black","blue","red","orange"),
        lty = c(1,2,4,3,1,1,1), bty="n", cex=1.8, inset=c(0,-0.05),
        y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.5, xpd=NA)
