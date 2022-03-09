@@ -310,8 +310,7 @@ The same derivation also applies to provide
 \end{equation}
 an analogous decomposition of $\olr_{j \bs i}$.
 
-Combining the decompositions of $\olr_{i \bs i}$ and $\olr_{j \bs i}$ and assuming without loss of generality that $\mu_i \leq \mu_j$ so that
-species $i$ is the weaker competitor and $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ can be regarded as a coexistence metric, we have
+Combining the decompositions of $\olr_{i \bs i}$ and $\olr_{j \bs i}$, we have
 \begin{equation}
 \olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]}+\Delta_i^{[EC]},\label{eq:decomp_overall_delta}
 \end{equation}
@@ -800,38 +799,6 @@ since $\olr_{j \bs i}=0$.
 As for (\ref{eq:decomp_overall_IGR}) and (\ref{eq:decomp_overall_rjbsi}), it is again the case that (\ref{eq:decomp_overall_delta})
 applies for the estimators as well as for the quantities being estimated.
 
-\section{Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
-
-%***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
-%It has been added but Dan needs to edit it.
-
-In Fig. \ref{MT-fig:fig4} we plot IGR , $\Delta_i^{[EC]}$, and IGR $-\Delta_i^{[EC]}$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
-From section \ref{sect:math_simplifications}, 
-\begin{align}
-\olr_{j \bs i} &= \E[\ln(1-\delta+E_j/C_{j \bs i})] \\
-&= \E[\ln(1-\delta+\delta B_j/B_j)] \\
-&= 0,
-\end{align}
-and
-\begin{align}
-\olep_j^{[EC]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
-&= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
-&= 0. %\label{eq:decomp:j:EnatC}
-\end{align}
-Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[EC]}$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}$ are zero so 
-\begin{equation}
-\olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\olr_{i \bs i}
-\end{equation}
-and 
-\begin{equation}
-\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}=\olep_i^{[EC]}
-\end{equation}
-Similarly for IGR $-\Delta_i^{[EC]}$, 
-\begin{equation}
-(\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-(\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}) = \olr_{i \bs i}-\olep_i^{[EC]}.
-\end{equation}
-Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}. 
-
 \section{Details of diatom model setup}\label{sect:diatom_model}
 
 %***DAN: Jasmin, please start on this section when you get a chance. Here are some topics that need
@@ -908,7 +875,7 @@ To obtain $E_i$ and $C_{i \bs i}$, the competiton model was simulated for a $T=3
 % ATA contribution. The functions alignranks, normcor...  (in partialSharp_fxns.R) 
 %***DAN: Yes, we are going to have to do that
 
-\section{Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
+\section{     Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
 
 The decomposition of storage effects and quantification of contributions of ATAs depends on 
 removing asymmetric tail associations from the bivariate random variable
@@ -955,7 +922,39 @@ $(E_{i,k}^\nat,C_{i \bs i,k}^\nat)$, $k=1,\ldots,T$ should be recomputed for
 multiple such samples, all computed via the same process, and a median of 
 the resulting distribution of values should be used.
 
-\section{\emph{Cyclotella psedosteligera} as the invader}\label{sect:Invader2}
+\section{Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
+
+%***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
+%It has been added but Dan needs to edit it.
+
+In Fig. \ref{MT-fig:fig4} we plot IGR , $\Delta_i^{[EC]}$, and IGR $-\Delta_i^{[EC]}$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
+From section \ref{sect:math_simplifications}, 
+\begin{align}
+\olr_{j \bs i} &= \E[\ln(1-\delta+E_j/C_{j \bs i})] \\
+&= \E[\ln(1-\delta+\delta B_j/B_j)] \\
+&= 0,
+\end{align}
+and
+\begin{align}
+\olep_j^{[EC]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
+&= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
+&= 0. %\label{eq:decomp:j:EnatC}
+\end{align}
+Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[EC]}$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}$ are zero so 
+\begin{equation}
+\olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\olr_{i \bs i}
+\end{equation}
+and 
+\begin{equation}
+\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}=\olep_i^{[EC]}
+\end{equation}
+Similarly for IGR $-\Delta_i^{[EC]}$, 
+\begin{equation}
+(\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-(\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}) = \olr_{i \bs i}-\olep_i^{[EC]}.
+\end{equation}
+Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}. 
+
+\section{     \emph{Cyclotella psedosteligera} as the invader}\label{sect:Invader2}
 We generated plots analougous to Fig. \ref{MT-fig:fig5} and Fig. \ref{MT-fig:fig6} for the reverse invader-resident scenario where \emph{C. pseudosteligera} is the invader and \emph{F. crotonensis} is the resisent to compute the IGR and decompose coexistence mechanisms of \emph{C. pseudosteligera}. Fig. \ref{fig:fig5_2} is analogous to Fig. \ref{MT-fig:fig5} and shows changes in the IGR and decomposed mechanisms in response to change in one temperature parameter while the other two are held constant. Within the parameters of our simulations, the IGR of \emph{C. pseudosteligera}
 
 
