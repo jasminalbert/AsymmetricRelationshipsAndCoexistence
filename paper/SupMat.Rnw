@@ -816,7 +816,7 @@ pictured in Fig. \ref{fig:VKQ} by filled circles and solid lines.
 Our investigation follows \cite{Ellner_2016, Ellner_2019} and 
 uses their modified functions.
 
-%Defintion of E and C
+%Defintions of E and C
 Our decomposition of GWR is defined by the choices $E_i(t)=\theta(t)$, 
 $C_{i}(t)=(K_i(t)+S(t))/S(t)$, which then imply $r_i(E_i,C_{i})=\frac{V_i(E_i)}{C_{i}} -D$. 
 This choice follows one of the choices made in the R computer code provided by \citep{Ellner_2016,Ellner_2019}.
@@ -825,7 +825,7 @@ Other choices are possible. For instance, in addition to this choice,
 as well as some other possibilities discussed in their supporting materials and 
 represented in their computer code. 
 
-%outline how the quantities E_i and C_i\i were obtained from simulations. 
+%Outline how the quantities E_i and C_i\i were obtained from simulations. 
 To obtain $E_i$ and $C_{i \bs i}$, the competition model was simulated for $T=3000$ time steps.
 Environmental temperature fluctuations were defined by the paramters $a$, $P$, and $\theta_0$ using 
 $\theta(t)=asin(2\pi t/P)+\theta_0$, and this determined $E_i(t)$ for $i=1,2$. To obtain 
@@ -836,6 +836,7 @@ along with $K_i(t)=K_i(\theta(t))$ were plugged in to the expression $C_{i}(t)=(
 
 \section{     Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
 
+%***DAN: Dan still needs to edit this section
 The decomposition of storage effects and quantification of contributions of ATAs depends on 
 removing asymmetric tail associations from the bivariate random variable
 $(E_i,C_{i \bs i})$, while maintaining its correlation and marginal distributions, to produce a new
@@ -881,41 +882,14 @@ $(E_{i,k}^\nat,C_{i \bs i,k}^\nat)$, $k=1,\ldots,T$ should be recomputed for
 multiple such samples, all computed via the same process, and a median of 
 the resulting distribution of values should be used.
 
-\section{Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
+\section{      Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
 
-%***DAN: Jasmin mentioned she had some math proving this, it needs to be added here.
-%It has been added but Dan needs to edit it.
-
-In Fig. \ref{MT-fig:fig4} we plot IGR , $\Delta_i^{[EC]}$, and IGR $-\Delta_i^{[EC]}$ (see equation \ref{eq:decomp_overall_delta}) and the text below it.  
-From section \ref{sect:math_simplifications}, 
-\begin{align}
-\olr_{j \bs i} &= \E[\ln(1-\delta+E_j/C_{j \bs i})] \\
-&= \E[\ln(1-\delta+\delta B_j/B_j)] \\
-&= 0,
-\end{align}
-and
-\begin{align}
-\olep_j^{[EC]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
-&= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
-&= 0. %\label{eq:decomp:j:EnatC}
-\end{align}
-Then $q_{ij}$ does not matter for IGR or $\Delta_i^{[EC]}$ because the second term in $\olr_{i \bs i}-q_{ij}\olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}$ are zero so 
-\begin{equation}
-\olr_{i \bs i}-q_{ij}\olr_{j \bs i}=\olr_{i \bs i}
-\end{equation}
-and 
-\begin{equation}
-\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}=\olep_i^{[EC]}
-\end{equation}
-Similarly for IGR $-\Delta_i^{[EC]}$, 
-\begin{equation}
-(\olr_{i \bs i}-q_{ij}\olr_{j \bs i})-(\olep_i^{[EC]}-q_{ij} \olep_j^{[EC]}) = \olr_{i \bs i}-\olep_i^{[EC]}.
-\end{equation}
-Thus $q_{ij}$ does not matter for anything computed for Fig. \ref{MT-fig:fig4}. 
-
-\section{     \emph{Cyclotella psedosteligera} as the invader}\label{sect:Invader2}
-We generated plots analougous to Fig. \ref{MT-fig:fig5} and Fig. \ref{MT-fig:fig6} for the reverse invader-resident scenario where \emph{C. pseudosteligera} is the invader and \emph{F. crotonensis} is the resisent to compute the IGR and decompose coexistence mechanisms of \emph{C. pseudosteligera}. Fig. \ref{fig:fig5_2} is analogous to Fig. \ref{MT-fig:fig5} and shows changes in the IGR and decomposed mechanisms in response to change in one temperature parameter while the other two are held constant. Within the parameters of our simulations, the IGR of \emph{C. pseudosteligera}
-
+In Fig. \ref{MT-fig:fig4} of the main text we plotted GWR , $\Delta_i^{[EC]}$, and $\text{GWR}-\Delta_i^{[EC]}$ 
+(see equation \ref{eq:decomp_overall_delta} and the text below it) for the lottery model. We here show
+the resulting plot does not depend on which of the two choices for the scaling factors $q_{ij}$ is used.
+But $\text{GWR} = \olr_{i \bs i} - q_{ij} \olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij}\olep_j^{[EC]}$,
+so it suffices to show $\olr_{j \bs i}=0$ and $\olep_j^{[EC]}=0$. The first of these is known true, \emph{a priori}, 
+and the second was demonstrated in section \ref{sect:math_simplifications}.
 
 \clearpage
 \newpage
