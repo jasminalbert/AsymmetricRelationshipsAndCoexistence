@@ -801,36 +801,19 @@ applies for the estimators as well as for the quantities being estimated.
 
 \section{Details of diatom model setup}\label{sect:diatom_model}
 
-%***DAN: Jasmin, please start on this section when you get a chance. Here are some topics that need
-%to be covered:
-Estimations of $Q_i(t)$, $V_i(t)$, and $K_i(t)$, temperature dependence functions for 
-cell quota, reproduction rate, and half saturation, respectively, were used to 
-paramaterize the competing diatom model outlined in the paper. 
-Values of and subsequent function estimations are plotted in Figure \ref{fig:VQK}. 
-\cite{Descamps_2005} obtained estimated values for $Q_i$, $V_i$, and $K_i$ from 
-single species nine-day batch experiments at four different temperatures ($6^\circ$C, 
-$12^\circ$C, $18^\circ$C, $24^\circ$C) (see Table 1 of \cite{Descamps_2005}) and further
-computed linear interpolations to
-functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$. These values and functions are 
-indicated in Figure \ref{fig:VKQ} by open circles and dashed lines. 
+Estimates of the temperature dependence functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$, 
+produced by earlier authors \cite{Descamps_2005,Ellner_2016,Ellner_2019} and which are part of the parameterization
+of the diatom competition model described in the main text, are now described.
+\cite{Descamps_2005} estimated values for $Q_i(t)$, $V_i(t)$, and $K_i(t)$ from 
+single-species, nine-day batch experiments at four different temperatures ($6^\circ$C, 
+$12^\circ$C, $18^\circ$C, $24^\circ$C) (see Table 1 of \cite{Descamps_2005}) and 
+used linear interpolations for the
+functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$. Their values and functions are 
+pictured in Fig. \ref{fig:VKQ} using open circles and dashed lines.
 \cite{Ellner_2016, Ellner_2019} used slightly modified values and functions,
-indicated in \ref{fig:VQK} by filled circles and solid lines. 
-Our investigation follows that of \cite{Ellner_2016, Ellner_2019} and 
-uses the modified functions of  $Q_i(t)$, $V_i(t)$, and $K_i(t)$ to analyze coexistence.
-
-
-
-%be very clear here. To give one example of the need for care, here, Ellner et al (2019) state on p. 6
-%of their paper that K_1 and K_2 were constant for the range of temperature considered, and they state
-%that they took constant values for these things. However, we used a larger range of temperatures. 
-%Depending on which of K1fun/K2fun versus K1flatfun/K2flatfun (from DDataAndVKQfuns.R) was actually used
-%may make a difference, so we have to specify. Note that even K1flatfun/K2flatfun were not actually flat
-%for the whole temperature range 6-24 degrees C, though they were for the range of temperature Ellner
-%et al considered. We should not say we used flat K1 and K2 functions unless we are sure we only ever
-%used temperatures in the flat ranges of these functions. Better just to describe the functions we
-%actually used, where the best way to describe them *may* be by plotting them. Anyway, what you need to
-%do is make sure you know what versions of each of these 6 functions your code actually used, and then
-%describe the functions precisely in this section.
+pictured in Fig. \ref{fig:VKQ} by filled circles and solid lines. 
+Our investigation follows \cite{Ellner_2016, Ellner_2019} and 
+uses their modified functions.
 
 %2) You need to specify what choices were made for E and C. The text below, which I cut-and-pasted
 %from the main text, does some of this. Please use an edited version of that text here, edited as you
@@ -838,17 +821,20 @@ uses the modified functions of  $Q_i(t)$, $V_i(t)$, and $K_i(t)$ to analyze coex
 %You ought to add a bit more exlanation to the text, so one understand why the choice of C make sense
 %and why r is what you've written there.
 
-Our decomposition is defined by $E(t)=\theta(t)$, 
+Our decomposition of GWR is defined by the choices $E(t)=\theta(t)$, 
 $C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$ and $r_i(E_i,C_{i \bs i})=\frac{V_i(E)}{C_{i \bs i}} -D$. 
+Other choices are possible. For instance, \cite{Ellner_2016} also considers
+
+
 We note that our definition and selection of our "features" of interest are
 options among many and features need not be limited to $E$ and $C$ \citep{Ellner_2019}. 
 For example \cite{Ellner_2019} decomposes coexistence with respect to fluctuation in
 inflow silicate concentration, $S$, and temperature, and \cite{Ellner_2016} decomposes
 coexistence using classical $E$ and $C$ drivers, but define $E=V(t)$. 
+
 Like \cite{Ellner_2016}, we set $C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$ to reflect 
 potential versus actual growth of the diatom populations. 
-Choice of drivers and their definitions are up to the investigator,
-but should refelct real variables that influence population growth.
+
 
 
 %3) You need to outline how the quantities E_i and C_i\i were obtained from simulations. 
@@ -972,9 +958,18 @@ were never greater than \Sexpr{round(se3qij,5)}, so are not displayed. \label{fi
 
 \begin{figure}
 \includegraphics[width=.66\textwidth]{../results_figs/VKQfig.pdf}
-\caption[Species growth rate, silica uptake, and half sturation responses to changes in temperature.]
-{Species maximum growth rate (a), half saturation constant (b), and silica uptake (c) responses to changes in temperature. Species 1 is \emph{F. crotonensis}, shown in blue, and species 2 is \emph{C. pseudostelligera}, shown in red. Open circles and dashed lines indicate estimated data and interpolations from \cite{Descamps_2005} and closed circles and solid lines indicate values and function used in our analysis as defined in \cite{Ellner_2016, Ellner_2019}. \label{fig:VKQ}}
+\caption[Maximum growth rate, cellular silicate content, and half sturation constant dependences on temperature.]
+{Species maximum population growth rates, $V_i$ (a), half saturation constants for the dependence 
+of growth rates on nutrient concentration, $K_i$ (b), and cellular silicate content, $Q_i$ (c) dependend on 
+temperature in ways explored by \cite{Descamps_2005} and \cite{Ellner_2016, Ellner_2019} and 
+pictured here. Species 1 is \emph{F. crotonensis}, shown in blue, and species 2 is 
+\emph{C. pseudostelligera}, shown in red. Open circles and dashed lines indicate estimated 
+values and interpolations from \cite{Descamps_2005} and closed circles and solid lines indicate 
+values and functions used by \cite{Ellner_2016, Ellner_2019} and in our analyses. The two sets of
+estimates and functions coincide on (c).\label{fig:VKQ}}
 \end{figure}
+%***DAN: I added the last sentence indicating the two sets of data and functions coincide on (c), can you please
+%check that and let me know if it's true, Jasmin?
 
 %\begin{figure}
 %\includegraphics[width=\textwidth]{../results_figs/fig5_2.pdf}

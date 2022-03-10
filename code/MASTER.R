@@ -1,4 +1,5 @@
-#MASTER - assumes the R working directory is the directory this file is in
+#Running this script should reproduce all analyses for the paper 
+#Assumes the R working directory is the directory this file is in, i.e., the code directory for the project
 
 rm(list=ls())
 
