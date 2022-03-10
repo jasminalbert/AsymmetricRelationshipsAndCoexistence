@@ -2,6 +2,9 @@
 source("diatom/DataAndVKQfuns.R")
 source("diatom/partialSharp_fxns.R")
 require(deSolve)
+
+
+
 # a     amplitude
 # P     Period (days)
 # Tbar  mean temperature (degrees C); theta_0

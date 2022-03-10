@@ -1,18 +1,27 @@
-noise_loc <- "../results_numeric/noise.RData"
-fig_loc <- "../results_figs/"
+#This script generates figure 1 from the paper
 
+#***Preamble
+
+#locations of inputs needed for this script
+noise_loc <- "../results_numeric/noise.RData"
+
+#locations where results are stored
+fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
 fig1_vertical_loc <- paste(fig_loc,"fig1_vertical.pdf",sep="")
 fig1_horiz_loc <- paste(fig_loc,"fig1_horizontal.pdf",sep="")
 
-load(noise_loc)
+#load the noise we'll need
+load(noise_loc) #this loads an obtect called b_tilde which has the noise in it
+
+#***Make the figure with panels arranged vertically
 
 nt <- c("l", "s", "r") #nt = noise type
 blue <- rgb(0,0,0.545,0.3) #col2rgb("darkblue")
 labels <- c("(a)","(b)", "(c)")
-##############################################################################################
+
 pdf(fig1_vertical_loc, width=2.8, height=7)
 
 par(mar=c(0.5,0.5,0,0), oma=c(5,5,2,2))
@@ -47,11 +56,8 @@ for (panel in 1:3){
 mtext("variable 1", outer=TRUE, side=1, line=2.5, cex.lab=1.25, at=0.43)
 mtext("variable 2", outer=TRUE, side=2, line=2.5, cex.lab=1.25, at=0.48)
 dev.off()
-##############################################################################
 
-
-
-
+#***Make the figure again, same but with panels arranged horizontally, as a possible alternative
 
 pdf(fig1_horiz_loc, width=7, height=3)
 
