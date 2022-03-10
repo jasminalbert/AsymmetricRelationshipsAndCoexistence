@@ -41,6 +41,8 @@ K2flatfun<- approxfun(Tvals,K2flat,rule = 2);
 V2dataMod <-  c(0.32,0.36,0.39,0.06)   # Cyclotella data with last value modified 
 V2modfun <-  approxfun(Tvals,V2dataMod,rule = 2)
 
+Q2mod <- c(0.301,0.862,0.619,0.619)
+
 forceChemo <- function(t,y,parms) {
 	temp <- parms["Tbar"] + parms["a"]*sin(2*pi*t/parms["P"]); 
 	V1 <- V1quad(temp); V2<- V2modfun(temp); K1<- K1flatfun(temp); K2 <-  K2flatfun(temp) 
