@@ -801,6 +801,7 @@ applies for the estimators as well as for the quantities being estimated.
 
 \section{Details of diatom model setup}\label{sect:diatom_model}
 
+%The Q, K and V functions
 Estimates of the temperature dependence functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$, 
 produced by earlier authors \cite{Descamps_2005,Ellner_2016,Ellner_2019} and which are part of the parameterization
 of the diatom competition model described in the main text, are now described.
@@ -815,51 +816,23 @@ pictured in Fig. \ref{fig:VKQ} by filled circles and solid lines.
 Our investigation follows \cite{Ellner_2016, Ellner_2019} and 
 uses their modified functions.
 
-%2) You need to specify what choices were made for E and C. The text below, which I cut-and-pasted
-%from the main text, does some of this. Please use an edited version of that text here, edited as you
-%see fit if clarity needs to be improved and to fit the text in with the rest of this new section.
-%You ought to add a bit more exlanation to the text, so one understand why the choice of C make sense
-%and why r is what you've written there.
+%Defintion of E and C
+Our decomposition of GWR is defined by the choices $E_i(t)=\theta(t)$, 
+$C_{i}(t)=(K_i(t)+S(t))/S(t)$, which then imply $r_i(E_i,C_{i})=\frac{V_i(E_i)}{C_{i}} -D$. 
+This choice follows one of the choices made in the R computer code provided by \citep{Ellner_2016,Ellner_2019}.
+Other choices are possible. For instance, in addition to this choice, 
+\cite{Ellner_2016} also considers an alternative choice $E_i(t)=V_i(t)$,
+as well as some other possibilities discussed in their supporting materials and 
+represented in their computer code. 
 
-Our decomposition of GWR is defined by the choices $E(t)=\theta(t)$, 
-$C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$ and $r_i(E_i,C_{i \bs i})=\frac{V_i(E)}{C_{i \bs i}} -D$. 
-Other choices are possible. For instance, \cite{Ellner_2016} also considers
-
-
-We note that our definition and selection of our "features" of interest are
-options among many and features need not be limited to $E$ and $C$ \citep{Ellner_2019}. 
-For example \cite{Ellner_2019} decomposes coexistence with respect to fluctuation in
-inflow silicate concentration, $S$, and temperature, and \cite{Ellner_2016} decomposes
-coexistence using classical $E$ and $C$ drivers, but define $E=V(t)$. 
-
-Like \cite{Ellner_2016}, we set $C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$ to reflect 
-potential versus actual growth of the diatom populations. 
-
-
-
-%3) You need to outline how the quantities E_i and C_i\i were obtained from simulations. 
-To obtain $E_i$ and $C_{i \bs i}$, the competiton model was simulated for a $T=3000$ number of timesteps to obtain $S$, the extracellular silicate concentration. The initial population size of invaderwas set at zero and initial population of the resident was set at 20. Environmental temperature fluctuations were defined by the paramters $a$, $P$, and $\theta_0$ for $\theta(t)=asin(2\pi t/P)+\theta_0$. Dilution was set to $D=0.09$ and inflow silicate concentration was set at $S_0=35$. A burn in time of $\frac{2}{3}T$ was cut from the resulting $S$ and $E_i(t)=\theta(t)$. Competitive pressure was calculated using $C_{i \bs i}(t)=(K_i(t)+S(t))/S(t)$.
-
-%***DAN: Some text and notes immediately below were cut and pasted from the main text, in case 
-%having this material helps in writing this new SI section
-%
-%and here, we consider varying parameters of temperature fluctuations and further decompose the 
-%coexistence of \emph{C. pseudostelligera} and \emph{F. crotonensis} to account for contributions 
-%of ATAs and ATA effects as described above. Our decomposition is defined by $E(t)=\theta(t)$, 
-%$C_j(t)=(K_j(t)+S(t))/S(t)$ and $r_j(E_j,C_j)=\frac{V_j(E)}{C_j} -D$. Thus in our exploration, 
-%environmental fluctuation is temperature fluctuation. We first considered the scenario where 
-%\emph{F. crotonensis} is the invader and emph{C. pseudostelligera} is the resident to compute 
-%the coexistence decomposition for \emph{F. crotonensis}. 
-%put reverse in sup mat?
-%***DAN: Yes, I think that would be a good idea. I forgot about that - we were able to only consider 1 invading 2 for 
-%the lottery model, because of some simplifying assumptions we were able to make, but cannot really do that here, right?
-%***JASMIN: Right. Species in the lottery model only differed in mu but here they differ in they're VKQ functions.
-%*** JASMIN: Note to to run the reverse invader-resident scenario and put in SUpMat!
-%do we need to explain how we separated the asymmetries using the sims??
-%***DAN: I am not sure what you mean by this question, Jasmin
-%***JASMIN: I mean should we explain the methodology of the code we wrote that is implemented to compute the 
-% ATA contribution. The functions alignranks, normcor...  (in partialSharp_fxns.R) 
-%***DAN: Yes, we are going to have to do that
+%outline how the quantities E_i and C_i\i were obtained from simulations. 
+To obtain $E_i$ and $C_{i \bs i}$, the competition model was simulated for $T=3000$ time steps.
+Environmental temperature fluctuations were defined by the paramters $a$, $P$, and $\theta_0$ using 
+$\theta(t)=asin(2\pi t/P)+\theta_0$, and this determined $E_i(t)$ for $i=1,2$. To obtain 
+$C_{i \bs i}$, a simulation was carried out starting from $x_i=0$ and $x_j=20$.
+Dilution was set to $D=0.09$ and inflow silicate concentration was set at $S_0=35$. A burn in time 
+of $\frac{2}{3}T$ was cut from the simulation and the $S(t)$ time series from the remainder of the simulation,
+along with $K_i(t)=K_i(\theta(t))$ were plugged in to the expression $C_{i}(t)=(K_i(t)+S(t))/S(t)$. 
 
 \section{     Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
 
