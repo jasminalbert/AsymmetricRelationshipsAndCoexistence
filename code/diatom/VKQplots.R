@@ -40,7 +40,7 @@ legend("bottomleft", legend=c("original data","modified data","original function
        lty=c(NA, NA, 2, 1), pch=c(1, 19, NA, NA), bty='n', pt.cex=c(1.3, .5,NA,NA))
 plotVKQ("K", Tvals, K1data, K2data, K1flat, K2flat, K1fun, K2fun, K1flatfun, K2flatfun)
 mtext("(b)", 3, -1.5, at=6)
-plotVKQ("Q", Tvals, Q1data, Q2data, Q1data, Q2data, Q1fun, Q2fun, Q1fun, Q2fun)
+plotVKQ("Q", Tvals, Q1data, Q2data, Q1data, Q2mod, Q1fun, Q2fun, Q1fun, Q2fun)
 mtext("(c)", 3, -1.5, at=24,)
 axis(1, at=Tvals, tick=F, cex.axis=1.3)
 axis(1, at=min(Tvals):max(Tvals), labels=F)
