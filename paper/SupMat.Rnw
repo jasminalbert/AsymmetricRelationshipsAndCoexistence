@@ -966,12 +966,12 @@ pictured here. Species 1 is \emph{F. crotonensis}, shown in blue, and species 2 
 \emph{C. pseudostelligera}, shown in red. Open circles and dashed lines indicate estimated 
 values and interpolations from \cite{Descamps_2005} and closed circles and solid lines indicate 
 values and functions used by \cite{Ellner_2016, Ellner_2019} and in our analyses. The two sets of
-estimates and functions coincide on (c), except for right-most point for species 2. For that species,
-data were not available for $Q$ at $24^\circ$ from the original study of \cite{Descamps_2005}; \cite{Ellner_2016, Ellner_2019}
-assumed constancy of $Q_2$ for $t$ between $18^\circ$ and $24^\circ$.\label{fig:VKQ}}
+estimates and functions coincide on (c), except for the right-most point for species 2. For that species,
+data were not available for $Q$ at $24^\circ$C from the original study of \cite{Descamps_2005}; \cite{Ellner_2016, Ellner_2019}
+assumed constancy of $Q_2$ for temperature between $18^\circ$C and $24^\circ$C. Data were also not avaialable at
+$24^\circ$C for $K_2$, and \cite{Ellner_2016, Ellner_2019} assumed constancy of $K_2$ for teperatures from 
+$12^\circ$C through $24^\circ$C. \label{fig:VKQ}}
 \end{figure}
-%***DAN: I added the last sentence indicating the two sets of data and functions coincide on (c), can you please
-%check that and let me know if it's true, Jasmin?
 
 %\begin{figure}
 %\includegraphics[width=\textwidth]{../results_figs/fig5_2.pdf}
