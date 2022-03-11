@@ -574,12 +574,8 @@ example we considered $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$ for both $i=1$, $j=
 $i=2$, $j=1$. Further details of the model setup are in SI section \ref{SI-sect:diatom_model}
 and specifics of how our decomposition extends to this empirical case are in 
 SI section \ref{SI-sect:Empircal_app}.
-%***DAN: Jasmin, you had already created and started on the second of these SI sections, but the first one
-%is new, and needs to be filled in. Please make a start at that when you get a chance. I've put some 
-%notes there indicating what the content of that section should be.
-%***JASMIN: Working on filling out diatom model set up section
 
-%***DAN: I see many instances of IGR have been replaced by GWR, but there are some IGRs remaining, e.g., in the sup mat, and
+%***DAN: I see many instances of IGR have been replaced by GWR, but there are some IGRs remaining, e.g., 
 %on the figures.
 
 To display results, we plotted the terms of (\ref{eq:full_decomp}) against one of the parameters 
@@ -647,35 +643,34 @@ show that ATA contributions to coexistence often have magnitudes comparable to t
 magnitudes of other terms of the extended MCT decomposition (Fig. \ref{fig:fig5}), and that 
 ATA rescue occurs for many combinations of parameters for this system (Fig. \ref{fig:fig5},
 but especially Fig. \ref{fig:fig6}).
-%***DAN: I ended up deciding we do not need sup mat analogues of Figs. 5 and 6, nor do we need 
-%sup mat section S11.
-
-%***DAN: Dan has edited through here and all he figure captions. Still need to do discussion and sup mat
-%8-11.
 
 \section{Discussion}\label{section:discussion}
 
-We produced and applied a mathematical extension to MCT that, for the first time, 
-considers ATAs for the coexistence of species and maintenance of biodiversity. 
-Implementing new methods of MCT \citep{Ellner_2016, Ellner_2019}, we provided a further tertiary 
-decomposition to MCT and decompose the storage effect into two new terms, 
-$\Delta_i^{[EC]}$, the contribution of ATAs, and $\Delta_i^{[E \nat C]}$, the contribution of correlation \emph{per se}. 
-The results of our application to a simple lottery model and 
-to a competitive diatom model show that ATA contributions to storage effects and to coexistence
-are non-negligible and meaningfully contribute to the coexistence of species and thus the maintenance of biodiversity. 
-Our results reinforce that common methods of correlation fail to reflect and include 
-important information on the structure of the relationship between variables and amends
-coexistence to the list of ecological theory and phenomena that ATAs have been found to 
-be important for \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}.  
+%***DAN: Jasmin, I just want to point out the below paragraph was quite well structured as it was 
+%before I edited it. I only made changes on the sentence level. Nice job! Go aead and delete this 
+%comment once you read it.
+We produced and applied a new extension to MCT that 
+quantifies the impact of ATAs on species coexistence and the maintenance of biodiversity. 
+Building upon a recent, simulation-based approach to MCT \citep{Ellner_2016, Ellner_2019},
+we decomposed storage effects into two new mechanisms, the contribution of ATAs to coexistence,
+and the contribution of $EC$ correlation \emph{per se}.
+Applications of our extended theory to the lottery model and to models based on a laboratory 
+system of competing diatoms demonstrated that  
+ATA contributions to storage effects and to species coexistence and the maintenance of biodiversity
+can often be comparable in magnitude to the contributions of previously recognized mechanisms.
+Our results highlight that common methods of correlation and covariance fail to include 
+important information on the structure of relationships between variables, and our results add
+coexistence and biodiversity maintenance to the list of ecological theories and phenomena on which 
+ATAs have been shown to have an important impact \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}.  
 Though storage effects are typically described as the contribution
-of covariance between drivers to coexistence, classically \emph{EC covariance},
-\citep{Chesson_2012, Ellner_2016, Ellner_2019}, we suggest that storage effects, instead, 
-be described as the contribution of the \emph{relationship} between the drivers.
-Measures of covariance do not fully capture all aspects of associativity throughout the bivariate 
-distribution of the variables; thus, it may be misleading to describe the contribution of the whole 
-EC (or other drivers') relationship as the contribution of EC (or other drivers') covariance.
-Accordingly, we have separated the mechanisms of storage effect 
-into contributions of ATAs and contributions of correlation \emph{per se}.
+of $EC$ \emph{covariance} to coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019},
+our results suggest that storage effects should be redefined to constitute the 
+contribution of \emph{associations} between $E$ and $C$, including both ATA effects and
+correlation \emph{per se}; the prior terminology, \emph{covariance}, is typically construed 
+as reflecting the linear relationship between variables, ignoring complexities of the association
+such as ATAs. 
+
+%***DAN: Dan made it to here in editing and has to stop until after spring break
 
 %The example case exapanding upon coexistence decompositions of the \cite{Descamps_2005} chemostat experiment support our earlier findings that ATA contributions are not only non-zero, but are non-neglible and contribute meaningfully to coexistence. 
 
