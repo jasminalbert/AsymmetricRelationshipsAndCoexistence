@@ -1,38 +1,41 @@
 library(MASS)
-# make into function
-
-# generate noise
+#makenoise function
+#follows protocol described in SupMat section S3:Noise
+#makes list of length 3 containing the three different types of bivariate noise: 
+#left tail ATA, right tail ATA, symmetric
+#ARGS:
+  #M    numeric, length of noise
+#OUT:
+  #List length 3, each element is a matrix with dimensions 2 x M
 
 makenoise <- function(M){
   
-  #sigma and mu to make standard normal bivariate noise
+  #Sigma matrix and mu to make standard normal bivariate noise
   Sigma_norm <- matrix(c(1,0,0,1),nrow=2)
   mu_norm <- c(0,0)
   
-  #standard normal
-  b <- mvrnorm(M, mu_norm, Sigma_norm) #points (a1,a2)
+  #bivariate standard normal
+  b <- mvrnorm(M, mu_norm, Sigma_norm) #points 
   a1 <- b[,1]
   a2 <- b[,2]
   
-  #A <- sample(ind, M*0.5) #50% chance
-  A <- a1>0
+  #half of points will be more than zero, 50%
+  A <- a1>0 
   
   #left tail
-  b[A,] <- rep(-abs(a1[A]))
-  b[!A,] <- abs(b[!A,])
+  b[A,] <- (-abs(a1[A])) #50% b_tilde[,1] = b_tilde[,2] = -|a_1|
+  b[!A,] <- abs(b[!A,]) #50% b_tilde[,1] = |a_1|, b_tilde[,2] = |a_2|
   b_l <- b
-  #plot(b_l[,1],b_l[,2])
   
-  #right tail
-  b[A,] <- -b[A,]
+  #right tail - get by flipping left tail noise 
+  b[A,] <- -b[A,] 
   b[!A,] <- -b[!A,]
   b_r <- b
-  #plot(b_r[,1],b_r[,2])
   
   #symmetric 
+  #with similar correlation as asymmetric noises
   Sigma_sym <- cor(b_l) 
   b_s <- mvrnorm(M, mu_norm, Sigma_sym)
-  #plot(b_s[,1],b_s[,2])
   
   return(list(l=b_l,r=b_r,s=b_s))
 }
