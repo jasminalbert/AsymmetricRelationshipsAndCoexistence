@@ -836,7 +836,6 @@ along with $K_i(t)=K_i(\theta(t))$ were plugged in to the expression $C_{i}(t)=(
 
 \section{     Decomposing storage effects in the diatom case study}\label{sect:Empircal_app}
 
-%***DAN: Dan still needs to edit this section
 The decomposition of storage effects and quantification of contributions of ATAs depends on 
 removing asymmetric tail associations from the bivariate random variable
 $(E_i,C_{i \bs i})$, while maintaining its correlation and marginal distributions, to produce a new
