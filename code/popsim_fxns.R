@@ -1,3 +1,61 @@
+#set of 5 different functions - all used to make figure 2:
+  #popsim
+  #transform
+  #co.periods
+  #co.pPlot
+  #simsPlot
+
+### transform ###
+# transform noise by sigma and mu as defined by lottery model 
+#ARGS:
+  #b_tilde      list-3 sets bivariate noise 
+  #rho          common correlation of bivariate noise sets
+  #sigma        common sd of bivariate noise sets
+  #mudif        mu1-mu2
+#OUT:
+  #list with each element as the environmental noise of one of the two species, 3 different types, =length 6
+transform <- function(b_tilde, u_tilde, rho, sigma, mudif){
+  b_l1 <- sigma*b_tilde$l[,1] 
+  b_l2 <- sigma*b_tilde$l[,2] - mudif
+  
+  b_r1 <- sigma*b_tilde$r[,1] 
+  b_r2 <- sigma*b_tilde$r[,2] - mudif
+  
+  b_s1 <- sigma*b_tilde$s[,1] 
+  b_s2 <- sigma*b_tilde$s[,2] - mudif
+    
+  return(list(b_l1=b_l1, b_l2=b_l2, b_r1=b_r1, b_r2=b_r2, 
+                b_s1=b_s1, b_s2=b_s2))
+}
+
+### popsim ###
+#ARGS:
+  #b1     species 1 environmental noise, vector length M
+  #b2     species 2 environmental noise, vector length M
+  #N      total abundance (N1 + N2), numeric
+  #N1     initial abundance of species 1, numeric
+  #delta  death rate (0-1), numeric
+  #M      length of noise, numeric
+#OUT:
+  #data.frame 2xM+1 with columns N1 and N2 that are the abundance of sp1 and sp2 over time
+popsim <- function(b1,b2,N,N1,delta,M){
+  B1 <- exp(b1)
+  B2 <- exp(b2)
+  N2 <- N-N1
+  
+  for (t in 1:M){
+    tot_new_juvs <- (B1[t]*N1[t]) + (B2[t]*N2[t])
+    
+    N1[t+1] <- (1-delta)*N1[t] + delta*N*((B1[t]*N1[t])/tot_new_juvs)	
+    
+    N2[t+1] <- (1-delta)*N2[t] + delta*N*((B2[t]*N2[t])/tot_new_juvs)
+  }
+  return(data.frame(N1=N1, N2=N2))
+}
+
+
+
+
 #function to plot simulations side by side to compare effect of ATA contributions
 source("./pop_sim.R")
 source("./transform2.R")
