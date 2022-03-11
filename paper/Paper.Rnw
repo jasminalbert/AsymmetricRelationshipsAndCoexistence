@@ -207,6 +207,7 @@ occur between environment and competition variables, can be an aspect of EC cova
 
 %***DAN: Go through and make sure all citation callouts list papers in date order, oldest to newest,
 %except when multiple pubs by the same first author are listed they are all together.
+%***JASMIN: Done
 
 %Lottery model and results based on it
 To further demonstrate the plausibility of ATAs altering coexistence between species, we carried out 
@@ -260,63 +261,6 @@ consider here, because ATAs pertain to \emph{relationships} between environmenta
 variables in the extremes, which are distinct from and can be altered independently
 of changes in the extremes of the univariate marginal distributions themselves \citep{Nelsen2006,Ghosh_2020_AER}.
 
-%make the above abstract ideas more concrete - 
-%***DAN: This para commented out for length, added a sentence about the systems to the above paragraph to take the place of this text
-%To make the above ideas more concrete, we briefly mention examples from prior work to 
-%which the ideas may apply. 
-%\cite{Chesson_2012} provides two examples of competitive plant communities in which different species
-%are likely influenced differently by phenologically distict environmental variables: an Australian 
-%grass-forb community, and an Arizona community of desert annuals. 
-%The communities follow the criteria required for temporal storage effects to operate \citep{Chesson_2012}. In both 
-%examples, distinct species have different periods of germination, competition is influenced by resource 
-%consumption, and population growth is buffered by overlapping generations or via seed banks.
-%Temporal differences between species in germination rates suggest the possibility that 
-%population growth of distinct species may be driven by rainfall signals in distinct parts
-%of the growing season. Thus all the ingredients seem to be present by which climatic changes may
-%alter ATAs between environmental variables which are relevant for the coexistence
-%of the example species, motivating our efforts, here, to perform a detailed study of how ATAs can influence competition.
-
-%Review of lit on changes in means and variances of climate signals and associated impacts on coexistence
-%**DAN: this para commetned out for length, added a couple of sentences to an aboce para to substitute
-%Although, to our knowledge, the potential importance of climatic changes in ATAs for species coexistence has 
-%not been studied, the importance for coexistence of changes 
-%in means and variability of environmental variables has been studied in many systems. We briefly 
-%review some of that literature.
-%\cite{diPaola_2012} concluded that coexistence of drought sensitive,
-%flood resistant species with flood sensitive, drought resistant species in 
-%Mediteranean coastal swamp forests of central Italy would be jeopardized
-%by projected changes in mean rainfall. 
-%\cite{Descombes_2020} found that if warming trends promote faster expansion toward 
-%higher altitudes of herbivore populations than of plant populations, newly arrived
-%herbivores at high altitudes can inflate plant species richness by reducing dominant plant species 
-%in favor of subordinates. Contrastingly, \cite{Usinowicz_2021} concluded, also for
-%alpine plants, that upward range expansion under warming trends would be good for the growth and survival of 
-%all species they considered, but that changes in competition would more than offset these direct benefits. 
-%Numerous studies take an ``event-focused'' 
-%perspective \citep{Jentsch_2007}, examining how increased climatic variability, in the
-%form of extreme weather events, can alter competitive interactions. For instance, 
-%\cite{White_2001} showed that single extreme heat events can alter competition 
-%between C3 and C4 plants. And \cite{Parepa_2013} showed that extreme variability in soil
-%nutrient availability for plants, mediated by soil moisture content, can alter 
-%the potential for invasive species to enter an ecosystem and establish, a process that involves
-%the invader overcoming competition from resident species. 
-%Using MCT, it has been demonstrated that increased variability can promote coexistence in plant 
-%communities, via storage effects \citep{Adler_2006,  Angert_2009}.
-
-%***DAN: Jasmin, I commented the below sentence because that body of work is famously 
-%complex and sophisticated, and I did not feel we could do it justice in short space.
-%decreased growth season precipitation can decrease the competitive ability of dominant 
-%forest tree species \citep{Clark_2011}, 
-%***DAN: Jasmin, I commented the below sentence because I'm not sure the two studies 
-%cited there are actually directly about coexistence, in the MCT sense. One of them is
-%a general review on invasive species, and the other has to do with competition,
-%but coexistence is not mentioned. I searched both papers for "coexist" and found
-%no hits. OK, both are relevant, but maybe not so directly, to what we are talking about,
-%and since this paragraph could anyway stand to be shortened a bit, I took these out.
-%Alternatively, dominant species exclusion may be beneficial as rare species can increase 
-%in diversity \citep{Mariotte_2013}, while an increase in dominant species fitness can 
-%reduce community diversity, typical of invasive species \citep{Vitousek_1997}. 
-
 %Goal para
 We previously demonstrated \citep{Ghosh_2020_AER} that ATAs are common in nature, and we argued above 
 that it is plausible both that climate change may alter environmental ATAs, and that ATAs may influence species 
@@ -364,6 +308,7 @@ presentation of new ideas.
 % throughout the paper. Has to be done in the main text and sup mat and the figures themselves.
 % Need also search for "invader" since sometimes we use that word. Also think of any other related terminology that needs to 
 % be altered as part of the overall change. 
+%***JASMIN: Done in text. Need to finish change in figures.
 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between rare and common species mean growth rates, when $i$ is the invader.
@@ -570,6 +515,7 @@ of $\theta_0$, $a$ and $P$. In contrast to the lottery model case, for which sim
 made it sufficient to decompose only the GWR of species 1, for this
 %***DAN: Please search for "growth when rare" and replace with GWR (except for the first instance,
 %where GWR is defined). If one defines an acronym, one then has to use it.
+%***JASMIN: Done
 example we considered $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$ for both $i=1$, $j=2$ and for
 $i=2$, $j=1$. Further details of the model setup are in SI section \ref{SI-sect:diatom_model}
 and specifics of how our decomposition extends to this empirical case are in 
@@ -577,6 +523,7 @@ SI section \ref{SI-sect:Empircal_app}.
 
 %***DAN: I see many instances of IGR have been replaced by GWR, but there are some IGRs remaining, e.g., 
 %on the figures.
+%***JASMIN: Figure 3 and 4 changed
 
 To display results, we plotted the terms of (\ref{eq:full_decomp}) against one of the parameters 
 $\theta_0$, $a$ and $P$ at a time, while keeping the other two fixed at the values
@@ -613,6 +560,7 @@ lines on Fig. \ref{fig:fig3}) were the only means by which coexistence could occ
 tended to be negative, weakening total storage effects.
 
 %***DAN: I think ATA rescue and ATA exclusion are mislabeled in the legend of Fig. 4. I think they got switched. Please check and correct if I am right.
+%***JASMIN: Fixed.
 
 %G3
 Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
@@ -646,9 +594,6 @@ but especially Fig. \ref{fig:fig6}).
 
 \section{Discussion}\label{section:discussion}
 
-%***DAN: Jasmin, I just want to point out the below paragraph was quite well structured as it was 
-%before I edited it. I only made changes on the sentence level. Nice job! Go aead and delete this 
-%comment once you read it.
 We produced and applied a new extension to MCT that 
 quantifies the impact of ATAs on species coexistence and the maintenance of biodiversity. 
 Building upon a recent, simulation-based approach to MCT \citep{Ellner_2016, Ellner_2019},
