@@ -18,9 +18,9 @@ rho_loc <- paste(numeric_results_loc, "/rho.RDS", sep = "")
 #makes list of length 3 containing the three different types of bivariate noise: 
 #left tail ATA, right tail ATA, symmetric
 #ARGS:
-#M    numeric, length of noise
+  #M    numeric, length of noise
 #OUT:
-#List length 3, each element is a matrix with dimensions 2 x M
+  #List length 3, each element is a matrix with dimensions 2 x M
 makenoise <- function(M){
   
   #Sigma matrix and mu to make standard normal bivariate noise
