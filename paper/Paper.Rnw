@@ -733,13 +733,19 @@ and subsequently species coexistence and the maintenance of biodiversity.
 
 %We note that our expansion, like the decomposition of \cite{Ellner_2019} is generalizable to multi-species and multi-driver models. Because asymmetric tail associations exist in many ecological variables \citep{Ghosh_2020_AER}, the more specified approach of considering unique drivers of coexistence rather than E and C and the ability to consider more than two drivers, could produce interesting results?? 
 %More species and more drivers= more things that can be related
-Our further decomposition and quantification of ATA contribution to coexistence can and 
+The extended decomposition of storage effects and quantification of ATA contribution to coexistence can and 
 should also be applied to multi-species models. 
 The inclusion of multiple species introduces a multitude of relationships between species'
 environmentally dependent parameters that could possibly be asymmetrically associated. 
 The greater the number of species the greater the possibilities of ATAs being more important 
 to their coexistence. 
 
+
+The probability of ATAs being important for the coexistence of species increases as more variables are included in the system, 
+either through multi-species systems or multi-driver systems (coexistence drivers beyond just E and C). 
+When multiple species included, the interaction between different species' E's and C's introduces more relationships 
+to consider and could increase the relative importance of ATA contribution to the species' coexistence. 
+Likewise, coexistence between species can also depend on more than two drivers \citep{Ellner_2019}. 
 %notation in ellner one could also use partial sharp 
 %reread ellner paper 
 %make three different biv dis that are standard normal copula and then pair with a shuffles third
