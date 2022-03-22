@@ -742,9 +742,9 @@ to their coexistence.
 
 
 The probability of ATAs being important for the coexistence of species increases as more variables are included in the system, 
-either through multi-species systems or multi-driver systems (coexistence drivers beyond just E and C). 
-When multiple species included, the interaction between different species' E's and C's introduces more relationships 
-to consider and could increase the relative importance of ATA contribution to the species' coexistence. 
+either through the addition of more species or more drivers (beyond just E and C), or both. 
+When multiple species are included in the system, the interaction between different species' E's and C's introduces more relationships 
+to consider that may or may not be asymmetrically related and could increase the relative importance of ATA contribution to the species' coexistence. 
 Likewise, coexistence between species can also depend on more than two drivers \citep{Ellner_2019}. 
 %notation in ellner one could also use partial sharp 
 %reread ellner paper 
