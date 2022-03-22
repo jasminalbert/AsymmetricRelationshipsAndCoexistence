@@ -205,10 +205,6 @@ rare and common species growth rates \citep{Chesson_1994,Ellner_2016}. %invader 
 Thus ATAs may, in principle, influence storage effects simply because storage effects hinge on EC covariation, and ATAs, when they 
 occur between environment and competition variables, can be an aspect of EC covariation. 
 
-%***DAN: Go through and make sure all citation callouts list papers in date order, oldest to newest,
-%except when multiple pubs by the same first author are listed they are all together.
-%***JASMIN: Done
-
 %Lottery model and results based on it
 To further demonstrate the plausibility of ATAs altering coexistence between species, we carried out 
 simulations using a simple two-species model, the lottery model. The simulations described in this
@@ -311,7 +307,7 @@ presentation of new ideas.
 %***JASMIN: Done in text. Need to finish change in figures.
 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
-$C$ to a difference between rare and common species mean growth rates, when $i$ is the invader.
+$C$ to a difference between rare and common species mean growth rates, when $i$ is rare.
 Specifically, storage effects for species $i$ are 
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
@@ -594,7 +590,7 @@ but especially Fig. \ref{fig:fig6}).
 
 \section{Discussion}\label{section:discussion}
 
-We produced and applied a new extension to MCT that 
+We produced and applied a new extension of MCT that 
 quantifies the impact of ATAs on species coexistence and the maintenance of biodiversity. 
 Building upon a recent, simulation-based approach to MCT \citep{Ellner_2016, Ellner_2019},
 we decomposed storage effects into two new mechanisms, the contribution of ATAs to coexistence,
@@ -604,7 +600,7 @@ system of competing diatoms demonstrated that
 ATA contributions to storage effects and to species coexistence and the maintenance of biodiversity
 can often be comparable in magnitude to the contributions of previously recognized mechanisms.
 Our results highlight that common methods of correlation and covariance fail to include 
-important information on the structure of relationships between variables, and our results add
+important information on the structure of relationships between variables. Our results add
 coexistence and biodiversity maintenance to the list of ecological theories and phenomena on which 
 ATAs have been shown to have an important impact \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}.  
 Though storage effects are typically described as the contribution
@@ -615,21 +611,18 @@ correlation \emph{per se}; the prior terminology, \emph{covariance}, is typicall
 as reflecting the linear relationship between variables, ignoring complexities of the association
 such as ATAs. 
 
-%***DAN: Dan made it to here in editing and has to stop until after spring break
+%ATA specialists
+The contributions we have documented of ATAs to species coexistence open the possibility that
+``ATA specialists'' may exist in some contexts. If a stronger competitor is present across a
+landscape and the GWR of a weaker competitor %***DAN: Dan is working right here.
 
-%The example case exapanding upon coexistence decompositions of the \cite{Descamps_2005} chemostat experiment support our earlier findings that ATA contributions are not only non-zero, but are non-neglible and contribute meaningfully to coexistence. 
-
-%Our expansion allows for the parsing of storage effects into contribution from a pure symmetrical correlation and structures beyond symmetric correlation. Previous studies report storage effect as a contribution to coexistence of EC covariance; yet compute it as the contribution of the EC relationship (covariance and beyond; symmetric and asymmetric).
-
-
-%\underline{ATA specialization}
-Not only is the contribution of ATA non-neglible but in some cases the presence or absence of ATAs 
-can mediate the result of competition between species, i.e., coexistence or extirpation. 
-For some parameters, the contribution of ATAs was the driving mechanism of 
-coexistence – GWR would be negative without it – deeming the scenario a case of 
-ATA rescue. For other parameter values, ATA exclusion occurs where ATAs are the 
-driving mechanism of the failure to coexist (exclusion) and the lack of ATAs would result in 
-a positive GWR. Parameter
+%Not only is the contribution of ATA non-neglible but in some cases the presence or absence of ATAs 
+%can mediate the result of competition between species, i.e., coexistence or extirpation. 
+%For some parameters, the contribution of ATAs was the driving mechanism of 
+%coexistence -- GWR would be negative without it -- deeming the scenario a case of 
+%ATA rescue. For other parameter values, ATA exclusion occurs where ATAs are the 
+%driving mechanism of the failure to coexist (exclusion) and the lack of ATAs would result in 
+%a positive GWR. Parameter
 subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists} - species which only persist in habitat patches where ATAs contribute to its coexistence. 
 One can imagine a species whose coexistence with others is conditional on the asymmetric relationship between drivers of coexistence and whose populations may become excluded when ATAs erode. 
 %I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
@@ -639,8 +632,7 @@ One can imagine a species whose coexistence with others is conditional on the as
 %are ATAs in its local, otherwise it'll have to go dormant or move elsewhere.
 
 
-%\underline{future work: study ATAs in environmental variables and how theyre changing - tie in with specialist}
-
+%future work: study ATAs in environmental variables and how theyre changing - tie in with specialist
 Our study highlights the importance of ATAs for ecological phenomena 
 and specifically for coexistence and the maintenance of biodiversity. 
 The occurence of ATAs among environmental variables themselves, 
@@ -726,7 +718,7 @@ detect ATA contributions, and our new extension to it cleary separates and quant
 relative contribution and importance of ATAs and pure correlation to the storage effect
 and subsequently species coexistence and the maintenance of biodiversity.
 
-\underline{multispecies models}
+%\underline{multispecies models}
 %Need a para about multi-species models - how would things change? One difference is there are more different
 %things that might have asymmetric tail association patterns. See the section "General Theory" of Ellner et al 2019 - might
 %just want write a short para saying it seems like it should be possible to generalize what we've done along those lines.
@@ -746,16 +738,16 @@ Likewise, coexistence between species can also depend on more than two drivers \
 The storage effect decomposition presented here is generalizable to coexistence decompositions of multiple variables.
 Following the set up and notation of \cite{Ellner_2019}'s \emph{covariance decomposition}, 
 ATA contributions and correlation \emph{per se} can be decomposed from the \emph{associations} between two variables
-among many from the appropriate term with parenthesized superscripts with the # symbol denoting and separating 
+among many from the appropriate term with parenthesized superscripts with the $\shp$ symbol denoting and separating 
 variables that are varying independently from the variables that are covarying whose relationship we are interested in decomposing. 
-For example, the term $\Delta^{(XY#Z)}$ could be decomposed into $\Delta^{[XY#Z]} + \Delta^{[X \nat Y#Z]}$. 
+For example, the term $\Delta^{(XY \shp Z)}$ could be decomposed into $\Delta^{[XY \shp Z]} + \Delta^{[X \nat Y \shp Z]}$. 
 As more terms and species are introduced into a system, more relationships between variables must be evaluated,
 more of those relationships may be asymmetrically tail associated, and ATAs may contribute more to the maintenance of 
 biodiversity in that system. 
 %make three different biv dis that are standard normal copula and then pair with a shuffles third
 %use to get rbar and subtract from rbar of XY#Z, 
 
-\underline{caveats and future directions}
+%\underline{caveats and future directions}
 %Realism - we usede simple/extreme ATA, simple model and simple lab system, futurw work needed to assess 
 %how mcuh ATA are important in complex systems, field systems
 %what systems? what env vars?
@@ -854,10 +846,9 @@ was \Sexpr{fig2$coMets$Sym$co} time steps for panel (a) and \Sexpr{fig2$coMets$A
 whereas the average duration of periods of
 one-species dominance was \Sexpr{fig2$coMets$Sym$dom} time steps for panel (a) and \Sexpr{fig2$coMets$Asy$dom} for (b). Thus, while periods of 
 noticeable coexistence were of similar duration for the two scenarios, periods of one-species dominance were much longer,
-on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1]$,
+on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1]}$,
 $\mu_2 = \Sexpr{fig2$params[2]}$, $\sigma = \Sexpr{fig2$params[3]}$, and $\delta = \Sexpr{fig2$params[4]}$. 
-See Introduction and Fig. \ref{fig:noise} caption for model details. 
-\label{fig:pedagog}}
+See Introduction and Fig. \ref{fig:noise} caption for model details. \label{fig:pedagog}}
 \end{figure}
 
 \begin{figure}
