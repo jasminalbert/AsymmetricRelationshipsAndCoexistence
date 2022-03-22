@@ -2,7 +2,7 @@
 
 ### source funtions ###
 #script containing functions to make plot
-source("./popsims_fxns.R")
+source("./popsim_fxns.R")
 
 ### location to save results ###
 noise_loc <- "../results_numeric/noise.RData"

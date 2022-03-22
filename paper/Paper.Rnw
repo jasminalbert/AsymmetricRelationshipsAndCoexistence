@@ -850,12 +850,12 @@ same model with the same parameters, but subject to noise with left-tail associa
 Both simulations were run for \Sexpr{M} time steps, though only the first $1000$ are shown. Periods of 
 ``noticeable coexistence'' of the species, defined to be periods when each species comprises at least $5\%$ of 
 total abundance, are marked in grey. The average duration of periods of noticeable coexistence 
-was \Sexpr{fig2$coSym} time steps for panel (a) and \Sexpr{fig2$coATA} for panel (b), over the full length of the simulations; 
+was \Sexpr{fig2$coMets$Sym$co} time steps for panel (a) and \Sexpr{fig2$coMets$Asy$co} for panel (b), over the full length of the simulations; 
 whereas the average duration of periods of
-one-species dominance was \Sexpr{fig2$domSym} time steps for panel (a) and \Sexpr{fig2$domATA} for (b). Thus, while periods of 
+one-species dominance was \Sexpr{fig2$coMets$Sym$dom} time steps for panel (a) and \Sexpr{fig2$coMets$Asy$dom} for (b). Thus, while periods of 
 noticeable coexistence were of similar duration for the two scenarios, periods of one-species dominance were much longer,
-on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1] + fig2$params[1]}$,
-$\mu_2 = \Sexpr{-(fig2$params[1])}$, $\sigma = \Sexpr{fig2$params[2]}$, and $\delta = \Sexpr{fig2$params[3]}$. 
+on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1]$,
+$\mu_2 = \Sexpr{fig2$params[2]}$, $\sigma = \Sexpr{fig2$params[3]}$, and $\delta = \Sexpr{fig2$params[4]}$. 
 See Introduction and Fig. \ref{fig:noise} caption for model details. 
 \label{fig:pedagog}}
 \end{figure}

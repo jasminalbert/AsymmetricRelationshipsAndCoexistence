@@ -9,12 +9,11 @@
 # transform noise by sigma and mu as defined by lottery model
 #ARGS:
   #b_tilde      list-3 sets bivariate noise 
-  #rho          common correlation of bivariate noise sets
   #sigma        common sd of bivariate noise sets
   #mudif        mu1-mu2
 #OUT:
   #list with each element as the environmental noise of one of the two species, 3 different types, =length 6
-transform <- function(b_tilde, u_tilde, rho, sigma, mudif){
+transform <- function(b_tilde, sigma, mudif){
   #multiply by sigma, shift second noise by mudif    
   #left tail ATA
   b_l1 <- sigma*b_tilde$l[,1] 
@@ -87,10 +86,6 @@ co.periods <- function(pop, dom, N){
   #return RLE object: list with length element and value (T/F) element 
   return(RLE)
 }
-#source("./pop_sim.R")
-#source("./transform2.R")
-#source("./co.periods.R")
-#end must be an even number
 
 ### co.pPlot ###
 #function to plot pop simulation with highlighted grey areas of noticeable coexistence
@@ -98,7 +93,7 @@ co.periods <- function(pop, dom, N){
   #co.p   RLE object (list length 2 with $length and $value)
   #pop    data.frame of N1 and N2
   #start  first time step to plot
-  #end    last time step to plot, must be even number
+  #end    last time step to plot, **must be even number**
 #OUT:
   #plot
 co.pPlot <- function(co.p, pop, start, end,...){
@@ -136,41 +131,54 @@ co.pPlot <- function(co.p, pop, start, end,...){
 }
 
 ### simsPlot ###
-
+#runs population simulation with and without ATA and
+#computes noticeable coexistence and dominance metrics
+#plots simulations using co.pPlot 
 #ARGS:
-
+	#noise_loc		location of noise .RData object in directory, 
+	#				contains b_tilde and u_tilde
+	#mudif			mean difference between species; mu1-mu2
+	#delta			death rate
+	#sigma			standard deviation of noise
+	#start			first time step to plot	
+	#end				last time step to plot, **must be even**
 #OUT:
+	#plot
+	#list of metrics, length 5
 
 simsPlot <- function(noise_loc, mudif, delta, sigma, start=1, end=500){
-  load(noise_loc)
-  #transform noise
-  n <- transform(b_tilde, u_tilde, rho, sigma=sigma, mudif=mudif, b_s=T)
+	#plotting titles
+	titles <- list(main=c("without ATA", "with ATA"), lab=c("(a)","(b)"))
+	
+  	load(noise_loc)
+  	#transform standard noise by mu and sigma
+  	n <- transform(b_tilde, sigma=sigma, mudif=mudif)
+  	#pop noise; only need left and symmetric; repackage for loop
+  	pn <- list(s=list(n$b_s1, n$b_s2), l=list(n$b_l1, n$b_l2))
+  	
+  	coMets <- list(Sym=0, Asy=0)
   
-  #asymmetric pop
-  popA <- popsim(n$b_l1,n$b_l2,N=50,N1=25,delta=delta,M)
-  copA <- co.periods(popA[start:end,], dom=0.95, N=50)
-  #symmetric pop
-  popS <- popsim(n$b_s1,n$b_s2,N=50,N1=25,delta=delta,M)
-  copS <- co.periods(popS[start:end,], dom=0.95, N=50)
+  	for (n in 1:length(pn)){
+  		#population simulation
+  		pop <- popsim(pn[[n]][[1]], pn[[n]][[2]],N=50,N1=25,delta=delta,M)
+  		#coexisting periods
+  		cop <- co.periods(pop[start:end,], dom=.95, N=50)
+  		#mean noticeable coexistence period length
+  		comean <- round(mean(cop$length[cop$values==TRUE]),3)
+  		#mean dominance period length
+  		dommean <- round(mean(cop$length[cop$values==FALSE]),3) 
+  		coMetssub <- list(co=comean, dom=dommean)	
+  		coMets[[n]] <- coMetssub
+  	
+  		#plot
+  		co.pPlot(cop, pop, start, end)
+  		title(main=titles$main[[n]], line=0)   
+  		mtext(titles$lab[[n]], side=3, line = -.85, at=-16)
+  	}
+
   
-  comeanA <- round(mean(copA$length[copA$values==TRUE]),3)
-  comeanS <- round(mean(copS$length[copS$values==TRUE]),3)
-  dommeanA <- round(mean(copA$length[copA$values==FALSE]),3)
-  dommeanS <- round(mean(copS$length[copS$values==FALSE]),3)
-    
-  co.pPlot(copS, popS, start, end)
-  title(main="without ATA", line=0)   
-  mtext("(a)", side=3, line = -.85, at=-16)
-  
-  co.pPlot(copA, popA, start, end)
-  title(main="with ATA", line=0)
-  mtext("(b)", side=3, line = -.85, at=-16)
-  
-  title(xlab="time", ylab="population of species 1", outer=T, line=-0.5)
-  
-  return(list(coSym = comeanS, domSym = dommeanS, coATA = comeanA, domATA = dommeanA, params = c(mudif, sigma, delta)))
+  return(list(coMets=coMets, params = c(mu1=0, mu2=abs(mudif), sigma, delta)))
 
 }
 
-#simsPlot(0,0.5,6)
 
