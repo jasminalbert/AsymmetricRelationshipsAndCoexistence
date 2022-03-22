@@ -767,20 +767,23 @@ biodiversity in that system.
 %how to say something about how future work may be able to explore the importance of ATA in that context?
 
 %Also need to talk about how this stuff will apply to data.
-As an introductory investigation of ATAs within the framework of coexistence theory, 
-we used simple and extreme examples, and future work should include more realism and complexity
-(assess more complex relationships, systems, and models). 
+As an introductory investigation of ATAs within the framework of MCT, 
+we used simple and extreme examples, and future work should assess more complex relationships, systems, and models. 
 In our theoretical exploration, we implemented a simple lottery model and assessed 
 the influence of extremely asymmetric associated noise, i.e., the noise was perfectly correlated
-in exactly one half of the distribution. However, more complex models such as structured demographic models
-or integral projection models should be explored and though similar results may be
-produced, varying deegres of ATA, less extremely shaped?/
-more moderately asymmetric / more realistic? relationships should be implemented.
-Moreover, because our empirical application makes use of a simple and controlled lab system, future 
+in exactly one half of the distribution. However, more complex models (such as structured demographic models
+or integral projection models should be explored )and varying degrees and qualities of ATA, (copula parameters, 
+difference between tails, rate of relatedness(slope of expansion??) should be implemented and explored.
+Moreover, because our empirical application makes use of a simple and controlled lab system, future studies
 should be done to assess the extent of how much ATA are important for complex systems and field systems.
+Because modeling the dynamics of long-lived populations can be challenging, a good field system to start
+exploring the ideas presented here is a system of annual plants. 
 For example, the ATAs between rainfall timing on the coexistence of grasses and forbs 
-and their dominant years in California grasslands \citep{Hallett_2019} could be a fruitful 
-further investigation of biodiversity maintenance in California grasslands and the effects of extreme rainfall fluctuation. 
+in California grasslands \citep{Hallett_2019} could be a fruitful 
+further investigation of biodiversity maintenance in California grasslands and the effects of extreme 
+rainfall fluctuation given the highly variable climate of the area.
+Moreover, our approach may provide more insight when expanded to consider fluctuations across space,
+in regards to questions about population synchrony, Moran effects, and the suggestion of possible ATA specialists. 
 
 
 %Delta=1 means no overlapping generations -  breaking the storage effect requirement of buffered population growth. 
