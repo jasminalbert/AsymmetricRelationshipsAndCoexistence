@@ -25,20 +25,27 @@ source("./decomposition_fxn.R")
 dePlot1 <- function(noise_loc, sigma, mudif, delta, cols, ltys,lwds,qij=FALSE,...){
   load(noise_loc)
   
-  #empty list
+  #empty list to store decomposition data.frames
   store <- vector(mode='list', length=length(sigma))
   
+  #iterate to sigmas to compute decomposition (see sourced script)
   for (i in 1:length(sigma)){
     store[[i]] <- decompose(mudif,sigma[i],delta,b_tilde,u_tilde)
   }
+  #get range of Deltas for plotting
   range <- range(unlist(lapply(store, function(X){(X$D)})))
   
+  #empty plot
   plot(0, xlab="", ylab="", ylim=range*1.1, xlim=c(0,7), col="white",...)
-  lines(0:7, rep(0,8), col="gray",lwd=0.7)
+  #line at zero
+  lines(0:length(sigma), rep(0,length(sigma)+1), col="gray",lwd=0.7)
   
+  #lines for each mechanism/ Delta term
   for (i in 1:length(sigma)){
+    #use qij=1
     if(i>=2){
       dat <- cbind(store[[i-1]]$D, store[[i]]$D)
+      #or qij!=1
       if(qij==TRUE){
         dat <- cbind(store[[i-1]]$Dq, store[[i]]$Dq)
       }
