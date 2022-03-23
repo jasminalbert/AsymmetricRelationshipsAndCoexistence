@@ -1,15 +1,18 @@
-#fucntion for coexistence decomposition of lottery model and function to use for plotting
+#function for coexistence decomposition of lottery model
 
 ### decompose ###
-# description; sup mat section 6: Efficient Computation
+# compute estimates for epsilons and Deltas of coexistence decomposition
+# using two alternatives for qij
+# see sup mat section 6: Efficient Computation
 #ARGS:
-  #mudif
-  #sigma
-  #delta
-  #b_tilde
-  #u
+  #mudif    mean difference; mu1-mu2
+  #sigma    standard deviation of noise
+  #delta    death rate
+  #b_tilde  list length three of three types of bivariate noise with standard normal marginals
+  #u        standard normal univariate noise
 #OUT:
-  #
+  #data.frame (7x8) containing all epsilon_i's epsilon_j's and 
+  #deltas computed using the qij alternatives
 decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #notation follows from paper/sup mat
   
@@ -148,7 +151,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
   DECq_se <- sqrt(s1^2 + s2^2)
   
-  #return 8
+  #return:
   #8 columns: ei, ei_se, ej, ej_se, D, D_se, Dq, Dq_se 
     # epsilon estimate and standard error for each species and 
     # Delta estimate and standard error for each qij alternative
