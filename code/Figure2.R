@@ -17,7 +17,9 @@ fig2data_loc <- "../results_numeric/fig2data.RDS"
 pdf(fig2_loc) 
 par(mfrow=c(2,1), mar=c(3,3,1,1), oma=c(2,1,1,1))
 
-fig2 <- simsPlot(noise_loc, mudif=-0.8, delta=0.8, sigma=5, end=1000) # r_woATA = 0.098, r = -0.0373, [E||C] = -0.1354
+#function from sourced script
+#choice of model parameters based on exploration cases with ATA exclusion
+fig2 <- simsPlot(noise_loc, mudif=-0.8, delta=0.8, sigma=5, end=1000)
 
 dev.off()
 
