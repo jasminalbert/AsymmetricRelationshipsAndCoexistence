@@ -1,142 +1,159 @@
+#fucntion for coexistence decomposition of lottery model and function to use for plotting
+
+### decompose ###
+# description; sup mat section 6: Efficient Computation
+#ARGS:
+  #mudif
+  #sigma
+  #delta
+  #b_tilde
+  #u
+#OUT:
+  #
 decompose <- function(mudif,sigma,delta,b_tilde,u) {
+  #notation follows from paper/sup mat
   
-  bi_til<-b_tilde$l[,1] #left ATA_i
-  bj_til<-b_tilde$l[,2] #left ATA_j
-  bi_um <-b_tilde$s[,1] #symmetric_i
-  bj_um <-b_tilde$s[,2] #symmetric_j
+  #define different noise 
+  bi_til<-b_tilde$l[,1] #left ATA for species i
+  bj_til<-b_tilde$l[,2] #left ATA for species j
+  bi_um <-b_tilde$s[,1] #symmetric for species i
+  bj_um <-b_tilde$s[,2] #symmetric for species j
+  
+  #length
   M <- nrow(b_tilde$s) 
   
-  #invader i
-  #epsilon^0_i
+  #defining epsilons for rare species i (second list in S6)
+  #1. epsilon^0_i (eq 39)
   e_0i <- log(1-delta+delta*exp(mudif))
   
-  #epsilon^E_i bar (42)
-  #hat
+  #2. epsilon^E_i bar (eq 42)
+  #estimate
   e_Ei_hat <- mean(log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))) - e_0i
-  #SE hat
+  #standard error
   e_Ei_se <- sd(log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)))/sqrt(M)
   
-  
-  #epsilon^C_i bar (45)
-  #hat
+  #3. epsilon^C_i bar (eq 45)
+  #estimate
   e_Ci_hat <- mean(log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2))) - e_0i
-  #SE hat
+  #standard error
   e_Ci_se <- sd(log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)))/sqrt(M)
   
-  #epsilon^(E#C) bar (51)
-  #hat
+  #4. epsilon^(E#C) bar (eq 51)
+  #estimate
   e_ECsharpi_hat <- mean(log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif))) - e_Ei_hat - e_Ci_hat - e_0i
-  #SE hat
+  #standard error
   e_ECsharpi_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) 
                        - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) 
                        - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) )/sqrt(M)  
   
-  #epsilon^[EC] bar (55)
-  #hat
+  #5. epsilon^[EC] bar (eq 55)
+  #estimate
   e_ECi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))-mean(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))
-  #SE hat
+  #standard error
   s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M)
   s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))/sqrt(M)
   e_ECi_se <- sqrt(s1^2 + s2^2)
   
-  #epsilon^[E||C] bar (54)
-  #hat
+  #6. epsilon^[E||C] bar (eq 54)
+  #estimate
   e_ECpipi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif))) - mean(log(1-delta+delta*exp(sigma*(bi_um-bj_um)+mudif)))   
-  #SE hat
+  #standard error
   s3 <- sd(log(1-delta+delta*exp((bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
   e_ECpipi_se <-sqrt(s3^2 + s1^2)
   
-  #r_i\i bar (36)
-  #hat
+  #7. r_i\i bar (eq 36)
+  #estimate 
   r_i_hat <- mean(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif)))
-  #SE hat
+  #standard error 
   r_i_se <- s3
   
-  #resident j 
-  #epsilon^0_j
+  #defining epsilions for common species j (third list in S6) 
+  #1. epsilon^0_j (eq 67)
   e_0j <- 0
   
-  #epsilon^E_j bar (72)
-  #hat
+  #2. epsilon^E_j bar (eq 72)
+  #estimate
   e_Ej_hat <- mean(log(1-delta+delta*exp(sigma*u - (sigma^2)/2))) - e_0j
-  #SE hat
+  #standard error
   e_Ej_se <- sd(log(1-delta+delta*exp(sigma*u - (sigma^2)/2)))/sqrt(M)
   
-  
-  #epsilon^C_j bar (77)
-  #hat
+  #3. epsilon^C_j bar (eq 77)
+  #estimate
   e_Cj_hat <- mean(log(1-delta+delta*exp(-sigma*u + (sigma^2)/2))) - e_0j
-  #SE hat
+  #standard error
   e_Cj_se <- sd(log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)))/sqrt(M)
   
-  #epsilon^(E#C)j bar (85)
-  #hat
+  #4. epsilon^(E#C)j bar (eq 85)
+  #estimate
   e_ECsharpj_hat <- mean(log(1-delta+delta*exp(sigma*sqrt(2)*u))) - e_Ej_hat - e_Cj_hat - e_0j
-  #SE hat
+  #standard error
   e_ECsharpj_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u)) 
                        - log(1-delta+delta*exp(u - (sigma^2)/2)) #need sigma here?
                        - log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)  
   
-  #epsilon^[EC]j bar (93)
-  #hat
+  #5. epsilon^[EC]j bar (eq 93)
+  #estimate
   e_ECj_hat <- mean(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
-  #SE hat
+  #standard error
   e_ECj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
   
-  #epsilon^[E||C] bar (91)
+  #6. epsilon^[E||C] bar (eq 91)
   e_ECpipj <- 0
   
-  #r_j\i bar 36
+  #7. r_j\i bar 
   r_j <- 0
   
+  #Deltas (fourth list in S6)
   #q=1
-  #Delta hats:
-  D0 <- e_0i  #Deltai_0
-  DE <- e_Ei_hat - e_Ej_hat #Deltai_E
-  DC <- e_Ci_hat - e_Cj_hat #Deltai_C
+  #Delta estimates:
+  D0 <- e_0i                                  #Deltai_0
+  DE <- e_Ei_hat - e_Ej_hat                   #Deltai_E
+  DC <- e_Ci_hat - e_Cj_hat                   #Deltai_C
   DECsharp <- e_ECsharpi_hat - e_ECsharpj_hat #Deltai_(E#C)
-  DEC <- e_ECi_hat - e_ECj_hat #Deltai_[EC]
-  DECpip <- e_ECpipi_hat  #Deltai_[E||C]
+  DEC <- e_ECi_hat - e_ECj_hat                #Deltai_[EC]
+  DECpip <- e_ECpipi_hat                      #Deltai_[E||C]
   Dr <- r_i_hat 
   DrwoATA <- r_i_hat - DECpip
   
-  #SE(Delta hats):
+  #standard error of Delta estimates:
   DE_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
   DC_se <- sd( log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) - log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
   DECsharp_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))
                      - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) 
                      - log(1-delta+delta*exp(sigma*sqrt(2)*u)) + log(1-delta+delta*exp(sigma*u - (sigma^2)/2))
                      + log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
-  s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) #does this need a second term w q12?
+  s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) 
   s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
   DEC_se <- sqrt(s1^2 + s2^2)
   DECpip_se <- e_ECpipi_se 
   Dr_se <- r_i_se
   
-  
   #q=...
   qij <- 1/((1-delta)*exp(-(mudif))+delta)
   
-  #Delta hats:
+  #Delta estimates:
   DEq <- e_Ei_hat - qij*e_Ej_hat
   DCq <- e_Ci_hat - qij*e_Cj_hat
   DECsharpq <- e_ECsharpi_hat - qij*e_ECsharpj_hat
   DECq <- e_ECi_hat - qij*e_ECj_hat
   
-  #SE(Delta hats):
+  #standard error of Delta estimates:
   DEq_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
   DCq_se <- sd( log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) - qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
   DECsharpq_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))
                       - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) 
                       - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)) + qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2))
                       + qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
-  s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) #does this need a second term w q12?
+  s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) 
   s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
   DECq_se <- sqrt(s1^2 + s2^2)
   
-  #return 8 columns
+  #return 8
   #8 columns: ei, ei_se, ej, ej_se, D, D_se, Dq, Dq_se 
-  # rows: 0, E, C, (E#C), [EC], [E||C], r
+    # epsilon estimate and standard error for each species and 
+    # Delta estimate and standard error for each qij alternative
+  #7 rows: 0, E, C, (E#C), [EC], [E||C], r, rwoATA 
+    # coexistence mechanims and gwr and gwr without ATA contribution 
   ei <- c(e_0i, e_Ei_hat, e_Ci_hat, e_ECsharpi_hat, e_ECi_hat, e_ECpipi_hat, r_i_hat, NA)
   ei_se <- c(0, e_Ei_se, e_Ci_se, e_ECsharpi_se, e_ECi_se, e_ECpipi_se, r_i_se, NA)
   ej <- c(e_0j, e_Ej_hat, e_Cj_hat, e_ECsharpj_hat, e_ECj_hat, e_ECpipj, r_j, NA)
