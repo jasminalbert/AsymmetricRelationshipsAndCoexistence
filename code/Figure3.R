@@ -38,7 +38,7 @@ dePlot1 <- function(noise_loc, sigma, mudif, delta, cols, ltys,lwds,qij=FALSE,..
   #empty plot
   plot(0, xlab="", ylab="", ylim=range*1.1, xlim=c(0,7), col="white",...)
   #line at zero
-  lines(range(sigma), rep(0,2, col="gray",lwd=0.7)
+  lines(range(sigma), rep(0,2), col="gray",lwd=0.7)
   
   #lines for each mechanism/ Delta term
   for (i in 1:length(sigma)){
