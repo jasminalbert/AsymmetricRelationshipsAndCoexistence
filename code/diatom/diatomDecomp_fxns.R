@@ -82,7 +82,7 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   epsECbrk <- rbar - rpsharp
   epsEpsharpC <- rpsharp - rsharp
   
-  return(data.frame(eps0=eps0, epsE=epsE, epsC=epsC, epsEsharpC=epsEsharpC, epsECbrk=epsECbrk, epsEpsharpC=epsEpsharpC, time=time))
+  return(data.frame('0'=eps0, E=epsE, C=epsC, EsharpC=epsEsharpC, ECbrk=epsECbrk, EpsharpC=epsEpsharpC, time=time))
 }
 
 getDelt <- function(a, P, Tbar, time, sims, invader=1){
@@ -92,8 +92,8 @@ getDelt <- function(a, P, Tbar, time, sims, invader=1){
   if (invader==2){Delta1 <- ep2-ep1} else {Delta1 <- ep1-ep2}
   
   Delta1 <- Delta1[,-7]
-  Delta1$IGR <- sum(Delta1)
-  Delta1$map <- Delta1$epsECbrk/Delta1$IGR
+  Delta1$GWR <- sum(Delta1)
+  Delta1$map <- Delta1$ECbrk/Delta1$GWR
   Delta1$time <- ep1$time
   return(Delta1)
 }

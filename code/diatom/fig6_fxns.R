@@ -40,7 +40,7 @@ mapDat <- function(parmlist, sims, time, invader){
   
   #extract results of interest into one data.frame
   #map is ATA/GWR
-  resdf <- data.frame(t(sapply(resList, function(X){c(X$IGR, X$epsECbrk, X$time, X$map)})))
+  resdf <- data.frame(t(sapply(resList, function(X){c(X$GWR, X$ECbrk, X$time, X$map)})))
   
   #extract aPT combinations and 
   parmsdf <- data.frame(matrix(unlist(argsList), ncol=6, byrow=T)[,-4:-6])
