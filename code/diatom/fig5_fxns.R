@@ -49,7 +49,7 @@ dat5 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
 #### fig5 ###
 # function that plots fig 5 data and produces figure as PDF
 #ARGS:
-  #filename
+  #filename   name of PDF
   #dat_loc    name of folder containing the .RDS data files
   #invader    1 or 2, which species is the rare species?
 #OUT:
