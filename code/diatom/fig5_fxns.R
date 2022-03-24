@@ -1,7 +1,7 @@
 #This script contains functions for making data for figure 5 and plotting
 
 ### dat5 ###
-# decription
+# computes Deltas for plotting 
 #ARGS:
   #dat_loc  #folder to put data
   #a_vec    vector containg set of amplitudes
@@ -46,25 +46,40 @@ dat5 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
   }
 } 
 
-
-# plotting functions #
-# fig 5
+#### fig5 ###
+# function that plots fig 5 data and produces figure as PDF
+#ARGS:
+  #filename
+  #dat_loc    name of folder containing the .RDS data files
+  #invader    1 or 2, which species is the rare species?
+#OUT:
+  #PDF file of figure 5
 fig5 <- function(filename, dat_loc, invader){
   names <- c("amplitude","Period","Tbar")
   plots <- 1:3
+  
+  #empty list
   varylist <- list()
   
-  for (p in plots){
+  for (p in plots){ #for each panel of figure
+    
+    #load data from folder in directory
     varylist[[p]] <- readRDS(paste0(dat_loc, "vary", names[p],invader,".RDS"))
   }
+  
+  #colors and line styles
   col <- c(rep("black",4), "red", "blue", "orange")
   line <- c(1:4, 1,1,1); lwd <- c(rep(2,6),3)
   
+  #get range for y axis
   range <- sapply(varylist, function(X){range(X[,1:7])})
   ymin <- min(range); ymax <- max(range)
+  
+  #set original diatom coexistence paramters (Gonzalez2005) to denote in panels
   orig <- c(a=6, P=60, Tbar=18)
   xlab <- c("a", "P", expression(theta[0]))
   
+  #start fig
   pdf(filename, height=5, width=15)
   par(mfrow=c(1,3), oma=c(0,4,0,0), mar=c(5,1,2,1) )
   
