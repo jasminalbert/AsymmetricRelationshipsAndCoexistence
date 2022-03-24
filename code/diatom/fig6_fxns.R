@@ -1,12 +1,112 @@
-#This script contains functions for making data for figure 5 and plotting
+#This script contains functions for making data for figure 6 and plotting
 
-# fig 6
-#argsList = list(a_vec, P_vec, T_vec, sims, time)
-mak6_wrap <- function(argsList){
+
+require(parallel)
+
+mapspace <- function(parmlist, sims, time, invader){
+  
+  #names(parmlist) <- c('a','P','Tbar')
+  #len <- unlist(lapply(parmlist, length))
+  #varlen <- len[len!=1]
+  #rows <- varlen[[1]]*varlen[[2]]
+  #res <- matrix(NA, ncol=6, nrow=rows)
+  
+  a <- parmlist[[1]]
+  P <- parmlist[[2]]
+  Tb <- parmlist[[3]]
+  
+  argsList <- list()
+  r <- 1
+  for (i in 1:length(a)){
+    for (j in 1:length(P)){
+      for (k in 1:length(Tb)){
+        #Delta1 <- getDelt(a[i], P[j], Tb[k], time, sims)
+        #res[r,] <- c(a[i], P[j], Tb[k], Delta1$IGR, Delta1$epsECbrk, Delta1$time)
+        #print(c(r,i,j,k))
+        argsList[[r]] <- c(a[i], P[j], Tb[k], time, sims, invader)
+        r <- r+1
+      }	
+    }
+  }
+  #res <- data.frame(res)
+  resList <- mclapply(argsList, wrapDelt, mc.cores=7) ###change cores here###
+  resdf <- data.frame(t(sapply(resList, function(X){c(X$IGR, X$epsECbrk, X$time, X$map)})))
+  parmsdf <- data.frame(matrix(unlist(argsList), ncol=6, byrow=T)[,-4:-6])
+  
+  res <- cbind(parmsdf, resdf)
+  colnames(res) <- c("a", "P", "Tbar", "IGR", "ATA", "time", "map")
+  return(res)
+}
+
+require(plot3D)
+
+cmMap <- function(dat){
+  dat$map[dat$map>1] <- rep(1, length(dat$map[dat$map>1]))
+  dat$map[dat$map<(-1)] <- rep(-1, length(dat$map[dat$map<(-1)]))
+  
+  a <- unique(dat$a); P <- unique(dat$P); Tbar <- unique(dat$Tbar)
+  dims <- list(a=round(a,3), P=round(P,3), Tbar=round(Tbar,3))
+  
+  len <- unlist(lapply(dims, length))
+  vars <- dims[len!=1]
+  
+  map <- matrix(dat$map, nrow=length(vars[[1]]), ncol=length(vars[[2]]), dimnames=vars, byrow=T)
+  
+  return(map)
+}
+
+cmContour <- function(map, ncolor=51, colkey=NULL,...){
+  x <- dimnames(map)[2]
+  y <- dimnames(map)[1]
+  #main <- expression(paste(Delta[i]^"[EC]","/IGR"))
+  cm <- cm.colors(ncolor)
+  
+  if(all(range(map)!=c(-1,1))){ #need to match actual range to full range to adj color index
+    by <- 2/(ncolor-1) 
+    ran0 <- matrix(seq(-1,1,by)) #full range
+    ran <- range(map) #actual range
+    rMatch <- c(round(ran[1]/by)*by, round(ran[2]/by)*by) #round to match 
+    
+    min <- apply(ran0, 1, function(X){all.equal(X, rMatch[1])}) #why does R have to lie about floats
+    max <- apply(ran0, 1, function(X){all.equal(X, rMatch[2])}) 
+    cm <- cm[which(min==TRUE):which(max==TRUE)] #cropped color palette..was there an easier way to do this?
+    
+    
+    #silly function I wrote before I realized the round(a/b)*b trick 
+    #also match() fucntion doesnt work because R lies about floats
+    
+    #roundby <- function(x, by){
+    #m <- round(x)
+    #if (m<x){i <- seq(m, m+1, by)
+    #} else {i <- seq(m, m-1, -by)}
+    #dd <- tail(i[x>i],1);du <- i[x<i][1]
+    #if (x-dd < du-x){x <- dd
+    #} else {x <- du}
+    #return(x)
+    #}
+    #ran <- range(map)
+    #rMatch <- c(roundby(ran[1],by), roundby(ran[2],by))
+    #cm <- cm[match(rMatch,ran0)[1]:match(rMatch,ran0)[2]]
+  }
+  
+  image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
+  title(xlab=names(x), ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=-1)
+  contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
+}
+
+
+
+### dat6_wrap ###
+# a wrapper function *to use* in dat6
+#ARGS:
+  #argsList   a list of parameters *made inside dat6 function
+              #argsList = list(a_vec, P_vec, T_vec, sims, time)
+dat6_wrap <- function(argsList){
+  #calls functions from diatomDecomp
   mapdf <- mapspace(parmlist=argsList[1:3], sims=argsList[[5]], time=argsList[[4]], invader=argsList[[6]])
   mapmat <- cmMap(mapdf)
 }
-mak6 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
+dat6 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
   if((length(a_vec)==length(P_vec) & length(P_vec)==length(T_vec)) == FALSE){
     paste("vectors are not equal length")
   }
@@ -19,7 +119,7 @@ mak6 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
     List <- as.list(parms)
     List[varcom[[p]]] <- aPT[varcom[[p]]]
     
-    map <- mak6_wrap(argsList=List)
+    map <- dat6_wrap(argsList=List)
     saveRDS(map,paste0(dat_loc,paste0(names[varcom[[p]]], collapse=''),parms['invader'],'.RDS'))
   }
 }#################test############
