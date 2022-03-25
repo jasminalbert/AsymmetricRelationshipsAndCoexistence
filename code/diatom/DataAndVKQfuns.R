@@ -1,5 +1,9 @@
+#this script contains:
+  #1. Data from Gonzalez 2005 diatom coexistence experiment
+  #2. Functions derived from those data
+  #3. competition model function to put into ode 
 
-#data
+#1. Data
 #1 = Fragiliaria crotonensis
 #2 = Cyclotella psuedostelligera
 
@@ -18,7 +22,7 @@ K2data <-  c(0.07,0.13,0.15,NA)
 Q1data <-  c(3.21,1.44,2.03,2.02)
 Q2data <-  c(0.301,0.862,0.619,NA)
 
-#functions
+#2. Functions
 V1fun <-  approxfun(Tvals,V1data,rule = 2) 
 V2fun <-  approxfun(Tvals,V2data,rule = 2)
 
@@ -43,6 +47,7 @@ V2modfun <-  approxfun(Tvals,V2dataMod,rule = 2)
 
 Q2mod <- c(0.301,0.862,0.619,0.619)
 
+#3. Competition model function
 forceChemo <- function(t,y,parms) {
 	temp <- parms["Tbar"] + parms["a"]*sin(2*pi*t/parms["P"]); 
 	V1 <- V1quad(temp); V2<- V2modfun(temp); K1<- K1flatfun(temp); K2 <-  K2flatfun(temp) 
