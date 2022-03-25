@@ -23,6 +23,7 @@ Q1data <-  c(3.21,1.44,2.03,2.02)
 Q2data <-  c(0.301,0.862,0.619,NA)
 
 #2. Functions
+#interpolations
 V1fun <-  approxfun(Tvals,V1data,rule = 2) 
 V2fun <-  approxfun(Tvals,V2data,rule = 2)
 
@@ -48,18 +49,39 @@ V2modfun <-  approxfun(Tvals,V2dataMod,rule = 2)
 Q2mod <- c(0.301,0.862,0.619,0.619)
 
 #3. Competition model function
+
+### forceChemo ###
+# diatom competition model
+# set up as ODE system to be solved by function ode in package deSolve
+#ARGS:
+  #t      time points
+  #y      initial values
+          #y0 <- c(R=.1,x1=0,x2=20)
+  #parms  named vector of parameters
+          #parms <- c(Tbar=Tbar, a=a, P=P, D=0.09, S=35)
 forceChemo <- function(t,y,parms) {
+  
+  #temperature sin wave
 	temp <- parms["Tbar"] + parms["a"]*sin(2*pi*t/parms["P"]); 
-	V1 <- V1quad(temp); V2<- V2modfun(temp); K1<- K1flatfun(temp); K2 <-  K2flatfun(temp) 
-	#V1 <- V1fun(temp); V2<- V2fun(temp); K1<- K1fun(temp); K2 <-  K2fun(temp) #unmodified funs
+	
+	#species responses to temperature fluctuation
+	V1 <- V1quad(temp); V2<- V2modfun(temp); 
+	K1<- K1flatfun(temp); K2 <-  K2flatfun(temp) 
 	Q1 <- Q1fun(temp); Q2 <-  Q2fun(temp);
-	R <- y[1]; x1<- y[2]; x2<- y[3]; 
+	
+	#inital values
+	R <- y[1]; x1<- y[2]; x2<- y[3];
+	
+	### model equations (see paper)
+	#change in R (S in paper)
 	up1 <- V1*R/(K1 + R); 
 	up2 <- V2*R/(K2 + R)  
 	dR <- parms["D"]*(parms["S"]-R) - Q1*x1*up1 - Q2*x2*up2; 
  	D <- parms["D"]; names(D) <- NULL;
+	#change in species abundance
 	dx1 <- x1*(up1-D); 
 	dx2 <- x2*(up2-D); 
+	
 	names(V1) <- NULL; names(up1) <- NULL; names(up2) <- NULL; names(R) <- NULL; 
 	return( list(dx = c(dR,dx1,dx2), temp = temp) ) 
 }
