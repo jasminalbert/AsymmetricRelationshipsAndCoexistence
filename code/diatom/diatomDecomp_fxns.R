@@ -1,49 +1,57 @@
-#setwd("~/Documents/AsymmetricRelationshipsAndCoexistence/code")
+#functions for decomposition: computing epsilons and Deltas
+  #getep, getDelt, wrapDelt
+
+### sourcing ###
 source("diatom/DataAndVKQfuns.R")
 source("diatom/partialSharp_fxns.R")
 require(deSolve)
 
-
-
-# a     amplitude
-# P     Period (days)
-# Tbar  mean temperature (degrees C); theta_0
-# time  total time to simulate invasion
-# reps  number repititions for simulating symmertric EC (for computing ATA contribution)
-# sp: calculate epsilons for 
-# 1: sp 1                    2: sp 2
-# invader: species that starts at 0 (other starts at 20)
-# 1: sp 1                    2: sp 2 
-# methods: E and r definitions
-# 1: E=temp, r=V(E)/C - D    2: E=V(temp), r=E/C - D
-# use method 1 in publication but use method 2 to check against results in Ellner_2019 SI
-
+### getep ###
+# computes epsilons given parameters and definitions
+#ARGS:
+  #a        amplitude
+  #P        Period (days)
+  #Tbar     mean temperature (degrees C); theta_0
+  #time     total time to simulate invasion
+  #reps     number repititions for simulating symmertric EC (for computing ATA contribution)
+  #sp       1 or 2; calculate epsilons for species 1 or 2 
+  #invader  1 or 2; species that starts at 0 (other starts at 20)
+  #methods  1 or 2; E and r definitions:
+            #1: E=temp, r=V(E)/C - D;    2: E=V(temp), r=E/C - D
+            #paper uses method 1 but use method 2 to check against results in Ellner_2019 SI
+#OUT:
+  #data.frame of epsilons: 0, E, C, (E#C), [EC], [E||C]; and time 
 getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   
   parms <- c(Tbar=Tbar, a=a, P=P, D=0.09, S=35)
-  #Time <- time 
+  
   times <- seq(0,time,by=.1)
   
   y0 <- c(R=.1,x1=0,x2=20)
-  if (invader==2){ #simulate with 2 as invader, 1 as resident
+  if (invader==2){ #simulate with sp 2 as rare, sp 1 as common
     y0["x1"]=20; y0["x2"]=0
   }
   
-  out <- ode(y0,times,func=forceChemo,parms=parms) 
+  #simulate competition model (see sourced script)
+  #to get R (resouce concentration) 
+  out <- ode(y0,times,func=forceChemo,parms=parms)
+  
+  #cut out burn in time
   cut <- time*(2/3)
   burn <- times > time - round((time - cut)/P,0)*P #integer multiple of P
   out <- out[burn,]
+  
   temp <- out[,5]
   R <- out[,2]
-  #use forceChemo to get R to get C 
   
+  #make sure simulation length after burning is a multiple of P
   if (length(temp)%%P!=0){stop("dims are not an integer multiple of P")}
   
-  if (sp==2){
+  if (sp==2){ #species specific responses to temperature
     Vfun <- V2modfun; Kfun <- K2flatfun
   } else {Vfun <- V1quad; Kfun <- K1flatfun}
   
-  if (method==2){
+  if (method==2){ #methods of defining r and E
     r <- function(E, C, parms){E/C - parms["D"]}
     E <- Vfun(temp)
   } else {
@@ -51,25 +59,35 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
     E <- temp
   }
   
+  #competition, C
   C <- (Kfun(temp)+R)/R
   
-  #special E's and C's
+  ### special E's and C's ###
+  #mean; no variation
   E0 <- mean(E)
   C0 <- mean(C)
   
+  #variation *per se*; E and C both vary but independently 
+  #decouple by getting all possible combinations
   EC <- expand.grid(E, C)
   Esharp <- EC[,1]; Csharp <- EC[,2]
   rm(EC)
   
+  #correlation *per se*; E and C covary but perfectly symmetrically
+  #see source script; methods defined in SI section 9
   ECpsharp <- makePsharp(E, C, reps)
   Epsharp <- ECpsharp[,1,]; Cpsharp <- ECpsharp[,2,]
   
-  #special r's
+  ### special r's ###
+  #rbar when E and C vary independently 
   rsharp <- mean(r(Esharp, Csharp, parms))
   
+  #get median of mean or normalized ranking simulations
+  #rbar when E and C covary symmetrically 
   rpsharpsims <- apply(ECpsharp, MARGIN=3, function(EC)			{ mean(r(EC[,1], EC[,2], parms)) } );
   rpsharp <- median(rpsharpsims)
   
+  #true rbar
   rbar <- mean(r(E, C, parms))
   
   #epsilons
@@ -78,26 +96,46 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   epsC <- mean(r(E0, C, parms)) - eps0
   #epsEC <- rbar - epsE - epsC - eps0
   epsEsharpC <- rsharp - epsE - epsC - eps0
-  #epsECpar <- rbar - rsharp
+  #epsECpar <- rbar - rsharp; #storage effect
   epsECbrk <- rbar - rpsharp
   epsEpsharpC <- rpsharp - rsharp
   
   return(data.frame('0'=eps0, E=epsE, C=epsC, EsharpC=epsEsharpC, ECbrk=epsECbrk, EpsharpC=epsEpsharpC, time=time))
 }
 
+
+### getDelt ###
+# get Deltas by subracting species epsilons term by term
+#ARGS:
+  #a        amplitude, single numeric
+  #P        Period, single numeric
+  #Tbar     Tbar, single numeric
+  #time     time of competition model simulation
+  #sims     number of normalized rank simulations (for EC partial sharp; correlation per se)
+  #invader  1 or 2; which species is rare?
+#OUT:
+  #data.frame of Deltas: 0, E, C, (E#C), [EC], [E||C]; and time and mapping ratio (fig 6)
 getDelt <- function(a, P, Tbar, time, sims, invader=1){
+  
+  #compute epsilons for both species
   ep1 <- getep(a, P, Tbar, time, reps=sims, sp=1, invader=invader)
   ep2 <- getep(a, P, Tbar, time, reps=sims, sp=2, invader=invader)
   
+  #subtract one from the other, depending on which one is invader
   if (invader==2){Delta1 <- ep2-ep1} else {Delta1 <- ep1-ep2}
   
   Delta1 <- Delta1[,-7]
-  Delta1$GWR <- sum(Delta1)
-  Delta1$map <- Delta1$ECbrk/Delta1$GWR
+  
+  Delta1$GWR <- sum(Delta1) #GWR
+  Delta1$map <- Delta1$ECbrk/Delta1$GWR #ATA/GWR (for fig 6)
   Delta1$time <- ep1$time
   return(Delta1)
 }
 
+### wrapDelt ###
+# wrapper function for getDelt to make possible to use in mclapply 
+#ARGS:
+  #args   named vector of arguements 
 wrapDelt <- function(args){
   Deltas <- getDelt(a=args[1], P=args[2], Tb=args[3], time=args[4], sims=args[5], invader=args[6])
   return(Deltas)
