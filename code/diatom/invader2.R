@@ -1,9 +1,20 @@
-#reverse invader resident scenario
-# E=temp; r=V(E)/C-D
-getep3 <- function(a, P, Tbar, time, reps, sp, invader=1){
+# a     amplitude
+# P     Period (days)
+# Tbar  mean temperature (degrees C); theta_0
+# time  total time to simulate invasion
+# reps  number repititions for simulating symmertric EC (for computing ATA contribution)
+# sp: calculate epsilons for 
+  # 1: sp 1                    2: sp 2
+# invader: species that starts at 0 (other starts at 20)
+  # 1: sp 1                    2: sp 2 
+# methods: E and r definitions
+  # 1: E=temp, r=V(E)/C - D    2: E=V(temp), r=E/C - D
+  # use method 1 in publication but use method 2 to check against results in Ellner_2019 SI
+
+getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   
   parms <- c(Tbar=Tbar, a=a, P=P, D=0.09, S=35)
-  Time <- time 
+  #Time <- time 
   times <- seq(0,Time,by=.1)
   
   y0 <- c(R=.1,x1=0,x2=20)
@@ -11,12 +22,13 @@ getep3 <- function(a, P, Tbar, time, reps, sp, invader=1){
     y0["x1"]=20; y0["x2"]=0
   }
   
-  out1i <- ode(y0,times,func=forceChemo,parms=parms) 
-  cut <- Time*(2/3)
-  burn <- times > Time - round((Time - cut)/P,0)*P #integer multiple of P
-  out1i <- out1i[burn,]
-  temp <- out1i[,5]
-  R <- out1i[,2]
+  out <- ode(y0,times,func=forceChemo,parms=parms) 
+  cut <- time*(2/3)
+  burn <- times > time - round((time - cut)/P,0)*P #integer multiple of P
+  out <- out[burn,]
+  temp <- out[,5]
+  R <- out[,2]
+  #use forceChemo to get R to get C 
   
   if (length(temp)%%P!=0){stop("dims are not an integer multiple of P")}
   
@@ -24,10 +36,14 @@ getep3 <- function(a, P, Tbar, time, reps, sp, invader=1){
     Vfun <- V2modfun; Kfun <- K2flatfun
   } else {Vfun <- V1quad; Kfun <- K1flatfun}
   
+  if (method==2){
+    r <- function(E, C, parms){E/C - parms["D"]}
+    E <- Vfun(temp)
+  } else {
+    r <- function(E, C, parms){Vfun(E)/C - parms["D"]}
+    E <- temp
+  }
   
-  r <- function(E, C, parms){Vfun(E)/C - parms["D"]}
-  
-  E <- temp #if after burning, the times is not an integer multiple P, temp is also not
   C <- (Kfun(temp)+R)/R
   
   #special E's and C's
@@ -64,11 +80,10 @@ getep3 <- function(a, P, Tbar, time, reps, sp, invader=1){
 }
 
 getDelt <- function(a, P, Tbar, time, sims, invader=1){
-  ep1 <- getep3(a, P, Tbar, time, reps=sims, sp=1, invader=invader)
-  ep2 <- getep3(a, P, Tbar, time, reps=sims, sp=2, invader=invader)
+  ep1 <- getep(a, P, Tbar, time, reps=sims, sp=1, invader=invader)
+  ep2 <- getep(a, P, Tbar, time, reps=sims, sp=2, invader=invader)
   
-  if (invader==2){Delta1 <- ep2-ep1}
-  else {Delta1 <- ep1-ep2}
+  if (invader==2){Delta1 <- ep2-ep1} else {Delta1 <- ep1-ep2}
 
   Delta1 <- Delta1[,-7]
   Delta1$IGR <- sum(Delta1)
@@ -76,9 +91,12 @@ getDelt <- function(a, P, Tbar, time, sims, invader=1){
   Delta1$time <- ep1$time
   return(Delta1)
 }
-#getDelt(6, 60, 18, 3000, 200, invader=1)
-#getDelt(6, 60, 18, 3000, 200, invader=2)
+m2_1 <- getDelt(6, 60, 18, 3000, 200, invader=1)
+m2_2 <- getDelt(6, 60, 18, 3000, 200, invader=2)
 
+m1_1 <- getDelt(6, 60, 18, 3000, 200, invader=1)
+m1_2 <- getDelt(6, 60, 18, 3000, 200, invader=2)
+print(m1_1); print(m1_2)
 
 dat_loc <- "../results_numeric/fig5dat/"
 if(dir.exists(dat_loc)==FALSE){
@@ -117,6 +135,57 @@ for (i in 2:length(Tbar)){
 DeltaT2$Tbar <- Tbar
 saveRDS(DeltaT2, paste(dat_loc,'varyTbar2.RDS',sep=''))
 ################################################################
+fig_loc <- "../results_figs/"
+if(dir.exists(fig_loc)==FALSE){
+  dir.create(fig_loc)
+}
+fig5_2 <- paste(fig_loc,"fig5_2.pdf",sep="")
+
+vAmp <- readRDS(paste(dat_loc,'varyAmplitude2.RDS',sep='')) #from makefig5dat.R
+vPer <- readRDS(paste(dat_loc,'varyPeriod2.RDS',sep=''))
+vTbr <- readRDS(paste(dat_loc,'varyTbar2.RDS',sep=''))
+
+col <- c(rep("black",4), "blue", "red", "orange")
+line <- c(1:4, 1,1,1)
+
+varylist <- list(vAmp, vPer, vTbr)
+range <- sapply(varylist, function(X){range(X[,1:7])})
+ymin <- min(range)
+ymax <- max(range)
+orig <- c(a=6, P=60, Tbar=18)
+
+#default is c(5, 4, 4, 2) + 0.1
+pdf(fig5_2, height=5, width=15)
+par(mfrow=c(1,3), oma=c(0,3,0,0), mar=c(5,1,2,1) )
+for (i in 1:3){
+  vdat <- varylist[[i]]
+  
+  #empty box
+  plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab=colnames(varylist[[i]])[10], ylab='', cex.lab=1.3, cex.axis=1.3)
+  
+  #axis
+  if (i==1){
+    axis(2)
+  }
+  
+  #loop for lines
+  for (j in 1:7){
+    lines(vdat[,10], vdat[,j], col=col[j], lty=line[j])	
+  }
+  abline(h=0, col="lightgrey") #zero
+  abline(v=orig[i], col='magenta', lty=3)
+  
+  #label
+  mtext(paste0("(", letters[i],")"), 3, -1.5, adj=0.985)
+  
+  #legend
+  if (i==1){
+    legend("topleft", legend=c(expression(Delta[i]^0), expression(Delta[i]^E), 				expression(Delta[i]^C), expression(Delta[i]^"(E#C)"), expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]") ,expression(IGR)), col = col,lty = line, bty="n", cex=1.2, inset=c(0,0))
+  }
+}
+title(ylab="coexistence", outer=T, line=1.5, cex.lab=1.3)
+
+dev.off()
 
 
 
