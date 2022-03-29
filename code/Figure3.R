@@ -4,7 +4,7 @@
 
 ### source function ###
 #lottery model decomposition
-source("./decomposition_fxn.R")
+source("./lotteryDecomp_fxns.R")
 
 ### define plotting function ###
 #### dePlot1 ###
