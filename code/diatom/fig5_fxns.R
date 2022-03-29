@@ -69,28 +69,28 @@ fig5 <- function(filename, dat_loc, invader){
   
   #colors and line styles
   col <- c(rep("black",4), "red", "blue", "orange")
-  line <- c(1:4, 1,1,1); lwd <- c(rep(2,6),3)
+  line <- c(1,2,4,3,1,1,1); lwd <- c(rep(2,6),3)
   
   #get range for y axis
   range <- sapply(varylist, function(X){range(X[,1:7])})
-  ymin <- min(range); ymax <- max(range)
+  ymin <- min(range); ymax <- max(range) + (max(range))*0.2
   
   #set original diatom coexistence paramters (Gonzalez2005) to denote in panels
   orig <- c(a=6, P=60, Tbar=18)
-  xlab <- c("a", "P", expression(theta[0]))
+  xlab <- c("amplitude (a)", "Period (P)", expression(paste("mean temperature (",theta[0],")" ) ))
   
   #start fig
-  pdf(filename, height=5, width=15)
-  par(mfrow=c(1,3), oma=c(0,4,0,0), mar=c(5,1,2,1) )
+  pdf(filename, height=5.5, width=13)
+  par(mfrow=c(1,3), oma=c(1,6,1,0), mar=c(6,1,2,1))
   
   for (i in 1:3){
     vdat <- varylist[[i]]
     #empty box
-    plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab="", ylab='', cex.lab=1.8, cex.axis=1.8)
-    title(xlab=xlab[i], cex.lab=2.3, line=3.5)
+    plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab="", ylab='', cex.axis=2.5,mgp=c(3, 1.8, 0), lwd.ticks=2, tck=-0.028)
+    title(xlab=xlab[i], cex.lab=2.6, line=4.5)
     #axis
     if (i==1){
-      axis(2, cex.axis=1.8)
+      axis(2, cex.axis=2.5, lwd.ticks=2, tck=-0.03, mgp=c(3,1.5,0))
     }
     #loop for lines
     for (j in 1:7){
@@ -107,14 +107,15 @@ fig5 <- function(filename, dat_loc, invader){
     rect(excl[1,10], ymin, tail(excl,1)[1,10], ymax, col="hotpink2", border=NA, density=40, lty=3)
     
     #label
-    mtext(paste0("(", letters[i],")"), 3, -2.5, adj=0.985, cex=1.8)
+    mtext(paste0("(", letters[i],")"), 3, -3, adj=0.985, cex=2.3)
     #legend
     if (i==1){
-      legend("topleft", legend=c(expression(Delta[i]^0), expression(Delta[i]^E), expression(Delta[i]^C), expression(Delta[i]^"(E#C)"), expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]") ,expression(IGR)), 
-             col = c(rep("black",4), "blue", "red", "orange"),lty = line, bty="n", cex=1.9, inset=c(-0.02,-0.03), 
-             y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.8)
+    		legend("topleft", legend=c(expression(Delta[i]^0), expression(Delta[i]^E), expression(Delta[i]^C), expression(Delta[i]^"(E#C)")), 
+             col ="black",lty = line[1:4], bty="n", cex=2.5, inset=c(-0.02,-0.03), 
+             y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=2)
+		legend("topleft", legend=c(expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]") ,expression(GWR)), col = c("blue", "red", "orange"), lty=line[5:7], bty='n', cex=2.5, inset=c(0.12, -0.035), x.intersp=0.1, seg.len=0.8, lwd=c(2, 2, 2.8), y.intersp=1.1)	
     }
   }
-  title(ylab="contribution to coexistence", outer=T, line=2.1, cex.lab=2, font.lab=2)
+  title(ylab="contribution to coexistence", outer=T, line=2.8, cex.lab=3.5, font.lab=2)
   dev.off()
 }
