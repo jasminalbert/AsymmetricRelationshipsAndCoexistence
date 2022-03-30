@@ -10,7 +10,7 @@ library(checkpoint)
 if (!dir.exists("./.checkpoint/")){
   dir.create("./.checkpoint/")
 }
-checkpoint("2020-12-31",checkpointLocation = "./")
+checkpoint("2020-12-31",checkpoint_location = "./")
 
 #Make standard environmental noise (transformed to use in different simulations), change M=length of 
 #simulations here, if desired 
