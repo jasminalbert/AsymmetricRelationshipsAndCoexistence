@@ -1,6 +1,8 @@
 #This script makes figure 5 in main text:
 #
 
+##libraries used (invoked with ::): none
+
 ### source diatom competition model coexistence decomposition functions ###
 source('./diatom/diatomDecomp_fxns.R')
 ### source functions for computing data for and plotting figure 5

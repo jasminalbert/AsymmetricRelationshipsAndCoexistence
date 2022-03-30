@@ -1,10 +1,11 @@
 #functions for decomposition: computing epsilons and Deltas
   #getep, getDelt, wrapDelt
 
+##libraries used (invoked with ::): deSolve, stats
+
 ### sourcing ###
 source("diatom/DataAndVKQfuns.R")
 source("diatom/partialSharp_fxns.R")
-require(deSolve)
 
 ### getep ###
 # computes epsilons given parameters and definitions
@@ -34,7 +35,7 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   
   #simulate competition model (see sourced script)
   #to get R (resouce concentration) 
-  out <- ode(y0,times,func=forceChemo,parms=parms)
+  out <- deSolve::ode(y0,times,func=forceChemo,parms=parms)
   
   #cut out burn in time
   cut <- time*(2/3)
@@ -85,7 +86,7 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   #get median of mean or normalized ranking simulations
   #rbar when E and C covary symmetrically 
   rpsharpsims <- apply(ECpsharp, MARGIN=3, function(EC)			{ mean(r(EC[,1], EC[,2], parms)) } );
-  rpsharp <- median(rpsharpsims)
+  rpsharp <- stats::median(rpsharpsims)
   
   #true rbar
   rbar <- mean(r(E, C, parms))

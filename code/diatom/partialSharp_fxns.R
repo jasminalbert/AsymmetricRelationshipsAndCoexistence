@@ -1,8 +1,9 @@
 #functions required for making partial sharp distributions
 #to parse pure correlation (correlation per se) from tail asymmetries
   #alignranks, normcor, makePsharp
-require(copula); require(mvtnorm)
 
+##libraries used (invoked with ::): copule, stats, mvtnorm
+  
 ### alignranks ###
 ## rearranges data so ranks match with sims
 # part of various copula surrogate algorithms
@@ -34,9 +35,9 @@ alignranks <- function(dat, sims){
 #OUT:
   #single value
 normcor <- function(X, Y){
-	rank_X <- pobs(X)
-	rank_Y <- pobs(Y)
-	rho <- cor(qnorm(rank_X), qnorm(rank_Y))
+	rank_X <- copula::pobs(X)
+	rank_Y <- copula::pobs(Y)
+	rho <- stats::cor(stats::qnorm(rank_X), stats::qnorm(rank_Y))
 	return(rho)
 }
 
@@ -66,7 +67,7 @@ makePsharp <- function(X, Y, reps){
 	res <- array(NA, dim=c(dim(dat), reps))
 		
 	for (i in 1:reps){
-		sims <- rmvnorm(n=length(X), sigma=Sigma)
+		sims <- mvtnorm::rmvnorm(n=length(X), sigma=Sigma)
 		res[,,i] <- alignranks(dat, sims)
 	}
 	return(res)
