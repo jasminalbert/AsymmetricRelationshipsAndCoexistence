@@ -2,6 +2,8 @@
 
 ### Preamble ###
 
+##libraries used (invoked with ::): stats, graphics, grDevices
+
 #locations of inputs needed for this script
 noise_loc <- "../results_numeric/noise.RData"
 

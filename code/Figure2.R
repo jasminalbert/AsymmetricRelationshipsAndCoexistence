@@ -1,5 +1,7 @@
 #This script makes figure 2 in main text: population simulations with and without ATAs 
 
+##libraries used (invoked with ::): graphics, grDevices
+
 ### source funtions ###
 #script containing functions to make plot
 source("./popsim_fxns.R")

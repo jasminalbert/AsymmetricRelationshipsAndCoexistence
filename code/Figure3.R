@@ -2,6 +2,8 @@
 #plotting decomposed mechanisms contributions against sigma
 #for different deltas and mu1-mu2
 
+##libraries used (invoked with ::): graphics, grDevices
+
 ### source function ###
 #lottery model decomposition
 source("./lotteryDecomp_fxns.R")
@@ -154,7 +156,7 @@ saveRDS(fig3maxse, file=fig3maxse_loc)
 #qij!=1; same as above but qij=TRUE in plotting function
 grDevices::pdf(fig3qij_loc)
 graphics::par(mgp=c(3,0.6,0), mar = c(0.5,1,1,1), oma=c(4,4,2,2))
-graphic::layout(matrix(c(2,3,4,5,1,
+graphics::layout(matrix(c(2,3,4,5,1,
                 6,7,8,9,1,	
                 10,11,12,13,1,
                 14,15,16,17,1,
