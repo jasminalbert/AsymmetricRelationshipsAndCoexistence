@@ -2,6 +2,8 @@
 #fig 5 and fig 6 where Cyclotella psuedosteligaria 
 #is the rare species instead of Fragilaria crotonensis
 
+##libraries used (invoked with ::): none
+
 ### sourcing ###
 source("./diatom/diatomDecomp_fxns.R")
 source("./diatom/fig5_fxns.R")

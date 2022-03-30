@@ -2,8 +2,7 @@
 #6 functions:
   #mapDat, cmMap, cmContour, dat6_wrap, dat6, fig6
 
-require(parallel) #mclapply; quickens computing time
-require(plot3D) #for contour color map plots
+##libraries used (invoked with ::): parallel, plot3D, grDevices, graphics
 
 ### mapDat ###
 # description
@@ -36,7 +35,7 @@ mapDat <- function(parmlist, sims, time, invader){
   }
   
   #use mclapply to quicken computation of Deltas
-  resList <- mclapply(argsList, wrapDelt, mc.cores=7) ###change cores here###
+  resList <- parallel::mclapply(argsList, wrapDelt, mc.cores=7) ###change cores here###
   
   #extract results of interest into one data.frame
   #map is ATA/GWR
@@ -86,7 +85,7 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
   x <- dimnames(map)[2]
   y <- dimnames(map)[1]
   
-  cm <- cm.colors(ncolor)
+  cm <- grDevices::cm.colors(ncolor)
   
   #aligning color index if range of values is not [-1,1] so that not all colors are used
   if(all(range(map)!=c(-1,1))){ 
@@ -102,11 +101,11 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
   }
   
   #color map plotting, plotting values of matrix in color
-  image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
-  title(xlab=names(x), ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=-1)
+  plot3D::image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
+  graphics::title(xlab=names(x), ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=-1)
   
   #contour lines
-  contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
+  graphics::contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
 }
 
 ### dat6_wrap ###
@@ -176,20 +175,20 @@ fig6 <- function(filename, dat_loc, invader){
   }
   
   #start figure
-  pdf(filename, height=15, width=5)
-  par(mfrow=c(1,1), oma=c(3,0,1,0), mar=c(2,3,1,1), bty='n', xpd=T)
-  layout(matrix(c(1,2,3,4), byrow=T), heights=c(1,1,1,0.1))
+  grDevices::pdf(filename, height=15, width=5)
+  graphics::par(mfrow=c(1,1), oma=c(3,0,1,0), mar=c(2,3,1,1), bty='n', xpd=T)
+  graphics::layout(matrix(c(1,2,3,4), byrow=T), heights=c(1,1,1,0.1))
   
   #make countor color plots
   for (i in 1:length(maps)){
     cmContour(maps[[i]], colkey=F, xaxt='n', yaxt='n')
-    axis(side=1, mgp=c(3,0.5,0.2), col='gray50')
-    axis(side=2, mgp=c(3,0.5,0.2), col='gray50')
-    mtext(paste0("(", letters[i],")"), side=3, line=-1.5, adj=0.985)
+    graphics::axis(side=1, mgp=c(3,0.5,0.2), col='gray50')
+    graphics::axis(side=2, mgp=c(3,0.5,0.2), col='gray50')
+    graphics::mtext(paste0("(", letters[i],")"), side=3, line=-1.5, adj=0.985)
   }
   #color bar key
-  colkey(col=cm.colors(51), clim=c(-1,1),side=1, width=10,)
+  plot3D::colkey(col=cm.colors(51), clim=c(-1,1),side=1, width=10,)
   
-  title(main=expression(paste(Delta[i]^"[EC]","/IGR")), outer=T, line=-111.5, cex.main=1.5, adj=0.53)
-  dev.off()
+  graphics::title(main=expression(paste(Delta[i]^"[EC]","/IGR")), outer=T, line=-111.5, cex.main=1.5, adj=0.53)
+  grDevices::dev.off()
 }
