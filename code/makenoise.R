@@ -2,6 +2,7 @@
   #b_tilde: list of 3 different types of bivariate noise: left tail ATA, righ tail ATA, and symmetric
   #u_tilde: univariate standard normal 
 
+##libraries used (invoked with ::): MASS, stats
 
 ### location to save results ###
 numeric_results_loc <- "../results_numeric"

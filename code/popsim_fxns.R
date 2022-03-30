@@ -5,6 +5,8 @@
   #co.pPlot
   #simsPlot
 
+##libraries used (invoked with ::): graphics
+
 ### transform ###
 # transform noise by sigma and mu as defined by lottery model
 #ARGS:
