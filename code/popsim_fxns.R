@@ -172,12 +172,11 @@ simsPlot <- function(noise_loc, mudif, delta, sigma, start=1, end=500){
   	
   		#plot
   		co.pPlot(cop, pop, start, end)
-  		title(main=titles$main[[n]], line=0)   
-  		mtext(titles$lab[[n]], side=3, line = -.85, at=-16)
+  		title(main=titles$main[[n]], line=-0.3, cex.main=1.8)   
+  		mtext(titles$lab[[n]], side=3, line = -1, at=1000, cex=1.5)
   	}
-
-  
-  return(list(coMets=coMets, params = c(mu1=0, mu2=abs(mudif), sigma, delta)))
+	
+	return(list(coMets=coMets, params = c(mu1=0, mu2=abs(mudif), sigma, delta)))
 
 }
 
