@@ -1,6 +1,6 @@
 #This script generates figure 1 from the paper
 
-#***Preamble
+### Preamble ###
 
 #locations of inputs needed for this script
 noise_loc <- "../results_numeric/noise.RData"
@@ -16,7 +16,7 @@ fig1_horiz_loc <- paste(fig_loc,"fig1_horizontal.pdf",sep="")
 #load the noise we'll need
 load(noise_loc) #this loads an obtect called b_tilde which has the noise in it
 
-#***Make the figure with panels arranged vertically
+#### Make the figure with panels arranged vertically ###
 
 nt <- c("l", "s", "r") #nt = noise type
 blue <- rgb(0,0,0.545,0.3) #col2rgb("darkblue")
@@ -57,7 +57,7 @@ mtext("variable 1", outer=TRUE, side=1, line=2.5, cex.lab=1.25, at=0.43)
 mtext("variable 2", outer=TRUE, side=2, line=2.5, cex.lab=1.25, at=0.48)
 dev.off()
 
-#***Make the figure again, same but with panels arranged horizontally, as a possible alternative
+### Make the figure again, same but with panels arranged horizontally, as a possible alternative
 
 pdf(fig1_horiz_loc, width=7, height=3)
 
