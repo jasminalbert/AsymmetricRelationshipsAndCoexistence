@@ -28,7 +28,7 @@ makenoise <- function(M){
   mu_norm <- c(0,0)
   
   #bivariate standard normal
-  b <- mvrnorm(M, mu_norm, Sigma_norm) #points 
+  b <- MASS::mvrnorm(M, mu_norm, Sigma_norm) #points 
   a1 <- b[,1]
   a2 <- b[,2]
   
@@ -47,8 +47,8 @@ makenoise <- function(M){
   
   #symmetric 
   #with similar correlation as asymmetric noises
-  Sigma_sym <- cor(b_l) 
-  b_s <- mvrnorm(M, mu_norm, Sigma_sym)
+  Sigma_sym <- stats::cor(b_l) 
+  b_s <- MASS::mvrnorm(M, mu_norm, Sigma_sym)
   
   return(list(l=b_l,r=b_r,s=b_s))
 }
@@ -61,10 +61,10 @@ M <- 1000000
 #bivariate noise list
 b_tilde <- makenoise(M)
 #univariate standard normal
-u_tilde <- rnorm(M)
+u_tilde <- stats::rnorm(M)
 
 #get correlation
-rho <- cor(b_tilde$l)[1,2]
+rho <- stats::cor(b_tilde$l)[1,2]
 cat("M=",M, " rho=", rho)
 
 ### save results ###

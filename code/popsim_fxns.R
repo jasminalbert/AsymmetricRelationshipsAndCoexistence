@@ -103,7 +103,7 @@ co.pPlot <- function(co.p, pop, start, end,...){
   #total abundance
   N <- sum(pop[1,])
   #empty plot
-  plot(0, xlab="", ylab="", ylim=c(0,N), xlim=c(start,end), 
+  graphics::plot(0, xlab="", ylab="", ylim=c(0,N), xlim=c(start,end), 
        col="white",bty="l",...)
   
   #rectangle highlights
@@ -122,12 +122,12 @@ co.pPlot <- function(co.p, pop, start, end,...){
   #loop through to plot rectangles  
   for (p in 1:length(co.p$lengths)){
     xright <- sum(co.p$lengths[1:(odds[p]+c)])
-    rect(xleft, ybottom, xright, ytop, col="grey90", border=NA)
+    graphics::rect(xleft, ybottom, xright, ytop, col="grey90", border=NA)
     xleft <- sum(co.p$lengths[1:(evens[p]+c)]) + 1
   }
   
   #plot lines
-  lines(pop$N1[start:end])
+  graphics::lines(pop$N1[start:end])
 }
 
 ### simsPlot ###
@@ -172,8 +172,8 @@ simsPlot <- function(noise_loc, mudif, delta, sigma, start=1, end=500){
   	
   		#plot
   		co.pPlot(cop, pop, start, end)
-  		title(main=titles$main[[n]], line=-0.3, cex.main=1.8)   
-  		mtext(titles$lab[[n]], side=3, line = -1, at=1000, cex=1.5)
+  		graphics::title(main=titles$main[[n]], line=-0.3, cex.main=1.8)   
+  		graphics::mtext(titles$lab[[n]], side=3, line = -1, at=1000, cex=1.5)
   	}
 	
 	return(list(coMets=coMets, params = c(mu1=0, mu2=abs(mudif), sigma, delta)))
