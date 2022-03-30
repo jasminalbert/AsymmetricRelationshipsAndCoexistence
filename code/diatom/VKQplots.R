@@ -6,7 +6,7 @@
 ##libraries used (invoked with ::): 
 
 ### source VKQ functions ###
-source("./diatom/DataAndVKQfuns.R")
+source("./diatom/diatomModel_andVKQ.R")
 
 ### location to save figure ###
 fig_loc <- "../results_figs/"

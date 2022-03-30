@@ -4,7 +4,7 @@
 ##libraries used (invoked with ::): deSolve, stats
 
 ### sourcing ###
-source("diatom/DataAndVKQfuns.R")
+source("diatom/diatomModel_andVKQ.R")
 source("diatom/partialSharp_fxns.R")
 
 ### getep ###
