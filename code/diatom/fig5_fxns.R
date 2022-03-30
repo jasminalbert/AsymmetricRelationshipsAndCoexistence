@@ -73,24 +73,24 @@ fig5 <- function(filename, dat_loc, invader){
   
   #get range for y axis
   range <- sapply(varylist, function(X){range(X[,1:7])})
-  ymin <- min(range); ymax <- max(range) + (max(range))*0.2
+  ymin <- min(range); ymax <- max(range) + (max(range))*0
   
   #set original diatom coexistence paramters (Gonzalez2005) to denote in panels
   orig <- c(a=6, P=60, Tbar=18)
   xlab <- c("amplitude (a)", "Period (P)", expression(paste("mean temperature (",theta[0],")" ) ))
   
   #start fig
-  pdf(filename, height=5.5, width=13)
+  pdf(filename, height=5.5, width=14)
   par(mfrow=c(1,3), oma=c(1,6,1,0), mar=c(6,1,2,1))
   
   for (i in 1:3){
     vdat <- varylist[[i]]
     #empty box
-    plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab="", ylab='', cex.axis=2.5,mgp=c(3, 1.8, 0), lwd.ticks=2, tck=-0.028)
-    title(xlab=xlab[i], cex.lab=2.6, line=4.5)
+    plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab="", ylab='', cex.axis=2.5,mgp=c(3, 2, 0), lwd.ticks=2, tck=-0.028)
+    title(xlab=xlab[i], cex.lab=2.6, line=5)
     #axis
     if (i==1){
-      axis(2, cex.axis=2.5, lwd.ticks=2, tck=-0.03, mgp=c(3,1.5,0))
+      axis(2, cex.axis=2.5, lwd.ticks=2, tck=-0.035, mgp=c(3,1.5,0))
     }
     #loop for lines
     for (j in 1:7){
