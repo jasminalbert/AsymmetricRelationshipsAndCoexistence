@@ -103,7 +103,8 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
   
   #color map plotting, plotting values of matrix in color
   plot3D::image2D(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=FALSE, col=cm, colkey=colkey, xlab='', ylab='',...)
-  graphics::title(xlab=names(x), ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=-1)
+  graphics::title(ylab=ifelse(names(y)=='Tbar', expression(theta[0]), names(y)), line=2.75, cex.lab=2)
+  graphics::title(xlab=ifelse(names(x)=='Tbar', expression(theta[0]), names(x)), line=3, cex.lab=2)
   
   #contour lines
   graphics::contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
@@ -177,19 +178,19 @@ fig6 <- function(filename, dat_loc, invader){
   
   #start figure
   grDevices::pdf(filename, height=15, width=5)
-  graphics::par(mfrow=c(1,1), oma=c(3,0,1,0), mar=c(2,3,1,1), bty='n', xpd=T)
+  graphics::par(mfrow=c(1,1), oma=c(3,1.5,1,0.5), mar=c(4,3,1,1), bty='n', xpd=NA)
   graphics::layout(matrix(c(1,2,3,4), byrow=T), heights=c(1,1,1,0.1))
   
   #make countor color plots
   for (i in 1:length(maps)){
     cmContour(maps[[i]], colkey=F, xaxt='n', yaxt='n')
-    graphics::axis(side=1, mgp=c(3,0.5,0.2), col='gray50')
-    graphics::axis(side=2, mgp=c(3,0.5,0.2), col='gray50')
-    graphics::mtext(paste0("(", letters[i],")"), side=3, line=-1.5, adj=0.985)
+    graphics::axis(side=1, mgp=c(3,1,0.2), col='gray50', cex.axis=1.5, lwd=1.8, lwd.ticks=1.8, tck=-0.025)
+    graphics::axis(side=2, mgp=c(3,1,0.2), col='gray50', cex.axis=1.5, lwd.ticks=1.8, lwd=1.8, tck=-0.025)
+    graphics::mtext(paste0("(", letters[i],")"), side=3, line=-2, adj=0.985, cex=1.5)
   }
   #color bar key
-  plot3D::colkey(col=cm.colors(51), clim=c(-1,1),side=1, width=10,)
+  plot3D::colkey(col=cm.colors(51), clim=c(-1,1),side=1, width=10, cex.axis=1.75)
   
-  graphics::title(main=expression(paste(Delta[i]^"[EC]","/IGR")), outer=T, line=-111.5, cex.main=1.5, adj=0.53)
+  graphics::title(main=expression(paste(Delta[i]^"[EC]","/GWR")), outer=T, line=-111.5, cex.main=1.5, adj=0.53)
   grDevices::dev.off()
 }
