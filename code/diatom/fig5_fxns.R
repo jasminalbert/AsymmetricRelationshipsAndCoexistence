@@ -88,11 +88,12 @@ fig5 <- function(filename, dat_loc, invader){
   for (i in 1:3){
     vdat <- varylist[[i]]
     #empty box
-    graphics::plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab="", ylab='', cex.axis=2.5,mgp=c(3, 2, 0), tck=-0.028)
+    graphics::plot(0, yaxt='n', xaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', ylab='', xlab='')
     graphics::title(xlab=xlab[i], cex.lab=2.6, line=5)
     #axis
+    graphics::axis(1, cex.axis=2.5, tck=-0.028, mgp=c(3, 2, 0), lwd.ticks=2)
     if (i==1){
-      graphics::axis(2, cex.axis=2.5, tck=-0.035, mgp=c(3,1.5,0))
+      graphics::axis(2, cex.axis=2.5, tck=-0.035, mgp=c(3,1.5,0), lwd.ticks=2)
     }
     #loop for lines
     for (j in 1:7){
