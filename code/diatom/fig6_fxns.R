@@ -67,6 +67,7 @@ cmMap <- function(dat){
   
   #get dimensions for matrix
   dims <- list(a=round(a,3), P=round(P,3), Tbar=round(Tbar,3))
+  len <- unlist(lapply, dims, length)
   vars <- dims[len!=1]
   
   map <- matrix(dat$map, nrow=length(vars[[1]]), ncol=length(vars[[2]]), dimnames=vars, byrow=T)
