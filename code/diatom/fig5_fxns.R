@@ -71,7 +71,7 @@ fig5 <- function(filename, dat_loc, invader){
   
   #colors and line styles
   col <- c(rep("black",4), "red", "blue", "orange")
-  graphics::line <- c(1,2,4,3,1,1,1); lwd <- c(rep(2,6),3)
+  line <- c(1,2,4,3,1,1,1); lwd <- c(rep(2,6),3)
   
   #get range for y axis
   range <- sapply(varylist, function(X){range(X[,1:7])})
@@ -88,11 +88,11 @@ fig5 <- function(filename, dat_loc, invader){
   for (i in 1:3){
     vdat <- varylist[[i]]
     #empty box
-    graphics::plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab="", ylab='', cex.axis=2.5,mgp=c(3, 2, 0), lwd.ticks=2, tck=-0.028)
+    graphics::plot(0, yaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', xlab="", ylab='', cex.axis=2.5,mgp=c(3, 2, 0), tck=-0.028)
     graphics::title(xlab=xlab[i], cex.lab=2.6, line=5)
     #axis
     if (i==1){
-      graphics::axis(2, cex.axis=2.5, lwd.ticks=2, tck=-0.035, mgp=c(3,1.5,0))
+      graphics::axis(2, cex.axis=2.5, tck=-0.035, mgp=c(3,1.5,0))
     }
     #loop for lines
     for (j in 1:7){
