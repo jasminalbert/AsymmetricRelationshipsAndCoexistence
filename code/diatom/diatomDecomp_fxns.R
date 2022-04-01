@@ -155,7 +155,8 @@ getDelt <- function(a, P, Tbar, time, sims, invader=1, fig6=FALSE){
 #ARGS:
   #args   named vector of arguements 
 wrapDelt <- function(args){
-  Deltas <- getDelt(a=args[1], P=args[2], Tb=args[3], time=args[4], sims=args[5], invader=args[6], fig6=args[7])
+  fig6 <- ifelse(args[7]==1, TRUE, FALSE)
+  Deltas <- getDelt(a=args[1], P=args[2], Tb=args[3], time=args[4], sims=args[5], invader=args[6], fig6=fig6)
   return(Deltas)
 }
 
