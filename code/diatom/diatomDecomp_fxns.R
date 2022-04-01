@@ -87,6 +87,8 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   #rbar when E and C covary symmetrically 
   rpsharpsims <- apply(ECpsharp, MARGIN=3, function(EC)			{ mean(r(EC[,1], EC[,2], parms)) } );
   rpsharp <- stats::median(rpsharpsims)
+  #get SE from 100 bootstrapped samples
+  se <- getsdbst(rpsharpsims, q=100)
   
   #true rbar
   rbar <- mean(r(E, C, parms))
@@ -101,7 +103,7 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1){
   epsECbrk <- rbar - rpsharp
   epsEpsharpC <- rpsharp - rsharp
   
-  return(data.frame('0'=eps0, E=epsE, C=epsC, EsharpC=epsEsharpC, ECbrk=epsECbrk, EpsharpC=epsEpsharpC, time=time))
+  return(data.frame('0'=eps0, E=epsE, C=epsC, EsharpC=epsEsharpC, ECbrk=epsECbrk, EpsharpC=epsEpsharpC, time=time, SEpsharp=se))
 }
 
 
@@ -125,11 +127,12 @@ getDelt <- function(a, P, Tbar, time, sims, invader=1){
   #subtract one from the other, depending on which one is invader
   if (invader==2){Delta1 <- ep2-ep1} else {Delta1 <- ep1-ep2}
   
-  Delta1 <- Delta1[,-7]
+  Delta1 <- Delta1[,-7:-8]
   
   Delta1$GWR <- sum(Delta1) #GWR
   Delta1$map <- Delta1$ECbrk/Delta1$GWR #ATA/GWR (for fig 6)
   Delta1$time <- ep1$time
+  Delta1$SE <- sqrt((ep1$SEpsharp^2)+(ep2$SEpsharp^2))
   return(Delta1)
 }
 
