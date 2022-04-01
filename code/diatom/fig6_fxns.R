@@ -28,7 +28,7 @@ mapDat <- function(parmlist, sims, time, invader){
       for (k in 1:length(Tb)){
         #put aPT in string with other parameters
         #each unique set is a list element
-        argsList[[r]] <- c(a[i], P[j], Tb[k], time, sims, invader)
+        argsList[[r]] <- c(a[i], P[j], Tb[k], time, sims, invader, TRUE)
         r <- r+1
       }	
     }
@@ -42,7 +42,7 @@ mapDat <- function(parmlist, sims, time, invader){
   resdf <- data.frame(t(sapply(resList, function(X){c(X$GWR, X$ECbrk, X$time, X$map)})))
   
   #extract aPT combinations and 
-  parmsdf <- data.frame(matrix(unlist(argsList), ncol=6, byrow=T)[,-4:-6])
+  parmsdf <- data.frame(matrix(unlist(argsList), ncol=7, byrow=T)[,-4:-7])
   
   #ammend to results data.frame
   res <- cbind(parmsdf, resdf)
