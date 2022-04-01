@@ -73,6 +73,24 @@ makePsharp <- function(X, Y, reps){
 	return(res)
 }
 
+### getsdbst ###
+# get standard error of the median by bootstrapping
+# used for computations se of rbar[E||C]
+#ARGS:
+  #x    vector, rbar computed using ECpartialsharp (rpsharpsims)
+  #q    number of repeats
+#OUT:
+  #single value that is the standard error
+getsdbst <- function(x, q){
+  boots <- matrix(0, nrow=q, ncol=length(x))
+  for (i in 1:q){
+    boots[i,] <- sample(x, size=length(x), replace=T)
+  }
+  med <- apply(boots, MARGIN=1, median)
+  se <- sd(med)
+  return(se)
+}
+
 
 
 
