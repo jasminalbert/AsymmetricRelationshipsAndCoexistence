@@ -146,6 +146,7 @@ dat6 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
   names <- c('a','P','Tb')
   
   for (p in plots){ #for each panel of figure
+    cat("making data for panel",p,"...")
     List <- as.list(parms)
     
     #replace two of the constant variables with two varying sets

@@ -28,18 +28,18 @@ dat5 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
   for (p in plots){ #for each panel of figure
     
     #fill a matrix with original paramters
-    Mat <- matrix(parms, nrow=len, ncol=length(parms), byrow=T)
+    Mat <- matrix(c(parms, FALSE), nrow=len, ncol=length(parms)+1, byrow=T)
     
     #change appropriate column to one of the vectors (allowing one parm to vary)
     Mat[,p] <- aPT[,p]
     
     #function from diatomDecomp_fxns.R; computes Deltas
+    cat("making data for panel",p)
     Delta <- wrapDelt(args=Mat[1,])
     
     #iterate over rows of Mat to compute Deltas
     for (i in 2:len){
       Delta[i,] <- wrapDelt(Mat[i,])
-      print(i)
     }
     Delta$var <- aPT[,p]
     

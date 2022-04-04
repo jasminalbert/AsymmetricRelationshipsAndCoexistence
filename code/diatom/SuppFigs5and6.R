@@ -34,7 +34,7 @@ if (dir.exists(dat_loc)==FALSE){
   P <- seq(51,199.5,length.out=100)
   
   #makes results as folder of .RDS files
-  mak5(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms=parms)
+  dat5(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms=parms)
 }
 ## name of figure file ##
 fig5_2 <- paste(fig_loc,"fig5_2.pdf",sep="")
@@ -59,7 +59,7 @@ if (dir.exists(dat_loc)==FALSE){
   Tbar <- seq(16,19,length.out=100)
   
    #makes results as folder of .RDS files
-  mak6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
+  dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
 }
 ## name of figure file ##
 fig6_2 <- paste0(fig_loc,"fig6_2.pdf")
