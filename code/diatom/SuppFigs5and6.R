@@ -47,7 +47,7 @@ fig5(fig5_2, dat_loc, invader=2)
 fig5_2se <- getSE(dat_loc)
 fig5_2maxse <- max(fig5_2se)
 cat("\nmaximum standard error in figure five (SI) is", fig5_2maxse)
-fig5_2maxse_loc <- paste0(numeric_results_loc, "/fig5_2maxse.RDS")
+fig5_2maxse_loc <- paste0(numeric_results_loc, "fig5_2maxse.RDS")
 saveRDS(fig5_2maxse, file=fig5_2maxse_loc)
 
 
@@ -78,7 +78,7 @@ fig6(fig6_2, dat_loc, invader=2)
 fig6_2se <- getSE(dat_loc)
 fig6_2maxse <- max(fig6_2se)
 cat("\nmaximum standard error in figure six (SI) is", fig6_2maxse)
-fig6_2maxse_loc <- paste0(numeric_results_loc, "/fig6_2maxse.RDS")
+fig6_2maxse_loc <- paste0(numeric_results_loc, "fig6_2maxse.RDS")
 saveRDS(fig6_2maxse, file=fig6_2maxse_loc)
 
 

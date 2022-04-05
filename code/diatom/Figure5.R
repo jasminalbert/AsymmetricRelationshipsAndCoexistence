@@ -44,7 +44,7 @@ fig5(Fig5, dat_loc, invader=1)
 fig5se <- getSE(dat_loc)
 fig5maxse <- max(fig5se)
 cat("\nmaximum standard error in figure five is", fig5maxse)
-fig5maxse_loc <- paste0(numeric_results_loc, "/fig5maxse.RDS")
+fig5maxse_loc <- paste0(numeric_results_loc, "fig5maxse.RDS")
 saveRDS(fig5maxse, file=fig5maxse_loc)
 
 
