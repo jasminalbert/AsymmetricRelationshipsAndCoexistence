@@ -122,3 +122,22 @@ fig5 <- function(filename, dat_loc, invader){
   graphics::title(ylab="contribution to coexistence", outer=T, line=2.8, cex.lab=3.5, font.lab=2)
   grDevices::dev.off()
 }
+
+
+### getSE5 ###
+# gets standard errors from saved decomposition results (works for fig5)
+#ARGS:
+#dat_loc    direction location of files
+#OUT:
+#matrix of standard errors with columns as different files 
+getSE5 <- function(dat_loc){
+  files <- list.files(dat_loc)
+  dat <- list()
+  
+  for (f in 1:length(files)){
+    dat[[f]] <- readRDS(paste0(dat_loc,files[f]))
+  }
+  
+  SEs <- sapply(dat, function(X){X$SE})
+  return(SEs)
+}
