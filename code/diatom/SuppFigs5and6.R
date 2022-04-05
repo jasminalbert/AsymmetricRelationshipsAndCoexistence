@@ -22,7 +22,8 @@ parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=2)
 ### supplemental version of fig 5 ###
 
 ## location of numeric results ## 
-dat_loc <- "../results_numeric/fig5dat2/"
+numeric_results_loc <- "../results_numeric/"
+dat_loc <- paste0(numeric_results_loc, "fig5dat2/")
 
 #if data is missing, make them
 if (dir.exists(dat_loc)==FALSE){
@@ -42,12 +43,18 @@ fig5_2 <- paste(fig_loc,"fig5_2.pdf",sep="")
 ## makes figure ##
 fig5(fig5_2, dat_loc, invader=2) 
 
+### get and save standard error ###
+fig5_2se <- getSE(dat_loc)
+fig5_2maxse <- max(fig5_2se)
+cat("\nmaximum standard error in figure five (SI) is", fig5_2maxse)
+fig5_2maxse_loc <- paste0(numeric_results_loc, "/fig5_2maxse.RDS")
+saveRDS(fig5_2maxse, file=fig5_2maxse_loc)
 
 
 ### supplemental version of fig 6 ###
 
 ## location of numeric results ## 
-dat_loc <- "../results_numeric/fig6dat2/"
+dat_loc <- paste0(numeric_results_loc, "fig6dat2/")
 
 #if data is missing, make them
 if (dir.exists(dat_loc)==FALSE){
@@ -67,6 +74,12 @@ fig6_2 <- paste0(fig_loc,"fig6_2.pdf")
 ## makes figure ##
 fig6(fig6_2, dat_loc, invader=2) 
 
+### get and save standard error ###
+fig6_2se <- getSE(dat_loc)
+fig6_2maxse <- max(fig6_2se)
+cat("\nmaximum standard error in figure six (SI) is", fig6_2maxse)
+fig6_2maxse_loc <- paste0(numeric_results_loc, "/fig6_2maxse.RDS")
+saveRDS(fig6_2maxse, file=fig6_2maxse_loc)
 
 
 

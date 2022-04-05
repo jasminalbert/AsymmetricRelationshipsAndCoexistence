@@ -12,7 +12,8 @@ source('./diatom/fig5_fxns.R')
 parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
 
 ### location of results ###
-dat_loc <- "../results_numeric/fig5dat/"
+numeric_results_loc <- "../results_numeric/"
+dat_loc <- paste0(numeric_results_loc, "fig5dat/")
 
 # if results are missing, make them
 if (dir.exists(dat_loc)==FALSE){
@@ -38,6 +39,15 @@ Fig5 <- paste(fig_loc,"fig5.pdf",sep="")
 
 ### function that makes figure ###
 fig5(Fig5, dat_loc, invader=1) 
+
+### get and save standard error ###
+fig5se <- getSE(dat_loc)
+fig5maxse <- max(fig5se)
+cat("\nmaximum standard error in figure five is", fig5maxse)
+fig5maxse_loc <- paste0(numeric_results_loc, "/fig5maxse.RDS")
+saveRDS(fig5maxse, file=fig5maxse_loc)
+
+
 
 
 
