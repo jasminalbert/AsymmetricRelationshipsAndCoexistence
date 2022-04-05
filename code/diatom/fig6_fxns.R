@@ -39,14 +39,14 @@ mapDat <- function(parmlist, sims, time, invader){
   
   #extract results of interest into one data.frame
   #map is ATA/GWR
-  resdf <- data.frame(t(sapply(resList, function(X){c(X$GWR, X$ECbrk, X$time, X$map)})))
+  resdf <- data.frame(t(sapply(resList, function(X){c(X$GWR, X$ECbrk, X$SE, X$time, X$map)})))
   
   #extract aPT combinations and 
   parmsdf <- data.frame(matrix(unlist(argsList), ncol=7, byrow=T)[,-4:-7])
   
   #ammend to results data.frame
   res <- cbind(parmsdf, resdf)
-  colnames(res) <- c("a", "P", "Tbar", "GWR", "ATA", "time", "map")
+  colnames(res) <- c("a", "P", "Tbar", "GWR", "ATA", "SE", "time", "map")
   return(res)
 }
 
@@ -118,9 +118,11 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
               #argsList = list(a_vec, P_vec, T_vec, sims, time)
 #OUT:
   #mapping matrix 
-dat6_wrap <- function(argsList){
+dat6_wrap <- function(argsList, SEfilename, loc){
   mapdf <- mapDat(parmlist=argsList[1:3], sims=argsList[[5]], time=argsList[[4]], invader=argsList[[6]])
+  SE <- mapdf$SE
   mapmat <- cmMap(mapdf)
+  retun(list(map=mapmat, SE=SE))
 }
 
 ### dat6 ###
@@ -184,7 +186,7 @@ fig6 <- function(filename, dat_loc, invader){
   
   #make countor color plots
   for (i in 1:length(maps)){
-    cmContour(maps[[i]], colkey=F, xaxt='n', yaxt='n')
+    cmContour(maps[[i]]$map, colkey=F, xaxt='n', yaxt='n')
     graphics::axis(side=1, mgp=c(3,1,0.2), col='gray50', cex.axis=1.5, lwd=1.8, lwd.ticks=1.8, tck=-0.025)
     graphics::axis(side=2, mgp=c(3,1,0.2), col='gray50', cex.axis=1.5, lwd.ticks=1.8, lwd=1.8, tck=-0.025)
     graphics::mtext(paste0("(", letters[i],")"), side=3, line=-2, adj=0.985, cex=1.5)

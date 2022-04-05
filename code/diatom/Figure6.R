@@ -39,7 +39,7 @@ Fig6 <- paste0(fig_loc,"fig6.pdf")
 fig6(Fig6, dat_loc, invader=1) 
 
 ### get and save standard error ###
-fig6se <- getSE(dat_loc)
+
 fig6maxse <- max(fig6se)
 cat("\nmaximum standard error in figure six is", fig6maxse)
 fig6maxse_loc <- paste0(numeric_results_loc, "/fig6maxse.RDS")
