@@ -11,7 +11,8 @@ source('./diatom/fig6_fxns.R')
 parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
 
 #location of data files
-dat_loc <- "../results_numeric/fig6dat/"
+numeric_results_loc <- "../results_numeric/"
+dat_loc <- paste0(numeric_results_loc,"fig6dat/")
 
 #if data is missing, make them
 if (dir.exists(dat_loc)==FALSE){
