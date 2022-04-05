@@ -161,4 +161,22 @@ wrapDelt <- function(args){
   return(Deltas)
 }
 
+### getSE ###
+# gets standard errors from saved decomposition results (works for fig5)
+#ARGS:
+#dat_loc    direction location of files
+#OUT:
+#matrix of standard errors with columns as different files 
+getSE <- function(dat_loc){
+  files <- list.files(dat_loc)
+  dat <- list()
+  
+  for (f in 1:length(files)){
+    dat[[f]] <- readRDS(paste0(dat_loc,files[f]))
+  }
+  
+  SEs <- sapply(dat, function(X){X$SE})
+  return(SEs)
+}
+
 
