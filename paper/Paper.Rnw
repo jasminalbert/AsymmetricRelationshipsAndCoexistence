@@ -300,12 +300,6 @@ that the $E_i(t)$ are iid through time, and likewise for the
 $C_i(t)$. Though the iid assumption can be circumvented, we make the assumption because it simplifies the
 presentation of new ideas. 
 
-%***DAN: I think we should replace the terminology "invasion growth rate" and "IGR" by "growth when rare" and "GWR",
-% throughout the paper. Has to be done in the main text and sup mat and the figures themselves.
-% Need also search for "invader" since sometimes we use that word. Also think of any other related terminology that needs to 
-% be altered as part of the overall change. 
-%***JASMIN: Done in text. Need to finish change in figures.
-
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between rare and common species mean growth rates, when $i$ is rare.
 Specifically, storage effects for species $i$ are 
@@ -509,17 +503,10 @@ $\theta_0$, $a$ and $P$. We further decomponse
 coexistence according to (\ref{eq:full_decomp}), and we do so for ranges of values
 of $\theta_0$, $a$ and $P$. In contrast to the lottery model case, for which simplifying assumptions
 made it sufficient to decompose only the GWR of species 1, for this
-%***DAN: Please search for "growth when rare" and replace with GWR (except for the first instance,
-%where GWR is defined). If one defines an acronym, one then has to use it.
-%***JASMIN: Done
 example we considered $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$ for both $i=1$, $j=2$ and for
 $i=2$, $j=1$. Further details of the model setup are in SI section \ref{SI-sect:diatom_model}
 and specifics of how our decomposition extends to this empirical case are in 
 SI section \ref{SI-sect:Empircal_app}.
-
-%***DAN: I see many instances of IGR have been replaced by GWR, but there are some IGRs remaining, e.g., 
-%on the figures.
-%***JASMIN: Figure 3 and 4 changed
 
 To display results, we plotted the terms of (\ref{eq:full_decomp}) against one of the parameters 
 $\theta_0$, $a$ and $P$ at a time, while keeping the other two fixed at the values
@@ -554,9 +541,6 @@ In the $\mu_1=\mu_2$ case (panels a-d), for which the two species were equal
 competitors, storage effects (blue plus red
 lines on Fig. \ref{fig:fig3}) were the only means by which coexistence could occur, and ATA effects
 tended to be negative, weakening total storage effects.
-
-%***DAN: I think ATA rescue and ATA exclusion are mislabeled in the legend of Fig. 4. I think they got switched. Please check and correct if I am right.
-%***JASMIN: Fixed.
 
 %G3
 Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
@@ -924,6 +908,7 @@ sufficient coexistence metric.}  \label{fig:fig5}
 %***DAN: Jasmin, some changes to this figure are needed. Please make axis labels and numbers bigger. Please put 
 %axis labels outside the axes instead of inside. Please make panel labels bigger. Please make coutour labels
 %slightly bigger.
+%***DAN: Do we want to do anything with standard error for this fig?
 \begin{figure}
 \includegraphics[width=.38\textwidth]{../results_figs/fig6.pdf}
 \caption{The contribution of ATAs to GWR of \emph{F. crotonensis}
