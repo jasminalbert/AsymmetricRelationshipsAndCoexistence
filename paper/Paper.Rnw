@@ -806,6 +806,7 @@ Wildlife Delta Science Program.
 %***DAN: Jasmim, please add any other acknolwedgments here - anyone else you have discussed this with or anything like that.
 %Be generous here, add people even if they only helped a tiny bit. If Steve consents to be coauthor, we take him
 %off this list and add him to the author list.
+%***DAN: DAN: if we add Ellner to the author list take him out here, and also take him out of the acks in the README.
 
 \clearpage
 \newpage
