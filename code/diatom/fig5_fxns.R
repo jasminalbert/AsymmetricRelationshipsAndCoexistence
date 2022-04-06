@@ -88,7 +88,7 @@ fig5 <- function(filename, dat_loc, invader){
   for (i in 1:3){
     vdat <- varylist[[i]]
     #empty box
-    graphics::plot(0, yaxt='n', xaxt='n', xlim=range(vdat[,10]), ylim=c(ymin, ymax), col='white', ylab='', xlab='')
+    graphics::plot(0, yaxt='n', xaxt='n', xlim=range(vdat$var), ylim=c(ymin, ymax), col='white', ylab='', xlab='')
     graphics::title(xlab=xlab[i], cex.lab=2.6, line=5)
     #axis
     graphics::axis(1, cex.axis=2.5, tck=-0.028, mgp=c(3, 2, 0), lwd.ticks=2)
@@ -97,7 +97,7 @@ fig5 <- function(filename, dat_loc, invader){
     }
     #loop for lines
     for (j in 1:7){
-      graphics::lines(vdat[,10], vdat[,j], col=col[j], lty=line[j], lwd=lwd[j])	
+      graphics::lines(vdat$var, vdat[,j], col=col[j], lty=line[j], lwd=lwd[j])	
     }
     graphics::abline(h=0, col="lightgrey") #zero
     graphics::abline(v=orig[i], col='magenta', lty=3, lwd=2)
