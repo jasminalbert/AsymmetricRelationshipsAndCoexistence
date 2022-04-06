@@ -122,7 +122,7 @@ dat6_wrap <- function(argsList, SEfilename, loc){
   mapdf <- mapDat(parmlist=argsList[1:3], sims=argsList[[5]], time=argsList[[4]], invader=argsList[[6]])
   SE <- mapdf$SE
   mapmat <- cmMap(mapdf)
-  retun(list(map=mapmat, SE=SE))
+  return(list(map=mapmat, SE=SE))
 }
 
 ### dat6 ###
