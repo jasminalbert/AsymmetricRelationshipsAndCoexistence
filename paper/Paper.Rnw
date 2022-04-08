@@ -114,10 +114,13 @@
 #place R code here for loading in necessary variables from Results
 #ordinarily this would be a readRDS command, but I'm just defining a variable here for now
 #allregres<-matrix(rnorm(10),2,5)
+res_loc <- "../results_numeric/"
 fig2 <- readRDS(file="../results_numeric/fig2data.RDS")
 M <- readRDS(file="../results_numeric/M.RDS")
 se3 <- readRDS(file="../results_numeric/fig3maxse.RDS")
 se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
+se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
+se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 @
 
 \maketitle
@@ -622,27 +625,28 @@ and specifically for coexistence and the maintenance of biodiversity.
 The occurence of ATAs among environmental variables themselves, 
 their contribution to coexistence, and their changes through space and time
 can and should be explored further. 
-The coupling of the magnitude of ATA contribution and environmental variability, 
+The coupling of ATA contribution magnitude with environmental variability, 
 as shown in our results and figures (Fig. \ref{fig:fig3} - \ref{fig:fig6}), 
 suggests that ATAs and their effects
 may become more important to consider for coexistence and possibly other 
-ecological phenomena as environmental conditions evidently
-become more variable.
-As described in section \ref{section:introduction}, changes in the ATAs between environmental
-variables may occur as the climate becomes more variable and extreme events become more 
-expansive and extensive, causing relationships between separated events to become tighter at one end or another and thus asymmetric. Additionally, 
+ecological phenomena as environmental conditions may evidently
+become more variable (probably need refs).
+As described in section \ref{section:introduction}, ATAs between environmental
+variables may shift as the climate becomes more variable and extreme events become more 
+expansive and extensive, causing associations of distinct temporal events to become 
+more related in one extreme or tail, thus asymmetric. Additionally, 
 if ATA specialist exist, their persistance may
 become at stake as the mechanism driving their coexistence changes with the climate.
 Thus it is of interest to further study how tail associations of environmental variables are changing and how this might 
 alter competition, coexistence, and the maintenance of biodiversity generally.
 Our investigation brings to attention the consequences of such
-possible \emph{relationships} in the extremes; however, 
+possible [bivariate] \emph{relationships} in the extremes; however, 
 simpler changes in [the marginal/ univariate distributions of] extreme events themselves such as
 intensity and frequency and their influence on coexistence also merit future work. 
 Possible changes in tail association
 patterns between environmental variables in nature can
 influence the coexistence of species through the storage effect and not other mechanisms, but
-extreme and changing climate is probable to affect other mechanims in other ways.
+extreme and changing climate is probable to affect other mechanims in other ways (refs?).
 %In the Discussion, I intend to talk about how possible changes in tail association 
 %patterns of env vars in nature may influence coexistence of species. It won't influence the 
 %other mechanisms, though changes in the extreme values of environmental variables, known
@@ -668,7 +672,7 @@ extreme and changing climate is probable to affect other mechanims in other ways
 %\underline{E and vital rates}
 We note that \emph{E}, in our investigation and in other investigations within the MCT 
 framework, is not directly a measure of the environment, but is a measure of response to the 
-environment, measured by a population's vital rates. Environment and environmental response may be related linearly
+environment, via a population's vital rates. Environment and environmental response may be related linearly
 (like lottery model?); though real environmental variables are probable to 
 actually be related to vital rates in a non-linear and often threshold-like way. 
 Threshold relationships can produce tail association, as we showed elsewhere (explain, ref). 
@@ -677,7 +681,7 @@ where those distributions of environmental variables are compared to thresholds,
 which may change the nature of tail associations between the effects of 
 those environmental variables. Thus, not only do the possible asymmteric association between 
 environmental variables merit future study, but the relationships between populations'
-vital rates should also be investigated for species coexistence and the maintenacne of biodiversity.
+vital rates should also be investigated for species coexistence and the maintenance of biodiversity.
 %Discussion content: We should (in future) study tail associations between environmental variables, and how these might be changing. However, more than that, the variables E in the lottery model are not actual environmental variables but rather are the effects of environmental variables on the species of the model. 
 
 %\underline{the new effects are not "weak noise" effects}
@@ -691,15 +695,15 @@ approach of MCT \citep{Ellner_2016, Ellner_2019},
 a new approach which bypasses the mathematical assumptions and obstructions of 
 standard MCT. Classical analytic derivations of MCT using second order Taylor expansion and 
 small-variance approximations completely miss out
-on any additions to coexistence beyond simple correlations and does not include our new term, $\Delta^{[EC]}$ or $\Delta^{(E \shp C)}$ \citep{Chesson_1994, Chesson_2000}. 
+on any additions to coexistence beyond simple correlations and does not include our new ATA term, $\Delta^{[EC]}$, or variance \emph{per se}, $\Delta^{(E \shp C)}$ \citep{Chesson_1994, Chesson_2000}. 
 In fact, storage effects in analytic MCT is computationally equal to $\Delta^{[E \nat C]}$, 
 the contributions of correlation \emph{per se}. 
 In newer, simulation based MCT, storage effect is 
 the sum of the two new terms, $\Delta^{(EC)}=\Delta^{[E \nat C]}+\Delta^{[EC]}$, 
-obscuring the effects of ATAs. However, because standard MCT's assumption make it impossible to 
+obscuring the effects of ATAs. Because standard MCT's assumption make it impossible to 
 detect interactions outide of correlation \emph{per se}, simulation-based MCT is required to
-detect ATA contributions, and our new extension to it cleary separates and quantifies the 
-relative contribution and importance of ATAs and pure correlation to the storage effect
+detect ATA contributions, and our new extension to it clarifies and cleary separates and quantifies the 
+relative importance of both ATAs and pure correlation in contribution to the storage effect
 and subsequently species coexistence and the maintenance of biodiversity.
 
 %\underline{multispecies models}
@@ -722,7 +726,7 @@ Likewise, coexistence between species can also depend on more than two drivers \
 The storage effect decomposition presented here is generalizable to coexistence decompositions of multiple variables.
 Following the set up and notation of \cite{Ellner_2019}'s \emph{covariance decomposition}, 
 ATA contributions and correlation \emph{per se} can be decomposed from the \emph{associations} between two variables
-among many from the appropriate term with parenthesized superscripts with the $\shp$ symbol denoting and separating 
+among many from the appropriate term with parenthesized superscripts containing the $\shp$ symbol which denotes and separates 
 variables that are varying independently from the variables that are covarying whose relationship we are interested in decomposing. 
 For example, the term $\Delta^{(XY \shp Z)}$ could be decomposed into $\Delta^{[XY \shp Z]} + \Delta^{[X \nat Y \shp Z]}$. 
 As more terms and species are introduced into a system, more relationships between variables must be evaluated,
@@ -751,10 +755,11 @@ in exactly one half of the distribution. However, more complex models (such as s
 or integral projection models should be explored )and varying degrees and qualities of ATA, (copula parameters, 
 difference between tails, rate of relatedness(slope of expansion??) should be implemented and explored.
 Moreover, because our empirical application makes use of a simple and controlled lab system, future studies
-should be done to assess the extent of how much ATA are important for complex systems and field systems.
+should be done to assess the extent of how much ATAs are important for complex systems and field systems which are 
+often subject to factors beyond our control.
 Because modeling the dynamics of long-lived populations can be challenging, a good field system to start
 exploring the ideas presented here is a system of annual plants. 
-For example, the ATAs between rainfall timing on the coexistence of grasses and forbs 
+For example, the ATAs effcts of rainfall timing on the coexistence of grasses and forbs 
 in California grasslands \citep{Hallett_2019} could be a fruitful 
 further investigation of biodiversity maintenance in California grasslands and the effects of extreme 
 rainfall fluctuation given the highly variable climate of the area.
@@ -897,8 +902,7 @@ to diatom coexistence in this system. In some instances, the GWR line (orange) f
 between the ATA line (red)
 and the horizontal axis, indicating that, for those parameter values, ATAs make the difference between species
 coexistence and exclusion of \emph{F. crotonensis}. 
-Standard errors of plotted quantities were always less then X, so are not shown.
-%***DAN: Don't forget to fill in the standard error stuff, please, Jasmin.
+Standard errors of plotted quantities were always less then \Sexpr{round(se5,5)}, so are not shown.
 For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, 
 was always positive both including and
 excluding the effects of ATAs, so GWR for \emph{F. crotonensis}, decomposed here, is a 
@@ -920,7 +924,8 @@ $\Delta_i^{[EC]}$ was always positive, so cyan indicates exclusion of \emph{F. c
 magenta indicates coexistence of the two diatom species. Values greater than 1 or less than -1
 were remapped to 1 and -1, respectively, for readability.
 For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, was always positive both including and
-excluding ATAs, so GWR for \emph{F. crotonensis} is a sufficient coexistence metric.} \label{fig:fig6}
+excluding ATAs, so GWR for \emph{F. crotonensis} is a sufficient coexistence metric.
+Standard errors of plotted quantities were always less then \Sexpr{round(se6,5)}, so are not shown.} \label{fig:fig6}
 \end{figure}
 
 \end{document}
