@@ -759,7 +759,7 @@ should be done to assess the extent of how much ATAs are important for complex s
 often subject to factors beyond our control.
 Because modeling the dynamics of long-lived populations can be challenging, a good field system to start
 exploring the ideas presented here is a system of annual plants. 
-For example, the ATAs effcts of rainfall timing on the coexistence of grasses and forbs 
+For example, the ATAs effects of rainfall timing on the coexistence of grasses and forbs 
 in California grasslands \citep{Hallett_2019} could be a fruitful 
 further investigation of biodiversity maintenance in California grasslands and the effects of extreme 
 rainfall fluctuation given the highly variable climate of the area.
