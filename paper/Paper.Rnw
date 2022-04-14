@@ -646,7 +646,7 @@ intensity and frequency and their influence on coexistence also merit future wor
 Possible changes in tail association
 patterns between environmental variables in nature can
 influence the coexistence of species through the storage effect and not other mechanisms, but
-extreme and changing climate is probable to affect other mechanims in other ways (refs?).
+extreme and changing climate is probable to affect other mechanisms in other ways (refs?).
 %In the Discussion, I intend to talk about how possible changes in tail association 
 %patterns of env vars in nature may influence coexistence of species. It won't influence the 
 %other mechanisms, though changes in the extreme values of environmental variables, known
