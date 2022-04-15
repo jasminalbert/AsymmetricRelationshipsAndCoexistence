@@ -675,7 +675,7 @@ framework, is not directly a measure of the environment, but is a measure of res
 environment, via a population's vital rates. Environment and environmental response may be related linearly
 (like lottery model?); though real environmental variables are probable to 
 actually be related to vital rates in a non-linear and often threshold-like way. 
-Threshold relationships can produce tail association, as we showed elsewhere (explain, ref). 
+Threshold relationships can produce tail association, as we showed elsewhere \citep{Walter_2022}. 
 Changes in the means of true environmental variables may change 
 where those distributions of environmental variables are compared to thresholds, 
 which may change the nature of tail associations between the effects of 
