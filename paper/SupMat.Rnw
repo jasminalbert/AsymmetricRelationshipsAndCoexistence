@@ -213,7 +213,7 @@ as stated in the main text.
 %on that thinks something here is sub-optimal. Anyway, the "do both" approach seems like it can't go wrong,
 %especially if Steve's prediction is correct that it won't make much difference.
 %***DAN: Dan, you probably need to spend a bit more time with the cited papers to better understand this. 
-We also use $q_{ij}=1$ as an alternative value, based on communication with Steve Ellner, for the following reasons.
+We also use $q_{ij}=1$ as an alternative value, for the following reasons.
 First, as discussed in the supporting information of \cite{Ellner_2016}, and as further elaborated by 
 \cite{Barabas_2018}, it takes very special circumstances for the scaling factors to exist and be unique, 
 especially with size-structured models. Second, in empirically parameterized models, scaling factor values are 

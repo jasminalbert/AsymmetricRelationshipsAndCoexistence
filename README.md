@@ -1,6 +1,7 @@
 # Code repository for the paper ``Relationships in the extremes and their influence on competition and coexistence''
 
-Pimsupa Jasmin Albert, University of Kansas  
+Pimsupa Jasmin Albert, University of Kansas 
+Stephen P. Ellner, Cornell University
 Daniel C. Reuman, University of Kansas  
 
 ## Introduction
