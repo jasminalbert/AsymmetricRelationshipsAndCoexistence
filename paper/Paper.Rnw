@@ -592,11 +592,11 @@ of $EC$ \emph{covariance} to coexistence \citep{Chesson_2012, Ellner_2016, Ellne
 our results suggest that storage effects should be redefined to constitute the 
 contribution of \emph{associations} between $E$ and $C$, including both ATA effects and
 correlation \emph{per se}; the prior terminology, \emph{covariance}, is typically construed 
-as reflecting the linear relationship between variables, ignoring complexities of the association
-such as ATAs. 
+as reflecting the linear relationship between variables, ignoring complexities of the association,
+such as ATAs, which we now know are important. 
 
 %ATA specialists
-The contributions we have documented of ATAs to species coexistence open the possibility that
+Contributions of ATAs to species coexistence open the possibility that
 ``ATA specialists'' may exist in some contexts. If a stronger competitor is present across a
 landscape and the GWR of a weaker competitor %***DAN: Dan is working right here.
 
