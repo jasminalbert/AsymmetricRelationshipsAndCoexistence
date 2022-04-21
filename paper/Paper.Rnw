@@ -600,23 +600,25 @@ such as ATAs, which we now know are important.
 
 %ATA specialists
 Contributions of ATAs to species coexistence open the possibility that
-``ATA specialists'' may exist in some contexts. If a stronger competitor is present across a
-landscape and the GWR of a weaker competitor %***DAN: Dan is working right here.
+``ATA specialists'' may exist in some contexts. If a strong competitor is present across a
+network of habitat patches and the GWR of a weaker competitor is only positive 
+in a patch in the presence of 
+ATAs between the temporal fluctuations of two environmental variables in that patch,
+then the weaker competitor can only persist in patches for which ATAs are present,
+and can therefore be regarded as an ``ATA specialist'' in the landscape. EC-associations
+can often boil down to associations between two environmental variables, as was the case
+for the lottery model we considered. Mechanisms of coexitence should correspond to
+means by which niche differentiation is possible. Thinking about our new mechanism of 
+coexistence in terms of possible ATA specialists helps highlight this connection. Likewise,
+because we have described ATA exclusion as well as ATA rescue, it is possible to 
+imagine a scenario in which a weaker competitor can only exist in habitat patches 
+for which ATAs are absent, and is hence a specialist on scenarios with symmetric
+tail associations of environmental variables (an ``STA-specialist''). Additional 
+research will be needed to assess to what degree these possibilities are realized 
+in nature.
 
-%Not only is the contribution of ATA non-neglible but in some cases the presence or absence of ATAs 
-%can mediate the result of competition between species, i.e., coexistence or extirpation. 
-%For some parameters, the contribution of ATAs was the driving mechanism of 
-%coexistence -- GWR would be negative without it -- deeming the scenario a case of 
-%ATA rescue. For other parameter values, ATA exclusion occurs where ATAs are the 
-%driving mechanism of the failure to coexist (exclusion) and the lack of ATAs would result in 
-%a positive GWR. Parameter
-subspaces of ATA exclusion and ATA rescue suggest a new kind of specialization among species or \emph{ATA specialists} - species which only persist in habitat patches where ATAs contribute to its coexistence. 
-One can imagine a species whose coexistence with others is conditional on the asymmetric relationship between drivers of coexistence and whose populations may become excluded when ATAs erode. 
-%I think ata specialists are a thing - if their competitor is ubiquitous, they can only live in places on the landscape 
-%where there are atas. Could have a discussion para on it, if it does not make the results. Or both. BTW, ATA exclusion has a 
-%similar thing going on - a species excluded by ATAs (and competition) can only live on the portions of the landscape where
-%there are no ATAs. Could also describe the temporal way of it - the ATA specialist can only survive in a era/epoch for which there
-%are ATAs in its local, otherwise it'll have to go dormant or move elsewhere.
+
+
 
 
 %future work: study ATAs in environmental variables and how theyre changing - tie in with specialist
