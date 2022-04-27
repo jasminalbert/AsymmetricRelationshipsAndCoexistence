@@ -503,7 +503,7 @@ $\theta(t)=\theta_0 +  a\sin(2\pi t/P)$,
 with parameters $\theta_0 = 18^\circ$C, $a = 6^\circ$C, $P = 60$d. 
 \cite{Ellner_2016, Ellner_2019} broke down coexistence into contributing mechanisms
 according to (\ref{eq:previous_decomp}) for these same values of
-$\theta_0$, $a$ and $P$. We further decomponse
+$\theta_0$, $a$ and $P$. We further decompose
 coexistence according to (\ref{eq:full_decomp}), and we do so for ranges of values
 of $\theta_0$, $a$ and $P$. In contrast to the lottery model case, for which simplifying assumptions
 made it sufficient to decompose only the GWR of species 1, for this
@@ -609,7 +609,7 @@ ATAs between the temporal fluctuations of two environmental variables in that pa
 then the weaker competitor can only persist in patches for which ATAs are present.
 The weaker competitor can therefore perhaps be regarded as an ``ATA specialist'' in the landscape. EC-associations
 can often boil down to associations between two environmental variables, as was assumed to be the case
-for the lottery model. Mechanisms of coexitence should correspond to
+for the lottery model. Mechanisms of coexistence should correspond to
 means by which niche differentiation is possible. Thinking about our new mechanism of 
 coexistence in terms of possible ATA specialists helps highlight this connection. Likewise,
 because we have described ATA exclusion as well as ATA rescue, it is possible to 
@@ -652,7 +652,7 @@ It was demonstrated elsewhere that nonlinear transformations can produce or alte
 asymmetries of tail association \citep{Ghosh_2020_AER,Walter_2022}.
 Thus the nature of ATAs between directly measured environmental variables may differ from the
 nature of ATAs between the population responses which actually matter for coexistence.
-Vital rates are often measured directly in demongraphic studies, so ATAs between vital rates could,
+Vital rates are often measured directly in demographic studies, so ATAs between vital rates could,
 in principle, be studied. To our knowledge, this has not yet been done. 
 
 %Differences with the original, analytic version of the MCT
@@ -666,7 +666,7 @@ in principle, be studied. To our knowledge, this has not yet been done.
 Our approach to exploring the influence of ATAs on coexistence relies on the computational
 extension of the MCT of \cite{Ellner_2019},
 and our results help demonstrate strengths of that approach.
-Storage effects as computed using the original, analytic appoach to MCT 
+Storage effects as computed using the original, analytic approach to MCT 
 \citep{Chesson_1994,Chesson_2000} should equal our term $\Delta^{[E \nat C]}$, 
 which we refer to as the contributions to coexistence of correlation \emph{per se}.
 This is because the weak-noise/Taylor approximation approach used in the original 
@@ -674,8 +674,8 @@ MCT neglects the effects of ATAs when higher-order terms
 in Taylor expansions are dropped. The term $\Delta^{(E \shp C)}$, which our theory 
 inherits from \cite{Ellner_2016}, is also dropped. These observations do not diminish 
 the major strengths of the 
-original, analytic appproach, which are well known and also elaborated by \cite{Ellner_2019};
-one such strength is the generality that analtic approaches provide.
+original, analytic approach, which are well known and also elaborated by \cite{Ellner_2019};
+one such strength is the generality that analytic approaches provide.
 It may be possible to extend the mathematics of the original MCT to consider ATAs.
 
 %multispecies models and multifactor models
