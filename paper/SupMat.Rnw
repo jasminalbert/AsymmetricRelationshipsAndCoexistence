@@ -100,6 +100,18 @@
 \affil[c]{Laboratory of Populations, Rockefeller University}
 \affil[*]{Corresponding author, reuman@ku.edu}
 
+%for dealing with line numbers bugs having to do with equations
+\let\oldequation\equation
+\let\oldendequation\endequation
+\renewenvironment{equation}
+  {\linenomathNonumbers\oldequation}
+  {\oldendequation\endlinenomath}
+\let\oldalign\align
+\let\oldendalign\endalign
+\renewenvironment{align}
+  {\linenomathNonumbers\oldalign}
+  {\oldendalign\endlinenomath}
+
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
@@ -115,6 +127,7 @@ rho <- readRDS(file="../results_numeric/rho.RDS")
 se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
 @
 
+\linenumbers
 \maketitle
 
 \tableofcontents
