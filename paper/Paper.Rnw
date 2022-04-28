@@ -634,7 +634,8 @@ studies of changes in environmental ATAs would differ from such prior work becau
 ATAs pertain to \emph{relationships} between variables in the extremes.  
 
 %E and vital rates
-Whereas the ``$E$'' of ``$EC$-covariance'' is often conceptualized as ``environment'', in fact it is a 
+Whereas the ``$E$'' of ``$EC$-covariance'' is often conceptualized as ``environment'', 
+in fact it is often instead a 
 species response to the environment. Because a directly measurable aspect of the 
 environment and a species response to it may be nonlinearly related, it may be 
 important, in future work, 
@@ -643,17 +644,16 @@ In the lottery model, it was assumed that fecundity of species $i$ tracks the
 environment directly, $B_i(t)=E_i(t)$. But vital rates such as fecundity are 
 more likely related to actual environmental variables according to a nonlinear
 function which may often be threshold-like or sigmoidal, and thus the $E_i=B_i$
-of the lottery model is actually better conceptualized as a species response
-than as the environment, directly.
+of the lottery model is probably better conceptualized as a species response.
 Likewise, one of the choices of $E_i$ considered by \cite{Ellner_2016} for the
-diatom model was $E_i=V_i$, the maximum population growth rate, clearly a response
+diatom model was $E_i=V_i$, the maximum population growth rate, a response
 to the environment rather than a direct environmental measurement. 
 It was demonstrated elsewhere that nonlinear transformations can produce or alter 
 asymmetries of tail association \citep{Ghosh_2020_AER,Walter_2022}.
-Thus the nature of ATAs between directly measured environmental variables may differ from the
-nature of ATAs between the population responses which actually matter for coexistence.
-Vital rates are often measured directly in demographic studies, so ATAs between vital rates could,
-in principle, be studied. To our knowledge, this has not yet been done. 
+So the nature of ATAs between directly measured environmental variables may differ from the
+nature of ATAs between the population responses which matter for coexistence.
+Vital rates are measured directly in demographic studies, so ATAs between vital rates could,
+in principle, be studied. To our knowledge, this has not been done. 
 
 %Differences with the original, analytic version of the MCT
 %
@@ -685,13 +685,14 @@ $Z$ are temporally varying factors, \cite{Ellner_2019} produced, for the $i^{\te
 \begin{align}
 \text{GWR}_i &= \Delta_i^0+\Delta_i^X+\Delta_i^Y+\Delta_i^Z \label{eq:9}\\
 &+\Delta_i^{(X \shp Y)} +\Delta_i^{(XY)} + \Delta_i^{(Y \shp Z)} + \Delta_i^{(YZ)} +\Delta_i^{(X \shp Z)}+\Delta_i^{(XZ)} \label{eq:10}\\
-&+ \Delta_i^{(XYZ)}+\Delta_i^{(XY \shp Z)}+\Delta_i^{(X \shp YZ)}+\Delta_i^{(XZ \shp Y)}+\Delta_i^{(X \shp Y \shp Z)}.
+&+ \Delta_i^{(XYZ)}+\Delta_i^{(XY \shp Z)}+\Delta_i^{(X \shp YZ)}+\Delta_i^{(XZ \shp Y)}+\Delta_i^{(X \shp Y \shp Z)}.\label{eq:11}
 \end{align}
 The terms in (\ref{eq:9}) and (\ref{eq:10}) are analogous to those of (\ref{eq:previous_decomp}).
-The new terms result from rendering one or more of $X$, $Y$, and $Z$ independent of the others.
+The new terms in (\ref{eq:11}) result from rendering one or 
+more of $X$, $Y$, and $Z$ independent of the others.
 We simply comment that this general decomposition should also be extendable to consider the effects of
 ATAs in the same way (\ref{eq:full_decomp}) extends (\ref{eq:previous_decomp}), though the complexity
-of such a decomposition may present difficulties.
+of such a decomposition may present challenges.
 For example, $\Delta^{(XY \shp Z)}$ can be decomposed as $\Delta^{[XY \shp Z]} + \Delta^{[X \nat Y \shp Z]}$.
 It seems reasonable to suppose that ATAs will play an increasingly important role in systems of 
 greater complexity because such systems have more pairs of temporally variable quantities that
@@ -709,7 +710,7 @@ Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, and 
 The authors were partly supported by US National
 Science Foundation grants 1714195 and 2023474, the James S McDonnell Foundation, and the California Department of Fish and
 Wildlife Delta Science Program. 
-%***DAN: DAN: if we take Ellner off the author list add him back here, and also add him back to the acks in the README.
+%***DAN: DAN: if we take Ellner off the author list add him back here, and also add him back to the acks in the README. Also take him off the author list in sup mat.
 
 %you store your bibliographic info in refs.bib, see that file
 \bibliographystyle{ecology_letters2}

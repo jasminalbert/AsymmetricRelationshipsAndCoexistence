@@ -92,10 +92,12 @@
 \date{}
 
 \author[a]{Pimsupa Jasmin Albert}
-\author[a,b,*]{Daniel C. Reuman}
+\author[b]{Stephen P. Ellner}
+\author[a,c,*]{Daniel C. Reuman}
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
-\affil[b]{Laboratory of Populations, Rockefeller University}
+\affil[b]{Department of Ecology and Evolutionary Biology, Cornell University}
+\affil[c]{Laboratory of Populations, Rockefeller University}
 \affil[*]{Corresponding author, reuman@ku.edu}
 
 \begin{document}
