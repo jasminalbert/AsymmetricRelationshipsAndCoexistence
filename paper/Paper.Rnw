@@ -182,8 +182,9 @@ Although MCT is mathematically complex to many ecologists, recent extensions mak
 
 %Intro to ATAs
 Every ecological discipline involves the study of relationships among biological and environmental variables,
-but standard statistical methods for examining the association between two variables provide only a small 
-portion of the overall information content of the
+but standard statistical methods for examining the association between two variables provide only 
+%a small portion of the overall information content of the
+partial information about the nature of the 
 association \citep{Ghosh_2020_AER,Ghosh_2020_Eco,Ghosh_2020_ecolevol,Ghosh_2021}. For instance, 
 the three pairs of variables in Fig. \ref{fig:noise} all have the same
 Pearson correlation, but nevertheless demonstrate very different types of association. Other metrics 
@@ -207,12 +208,12 @@ have, to our knowledge, not previously been considered; doing so is the overarch
 It is straightforward to see, intuitively, 
 why ATAs may influence one mechanism of coexistence in particular: storage effects. We review, conceptually, 
 what storage effects are \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and explain why ATAs may be relevant to them.
-Storage effects allow for species to fluctuate over time while escaping extinction because storage effects provide a relative benefit to
+Storage effects allow competing species to fluctuate over time while escaping extinction because storage effects provide a relative benefit to
 whichever species is currently rare; this is the characteristic that makes storage effects a so-called \emph{stabilizing} mechanism 
 of coexistence \citep{Chesson_2000}.
 Storage effects can occur if three conditions are met \citep{Chesson_1994}. First, there must be positive 
 covariation between the fluctuating quality of the environment (E)
-for a species and the strength of competition (C) experienced by that species (called EC covariance). 
+for a species and the strength of competition (C) experienced by that species (called EC covariance), that is stronger when the species is common than when it is rare. 
 Second, growth responses to the environment must be species-specific, so that distinct species do not find the 
 same environmental conditions to be optimal. Third, a buffering mechanism must exist whereby species limit the influence of competition
 in times when the environment is poor. Dormant stages such as seed banks are an
@@ -827,7 +828,7 @@ to diatom coexistence in this system. In some instances, the GWR line (orange) f
 between the ATA line (red)
 and the horizontal axis, indicating that, for those parameter values, ATAs make the difference between species
 coexistence and exclusion of \emph{F. crotonensis}. 
-Standard errors of plotted quantities were always less then \Sexpr{round(se5,5)}, so are not shown.
+Standard errors of plotted quantities were always less than \Sexpr{round(se5,5)}, so are not shown.
 For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, 
 was always positive both including and
 excluding the effects of ATAs, so GWR for \emph{F. crotonensis}, decomposed here, is a 
@@ -846,7 +847,7 @@ magenta indicates coexistence of the two diatom species. Values greater than 1 o
 were remapped to 1 and -1, respectively, for readability.
 For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, was always positive both including and
 excluding ATAs, so GWR for \emph{F. crotonensis} is a sufficient coexistence metric.
-Standard errors of plotted quantities were always less then \Sexpr{round(se6,5)}, so are not shown.} \label{fig:fig6}
+Standard errors of plotted quantities were always less than \Sexpr{round(se6,5)}, so are not shown.} \label{fig:fig6}
 \end{figure}
 
 \end{document}
