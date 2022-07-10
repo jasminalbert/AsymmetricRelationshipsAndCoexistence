@@ -462,23 +462,29 @@ the magnitude of the new ATA term, $\Delta_i^{[EC]}$, relative to the magnitudes
 \section{Methods}\label{section:methods}
 
 %G2
-Left- or right-tail associated noise $(b_1,b_2)$, with $b_i$ normally distributed with mean $\mu_i$ and standard deviation 
+To achieve goal G2 from the Introduction, 
+left- or right-tail associated %noise 
+log fecundities $(b_1,b_2)$, with $b_i$ normally distributed with mean $\mu_i$ and standard deviation 
 $\sigma$, was generated as pictured in Fig. \ref{fig:noise}, details in SI section \ref{SI-sect:noise}.
-To achieve goal G2 from the Introduction, i.e., to explore using a simple model the relative magnitudes of the contributions 
-to coexistence that come from ATAs versus other mechanisms, we plotted the terms $\Delta_i^0$, $\Delta_i^E$, $\Delta_i^C$, 
+%To achieve goal G2 from the Introduction, i.e., to explore using a simple model the relative magnitudes of the contributions 
+%to coexistence that come from ATAs versus other mechanisms, 
+We then plotted the terms $\Delta_i^0$, $\Delta_i^E$, $\Delta_i^C$, 
 $\Delta_i^{(E\shp C)}$, $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ [see (\ref{eq:full_decomp})] for the lottery model
-against the parameters of the model, $\mu_1$, $\mu_2$, $\sigma$ and $\delta$; and we compared 
-values on plots. Some mathematical shortcuts, summarized here, simplified plotting. 
+against the parameters of the model, $\mu_1$, $\mu_2$, $\sigma$ and $\delta$. %; and we compared values on plots. 
+Some mathematical shortcuts, summarized here, simplified plotting. 
 First, we assumed, without loss of generality, that $\mu_1 \leq \mu_2$. To understand coexistence, 
 it was then sufficient to decompose the GWR of the weaker competitor, species 1. 
 Second, we showed that, for the 
 lottery model, none of the components in (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
-instead they depend only on $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). So we plotted 
+instead they depend only on $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). 
+So we plotted 
+the terms
 against $\mu_1 - \mu_2$. 
 Third, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
-for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}). So we only generated plots 
-for left-tail associated noise. For each combination of $\delta=0.2, 0.4, 0.6, 0.8$
-and $\mu_1-\mu_2=0,-0.5,-2,-4$,
+for both our left- and right-tail associated cases (SI section \ref{SI-sect:math_simplifications}), 
+so we only generated plots for left-tail associated noise. 
+For each combination of $\delta=0.2, 0.4, 0.6$
+and $\mu_1-\mu_2=0,-0.5,-1$,
 we plotted all the components of (\ref{eq:full_decomp}) against $\sigma$. 
 %Relative importance of contributions was judged from the 
 %plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
