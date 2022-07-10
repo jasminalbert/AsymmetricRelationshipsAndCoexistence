@@ -396,30 +396,44 @@ of storage effects, which are themselves a term in the MCT decomposition \citep{
 below for additional details.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
-correlation unchanged? We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
-$C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively, are strictly monotonic and continuous. 
+correlation unchanged? 
+We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
+$C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, 
+respectively, are strictly monotonic and continuous. 
 Letting $\varphi$ be the CDF of a standard normal distribution, we consider the random variables
-$\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
-distributed, although they are not necessarily jointly bivariate normal.  Let $\rho_i$ be the covariance of
-these random variables. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
+$\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$. %, which are standard normally
+These are standard Normal 
+distributed, although they are not necessarily jointly bivariate normal.  
+Let $\rho_i$ be the covariance of these random variables. 
+We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
 $\E(e_i)=\E(c_{i \bs i})=0$ and $\var(e_i)=\var(c_{i \bs i})=1$, and we denote 
 $\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$. We define 
 $E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
-and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. The value of $\ddot{\rho}_i$ is then determined 
-in one of 
-four alternative ways: $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
-$E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
+and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. 
+The value of $\ddot{\rho}_i$ is then determined in one of four alternative ways: 
+either by setting 
+$\ddot{\rho}_i = \rho_i$; 
+or so that the Pearson, Spearman or Kendall correlation of 
+$E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. 
+The choice of bivariate normal 
 $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
-For those familiar with copula statistics (see, e.g., \citealp{Genest_2007} and \citealp{Ghosh_2020_AER}), 
+
+
+For those familiar with copula statistics 
+(see, e.g., \citealp{Genest_2007} and \citealp{Ghosh_2020_AER}), 
 we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
 $C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
-as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
+as desired. 
+The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
 
 The other mechanisms in MCT that apply in our modelling context of purely temporal variation
-make no reference to covariation between quantities, whereas ATAs are 
-defined in a covariation context. Therefore, storage effects are the only mechanism of coexistence
+make no reference to covariation between quantities, 
+(see eqn. (13) in Ellner (2019),
+whereas ATAs are %defined in a covariation context
+strictly about covariation. 
+Therefore, storage effects are the only mechanism of coexistence
 for which ATAs are relevant. Mathematical details supporting this claim are in SI section 
 \ref{SI-SIsect:other_mechanisms}, but we here provide a conceptual understanding. \cite{Ellner_2016} and
 \cite{Ellner_2019} provide a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$,
