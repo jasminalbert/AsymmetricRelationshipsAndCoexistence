@@ -178,7 +178,8 @@ MCT breaks down coexistence into the contributions of various mechanisms, with n
 in competition'' and ``storage effect'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
-Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
+%Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
+Though MCT's original analytical form presented mathematical challenges for applications to and tests of new systems, recent extensions expand testability and accessibility \citep{Ellner_2016,Ellner_2019}.
 
 %Intro to ATAs
 Every ecological discipline involves the study of relationships among biological and environmental variables,
@@ -230,7 +231,8 @@ Thus ATAs may, in principle, influence storage effect simply because storage eff
 occur between environment and competition variables, can be an aspect of EC covariation. 
 
 %Lottery model and results based on it
-To further demonstrate the plausibility of ATAs altering coexistence between species, we carried out simulations using a simple two-species model, the lottery model. 
+%To further demonstrate the plausibility of ATAs altering coexistence between species, 
+To more robustly demonstrate the role of ATAs in structuring fluctuation-dependent coexistence, we carried out simulations using a simple two-species model, the lottery model. 
 The simulations described in this paragraph are sufficient to demonstrate that ATAs influence coexistence in some manner; 
 the precise nature of that influence is then the subject of the rest of the paper.
 The lottery model was originally introduced as a model for coral reef fish competing for
