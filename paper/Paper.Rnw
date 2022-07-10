@@ -145,7 +145,7 @@ se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 \noindent Species coexistence attracts wide 
 interest in ecology. Modern coexistence
 theory (MCT) identifies coexistence mechanisms,
-one of which, storage effects, hinges on relationships between fluctuations
+one of which, the storage effect, hinges on relationships between fluctuations
 in environmental and competitive pressures. However, such relationships
 are typically measured using covariance, which does not account for 
 the possibility that environment and competition may be more related to each other
@@ -153,7 +153,7 @@ when they are strong than when weak, or vice versa.
 Recent work showed that such `asymmetric tail associations' (ATAs) are common
 between ecological variables, and are important for 
 extinction risk, ecosystem stability, and other phenomena. 
-We extend the MCT, decomposing storage effects to show the influence of ATAs.
+We extend the MCT, decomposing the storage effect to show the influence of ATAs.
 Analysis of a simple model
 and an empirical example using diatoms
 illustrate that ATA influences can be comparable in magnitude to other
@@ -162,7 +162,7 @@ difference between species coexistence and competitive exclusion.
 ATA influences are an important new mechanism of coexistence. 
 \end{abstract}
 
-\keywords{asymmetric tail association, biodiversity, coexistence, competition, competitive exclusion, modern coexistence theory, niche differentiation, storage effects}
+\keywords{asymmetric tail association, biodiversity, coexistence, competition, competitive exclusion, modern coexistence theory, niche differentiation, storage effect}
 
 \section{Introduction}\label{section:introduction}
 
@@ -175,7 +175,7 @@ the other and drive it extinct \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems. 
 MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``relative nonlinearity
-in competition'' and ``storage effects'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
+in competition'' and ``storage effect'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
 Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
@@ -208,13 +208,13 @@ have, to our knowledge, not previously been considered; doing so is the overarch
 
 %Intro to storage effects and why they might be influenced by ATAs
 It is straightforward to see, intuitively, 
-why ATAs may influence one mechanism of coexistence in particular: storage effects. We review, conceptually, 
-what storage effects are \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and explain why ATAs may be relevant to them.
-Storage effects allow competing species to fluctuate %over time while escaping extinction because storage effects provide 
+why ATAs may influence one mechanism of coexistence in particular: the storage effect. We review, conceptually, 
+what the storage effect is \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and explain why ATAs may be relevant to them.
+Storage effect allows competing species to fluctuate %over time while escaping extinction because storage effects provide 
 in abundance without any going extinct by providing
-a relative benefit to whichever species is currently rare; this is the characteristic that makes storage effects a so-called \emph{stabilizing} mechanism 
+a relative benefit to whichever species is currently rare; this is the characteristic that makes the storage effect a so-called \emph{stabilizing} mechanism 
 of coexistence \citep{Chesson_2000}.
-Storage effects can occur if three conditions are met \citep{Chesson_1994}. First, there must be positive 
+Storage effect can occur if three conditions are met \citep{Chesson_1994}. First, there must be positive 
 covariation between the fluctuating quality of the environment (E)
 for a species and the strength of competition (C) experienced by that species (called EC covariance), that is stronger when the species is common than when it is rare. 
 Second, growth responses to the environment must be species-specific, so that distinct species do not find the 
@@ -224,9 +224,9 @@ which limits the influence of competition %in times
 when the environment is poor. 
 Dormant stages such as seed banks are an example buffering mechanism \citep{Chesson_2012}. 
 When present, these three factors combine so that EC covariance provides a relative benefit to whatever species is currently rare.
-Importantly, storage effects can be quantified by measuring to what extent EC covariance contributes to differences between 
+Importantly, the storage effect can be quantified by measuring to what extent EC covariance contributes to differences between 
 rare and common species growth rates \citep{Chesson_1994,Ellner_2016}. %invader and resident 
-Thus ATAs may, in principle, influence storage effects simply because storage effects hinge on EC covariation, and ATAs, when they 
+Thus ATAs may, in principle, influence storage effect simply because storage effect hinges on EC covariation, and ATAs, when they 
 occur between environment and competition variables, can be an aspect of EC covariation. 
 
 %Lottery model and results based on it
@@ -313,8 +313,8 @@ two-species model (below), and also specifically for the lottery model of the In
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
 multiple mechanisms to coexistence. But we show below
-that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
-So we begin by defining storage effects. Our mathematical notation parallels
+that, for purely temporal variation, only one mechanism relates to tail associations: the storage effect. 
+So we begin by defining the storage effect. Our mathematical notation parallels
 that of \cite{Ellner_2016,Ellner_2019}. It is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
 an environment-dependent factor $E_i(t)$ and as a decreasing function of a quantity representing
@@ -326,7 +326,7 @@ it simplifies the presentation of new ideas.
 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between rare and common species mean growth rates, when $i$ is rare.
-Specifically, storage effects for species $i$ are 
+Specifically, storage effect for species $i$ is 
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
 \end{equation}
@@ -352,7 +352,7 @@ $(E_i^\shp,C_{i \bs i}^\shp)$, so $\olrs_{i \bs i}=\E[r_i(E_i^\shp,C_{i \bs i}^\
 Likewise, $\olrs_{j \bs i}=\E[r_j(E_j^\shp,C_{j \bs i}^\shp)]$.
 %Though some readers may find it slightly confusing to simultaneously use the variable $E_i$ and the operator $\E(\cdot)$, both of these notational choices are standard, so it would be more confusing to use alternative notation. Like all variables, $E_i$ is rendered in italic; like all operators, $\E(\cdot)$ is rendered upright.
 
-We now specify how to decompose storage effects into contributions due to ATAs and 
+We now specify how to decompose storage effect into contributions due to ATAs and 
 due to $EC$ correlation \emph{per se}. 
 Storage effect for species $i$ was computed by comparing
 differences between rare and common species mean growth rates for the original model and for a 
@@ -383,16 +383,16 @@ and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition
 [(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i})] \label{eq:storage_effects_further1}\\
 &= \Delta_i^{[EC]} + \Delta_i^{[E \nat C]}.\label{eq:storage_effects_further}
 \end{align}
-The term $\Delta_i^{[EC]}$ is the component of storage effects due to 
+The term $\Delta_i^{[EC]}$ is the component of storage effect due to 
 ATAs between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$.
-The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to $EC$ 
+The term $\Delta_i^{[E \nat C]}$ is the component of storage effect due to $EC$ 
 correlation \emph{per se}, remaining after having removed the effects of ATAs.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
 corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
 The new symbol should correspondingly be pronounced ``partial sharp''.
 The brackets in $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
-of storage effects, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
+of storage effect, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
 below for additional details.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
@@ -433,7 +433,7 @@ make no reference to covariation between quantities,
 (see eqn. (13) in Ellner (2019),
 whereas ATAs are %defined in a covariation context
 strictly about covariation. 
-Therefore, storage effects are the only mechanism of coexistence
+Therefore, the storage effect is the only mechanism of coexistence
 for which ATAs are relevant. Mathematical details supporting this claim are in SI section 
 \ref{SI-SIsect:other_mechanisms}, but we here provide a conceptual understanding. \cite{Ellner_2016} and
 \cite{Ellner_2019} provide a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$,
@@ -448,9 +448,9 @@ $\Delta_i^E$ is a contribution to coexistence of environmental variation;
 $\Delta_i^C$ is a contribution to coexistence of variation in competition;
 $\Delta_i^{(E\shp C)}$ is a contribution to coexistence of having simultaneous variation in both environment and competition, but not including the effects 
 of covariation in these quantities; and
-$\Delta_i^{(EC)}$ is a contribution to coexistence of $EC$ covariation itself -- storage effects. 
-Only storage effects involve $EC$ covariation,
-so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is storage effects. Combining our decomposition 
+$\Delta_i^{(EC)}$ is a contribution to coexistence of $EC$ covariation itself -- the storage effect. 
+Only storage effect involve $EC$ covariation,
+so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is the storage effect. Combining our decomposition 
 (\ref{eq:storage_effects_further}) with the decomposition (\ref{eq:previous_decomp}) of \cite{Ellner_2019} gives 
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
@@ -588,9 +588,9 @@ Magnitudes of $\Delta_i^{[EC]}$ tended to be larger, relative to the magnitudes 
 other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between $\mu_1$ and 
 $\mu_2$, i.e., for closer-to-equal competitors. 
 In the $\mu_1=\mu_2$ case (panels a-d), for which the two species were equal 
-competitors, storage effects (blue plus red
-lines on Fig. \ref{fig:fig3}) were the only means by which coexistence could occur, and ATA effects
-tended to be negative, weakening total storage effects.
+competitors, storage effect (blue plus red
+lines on Fig. \ref{fig:fig3}) was the only means by which coexistence could occur, and ATA effects
+tended to be negative, weakening total storage effect.
 
 %G3
 Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
@@ -628,19 +628,19 @@ but especially Fig. \ref{fig:fig6}).
 We produced and applied a new extension of MCT that 
 quantifies the impact of ATAs on species coexistence and the maintenance of biodiversity. 
 Building upon a recent, simulation-based approach to MCT \citep{Ellner_2016, Ellner_2019},
-we decomposed storage effects into two new mechanisms, the contribution of ATAs to coexistence,
+we decomposed the storage effect into two new mechanisms, the contribution of ATAs to coexistence,
 and the contribution of $EC$ correlation \emph{per se}.
 Applications of our extended theory to the lottery model and to models based on a laboratory 
 system of competing diatoms demonstrated that  
-ATA contributions to storage effects and to species coexistence and the maintenance of biodiversity
+ATA contributions to the storage effect and to species coexistence and the maintenance of biodiversity
 can often be comparable in magnitude to the contributions of previously recognized mechanisms.
 Our results highlight that common methods of correlation and covariance fail to include 
 important information on the structure of relationships between variables. Our results add
 coexistence and biodiversity maintenance to the list of ecological theories and phenomena on which 
 ATAs have been shown to have an important impact \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}.  
-Though storage effects are typically described as the contribution
+Though storage effect is typically described as the contribution
 of $EC$ \emph{covariance} to coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019},
-our results suggest that storage effects should be redefined to constitute the 
+our results suggest that storage effect should be redefined to constitute the 
 contribution of \emph{associations} between $E$ and $C$, including both ATA effects and
 correlation \emph{per se}; the prior terminology, \emph{covariance}, is typically construed 
 as reflecting the linear relationship between variables, ignoring complexities of the association,
@@ -712,7 +712,7 @@ in principle, be studied. To our knowledge, this has not been done.
 Our approach to exploring the influence of ATAs on coexistence relies on the computational
 extension of the MCT of \cite{Ellner_2019},
 and our results help demonstrate strengths of that approach.
-Storage effects as computed using the original, analytic approach to MCT 
+Storage effect as computed using the original, analytic approach to MCT 
 \citep{Chesson_1994,Chesson_2000} should equal our term $\Delta^{[E \nat C]}$, 
 which we refer to as the contributions to coexistence of correlation \emph{per se}.
 This is because the weak-noise/Taylor approximation approach used in the original 
