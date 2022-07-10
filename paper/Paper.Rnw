@@ -153,7 +153,7 @@ when they are strong than when weak, or vice versa.
 Recent work showed that such `asymmetric tail associations' (ATAs) are common
 between ecological variables, and are important for 
 extinction risk, ecosystem stability, and other phenomena. 
-We extend the MCT, decomposing the storage effect to show the influence of ATAs.
+We extend MCT, decomposing the storage effect to show the influence of ATAs.
 Analysis of a simple model
 and an empirical example using diatoms
 illustrate that ATA influences can be comparable in magnitude to other
@@ -187,18 +187,18 @@ measures for %examining the
 measuring the strength and direction of the association between two variables provide only 
 %a small portion of the overall information content of the
 partial information about the nature of the 
-association \citep{Ghosh_2020_AER,Ghosh_2020_Eco,Ghosh_2020_ecolevol,Ghosh_2021}. For instance, 
-the three pairs of variables in Fig. \ref{fig:noise} all have the same
-Pearson correlation, but nevertheless demonstrate very different types of association. Other metrics 
-of association are also often used, in addition to correlations
+association \citep{Ghosh_2020_AER,Ghosh_2020_Eco,Ghosh_2020_ecolevol,Ghosh_2021}. 
+For instance, consider the three pairs of variables in Fig. \ref{fig:noise}.
+The variables in Fig. \ref{fig:noise}a,c exhibit what we have previously referred to as ``asymmetric tail association'' 
+[ATA; \cite{Ghosh_2020_AER}], i.e., they are more strongly related to each
+other in the left (Fig. \ref{fig:noise}a, termed ``left-tail association'') or right (Fig. \ref{fig:noise}c,
+termed ``right-tail association'') portions of the variables' distributions. 
+The relationships displayed in Fig. \ref{fig:noise} demonstrate very different types of association, 
+but nevertheless all have the same Pearson correlation. 
+Other metrics of association are also often used, in addition to correlations 
 (e.g., various forms of regression), but correlations are extremely common, and other
 methods also reveal only a small portion of the information content of the relationship between variables \citep{Nelsen2006}.
-The variables in Fig. \ref{fig:noise}a,c 
-exhibit what we have previously referred to as ``asymmetric tail association'' [ATA; \cite{Ghosh_2020_AER}], i.e., 
-they are more strongly related to each
-other in the left (Fig. \ref{fig:noise}a, termed ``left-tail association'') or right (Fig. \ref{fig:noise}c,
-termed ``right-tail association'') portions of the variables' distributions. Although ATAs 
-and related ideas had previously been seldom 
+Although ATAs and related ideas had previously been seldom 
 considered in ecology (but see \citealp{deValpine_2014, Anderson_2019, Popovic_2019}), 
 our recent work shows that ATAs are extremely common \citep{Ghosh_2020_AER}, and can influence 
 many phenomena, including extinction risk \citep{Ghosh_2020_Eco}, Taylor's law \citep{Ghosh_2020_AER}, 
