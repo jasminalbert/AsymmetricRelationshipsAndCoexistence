@@ -222,7 +222,7 @@ a relative benefit to whichever species is currently rare; this is the character
 of coexistence \citep{Chesson_2000}.
 Storage effect can occur if three conditions are met \citep{Chesson_1994}. First, there must be positive 
 covariation between the fluctuating quality of the environment (E)
-for a species and the strength of competition (C) experienced by that species (called EC covariance), that is stronger when the species is common than when it is rare. 
+for a species and the strength of competition (C) experienced by that species (called EC covariance), that is stronger when the species is at stable-state abundance than when it is rare. 
 Second, growth responses to the environment must be species-specific, so that distinct species do not find the 
 same environmental conditions to be optimal. 
 Third, a buffering mechanism %must exist whereby species limit 
@@ -230,8 +230,8 @@ which limits the influence of competition %in times
 when the environment is poor. 
 Dormant stages such as seed banks are an example buffering mechanism \citep{Chesson_2012}. 
 When present, these three factors combine so that EC covariance provides a relative benefit to whatever species is currently rare.
-Importantly, the storage effect can be quantified by measuring to what extent EC covariance contributes to differences between 
-rare and common species growth rates \citep{Chesson_1994,Ellner_2016}. %invader and resident 
+Critically, the storage effect can be quantified in invasion analysis by measuring to what extent EC covariance contributes to differences between 
+invader (rare) and resident (stable-state) species growth rates \citep{Chesson_1994,Ellner_2016}. %invader and resident 
 Thus ATAs may, in principle, influence storage effect simply because storage effect hinges on EC covariation, and ATAs, when they 
 occur between environment and competition variables, can be an aspect of EC covariation. 
 
@@ -332,7 +332,7 @@ is not neccesary, %we make the assumption because
 it simplifies the presentation of new ideas. 
 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
-$C$ to a difference between rare and common species mean growth rates, when $i$ is rare.
+$C$ to a difference between invader and resident species mean growth rates, when $i$ is the invader.
 Specifically, storage effect for species $i$ is 
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
@@ -362,17 +362,17 @@ Likewise, $\olrs_{j \bs i}=\E[r_j(E_j^\shp,C_{j \bs i}^\shp)]$.
 We now specify how to decompose storage effect into contributions due to ATAs and 
 due to $EC$ correlation \emph{per se}. 
 Storage effect for species $i$ was computed by comparing
-differences between rare and common species mean growth rates for the original model and for a 
+differences between invader and resident species mean growth rates for the original model and for a 
 modified model for which 
 %the components of $(E_i,C_{i \bs i})$ and those of $(E_j,C_{j \bs i})$
 $E$ and $C$
 were rendered independent of each other,
-for both rare and common species [see (\ref{eq:storage_effects_gen})]. 
+for both invader and resideent species [see (\ref{eq:storage_effects_gen})]. 
 Because %these components 
 $E$ and $C$ 
 were rendered completely independent in the modified model, 
 storage effect quantifies the contribution of the whole $EC$ relationship, in all its aspects, 
-to the rare/common species growth rate difference. 
+to the invader/resident growth rate difference. 
 But we can instead consider distributions $(E_i^\nat,C_{i \bs i}^\nat)$ and 
 $(E_j^\nat,C_{j \bs i}^\nat)$ with the same
 marginal distributions, respectively, as $(E_i,C_{i \bs i})$ and $(E_j,C_{j \bs i})$,
