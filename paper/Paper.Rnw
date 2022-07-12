@@ -166,21 +166,6 @@ ATA influences are an important new mechanism of coexistence.
 
 \section{Introduction}\label{section:introduction}
 
-%Intro to competition, coexistence, MCT, etc.
-Competition and the maintenance of biodiversity are research topics at the core of modern ecology 
-\citep{MacArthur_1958, Hutchinson_1961, Schmida_1984}.
-The competitive exclusion principle states 
-that two species competing for the same limiting resource cannot coexist at constant densities - one will instead outcompete 
-the other and drive it extinct \citep{Hardin_1960}.
-Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
-framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems. 
-MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``relative nonlinearity
-in competition'' and ``storage effect'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
-applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
-tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
-%Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
-Though MCT's original analytical form presented mathematical challenges for applications to and tests of new systems, recent extensions expand testability and accessibility \citep{Ellner_2016,Ellner_2019}.
-
 %Intro to ATAs
 Every ecological discipline involves the study of relationships among biological and environmental variables,
 but standard %statistical methods 
@@ -207,10 +192,30 @@ synchrony, and stability of ecosystem functioning \citep{Ghosh_2020_ecolevol,Gho
 Although ATAs are now known to be important, the implications of ATAs for competition and species coexistence 
 have, to our knowledge, not previously been considered; doing so is the overarching mission of this study. 
 
+%Intro to competition, coexistence, MCT, etc.
+Competition and the maintenance of biodiversity are research topics at the core of modern ecology 
+\citep{MacArthur_1958, Hutchinson_1961, Schmida_1984}.
+The competitive exclusion principle states 
+that two species competing for the same limiting resource cannot coexist at constant densities - one will instead outcompete 
+the other and drive it extinct \citep{Hardin_1960}.
+Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] %is a 
+has emerged as a
+framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems. 
+MCT breaks down coexistence into the contributions of various mechanisms, %with names such as ``relative nonlinearityin competition'' and ``storage effect'' \citep{Chesson_1994} which will be familiar to many readers. 
+highlighting the importance of environmental fluctuations to species coexistence. 
+For example, one such mechanism, the storage effect, promotes coexistence when species can reap or "store" the benefits of times when environmental conditions are good to overcome competition and persist through bad conditions.
+MCT has been applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
+tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
+%Although MCT is mathematically complex to many ecologists, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
+Though MCT's original analytical form presented mathematical challenges for applications to and tests of new systems, recent developments expand its testability and accessibility and present the opportunity for further extensions \citep{Ellner_2016,Ellner_2019}. 
+
+
 %Intro to storage effects and why they might be influenced by ATAs
-It is straightforward to see, intuitively, 
-why ATAs may influence one mechanism of coexistence in particular: the storage effect. We review, conceptually, 
-what the storage effect is \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and explain why ATAs may be relevant to them.
+In this paper, we show how ATAs can also be important for competition and for the coexistence of
+competing species. In particular, we show how ATAs can strongly influence one specific coexistence mechanism:
+storage effects.
+%It is straightforward to see, intuitively, why ATAs may influence one mechanism of coexistence in particular: the storage effect. 
+%We review, conceptually, what the storage effect is \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and explain why ATAs may be relevant to them.
 Storage effect allows competing species to fluctuate %over time while escaping extinction because storage effects provide 
 in abundance without any going extinct by providing
 a relative benefit to whichever species is currently rare; this is the characteristic that makes the storage effect a so-called \emph{stabilizing} mechanism 
