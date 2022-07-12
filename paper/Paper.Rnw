@@ -444,7 +444,7 @@ Therefore, the storage effect is the only mechanism of coexistence
 for which ATAs are relevant. Mathematical details supporting this claim are in SI section 
 \ref{SI-SIsect:other_mechanisms}, but we here provide a conceptual understanding. \cite{Ellner_2016} and
 \cite{Ellner_2019} provide a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$,
-which equals GWR of species $i$. The decomposition, which we use below, is similar to and motivated by the 
+which equals GWR of species $i$. The decomposition, which we use below, is analogous to and motivated by the 
 original decomposition of \cite{Chesson_1994}; the decomposition is how the mechanisms of 
 coexistence operating in a given case are illuminated. The decomposition is 
 \begin{equation}
@@ -462,7 +462,8 @@ so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is th
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
 \end{equation}
-which is the extension of MCT which was goal G1 of the Introduction. One typically (but see below) must examine this quantity for each species, $i$,
+which is the extension of MCT which was goal G1 of the Introduction. One typically %(but see below) 
+must examine this quantity for each species, $i$,
 to obtain complete information about coexistence. To pursue goal G2, below, we will quantify
 the magnitude of the new ATA term, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms. 
 
