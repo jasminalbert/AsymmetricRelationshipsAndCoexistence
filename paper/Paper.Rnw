@@ -319,7 +319,7 @@ two-species model (below), and also specifically for the lottery model of the In
 (SI section \ref{SI-SIsect:TheoryForLottery}).
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
-multiple mechanisms to coexistence. But we show below
+multiple mechanisms to coexistence. But we show
 that, for purely temporal variation, only one mechanism relates to tail associations: the storage effect. 
 So we begin by defining the storage effect. Our mathematical notation parallels
 that of \cite{Ellner_2016,Ellner_2019}. It is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
@@ -331,8 +331,19 @@ $C_i(t)$. Though the iid assumption %can be circumvented
 is not neccesary, %we make the assumption because 
 it simplifies the presentation of new ideas. 
 
-The storage effect for species $i$ is the contribution of covariation between $E$ and 
-$C$ to a difference between invader and resident species mean growth rates, when $i$ is the invader.
+In MCT, coexistence is assessed by the ability to increase when rare, i.e., 
+the mean ``growth when rare'' [GWR] of species $i$, 
+quantified by the weighted difference between mean growth rates when species $i$, the invader, is at negligible abundance 
+and species $j$, the resident (the other species) is at stochastic steady state. The GWR is computed for each species assessed as the invader of a resident community, and only when the difference is positive for all is coexistence possible. 
+The weighted difference, $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, can be decomposed into coexistence mechanisms. 
+A subscript $i \bs i$ indicates a quantity computed for species $i$ when that species is at negligible abundance, 
+and a subscript $j \bs i$ indicates a quantity computed for $j$ when $i$ is absent. 
+The \emph{scaling factor} $q_{ij}$ weights the relative sensitivities to competition of the two species, 
+see \cite{Chesson_1994}, \cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the two alternative definitions of $q_{ij}$ that we use. 
+
+The storage effect %for species $i$ 
+is the contribution of covariation between $E$ and 
+$C$ to a difference between invader and resident species mean growth rates  \cite{Ellner_2016}. %, when $i$ is the invader.
 Specifically, storage effect for species $i$ is 
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
@@ -462,9 +473,9 @@ so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is th
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
 \end{equation}
-which is the extension of MCT which was goal G1 of the Introduction. One typically %(but see below) 
-must examine this quantity for each species, $i$,
-to obtain complete information about coexistence. To pursue goal G2, below, we will quantify
+which is the extension of MCT which was goal G1 of the Introduction. 
+%One typically %(but see below) must examine this quantity for each species, $i$,to obtain complete information about coexistence. 
+To pursue goal G2, below, we will quantify
 the magnitude of the new ATA term, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms. 
 
 \section{Methods}\label{section:methods}
