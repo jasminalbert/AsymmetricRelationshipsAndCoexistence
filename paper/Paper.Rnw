@@ -231,7 +231,7 @@ when the environment is poor.
 Dormant stages such as seed banks are an example buffering mechanism \citep{Chesson_2012}. 
 When present, these three factors combine so that EC covariance provides a relative benefit to whatever species is currently rare.
 Critically, the storage effect can be quantified in invasion analysis by measuring to what extent EC covariance contributes to differences between 
-invader (rare) and resident (stable-state) species growth rates \citep{Chesson_1994,Ellner_2016}. %invader and resident 
+invader (rare) and resident (steady state) species growth rates \citep{Chesson_1994,Ellner_2016}. %invader and resident 
 Thus ATAs may, in principle, influence storage effect simply because storage effect hinges on EC covariation, and ATAs, when they 
 occur between environment and competition variables, can be an aspect of EC covariation. 
 
@@ -313,9 +313,11 @@ and a means of understanding its theoretical and empirical importance.
 
 \section{Theory}\label{section:theory}
 
-We here pursue goal G1 from the Introduction: to augment MCT to illuminate how ATA
-plays a role in coexistence. We develop each step of our new theory for a general 
-two-species model (below), and also specifically for the lottery model of the Introduction 
+We here pursue goal G1 from the Introduction: to augment MCT to illuminate how ATAs
+%plays a role in coexistence. 
+can structure coexistence. We develop each step of our new theory for a general 
+two-species model %(below)
+, and also specifically for the lottery model of the Introduction 
 (SI section \ref{SI-SIsect:TheoryForLottery}).
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
@@ -328,7 +330,7 @@ an environment-dependent factor $E_i(t)$ and as a decreasing function of a quant
 competitive pressure on species $i$, $C_i(t)$. We also assume, for simplicity, 
 that the $E_i(t)$ are iid through time, and likewise for the
 $C_i(t)$. Though the iid assumption %can be circumvented
-is not neccesary, %we make the assumption because 
+is not necessary, %we make the assumption because 
 it simplifies the presentation of new ideas. 
 
 In MCT, coexistence is assessed by the ability to increase when rare, i.e., 
@@ -378,7 +380,7 @@ modified model for which
 %the components of $(E_i,C_{i \bs i})$ and those of $(E_j,C_{j \bs i})$
 $E$ and $C$
 were rendered independent of each other,
-for both invader and resideent species [see (\ref{eq:storage_effects_gen})]. 
+for both invader and resident species [see (\ref{eq:storage_effects_gen})]. 
 Because %these components 
 $E$ and $C$ 
 were rendered completely independent in the modified model, 
@@ -391,8 +393,7 @@ and with some but not all aspects of the relationship
 between %the components 
 $E$ and $C$
 altered relative to the original distributions. 
-
-Specifically, asymmetries of tail association are removed -- see below for how this is done. 
+Specifically, asymmetries of tail association are removed. 
 We then define $\olrn_{i \bs i}$ and $\olrn_{j \bs i}$ based on a modified model 
 using  $(E_i^\nat,C_{i \bs i}^\nat)$
 and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition 
@@ -410,8 +411,7 @@ corresponding to the removal of part of the relationship between $E$ and $C$ com
 The new symbol should correspondingly be pronounced ``partial sharp''.
 The brackets in $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
-of storage effect, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
-below for additional details.
+of storage effect, which are themselves a term in the MCT decomposition \citep{Ellner_2019}.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
 correlation unchanged? 
@@ -759,6 +759,7 @@ We simply comment that this general decomposition should also be extendable to c
 ATAs in the same way (\ref{eq:full_decomp}) extends (\ref{eq:previous_decomp}), though the complexity
 of such a decomposition may present challenges.
 For example, $\Delta^{(XY \shp Z)}$ can be decomposed as $\Delta^{[XY \shp Z]} + \Delta^{[X \nat Y \shp Z]}$.
+
 It seems reasonable to suppose that ATAs will play an increasingly important role in systems of 
 greater complexity because such systems have more pairs of temporally variable quantities that
 may exhibit asymmetries of association. Our prior work shows that ATAs are common in 
