@@ -2,10 +2,25 @@ numeric_results_loc <- "../results_numeric"
 betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
 b<-readRDS(betanoise_loc)
 
+b2p <- function(lb,ub){
+	mu <- (lb+ub)/2
+	sigma <- ub-lb
+	return(c(mu=mu, sigma=sigma))
+}
+
 #load litle b's
 # B_i = sigma_i * b_i + mu_i
 
-decompose <- function(mu_i,mu_j,sigma_i,sigma_j, delta,blist,dir="LEFT") {
+decompose <- function(lb_i,lb_j,up_i,up_j, delta,blist,dir="LEFT",plot=FALSE) {
+	
+	paramsi <- b2p(lb_i, up_i)
+	paramsj <- b2p(lb_j, up_j)
+	
+	sigma_i <- paramsi["sigma"]; sigma_j <- paramsj["sigma"]
+	mu_i <- paramsi["mu"]; mu_j <- paramsj["mu"]
+	
+	
+	
   #notation follows from paper/sup mat
   
   if (mu_i < (sigma_i/2)){
@@ -158,7 +173,16 @@ decompose <- function(mu_i,mu_j,sigma_i,sigma_j, delta,blist,dir="LEFT") {
   #res <- data.frame(ei=ei, ei_se=ei_se, ej=ej, ej_se=ej_se, D=D, D_se=D_se, Dq=Dq, Dq_se=Dq_se)
   res <- data.frame(ei=ei, ej=ej, D=D, Dq=Dq)
   row.names(res) <- c("0","E","C","(E#C)","[EC]","[E||C]","r", "rwoATA")
-  
+    if (plot==TRUE){
+  		par(mfrow=c(2,1))
+  		hist(b$i*sigma_i+mu_i, main='', xlab='',sub=paste("mu_i=",mu_i,",mu_j=",mu_j,",sigma_i=",sigma_i,",sigma_j=",sigma_j), col="black", xlim=c(0,ifelse(up_i>up_j, up_i, up_j)))
+  		hist(b$j*sigma_j+mu_j, add=TRUE)
+  		barplot(res$D[1:7],names.arg=rownames(res[1:7,]), main=paste("delta=",delta))
+  }
+
   return(res)
 }
+
+
+
 
