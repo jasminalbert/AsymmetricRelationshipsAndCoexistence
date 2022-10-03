@@ -15,7 +15,8 @@ ncop<-normalCopula(.7)
 
 #Clayton copula with same Spearman as the above normal copula
 ccop<-claytonCopula(2)
-ccop<-claytonCopula(iRho(ccop,rho(ncop)))
+ccop<-claytonCopula(iRho(ccop,rho(ncop))) 
+#iRho converts rho to appropriate parameter of certain copula
 
 #There are many copulas encoded in the copula and VineCopula packages in R. Jasmin,
 #if you want one with different properties, let me know.
@@ -44,7 +45,8 @@ pbmarg<-function(x){return(pbeta(x+.5,shape1=shape1,shape2=shape2))}
 qbmarg<-function(x){return(qbeta(x,shape1=shape1,shape2=shape2))}
 
 #make sure this beta looks like the one we want
-hist(rbeta(10000,shape1=shape1,shape2=shape2))
+#hist(rbeta(10000,shape1=shape1,shape2=shape2))
+
 #One can play around with shape1 and shape2, keeping them equal, to 
 #get different degrees of bimodality. Smaller values mean less 
 #probability mass in the middle.
