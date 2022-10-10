@@ -11,7 +11,11 @@ source("./theory_panel_fxn.R")
 
 #figure file location and names
 fig_loc <- "../results_figs"
+if (dir.exists(fig_loc)==F){
+  dir.create(fig_loc)
+}
 theoryfig <- paste0(fig_loc,"/theory_fig_rw.pdf")
+theoryfig_col <- paste0(fig_loc,"/theory_fig_col.pdf")
 theoryfig_qd <- paste0(fig_loc,"/theory_fig_qd.pdf")
 
 #copulas
@@ -45,6 +49,15 @@ pdf(theoryfig, height=4, width=15)
 layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
 par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
 source("./theoryfig_meat.R")
+dev.off() 
+########
+
+#colored points
+#### start pdf ####
+pdf(theoryfig_col, height=4, width=15)
+layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
+par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
+source("./theoryfig_col_meat.R")
 dev.off() 
 ########
 

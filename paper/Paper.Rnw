@@ -820,6 +820,35 @@ See Introduction and Fig. \ref{fig:noise} caption for model details. \label{fig:
 \end{figure}
 
 \begin{figure}
+\includegraphics[width=\textwidth]{../results_figs/theory_fig_col.pdf}
+\caption{Pedagogical figure to demonstrate how asymmetric tail associations are removed while maintaining original marginal distributions and correlation between variables. (a) the starting variables with ATA. (b) the variables are transformed by a normal inverse cumulative distribution function of their own cumulative distribution function. (with a Spearman correlation of $\rho). Asymmetric association structure is maintained. (c) a newly generated, naturally symmetric, bivariate normal with the correlation, $\ddot{\rho}=\rho. (d) two variables which have the same marginals and correlation as the starting variables in (a) but have a symmetric association structure, obtained by taking the inverse cumulative distribution functions of the starting variables of the normal cumulative distribution function of the normal distributions. For demonstration purposes we start with beta distributed variables, though variables can be distributed differently and the two can be dissimilar. \label{fig:theory}}
+\end{figure}
+
+
+How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
+correlation unchanged? 
+We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
+$C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, 
+respectively, are strictly monotonic and continuous. 
+Letting $\varphi$ be the CDF of a standard normal distribution, we consider the random variables
+$\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$. %, which are standard normally
+These are standard Normal 
+distributed, although they are not necessarily jointly bivariate normal.  
+Let $\rho_i$ be the covariance of these random variables. 
+We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
+$\E(e_i)=\E(c_{i \bs i})=0$ and $\var(e_i)=\var(c_{i \bs i})=1$, and we denote 
+$\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$. We define 
+$E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
+and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. 
+The value of $\ddot{\rho}_i$ is then determined in one of four alternative ways: 
+either by setting 
+$\ddot{\rho}_i = \rho_i$; 
+or so that the Pearson, Spearman or Kendall correlation of 
+$E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. 
+The choice of bivariate normal 
+$(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
+
+\begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig3.pdf}
 \caption{The contribution of ATAs to species coexistence is often meaningfully large compared to 
 other components of the MCT decomposition. All panels show GWR and the decomposition of
