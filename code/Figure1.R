@@ -31,7 +31,7 @@ load(plankton_loc) #list called ceratium1x2 from two locations
 nt <- c("l", "um", "r") #nt = noise type
 blue <- grDevices::rgb(0,0,0.545,0.3) #col2rgb("darkblue")
 
-grDevices::pdf(fig1_loc, width=6.7, height=4.5)
+grDevices::pdf(fig1_loc, width=7.5, height=5)
 
 graphics::par(mar=c(0.5,0.5,0,0), oma=c(4,3,2,1),mgp=c(2.2,0.6,0), xpd=NA, cex.lab=1.7)
 
@@ -74,50 +74,21 @@ for (panel in 1:3){
   graphics::mtext(paste0("(",letters[panel+3],")"), side=3, line=-0.8, at=7)
 }
 
-
-grDevices::dev.off()
-
-### Make the figure again, same but with panels arranged horizontally, as a possible alternative
-
-grDevices::pdf(fig1_horiz_loc, width=7, height=3)
-
-graphics::par(mar=c(0.5,0.5,0,0), oma=c(5,5,2,2))
-graphics::layout(matrix(c(2,10,10,5,11,11,8,12,
-                1,3 ,13,4,6 ,14,7,9 ),nrow=2,byrow=T),
-       heights=c(0.25,1), widths=c(1,0.25,0.25,1,0.25,0.25,1,0.25))
-
-for (panel in 1:3){
-  
-  noise <- b_tilde[[nt[panel]]]
-  P <- stats::cor(noise, method='pearson')[1,2]
-  
-  #noise
-  graphics::plot(noise[1:800,1], noise[1:800,2], col=blue, 
-       ylab=NA, xlab=NA, xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5)
-  graphics::text(x=4,y=-3.8,labels=bquote(~ rho == .(round(P,5))), adj=1)
-  graphics::mtext(labels[panel], side=3, line=-1.6, at=-3.5)
-  
-  #marginals
-  d1 <- stats::density(noise[,1])
-  d2 <- stats::density(noise[,2])
-  graphics::plot(d1$x, d1$y, xlab=NA, ylab=NA, sub=NA, main=NA, bty='n',type='l', xaxt='n', yaxt='n')
-  graphics::plot(d2$y, d2$x, xlab=NA, ylab=NA, sub=NA, main=NA, bty='n', type='l',xaxt='n', yaxt='n')
+graphics::par(mar=c(0.5,0.25,0.3,0))
+plot.new();plot.new()
+# plankton example - ranked density
+title(ylab="C. furca density", line=-1.6)
+for (panel in 1:2){
+	cerfus <- ceratium1x2[[panel]]$cerfus
+	cerfur <- ceratium1x2[[panel]]$cerfur
+	T <- dim(ceratium1x2[[panel]])[1]
+	graphics::plot(rank(cerfus)/T, rank(cerfur)/T, bty="n",pch=20, col="darkgrey", cex=2, ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
+	graphics::mtext(paste0("(",letters[panel+6],")"), side=3, line=-1.5, at=0.05)
 }
+#mtext("C. furca density", side=4,outer=T, line=-14, cex=1)
 
-graphics::title(xlab="variable 1", outer=TRUE, line=3, cex.lab=1.5)
-graphics::title(ylab="variable 2", outer=TRUE, line=3, cex.lab=1.5)
 
 grDevices::dev.off()
-
-
-
-
-
-
-
-
-
-
 
 
 
