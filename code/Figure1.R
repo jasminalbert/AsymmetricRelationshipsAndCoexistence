@@ -1,24 +1,32 @@
 #This script generates figure 1 from the paper
+#combines ATA examples and lottery pop sims using that noise
+#and plankton ATA examples
 
 ### Preamble ###
 
 ##libraries used (invoked with ::): stats, graphics, grDevices
 
 #locations of inputs needed for this script
-noise_loc <- "../results_numeric/noise.RData"
+numRes_loc <- "../results_numeric/"
+noise_loc <- paste0(numRes_loc,"noiseB.RData") #from makenoise_LB.R
+popsim_loc <- paste0(numRes_loc,"betapopsim.RData") #from betapopsim.R
+plankton_loc <- paste0(numRes_loc,"ceratium1x2.RData") #from plankton.R
 
-#locations where results are stored
+#locations where result figs are stored
 fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
-fig1_vertical_loc <- paste(fig_loc,"fig1_vertical.pdf",sep="")
-fig1_horiz_loc <- paste(fig_loc,"fig1_horizontal.pdf",sep="")
+fig1 <- paste(fig_loc,"fig1_a-h.pdf",sep="")
 
 #load the noise we'll need
-load(noise_loc) #this loads an obtect called b_tilde which has the noise in it
+load(noise_loc) #this loads an obtect called v which has beta noise in it
+load(popsim_loc) #list called popsim with three kinds of popsim from beta noise
+load(plankton_loc) #list called ceratium1x2 from two locations
 
-#### Make the figure with panels arranged vertically ###
+####
+
+#### Make the figure ###
 
 nt <- c("l", "s", "r") #nt = noise type
 blue <- grDevices::rgb(0,0,0.545,0.3) #col2rgb("darkblue")
