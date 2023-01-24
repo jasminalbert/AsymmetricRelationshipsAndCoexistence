@@ -1,6 +1,6 @@
 #This script makes sets of noise to be used in the lottery model analysis and saves their length, M, and correlation, rho
-  #b_tilde: list of 3 different types of bivariate noise: left tail ATA, righ tail ATA, and symmetric
-  #u_tilde: univariate standard normal 
+  #b: list of 4 different types of bivariate noise: left tail ATA, righ tail ATA, bivariate normal with cov (1,0,0,1) and symmetric
+  #u: univariate standard normal 
 
 ##libraries used (invoked with ::): MASS, stats
 
