@@ -10,9 +10,9 @@ numeric_results_loc <- "../results_numeric"
 if(dir.exists(numeric_results_loc)==FALSE){
   dir.create(numeric_results_loc)
 }
-noise_loc <- paste(numeric_results_loc, "/noise.RData", sep = "")
-M_loc <- paste(numeric_results_loc, "/M.RDS", sep = "")
-rho_loc <- paste(numeric_results_loc, "/rho.RDS", sep = "")
+noise_loc <- paste0(numeric_results_loc, "/noise.RData")
+M_loc <- paste0(numeric_results_loc, "/M.RDS")
+rho_loc <- paste0(numeric_results_loc, "/rho.RDS")
 
 ### makenoise function ###
 #follows protocol described in SupMat section S3:Noise
@@ -29,16 +29,17 @@ makenoise <- function(M){
   mu_norm <- c(0,0)
   
   #bivariate standard normal
-  b <- MASS::mvrnorm(M, mu_norm, Sigma_norm) #points 
-  a1 <- b[,1]
-  a2 <- b[,2]
+  b <- MASS::mvrnorm(M, mu_norm, Sigma_norm) #points
+  colnames(b) <- c("i","j")
+  b_ti <- b
   
   #half of points will be more than zero, 50%
+  a1 <- b[,1]; a2 <- b[,2]
   A <- a1>0 
   
   #left tail
-  b[A,] <- (-abs(a1[A])) #50% b_tilde[,1] = b_tilde[,2] = -|a_1|
-  b[!A,] <- abs(b[!A,]) #50% b_tilde[,1] = |a_1|, b_tilde[,2] = |a_2|
+  b[A,] <- (-abs(a1[A])) #50% b[,1] = b[,2] = -|a_1|
+  b[!A,] <- abs(b[!A,]) #50% b[,1] = |a_1|, b[,2] = |a_2|
   b_l <- b
   
   #right tail - get by flipping left tail noise 
@@ -49,9 +50,10 @@ makenoise <- function(M){
   #symmetric 
   #with similar correlation as asymmetric noises
   Sigma_sym <- stats::cor(b_l) 
-  b_s <- MASS::mvrnorm(M, mu_norm, Sigma_sym)
+  b_um <- MASS::mvrnorm(M, mu_norm, Sigma_sym)
+  colnames(b_um) <- colnames(b)
   
-  return(list(l=b_l,r=b_r,s=b_s))
+  return(list(l=b_l,r=b_r,s=b_um,til=b_ti))
 }
 
 ### make noise ###
@@ -60,16 +62,16 @@ set.seed(1360)
 #noise length
 M <- 1000000
 #bivariate noise list
-b_tilde <- makenoise(M)
+b <- makenoise(M)
 #univariate standard normal
-u_tilde <- stats::rnorm(M)
+u <- stats::rnorm(M)
 
 #get correlation
 rho <- stats::cor(b_tilde$l)[1,2]
 cat("M=",M, " rho=", rho)
 
 ### save results ###
-save(b_tilde,u_tilde, file = noise_loc)
+save(b,u, file = noise_loc)
 saveRDS(M, file=M_loc)
 saveRDS(rho, file=rho_loc)
 
