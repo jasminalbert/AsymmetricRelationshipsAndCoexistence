@@ -8,7 +8,7 @@
 
 #locations of inputs needed for this script
 numRes_loc <- "../results_numeric/"
-noise_loc <- paste0(numRes_loc,"noiseB.RData") #from makenoise_LB.R
+noise_loc <- paste0(numRes_loc,"noise.RData") #from makenoise_LB.R
 popsim_loc <- paste0(numRes_loc,"betapopsim.RData") #from betapopsim.R
 plankton_loc <- paste0(numRes_loc,"ceratium1x2.RData") #from plankton.R
 
@@ -20,7 +20,7 @@ if(dir.exists(fig_loc)==FALSE){
 fig1_loc <- paste(fig_loc,"fig1_a-h.pdf",sep="")
 
 #load the noise we'll need
-load(noise_loc) #this loads an obtect called v which has beta noise in it
+load(noise_loc) #this loads an obtect called b which has noise in it
 load(popsim_loc) #list called popsim with three kinds of popsim from beta noise
 load(plankton_loc) #list called ceratium1x2 from two locations
 
@@ -28,7 +28,7 @@ load(plankton_loc) #list called ceratium1x2 from two locations
 
 #### Make the figure ###
 
-nt <- c("l", "um", "r") #nt = noise type
+nt <- c("l", "s", "r") #nt = noise type
 blue <- grDevices::rgb(0,0,0.545,0.3) #col2rgb("darkblue")
 
 grDevices::pdf(fig1_loc, width=7.5, height=5)
@@ -48,7 +48,7 @@ graphics::layout(matrix(c(
 
 for (panel in 1:3){
   
-  noise <- v[[nt[panel]]]
+  noise <- b[[nt[panel]]]
   P <- stats::cor(noise, method='pearson')[1,2]
   
   #noise
