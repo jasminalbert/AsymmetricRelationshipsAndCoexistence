@@ -1,9 +1,9 @@
 #This script makes transforms b made in makenoise.R to beta distributed fecundities, B
 
 ### location of results ###
-numeric_results_loc <- "../results_numeric"
+numRes_loc <- "../results_numeric/"
 
-noise_loc <- paste0(numeric_results_loc, "/noise.RData")
+noise_loc <- paste0(numRes_loc, "noise.RData")
 load(noise_loc) #list of noise, b, containing:
 
 	## 1) (b_i_r, b_j_r), (b_i_l, b_j_l): 
@@ -53,7 +53,7 @@ plot(betaB$r[1:10000,1], betaB$r[1:10000,2]); cov(betaB$r)
 plot(betaB$til[1:10000,1], betaB$til[1:10000,2]); cov(betaB$til)
 plot(betaB$s[1:10000,1], betaB$s[1:10000,2]); cov(betaB$s)
 #good; save
-betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
+betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 saveRDS(betaB, file=betanoise_loc)
 
 #now can make Bi's and Bj's
