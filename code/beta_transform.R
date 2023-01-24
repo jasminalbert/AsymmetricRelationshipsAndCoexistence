@@ -1,60 +1,63 @@
+#This script makes transforms b made in makenoise.R to beta distributed fecundities, B
+
+### location of results ###
+numeric_results_loc <- "../results_numeric"
+
+noise_loc <- paste0(numeric_results_loc, "/noise.RData")
+load(noise_loc) #list of noise, b, containing:
+
+	## 1) (b_i_r, b_j_r), (b_i_l, b_j_l): 
+		# left and right TA bivariate noise with standard normal 		marginals 
+	## 2) (b_i_tilde, b_j_tilde): 
+		# bivaraite normal mean (0,0) and cov (1,0,0,1)
+	## 3) (b_i_s, b_j_s): (umlaut)
+		# bivariate normal mean (0,0) and cov (1,rho,rho,1) 
+			# where rho is cov between b_j_l and b_i_l
+
+#now make B
+## make beta b_l, b_r, b_s, b_tilde 
+	# by taking the F of the respective (b_i, b_j)'s
+
 #transforming normal noise to beta
 F <- function(noise,...){
-	qbeta(pnorm(noise),...)-0.5
+	qbeta(pnorm(noise),...)
 }
 
-obj <- F(b[[1]], shape1=0.5, shape2=0.5)
-hist(obj)
-
-#making noise to be used
-# A
-## 1) (v_i_r, v_j_r), (v_i_l, v_j_l): 
-	# left and right TA bivariate noise with standard normal marginals 
-## 2) (v_i_tilde, v_j_tilde): 
-	# bivaraite normal mean (0,0) and cov (1,0,0,1)
-## 3) (v_i_umlaut, v_j_umlaut):
-	# bivariate normal mean (0,0) and cov (1,rho,rho,1) 
-		# where rho is cov between v_j and v_i
-# B
-## make beta b_l, b_r, b_umlaut, b_tilde 
-	# by taking the F of the respective (v_i, v_j)'s 
-
-#source("./lottery_beta/makenoise_LB.R")
-noise_loc <- paste(numeric_results_loc, "/noiseB.RData", sep = "")
-load(noise_loc) #object is called v
-hist(v$l[,1]); mean(v$l[,1]); sd(v$l[,1])
-hist(v$l[,2]); mean(v$l[,2]); sd(v$l[,2])
-hist(v$r[,1]); mean(v$r[,1]); sd(v$r[,1])
-hist(v$r[,2]); mean(v$r[,2]); sd(v$r[,2])
-hist(v$til[,1]); mean(v$til[,1]); sd(v$til[,1])
-hist(v$til[,2]); mean(v$til[,2]); sd(v$til[,2])
-hist(v$um[,1]); mean(v$um[,1]); sd(v$um[,1])
-hist(v$um[,2]); mean(v$um[,2]); sd(v$um[,2])
-plot(v$l[1:10000,1], v$l[1:10000,2]); cov(v$l)
-plot(v$r[1:10000,1], v$r[1:10000,2]); cov(v$r)
-plot(v$til[1:10000,1], v$til[1:10000,2]); cov(v$til)
-plot(v$um[1:10000,1], v$um[1:10000,2]); cov(v$um)
-b <- lapply(v, FUN=F, shape1=0.5, shape2=0.5)
-#check
+#looking at b
 hist(b$l[,1]); mean(b$l[,1]); sd(b$l[,1])
 hist(b$l[,2]); mean(b$l[,2]); sd(b$l[,2])
 hist(b$r[,1]); mean(b$r[,1]); sd(b$r[,1])
 hist(b$r[,2]); mean(b$r[,2]); sd(b$r[,2])
 hist(b$til[,1]); mean(b$til[,1]); sd(b$til[,1])
 hist(b$til[,2]); mean(b$til[,2]); sd(b$til[,2])
-hist(b$um[,1]); mean(b$um[,1]); sd(b$um[,1])
-hist(b$um[,2]); mean(b$um[,2]); sd(b$um[,2])
+hist(b$s[,1]); mean(b$s[,1]); sd(b$s[,1])
+hist(b$s[,2]); mean(b$s[,2]); sd(b$s[,2])
 plot(b$l[1:10000,1], b$l[1:10000,2]); cov(b$l)
 plot(b$r[1:10000,1], b$r[1:10000,2]); cov(b$r)
 plot(b$til[1:10000,1], b$til[1:10000,2]); cov(b$til)
-plot(b$um[1:10000,1], b$um[1:10000,2]); cov(b$um)
-#good
+plot(b$s[1:10000,1], b$s[1:10000,2]); cov(b$s)
+
+#transform
+betaB <- lapply(b, FUN=F, shape1=0.5, shape2=0.5)
+#check
+hist(betaB$l[,1]); mean(betaB$l[,1]); sd(betaB$l[,1])
+hist(betaB$l[,2]); mean(betaB$l[,2]); sd(betaB$l[,2])
+hist(betaB$r[,1]); mean(betaB$r[,1]); sd(betaB$r[,1])
+hist(betaB$r[,2]); mean(betaB$r[,2]); sd(betaB$r[,2])
+hist(betaB$til[,1]); mean(betaB$til[,1]); sd(betaB$til[,1])
+hist(betaB$til[,2]); mean(betaB$til[,2]); sd(betaB$til[,2])
+hist(betaB$s[,1]); mean(betaB$s[,1]); sd(betaB$s[,1])
+hist(betaB$s[,2]); mean(betaB$s[,2]); sd(betaB$s[,2])
+plot(betaB$l[1:10000,1], betaB$l[1:10000,2]); cov(betaB$l)
+plot(betaB$r[1:10000,1], betaB$r[1:10000,2]); cov(betaB$r)
+plot(betaB$til[1:10000,1], betaB$til[1:10000,2]); cov(betaB$til)
+plot(betaB$s[1:10000,1], betaB$s[1:10000,2]); cov(betaB$s)
+#good; save
 betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
-saveRDS(b, file=betanoise_loc)
+saveRDS(betaB, file=betanoise_loc)
 
 #now can make Bi's and Bj's
-#note: should only consider sigma and mu such that
-	# mu = sigma/2; so that B is never negative 
+
 
 
 
