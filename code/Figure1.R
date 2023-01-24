@@ -9,7 +9,7 @@
 #locations of inputs needed for this script
 numRes_loc <- "../results_numeric/"
 noise_loc <- paste0(numRes_loc,"noise.RData") #from makenoise_LB.R
-popsim_loc <- paste0(numRes_loc,"betapopsim.RData") #from betapopsim.R
+popsim_loc <- paste0(numRes_loc,"betapopsim.RData") #from beta_popsims.R
 plankton_loc <- paste0(numRes_loc,"ceratium1x2.RData") #from plankton.R
 
 #locations where result figs are stored
