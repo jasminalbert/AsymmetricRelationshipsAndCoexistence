@@ -16,6 +16,10 @@ checkpoint("2020-12-31",checkpoint_location = "./")
 #simulations here, if desired 
 source("./makenoise.R") 
 
+#transform b to beta distributed B
+#includes plotting checks
+source("./beta_transform.R")
+
 #Set parameters sigma, mu1, mu2, delta for the lottery model
 source("./parameters.R") 
 
