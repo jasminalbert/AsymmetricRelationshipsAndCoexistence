@@ -11,10 +11,10 @@ b2p <- function(lb,ub){
 #load litle b's
 # B_i = sigma_i * b_i + mu_i
 
-decompose <- function(lb_i,lb_j,up_i,up_j, delta,blist,dir="LEFT",plot=FALSE) {
+decomposeB <- function(lb_i,lb_j,ub_i,ub_j, delta,blist,dir="LEFT",plot=FALSE) {
 	
-	paramsi <- b2p(lb_i, up_i)
-	paramsj <- b2p(lb_j, up_j)
+	paramsi <- b2p(lb_i, ub_i)
+	paramsj <- b2p(lb_j, ub_j)
 	
 	sigma_i <- paramsi["sigma"]; sigma_j <- paramsj["sigma"]
 	mu_i <- paramsi["mu"]; mu_j <- paramsj["mu"]
@@ -33,7 +33,7 @@ decompose <- function(lb_i,lb_j,up_i,up_j, delta,blist,dir="LEFT",plot=FALSE) {
   b <- data.frame(blist$l) #left ATA biv dis
   b_til <- data.frame(blist$til) #standard normal biv
   b_um <- data.frame(blist$um) #normal biv w same rho as ATA noise
-  if (dir=="RIGT"){
+  if (dir=="RIGHT"){
   	b <- data.frame(blist$r) #right ATA biv dis
   }
   
@@ -175,7 +175,7 @@ decompose <- function(lb_i,lb_j,up_i,up_j, delta,blist,dir="LEFT",plot=FALSE) {
   row.names(res) <- c("0","E","C","(E#C)","[EC]","[E||C]","r", "rwoATA")
     if (plot==TRUE){
   		par(mfrow=c(2,1))
-  		hist(b$i*sigma_i+mu_i, main='', xlab='',sub=paste("mu_i=",mu_i,",mu_j=",mu_j,",sigma_i=",sigma_i,",sigma_j=",sigma_j), col="black", xlim=c(0,ifelse(up_i>up_j, up_i, up_j)))
+  		hist(b$i*sigma_i+mu_i, main='', xlab='',sub=paste("mu_i=",mu_i,",mu_j=",mu_j,",sigma_i=",sigma_i,",sigma_j=",sigma_j), col="black", xlim=c(0,ifelse(ub_i>ub_j, ub_i, ub_j)))
   		hist(b$j*sigma_j+mu_j, add=TRUE)
   		barplot(res$D[1:7],names.arg=rownames(res[1:7,]), main=paste("delta=",delta))
   }
