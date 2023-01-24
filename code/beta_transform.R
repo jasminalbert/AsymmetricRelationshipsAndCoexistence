@@ -1,4 +1,4 @@
-#transforrming normal noise to beta
+#transforming normal noise to beta
 F <- function(noise,...){
 	qbeta(pnorm(noise),...)-0.5
 }
@@ -19,8 +19,8 @@ hist(obj)
 ## make beta b_l, b_r, b_umlaut, b_tilde 
 	# by taking the F of the respective (v_i, v_j)'s 
 
-source("./lottery_beta/makenoise_LB.R")
-noise_loc <- paste(numeric_results_loc, "/noise.RData", sep = "")
+#source("./lottery_beta/makenoise_LB.R")
+noise_loc <- paste(numeric_results_loc, "/noiseB.RData", sep = "")
 load(noise_loc) #object is called v
 hist(v$l[,1]); mean(v$l[,1]); sd(v$l[,1])
 hist(v$l[,2]); mean(v$l[,2]); sd(v$l[,2])
