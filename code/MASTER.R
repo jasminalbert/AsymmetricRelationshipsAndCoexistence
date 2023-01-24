@@ -20,8 +20,15 @@ source("./makenoise.R")
 #includes plotting checks
 source("./beta_transform.R")
 
+#beta pop sim
+#can change parameters for pop sim here
+source("/beta_popsims.R")
+
 #Set parameters sigma, mu1, mu2, delta for the lottery model
 source("./parameters.R") 
+
+#plankton data for fig 1
+source("./plankton.R")
 
 #FIGURE 1
 source("./Figure1.R")
