@@ -3,50 +3,32 @@ numRes_loc <- "../results_numeric/"
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 B <-readRDS(betanoise_loc)
 
-b2p <- function(lb,ub){
-  mu <- (lb+ub)/2
-  sigma <- ub-lb
-  return(c(mu=mu, sigma=sigma))
-}
-
-#load litle b's
-# B_i = sigma_i * b_i + mu_i
-
 ### popsim ###
 #ARGS:
-#b1     species 1 environmental noise, vector length M
-#b2     species 2 environmental noise, vector length M
+#bnoise	2 column matrix of species noise
 #N      total abundance (N1 + N2), numeric
-#N1     initial abundance of species 1, numeric
+#N1     initial abundance of species i, numeric
+#up_i	upper bound of species i noise
+#up_j 	upper bound of species j noise
 #delta  death rate (0-1), numeric
-#M      length of noise, numeric
+#plot   T/F
+#len	length x-axis of plot
 #OUT:
-#data.frame 2xM+1 with columns N1 and N2 that are the abundance of sp1 and sp2 over time
+#data.frame nrow M with columns N1 and N2 that are the abundance of sp1 and sp2 and other metrics over time
   
-popsim <- function(N,N1,lb_i,lb_j,up_i,up_j,delta,bnoise,plot=TRUE, len=100) {
+popsim <- function(N,N1,up_i,up_j,delta,bnoise,plot=TRUE, len=100) {
   
-  paramsi <- b2p(lb_i, up_i)
-  paramsj <- b2p(lb_j, up_j)
-  
-  sigma_i <- paramsi["sigma"]; sigma_j <- paramsj["sigma"]
-  mu_i <- paramsi["mu"]; mu_j <- paramsj["mu"]
-
-  
-  if (mu_i < (sigma_i/2)){
-    stop("error: mu_i is not >= sigma_i/2")
-  }
-  if (mu_j < (sigma_j/2)){
-    stop("error: mu_j is not >= sigma_j/2")
-  }
-  
+  #convert upper bound to sigma and mu
+  sigma_i <- up_i 
+  sigma_j <- up_j
+  mu_i <- up_i/2 
+  mu_j <- up_j/2
   
   #length
   M <- nrow(bnoise)
-  b_i <- bnoise[,"i"]
-  b_j <- bnoise[,"j"]
-  B_i <- sigma_i * b_i + mu_i
-  B_j <- sigma_j * b_j + mu_j
-  
+  B_i <- sigma_i * bnoise[,1]
+  B_j <- sigma_j * bnoise[,2] 
+
     
   #species 2 initial abundance
   N2 <- N-N1
@@ -77,12 +59,22 @@ popsim <- function(N,N1,lb_i,lb_j,up_i,up_j,delta,bnoise,plot=TRUE, len=100) {
   return(res)
 }
 
+#simulate pops with beta fecunsities and only difference being ATAs
 
-popL <- popsim(50,1,0,0,1,1.05,0.4,b$l, len=500)
-popR <- popsim(50,1,0,0,1,1.05,0.4,b$r, len=500)
-popS <- popsim(50,1,0,0,1,1.05,0.4,b$um, len=500)
+### location to save results ###
+popsim_loc <- paste0(numRes_loc, "betapopsim.RData")
 
-#head(popL)
-#head(round(popR,3),100)
+N <- 50
+N1 <- 40
+up_i <- 1 #upper bound of i
+up_j <- 1.05 
+d <- 0.7
+
+popL <- popsim(N,N1,up_i,up_j,d,B$l,len=500)
+popS <- popsim(N,N1,up_i,up_j,d,B$s,len=500)
+popR <- popsim(N,N1,up_i,up_j,d,B$r,len=500)
+popsim <- list(l=popL, s=popS, r=popR)
+save(popsim, file=popsim_loc)
+
 
 
