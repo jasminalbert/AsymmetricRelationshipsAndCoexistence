@@ -24,17 +24,17 @@ source("./beta_transform.R")
 #can change parameters for pop sim here
 source("/beta_popsims.R")
 
-#Set parameters sigma, mu1, mu2, delta for the lottery model
-source("./parameters.R") 
-
 #plankton data for fig 1
 source("./plankton.R")
+
+#Set parameters sigma, mu1, mu2, delta for the lottery model
+source("./parameters.R") 
 
 #FIGURE 1
 source("./Figure1.R")
 
 #FIGURE 2
-source("./Figure2.R")
+source("./theoryfig.R")
 
 #FIGURE 3
 source("./Figure3.R")
