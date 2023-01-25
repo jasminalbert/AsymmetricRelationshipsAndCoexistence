@@ -45,11 +45,11 @@ lblc <- matrix(c(-2,-4.8,-4.3,-4.3,-1.7,0.2), nrow=3,dimnames=list(c("E","C","la
 ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
 				1,3,17,5,7,17,9,11,17,13,15), byrow=T, nrow=2)
 #### start pdf ####
-pdf(theoryfig, height=4, width=15)
-layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
-par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
-source("./theoryfig_meat.R")
-dev.off() 
+#pdf(theoryfig, height=4, width=15)
+#layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
+#par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
+#source("./theoryfig_meat.R")
+#dev.off() 
 ########
 
 #colored points
@@ -62,19 +62,19 @@ dev.off()
 ########
 
 #quad layout
-lblc[2,1] <- -4.5; lblc[1,2] <- -4.15; lblc[3,] <- c(-4.1,0.15)
-ly_mat<- matrix(c(2,4,17,6,8,
-				1,3,17,5,7,
-				17,17,17,17,17,
-				14,16,17,10,12,
-				13,15,17,9,11), byrow=T, nrow=5)
-hts <- c(.3,1,.2,.3,1); wds <- c(1,.3,.2,1,.3)
+#lblc[2,1] <- -4.5; lblc[1,2] <- -4.15; lblc[3,] <- c(-4.1,0.15)
+#ly_mat<- matrix(c(2,4,17,6,8,
+#				1,3,17,5,7,
+#				17,17,17,17,17,
+#				14,16,17,10,12,
+#				13,15,17,9,11), byrow=T, nrow=5)
+#hts <- c(.3,1,.2,.3,1); wds <- c(1,.3,.2,1,.3)
 #### start pdf ####
-pdf(theoryfig_qd, height=10, width=10)
-layout(ly_mat, heights=hts, widths=wds);#layout.show(n=17)
-par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
-source("./theoryfig_meat.R")
-dev.off() 
+#pdf(theoryfig_qd, height=10, width=10)
+#layout(ly_mat, heights=hts, widths=wds);#layout.show(n=17)
+#par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
+#source("./theoryfig_meat.R")
+#dev.off() 
 ########
 
 
@@ -89,16 +89,16 @@ dev.off()
 
 
 
-pdf("panelA_0.5_filled.pdf") #issue - filled.con not going into layout
-layout(matrix(c(2,4,1,3), byrow=T, nrow=2), heights=c(.3,1), widths=c(1,.3))
-par(mar=c(0.5,0.5,0.5,0.5), oma=c(2,2,1,1), xpd=NA)
-levs<-c(-.5,0,1,1.5)
-filled.contour(x,y,log10(z),xlim=range(x),ylim=range(y),nlevels=40, bty='l')
+#pdf("panelA_0.5_filled.pdf") #issue - filled.con not going into layout
+#layout(matrix(c(2,4,1,3), byrow=T, nrow=2), heights=c(.3,1), widths=c(1,.3))
+#par(mar=c(0.5,0.5,0.5,0.5), oma=c(2,2,1,1), xpd=NA)
+#levs<-c(-.5,0,1,1.5)
+#filled.contour(x,y,log10(z),xlim=range(x),ylim=range(y),nlevels=40, bty='l')
 #marginals
-plot(x,dbmarg(x),type="l", bty='n', xaxt='n', xlab="", yaxt="n") #one marginal
-plot(dbmarg(x),x,type="l", bty='n', yaxt='n', ylab="", xaxt="n") #the other (which is the same in this case)
-plot.new() 
-dev.off()
+#plot(x,dbmarg(x),type="l", bty='n', xaxt='n', xlab="", yaxt="n") #one marginal
+#plot(dbmarg(x),x,type="l", bty='n', yaxt='n', ylab="", xaxt="n") #the other (which is the same in this case)
+#plot.new() 
+#dev.off()
 
 
 

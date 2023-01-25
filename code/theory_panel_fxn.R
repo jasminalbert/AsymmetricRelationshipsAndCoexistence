@@ -1,5 +1,5 @@
 
-theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,col=F,logpoints=F,...){
+theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,col=F,log_points=F,...){
 	probdisf <- makepdf(cop,d,d,p,p)
 	xy <- expand.grid(x,y)
 	z <- probdisf(xy)
@@ -17,7 +17,7 @@ theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,
 	}
 	if (col==TRUE){
 	  ncol <- 100
-	  if (logpoints==TRUE){
+	  if (log_points==T){
 	    z[z==0]<-NA; zvar <- log10(z)
 	  } else { zvar <- z }
 	  z_ran <- range(zvar, na.rm=T)
