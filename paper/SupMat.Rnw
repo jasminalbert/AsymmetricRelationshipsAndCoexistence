@@ -30,8 +30,7 @@
 %new commands and so on
 \DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
 
-\DeclareMathOperator{\EX}{E}% expected value
-\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\E}{\mathbb{E}}% expected value
 \DeclareMathOperator{\VarX}{var}
 \DeclareMathOperator{\var}{var}
 \DeclareMathOperator{\CovX}{cov}
@@ -88,16 +87,14 @@
 \externaldocument[MT-]{Paper}
 
 %header material for paper
-\title{Relationships in the extremes and their influence on competition and coexistence: Supporting information}
+\title{Asymmetric relationships and their impact on coexistence: Supporting information}
 \date{}
 
 \author[a]{Pimsupa Jasmin Albert}
-\author[b]{Stephen P. Ellner}
-\author[a,c,*]{Daniel C. Reuman}
+\author[a,b,*]{Daniel C. Reuman}
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
-\affil[b]{Department of Ecology and Evolutionary Biology, Cornell University}
-\affil[c]{Laboratory of Populations, Rockefeller University}
+\affil[b]{Laboratory of Populations, Rockefeller University}
 \affil[*]{Corresponding author, reuman@ku.edu}
 
 %for dealing with line numbers bugs having to do with equations
