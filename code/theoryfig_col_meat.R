@@ -1,3 +1,4 @@
+source("./theory_panel_fxn_color.R")
 library(latex2exp)
 # A BETA MARGS CLAYTON COP
 sampsA <- theoryfigpanel(dbmarg, pbmarg, qbmarg, ccop, x, y, gnrt_var=TRUE,col=T,logpoints=T)
