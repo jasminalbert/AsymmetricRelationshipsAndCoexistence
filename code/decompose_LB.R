@@ -1,6 +1,6 @@
-numeric_results_loc <- "../results_numeric"
-betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
-b<-readRDS(betanoise_loc)
+#numeric_results_loc <- "../results_numeric"
+#betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
+#B<-readRDS(betanoise_loc)
 
 b2p <- function(lb,ub){
 	mu <- (lb+ub)/2
@@ -19,7 +19,11 @@ decomposeB <- function(lb_i,lb_j,ub_i,ub_j, delta,blist,dir="LEFT",plot=FALSE) {
 	sigma_i <- paramsi["sigma"]; sigma_j <- paramsj["sigma"]
 	mu_i <- paramsi["mu"]; mu_j <- paramsj["mu"]
 	
-	
+	  #convert upper bound to sigma and mu
+  #sigma_i <- up_i 
+  #sigma_j <- up_j
+  #mu_i <- 
+  #mu_j <- 
 	
   #notation follows from paper/sup mat
   

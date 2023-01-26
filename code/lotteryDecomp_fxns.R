@@ -49,20 +49,21 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
                        - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) 
                        - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) )/sqrt(M)  
   
-  #5. epsilon^[EC] bar (eq 55)
+  #5. epsilon^[E||C] bar (eq 55)
   #estimate
-  e_ECi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))-mean(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))
+  e_ECpipi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))-mean(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))
   #standard error
   s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M)
   s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))/sqrt(M)
-  e_ECi_se <- sqrt(s1^2 + s2^2)
+  e_ECpipi_se <- sqrt(s1^2 + s2^2)
   
-  #6. epsilon^[E||C] bar (eq 54)
+  #5. epsilon^[EC] bar (eq 54)
   #estimate
-  e_ECpipi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif))) - mean(log(1-delta+delta*exp(sigma*(bi_um-bj_um)+mudif)))   
+  e_ECi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif))) - mean(log(1-delta+delta*exp(sigma*(bi_um-bj_um)+mudif)))   
   #standard error
   s3 <- sd(log(1-delta+delta*exp((bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
-  e_ECpipi_se <-sqrt(s3^2 + s1^2)
+  e_ECi_se <-sqrt(s3^2 + s1^2)
+  
   
   #7. r_i\i bar (eq 36)
   #estimate 
@@ -94,14 +95,14 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
                        - log(1-delta+delta*exp(u - (sigma^2)/2)) #need sigma here?
                        - log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)  
   
-  #5. epsilon^[EC]j bar (eq 93)
+  #5. epsilon^[E||C]j bar (eq 93)
   #estimate
-  e_ECj_hat <- mean(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
+  e_ECpipj_hat <- mean(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
   #standard error
-  e_ECj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
+  e_ECpipj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
   
-  #6. epsilon^[E||C] bar (eq 91)
-  e_ECpipj <- 0
+  #6. epsilon^[EC] bar (eq 91)
+  e_ECj <- 0
   
   #7. r_j\i bar 
   r_j <- 0
@@ -113,8 +114,8 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DE <- e_Ei_hat - e_Ej_hat                   #Deltai_E
   DC <- e_Ci_hat - e_Cj_hat                   #Deltai_C
   DECsharp <- e_ECsharpi_hat - e_ECsharpj_hat #Deltai_(E#C)
-  DEC <- e_ECi_hat - e_ECj_hat                #Deltai_[EC]
-  DECpip <- e_ECpipi_hat                      #Deltai_[E||C]
+  DEC <- e_ECi_hat - e_ECj                    #Deltai_[EC]
+  DECpip <- e_ECpipi_hat - e_ECpipj_hat       #Deltai_[E||C]
   Dr <- r_i_hat 
   DrwoATA <- r_i_hat - DECpip
   
@@ -138,7 +139,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DEq <- e_Ei_hat - qij*e_Ej_hat
   DCq <- e_Ci_hat - qij*e_Cj_hat
   DECsharpq <- e_ECsharpi_hat - qij*e_ECsharpj_hat
-  DECq <- e_ECi_hat - qij*e_ECj_hat
+  DECq <- e_ECi_hat - qij*e_ECj
   
   #standard error of Delta estimates:
   DEq_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
@@ -159,8 +160,8 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
     # coexistence mechanims and gwr and gwr without ATA contribution 
   ei <- c(e_0i, e_Ei_hat, e_Ci_hat, e_ECsharpi_hat, e_ECi_hat, e_ECpipi_hat, r_i_hat, NA)
   ei_se <- c(0, e_Ei_se, e_Ci_se, e_ECsharpi_se, e_ECi_se, e_ECpipi_se, r_i_se, NA)
-  ej <- c(e_0j, e_Ej_hat, e_Cj_hat, e_ECsharpj_hat, e_ECj_hat, e_ECpipj, r_j, NA)
-  ej_se <- c(0, e_Ej_se, e_Cj_se, e_ECsharpj_se, e_ECj_se, 0, 0, NA)
+  ej <- c(e_0j, e_Ej_hat, e_Cj_hat, e_ECsharpj_hat, e_ECj, e_ECpipj_hat, r_j, NA)
+  ej_se <- c(0, e_Ej_se, e_Cj_se, e_ECsharpj_se, 0, e_ECpipj_se, 0, NA)
   D <- c(D0, DE, DC, DECsharp, DEC, DECpip, Dr, DrwoATA)
   D_se <- c(0, DE_se, DC_se, DECsharp_se, DEC_se, DECpip_se, Dr_se, NA)
   Dq <- c(D0, DEq, DCq, DECsharpq, DECq, DECpip, Dr, DrwoATA)
