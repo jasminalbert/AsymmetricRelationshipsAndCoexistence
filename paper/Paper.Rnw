@@ -298,8 +298,8 @@ and a means of understanding its theoretical and empirical importance.
 
 \section{Theory}\label{section:theory}
 
-We here pursue goal G1 from the Introduction: to augment MCT to illuminate how ATA
-plays a role in coexistence. We develop each step of our new theory for a general 
+We here pursue goal G1 from the Introduction: to augment MCT to show formally how ATAs play a role in coexistence. 
+We develop each step of our new theory for a general 
 two-species model (below), and also specifically for the lottery model of the Introduction 
 (SI section \ref{SI-SIsect:TheoryForLottery}).
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
