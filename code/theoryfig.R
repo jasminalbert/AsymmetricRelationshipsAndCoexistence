@@ -33,8 +33,8 @@ dnmarg<-function(x){return(dnorm(x,mean=0,sd=1))}
 pnmarg<-function(x){return(pnorm(x,mean=0,sd=1))}
 qnmarg<-function(x){return(qnorm(x,mean=0,sd=1))}
 
-x<-seq(from=-0.51,to=0.49,by=0.01)
-y<-seq(from=-0.51,to=0.49,by=0.01)
+x<-seq(from=-4,to=4,by=0.01)
+y<-seq(from=-4,to=4,by=0.01)
 
 shape1<-0.5;shape2<-0.5
 
