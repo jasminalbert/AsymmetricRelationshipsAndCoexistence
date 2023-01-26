@@ -1,18 +1,26 @@
-
+# d		pdf (density function) of marginals
+# p		cdf of marginals
+# q		inverse cdf (quantile function) of marginals
+# cop	copula object of desired shape
+# x		x values
+# y 	y values
+		
 theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,col=F,log_points=F,...){
-	probdisf <- makepdf(cop,d,d,p,p)
+	
+	#makepdf with some copula structure and marginals
+	probdisf <- makepdf(cop,d,d,p,p) 
 	xy <- expand.grid(x,y)
 	z <- probdisf(xy)
 	z <- matrix(z, length(x), length(y))
 	
-	#layout(matrix(c(2,4,1,3), byrow=T, nrow=2), heights=c(.3,1), widths=c(1,.3))
-	#par(mar=c(0.5,0.5,0.5,0.5), oma=c(2,2,1,1), xpd=NA)
-	#contour(x,y,log10(z),xlim=range(x),ylim=range(y),nlevels=10, bty='l')
+	
 	plot(x,y,type="n", xlab="",ylab="", bty="l")
 	if (gnrt_var == TRUE){
+		#make new random vars for points
 		rand_var <- makerandgenrtr(cop,q,q)
 		samps <- rand_var(1000)
 	} else{
+		#or use inv cdf to transform from existing rvs
 		samps <- tdis(q, oldp, samps)
 	}
 	if (col==TRUE){
@@ -42,6 +50,7 @@ theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,
 	plot.new() 
 	return(samps)
 }
+
 
 tdis <- function(q, oldp, samps){
 	samps <- q(oldp(samps))
