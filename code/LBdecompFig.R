@@ -1,4 +1,4 @@
-source("./lottery_beta/decompose_LB2.R")
+source("./decompose_LB.R")
 numRes_loc <- "../results_numeric/"
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 B<-readRDS(betanoise_loc)
@@ -18,7 +18,7 @@ plotco <- function(lb_i,lb_j,ub_i,ub_j,delta, noise,Deltas_loc=0,...){
 		store <- vector(mode='list')
 
 		for (j in 1:length(ub_j)){
-    		store[[j]] <- decompose(lb_i,lb_j,ub_i,ub_j[j], delta,b,...)
+    		store[[j]] <- decomposeB(lb_i,lb_j,ub_i,ub_j[j], delta,B,...)
     		cat(".")
     	}
     	cat("done")
@@ -67,7 +67,7 @@ plotco <- function(lb_i,lb_j,ub_i,ub_j,delta, noise,Deltas_loc=0,...){
 	#title(main=paste("mu_j=",params["mu_j"], "sigma_i=",params["sigma_i"], "sigma_j=",params["sigma_j"], "delta=",params["delta"]))
 }
 fig_loc <- "../results_figs/"
-res_loc <- paste0(numeric_results_loc,"fig3LB/")
+res_loc <- paste0(numRes_loc,"fig3LB/")
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
@@ -102,7 +102,7 @@ par(mfrow=c(2,3), oma=c(3,4,4,7), mar=c(1,1,1,1), mgp=c(3,1,0), xpd=NA)
 for (d in seq_along(delta)){
 	
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_LT.RDS")
-	DeltasLT <- plotco(lb_i,lb_j,ub_i,ub_j,delta[d], b,Deltas_loc=file)
+	DeltasLT <- plotco(lb_i,lb_j,ub_i,ub_j,delta[d], B,Deltas_loc=file)
 	
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
 	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
@@ -125,7 +125,7 @@ for (d in seq_along(delta)){
 #d-f (right-tail)
 for (d in 1:length(delta)){
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_RT.RDS")
-	DeltasRT <- plotco(lb_i,lb_j,ub_i,ub_j,delta[d],b, Deltas_loc=file, dir="RIGHT")
+	DeltasRT <- plotco(lb_i,lb_j,ub_i,ub_j,delta[d],B, Deltas_loc=file, dir="RIGHT")
 	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
 	if (d==1){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
