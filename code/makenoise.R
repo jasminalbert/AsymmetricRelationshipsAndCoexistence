@@ -5,14 +5,14 @@
 ##libraries used (invoked with ::): MASS, stats
 
 ### location to save results ###
-numeric_results_loc <- "../results_numeric"
+numRes_loc <- "../results_numeric/"
 
-if(dir.exists(numeric_results_loc)==FALSE){
-  dir.create(numeric_results_loc)
+if(dir.exists(numRes_loc)==FALSE){
+  dir.create(numRes_loc)
 }
-noise_loc <- paste0(numeric_results_loc, "/noise.RData")
-M_loc <- paste0(numeric_results_loc, "/M.RDS")
-rho_loc <- paste0(numeric_results_loc, "/rho.RDS")
+noise_loc <- paste0(numRes_loc, "noise.RData")
+M_loc <- paste0(numRes_loc, "M.RDS")
+rho_loc <- paste0(numRes_loc, "rho.RDS")
 
 ### makenoise function ###
 #follows protocol described in SupMat section S3:Noise
@@ -67,7 +67,7 @@ b <- makenoise(M)
 u <- stats::rnorm(M)
 
 #get correlation
-rho <- stats::cor(b_tilde$l)[1,2]
+rho <- stats::cor(b$l)[1,2]
 cat("M=",M, " rho=", rho)
 
 ### save results ###
