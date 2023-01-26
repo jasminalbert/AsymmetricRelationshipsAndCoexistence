@@ -299,9 +299,7 @@ and a means of understanding its theoretical and empirical importance.
 \section{Theory}\label{section:theory}
 
 We here pursue goal G1 from the Introduction: to augment MCT to show formally how ATAs play a role in coexistence. 
-We develop each step of our new theory for a general 
-two-species model (below), and also specifically for the lottery model of the Introduction 
-(SI section \ref{SI-SIsect:TheoryForLottery}).
+We develop our new theory for a general two-species model, later applying it to specific scenarios.
 MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
 multiple mechanisms to coexistence. But we show below
@@ -314,6 +312,8 @@ competitive pressure on species $i$, $C_i(t)$. We also assume, for simplicity,
 that the $E_i(t)$ are iid through time, and likewise for the
 $C_i(t)$. Though the iid assumption can be circumvented, we make the assumption because it simplifies the
 presentation of new ideas. 
+
+\subsection{The storage effect}
 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between rare and common species mean growth rates, when $i$ is rare.
@@ -341,10 +341,8 @@ An expression for $\olrs_{i \bs i}$ is obtained from $\olr_{i \bs i}$ by replaci
 variable $(E_i,C_{i \bs i})$ by a random variable with the same marginal distributions, but independent components, 
 $(E_i^\shp,C_{i \bs i}^\shp)$, so $\olrs_{i \bs i}=\E[r_i(E_i^\shp,C_{i \bs i}^\shp)]$.
 Likewise, $\olrs_{j \bs i}=\E[r_j(E_j^\shp,C_{j \bs i}^\shp)]$.
-Though some readers may find it slightly confusing to simultaneously use the variable 
-$E_i$ and the operator $\E(\cdot)$, both of these notational choices are standard, so it would 
-be more confusing to use alternative notation. Like all variables, $E_i$ is rendered in italic; like
-all operators, $\E(\cdot)$ is rendered upright.
+
+\subsection{Decomposing the storage effect}
 
 We now specify how to decompose storage effects into
 contributions due to ATAs and due
@@ -369,7 +367,8 @@ and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition
 &= \Delta_i^{[EC]} + \Delta_i^{[E \nat C]}.\label{eq:storage_effects_further}
 \end{align}
 The term $\Delta_i^{[EC]}$ is the component of storage effects due to 
-ATAs between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$.
+ATAs between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$. We will refer to this term as 
+the \emph{ATA effect on coexistence}. 
 The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to $EC$ 
 correlation \emph{per se}, remaining after having removed the effects of ATAs.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
@@ -380,18 +379,22 @@ The brackets in $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to in
 of storage effects, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
 below for additional details.
 
+\subsection{Removing asymmetries of association}
+
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
-correlation unchanged? We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
+correlation unchanged? Fig. \ref{fig:pedagog2} provides an illustration of the steps we describe here. 
+We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
 $C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively, are strictly monotonic and continuous. 
 Letting $\varphi$ be the CDF of a standard normal distribution, we consider the random variables
 $\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
-distributed, although they are not necessarily jointly bivariate normal.  Let $\rho_i$ be the covariance of
+distributed, although they are not necessarily jointly bivariate normal (Fig. \ref{fig:pedagog2}a,b).  
+Let $\rho_i$ be the covariance of
 these random variables. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
 $\E(e_i)=\E(c_{i \bs i})=0$ and $\var(e_i)=\var(c_{i \bs i})=1$, and we denote 
-$\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$. We define 
+$\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$ (Fig. \ref{fig:pedagog2}c). We define 
 $E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
-and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$. The value of $\ddot{\rho}_i$ is then determined 
-in one of 
+and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$ (Fig. \ref{fig:pedagog2}d). 
+The value of $\ddot{\rho}_i$ is then determined in one of 
 four alternative ways: $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
 $E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
 $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
@@ -401,6 +404,8 @@ The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
 $C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
 as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
+
+\subsection{Our decomposition as an extention of modern coexistence theory}
 
 The other mechanisms in MCT that apply in our modelling context of purely temporal variation
 make no reference to covariation between quantities, whereas ATAs are 
@@ -428,7 +433,8 @@ so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is st
 \end{equation}
 which is the extension of MCT which was goal G1 of the Introduction. One typically (but see below) must examine this quantity for each species, $i$,
 to obtain complete information about coexistence. To pursue goal G2, below, we will quantify
-the magnitude of the new ATA term, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms. 
+the magnitude of the new ATA term, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms for the 
+lottery model described in the Introduction. 
 
 \section{Methods}\label{section:methods}
 
@@ -718,22 +724,21 @@ such as predation and facilitation that can also mediate coexistence, and other 
 
 The authors thank Shyamolina Ghosh for suggesting the research problem, and Lawrence Sheppard, Max Castorani,
 Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, and Robin Snyder for helpful discussions. 
+The authors especially thank Steve Ellner for key advice at several watershed moments in the devlopment of the project. 
 The authors were partly supported by US National
-Science Foundation grants 1714195 and 2023474, the James S McDonnell Foundation, and the California Department of Fish and
-Wildlife Delta Science Program. 
-%***DAN: DAN: if we take Ellner off the author list add him back here, and also add him back to the acks in the README. Also take him off the author list in sup mat.
+Science Foundation grants 1714195 and 2023474, the James S McDonnell Foundation, the California Department of Fish and
+Wildlife Delta Science Program, and the Alexander von Humboldt Foundation. 
 
-%you store your bibliographic info in refs.bib, see that file
 \bibliographystyle{ecology_letters2}
 \bibliography{refs}
 
 \clearpage
 \newpage
 
-\begin{figure}
-\includegraphics[width=.25\textwidth]{../results_figs/fig1_vertical.pdf}
 %***DAN: I edited the caption (2023 01 25) but need to replace the figure once I know where in the repo 
 %structure it is generated and stored, and after I have re-run Jasmin's code
+\begin{figure}
+\includegraphics[width=.25\textwidth]{../results_figs/fig1_vertical.pdf}
 \caption{Examples motivating our study of the effects of asymmetric tail associations (ATAs) on competition
 and coexistence. (a-c) Bivariate random variables with standard normal marginals showing
 alternative patterns of association in the left and right parts of the distributions. 
@@ -756,24 +761,31 @@ in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by loc
 left-tail association and (h) showing right-tail association. \label{fig:pedagog1}}
 \end{figure}
 
+%***DAN: I edited the caption (2023 01 26) but this is the completely the wrong figure. I need to replace it 
+%with Jasmin's new pedagogical figure once I know where in the repo 
+%structure that one is generated and stored, and after I have re-run Jasmin's code, and after she has made the
+%changes I recently asked for (see next comment).
+%***DAN: I asked Jasmin to replace the \phi with \varphi in the axis labels on b and d, and to make the marginals
+%on b and c be *standard* normal instead of just normal.
 \begin{figure}
 \includegraphics[width=.75\textwidth]{../results_figs/fig2.pdf}
-\caption{Our simulated lottery-model populations influenced by asymmetric tail associations (ATAs) recovered 
-from low densities less often and 
-spent more time in a state of one-species dominance, demonstrating that ATAs can influence aspects of 
-species coexistence. Panel (a) shows species 1 from the lottery 
-model subject to environmental noise with symmetric tail associations (Fig. \ref{fig:noise}b). Panel (b) shows species 1 from the 
-same model with the same parameters, but subject to noise with left-tail association (Fig. \ref{fig:noise}a).
-Both simulations were run for \Sexpr{M} time steps, though only the first $1000$ are shown. Periods of 
-``noticeable coexistence'' of the species, defined to be periods when each species comprises at least $5\%$ of 
-total abundance, are marked in grey. The average duration of periods of noticeable coexistence 
-was \Sexpr{fig2$coMets$Sym$co} time steps for panel (a) and \Sexpr{fig2$coMets$Asy$co} for panel (b), over the full length of the simulations; 
-whereas the average duration of periods of
-one-species dominance was \Sexpr{fig2$coMets$Sym$dom} time steps for panel (a) and \Sexpr{fig2$coMets$Asy$dom} for (b). Thus, while periods of 
-noticeable coexistence were of similar duration for the two scenarios, periods of one-species dominance were much longer,
-on average, for the ATA case. Parameters were $\mu_1 = \Sexpr{fig2$params[1]}$,
-$\mu_2 = \Sexpr{fig2$params[2]}$, $\sigma = \Sexpr{fig2$params[3]}$, and $\delta = \Sexpr{fig2$params[4]}$. 
-See Introduction and Fig. \ref{fig:noise} caption for model details. \label{fig:pedagog}}
+\caption{Illustration of how asymmetric tail associations are removed while retaining marginal distributions and correlation 
+between variables (see Theory). (a) An example original bivariate distribution $(E_i,C_{i \bs i})$, with ATA present. 
+(b) Marginals are now normalized. The variables $E_i$ and $C_{i \bs i}$ are individually transformed to have standard normal 
+marginals through a composition of the inverse of the standard normal cumulative distribution function (CDF), 
+$\varphi^{-1}$, and 
+each variable's CDF, $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively.  
+(c) A newly generated bivariate normal distribution, $(e_i,c_{i \bs i})$, with correlation $\ddot{\rho}=\rho$
+selected to match that of the original distribution (see Theory). (d) Two new variables, 
+$E_i^{||}$ and  $C_{i \bs i}^{||}$,
+%***DAN: I replaced \nat in the above two expressions by || because for some reason the \nat does not
+%compile when it occurs within a caption. Not sure how to deal with that, but leaving it alone for now.
+which have the same marginals and correlation as the original $E_i$ and $C_{i \bs i}$ variables of (a) but 
+which have symmetric association structure. These variables are obtained by transforming the marginals from (c), 
+$e_i$ and $c_{i \bs i}$, using the inverses of the functions used in (b).
+For illustration purposes we started with beta distributed $E_i$ and $C_{i \bs i}$. Contour lines are 
+$\log_{10}$ of probability density on all panels. 
+\label{fig:pedagog2}}
 \end{figure}
 
 \begin{figure}

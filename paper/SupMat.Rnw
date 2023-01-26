@@ -130,54 +130,6 @@ se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
 \tableofcontents
 \listoffigures
 
-\section{Theory for the lottery model}\label{SIsect:TheoryForLottery}
-
-For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
-the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
-divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
-does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
-Species growth rates for the lottery model can then be written 
-$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$, which is an increasing
-function of $E_i$ and decreasing function of $C_i$.
-
-When $i$ is an invader, the competition experienced by either 
-species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$; and likewise to get
-$\olr_{i \bs i}$ from the expression for $r_i$ for the model. Thus 
-$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta$, and 
-$\olr_{i \bs i} = \E[\ln(1-\delta+\delta B_i/B_j)]=\E[\ln(1-\delta+E_i /C_{i \bs i})]$. 
-Likewise, 
-$\olr_{j \bs i} = \E[\ln(1-\delta+\delta B_j/B_j)]=\E[\ln(1-\delta+E_j/C_{j \bs i})]$,
-though we already knew this equals $0$. 
-An expression for $\olrs_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
-by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
-Thus $\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)]$. Likewise,
-$\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we use 
-$(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
-$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
-We show in SI section \ref{SIsect:scaling_factors}
-that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
-Since we assumed log-normally distributed $B_i$, 
-$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
-We alternatively also consider $q_{ij}=1$, for reasons explained in SI section \ref{SIsect:scaling_factors}.
-Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
-to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
-and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into main text equation (\ref{MT-eq:storage_effects_gen}).
-
-For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
-$\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
-$\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
-Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
-Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
-$\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
-can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
-is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
-and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
-marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
-$(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
-component $\olrn_{i \bs i}$ of main text equation (\ref{MT-eq:storage_effects_further1}) for the lottery model using the simulation 
-approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
-so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
-
 \section{Scaling factors}\label{SIsect:scaling_factors}
 
 Following \cite{Ellner_2016}, we define
@@ -197,40 +149,42 @@ and evaluating it at $\sC_{j \bs i}=0$ [see \cite{Chesson_1994} and \cite{Ellner
 on this definition]. To make sense of this definition, it must be possible to write $\sC_{i \bs i}$, explicitly 
 or implicitly, uniquely as a function of $\sC_{j \bs i}$ \citep{Ellner_2016}.
 
-For the lottery model, for $i \neq j$, we have
-\begin{align}
-\sC_j &= -\ln \left[ 1-\delta+\delta N \frac{\overline{B}_j}{B_1(t) N_1 (t) + B_2(t) N_2(t)}  \right]  \\
-\sC_{j \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_j}{B_j(t)} \right] \\
-\sC_{i \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_i}{B_j(t)} \right].
-\end{align}
-Both $\sC_{i \bs i}$ and $\sC_{j \bs i}$ are strictly monotonic functions of $B_j$, so the function
-$B_j \mapsto \sC_{j \bs i}$ is invertible, and using its inverse provides an expression of $\sC_{i \bs i}$ 
-in terms of $\sC_{j \bs i}$. One could write this expression explicitly and then differentiate it to calculate $q_{ij}$,
-but we instead compute $q_{ij}$ through implicit differentiation:
-\begin{align}
-\frac{\partial \sC_{i \bs i}}{\partial \sC_{j \bs i}} &= \left. \frac{\partial \sC_{i \bs i}}{\partial B_j} \middle/ \frac{\partial \sC_{j \bs i}}{\partial B_j} \right. \\
-&= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{B_j}}{1-\delta+\delta \frac{\overline{B}_i}{B_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right).
-\end{align}
-Solving $\sC_{j \bs i}=0$ gives $B_j=\overline{B}_j$, so 
-\begin{align}
-q_{ij} &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{\overline{B}_j}}{1-\delta+\delta \frac{\overline{B}_i}{\overline{B}_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right) \\
-&= \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta},
-\end{align}
-as stated in the main text. 
+%***DAN: I decided to present the general theory (not for the lottery model but for the
+%general case) in the Theory section in the main text, putting off the specific lottery
+%model application to later. For that, I need to explain scaling factors in general.
+%So this section is now for that explanation. That means the below text, which is about
+%the scaling factors for the lottery model need to be handled later. It is good, however,
+%that the below text is for the general lottery model, for either way of doing the 
+%fecundities. That will come in handy later.
+%
+% For the lottery model, for $i \neq j$, we have
+% \begin{align}
+% \sC_j &= -\ln \left[ 1-\delta+\delta N \frac{\overline{B}_j}{B_1(t) N_1 (t) + B_2(t) N_2(t)}  \right]  \\
+% \sC_{j \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_j}{B_j(t)} \right] \\
+% \sC_{i \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_i}{B_j(t)} \right].
+% \end{align}
+% Both $\sC_{i \bs i}$ and $\sC_{j \bs i}$ are strictly monotonic functions of $B_j$, so the function
+% $B_j \mapsto \sC_{j \bs i}$ is invertible, and using its inverse provides an expression of $\sC_{i \bs i}$ 
+% in terms of $\sC_{j \bs i}$. One could write this expression explicitly and then differentiate it to calculate $q_{ij}$,
+% but we instead compute $q_{ij}$ through implicit differentiation:
+% \begin{align}
+% \frac{\partial \sC_{i \bs i}}{\partial \sC_{j \bs i}} &= \left. \frac{\partial \sC_{i \bs i}}{\partial B_j} \middle/ \frac{\partial \sC_{j \bs i}}{\partial B_j} \right. \\
+% &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{B_j}}{1-\delta+\delta \frac{\overline{B}_i}{B_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right).
+% \end{align}
+% Solving $\sC_{j \bs i}=0$ gives $B_j=\overline{B}_j$, so 
+% \begin{align}
+% q_{ij} &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{\overline{B}_j}}{1-\delta+\delta \frac{\overline{B}_i}{\overline{B}_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right) \\
+% &= \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta},
+% \end{align}
+% as stated in the main text. 
 
-%***DAN: Change the below paragraph if needed. Some reasons it might be needed: Steve joins as a coauthor - easy
-%just means a change in wording at the top bit;
-%Steve reads this and thinks it makes sense to change it because something is factually or presentationally 
-%sub-optimal; or Dan or Jasmin actually develops a more rigorous understanding of scaling factors and based
-%on that thinks something here is sub-optimal. Anyway, the "do both" approach seems like it can't go wrong,
-%especially if Steve's prediction is correct that it won't make much difference.
-%***DAN: Dan, you probably need to spend a bit more time with the cited papers to better understand this. 
 We also use $q_{ij}=1$ as an alternative value, for the following reasons.
 First, as discussed in the supporting information of \cite{Ellner_2016}, and as further elaborated by 
 \cite{Barabas_2018}, it takes very special circumstances for the scaling factors to exist and be unique, 
 especially with size-structured models. Second, in empirically parameterized models, scaling factor values are 
 often not robust to arbitrary modelling choices. 
-Although the lottery model is not size structured and we do not empirically parameterize it, the above shortcomings of 
+Although the lottery model to which we apply our theory 
+is not size structured and we do not empirically parameterize it, the above shortcomings of 
 scaling factors, generally, suggest we should find alternatives to their use. The alternative 
 suggested by Ellner for empirical applications is to do a series of pairwise invader-resident comparisons, each with an 
 equal weighting of invader and resident $r$ values; for our context this amounts to setting scaling factors to $1$. 
@@ -243,16 +197,15 @@ by researchers making that choice.
 We first review the decompositions of \cite{Ellner_2016} and \cite{Ellner_2019}, which are similar to and motivated by the 
 original decompositions of \cite{Chesson_1994}; and then we include our extensions of the decomposition. 
 
-We begin by decomposing 
-the invasion growth rate,
+We begin by decomposing the GWR,
 \begin{equation}
 \olr_{i \bs i}=\E[r_i(E_i,C_{i \bs i})].
 \end{equation}
-The invasion growth rate with both $E_i$ and $C_{i \bs i}$ constant at their means is 
+Replacing both $E_i$ and $C_{i \bs i}$ with their means gives 
 \begin{align}
 \epsilon_i^0 = r_i(\overline{E}_i,\overline{C}_{i \bs i}).
 \end{align}
-The additional contribution of variation in $E_i$ to the invasion growth rate is then
+The additional contribution of variation in $E_i$ to the GWR is then
 \begin{equation}
 \olep_i^E = \E[r_i(E_i,\overline{C}_{i \bs i})]-\epsilon_i^0,
 \end{equation}
@@ -309,7 +262,7 @@ As in the main text, we can now define the tertiary decomposition
 \end{align}
 The brackets in the superscripts of $\olep_i^{[EC]}$ and $\olep_i^{[E \nat C]}$ indicate that we are talking about a term in the
 tertiary decomposition, i.e., in the decomposition of $\olep_i^{(EC)}$. 
-The term $\olep_i^{[EC]}$ quantifies the influence of asymmetric tail associations of $E_i$ and $C_{i \bs i}$ on the invasion growth rate,
+The term $\olep_i^{[EC]}$ quantifies the influence of asymmetric tail associations of $E_i$ and $C_{i \bs i}$ on GWR,
 and the the term $\olep_i^{[E \nat C]}$ corresponds to $EC$ correlations \emph{per se}, after the removal of asymmetries of tail association.
 The symbol $\nat$ denotes the removal of asymmetries of tail association. We therefore have 
 \begin{equation}
@@ -335,6 +288,54 @@ variation \emph{per se} in both environment and competition, not including the e
 not including the effects of asymmetric tail associations between environment and competition;
 and $\Delta_i^{[EC]}=\olep_i^{[EC]} - q_{ij} \olep_j^{[EC]}$ is the contribution to coexistence of 
 asymmetric tail associations. The subscript $i$ on all these newly defined quantities $\Delta_i$ refers to species $i$.
+
+\section{Theory for the lottery model}\label{SIsect:TheoryForLottery}
+
+For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
+the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
+divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
+does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
+Species growth rates for the lottery model can then be written 
+$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$, which is an increasing
+function of $E_i$ and decreasing function of $C_i$.
+
+When $i$ is an invader, the competition experienced by either 
+species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$; and likewise to get
+$\olr_{i \bs i}$ from the expression for $r_i$ for the model. Thus 
+$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta$, and 
+$\olr_{i \bs i} = \E[\ln(1-\delta+\delta B_i/B_j)]=\E[\ln(1-\delta+E_i /C_{i \bs i})]$. 
+Likewise, 
+$\olr_{j \bs i} = \E[\ln(1-\delta+\delta B_j/B_j)]=\E[\ln(1-\delta+E_j/C_{j \bs i})]$,
+though we already knew this equals $0$. 
+An expression for $\olrs_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
+by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
+Thus $\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)]$. Likewise,
+$\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we use 
+$(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
+$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
+We show in SI section \ref{SIsect:scaling_factors}
+that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
+Since we assumed log-normally distributed $B_i$, 
+$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
+We alternatively also consider $q_{ij}=1$, for reasons explained in SI section \ref{SIsect:scaling_factors}.
+Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
+to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
+and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into main text equation (\ref{MT-eq:storage_effects_gen}).
+
+For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
+$\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
+$\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
+Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
+Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
+$\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
+can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
+is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
+and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
+marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
+$(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
+component $\olrn_{i \bs i}$ of main text equation (\ref{MT-eq:storage_effects_further1}) for the lottery model using the simulation 
+approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
+so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
 
 \section{Noise} \label{sect:noise}
 
