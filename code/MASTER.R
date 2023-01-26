@@ -22,7 +22,7 @@ source("./beta_transform.R")
 
 #beta pop sim
 #can change parameters for pop sim here
-source("/beta_popsims.R")
+source("./beta_popsims.R")
 
 #plankton data for fig 1
 source("./plankton.R")
