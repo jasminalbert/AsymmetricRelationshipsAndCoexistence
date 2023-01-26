@@ -12,7 +12,7 @@ makeDeltas <- function(noise_loc, sigma, mudif, delta,qij=FALSE){
 		
 	#iterate across variance parameter to compute decomposition (see sourced scripts)
 	for (i in 1:length(sigma)){
-    	store[[i]] <- decompose(mudif,sigma[i],delta,b_tilde,u_tilde)
+    	store[[i]] <- decompose(mudif,sigma[i],delta,b,u)
     	cat(".")
     }
     cat("done")
