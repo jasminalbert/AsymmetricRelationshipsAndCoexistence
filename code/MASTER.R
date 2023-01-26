@@ -40,7 +40,7 @@ source("./theoryfig.R")
 source("./Figure3.R")
 
 #FIGURE 4
-source("./Figure4.R")
+source("./LBdecompFig.R")
 
 #FIGURE 5
 source("./diatom/Figure5.R")
