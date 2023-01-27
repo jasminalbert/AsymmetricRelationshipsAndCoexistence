@@ -24,15 +24,17 @@ ccop<-claytonCopula(2)
 ccop<-claytonCopula(iRho(ccop,rho(ncop)))
 
 #distribution functions
+##beta
 dbmarg<-function(x){return(dbeta(x+.5,shape1=shape1,shape2=shape2))}
 pbmarg<-function(x){return(pbeta(x+.5,shape1=shape1,shape2=shape2))}
 qbmarg<-function(x){return(qbeta(x,shape1=shape1,shape2=shape2)-.5)}
-dnmarg<-function(x){return(dnorm(x,mean=0,sd=0.5/3))}
-pnmarg<-function(x){return(pnorm(x,mean=0,sd=0.5/3))}
-qnmarg<-function(x){return(qnorm(x,mean=0,sd=0.5/3))}
+##normal
+dnmarg<-function(x){return(dnorm(x,mean=0,sd=1))}
+pnmarg<-function(x){return(pnorm(x,mean=0,sd=1))}
+qnmarg<-function(x){return(qnorm(x,mean=0,sd=1))}
 
-x<-seq(from=-0.51,to=0.49,by=0.01)
-y<-seq(from=-0.51,to=0.49,by=0.01)
+x<-seq(from=-4,to=4,by=0.01)
+y<-seq(from=-4,to=4,by=0.01)
 
 shape1<-0.5;shape2<-0.5
 

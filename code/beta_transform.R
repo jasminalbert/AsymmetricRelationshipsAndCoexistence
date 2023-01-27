@@ -19,7 +19,7 @@ load(noise_loc) #list of noise, b, containing:
 	# by taking the F of the respective (b_i, b_j)'s
 
 #transforming normal noise to beta
-F <- function(noise,...){
+norm2beta <- function(noise,...){
 	qbeta(pnorm(noise),...)
 }
 
@@ -38,7 +38,7 @@ plot(b$til[1:10000,1], b$til[1:10000,2]); cov(b$til)
 plot(b$s[1:10000,1], b$s[1:10000,2]); cov(b$s)
 
 #transform
-betaB <- lapply(b, FUN=F, shape1=0.5, shape2=0.5)
+betaB <- lapply(b, FUN=norm2beta, shape1=0.5, shape2=0.5)
 #check
 hist(betaB$l[,1]); mean(betaB$l[,1]); sd(betaB$l[,1])
 hist(betaB$l[,2]); mean(betaB$l[,2]); sd(betaB$l[,2])

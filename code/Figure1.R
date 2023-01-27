@@ -81,8 +81,8 @@ title(ylab="C. furca density", line=-1.6)
 for (panel in 1:2){
 	cerfus <- ceratium1x2[[panel]]$cerfus
 	cerfur <- ceratium1x2[[panel]]$cerfur
-	T <- dim(ceratium1x2[[panel]])[1]
-	graphics::plot(rank(cerfus)/T, rank(cerfur)/T, bty="n",pch=20, col="darkgrey", cex=2, ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
+	Tot <- dim(ceratium1x2[[panel]])[1]
+	graphics::plot(rank(cerfus)/Tot, rank(cerfur)/Tot, bty="n",pch=20, col="darkgrey", cex=2, ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
 	graphics::mtext(paste0("(",letters[panel+6],")"), side=3, line=-1.5, at=0.05)
 }
 #mtext("C. furca density", side=4,outer=T, line=-14, cex=1)
