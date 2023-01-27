@@ -234,13 +234,15 @@ N_i(t+1)=(1-\delta)N_i(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)
 for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundity of species $i$ at time $t$. 
 The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles 
 in proportion to the reproductive outputs of the two species that year. Note that $N$ is constant through time. 
+Notation for the whole paper is summarized in Table X.
+%***DAN: make the table
 For each $i$, we assume for simplicity that the random variables $B_i(t)$ are independent and identically 
 distributed (iid) through time. In three distinct similations (Fig. \ref{fig:pedagog1}d-f), 
 $B_1$ and $B_2$ were, respectively, 
 left- (Fig. \ref{fig:pedagog1}a), right- (Fig. \ref{fig:pedagog1}c) and symetrically (Fig. \ref{fig:pedagog1}b)
 tail associated, while the same marginal distributions for these fecundities were used in all simulations (see Methods
 for details). Thus, the model setup was identical in the three simulations except for different ATAs. 
-ATAs substantially influenced aspects of species coexistence (Fig. \ref{fig:pedagog1}d-f).
+ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}d-f).
 
 %***DAN: I commented the below because we decided it does not belong in the Intro, but a version of it 
 %should be in the Discussion. Keeping it for now until I have a chance to move it there. Note also that
@@ -290,8 +292,9 @@ from ATAs compared to other, previously known mechanisms of coexistence; and to 
 sometimes coexist with ATAs but not without, or vice versa. This is to help 
 illuminate whether ATA contributions to coexistence and biodiversity maintenance
 are likely to be negligible or meaningfully large. 
-G3) To provide an empirical example of species coexistence which highlights the role ATAs can play.
-In the Discussion, we consider whether climate change may alter
+G3) To provide an empirical example of species coexistence which highlights the role ATAs can play and the
+potential importance of ATAs relative to other mechanisms of coexistence.
+The example is a diatom system in a chemostat. In the Discussion, we consider whether climate change may alter
 ATAs of environmental variables and thereby influence competition and coexistence.
 Overall, our study presents a new mechanism of species coexistence
 and a means of understanding its theoretical and empirical importance.
@@ -299,29 +302,33 @@ and a means of understanding its theoretical and empirical importance.
 \section{Theory}\label{section:theory}
 
 We here pursue goal G1 from the Introduction: to augment MCT to show formally how ATAs play a role in coexistence. 
+
+\subsection{Theoretical setup}
+
 We develop our new theory for a general two-species model, later applying it to specific scenarios.
-MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
-quantify the contributions of 
-multiple mechanisms to coexistence. But we show below
-that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
-So we begin by defining storage effects. Our mathematical notation parallels
+Our mathematical notation parallels
 that of \cite{Ellner_2016,Ellner_2019}. It is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
 an environment-dependent factor $E_i(t)$ and as a decreasing function of a quantity representing
-competitive pressure on species $i$, $C_i(t)$. We also assume, for simplicity, 
+competitive pressure on species $i$, $C_i(t)$, i.e., $r_i(E_i,C_i)$. We also assume, for simplicity, 
 that the $E_i(t)$ are iid through time, and likewise for the
 $C_i(t)$. Though the iid assumption can be circumvented, we make the assumption because it simplifies the
 presentation of new ideas. 
 
 \subsection{The storage effect}
 
+MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
+quantify the contributions of 
+multiple mechanisms to coexistence. But we show below
+that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
+So we begin by defining storage effects. 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between rare and common species mean growth rates, when $i$ is rare.
 Specifically, storage effects for species $i$ are 
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
 \end{equation}
-where: $\olr_{i \bs i}$ refers to the mean ``growth when rare'' [GWR] of species $i$, that is, the mean growth rate of 
+where: $\olr_{i \bs i}$ refers to the mean ``growth when rare'' (GWR) of species $i$, that is, the mean growth rate of 
 species $i$ when it is at negligible abundance and species $j$ (the other species) is at stochastic steady state;
 $\olr_{j \bs i}$ refers to the mean steady-state 
 growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
@@ -431,12 +438,92 @@ so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is st
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
 \end{equation}
-which is the extension of MCT which was goal G1 of the Introduction. One typically (but see below) must examine this quantity for each species, $i$,
-to obtain complete information about coexistence. To pursue goal G2, below, we will quantify
-the magnitude of the new ATA term, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms for the 
-lottery model described in the Introduction. 
+which is the extension of MCT which was goal G1 of the Introduction. 
+
+\subsection{ATA rescue and exclusion}
+
+To evaluate the importance of ATAs for a given scenario,
+one can quantify
+the magnitude of the new ATA effect term, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms for the 
+scenario.  One typically (but see below) must examine this quantity for each species, $i$,
+to obtain complete information about coexistence, since coexistence requires both species populations to 
+be able to grow when rare. We also defined scenarios of ``ATA rescue''
+and ``ATA exclusion''. \emph{ATA rescue} was considered to have occurred for a given scenario if coexistence
+was possible when ATAs were taken into account, i.e., GWR$>0$ for both species, but impossible otherwise, i.e.,
+the sum of the non-ATA terms in (\ref{eq:full_decomp}) was negative for at least one species. \emph{ATA exclusion} was 
+considered to have occurred if the species did not coexist when ATAs
+were taken into account, i.e., GWR$<0$ for at least one species, but would have coexisted were it not for ATAs, 
+i.e., the sum of the non-ATA terms in (\ref{eq:full_decomp})
+was positive for both species.
 
 \section{Methods}\label{section:methods}
+
+\subsection{Versions of the lottery model}
+
+To pursue goal G2 of the Introduction, we applied the framework of Theory to the lottery model, 
+comparing the magnitude of the ATA effect on coexistance, $\Delta_i^{[EC]}$, to the magnitudes 
+of the other terms of 
+the decomposition (\ref{eq:full_decomp}) for various model parameterizations. We used two versions 
+of the lottery model which we now specify. The versions both used the same dynamical equations
+(Introduction) and assumed temporally independent and identically distributed (iid) fecundities, but the
+versions differed in the distribution of $(B_1,B_2)$ used. Both distributions were based on 
+transformations of the distributions $(b_1,b_2)$ pictured in Fig. \ref{fig:pedagog1}a-c;
+the details of how the left- (Fig. \ref{fig:pedagog1}a), right- (Fig. \ref{fig:pedagog1}c), 
+and symmetrically (Fig. \ref{fig:pedagog1}b) tail associated alternatives for $(b_1,b_2)$ were generated 
+are in SI section \ref{SI-sect:noise}. 
+
+The \emph{log-normal fecundities lottery model} used $B_i = \exp(\sigma+\mu_i b_i)$,
+and therefore had parameters $\sigma$, $\mu_1$ and $\mu_2$ in addition to the death rate parameter $\delta$
+that both versions of the lottery model use (Introduction). The parameter $\sigma$ is the variance of the
+log-fecundities and $\mu_i$ is the mean log fecundity for species $i$. 
+
+The \emph{beta-fecundities lottery model}
+used $B_i = \eta_i F_\beta \circ \varphi^{-1}(b_i)$, where $\varphi$ is the CDF of the standard normal
+distribution and $F_\beta$ is the CDF of a beta distribution 
+with shape and scale parameters $0.5$ (probability density function proportional to $x^{-05}(1-x)^{-0.5}$ on
+the unit interval). So the beta-fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
+and produced fecundities with $U$-shaped distributions between $0$ and $\eta_1$, for $B_1$, and
+$\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$ and larger $\eta_i$ also 
+corresponded to more variable fecundities for species $i$. 
+
+For both versions of the lottery model, 
+fecundities were taken to directly reflect 
+the environment, i.e., the $E_i$ of Theory was set equal to $B_i$. 
+Competition, $C_i(t)$, in the lottery model occurs at the stage of juveniles occupying open sites.
+For both model versions, $C_i$ was therefore taken to be the number of new offspring
+divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
+does not depend on $i$. These choices for $E$ and $C$ meet the assumptions of Theory (SI section Y).
+%***DAN: This SI reference is to the big section S$ listed below, but this material will be in the
+%first part of that section, prior to the subsections.
+
+\subsection{Plotting results for G2}
+
+%Then write a para or section that starts by saying we plotted the decomp terms against model parameters for
+%the log-normal-fecundity lottery model, and some mathematical shortcuts simplified it. Then summarize
+%the shortcuts.
+%This is similar to an existing para. Also cites a lot of sup mat stuff.
+
+%Then a similar para for the beta-fecundity lottery model.
+
+%Then a para about ATA exclusion and rescue and how that was assess for each model - different from
+%the current way of doing it with trait spaces - drop the trait space stuff.
+
+%For the sup mat, I think you will need these sections:
+%S3 - on generating the Fig. 1 noise (only)
+%S4 - as large section with subsections. About the theory for the two lottery models, but not about the effecient computation
+%   Starts with material on the general lottery model
+%   Then a sub-section with all the computations for the log-normal-fecundities lottery model
+%   Then a sub-section for the beta-fecundities lottery model
+%S5 - then a similar section, but for the efficient computations
+%There might be additional sections, see the current sections and see if those need to be maintained
+%as their own sections or can be absorbed into the above.
+%This is going to take some work. 
+
+\subsection{Diatom chemostat system}
+
+%Then on to the diatom stuff.
+
+
 
 %G2
 Left- or right-tail associated noise $(b_1,b_2)$, with $b_i$ normally distributed with mean $\mu_i$ and standard deviation 
