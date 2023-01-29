@@ -822,10 +822,8 @@ Wildlife Delta Science Program, and the Alexander von Humboldt Foundation.
 \clearpage
 \newpage
 
-%***DAN: I edited the caption (2023 01 25) but need to replace the figure once I know where in the repo 
-%structure it is generated and stored, and after I have re-run Jasmin's code
 \begin{figure}
-\includegraphics[width=.25\textwidth]{../results_figs/fig1_vertical.pdf}
+\includegraphics[width=\textwidth]{../results_figs/fig1_a-h.pdf}
 \caption{Examples motivating our study of the effects of asymmetric tail associations (ATAs) on competition
 and coexistence. (a-c) Bivariate random variables with standard normal marginals showing
 alternative patterns of association in the left and right parts of the distributions. 
