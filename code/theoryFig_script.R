@@ -1,11 +1,11 @@
 source("./theory_panel_fxn.R")
 library(latex2exp)
 
-nx<-seq(from=-4,to=4,by=0.01)
-ny<-seq(from=-4,to=4,by=0.01)
+nx<-seq(from=-4,to=4,by=0.02)
+ny<-seq(from=-4,to=4,by=0.02)
 
-bx<-seq(from=-0.5,to=0.5,by=0.01)
-by<-seq(from=-0.5,to=0.5,by=0.01)
+bx<-seq(from=0,to=1.0,by=0.01)
+by<-seq(from=0,to=1.0,by=0.01)
 
 # A BETA MARGS CLAYTON COP
 sampsA <- theoryfigpanel(dbmarg, pbmarg, qbmarg, ccop, bx, by, gnrt_var=TRUE,col=T,log_points=T)
