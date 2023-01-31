@@ -82,7 +82,7 @@
 \newcommand{\bs}{\backslash}
 
 %header material for paper
-\title{Asymmetric relationships and their impact on coexistence}
+\title{Asymmetric relationships and their effects on coexistence}
 \date{}
 
 %Put other possible titles below, commented, and we will select the best one at the end
@@ -338,9 +338,10 @@ A subscript
 $i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
 a subscript $j \bs i$ indicates a quantity computed for $j$ when $i$ is absent.
 The \emph{scaling factor}
-$q_{ij}$ measures the relative sensitivities to competition of the two species, see \cite{Chesson_1994},
+$q_{ij}$ measures the relative sensitivities to competition of the two species. See \cite{Chesson_1994},
 \cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the two
-alternative definitions of $q_{ij}$ that we use. 
+alternative definitions of $q_{ij}$ that we use, but one definition is $q_{ij}=1$, and to understand the new
+ideas presented here it is sufficient to use that definition. 
 Since it was assumed that $r_i=r_i(E_i,C_i)$, we can write $\olr_{i \bs i}=\E[r_i(E_i,C_{i \bs i})]$, where
 $\E(\cdot)$ denotes expected value just as does an overbar, but we use $\E$ for longer expressions.
 Also, $\olr_{j \bs i}=\E[r_j(E_j,C_{j \bs i})]$.
@@ -438,7 +439,7 @@ so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is st
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
 \end{equation}
-which is the extension of MCT which was goal G1 of the Introduction. 
+which is the extension of MCT that was goal G1 of the Introduction. 
 
 \subsection{ATA rescue and exclusion}
 
@@ -460,53 +461,86 @@ was positive for both species.
 
 \subsection{Versions of the lottery model}
 
+%Setup - two versions, and basics which apply to both
 To pursue goal G2 of the Introduction, we applied the framework of Theory to the lottery model, 
 comparing the magnitude of the ATA effect on coexistance, $\Delta_i^{[EC]}$, to the magnitudes 
 of the other terms of 
 the decomposition (\ref{eq:full_decomp}) for various model parameterizations. We used two versions 
 of the lottery model which we now specify. The versions both used the same dynamical equations
 (Introduction) and assumed temporally independent and identically distributed (iid) fecundities, but the
-versions differed in the distribution of $(B_1,B_2)$ used. Both distributions were based on 
+versions differed in the distributions of $(B_1,B_2)$ used. Both distributions were based on 
 transformations of the distributions $(b_1,b_2)$ pictured in Fig. \ref{fig:pedagog1}a-c;
 the details of how the left- (Fig. \ref{fig:pedagog1}a), right- (Fig. \ref{fig:pedagog1}c), 
 and symmetrically (Fig. \ref{fig:pedagog1}b) tail associated alternatives for $(b_1,b_2)$ were generated 
 are in SI section \ref{SI-sect:noise}. 
 
+%the log-normal fecundities version
 The \emph{log-normal fecundities lottery model} used $B_i = \exp(\sigma+\mu_i b_i)$,
 and therefore had parameters $\sigma$, $\mu_1$ and $\mu_2$ in addition to the death rate parameter $\delta$
-that both versions of the lottery model use (Introduction). The parameter $\sigma$ is the variance of the
+(Introduction) that both versions of the lottery model used. The parameter $\sigma$ is the variance of the
 log-fecundities and $\mu_i$ is the mean log fecundity for species $i$. 
 
+%the beta fucundities version
 The \emph{beta-fecundities lottery model}
-used $B_i = \eta_i F_\beta \circ \varphi^{-1}(b_i)$, where $\varphi$ is the CDF of the standard normal
+used $B_i = \eta_i F_\beta^{-1} \circ \varphi(b_i)$, where $\varphi$ is the CDF of the standard normal
 distribution and $F_\beta$ is the CDF of a beta distribution 
 with shape and scale parameters $0.5$ (probability density function proportional to $x^{-05}(1-x)^{-0.5}$ on
 the unit interval). So the beta-fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
-and produced fecundities with $U$-shaped distributions between $0$ and $\eta_1$, for $B_1$, and
-$\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$ and larger $\eta_i$ also 
+and produced fecundities with $U$-shaped, beta distributions between $0$ and $\eta_1$, for $B_1$, and
+$\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$, and larger $\eta_i$ also 
 corresponded to more variable fecundities for species $i$. 
 
+%more stuff that applies to both
 For both versions of the lottery model, 
 fecundities were taken to directly reflect 
 the environment, i.e., the $E_i$ of Theory was set equal to $B_i$. 
 Competition, $C_i(t)$, in the lottery model occurs at the stage of juveniles occupying open sites.
 For both model versions, $C_i$ was therefore taken to be the number of new offspring
 divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
-does not depend on $i$. These choices for $E$ and $C$ meet the assumptions of Theory (SI section Y).
-%***DAN: This SI reference is to the big section S$ listed below, but this material will be in the
-%first part of that section, prior to the subsections.
+does not depend on $i$. These choices for $E_i(t)$ and $C_i(t)$ fulfill the assumption of Theory 
+that the growth rate, $r_i(t)$ is an increasing function of $E_i(t)$ and a decreasing function of $C_i(t)$ 
+(see SI section \ref{SI-SIsect:TheoryForLottery} for details).
 
-\subsection{Plotting results for G2}
+\subsection{How results were plotted for G2}
 
-%Then write a para or section that starts by saying we plotted the decomp terms against model parameters for
-%the log-normal-fecundity lottery model, and some mathematical shortcuts simplified it. Then summarize
-%the shortcuts.
-%This is similar to an existing para. Also cites a lot of sup mat stuff.
+%Plotting shortcuts for the log-normal fecundities model
+To explore, using the log-normal fecundities lottery model, the relative magnitudes of the contributions 
+to coexistence that come from ATAs versus other mechanisms, we plotted the terms of the decomposition 
+(\ref{eq:full_decomp}) for that model against the model parameters $\mu_1$, $\mu_2$, $\sigma$ and $\delta$.
+We labeled regions of the plot which corresponded to ATA rescue or exclusion, i.e., regions for which
+GWR and GWR-$\Delta_i^{[EC]}$ had opposite signs.
+Some mathematical shortcuts, summarized here, simplified plotting. 
+First, we assumed, without loss of generality, that $\mu_1 \leq \mu_2$. To understand coexistence, 
+it was then sufficient to decompose GWR of the weaker competitor, species 1. 
+Second, we showed that, for the log-normal fecundities
+lottery model, none of the components of (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
+instead they depend only on $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). 
+%***DAN: Not sure if this will the right citation anymore after we restructure those parts of the SI
+So we plotted against $\mu_1 - \mu_2$. 
+Third, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
+for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}). 
+%***DAN: Also check this citation
+So we only generated plots 
+for left-tail associated noise. For each combination of $\delta=0.2, 0.4, 0.6$
+and $\mu_1-\mu_2=0,-0.5,-2,-4$,
+we plotted the components of (\ref{eq:full_decomp}) against $\sigma$. 
+%***DAN: Jasmin mentioned that she only used \delta=0.2, .4, .6 because of a comment Ellner made where he 
+%said it was known that larger values of \delta made for very little storage effects. Read that comment 
+%again and then write something here to jstify the choice. I think I can probably then delete the section of
+%sup mat, mentioned in the commented text below, that talks about \delta=1.
+%Mathematical simplications for the $\delta=1$ case make it straightforward to see that
+%coexistence is impossible and that the case is relatively trivial (SI 
+%section \ref{SI-sect:delta1}), so that case is not plotted.  
+The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
+Computationally efficient means of performing these simulations are in 
+SI section \ref{SI-sect:efficient_computation}.
+%***DAN: check the citation after restructuring the SI
 
 %Then a similar para for the beta-fecundity lottery model.
-
-%Then a para about ATA exclusion and rescue and how that was assess for each model - different from
-%the current way of doing it with trait spaces - drop the trait space stuff.
+To explore, using the beta fecundities lottery model, the relative magnitudes of the contributions 
+to coexistence that come from ATAs versus other mechanisms, we plotted the terms of the decomposition 
+(\ref{eq:full_decomp}) for that model against the model parameters $\eta_1$, $\eta_2$, and $\delta$.
+%***DAN: finish it
 
 %For the sup mat, I think you will need these sections:
 %S3 - on generating the Fig. 1 noise (only)
@@ -525,34 +559,6 @@ does not depend on $i$. These choices for $E$ and $C$ meet the assumptions of Th
 
 
 
-%G2
-Left- or right-tail associated noise $(b_1,b_2)$, with $b_i$ normally distributed with mean $\mu_i$ and standard deviation 
-$\sigma$, was generated as pictured in Fig. \ref{fig:noise}, details in SI section \ref{SI-sect:noise}.
-To achieve goal G2 from the Introduction, i.e., to explore using a simple model the relative magnitudes of the contributions 
-to coexistence that come from ATAs versus other mechanisms, we plotted the terms $\Delta_i^0$, $\Delta_i^E$, $\Delta_i^C$, 
-$\Delta_i^{(E\shp C)}$, $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ [see (\ref{eq:full_decomp})] for the lottery model
-against the parameters of the model, $\mu_1$, $\mu_2$, $\sigma$ and $\delta$; and we compared 
-values on plots. Some mathematical shortcuts, summarized here, simplified plotting. 
-First, we assumed, without loss of generality, that $\mu_1 \leq \mu_2$. To understand coexistence, 
-it was then sufficient to decompose the GWR of the weaker competitor, species 1. 
-Second, we showed that, for the 
-lottery model, none of the components in (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
-instead they depend only on $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). So we plotted 
-against $\mu_1 - \mu_2$. 
-Third, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
-for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}). So we only generated plots 
-for left-tail associated noise. For each combination of $\delta=0.2, 0.4, 0.6, 0.8$
-and $\mu_1-\mu_2=0,-0.5,-2,-4$,
-we plotted all the components of (\ref{eq:full_decomp}) against $\sigma$. 
-%Relative importance of contributions was judged from the 
-%plots to assess whether and to what extent ATA effects on coexistence were meaningfully large for the lottery model, compared to 
-%the contributions of other mechanisms.
-Mathematical simplications for the $\delta=1$ case make it straightforward to see that
-coexistence is impossible and that the case is relatively trivial (SI 
-section \ref{SI-sect:delta1}), so that case is not plotted.  
-The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
-Computationally efficient means of performing these simulations, for the lottery model, are in 
-SI section \ref{SI-sect:efficient_computation}.
 
 %G3
 To achieve goal G3 from the Introduction, i.e., to explore, using the lottery model, the likelihood that species can coexist with
@@ -822,10 +828,8 @@ Wildlife Delta Science Program, and the Alexander von Humboldt Foundation.
 \clearpage
 \newpage
 
-%***DAN: I edited the caption (2023 01 25) but need to replace the figure once I know where in the repo 
-%structure it is generated and stored, and after I have re-run Jasmin's code
 \begin{figure}
-\includegraphics[width=.25\textwidth]{../results_figs/fig1_vertical.pdf}
+\includegraphics[width=\textwidth]{../results_figs/fig1_a-h.pdf}
 \caption{Examples motivating our study of the effects of asymmetric tail associations (ATAs) on competition
 and coexistence. (a-c) Bivariate random variables with standard normal marginals showing
 alternative patterns of association in the left and right parts of the distributions. 
