@@ -39,7 +39,7 @@ shape1<-0.5;shape2<-0.5
 ### set up ###
 hts <- c(.3,1)
 wds <- c(rep(c(1,.3,.3),3), c(1,.3))
-lblc <- matrix(c(-2,-4.8,-4.3,-4.3,-1.7,0.2), nrow=3,dimnames=list(c("E","C","lab"),c("x","y")))
+lblc <- matrix(c(-2.1,-4.8,-4.3,-4.4,-1.7,0.2), nrow=3,dimnames=list(c("E","C","lab"),c("x","y")))
 
 #single row layout
 ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
