@@ -62,9 +62,9 @@ dePlot1 <- function(noise_loc, sigma, mudif, delta, cols, ltys,lwds,qij=FALSE,..
 
 
 ### location to save results ###
-numeric_results_loc <- "../results_numeric"
-if(dir.exists(numeric_results_loc)==FALSE){
-  dir.create(numeric_results_loc)
+numRes_loc <- "../results_numeric/"
+if(dir.exists(numRes_loc)==FALSE){
+  dir.create(numRes_loc)
 }
 fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
@@ -74,9 +74,9 @@ fig3_loc <- paste(fig_loc,"decompFigLLN.pdf",sep="")
 fig3qij_loc <- paste(fig_loc,"fig3_qij.pdf",sep="")
 
 ### files to load ###
-noise_loc <- paste0(numeric_results_loc, "/noise.RData")
-params_loc <- paste0(numeric_results_loc, "/params.RData")
-res_loc <- paste0(numeric_results_loc,"/fig3dat/")
+noise_loc <- paste0(numRes_loc, "noise.RData")
+params_loc <- paste0(numRes_loc, "params.RData")
+res_loc <- paste0(numRes_loc,"fig3dat/")
 if(dir.exists(res_loc)==FALSE){
   dir.create(res_loc)
 }
@@ -100,25 +100,29 @@ terms <- c(expression(Delta[i]^0), expression(Delta[i]^E),
            expression(Delta[i]^C), expression(Delta[i]^"(E#C)"),
            expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]")
            ,expression(GWR))
-cols <- c("black","black","black","black","blue","red","orange")
-ltys <- c(1,2,4,3,1,1,1)
-lwds <- c(rep(1,6),2)
+ncol <- 5
+yor <- hcl.colors(ncol, palette = "YlOrRd")
+cols <- c("black","black","black","black",yor[1:3])
+ltys <- c(1,2,3,4,2,1,1)
+lwds <- c(rep(1.5,4),2,2,3)
 
 ### make fig ###
 #qij=1
 grDevices::pdf(fig3_loc, height=8, width=8)
-graphics::par(mfrow=c(4,3), oma=c(3,4,4,7), mar=c(1,1,1,1), mgp=c(3,1,0), xpd=NA)
+graphics::par(mfrow=c(4,3), oma=c(3.2,4,4,10), mar=c(1,1,1,1), mgp=c(3,1,0), xpd=NA)
 ylims <- list(c(-0.5,1.25),c(-0.5,1.25),c(-2,1.5), c(-4,2.5))
-#graphics::legend("topright", legend=terms, col = cols, lty = ltys, bty="n", cex=1.8, inset=c(0,-0.05), y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.5)
+
 n <- 1
 for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
   	
   	file <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],".RDS")
+  	sefile <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],"_SE.RDS")
   	#make files?
   	if(file.exists(file)==FALSE){
   		Delts <- makeDeltas(noise_loc, sigma, mudif[m], delta[d], qij=FALSE)
-  		saveRDS(Delts, file=file)
+  		saveRDS(Delts$D, file=file)
+  		saveRDS(Delts$se, file=sefile)
   	}
   	#plot
   	plotco(file,sigma,ylim=ylims[[m]])
@@ -131,8 +135,8 @@ for (m in seq_along(mudif)){ #iterates across mudif values
     graphics::mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
     if (n==2){
-    	graphics::mtext("adult death rate, ", line=2.5, font=2, cex=1.5, col="gray40", at=-0.75, adj=0)
-    	graphics::mtext(expression(delta), line=2.5, font=2, cex=2.3, col="gray40", side=3, at=8, adj=1)
+    	graphics::mtext("adult death rate, ", line=2.5, font=2, cex=1.5, col="gray40", at=-1, adj=0)
+    	graphics::mtext(expression(delta), line=2.5, font=2, cex=2.3, col="gray40", side=3, at=8.25, adj=1)
     }
     if (n<4){
       graphics::mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.25, col="gray30")
@@ -141,18 +145,19 @@ for (m in seq_along(mudif)){ #iterates across mudif values
       graphics::text(paste(mudif[m]), srt=-90, x=7.8,y=mean(ylims[[m]]),  font=2, cex=2, col="gray30")
     }
     if (n==6){
-    	graphics::text("mean log fecundity difference, ", x=10,y=2.4, font=2, cex=2.5, srt=-90, adj=0, col="gray40")
-    	graphics::text(expression(mu[1]-mu[2]), x=10,y=-4, font=2, cex=3, srt=-90, adj=1, col="gray40")
+    	graphics::text("mean log fecundity difference, ", x=9,y=2.2, font=2, cex=2.5, srt=-90, adj=0, col="gray40")
+    	graphics::text(expression(mu[1]-mu[2]), x=9,y=-3.3, font=2, cex=3, srt=-90, adj=1, col="gray40")
     }
     if (n==11){
-    	graphics::mtext("log fecundity standard deviation, ",side=1, line=3, cex=1.25, at=-2.75, adj=0,col="gray40")
-    	graphics::mtext(expression(sigma),side=1, line=3, cex=1.5, at=9.75, adj=1,col="gray40")
+    	graphics::mtext("log fecundity standard deviation, ",side=1, line=2.8, cex=1.25, at=-3.25, adj=0,col="gray40")
+    	graphics::mtext(expression(sigma),side=1, line=2.8, cex=1.5, at=10.15, adj=1,col="gray40")
     }
     n <- n+1
   }
 } 
 graphics::mtext("contribution to coexistence", side=2, outer=TRUE, line=2, font=2, cex=1.7, col="gray40")
-
+graphics::legend("topright", legend=terms, col = cols, lty = ltys, bty="n", cex=2, inset=c(-0.83,-2.75), y.intersp = 1.35, x.intersp = 0.1, seg.len=0.8, lwd=lwds)
+graphics::legend("topright",legend=c("ATA \nexcl.", "ATA \nresc."), fill=c(excol,rescol), cex=1.8, bty="n",border=NA, inset=c(-0.76,-0.8), x.intersp = 0.1,y.intersp = 1.7)
 grDevices::dev.off() #finish plotting
 
 ### get standard error and save ###
