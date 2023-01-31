@@ -12,7 +12,7 @@ sampsA <- theoryfigpanel(dbmarg, pbmarg, qbmarg, ccop, bx, by, gnrt_var=TRUE,col
 #text(x=lblc["E","x"], y=lblc["E","y"], labels=expression('E'['i']), cex=2)
 text(x=lblc["E","x"], y=lblc["E","y"], labels=TeX('$E_i$'), cex=2)
 #text(x=lblc["C","x"], y=lblc["C","y"], labels=expression('C'['i\i']), srt=90, cex=2)
-text(x=lblc["C","x"], y=lblc["C","y"], labels=TeX('($C_{i\\setminus i}$)'), srt=90, cex=2)
+text(x=lblc["C","x"], y=lblc["C","y"], labels=TeX('($C_{i\\backslash i}$)'), srt=90, cex=2)
 text(x=lblc["lab","x"], y=lblc["lab","y"],labels=paste("(",letters[1],")"),cex=2)
 
 # B NORM MARGS CLAY COP
