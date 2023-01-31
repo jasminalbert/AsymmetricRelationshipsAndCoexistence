@@ -14,9 +14,8 @@ fig_loc <- "../results_figs"
 if (dir.exists(fig_loc)==F){
   dir.create(fig_loc)
 }
-theoryfig <- paste0(fig_loc,"/theory_fig_rw.pdf")
 theoryfig_col <- paste0(fig_loc,"/theory_fig_col.pdf")
-theoryfig_qd <- paste0(fig_loc,"/theory_fig_qd.pdf")
+
 
 #copulas
 ncop<-normalCopula(.7)
@@ -44,13 +43,6 @@ lblc <- matrix(c(-2.1,-4.8,-4.3,-4.4,-1.7,0.2), nrow=3,dimnames=list(c("E","C","
 #single row layout
 ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
 				1,3,17,5,7,17,9,11,17,13,15), byrow=T, nrow=2)
-#### start pdf ####
-#pdf(theoryfig, height=4, width=15)
-#layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
-#par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
-#source("./theoryfig_meat.R")
-#dev.off() 
-########
 
 #colored points
 #### start pdf ####
@@ -62,6 +54,7 @@ dev.off()
 ########
 
 #quad layout
+#theoryfig_qd <- paste0(fig_loc,"/theory_fig_qd.pdf")
 #lblc[2,1] <- -4.5; lblc[1,2] <- -4.15; lblc[3,] <- c(-4.1,0.15)
 #ly_mat<- matrix(c(2,4,17,6,8,
 #				1,3,17,5,7,
@@ -77,6 +70,15 @@ dev.off()
 #dev.off() 
 ########
 
+#no color
+#theoryfig <- paste0(fig_loc,"/theory_fig_rw.pdf")
+#### start pdf ####
+#pdf(theoryfig, height=4, width=15)
+#layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
+#par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
+#source("./theoryfig_meat.R")
+#dev.off() 
+########
 
 
 
