@@ -28,12 +28,14 @@ theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,
 	  if (log_points==T){
 	    z[z==0]<-NA; zvar <- log10(z)
 	  } else { zvar <- z }
+	  
 	  z_ran <- range(zvar, na.rm=T)
 	  zbin <- .bincode(zvar, breaks=seq(z_ran[1],z_ran[2],len=ncol+1),TRUE,TRUE)
 	  zbin <- matrix(zbin, length(x), length(y))
 	  cols <- hcl.colors(ncol, palette = "YlOrRd",rev=T)
 	  xbin <- .bincode(samps[,1], breaks=seq(min(x),max(x),len=nrow(z)+1),TRUE,TRUE)
 	  ybin <- .bincode(samps[,2], breaks=seq(min(y),max(y),len=ncol(z)+1),TRUE,TRUE)
+	  
 	  colindex <- {}
 	  for (i in 1:nrow(samps)) {colindex[i]<-zbin[xbin[i],ybin[i]]}
 	  rgb<-sapply(cols[colindex],FUN=col2rgb)
@@ -45,8 +47,8 @@ theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,
 	  points(samps[,1],samps[,2],type="p",pch=20, cex=1, col=rgb(.74,.74,.74,.4))
 	}
 	contour(x,y,log10(z),nlevels=10, bty='l', add=T)
-	pdfhist(samps[,1],d,...)
-	pdfhist(samps[,2],d,horiz=TRUE,...)
+	pdfhist(samps[,1],x,y,d)
+	pdfhist(samps[,2],x,y,d,horiz=TRUE)
 	plot.new() 
 	return(samps)
 }
@@ -56,7 +58,7 @@ tdis <- function(q, oldp, samps){
 	samps <- q(oldp(samps))
 }
 
-pdfhist <- function(samps, d, horiz=FALSE,xpd=FALSE){
+pdfhist <- function(samps,x,y,d, horiz=FALSE,xpd=FALSE){
 	min <- min(x)
 	max <- max(y)
 	h <- hist(samps, seq(min(samps),max(samps),length.out=10), plot=FALSE)
