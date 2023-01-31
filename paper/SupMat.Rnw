@@ -87,7 +87,7 @@
 \externaldocument[MT-]{Paper}
 
 %header material for paper
-\title{Asymmetric relationships and their impact on coexistence: Supporting information}
+\title{Asymmetric relationships and their effects on coexistence: Supporting information}
 \date{}
 
 \author[a]{Pimsupa Jasmin Albert}
@@ -149,35 +149,6 @@ and evaluating it at $\sC_{j \bs i}=0$ [see \cite{Chesson_1994} and \cite{Ellner
 on this definition]. To make sense of this definition, it must be possible to write $\sC_{i \bs i}$, explicitly 
 or implicitly, uniquely as a function of $\sC_{j \bs i}$ \citep{Ellner_2016}.
 
-%***DAN: I decided to present the general theory (not for the lottery model but for the
-%general case) in the Theory section in the main text, putting off the specific lottery
-%model application to later. For that, I need to explain scaling factors in general.
-%So this section is now for that explanation. That means the below text, which is about
-%the scaling factors for the lottery model need to be handled later. It is good, however,
-%that the below text is for the general lottery model, for either way of doing the 
-%fecundities. That will come in handy later.
-%
-% For the lottery model, for $i \neq j$, we have
-% \begin{align}
-% \sC_j &= -\ln \left[ 1-\delta+\delta N \frac{\overline{B}_j}{B_1(t) N_1 (t) + B_2(t) N_2(t)}  \right]  \\
-% \sC_{j \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_j}{B_j(t)} \right] \\
-% \sC_{i \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_i}{B_j(t)} \right].
-% \end{align}
-% Both $\sC_{i \bs i}$ and $\sC_{j \bs i}$ are strictly monotonic functions of $B_j$, so the function
-% $B_j \mapsto \sC_{j \bs i}$ is invertible, and using its inverse provides an expression of $\sC_{i \bs i}$ 
-% in terms of $\sC_{j \bs i}$. One could write this expression explicitly and then differentiate it to calculate $q_{ij}$,
-% but we instead compute $q_{ij}$ through implicit differentiation:
-% \begin{align}
-% \frac{\partial \sC_{i \bs i}}{\partial \sC_{j \bs i}} &= \left. \frac{\partial \sC_{i \bs i}}{\partial B_j} \middle/ \frac{\partial \sC_{j \bs i}}{\partial B_j} \right. \\
-% &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{B_j}}{1-\delta+\delta \frac{\overline{B}_i}{B_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right).
-% \end{align}
-% Solving $\sC_{j \bs i}=0$ gives $B_j=\overline{B}_j$, so 
-% \begin{align}
-% q_{ij} &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{\overline{B}_j}}{1-\delta+\delta \frac{\overline{B}_i}{\overline{B}_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right) \\
-% &= \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta},
-% \end{align}
-% as stated in the main text. 
-
 We also use $q_{ij}=1$ as an alternative value, for the following reasons.
 First, as discussed in the supporting information of \cite{Ellner_2016}, and as further elaborated by 
 \cite{Barabas_2018}, it takes very special circumstances for the scaling factors to exist and be unique, 
@@ -195,7 +166,7 @@ by researchers making that choice.
 \section{Mechanisms other than storage effects}\label{SIsect:other_mechanisms}
 
 We first review the decompositions of \cite{Ellner_2016} and \cite{Ellner_2019}, which are similar to and motivated by the 
-original decompositions of \cite{Chesson_1994}; and then we include our extensions of the decomposition. 
+original decompositions of \cite{Chesson_1994}; and then we include our extension of the decomposition. 
 
 We begin by decomposing the GWR,
 \begin{equation}
@@ -317,78 +288,111 @@ generated
 from the bivariate normal distribution $N\left(\vec{0}, \Sigma \right)$, where now
 $\Sigma = \begin{pmatrix} 1&\rho \\ \rho&1\end{pmatrix}$.
 
-%***DAN: stopped here on 2023 01 27. See outline in the main text of how I need to restructure the 
-%SI sections from this point forward.
-
 \section{Theory for the lottery model}\label{SIsect:TheoryForLottery}
 
-For the lottery model, we take $E_i(t)=B_i(t)$, henceforth assuming that fecundity depends strictly on
-the environment. Competition, $C_i(t)$, in the lottery model is the number of new offspring
-divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
-does not depend on $i$. Competition in the lottery model occurs at the stage of juveniles occupying open sites. 
-Species growth rates for the lottery model can then be written 
-$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)]$, which is an increasing
-function of $E_i$ and decreasing function of $C_i$.
+\subsection{Theory that applies to both versions of the model}\label{SIsect:TheoryForLotteryBoth}
+
+Recall we took $E_i(t)=B_i(t)$, thereby assuming that fecundity depends strictly on
+the environment for the lottery model (both the log-normal fecundities and the beta fecundities versions of the model). 
+Recall also that competition, $C_i(t)$, is 
+$$C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N)$$ (again for both versions of the model), which
+does not depend on $i$. Species growth rates for the lottery model, $r_i(t)=\ln(N_{i}(t+1)/N_i(t))$, can then be written 
+$$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)],$$ 
+which is an increasing
+function of $E_i$ and decreasing function of $C_i$, as was assumed at the outset of Theory.
 
 When $i$ is an invader, the competition experienced by either 
-species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$; and likewise to get
-$\olr_{i \bs i}$ from the expression for $r_i$ for the model. Thus 
-$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta$, and 
-$\olr_{i \bs i} = \E[\ln(1-\delta+\delta B_i/B_j)]=\E[\ln(1-\delta+E_i /C_{i \bs i})]$. 
+species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$. Thus 
+$$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta.$$
+Lottery-model values of all the expressions of SI section \ref{SIsect:other_mechanisms} can be obtained 
+from the above expression for $C_{i \bs i}$ and the assumption that $E_i(t)=B_i(t)$.
+For instance, 
+$$\olr_{i \bs i} = \E[r_i(E_i,C_{i \bs i})] = \E[\ln(1-\delta+E_i /C_{i \bs i})] = \E[\ln(1-\delta+\delta B_i/B_j)].$$ 
 Likewise, 
-$\olr_{j \bs i} = \E[\ln(1-\delta+\delta B_j/B_j)]=\E[\ln(1-\delta+E_j/C_{j \bs i})]$,
-though we already knew this equals $0$. 
+$$\olr_{j \bs i} = \E[r_j(E_j,C_{j \bs i})] = \E[\ln(1-\delta+E_j/C_{j \bs i})] = \E[\ln(1-\delta+\delta B_j/B_j)]=0,$$
+though we already knew, \emph{a priori}, that this equals $0$. 
 An expression for $\olrs_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
 by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
-Thus $\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)]$. Likewise,
-$\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we use 
+Thus 
+$$\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)].$$ 
+Likewise, $\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we can use 
 $(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
-$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)]$.
-We show in SI section \ref{SIsect:scaling_factors}
-that $q_{ij}=\overline{B}_i/((1-\delta)\overline{B}_j+\delta \overline{B}_i)$. 
-Since we assumed log-normally distributed $B_i$, 
-$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
-We alternatively also consider $q_{ij}=1$, for reasons explained in SI section \ref{SIsect:scaling_factors}.
-Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
-to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
-and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into main text equation (\ref{MT-eq:storage_effects_gen}).
-
-For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
-$\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
-$\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
-Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
-Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
-$\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
-can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
-is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
-and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
-marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
-$(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
-component $\olrn_{i \bs i}$ of main text equation (\ref{MT-eq:storage_effects_further1}) for the lottery model using the simulation 
-approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
+$$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)].$$
+An expression for $\olrn_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
+by a random variable with the same marginals, but with ATAs removed, $(B_i^\nat,B_j^\nat /\delta)$.
+Thus 
+$$\olrn_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\nat/B_j^\nat)].$$ 
+Likewise, $\olrn_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})=(B_j,B_j/\delta)$ in an analogous way.
+But note that $B_j$ and $B_j/\delta$ are linearly related for the lottery model, so their association is 
+already symmetric, so
 so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
+This type of reasoning is applied to the log-normal fecundities and beta fecundities versions of the 
+lottery model, specifically, in the subsequent sections. 
 
-\section{Mathematical simplifications for plotting}\label{sect:math_simplifications}
+%scaling factors
+We now consider the scaling factors $q_{ij}$ for the lottery model. 
+For the lottery model, for $i \neq j$, we have
+\begin{align}
+\sC_j &= -\ln \left[ 1-\delta+\delta N \frac{\overline{B}_j}{B_1(t) N_1 (t) + B_2(t) N_2(t)}  \right]  \\
+\sC_{j \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_j}{B_j(t)} \right] \\
+\sC_{i \bs i} &= -\ln \left[ 1-\delta+\delta  \frac{\overline{B}_i}{B_j(t)} \right].
+\end{align}
+Both $\sC_{i \bs i}$ and $\sC_{j \bs i}$ are strictly monotonic functions of $B_j$, so the function
+$B_j \mapsto \sC_{j \bs i}$ is invertible, and using its inverse provides an expression of $\sC_{i \bs i}$
+in terms of $\sC_{j \bs i}$. One could write this expression explicitly and then differentiate it to calculate $q_{ij}$,
+but we instead compute $q_{ij}$ through implicit differentiation:
+\begin{align}
+\frac{\partial \sC_{i \bs i}}{\partial \sC_{j \bs i}} &= \left. \frac{\partial \sC_{i \bs i}}{\partial B_j} \middle/ \frac{\partial \sC_{j \bs i}}{\partial B_j} \right. \\
+&= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{B_j}}{1-\delta+\delta \frac{\overline{B}_i}{B_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right).
+\end{align}
+Solving $\sC_{j \bs i}=0$ gives $B_j=\overline{B}_j$, so
+\begin{align}
+q_{ij} &= \left( \frac{1-\delta +\delta \frac{\overline{B}_j}{\overline{B}_j}}{1-\delta+\delta \frac{\overline{B}_i}{\overline{B}_j}} \right) \left( \frac{\overline{B}_i}{\overline{B}_j}  \right) \\
+&= \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta}.
+\end{align}
+This expression is made specific to the log-normal decundities and beta fecundities versions of the lottery
+model in the subsequent sections. We alternatively also consider $q_{ij}=1$, for reasons explained in SI 
+section \ref{SIsect:scaling_factors}.
 
-We first compute all terms of the decomposition (\ref{eq:decomp_overall_IGR}) of $\olr_{i \bs i}$ for the lottery model. 
+%***DAN: Might need this text below, in the section on the log-normal fecundities lottery model, but not here
+%Since we assumed log-normally distributed $B_i$, 
+%$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
+%Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
+%to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
+%and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into main text equation (\ref{MT-eq:storage_effects_gen}).
+
+%***DAN: We might need this text somewhere, but not sure where. Just saving it out of caution.
+% For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
+% $\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
+% $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
+% Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
+% Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
+% $\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
+% can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
+% is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
+% and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
+% marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
+% $(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
+% component $\olrn_{i \bs i}$ of main text equation (\ref{MT-eq:storage_effects_further1}) for the lottery model using the simulation 
+% approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
+% so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
+
+\subsection{Theory and plotting simplifications for the log-normal fecundities lottery model}\label{SIsect:TheoryForLotteryLogNorm}
+
+%The first of the two growth rate decompositions
+We first compute all terms of the decomposition (\ref{eq:decomp_overall_IGR}) of $\olr_{i \bs i}$ for the 
+log-normal fecundities lottery model. 
 One can straightforwardly show from the formulas of SI section \ref{SIsect:other_mechanisms} that
 \begin{equation}
-E_i=B_i=\exp(b_i)
+E_i=B_i=\exp(\sigma b_i +\mu_i)
 \end{equation}
 \begin{equation}
-C_i=\frac{B_1 N_1 + B_2 N_2}{\delta N}
-\end{equation}
-\begin{equation}
-C_{i \bs i} = B_j/\delta=\exp(b_j)/\delta
-\end{equation}
-\begin{equation}
-r_i=\ln(1-\delta+E_i/C_i)
+C_{i \bs i} = B_j/\delta=\exp(\sigma b_j + \mu_j)/\delta
 \end{equation}
 %IGR
 \begin{align}
-\olr_{i \bs i} &= \E[\ln(1-\delta+E_i/C_{i \bs i})] \\
-&= \E[\ln(1-\delta+\delta B_i/B_j)] \\
-&= \E[\ln(1-\delta+\delta\exp(b_i-b_j))]\label{eq:base_IGR}
+\olr_{i \bs i} &= \E[\ln(1-\delta+\delta B_i/B_j)] \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma(b_i-b_j)+\mu_i-\mu_j))]\label{eq:base_IGR}
 \end{align}
 \begin{equation}
 \overline{E}_i = \exp(\mu_i + \sigma^2/2)
@@ -403,61 +407,58 @@ r_i=\ln(1-\delta+E_i/C_i)
 %contrib of variation in E
 and
 \begin{align}
-\olep_i^E &= \E[\ln(1-\delta+\delta\exp(b_i)/\exp(\mu_j + \sigma^2/2))]-\epsilon_i^0 \\
-&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i+\mu_i)/\exp(\mu_j+\sigma^2/2))]-\epsilon_i^0 \\
-&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i + \mu_i - \mu_j - \sigma^2/2))]-\epsilon_i^0, \label{eq:decomp:contrib_of_var_E}
+\olep_i^E &= \E[\ln(1-\delta+\delta\exp(\sigma b_i + \mu_i)/\exp(\mu_j + \sigma^2/2))]-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma b_i + \mu_i - \mu_j - \sigma^2/2))]-\epsilon_i^0, \label{eq:decomp:contrib_of_var_E}
 \end{align}
-where $\tilde{b}_i$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
+where $b_i$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
 %contrib of variation in C
 \begin{align}
-\olep_i^C &= \E[\ln(1-\delta + \delta \exp(\mu_i+\sigma^2/2)/\exp(b_j))]-\epsilon_i^0 \\
-&= \E[\ln(1-\delta + \delta \exp(\mu_i+\sigma^2/2)/\exp(\sigma \tilde{b}_j +\mu_j))]-\epsilon_i^0 \\
-&= \E[\ln(1-\delta + \delta \exp(-\sigma \tilde{b}_j +\mu_i -\mu_j+\sigma^2/2))]-\epsilon_i^0, \label{eq:decomp:contrib_of_var_C} 
+\olep_i^C &= \E[\ln(1-\delta + \delta \exp(\mu_i+\sigma^2/2)/\exp(\sigma b_j + \mu_j))]-\epsilon_i^0 \\
+&= \E[\ln(1-\delta + \delta \exp(-\sigma b_j +\mu_i -\mu_j+\sigma^2/2))]-\epsilon_i^0, \label{eq:decomp:contrib_of_var_C} 
 \end{align}
-where $\tilde{b}_j$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
+where $b_j$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
 %last term of primary decomp, later splits into storage effects and effect of variation in E and C, per se  
 \begin{align}
-\olep_i^{EC} &= \E[\ln(1-\delta+\delta\exp(b_i)/\exp(b_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
-&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i +\mu_i)/\exp(\sigma \tilde{b}_j +\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
-&= \E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i - \tilde{b}_j)+\mu_i-\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0, \label{eq:decomp:last_term_primary}
+\olep_i^{EC} &= \E[\ln(1-\delta+\delta\exp(\sigma b_i +\mu_i)/\exp(\sigma b_j +\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma (b_i - b_j)+\mu_i-\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0, \label{eq:decomp:last_term_primary}
 \end{align}
-where $(\tilde{b}_i, \tilde{b}_j)$ is distributed as in SI section \ref{sect:noise}, i.e., 
-$(\tilde{b}_i,\tilde{b}_j)=\left(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$. Continuing,
+where $(b_i, b_j)$ is distributed as in SI section \ref{sect:noise}. Continuing,
 %contrib of variation in E and C, per se  
 \begin{align}
-\olep_i^{(E\shp C)} &= \E[\ln(1-\delta+\delta\exp(b_i^\shp)/\exp(b_j^\shp))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
-&= \E[\ln(1-\delta+\delta\exp(\sigma \tilde{b}_i^\shp +\mu_i)/\exp(\sigma \tilde{b}_j^\shp + \mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
-&= \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0, \label{eq:decomp:contrib_of_EC_var_per_se}
+\olep_i^{(E\shp C)} &= \E[\ln(1-\delta+\delta\exp(\sigma b_i^\shp +\mu_i)/\exp(\sigma b_j^\shp + \mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma(b_i^\shp - b_j^\shp)+\mu_i-\mu_j))]-\olep_i^E-\olep_i^C-\epsilon_i^0, \label{eq:decomp:contrib_of_EC_var_per_se}
 \end{align}
-where $\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent. Continuing,
+where $b_i^\shp$ and $b_j^\shp$ are standard normally distributed and independent. Continuing,
 %storage effects
 \begin{equation}
-\olep_i^{(EC)} = \E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i - \tilde{b}_j)+\mu_i-\mu_j))]-
-\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))],\label{eq:decomp:storage_effects}
+\olep_i^{(EC)} = \E[\ln(1-\delta+\delta\exp(\sigma (b_i - b_j)+\mu_i-\mu_j))]-
+\E[\ln(1-\delta+\delta\exp(\sigma (b_i^\shp - b_j^\shp)+\mu_i-\mu_j))],\label{eq:decomp:storage_effects}
 \end{equation}
-where $(\tilde{b}_i,\tilde{b}_j)$ is distributed as in SI section \ref{sect:noise}, i.e., 
-$(\tilde{b}_i,\tilde{b}_j)=\left(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$, and 
-$\tilde{b}_i^\shp$ and $\tilde{b}_j^\shp$ are standard normal and independent. Continuing,
+where $(b_i,b_j)$ is distributed as in SI section \ref{sect:noise}, and 
+$b_i^\shp$ and $b_j^\shp$ are standard normal and independent. Continuing,
 %contrib of ATA
 \begin{equation}
-\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))],\label{eq:decomp:contrib_ATA_1}
+\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(\sigma(b_i-b_j)+\mu_i-\mu_j))]-
+\E[\ln(1-\delta+\delta\exp(\sigma(b_i^\nat-b_j^\nat)+\mu_i-\mu_j))],\label{eq:decomp:contrib_ATA_1}
 \end{equation}
-where $(\ddot{b}_i,\ddot{b}_j)$ have the same (normal) marginals and covariance as $(b_i,b_j)$ but are 
-bivariate normal. Thus
-\begin{equation}
-\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i-\tilde{b}_j)+\mu_i-\mu_j))]-
-\E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))], \label{eq:decomp:contrib_ATA_2}
-\end{equation}
-where $(\tilde{b}_i,\tilde{b}_j)=\left( \frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma} \right)$ and 
-$(\tilde{\ddot{b}}_i,\tilde{\ddot{b}}_j)=\left( \frac{\ddot{b}_i-\mu_i}{\sigma},\frac{\ddot{b}_j-\mu_j}{\sigma} \right)$.
-Continuing, $\olep_i^{[E \nat C]}=\olep_i^{(EC)}-\olep_i^{[EC]}$ is available by subtracting expression (\ref{eq:decomp:contrib_ATA_2})
+where $(b_i^\nat,b_j^\nat)$ have the same (standard normal) marginals and covariance as $(b_i,b_j)$ but are 
+bivariate normal. Note, a choice has been made here: we could also have chosen $(b_i^\nat,b_j^\nat)$
+to have the same standard normal marginals as $(b_i,b_j)$, but with covariance chosen such that
+the Pearson, Spearman, or Kendall correlation of $E_i^\nat = \exp(\sigma b_i^\nat +\mu_i)$
+and $C_{i \bs i}^\nat = \exp(\sigma b_j^\nat +\mu_j)/\delta$ matches that of $E_i = \exp(\sigma b_i +\mu_i)$
+and $C_{i \bs i} = \exp(\sigma b_j +\mu_j)$. But the choice we made seems 
+the most natural for the log-normal fecundities lottery models (and also for the 
+beta fecundities lottery model - see below). 
+Continuing, $\olep_i^{[E \nat C]}=\olep_i^{(EC)}-\olep_i^{[EC]}$ is available by subtracting expression (\ref{eq:decomp:contrib_ATA_1})
 from expression (\ref{eq:decomp:storage_effects}), i.e., 
 \begin{equation}
-\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i-\tilde{\ddot{b}}_j)+\mu_i-\mu_j))] - 
-\E[\ln(1-\delta+\delta\exp(\sigma (\tilde{b}_i^\shp - \tilde{b}_j^\shp)+\mu_i-\mu_j))].\label{eq:decomp:contrib_EC}
+\olep_i^{[E \nat C]} = \E[\ln(1-\delta+\delta\exp(\sigma(b_i^\nat-b_j^\nat)+\mu_i-\mu_j))] - 
+\E[\ln(1-\delta+\delta\exp(\sigma (b_i^\shp - b_j^\shp)+\mu_i-\mu_j))].\label{eq:decomp:contrib_EC}
 \end{equation}
-This completes the calculation of all the terms of the decomposition (\ref{eq:decomp_overall_IGR})  of $\olr_{i \bs i}$ for the lottery model.
+This completes the calculation of all the terms of the decomposition (\ref{eq:decomp_overall_IGR})  of $\olr_{i \bs i}$ 
+for the log-normal fecundities lottery model.
 
+%The second of the two growth rate decompositions
 We next decompose $\olr_{j \bs i}$ for the lottery model. We have 
 \begin{equation}
 E_j = B_j = \exp(b_j)
