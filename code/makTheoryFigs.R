@@ -57,7 +57,7 @@ ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
 pdf(theoryfig_col, height=4, width=15)
 layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
 par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
-source("./theoryfig_col_meat.R")
+source("./theoryFig_script.R")
 dev.off() 
 ########
 
