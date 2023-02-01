@@ -34,7 +34,7 @@ source("./parameters.R")
 source("./Figure1.R")
 
 #FIGURE 2
-source("./theoryfig.R")
+source("./makTheoryFigs.R")
 
 #FIGURE 3
 source("./Figure3.R")

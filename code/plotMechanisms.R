@@ -16,9 +16,18 @@ makeDeltas <- function(noise_loc, sigma, mudif, delta,qij=FALSE){
     	cat(".")
     }
     cat("done")
-    Deltas <- data.frame(t(sapply(store, function(X){X$D})))
-	colnames(Deltas) <- rownames(store[[1]])
-	return(Deltas)
+    
+    if (qij == TRUE){
+    	Deltas <- data.frame(t(sapply(store, function(X){X$Dq})))
+    	se <- data.frame(t(sapply(store, function(X){X$Dq_se})))
+    } else {
+    	Deltas <- data.frame(t(sapply(store, function(X){X$D})))
+    	se <- data.frame(t(sapply(store, function(X){X$D_se})))
+    }
+ 
+    
+	colnames(se) <- colnames(Deltas) <- rownames(store[[1]])
+	return(list(D=Deltas, se=se))
 }
 
 makeDeltasB <- function(noise_loc,lb_i,lb_j,ub_i,ub_j,delta,...){
@@ -48,7 +57,7 @@ plotco <- function(Deltas_loc,xvar,ylim,...){
 	} else {Deltas <- readRDS(Deltas_loc)}
 	
     range <- range(Deltas[,1:7])
-    #ylim <- range*1.1
+    ylim <- range*1.1
     #ylim <- c(-0.6,0.2)
     
     #ATA effect
@@ -88,6 +97,18 @@ plotco <- function(Deltas_loc,xvar,ylim,...){
 
 ########
  	
-  	
+### setting up legend ###
+terms <- c(expression(Delta[i]^0), expression(Delta[i]^E),
+           expression(Delta[i]^C), expression(Delta[i]^"(E#C)"),
+           expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]")
+           ,expression(GWR))
+ncol <- 5
+yor <- hcl.colors(ncol, palette = "YlOrRd")
+cols <- c("black","black","black","black",yor[1:3])
+ltys <- c(1,2,3,4,2,1,1)
+lwds <- c(rep(1.5,4),2,2,3)
+
+rescol <- rgb(227/255, 211/255, 148/255,.5)
+excol <- rgb(38/255, 38/255, 38/255,.5)  	
   	
 

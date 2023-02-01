@@ -14,9 +14,8 @@ fig_loc <- "../results_figs"
 if (dir.exists(fig_loc)==F){
   dir.create(fig_loc)
 }
-theoryfig <- paste0(fig_loc,"/theory_fig_rw.pdf")
 theoryfig_col <- paste0(fig_loc,"/theory_fig_col.pdf")
-theoryfig_qd <- paste0(fig_loc,"/theory_fig_qd.pdf")
+
 
 #copulas
 ncop<-normalCopula(.7)
@@ -25,45 +24,37 @@ ccop<-claytonCopula(iRho(ccop,rho(ncop)))
 
 #distribution functions
 ##beta
-dbmarg<-function(x){return(dbeta(x+.5,shape1=shape1,shape2=shape2))}
-pbmarg<-function(x){return(pbeta(x+.5,shape1=shape1,shape2=shape2))}
-qbmarg<-function(x){return(qbeta(x,shape1=shape1,shape2=shape2)-.5)}
+dbmarg<-function(x){return(dbeta(x,shape1=shape1,shape2=shape2))}
+pbmarg<-function(x){return(pbeta(x,shape1=shape1,shape2=shape2))}
+qbmarg<-function(x){return(qbeta(x,shape1=shape1,shape2=shape2))}
 ##normal
 dnmarg<-function(x){return(dnorm(x,mean=0,sd=1))}
 pnmarg<-function(x){return(pnorm(x,mean=0,sd=1))}
 qnmarg<-function(x){return(qnorm(x,mean=0,sd=1))}
 
-x<-seq(from=-4,to=4,by=0.01)
-y<-seq(from=-4,to=4,by=0.01)
 
-shape1<-0.5;shape2<-0.5
+shape1<-0.55;shape2<-0.55
 
 ### set up ###
 hts <- c(.3,1)
 wds <- c(rep(c(1,.3,.3),3), c(1,.3))
-lblc <- matrix(c(-2,-4.8,-4.3,-4.3,-1.7,0.2), nrow=3,dimnames=list(c("E","C","lab"),c("x","y")))
+lblc <- matrix(c(-2.1,-4.8,-4.3,-4.4,-1.7,0.2), nrow=3,dimnames=list(c("E","C","lab"),c("x","y")))
 
 #single row layout
 ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
 				1,3,17,5,7,17,9,11,17,13,15), byrow=T, nrow=2)
-#### start pdf ####
-#pdf(theoryfig, height=4, width=15)
-#layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
-#par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
-#source("./theoryfig_meat.R")
-#dev.off() 
-########
 
 #colored points
 #### start pdf ####
 pdf(theoryfig_col, height=4, width=15)
 layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
 par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
-source("./theoryfig_col_meat.R")
+source("./theoryFig_script.R")
 dev.off() 
 ########
 
 #quad layout
+#theoryfig_qd <- paste0(fig_loc,"/theory_fig_qd.pdf")
 #lblc[2,1] <- -4.5; lblc[1,2] <- -4.15; lblc[3,] <- c(-4.1,0.15)
 #ly_mat<- matrix(c(2,4,17,6,8,
 #				1,3,17,5,7,
@@ -79,6 +70,15 @@ dev.off()
 #dev.off() 
 ########
 
+#no color
+#theoryfig <- paste0(fig_loc,"/theory_fig_rw.pdf")
+#### start pdf ####
+#pdf(theoryfig, height=4, width=15)
+#layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
+#par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
+#source("./theoryfig_meat.R")
+#dev.off() 
+########
 
 
 

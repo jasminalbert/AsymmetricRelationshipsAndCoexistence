@@ -110,7 +110,8 @@ for (d in seq_along(delta)){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
 	}
 	if (d==2){
-		title(main="adult death rate", line=2.75, font.main=2, cex.main=2.3, col.main="gray40")
+		graphics::mtext("adult death rate, ", line=2.5, font=2, cex=1.5, col="gray40", at=1.25, adj=0)
+    	graphics::mtext(expression(delta), line=2.5, font=2, cex=2.3, col="gray40", side=3, at=5, adj=1)
 	} 
 	if (d==3){
 		text("LEFT-TAILED", x=5.4, y=0.23, font=2, srt=-90, cex=1.8,adj=0, col="grey")
@@ -131,7 +132,7 @@ for (d in 1:length(delta)){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
 	}
 	if (d==2){
-		title(xlab="variance metric", line=2.75, font.lab=2, cex.lab=2, col.lab="gray40")
+		title(xlab="upper bound ratio", line=2.75, font.lab=2, cex.lab=2, col.lab="gray40")
 	}	
 	if (d==3){
 		text("RIGHT-TAILED", x=5.4, y=-0.62, font=2, srt=-90, cex=1.8,adj=1, col="grey")

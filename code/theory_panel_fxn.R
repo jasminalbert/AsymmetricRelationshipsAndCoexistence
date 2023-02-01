@@ -62,14 +62,17 @@ pdfhist <- function(samps,x,y,d, horiz=FALSE,xpd=FALSE){
 	min <- min(x)
 	max <- max(y)
 	h <- hist(samps, seq(min(samps),max(samps),length.out=10), plot=FALSE)
+	
 	ylines <- d(x)*length(samps)* diff(h$breaks)[1]
-	xent <- length(h$counts)
-	barplot(h$counts, space=0, horiz=horiz, col = rgb(.74,.74,.74,.4), border="white", xlab='', ylab='', main='', yaxt='n', xaxt='n')
+	xlines <- seq(0, length(h$counts), len=length(x))
+	
+	if(max(x)>1){xpd <- NA}
+	barplot(h$counts, space=0, horiz=horiz, col = rgb(.74,.74,.74,.4), border="white", xlab='', ylab='', main='', yaxt='n', xaxt='n', xpd=NA)
 
 	if (horiz==TRUE){
-		lines(ylines,(x-min(x))*xent,xpd=xpd)
+		lines(ylines,xlines,xpd=xpd)
 	} else{
-		lines((x-min(x))*xent, ylines,xpd=xpd)
+		lines(xlines, ylines,xpd=xpd)
 		}
 }
 #pdfhist(sampsB[,1],dnmarg)
