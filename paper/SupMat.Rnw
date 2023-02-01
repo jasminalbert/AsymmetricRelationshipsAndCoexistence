@@ -354,13 +354,6 @@ This expression is made specific to the log-normal decundities and beta fecundit
 model in the subsequent sections. We alternatively also consider $q_{ij}=1$, for reasons explained in SI 
 section \ref{SIsect:scaling_factors}.
 
-%***DAN: Might need this text below, in the section on the log-normal fecundities lottery model, but not here
-%Since we assumed log-normally distributed $B_i$, 
-%$\overline{B}_i=\exp(\mu_i+\sigma^2/2)$, so $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$.
-%Thus $\Delta_i^{(EC)}$ for the lottery model can be computed by using simulations \citep{Ellner_2016}
-%to very accurately approximate $\olr_{i \bs i}$, $\olrs_{i \bs i}$,
-%and $\olrs_{j \bs i}$, and then plugging them and $q_{ij}$ into main text equation (\ref{MT-eq:storage_effects_gen}).
-
 %***DAN: We might need this text somewhere, but not sure where. Just saving it out of caution.
 % For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
 % $\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
@@ -459,18 +452,12 @@ This completes the calculation of all the terms of the decomposition (\ref{eq:de
 for the log-normal fecundities lottery model.
 
 %The second of the two growth rate decompositions
-We next decompose $\olr_{j \bs i}$ for the lottery model. We have 
+We next decompose $\olr_{j \bs i}$ for the log-normal fecundities lottery model [see (\ref{eq:decomp_overall_rjbsi})]. We have 
 \begin{equation}
-E_j = B_j = \exp(b_j)
+E_j = B_j = \exp(\sigma b_j + \mu_j)
 \end{equation}
 \begin{equation}
-C_j=\frac{B_1 N_1 + B_2 N_2}{\delta N}
-\end{equation}
-\begin{equation}
-C_{j \bs i} = B_j/\delta = \exp(b_j)/\delta
-\end{equation}
-\begin{equation}
-r_j=\ln(1-\delta+E_j/C_j)
+C_{j \bs i} = B_j/\delta = \exp(\sigma b_j + \mu_j)/\delta
 \end{equation}
 \begin{align}
 \olr_{j \bs i} &= \E[\ln(1-\delta+E_j/C_{j \bs i})] \\
@@ -494,20 +481,18 @@ and
 \begin{align}
 \olep_j^E &= \E[r_j(E_j,\overline{C}_{j \bs i})]-\epsilon_j^0 \\
 &= \E[\ln(1-\delta+\delta B_j/\overline{B}_j)]-\epsilon_j^0 \\
-&= \E \left[ \ln \left(1-\delta+\delta \frac{\exp(b_j)}{\exp(\mu_j+\sigma^2/2)} \right) \right]-\epsilon_j^0 \\
-&= \E \left[ \ln \left(1-\delta+\delta\frac{\exp(\sigma \tilde{b}_j + \mu_j)}{\exp(\mu_j+\sigma^2/2)} \right) \right]-\epsilon_j^0 \\
-&= \E[\ln(1-\delta+\delta \exp(\sigma \tilde{b}_j - \sigma^2/2))]-\epsilon_j^0, \label{eq:decomp:contrib_of_var_E_j}
+&= \E \left[ \ln \left(1-\delta+\delta\frac{\exp(\sigma b_j + \mu_j)}{\exp(\mu_j+\sigma^2/2)} \right) \right]-\epsilon_j^0 \\
+&= \E[\ln(1-\delta+\delta \exp(\sigma b_j - \sigma^2/2))]-\epsilon_j^0, \label{eq:decomp:contrib_of_var_E_j}
 \end{align}
-where $\tilde{b}_j$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
+where $b_j$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
 %contrib of variation in C
 \begin{align}
 \olep_j^C &= \E[r_j(\overline{E}_j,C_{j \bs i})]-\epsilon_j^0 \\
 &= \E \left[ \ln \left(1-\delta+\delta \frac{\overline{B}_j}{B_j} \right) \right]-\epsilon_j^0 \\
-&= \E \left[ \ln \left(1-\delta+\delta \frac{\exp(\mu_j+\sigma^2/2)}{\exp(b_j)} \right) \right]-\epsilon_j^0 \\
-&= \E \left[ \ln \left(1-\delta+\delta \frac{\exp(\mu_j+\sigma^2/2)}{\exp(\sigma \tilde{b}_j +\mu_j)} \right) \right]-\epsilon_j^0 \\
-&= \E[\ln(1-\delta+\delta \exp(-\sigma \tilde{b}_j+\sigma^2/2))]-\epsilon_j^0,\label{eq:decomp:contrib_of_var_C_j}
+&= \E \left[ \ln \left(1-\delta+\delta \frac{\exp(\mu_j+\sigma^2/2)}{\exp(\sigma b_j +\mu_j)} \right) \right]-\epsilon_j^0 \\
+&= \E[\ln(1-\delta+\delta \exp(-\sigma b_j+\sigma^2/2))]-\epsilon_j^0,\label{eq:decomp:contrib_of_var_C_j}
 \end{align}
-where again $\tilde{b}_j$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
+where again $b_j$ is standard normally distributed (see SI section \ref{sect:noise}). Continuing,
 %last term of primary decomp, later splits into storage effects and effect of variation in E and C, per se  
 \begin{align}
 \olep_j^{EC} &= \E[r_j(E_j,C_{j \bs i})]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
@@ -519,58 +504,65 @@ Continuing,
 \begin{align}
 \olep_j^{(E\shp C)} &= \E[r_j(E_j^\shp , C_{j \bs i}^\shp )]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
 &= \E \left[ \ln \left(1-\delta+\delta \frac{B_j^\shp}{B_j} \right) \right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
-&= \E \left[ \ln \left(1-\delta+\delta \frac{\exp(b_j^\shp)}{\exp(b_j)} \right) \right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
-&= \E \left[ \ln \left(1-\delta+\delta \frac{\exp(\sigma \tilde{b}_j^\shp + \mu_j)}{\exp(\sigma \tilde{b}_j + \mu_j)} \right) \right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
-&= \E[\ln(1-\delta+\delta \exp(\sigma(\tilde{b}_j^\shp - \tilde{b}_j)))]-\olep_j^E-\olep_j^C-\epsilon_j^0, \label{eq:decomp:j:EshpC}
+&= \E \left[ \ln \left(1-\delta+\delta \frac{\exp(\sigma b_j^\shp + \mu_j)}{\exp(\sigma b_j + \mu_j)} \right) \right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
+&= \E[\ln(1-\delta+\delta \exp(\sigma(b_j^\shp - b_j)))]-\olep_j^E-\olep_j^C-\epsilon_j^0, \label{eq:decomp:j:EshpC}
 \end{align}
 where $(E_j^\shp , C_{j \bs i}^\shp)$ has the same marginals as $(E_j,C_{j \bs i})$ but has independent components;
-$B_j^\shp$ is distributed in the same way as $B_j$ but is independent of it; $b_j^\shp$ is distributed in the same
-way as $b_j$ but is independent of it; and $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and 
-independent of each other. Continuing,
+$B_j^\shp$ is distributed in the same way as $B_j$ but is independent of it; and $b_j^\shp$ is distributed in the same
+way as $b_j$ but is independent of it. Continuing,
 %storage effects
 \begin{align}
 \olep_j^{(EC)} &= \E[r_j(E_j,C_{j \bs i})]-\E[r_j(E_j^\shp , C_{j \bs i}^\shp)] \\
 &= -\E[r_j(E_j^\shp , C_{j \bs i}^\shp)] \\
-&= -\E[\ln(1-\delta+\delta \exp(\sigma (\tilde{b}_j^\shp - \tilde{b}_j)))],\label{eq:decomp:j:pECp}
+&= -\E[\ln(1-\delta+\delta \exp(\sigma (b_j^\shp - b_j)))].\label{eq:decomp:j:pECp}
 \end{align}
-these results obtained from (\ref{eq:decomp:j:EC}) and (\ref{eq:decomp:j:EshpC}). Again, $\tilde{b}_j$ and 
-$\tilde{b}_j^\shp$ are standard normally distributed and independent. Continuing,
+Continuing,
 \begin{align}
 \olep_j^{[EC]} &= \E[r_j(E_j,C_{j \bs i})] - \E[r_j(E_j^\nat , C_{j \bs i}^\nat)] \\
 &= \olr_{j \bs i} - \olr_{j \bs i}^\nat \\
 &= 0 \label{eq:decomp:j:EnatC}
 \end{align}
-because we showed in the Theory section of the main text that $\olr_{j \bs i}^\nat = \olr_{j \bs i}$ due to the fact that
+because we showed in SI section \ref{SIsect:TheoryForLotteryBoth} that $\olr_{j \bs i}^\nat = \olr_{j \bs i}$, 
+due to the fact that
 $E_j$ and $C_{j \bs i}$ are perfectly linearly related to each other. Continuing,
 \begin{align}
 \olep_j^{[E \nat C]} &= \olep_j^{(EC)} - \olep_j^{[EC]} \\
-&= - \E[\ln(1-\delta+\delta \exp(\sigma(\tilde{b}_j^\shp - \tilde{b}_j)))],\label{eq:decomp:j:EChard}
+&= - \E[\ln(1-\delta+\delta \exp(\sigma(b_j^\shp - b_j)))],\label{eq:decomp:j:EChard}
 \end{align}
-where again $\tilde{b}_j$ and $\tilde{b}_j^\shp$ are standard normally distributed and independent of each other.
-This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$ for the lottery model.
+where again $b_j$ and $b_j^\shp$ are standard normally distributed and independent of each other.
+This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$ for the log-normal
+fecundities lottery model.
 
 Using the above formulas, we observe that all the terms of the decomposition of $\olr_{i \bs i}$ depend on 
 $\delta$, $\sigma$, and $\mu_i - \mu_j$, but not separately on $\mu_i$ or $\mu_j$. The terms of the decomposition
 of $\olr_{j \bs i}$ depend on $\delta$ and $\sigma$, but do not depend on $\mu_i$ or $\mu_j$ at all.
 As discussed in the main text and SI section \ref{SIsect:scaling_factors}, we consider two alternative
-values for the scaling factors, $q_{ij}$, namely $q_{ij}=1$ and 
+values for the scaling factors, $q_{ij}$, namely $q_{ij}=1$ and a value which is shown in 
+SI section \ref{SIsect:TheoryForLotteryBoth}
+to equal, for the lottery model (both versions), the quantity
+\begin{equation}
+q_{ij} = \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta}.
+\end{equation}
+For the log-normal fecundities lottery model, this is
 \begin{align}
 q_{ij} &= \frac{\exp(\mu_i)}{(1-\delta) \exp(\mu_j)+\delta \exp(\mu_i)} \\
 &= \frac{\exp(-\mu_i)\exp(\mu_i)}{\exp(-\mu_i)[(1-\delta) \exp(\mu_j)+\delta \exp(\mu_i)]} \\
 &= \frac{1}{(1-\delta)\exp(-(\mu_i-\mu_j))+\delta}.\label{eq:decomp:qnot1}
 \end{align}
-These also either do not depend on $\mu_i$ or $\mu_j$ at all or they depend on the difference 
-$\mu_i-\mu_j$. Thus each of the terms of the decomposition (\ref{MT-eq:full_decomp}) from the main text
+Thus the $q_{ij}$ either do not depend on $\mu_i$ or $\mu_j$ at all or they depend on the difference 
+$\mu_i-\mu_j$, rather than depending separately on $\mu_i$ or $\mu_j$. Thus each of the terms of the 
+decomposition (\ref{MT-eq:full_decomp}) from the main text
 depends only on $\mu_i-\mu_j$ and not separately on $\mu_i$ or $\mu_j$, as stated in the Methods section of the main text.
 
-We now want to show that, for the lottery model, 
+We now want to show that, for the log-normal fecundities lottery model, 
 all elements of our decompositions (\ref{eq:decomp_overall_IGR}) and (\ref{eq:decomp_overall_rjbsi}), as well
 as $q_{ij}$, and therefore all elements of our decomposition (\ref{eq:decomp_overall_delta}), are the same 
 for our left- and right-tail associated cases, as was stated in Methods in the main text. Using the notation 
-$(E_i^{(l)},C_{i \bs i}^{(l)})=(B_i^{(l)},B_j^{(l)}/\delta)=(\exp(b_i^{(l)}),\exp(b_j^{(l)})/\delta)$ and 
-$(E_i^{(r)},C_{i \bs i}^{(r)})=(B_i^{(r)},B_j^{(r)}/\delta)=(\exp(b_i^{(r)}),\exp(b_j^{(r)})/\delta)$
+$(E_i^{(l)},C_{i \bs i}^{(l)})=(B_i^{(l)},B_j^{(l)}/\delta)=(\exp(\sigma b_i^{(l)} + \mu_i),
+\exp(\sigma b_j^{(l)} + \mu_j)/\delta)$ and 
+$(E_i^{(r)},C_{i \bs i}^{(r)})=(B_i^{(r)},B_j^{(r)}/\delta)=(\exp(\sigma b_i^{(r)}+\mu_i),\exp(\sigma b_j^{(r)}+\mu_j)/\delta)$
 for the left- and right-tail associated cases, respectively, we note that the marginal distributions of
-$(b_i^{(l)},b_j^{(l)})$ are the same as those of $(b_i^{(r)},b_j^{(r)})$, and likewise the marginals of 
+$(b_i^{(l)},b_j^{(l)})$ are the same as those of $(b_i^{(r)},b_j^{(r)})$, and so likewise the marginals of 
 $(B_i^{(l)},B_j^{(l)}/\delta)$ are the same as those of $(B_i^{(r)},B_j^{(r)}/\delta)$.
 So any component of (\ref{eq:decomp_overall_IGR}), or $q_{ij}$, will not depend on the choice
 of our left- or right-tail associated noise cases as long as it depends only on marginal distributions.
@@ -591,131 +583,141 @@ as is $(E_i^\shp ,C_{i \bs i}^\shp)$.
 
 We now examine $\olep_i^{[EC]}$, which, by (\ref{eq:decomp:contrib_ATA_1}), equals 
 \begin{equation}
-\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(b_i-b_j))]-\E[\ln(1-\delta+\delta\exp(\ddot{b}_i-\ddot{b}_j))].\label{eq:rep1}
+\olep_i^{[EC]} = \E[\ln(1-\delta+\delta\exp(\sigma(b_i-b_j)+\mu_i-\mu_j)]-
+\E[\ln(1-\delta+\delta\exp(\sigma(b_i^\nat-b_j^\nat)+\mu_i-\mu_j)].\label{eq:rep1}
 \end{equation}
-But $(\ddot{b}_i,\ddot{b}_j)$ is a bivariate normal random variable constructed to have the same marginals and 
+But $(b_i^\nat,b_j^\nat)$ is a bivariate normal random variable constructed to have the same marginals and 
 covariance as $(b_i,b_j)$, and the marginals and covariance of $(b_i^{(l)},b_j^{(l)})$ are the same as those of
-$(b_i^{(r)},b_j^{(r)})$, so $(\ddot{b}_i^{(l)},\ddot{b}_j^{(l)})$ is distributed in the same way as 
-$(\ddot{b}_i^{(r)},\ddot{b}_j^{(r)})$. So the second term on the right of (\ref{eq:rep1}) is independent
+$(b_i^{(r)},b_j^{(r)})$, so $(b_i^{\nat,(l)},b_j^{\nat,(l)})$ is distributed in the same way as 
+$(b_i^{\nat,(r)},b_j^{\nat,(r)})$. So the second term on the right of (\ref{eq:rep1}) is independent
 of the choice between our left- and right-tail-associated noise cases. Now examining 
-$\E[\ln(1-\delta+\delta\exp(b_i-b_j))]$, we define $\beta_1=-b_2+\mu_1+\mu_2$ and $\beta_2=-b_1+\mu_1+\mu_2$,
+$\E[\ln(1-\delta+\delta\exp(\sigma(b_i-b_j)+\mu_i-\mu_j))]$, 
+we define $\beta_1=-b_2$ and $\beta_2=-b_1$,
 and we note that $(\beta_1^{(l)},\beta_2^{(l)})$ is distributed in the same way as 
 $(b_1^{(r)},b_2^{(r)})$; likewise, $(\beta_1^{(r)},\beta_2^{(r)})$ is distributed in the same way as 
-$(b_1^{(l)},b_2^{(l)})$. But then we have 
+$(b_1^{(l)},b_2^{(l)})$. So we then have 
 \begin{align}
-\E[\ln(1-\delta+\delta\exp(b_i^{(l)}-b_j^{(l)}))] &= \E[\ln(1-\delta+\delta\exp(-\beta_j^{(l)}+\mu_1+\mu_2-(-\beta_i^{(l)}+\mu_1+\mu_2)))] \\
-&= \E[\ln(1-\delta+\delta\exp(\beta_i^{(l)}-\beta_j^{(l)}))] \\
-&= \E[\ln(1-\delta+\delta\exp(b_i^{(r)}-b_j^{(r)}))], 
+\E[\ln(1-\delta+\delta\exp(\sigma(b_i^{(l)}-b_j^{(l)})+\mu_i-\mu_j))] 
+&= \E[\ln(1-\delta+\delta\exp(\sigma(\beta_i^{(r)}-\beta_j^{(r)})+\mu_i+\mu_j))] \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma(-b_j^{(r)}+b_i^{(r)})+\mu_i-\mu_j))] \\
+&= \E[\ln(1-\delta+\delta\exp(\sigma(b_i^{(r)}-b_j^{(r)})+\mu_i-\mu_j))], 
 \end{align}
 which completes the proof that $\olep_i^{[EC]}$ is independent of left- versus right-tail associated noise.
 For the terms of the decomposition (\ref{eq:decomp_overall_rjbsi}), it suffices to look at the equations for those terms, 
 above, in this section, and note that all those terms depend only on marginals. 
 
-\section{The $\delta=1$ case}\label{sect:delta1}
+\subsection{Theory and plotting simplifications for the beta fecundities lottery model}\label{SIsect:TheoryForLotteryBeta}
+%***DAN: Fill this in.
 
-%The i terms
-Setting $\delta=1$ in (\ref{eq:decomp:baseline}) gives 
-\begin{equation}
-\epsilon_i^0 = \mu_i - \mu_j.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_E}) gives
-\begin{align}
-\olep_i^E &= \mu_i-\mu_j-\sigma^2/2-\epsilon_i^0 \\
-&= -\sigma^2/2.
-\end{align}
-Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_C}) gives
-\begin{align}
-\olep_i^C &= \mu_i - \mu_j + \sigma^2/2 -\epsilon_i^0 \\
-&= \sigma^2/2.
-\end{align}
-Setting $\delta=1$ in (\ref{eq:decomp:last_term_primary}) gives
-\begin{align}
-\olep_i^{EC} &= \mu_i - \mu_j -\olep_i^E - \olep_i^C - \epsilon_i^0 \\
-&= 0.
-\end{align}
-Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_EC_var_per_se}) gives
-\begin{align}
-\olep_i^{(E \shp C)} &= \mu_i - \mu_j -\olep_i^E - \olep_i^C - \epsilon_i^0 \\
-&= 0.
-\end{align}
-Setting $\delta=1$ in (\ref{eq:decomp:storage_effects}) gives
-\begin{align}
-\olep_i^{(EC)} &= \mu_i - \mu_j - (\mu_i -\mu_j) \\
-&= 0.
-\end{align}
-Setting $\delta=1$ in (\ref{eq:decomp:contrib_ATA_2}) gives
-\begin{equation}
-\olep_i^{[E \nat C]}=0.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:contrib_EC}) gives
-\begin{equation}
-\olep_i^{[EC]}=0.
-\end{equation}
-%The j terms
-Setting $\delta=1$ in (\ref{eq:decomp:baseline_j}) gives
-\begin{equation}
-\epsilon_j^0 = 0.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_E_j}) gives
-\begin{equation}
-\olep_j^E = -\sigma^2/2.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_C_j}) gives
-\begin{equation}
-\olep_j^C = \sigma^2/2.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:j:EC}) gives
-\begin{equation}
-\olep_j^{EC} = 0.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:j:EshpC}) gives
-\begin{equation}
-\olep_j^{(E \shp C)} = 0.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:j:pECp}) gives
-\begin{equation}
-\olep_j^{(EC)} = 0.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:j:EnatC}) gives
-\begin{equation}
-\olep_j^{[E \nat C]} = 0.
-\end{equation}
-Setting $\delta=1$ in (\ref{eq:decomp:j:EChard}) gives
-\begin{equation}
-\olep_j^{[EC]}=0.
-\end{equation}
-
-For $\delta=1$, the second value of $q_{ij}$ we considered, namely
-$q_{ij}=\frac{\exp(\mu_i)}{(1-\delta)\exp(\mu_j)+\delta \exp(\mu_i)}$, equals $1$, so both the
-options we considered for $q_{ij}$ are $1$ in this case. Combining the above 
-equations using $q_{ij}=1$ gives
-\begin{align}
-\Delta_i^0 &= \mu_i - \mu_j \\
-\Delta_i^E &= 0  \\
-\Delta_i^C &= 0  \\
-\Delta_i^{(E \shp C)} &=  0 \\
-\Delta_i^{[E \nat C]} &= 0  \\
-\Delta_i^{[EC]} &=  0. 
-\end{align}
-Thus the only contribution to coexistence for the $\delta=1$ case is $\Delta_i^0 = \mu_i - \mu_j$,
-which does not depend on $\sigma$ and which is non-positive whenever $\mu_i \leq \mu_j$ (which we assumed,
-without loss of generality).
-So there is no robust coexistence in the $\delta=1$ case for our simple model.
+%***DAN: I am 90% sure that once I re-read the comment of Ellner saying we do not need to consider really
+%big \delta, we will be able to delete the below.
+% \section{The $\delta=1$ case}\label{sect:delta1}
+% 
+% %The i terms
+% Setting $\delta=1$ in (\ref{eq:decomp:baseline}) gives 
+% \begin{equation}
+% \epsilon_i^0 = \mu_i - \mu_j.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_E}) gives
+% \begin{align}
+% \olep_i^E &= \mu_i-\mu_j-\sigma^2/2-\epsilon_i^0 \\
+% &= -\sigma^2/2.
+% \end{align}
+% Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_C}) gives
+% \begin{align}
+% \olep_i^C &= \mu_i - \mu_j + \sigma^2/2 -\epsilon_i^0 \\
+% &= \sigma^2/2.
+% \end{align}
+% Setting $\delta=1$ in (\ref{eq:decomp:last_term_primary}) gives
+% \begin{align}
+% \olep_i^{EC} &= \mu_i - \mu_j -\olep_i^E - \olep_i^C - \epsilon_i^0 \\
+% &= 0.
+% \end{align}
+% Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_EC_var_per_se}) gives
+% \begin{align}
+% \olep_i^{(E \shp C)} &= \mu_i - \mu_j -\olep_i^E - \olep_i^C - \epsilon_i^0 \\
+% &= 0.
+% \end{align}
+% Setting $\delta=1$ in (\ref{eq:decomp:storage_effects}) gives
+% \begin{align}
+% \olep_i^{(EC)} &= \mu_i - \mu_j - (\mu_i -\mu_j) \\
+% &= 0.
+% \end{align}
+% Setting $\delta=1$ in (\ref{eq:decomp:contrib_ATA_2}) gives
+% \begin{equation}
+% \olep_i^{[E \nat C]}=0.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:contrib_EC}) gives
+% \begin{equation}
+% \olep_i^{[EC]}=0.
+% \end{equation}
+% %The j terms
+% Setting $\delta=1$ in (\ref{eq:decomp:baseline_j}) gives
+% \begin{equation}
+% \epsilon_j^0 = 0.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_E_j}) gives
+% \begin{equation}
+% \olep_j^E = -\sigma^2/2.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:contrib_of_var_C_j}) gives
+% \begin{equation}
+% \olep_j^C = \sigma^2/2.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:j:EC}) gives
+% \begin{equation}
+% \olep_j^{EC} = 0.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:j:EshpC}) gives
+% \begin{equation}
+% \olep_j^{(E \shp C)} = 0.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:j:pECp}) gives
+% \begin{equation}
+% \olep_j^{(EC)} = 0.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:j:EnatC}) gives
+% \begin{equation}
+% \olep_j^{[E \nat C]} = 0.
+% \end{equation}
+% Setting $\delta=1$ in (\ref{eq:decomp:j:EChard}) gives
+% \begin{equation}
+% \olep_j^{[EC]}=0.
+% \end{equation}
+% 
+% For $\delta=1$, the second value of $q_{ij}$ we considered, namely
+% $q_{ij}=\frac{\exp(\mu_i)}{(1-\delta)\exp(\mu_j)+\delta \exp(\mu_i)}$, equals $1$, so both the
+% options we considered for $q_{ij}$ are $1$ in this case. Combining the above 
+% equations using $q_{ij}=1$ gives
+% \begin{align}
+% \Delta_i^0 &= \mu_i - \mu_j \\
+% \Delta_i^E &= 0  \\
+% \Delta_i^C &= 0  \\
+% \Delta_i^{(E \shp C)} &=  0 \\
+% \Delta_i^{[E \nat C]} &= 0  \\
+% \Delta_i^{[EC]} &=  0. 
+% \end{align}
+% Thus the only contribution to coexistence for the $\delta=1$ case is $\Delta_i^0 = \mu_i - \mu_j$,
+% which does not depend on $\sigma$ and which is non-positive whenever $\mu_i \leq \mu_j$ (which we assumed,
+% without loss of generality).
+% So there is no robust coexistence in the $\delta=1$ case for our simple model.
 
 \section{Efficient computation}\label{sect:efficient_computation}
 
+\subsection{Efficient computation for the log-normal fecundities lottery model}\label{sect:efficient_computation_lognormal}
+
 We here elaborate how the terms in the decompositions (\ref{eq:decomp_overall_IGR}), (\ref{eq:decomp_overall_rjbsi})
-and (\ref{eq:decomp_overall_delta}) are computed rapidly, for the lottery model.
+and (\ref{eq:decomp_overall_delta}) are computed rapidly, for the log-normal fecundities lottery model.
 
 First, for a large integer $M$ (we used $M=\Sexpr{M}$),
 carry out the following steps once.
 \begin{enumerate}
 \item Generate $M$ independent points $u^{(k)}$, $k=1,\ldots,M$, from a standard normal distribution.
-\item Generate $M$ independent points $(\tilde{b}_i^{(k)},\tilde{b}_j^{(k)})$, as in SI section \ref{sect:noise}, which are left-tail associated
-and which have standard-normal marginals. 
-\item Again as in SI section \ref{sect:noise}, generate $M$ independent points $(\tilde{\ddot{b}}_i^{(k)},\tilde{\ddot{b}}_j^{(k)})$, 
+\item Generate $M$ independent points $(b_i^{(k)},b_j^{(k)})$, $k=1,\ldots,M$, as in SI section \ref{sect:noise}, 
+which are left-tail associated and which have standard-normal marginals. 
+\item Again as in SI section \ref{sect:noise}, generate $M$ independent points $(b_i^{\nat,(k)},b_j^{\nat,(k)})$, 
 $k=1,\ldots,M$, from a bivariate normal distribution with component variances $1$ and Pearson correlation the same as 
-$(\tilde{b}_i^{(k)},\tilde{b}_j^{(k)})$.
+$(b_i^{(k)},b_j^{(k)})$.
 \end{enumerate}
 These data are stored and used repeatedly below. This provides computational efficiency because 
 random number generation is computationally expensive.
@@ -740,16 +742,16 @@ $\se \left( \widehat{\olep_i^{(E \shp C)}} \right) = \sd_k [\ln(1-\delta+\delta\
 \ln(1-\delta+\delta\exp(\sigma u^{(k)}+\mu_i-\mu_j-\sigma^2/2))-
 \ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\mu_i-\mu_j+\sigma^2/2))]/\sqrt{M}$. 
 \item Estimate $\olep_i^{[E \nat C]}$, following (\ref{eq:decomp:contrib_EC}), as
-$\widehat{\olep_i^{[E \nat C]}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]-\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]$. The standard error of this expression is 
-$\se \left( \widehat{\olep_i^{[E \nat C]}} \right) = \sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k [\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}$
+$\widehat{\olep_i^{[E \nat C]}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(b_i^{\nat,(k)}-b_j^{\nat,(k)})+\mu_i-\mu_j))]-\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]$. The standard error of this expression is 
+$\se \left( \widehat{\olep_i^{[E \nat C]}} \right) = \sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k [\ln(1-\delta+\delta\exp(\sigma(b_i^{\nat,(k)}-b_j^{\nat,(k)})+\mu_i-\mu_j))]/\sqrt{M}$
 and $s_2=\sd_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]/\sqrt{M}$.
-\item Estimate $\olep_i^{[EC]}$, following (\ref{eq:decomp:contrib_ATA_2}), as 
-$\widehat{\olep_i^{[EC]}} = \mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))]-
-\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))].$ The standard
+\item Estimate $\olep_i^{[EC]}$, following (\ref{eq:decomp:contrib_ATA_1}), as 
+$\widehat{\olep_i^{[EC]}} = \mean_k[\ln(1-\delta+\delta\exp(\sigma(b_i^{(k)}-b_j^{(k)})+\mu_i-\mu_j))]-
+\mean_k[\ln(1-\delta+\delta\exp(\sigma(b_i^{\nat,(k)}-b_j^{\nat,(k)})+\mu_i-\mu_j))].$ The standard
 error of this expression is $\se \left( \widehat{\olep_i^{[EC]}} \right)=\sqrt{s_3^2+s_1^2}$, where
-$s_1$ is as above, and $s_3=\sd_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}.$
+$s_1$ is as above, and $s_3=\sd_k[\ln(1-\delta+\delta\exp(\sigma(b_i^{(k)}-b_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}.$
 \item Finally, estimate $\olr_{i \bs i}$, following (\ref{eq:base_IGR}), as 
-$\widehat{\olr_{i \bs i}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{b}_i^{(k)}-\tilde{b}_j^{(k)})+\mu_i-\mu_j))],$
+$\widehat{\olr_{i \bs i}}=\mean_k[\ln(1-\delta+\delta\exp(\sigma(b_i^{(k)}-b_j^{(k)})+\mu_i-\mu_j))],$
 which has standard error $s_3$ from above.
 \end{enumerate}
 It is easy to see that $\widehat{\olr_{i \bs i}}=\epsilon_i^0+\widehat{\olep_i^E}+\widehat{\olep_i^C}+\widehat{\olep_i^{(E \shp C)}}+
@@ -765,8 +767,8 @@ with standard error $\se \left( \widehat{\olep_j^E} \right) = \sd_k [\ln(1-\delt
 \item Estimate $\olep_j^C$, following (\ref{eq:decomp:contrib_of_var_C_j}), as
 $\widehat{\olep_j^C}=\mean_k[\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]-\epsilon_j^0$, which has 
 standard error $\se \left( \widehat{\olep_j^C} \right) = \sd_k [\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
-\item Note that $\tilde{b}_j$ and $\tilde{b}_j^\shp$ in (\ref{eq:decomp:j:EshpC}) are standard normally distributed and
-independent, so $\tilde{b}_j^\shp - \tilde{b}_j$ is normally distributed with mean $0$ and variance $2$. So we can 
+\item Note that $b_j$ and $b_j^\shp$ in (\ref{eq:decomp:j:EshpC}) are standard normally distributed and
+independent, so $b_j^\shp - b_j$ is normally distributed with mean $0$ and variance $2$. So we can 
 estimate $\olep_j^{(E \shp C)}$, following (\ref{eq:decomp:j:EshpC}), as 
 $\widehat{\olep_j^{(E \shp C)}} = \mean_k [\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))]-\widehat{\olep_j^E}-\widehat{\olep_j^C}-\epsilon_j^0$.
 The standard error of this expression is $\se \left(  \widehat{\olep_j^{(E \shp C)}} \right) = 
@@ -782,7 +784,7 @@ estimates as well as for the quantities being estimated.
 Next, $q_{ij}$ can be taken (see SI section \ref{SIsect:scaling_factors}) to be, alternatively, $1$ or 
 the quantity displayed in (\ref{eq:decomp:qnot1}). Hence the terms of the decomposition 
 (\ref{eq:decomp_overall_delta}) can straightforwardly be etimated using our estimates elaborated 
-above, as follows. There are two alternative versions of the estiamtors for this decomposition, corresponding 
+above, as follows. There are two alternative versions of the estimators for this decomposition, corresponding 
 to the alternative values for $q_{ij}$.
 \begin{enumerate}
 \item Compute $\Delta_i^0 = \epsilon_i^0 - q_{ij} \epsilon_j^0$, which is computed exactly, since 
@@ -812,10 +814,10 @@ q_{ij}\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))+
 q_{ij}\ln(1-\delta+\delta\exp(\sigma u^{(k)}-\sigma^2/2))+
 q_{ij}\ln(1-\delta+\delta\exp(-\sigma u^{(k)}+\sigma^2/2))]/\sqrt{M}$.
 \item Estimate $\Delta_i^{[E \nat C]}$ as $\widehat{\Delta_i^{[E \nat C]}}=\widehat{\olep_i^{[E \nat C]}}-q_{ij}\widehat{\olep_j^{[E \nat C]}}=
-\mean_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]-
+\mean_k[\ln(1-\delta+\delta\exp(\sigma(b_i^{\nat,(k)}-b_j^{\nat,(k)})+\mu_i-\mu_j))]-
 \mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))]+
 q_{ij}\mean_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))],$ which one can straightforwardly show has standard error
-$\sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k[\ln(1-\delta+\delta\exp(\sigma(\tilde{\ddot{b}}_i^{(k)}-\tilde{\ddot{b}}_j^{(k)})+\mu_i-\mu_j))]/\sqrt{M}$ 
+$\sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k[\ln(1-\delta+\delta\exp(\sigma(b_i^{\nat,(k)}-b_j^{\nat,(k)})+\mu_i-\mu_j))]/\sqrt{M}$ 
 and $s_2=\sd_k[\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}+\mu_i-\mu_j))-q_{ij}\ln(1-\delta+\delta\exp(\sigma\sqrt{2}u^{(k)}))]/\sqrt{M}$.
 \item For $\Delta_i^{[EC]}$, we recall that $\olep_j^{[EC]}=0$, so $\Delta_i^{[EC]}=\olep_i^{[EC]}$. So we use
 $\widehat{\olep_i^{[EC]}}$ for $\widehat{\Delta_i^{[EC]}}$.
@@ -824,6 +826,9 @@ since $\olr_{j \bs i}=0$.
 \end{enumerate}
 As for (\ref{eq:decomp_overall_IGR}) and (\ref{eq:decomp_overall_rjbsi}), it is again the case that (\ref{eq:decomp_overall_delta})
 applies for the estimators as well as for the quantities being estimated.
+
+\subsection{Efficient computation for the beta fecundities lottery model}\label{sect:efficient_computation_beta}
+%***DAN: fill in later
 
 \section{Details of diatom model setup}\label{sect:diatom_model}
 
@@ -907,14 +912,15 @@ $(E_{i,k}^\nat,C_{i \bs i,k}^\nat)$, $k=1,\ldots,T$ should be recomputed for
 multiple such samples, all computed via the same process, and a median of 
 the resulting distribution of values should be used.
 
-\section{      Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
-
-In Fig. \ref{MT-fig:fig4} of the main text we plotted GWR , $\Delta_i^{[EC]}$, and $\text{GWR}-\Delta_i^{[EC]}$ 
-(see equation \ref{eq:decomp_overall_delta} and the text below it) for the lottery model. We here show
-the resulting plot does not depend on which of the two choices for the scaling factors $q_{ij}$ is used.
-But $\text{GWR} = \olr_{i \bs i} - q_{ij} \olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij}\olep_j^{[EC]}$,
-so it suffices to show $\olr_{j \bs i}=0$ and $\olep_j^{[EC]}=0$. The first of these is known true, \emph{a priori}, 
-and the second was demonstrated in section \ref{sect:math_simplifications}.
+%***DAN: I think I do not need this section anymore, but just keeping it around to be safe.
+% \section{      Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
+% 
+% In Fig. \ref{MT-fig:fig4} of the main text we plotted GWR , $\Delta_i^{[EC]}$, and $\text{GWR}-\Delta_i^{[EC]}$ 
+% (see equation \ref{eq:decomp_overall_delta} and the text below it) for the lottery model. We here show
+% the resulting plot does not depend on which of the two choices for the scaling factors $q_{ij}$ is used.
+% But $\text{GWR} = \olr_{i \bs i} - q_{ij} \olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij}\olep_j^{[EC]}$,
+% so it suffices to show $\olr_{j \bs i}=0$ and $\olep_j^{[EC]}=0$. The first of these is known true, \emph{a priori}, 
+% and the second was demonstrated in section \ref{sect:math_simplifications}.
 
 \clearpage
 \newpage

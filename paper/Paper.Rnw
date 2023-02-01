@@ -514,12 +514,10 @@ First, we assumed, without loss of generality, that $\mu_1 \leq \mu_2$. To under
 it was then sufficient to decompose GWR of the weaker competitor, species 1. 
 Second, we showed that, for the log-normal fecundities
 lottery model, none of the components of (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
-instead they depend only on $\mu_1-\mu_2$ (SI section \ref{SI-sect:math_simplifications}). 
-%***DAN: Not sure if this will the right citation anymore after we restructure those parts of the SI
+instead they depend only on $\mu_1-\mu_2$ (SI section \ref{SI-SIsect:TheoryForLottery}). 
 So we plotted against $\mu_1 - \mu_2$. 
 Third, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
-for both our left- and right-tail associated noises (SI section \ref{SI-sect:math_simplifications}). 
-%***DAN: Also check this citation
+for both our left- and right-tail associated noises (SI section \ref{SI-SIsect:TheoryForLottery}). 
 So we only generated plots 
 for left-tail associated noise. For each combination of $\delta=0.2, 0.4, 0.6$
 and $\mu_1-\mu_2=0,-0.5,-2,-4$,
@@ -534,24 +532,17 @@ we plotted the components of (\ref{eq:full_decomp}) against $\sigma$.
 The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of performing these simulations are in 
 SI section \ref{SI-sect:efficient_computation}.
-%***DAN: check the citation after restructuring the SI
 
 %Then a similar para for the beta-fecundity lottery model.
 To explore, using the beta fecundities lottery model, the relative magnitudes of the contributions 
 to coexistence that come from ATAs versus other mechanisms, we plotted the terms of the decomposition 
 (\ref{eq:full_decomp}) for that model against the model parameters $\eta_1$, $\eta_2$, and $\delta$.
 %***DAN: finish it
+%***DAN: Next steps as of 2023 02 01:
+%Fill in the sup mat section for the theory for the beta fecundities lottery model
+%fill in the efficient computation section for that same model
+%write this section, here, in the main text
 
-%For the sup mat, I think you will need these sections:
-%S3 - on generating the Fig. 1 noise (only)
-%S4 - as large section with subsections. About the theory for the two lottery models, but not about the effecient computation
-%   Starts with material on the general lottery model
-%   Then a sub-section with all the computations for the log-normal-fecundities lottery model
-%   Then a sub-section for the beta-fecundities lottery model
-%S5 - then a similar section, but for the efficient computations
-%There might be additional sections, see the current sections and see if those need to be maintained
-%as their own sections or can be absorbed into the above.
-%This is going to take some work. 
 
 \subsection{Diatom chemostat system}
 
