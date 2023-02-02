@@ -6,11 +6,10 @@ rm(list=ls())
 #checkpoint - uses the checkpoint package, sets up a local installation of all packages as they existed 
 #on the date specified, in the same directory as this file, then runs code from those installations
 #of the packages. Helps ensure reproducibility through time. 
-library(checkpoint)
 if (!dir.exists("./.checkpoint/")){
   dir.create("./.checkpoint/")
 }
-checkpoint("2020-12-31",checkpoint_location = "./")
+checkpoint::checkpoint("2020-12-31",checkpoint_location = "./")
 
 #Make standard environmental noise (transformed to use in different simulations), change M=length of 
 #simulations here, if desired 
