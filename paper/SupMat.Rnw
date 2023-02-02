@@ -295,33 +295,50 @@ $\Sigma = \begin{pmatrix} 1&\rho \\ \rho&1\end{pmatrix}$.
 Recall we took $E_i(t)=B_i(t)$, thereby assuming that fecundity depends strictly on
 the environment for the lottery model (both the log-normal fecundities and the beta fecundities versions of the model). 
 Recall also that competition, $C_i(t)$, is 
-$$C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N)$$ (again for both versions of the model), which
+\begin{equation}
+C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N)
+\end{equation}
+(again for both versions of the model), which
 does not depend on $i$. Species growth rates for the lottery model, $r_i(t)=\ln(N_{i}(t+1)/N_i(t))$, can then be written 
-$$r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)],$$ 
+\begin{equation}
+r_i(t)=\ln[1-\delta+\delta N B_i(t)/(B_1(t)N_1(t)+B_2(t)N_2(t))]=\ln[1-\delta+E_i(t)/C_i(t)],
+\end{equation}
 which is an increasing
 function of $E_i$ and decreasing function of $C_i$, as was assumed at the outset of Theory.
 
 When $i$ is an invader, the competition experienced by either 
 species is obtained from the expression for $C_i=C_j$ by setting $N_i=0$ and $N_j=N$. Thus 
-$$C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta.$$
+\begin{equation}
+C_{i \bs i}(t)=C_{j \bs i}(t)=B_j(t)/\delta=E_j(t)/\delta.
+\end{equation}
 Lottery-model values of all the expressions of SI section \ref{SIsect:other_mechanisms} can be obtained 
 from the above expression for $C_{i \bs i}$ and the assumption that $E_i(t)=B_i(t)$.
 For instance, 
-$$\olr_{i \bs i} = \E[r_i(E_i,C_{i \bs i})] = \E[\ln(1-\delta+E_i /C_{i \bs i})] = \E[\ln(1-\delta+\delta B_i/B_j)].$$ 
+\begin{equation}
+\olr_{i \bs i} = \E[r_i(E_i,C_{i \bs i})] = \E[\ln(1-\delta+E_i /C_{i \bs i})] = \E[\ln(1-\delta+\delta B_i/B_j)].
+\end{equation}
 Likewise, 
-$$\olr_{j \bs i} = \E[r_j(E_j,C_{j \bs i})] = \E[\ln(1-\delta+E_j/C_{j \bs i})] = \E[\ln(1-\delta+\delta B_j/B_j)]=0,$$
+\begin{equation}
+\olr_{j \bs i} = \E[r_j(E_j,C_{j \bs i})] = \E[\ln(1-\delta+E_j/C_{j \bs i})] = \E[\ln(1-\delta+\delta B_j/B_j)]=0,
+\end{equation}
 though we already knew, \emph{a priori}, that this equals $0$. 
 An expression for $\olrs_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
 by a random variable with the same marginals, but independent components, $(B_i^\shp,B_j^\shp /\delta)$.
 Thus 
-$$\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)].$$ 
+\begin{equation}
+\olrs_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\shp/B_j^\shp)].
+\end{equation}
 Likewise, $\olrs_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})$ in an analogous way; we can use 
 $(E_j^\shp,C_{j \bs i}^\shp)=(B_j^\shp, B_j /\delta)$, so 
-$$\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)].$$
+\begin{equation}
+\olrs_{j \bs i}=\E[\ln(1-\delta+\delta B_j^\shp / B_j)].
+\end{equation}
 An expression for $\olrn_{i \bs i}$ is obtained by replacing $(E_i,C_{i \bs i})=(B_i,B_j/\delta)$
 by a random variable with the same marginals, but with ATAs removed, $(B_i^\nat,B_j^\nat /\delta)$.
 Thus 
-$$\olrn_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\nat/B_j^\nat)].$$ 
+\begin{equation}
+\olrn_{i \bs i} = \E[\ln(1-\delta+\delta B_i^\nat/B_j^\nat)].
+\end{equation}
 Likewise, $\olrn_{j \bs i}$ is computed by replacing $(E_j,C_{j \bs i})=(B_j,B_j/\delta)$ in an analogous way.
 But note that $B_j$ and $B_j/\delta$ are linearly related for the lottery model, so their association is 
 already symmetric, so
@@ -607,7 +624,157 @@ For the terms of the decomposition (\ref{eq:decomp_overall_rjbsi}), it suffices 
 above, in this section, and note that all those terms depend only on marginals. 
 
 \subsection{Theory and plotting simplifications for the beta fecundities lottery model}\label{SIsect:TheoryForLotteryBeta}
-%***DAN: Fill this in.
+
+We first compute all terms of the decomposition (\ref{eq:decomp_overall_IGR}) of $\olr_{i \bs i}$ for the 
+beta fecundities lottery model. Defining, for this section, $\beta_i=F_\beta^{-1} \circ \varphi(b_i)$ 
+where $F_\beta$ is the CDF of a beta distribution with parameters $0.5,0.5$ and $\varphi$ is the CDF of 
+a standard normal distribution, we have $B_i = \eta_i \beta_i$. Then, using the formulas of 
+SI section \ref{SIsect:other_mechanisms}, we have
+\begin{equation}
+E_i = B_i = \eta_i \beta_i 
+\end{equation}
+\begin{equation}
+B_j = \eta_j \beta_j 
+\end{equation}
+\begin{equation}
+C_{i \bs i} = \frac{B_j}{\delta} = \frac{\eta_j}{\delta}\beta_j
+\end{equation}
+\begin{equation}
+\overline{E}_i = \overline{B}_i = \frac{\eta_i}{2} 
+\end{equation}
+\begin{equation}
+\overline{B}_j = \frac{\eta_j}{2} 
+\end{equation}
+\begin{equation}
+\overline{C}_{i \bs i} = \frac{\eta_j}{2 \delta} 
+\end{equation}
+\begin{equation}
+r_{i \bs i} = \ln\left(1-\delta+\delta \frac{B_i}{B_j} \right) = \ln\left(1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j}\right)
+\end{equation}
+\begin{equation}
+\epsilon_i^0 = \ln\left( 1-\delta+\delta \frac{\eta_i}{\eta_j}  \right) 
+\end{equation}
+\begin{equation}
+\olep_i^E = \E\left[ \ln\left( 1-\delta+\delta \frac{2\eta_i \beta_i}{\eta_j}  \right)  \right]-\epsilon_i^0
+\end{equation}
+\begin{equation}
+\olep_i^C \E\left[ \ln\left(1-\delta+\delta\frac{\eta_i}{2\eta_j \beta_j}\right)  \right]-\epsilon_i^0
+\end{equation}
+\begin{equation}
+\olep_i^{EC} = \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j}  \right) \right]-\olep_i^E-\olep_i^C-\epsilon_i^0
+\end{equation}
+and
+\begin{equation}
+\olep_i^{(E\shp C)} = \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i^\shp}{\eta_j \beta_j^\shp}  \right)  \right]-\olep_i^E-\olep_i^C-\epsilon_i^0,
+\end{equation}
+where $(\beta_i^\shp,\beta_j^\shp)=(F_\beta^{-1} \circ \varphi (b_i^\shp),F_\beta^{-1} \circ \varphi(b_j^\shp))$.
+Here, $b_i^\shp$ and $b_j^\shp$ are standard normal and independent. Continuing,
+\begin{equation}
+\olep_i^{(EC)} = \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j}  \right) \right]
+-\E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i\beta_i^\shp}{\eta_j \beta_j^\shp} \right) \right].
+\end{equation}
+Continuing,
+\begin{equation}
+\olep_i^{[EC]}=\E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j} \right) \right]-
+\E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i^\nat}{\eta_j \beta_j^\nat}  \right)  \right],
+\end{equation}
+where $(\beta_i^\nat,\beta_j^\nat)=(F_\beta^{-1} \circ \varphi (b_i^\nat),F_\beta^{-1} \circ \varphi(b_j^\nat))$,
+and $(b_i^\nat,b_j^\nat)$ has the same (standard normal) marginals and covariance as $(b_i,b_j)$ but is
+bivariate normal. Note that a choice has been made here: we could have chosen $(b_i^\nat,b_j^\nat)$
+to have the same (standard normal) marginals as $(b_i,b_j)$, but with covariance chosen so that
+the Pearson, Spearman, or Kendall correlation of $E_i^\nat = \eta_i F_\beta^{-1} \circ \varphi (b_i^\nat)$
+and $C_{i \bs i}^\nat = \eta_j F_\beta^{-1} \circ \varphi (b_j^\nat)/\delta$ is the same as that of 
+$E_i = \eta_i F_\beta^{-1} \circ \varphi (b_i)$ and $C_{i \bs i} = \eta_j F_\beta^{-1} \circ \varphi (b_j)/\delta$.
+But the choice we made seems the most natural under the circumstances.
+Continuing, $\olep_i^{[E\nat C]}=\olep_i^{(E C)}-\olep_i^{[E C]}$ is available by subtraction, i.e.,
+\begin{equation}
+\olep_i^{[E\nat C]} = \E\left[ \ln\left(1-\delta+\delta\frac{\eta_i \beta_i^\nat}{\eta_j \beta_j^\nat}  \right)  \right] - 
+\E\left[ \ln\left(1-\delta+\delta\frac{\eta_i \beta_i^\shp}{\eta_j \beta_j^\shp}  \right)  \right].
+\end{equation}
+This completes the calculation of all the terms of the decomposition 
+(\ref{eq:decomp_overall_IGR}) of $\olr_{i \bs i}$ for the beta fecundities lottery model.
+
+We next decompose $\olr_{j \bs i}$ for the beta fecundities lottery model [see (\ref{eq:decomp_overall_rjbsi})]. We have 
+\begin{equation}
+E_j = B_j = \eta_j \beta_j
+\end{equation}
+\begin{equation}
+C_{j \bs i} = \frac{B_j}{\delta} = \frac{\eta_j \beta_j}{\delta}
+\end{equation}
+\begin{equation}
+\overline{E}_j = \frac{\eta_j}{2}
+\end{equation}
+\begin{equation}
+\overline{C}_{j \bs i} = \frac{\eta_j}{2\delta}
+\end{equation}
+\begin{equation}
+\overline{B}_j = \frac{\eta_j}{2}
+\end{equation}
+\begin{align}
+\olr_{j \bs i} &= \E\left[ \ln\left( 1-\delta+\frac{E_j}{C_{j \bs i}} \right) \right] \\
+&= \E\left[ \ln\left( 1-\delta+\frac{B_j}{B_j} \right) \right] \\
+&= 0 
+\end{align}
+\begin{equation}
+\epsilon_j^0 = \ln \left( 1-\delta+\delta\frac{\eta_j /2}{\eta_j /2} \right) = 0
+\end{equation}
+\begin{align}
+\olep_j^E &= \E\left[ \ln\left( 1-\delta+\delta\frac{2\eta_j \beta_j}{\eta_j} \right) \right] - \epsilon_j^0 \\
+&= \E\left[ \ln\left( 1-\delta+2 \delta \beta_j \right) \right]
+\end{align}
+\begin{align}
+\olep_j^C &= \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_j}{2\eta_j\beta_j} \right) \right]-\epsilon_j^0 \\
+&= \E\left[ \ln\left( 1-\delta+\frac{\delta}{2\beta_j} \right) \right]
+\end{align}
+\begin{align}
+\olep_j^{EC} &= \E\left[  \ln\left( 1-\delta+\delta\frac{B_j}{B_j} \right)\right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
+&= -\olep_j^E - \olep_j^C
+\end{align}
+\begin{align}
+\olep_j^{(E\shp C)} &= \E\left[ \ln\left( 1-\delta+\delta\frac{B_j}{B_j^\shp} \right) \right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
+&= \E\left[ \ln\left( 1-\delta+\delta\frac{\beta_j}{\beta_j^\shp} \right) \right]-\olep_j^E-\olep_j^C,
+\end{align}
+where $(\beta_j,\beta_j^\shp)=(F_\beta^{-1} \circ \varphi (b_j),F_\beta^{-1} \circ \varphi (b_j^\shp))$ and
+$b_j^\shp$ is distributed in the same way as $b_j$ but is independent of it. Continuing,
+\begin{align}
+\olep_j^{(EC)} &= \E\left[ \ln\left(1-\delta+\delta \frac{B_j}{B_j} \right)  \right]-
+\E\left[ \ln\left(1-\delta+\delta\frac{B_j}{B_j^\shp}  \right)  \right] \\
+&= -\E\left[\ln\left( 1-\delta+\delta\frac{\beta_j}{\beta_j^\shp} \right)  \right].
+\end{align}
+Continuing,
+\begin{align}
+\olep_j^{[EC]} &= \E\left[ \ln\left(1-\delta+\delta \frac{B_j}{B_j} \right)  \right]-
+\E\left[ \ln\left(1-\delta+\delta\frac{B_j^\nat}{B_j^\nat}  \right)  \right] \\
+&= 0.
+\end{align}
+We showed already (SI section \ref{SIsect:TheoryForLotteryBoth} and 
+\ref{SIsect:TheoryForLotteryLogNorm}) that this is $0$ because $E_j$ and $C_{j \bs i}$
+are linearly related to each other. Continuing,
+\begin{align}
+\olep_j^{[E \nat C]} &= \olep_j^{(EC)}-\olep_j^{[EC]} \\
+&= -\E\left[ \ln\left( 1-\delta+\delta\frac{\beta_j}{\beta_j^\shp}  \right)  \right].
+\end{align}
+This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$
+for the beta fecundities lottery model.
+
+Using the above formulas, we observe that all the terms of the decomposition of $\olr_{i \bs i}$ depend on 
+$\delta$, $\sigma$, and $\eta_i/\eta_j$, but not separately on $\eta_i$ or $\eta_j$. The terms of the decomposition
+of $\olr_{j \bs i}$ depend on $\delta$ and $\sigma$, but do not depend on $\eta_i$ or $\eta_j$ at all.
+As discussed in the main text and SI section \ref{SIsect:scaling_factors}, we consider two alternative
+values for the scaling factors, $q_{ij}$, namely $q_{ij}=1$ and 
+\begin{equation}
+q_{ij} = \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta}.
+\end{equation}
+For the beta fecundities lottery model, this is
+\begin{align}
+q_{ij} &= \frac{\eta_i}{\eta_j(1-\delta)+\eta_i \delta} \\
+&= \frac{\eta_i/\eta_j}{(1-\delta)+\frac{\eta_i}{\eta_j}\delta}.
+\end{align}
+Thus the $q_{ij}$ either do not depend on $\eta_i$ or $\eta_j$ at all or they depend on the quotient 
+$\eta_i/\eta_j$, rather than depending separately on $\eta_i$ or $\eta_j$. Thus each of the terms of the 
+decomposition (\ref{MT-eq:full_decomp}) from the main text
+depends only on $\eta_i/\eta_j$ and not separately on $\eta_i$ or $\eta_j$, as stated in the Methods 
+section of the main text.
 
 %***DAN: I am 90% sure that once I re-read the comment of Ellner saying we do not need to consider really
 %big \delta, we will be able to delete the below.

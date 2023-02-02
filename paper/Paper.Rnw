@@ -488,7 +488,8 @@ with shape and scale parameters $0.5$ (probability density function proportional
 the unit interval). So the beta-fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
 and produced fecundities with $U$-shaped, beta distributions between $0$ and $\eta_1$, for $B_1$, and
 $\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$, and larger $\eta_i$ also 
-corresponded to more variable fecundities for species $i$. 
+corresponded to more variable fecundities for species $i$. The parameter $\eta_i$ represents the upper
+bound on what fecundities could occur for species $i$.
 
 %more stuff that applies to both
 For both versions of the lottery model, 
@@ -501,7 +502,7 @@ does not depend on $i$. These choices for $E_i(t)$ and $C_i(t)$ fulfill the assu
 that the growth rate, $r_i(t)$ is an increasing function of $E_i(t)$ and a decreasing function of $C_i(t)$ 
 (see SI section \ref{SI-SIsect:TheoryForLottery} for details).
 
-\subsection{How results were plotted for G2}
+\subsection{How results were plotted for goal G2}
 
 %Plotting shortcuts for the log-normal fecundities model
 To explore, using the log-normal fecundities lottery model, the relative magnitudes of the contributions 
@@ -536,12 +537,26 @@ SI section \ref{SI-sect:efficient_computation}.
 %Then a similar para for the beta-fecundity lottery model.
 To explore, using the beta fecundities lottery model, the relative magnitudes of the contributions 
 to coexistence that come from ATAs versus other mechanisms, we plotted the terms of the decomposition 
-(\ref{eq:full_decomp}) for that model against the model parameters $\eta_1$, $\eta_2$, and $\delta$.
-%***DAN: finish it
+(\ref{eq:full_decomp}) for that model against the model parameters $\eta_1$, $\eta_2$, and $\delta$,
+again labelling regions corresponding to ATA rescue or exclusion.
+Some mathematical shortcuts, summarized here, simplified plotting. 
+First, we assumed, without loss of generality, that $\eta_1 \leq \eta_2$. To understand coexistence, 
+it was then sufficient to decompose GWR of the weaker competitor, species 1. 
+Second, we showed that, for the beta fecundities
+lottery model, none of the components of (\ref{eq:full_decomp}) depends independently on $\eta_1$ and $\eta_2$;
+instead they depend only on $\eta_1/\eta_2$ (SI section \ref{SI-SIsect:TheoryForLottery}). 
+So we plotted against $\eta_1/\eta_2$. 
+For each combination of $\delta=0.2, 0.4, 0.6$
+and for left- and right-tail associated noise, we plotted 
+the components of (\ref{eq:full_decomp}) against the upper bound ratio $\eta_1/\eta_2$. 
+The simulation methods of \cite{Ellner_2019} were again used.
+Computationally efficient means of performing these simulations are in 
+SI section \ref{SI-sect:efficient_computation}.
+
 %***DAN: Next steps as of 2023 02 01:
-%Fill in the sup mat section for the theory for the beta fecundities lottery model
+%DONE Fill in the sup mat section for the theory for the beta fecundities lottery model
 %fill in the efficient computation section for that same model
-%write this section, here, in the main text
+%DONE write this section, here, in the main text
 
 
 \subsection{Diatom chemostat system}
