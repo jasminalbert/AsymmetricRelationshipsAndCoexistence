@@ -641,9 +641,17 @@ Complete computer codes for the project are stored at
 
 \section{Results}\label{section:results}
 
+%***DAN: made it to here, 2023 02 03, 4:11 pm. Resume from here.
+
+%***DAN: copy of goal from the Intro
+%G2) To explore, using the simple lottery model, the relative magnitudes of the contributions to coexistence that come
+%from ATAs compared to other, previously known mechanisms of coexistence; and to determine whether species may 
+%sometimes coexist with ATAs but not without, or vice versa. 
+
 %G2 
-Fulfilling goal G2 of the Introduction (to explore, using the lottery model, the relative magnitudes 
-of the contributions to coexistence that come from ATAs compared to other mechanisms), Fig.
+To begin fulfilling goal G2 of the Introduction (to explore, using the lottery model, the relative magnitudes 
+of the contributions to coexistence that come from ATAs compared to other mechanisms; and to see if ATA rescue 
+or ATA exclusion can occur), Fig.
 \ref{fig:fig3} shows that the ATA term of (\ref{eq:full_decomp}) often, but not always, has 
 magnitude comparable to the magnitudes of other terms of the extended MCT decomposition. 
 Magnitudes of $\Delta_i^{[EC]}$ tended to be larger, relative to the magnitudes of the 
@@ -850,14 +858,10 @@ in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by loc
 left-tail association and (h) showing right-tail association. \label{fig:pedagog1}}
 \end{figure}
 
-%***DAN: I edited the caption (2023 01 26) but this is the completely the wrong figure. I need to replace it 
-%with Jasmin's new pedagogical figure once I know where in the repo 
-%structure that one is generated and stored, and after I have re-run Jasmin's code, and after she has made the
-%changes I recently asked for (see next comment).
-%***DAN: I asked Jasmin to replace the \phi with \varphi in the axis labels on b and d, and to make the marginals
-%on b and c be *standard* normal instead of just normal.
+%***DAN: This looks pretty good except the histograms for some marginals do not really look like the plotted
+%pdfs of the marginals. I think Jasmin said in an email she was fixing this.
 \begin{figure}
-\includegraphics[width=.75\textwidth]{../results_figs/fig2.pdf}
+\includegraphics[width=1.025\textwidth]{../results_figs/theory_fig_col.pdf}
 \caption{Illustration of how asymmetric tail associations are removed while retaining marginal distributions and correlation 
 between variables (see Theory). (a) An example original bivariate distribution $(E_i,C_{i \bs i})$, with ATA present. 
 (b) Marginals are now normalized. The variables $E_i$ and $C_{i \bs i}$ are individually transformed to have standard normal 
