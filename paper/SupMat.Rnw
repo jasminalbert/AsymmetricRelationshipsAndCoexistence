@@ -649,23 +649,23 @@ C_{i \bs i} = \frac{B_j}{\delta} = \frac{\eta_j}{\delta}\beta_j
 \overline{C}_{i \bs i} = \frac{\eta_j}{2 \delta} 
 \end{equation}
 \begin{equation}
-r_{i \bs i} = \ln\left(1-\delta+\delta \frac{B_i}{B_j} \right) = \ln\left(1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j}\right)
+r_{i \bs i} = \ln\left(1-\delta+\delta \frac{B_i}{B_j} \right) = \ln\left(1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j}\right)\label{eq:103}
 \end{equation}
 \begin{equation}
-\epsilon_i^0 = \ln\left( 1-\delta+\delta \frac{\eta_i}{\eta_j}  \right) 
+\epsilon_i^0 = \ln\left( 1-\delta+\delta \frac{\eta_i}{\eta_j}  \right) \label{eq:104}
 \end{equation}
 \begin{equation}
-\olep_i^E = \E\left[ \ln\left( 1-\delta+\delta \frac{2\eta_i \beta_i}{\eta_j}  \right)  \right]-\epsilon_i^0
+\olep_i^E = \E\left[ \ln\left( 1-\delta+\delta \frac{2\eta_i \beta_i}{\eta_j}  \right)  \right]-\epsilon_i^0 \label{eq:105}
 \end{equation}
 \begin{equation}
-\olep_i^C \E\left[ \ln\left(1-\delta+\delta\frac{\eta_i}{2\eta_j \beta_j}\right)  \right]-\epsilon_i^0
+\olep_i^C = \E\left[ \ln\left(1-\delta+\delta\frac{\eta_i}{2\eta_j \beta_j}\right)  \right]-\epsilon_i^0 \label{eq:106}
 \end{equation}
 \begin{equation}
 \olep_i^{EC} = \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j}  \right) \right]-\olep_i^E-\olep_i^C-\epsilon_i^0
 \end{equation}
 and
 \begin{equation}
-\olep_i^{(E\shp C)} = \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i^\shp}{\eta_j \beta_j^\shp}  \right)  \right]-\olep_i^E-\olep_i^C-\epsilon_i^0,
+\olep_i^{(E\shp C)} = \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i^\shp}{\eta_j \beta_j^\shp}  \right)  \right]-\olep_i^E-\olep_i^C-\epsilon_i^0,\label{eq:108}
 \end{equation}
 where $(\beta_i^\shp,\beta_j^\shp)=(F_\beta^{-1} \circ \varphi (b_i^\shp),F_\beta^{-1} \circ \varphi(b_j^\shp))$.
 Here, $b_i^\shp$ and $b_j^\shp$ are standard normal and independent. Continuing,
@@ -676,7 +676,7 @@ Here, $b_i^\shp$ and $b_j^\shp$ are standard normal and independent. Continuing,
 Continuing,
 \begin{equation}
 \olep_i^{[EC]}=\E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i}{\eta_j \beta_j} \right) \right]-
-\E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i^\nat}{\eta_j \beta_j^\nat}  \right)  \right],
+\E\left[ \ln\left( 1-\delta+\delta\frac{\eta_i \beta_i^\nat}{\eta_j \beta_j^\nat}  \right)  \right],\label{eq:110}
 \end{equation}
 where $(\beta_i^\nat,\beta_j^\nat)=(F_\beta^{-1} \circ \varphi (b_i^\nat),F_\beta^{-1} \circ \varphi(b_j^\nat))$,
 and $(b_i^\nat,b_j^\nat)$ has the same (standard normal) marginals and covariance as $(b_i,b_j)$ but is
@@ -689,7 +689,7 @@ But the choice we made seems the most natural under the circumstances.
 Continuing, $\olep_i^{[E\nat C]}=\olep_i^{(E C)}-\olep_i^{[E C]}$ is available by subtraction, i.e.,
 \begin{equation}
 \olep_i^{[E\nat C]} = \E\left[ \ln\left(1-\delta+\delta\frac{\eta_i \beta_i^\nat}{\eta_j \beta_j^\nat}  \right)  \right] - 
-\E\left[ \ln\left(1-\delta+\delta\frac{\eta_i \beta_i^\shp}{\eta_j \beta_j^\shp}  \right)  \right].
+\E\left[ \ln\left(1-\delta+\delta\frac{\eta_i \beta_i^\shp}{\eta_j \beta_j^\shp}  \right)  \right].\label{eq:111}
 \end{equation}
 This completes the calculation of all the terms of the decomposition 
 (\ref{eq:decomp_overall_IGR}) of $\olr_{i \bs i}$ for the beta fecundities lottery model.
@@ -713,18 +713,18 @@ C_{j \bs i} = \frac{B_j}{\delta} = \frac{\eta_j \beta_j}{\delta}
 \begin{align}
 \olr_{j \bs i} &= \E\left[ \ln\left( 1-\delta+\frac{E_j}{C_{j \bs i}} \right) \right] \\
 &= \E\left[ \ln\left( 1-\delta+\frac{B_j}{B_j} \right) \right] \\
-&= 0 
+&= 0 \label{eq:119}
 \end{align}
 \begin{equation}
-\epsilon_j^0 = \ln \left( 1-\delta+\delta\frac{\eta_j /2}{\eta_j /2} \right) = 0
+\epsilon_j^0 = \ln \left( 1-\delta+\delta\frac{\eta_j /2}{\eta_j /2} \right) = 0 \label{eq:120}
 \end{equation}
 \begin{align}
 \olep_j^E &= \E\left[ \ln\left( 1-\delta+\delta\frac{2\eta_j \beta_j}{\eta_j} \right) \right] - \epsilon_j^0 \\
-&= \E\left[ \ln\left( 1-\delta+2 \delta \beta_j \right) \right]
+&= \E\left[ \ln\left( 1-\delta+2 \delta \beta_j \right) \right] \label{eq:122}
 \end{align}
 \begin{align}
 \olep_j^C &= \E\left[ \ln\left( 1-\delta+\delta\frac{\eta_j}{2\eta_j\beta_j} \right) \right]-\epsilon_j^0 \\
-&= \E\left[ \ln\left( 1-\delta+\frac{\delta}{2\beta_j} \right) \right]
+&= \E\left[ \ln\left( 1-\delta+\frac{\delta}{2\beta_j} \right) \right] \label{eq:124}
 \end{align}
 \begin{align}
 \olep_j^{EC} &= \E\left[  \ln\left( 1-\delta+\delta\frac{B_j}{B_j} \right)\right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
@@ -732,7 +732,7 @@ C_{j \bs i} = \frac{B_j}{\delta} = \frac{\eta_j \beta_j}{\delta}
 \end{align}
 \begin{align}
 \olep_j^{(E\shp C)} &= \E\left[ \ln\left( 1-\delta+\delta\frac{B_j}{B_j^\shp} \right) \right]-\olep_j^E-\olep_j^C-\epsilon_j^0 \\
-&= \E\left[ \ln\left( 1-\delta+\delta\frac{\beta_j}{\beta_j^\shp} \right) \right]-\olep_j^E-\olep_j^C,
+&= \E\left[ \ln\left( 1-\delta+\delta\frac{\beta_j}{\beta_j^\shp} \right) \right]-\olep_j^E-\olep_j^C, \label{eq:128}
 \end{align}
 where $(\beta_j,\beta_j^\shp)=(F_\beta^{-1} \circ \varphi (b_j),F_\beta^{-1} \circ \varphi (b_j^\shp))$ and
 $b_j^\shp$ is distributed in the same way as $b_j$ but is independent of it. Continuing,
@@ -745,14 +745,14 @@ Continuing,
 \begin{align}
 \olep_j^{[EC]} &= \E\left[ \ln\left(1-\delta+\delta \frac{B_j}{B_j} \right)  \right]-
 \E\left[ \ln\left(1-\delta+\delta\frac{B_j^\nat}{B_j^\nat}  \right)  \right] \\
-&= 0.
+&= 0.\label{eq:132}
 \end{align}
 We showed already (SI section \ref{SIsect:TheoryForLotteryBoth} and 
 \ref{SIsect:TheoryForLotteryLogNorm}) that this is $0$ because $E_j$ and $C_{j \bs i}$
 are linearly related to each other. Continuing,
 \begin{align}
 \olep_j^{[E \nat C]} &= \olep_j^{(EC)}-\olep_j^{[EC]} \\
-&= -\E\left[ \ln\left( 1-\delta+\delta\frac{\beta_j}{\beta_j^\shp}  \right)  \right].
+&= -\E\left[ \ln\left( 1-\delta+\delta\frac{\beta_j}{\beta_j^\shp}  \right)  \right].\label{eq:134}
 \end{align}
 This completes the calculation of all the terms of the decomposition of $\olr_{j \bs i}$
 for the beta fecundities lottery model.
@@ -768,7 +768,7 @@ q_{ij} = \frac{\overline{B}_i}{\overline{B}_j (1-\delta) +\overline{B}_i \delta}
 For the beta fecundities lottery model, this is
 \begin{align}
 q_{ij} &= \frac{\eta_i}{\eta_j(1-\delta)+\eta_i \delta} \\
-&= \frac{\eta_i/\eta_j}{(1-\delta)+\frac{\eta_i}{\eta_j}\delta}.
+&= \frac{\eta_i/\eta_j}{(1-\delta)+\frac{\eta_i}{\eta_j}\delta}.\label{eq:137}
 \end{align}
 Thus the $q_{ij}$ either do not depend on $\eta_i$ or $\eta_j$ at all or they depend on the quotient 
 $\eta_i/\eta_j$, rather than depending separately on $\eta_i$ or $\eta_j$. Thus each of the terms of the 
@@ -923,7 +923,7 @@ which has standard error $s_3$ from above.
 \end{enumerate}
 It is easy to see that $\widehat{\olr_{i \bs i}}=\epsilon_i^0+\widehat{\olep_i^E}+\widehat{\olep_i^C}+\widehat{\olep_i^{(E \shp C)}}+
 \widehat{\olep_i^{[E \nat C]}}+\widehat{\olep_i^{[EC]}},$ i.e., the decomposition (\ref{eq:decomp_overall_IGR}) applies 
-at the level of the estimators, as well
+at the level of the estimators, as well as at the level of the quantities being estimated.
 
 Next, proceed as follows to get estimates of the terms in the decomposition (\ref{eq:decomp_overall_rjbsi}). 
 \begin{enumerate}
@@ -995,7 +995,107 @@ As for (\ref{eq:decomp_overall_IGR}) and (\ref{eq:decomp_overall_rjbsi}), it is 
 applies for the estimators as well as for the quantities being estimated.
 
 \subsection{Efficient computation for the beta fecundities lottery model}\label{sect:efficient_computation_beta}
-%***DAN: fill in later
+
+We here elaborate how the terms in the decompositions (\ref{eq:decomp_overall_IGR}), (\ref{eq:decomp_overall_rjbsi})
+and (\ref{eq:decomp_overall_delta}) are computed rapidly, for the beta fecundities lottery model.
+
+First, for a large integer $M$ (we used $M=\Sexpr{M}$),
+carry out the following steps once:
+\begin{enumerate}
+\item Generate $M$ independent points $(\beta_i^{(k)},\beta_j^{(k)})=(F_\beta^{-1} \circ \varphi (b_i^{(k)}),F_\beta^{-1} \circ \varphi (b_j^{(k)}))$,
+$k=1,\ldots,M$, where $(b_i^{(k)},b_j^{(k)})$ are left- or right-tail associated points generated as in SI section \ref{sect:noise},
+depending on whether one is currently considering the left- or right-tail associated case.
+\item Generate $M$ independent points $(\beta_i^{\shp,(k)},\beta_j^{\shp,(k)})=(F_\beta^{-1} \circ \varphi (b_i^{\shp,(k)}),
+F_\beta^{-1} \circ \varphi (b_j^{\shp,(k)}))$, $k=1,\ldots,M$, where $b_i^{\shp,(k)}$ and $b_j^{\shp,(k)}$ are standard normal and 
+independent.
+\item Generate $M$ independent points 
+$(\beta_i^{\nat,(k)},\beta_j^{\nat,(k)})=(F_\beta^{-1} \circ \varphi (b_i^{\nat,(k)}),
+F_\beta^{-1} \circ \varphi (b_j^{\nat,(k)}))$, $k=1,\ldots,M$, where the points $(b_i^{\nat,(k)},b_j^{\nat,(k)})$
+come from a bivariate normal distribution with standard normal marginals and Pearson correlation the same
+as $(b_i^{(k)},b_j^{(k)})$ (see SI section \ref{sect:noise}). 
+\end{enumerate}
+These data are stored and used repeatedly below.
+
+Next, given values of the parameters $\delta$ and $\eta_i/\eta_j$, proceed as follows to get estimates of the terms of the 
+decomposition (\ref{eq:decomp_overall_IGR}).
+\begin{enumerate}
+%baseline
+\item Compute $\epsilon_i^0$, following (\ref{eq:104}), which is a simple formula of $\delta$ and $\eta_i/\eta_j$, not 
+requiring use of the random samples described above. This gives an exact values of $\epsilon_i^0$, not an estimate.
+%E
+\item Estimate $\olep_i^E$, following (\ref{eq:105}), as $\widehat{\olep_i^E}=
+\mean_k[ \ln( 1-\delta+2\delta \frac{\eta_i}{\eta_j}\beta_i^{\shp,(k)}) ]-\epsilon_i^0$. This 
+estimate has standard error $\se( \widehat{\olep_i^E})=
+\sd_k[  \ln( 1-\delta+2\delta \frac{\eta_i}{\eta_j}\beta_i^{\shp,(k)}) ]/\sqrt{M}$, where 
+$\sd (\cdot)$ denotes sample standard deviation.
+%C
+\item Estimate $\olep_i^C$, following (\ref{eq:106}), as $\widehat{\olep_i^C}=
+\mean_k[ \ln( 1-\delta+\frac{\delta}{2} \frac{\eta_i}{\eta_j}\frac{1}{\beta_j^{\shp,(k)}}) ]-\epsilon_i^0$. 
+This estimate has standard error $\se( \widehat{\olep_i^C})=
+\sd_k[  \ln( 1-\delta+\frac{\delta}{2} \frac{\eta_i}{\eta_j}\frac{1}{\beta_j^{\shp,(k)}}) ]/\sqrt{M}$.
+%E#C
+\item Estimate $\olep_i^{(E \shp C)}$, following (\ref{eq:108}), as $\widehat{\olep_i^{(E \shp C)}}=
+\mean_k[ \ln( 1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}}) ]-
+\widehat{\olep_i^E}-\widehat{\olep_i^C}-\epsilon_i^0$. The standard error of this estimate is 
+$\se( \widehat{\olep_i^{(E \shp C)}}  )=
+\sd_k [ \ln( 1-\delta+\delta \frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}})-
+\ln( 1-\delta+\frac{\delta}{2}\frac{\eta_i}{\eta_j}\frac{1}{\beta_j^{\shp,(k)}} )-
+\ln( 1-\delta+2\delta\frac{\eta_i}{\eta_j}\beta_i^{\shp,(k)} )]/\sqrt{M}$.
+%E||C
+\item Estimate $\olep_i^{[E \nat C]}$, following (\ref{eq:111}), as $\widehat{\olep_i^{[E\nat C]}}=
+\mean_k[\ln( 1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\nat,(k)}}{\beta_j^{\nat,(k)}} )]-
+\mean_k[\ln( 1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}} )]$.
+The standard error of this expression is $\sqrt{s_1^2+s_2^2}$, where 
+$s_1=\sd_k[ \ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\nat,(k)}}{\beta_j^{\nat,(k)}}  )  ]/\sqrt{M}$
+and $s_2=\sd_k[ \ln(  1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}}) ]/\sqrt{M}$.
+%[EC]
+\item Esimate $\olep_i^{[EC]}$, following (\ref{eq:110}), as $\widehat{\olep_i^{[EC]}}=
+\mean_k[\ln( 1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{(k)}}{\beta_j^{(k)}} )]-
+\mean_k[\ln( 1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\nat,(k)}}{\beta_j^{\nat,(k)}} )]$.
+The standard error of this expression is $\sqrt{s_1^2+s_3^2}$, where $s_1$ is defined above, and 
+$s_3=\sd_k[ \ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{(k)}}{\beta_j^{(k)}}  )  ]/\sqrt{M}$.
+%r
+\item Finally, estimate $\olr_{i \bs i}$, following (\ref{eq:103}), as
+$\widehat{\olr_{i \bs i}}=\mean_k[\ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{(k)}}{\beta_j^{(k)}})]$,
+which has standard error $s_3$ from above.
+\end{enumerate}
+It is easy to see that $\widehat{\olr_{i \bs i}}=\epsilon_i^0+\widehat{\olep_i^E}+\widehat{\olep_i^C}+\widehat{\olep_i^{(E \shp C)}}+
+\widehat{\olep_i^{[E \nat C]}}+\widehat{\olep_i^{[EC]}},$ i.e., the decomposition (\ref{eq:decomp_overall_IGR}) applies 
+at the level of the estimators, as well as at the level of the quantities being estimated.
+
+Next, proceed as follows to get estimates of the terms in the decomposition (\ref{eq:decomp_overall_rjbsi}). 
+\begin{enumerate}
+%baseline
+\item Use $\epsilon_j^0 = 0$, as in (\ref{eq:120}), and this is an exact value.
+%E
+\item Estimate $\olep_j^E$, following (\ref{eq:122}), as $\widehat{\olep_j^E}=\mean_k[\ln(1-\delta+2\delta\beta_j^{(k)})]$. This has
+standard error $\se(\widehat{\olep_j^E})=\sd_k[\ln(1-\delta+2\delta\beta_j^{(k)})]/\sqrt{M}$.
+%C
+\item Estimate $\olep_j^C$, following (\ref{eq:124}), as $\widehat{\olep_j^C}=
+\mean_k[\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]$, which has standard error $\se(\widehat{\olep_j^C})=
+\sd_k[\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
+%E#C
+\item Estimate $\olep_j^{(E \shp C)}$, following (\ref{eq:128}), as $\widehat{\olep_j^{(E \shp C)}}=
+\mean_k[\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})]-\widehat{\olep_j^E}-\widehat{\olep_j^C}$. This has
+standard error $\se(\widehat{\olep_j^{(E \shp C)}})=\sd_k[\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})-
+\ln(1-\delta+2\delta \beta_j^{(k)})-\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
+%E||C
+\item Estimate $\olep_j^{[E \nat C]}$, following (\ref{eq:134}), as $\widehat{\olep_j^{[E \nat C]}}=
+-\mean_k[\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})]$, which has standard error 
+$\se(\widehat{\olep_j^{[E \nat C]}})=\sd_k[\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
+%[EC]
+\item Use $\olep_j^{[EC]}=0$, following (\ref{eq:132}). This is exact.
+%r
+\item Finally, use $\olr_{j \bs i} = 0$, following (\ref{eq:119}), again exact.
+\end{enumerate}
+As for (\ref{eq:decomp_overall_IGR}), it is again easy to see that (\ref{eq:decomp_overall_rjbsi})
+applies for the estimates, as well as for the quantities being estimated.
+
+Next, $q_{ij}$ can be taken (SI section \ref{sect:noise}) to be, alternatively, either $1$ or the quantity displayed in 
+(\ref{eq:137}). Hence the terms of the decomposition (\ref{eq:decomp_overall_delta}) can straightforwardly be
+estimated using our estimates elaborated above, as follows. There are two versions of each estimator, corresponding
+to the alternative values of $q_{ij}$. 
+%***DAN: stopped here, 2023 02 03. You can continue from p. 8 of your hand-written version of this
 
 \section{Details of diatom model setup}\label{sect:diatom_model}
 
