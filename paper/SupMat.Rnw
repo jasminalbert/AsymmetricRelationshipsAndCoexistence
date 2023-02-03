@@ -1095,7 +1095,46 @@ Next, $q_{ij}$ can be taken (SI section \ref{sect:noise}) to be, alternatively, 
 (\ref{eq:137}). Hence the terms of the decomposition (\ref{eq:decomp_overall_delta}) can straightforwardly be
 estimated using our estimates elaborated above, as follows. There are two versions of each estimator, corresponding
 to the alternative values of $q_{ij}$. 
-%***DAN: stopped here, 2023 02 03. You can continue from p. 8 of your hand-written version of this
+\begin{enumerate}
+%baseline
+\item Compute $\Delta_i^0 = \epsilon_i^0 - q_{ij} \epsilon_j^0$, which is exact. Since $\epsilon_j^0=0$, 
+we have $\Delta_i^0 = \epsilon_i^0$.
+%E
+\item Estimate $\Delta_i^E$ as $\widehat{\Delta_i^E}=\widehat{\olep_i^E}-q_{ij} \widehat{\olep_j^E}=
+\mean_k[\ln(1-\delta+2\delta\frac{\eta_i}{\eta_j}\beta_i^{\shp,(k)})]-\epsilon_i^0-
+q_{ij} \mean_k[\ln(1-\delta+2\delta\beta_j^{(k)})]$, which has standard error 
+$\se(\widehat{\Delta_i^E})=\sqrt{s_1^2+s_2^2}$, where $s_1=\sd_k[\ln(1-\delta+2\delta\frac{\eta_i}{\eta_j}\beta_i^{\shp,(k)})]/\sqrt{M}$
+and $s_2=q_{ij}\sd_k[\ln(1-\delta+2\delta\beta_j^{(k)})]/\sqrt{M}$.
+%C
+\item Estimate $\Delta_i^C$ as $\widehat{\Delta_i^C}=\widehat{\olep_i^C}-q_{ij}\widehat{\olep_j^C}=
+\mean_k[\ln(1-\delta+\frac{\delta}{2}\frac{\eta_i}{\eta_j}\frac{1}{\beta_j^{\shp,(k)}})]-\epsilon_i^0-q_{ij} 
+\mean_k[\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]$, which has standard error
+$\se(\widehat{\Delta_i^C})=\sd_k[\ln(1-\delta+\frac{\delta}{2}\frac{\eta_i}{\eta_j}\frac{1}{\beta_j^{\shp,(k)}})-
+q_{ij}\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
+%E#C
+\item Estimate $\Delta_i^{(E\shp C)}$ as $\widehat{\Delta_i^{(E\shp C)}}=\widehat{\olep_i^{(E\shp C)}}-q_{ij}
+\widehat{\olep_j^{(E\shp C)}}$. This has standard error 
+$\se(\widehat{\Delta_i^{(E\shp C)}})=\sd_k[\ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}})-
+\ln(1-\delta+2\delta\frac{\eta_i}{\eta_j}\beta_i^{\shp,(k)})-\ln(1-\delta+\frac{\delta}{2}\frac{\eta_1}{\eta_2}\frac{1}{\beta_j^{\shp,(k)}})-
+q_{ij}\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})+q_{ij}\ln(1-\delta+2\delta\beta_i^{(k)})+
+q_{ij}\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
+%E||C
+\item Estimate $\Delta_i^{[E\nat C]}$ as $\widehat{\Delta_i^{[E\nat C]}}=\widehat{\olep_i^{[E\nat C]}}-
+q_{ij}\widehat{\olep_j^{[E\nat C]}}=
+\mean_k[\ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\nat,(k)}}{\beta_j^{\nat,(k)}})]-
+\mean_k[\ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}})]+
+q_{ij}\mean_k[\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})]$, 
+which has standard error
+$\se(\widehat{\Delta_i^{[E\nat C]}})=\sd_k[\ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\nat,(k)}}{\beta_j^{\nat,(k)}})-
+\ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}})+
+q_{ij}\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
+%[EC]
+\item For $\Delta_i^{[EC]}$, we recall that $\olep_j^{[EC]}=0$, so $\Delta_i^{[EC]}=\olep_i^{[EC]}$.
+So we use $\widehat{\olep_i^{[EC]}}$ for $\Delta_i^{[EC]}$.
+%r
+\item Finally, we can estimate $\olr_{i \bs i}-q_{ij} \olr_{j \bs i}$ simply as $\widehat{\olr_{i \bs i}}$,
+since $\olr_{j \bs i}=0$.
+\end{enumerate}
 
 \section{Details of diatom model setup}\label{sect:diatom_model}
 
