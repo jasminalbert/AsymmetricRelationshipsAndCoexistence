@@ -2,7 +2,7 @@
 #betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
 #B<-readRDS(betanoise_loc)
 
-decomp <- function(etai, etaj, delta, Blist, dir="LEFT"){
+decomp <- function(etai, etaj, delta, Blist, dir="LEFT", qij=FALSE){
 	
 	r <- function(E,C){log(1-delta+E/C)}
 	rbar <- function(E,C){mean(r(E,C))}
@@ -74,8 +74,12 @@ decomp <- function(etai, etaj, delta, Blist, dir="LEFT"){
 
 	## Delta_i's (invader epsilons - resident epsilons) ##
 	
-	qij <- 1
-	
+	if (qij==TRUE){
+		qij <- (etai/etaj) / ((1-delta) + (etai/etaj)*delta)
+	} else if (qij==FALSE) {
+		qij <- 1
+	} else {stop("qij arguement must be logical")}
+		
 	Di <- matrix(ei-qij*ej, dimnames=list(terms,"Delta_i"))
 	
 	seD["0",] <- NA
