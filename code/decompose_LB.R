@@ -2,6 +2,100 @@
 #betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
 #B<-readRDS(betanoise_loc)
 
+decomp <- function(etai, etaj, delta, Blist, dir="LEFT"){
+	
+	r <- function(E,C){log(1-delta+E/C)}
+	rbar <- function(E,C){mean(r(E,C))}
+	terms <- c("0","E", "C", "EsC", "EpsC", "ATA", "r")
+	
+	#storage for epsilons and standard error
+	ei <- matrix(nrow=length(terms), ncol=1, dimnames=list(terms,"epsilon_i"))
+	sei <- matrix(ei, dimnames=list(terms,"stanErr(e_i)"))
+	ej <- matrix(ei, dimnames=list(terms,"epsilon_j"))
+	sej <- matrix(sei, dimnames=list(terms,"stanErr(e_j)"))
+	seD <- matrix(sei, dimnames=list(terms,"stanErr(D_i)"))
+	
+	#B variables
+	if (dir=="RIGHT") {
+		Bi <- Blist$r[,1]; Bj <- Blist$r[,2]
+	} else{
+		Bi <- Blist$l[,1]; Bj <- Blist$l[,2]
+	}
+	Bis <- Blist$til[,1]; Bjs <- Blist$til[,2]
+	Bips <- Blist$s[,1]; Bjps <- Blist$s[,2]
+
+	M <- length(Bi)
+	
+	## epsilon_i's (invader) ##
+	ei["0",] <- r(etai,etaj/delta)
+	sei["0",] <- NA
+	
+	ei["E",] <- rbar(etai*Bis, etaj/(delta*2))-ei["0",]
+	sei["E",] <- sd(r(etai*Bis, etaj/(delta*2)))/sqrt(M)
+	
+	ei["C",] <- rbar(etai/2, (etaj*Bjs)/delta)-ei["0",]
+	sei["C",] <- sd(r(etai/2, (etaj*Bjs)/delta))/sqrt(M)
+	
+	ei["EsC",] <- rbar(etai*Bis, (etaj/delta)*Bjs) - ei["0",] - ei["C",] - ei["E",]
+	sei["EsC",] <- sd(r(etai*Bis, (etaj/delta)*Bjs)-r(etai/2,(etaj/delta)*Bjs) - r(etai*Bis,etaj/(2*delta)) )/sqrt(M)
+	
+	ei["EpsC",] <- rbar(etai*Bips, (etaj/delta)*Bjps) - rbar(etai*Bis, (etaj/delta)*Bjs)
+	s1 <- sd(r(etai*Bips, (etaj/delta)*Bjps))/sqrt(M)
+	s2 <- sd(r(etai*Bis, (etaj/delta)*Bjs))/sqrt(M)
+	sei["EpsC",] <- sqrt(s1^2 + s2^2)
+
+	ei["ATA",] <- rbar(etai*Bi, etaj*Bj/delta) - rbar(etai*Bips, etaj*Bjps/delta)
+	s3 <- sd(r(etai*Bi, etaj*Bj/delta))/sqrt(M)
+	sei["ATA",] <- sqrt(s1^2 + s3^2)
+
+	ei["r",] <- rbar(etai*Bi, etaj*Bj/delta)
+	sei["r",] <- s3
+
+	## epsilon_j's (resident) ##
+	ej["0",] <- 0; sej["0",] <- NA
+
+	ej["E",] <- rbar(etaj*Bj, etaj/(2*delta))
+	sej["E",] <- sd(r(etaj*Bj, etaj/(2*delta)))/sqrt(M)
+
+	ej["C",] <- rbar(etaj/2, etaj*Bjs/delta)
+	sej["C",] <- sd(r(etaj/2, etaj*Bjs/delta))/sqrt(M)
+
+	ej["EsC",] <- rbar(etaj*Bj, etaj*Bjs/delta) - ejC-ejE
+	sej["EsC",] <- sd(r(etaj*Bj, etaj*Bjs/delta)- r(etaj*Bj, etaj/(2*delta)) - r(etaj/2, etaj*Bjs/delta))/sqrt(M)
+
+	ej["EpsC",] <- -rbar(etaj*Bj, etaj*Bjs/delta)
+	sej["EpsC",] <- sd(r(etaj*Bj, etaj*Bjs/delta))/sqrt(M)
+
+	ej["ATA",] <- 0
+	sej["ATA",] <- NA
+
+	ej["r",] <- 0
+	sej["r",] <- NA
+
+	## Delta_i's (invader epsilons - resident epsilons) ##
+	
+	qij <- 1
+	
+	Di <- matrix(ei-qij*ej, dimnames=list(terms,"Delta_i"))
+	
+	seD["0",] <- NA
+	
+	s1 <- sd(r(etai*Bis, etaj/(2*delta)))/sqrt(M)
+	s2 <- qij*sd(r(etaj*Bj, etaj/(2*delta)))/sqrt(M)
+	seD["E",] <- sqrt(s1^2+s2^2)
+
+	seD["C",] <- sd(r(etai/2, etaj*Bjs/delta) - qij*r(etaj/2, etaj*Bjs/delta))/sqrt(M)
+
+	seD["EsC",] <- sd(r(etai*Bis, etaj*Bjs/delta) - r(etai*Bis, etaj/(2*delta)) - r(etai/2, etaj*Bjs/delta) - qij*r(etaj*Bj, etaj*Bjs/delta) + qij*r(etaj*Bj, etaj/(2*delta)) + qij*r(etaj/2, etaj*Bjs/delta))/sqrt(M)
+
+	seD["EpsC",] <- sd(r(etai*Bips, etaj*Bjps/delta)-r(etai*Bis, etaj*Bjs/delta)+ qij*r(etaj*Bj, etaj*Bjs/delta))/sqrt(M)
+
+	seD["ATA",] <- sei["ATA",]
+	seD["r",] <- sei["r",]
+
+	return(data.frame(cbind(ei,ej,Di,sei,sej,seD)))
+}
+
 b2p <- function(lb,ub){
 	mu <- (lb+ub)/2
 	sigma <- ub-lb
