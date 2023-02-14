@@ -102,12 +102,13 @@ pdf(fig3_LB_loc, height=8, width=10)
 par(mfrow=c(2,3), oma=c(3,4,4,7), mar=c(1,1,1,1), mgp=c(3,1,0), xpd=NA)
 
 #panel a-c (left tail)
+maxseLT <- {}
 for (d in seq_along(delta)){
 	
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_LT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_LT.RDS")
 	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file)
-	
+	maxseLT[d] <- max(DeltasLT$SE,na.rm=T)
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
 	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
 	if (d==1){
@@ -128,10 +129,12 @@ for (d in seq_along(delta)){
 #text("LEFT-TAILED ASYMMETRY", x=5.4, y=-0.2, font=2, srt=-90, cex=1.5)
 
 #d-f (right-tail)
+maxseRT <- {}
 for (d in 1:length(delta)){
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_RT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_RT.RDS")	
 	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, dir="RIGHT")
+	maxseRT[d] <- max(DeltasRT$SE,na.rm=T)
 	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
 	if (d==1){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
@@ -161,8 +164,8 @@ mtext("contribution to coexistence", side=2, outer=TRUE, line=2, font=2, cex=1.7
 #mtext("variance metric", side=1, outer=T, line=1, font=2, cex=1.5)
 dev.off()
 
-
-
+maxSE_LBdecomp <- max(c(maxseLT, maxseRT))
+saveRDS(maxSE_LBdecomp,file=paste0(numRes_loc,"SE_LBdecomp.RDS"))
 
 
 
