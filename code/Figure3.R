@@ -113,7 +113,7 @@ graphics::legend("topright",legend=c("ATA \nexcl.", "ATA \nresc."), fill=c(excol
 grDevices::dev.off() #finish plotting
 
 ### get standard error and save ###
-fig3maxse <- max(maxse)
+fig3maxse <- max(maxse, na.rm=T)
 cat("maximum standard error in figure three is", fig3maxse, "\n(M=", M, ")\n")
 fig3maxse_loc <- paste(numRes_loc, "fig3maxse.RDS", sep="")
 saveRDS(fig3maxse, file=fig3maxse_loc)
@@ -184,7 +184,7 @@ graphics::legend("topright",legend=c("ATA \nexcl.", "ATA \nresc."), fill=c(excol
 grDevices::dev.off() #finish plotting
 
 ### get standard error and save ###
-fig3qijmaxse <- max(maxse)
+fig3qijmaxse <- max(maxse, na.rm=T)
 cat("maximum standard error in figure three (qij!=1) is", fig3qijmaxse, "\n(M=", M, ")\n")
 fig3qijmaxse_loc <- paste(numRes_loc, "fig3qijmaxse.RDS", sep="")
 saveRDS(fig3qijmaxse, file=fig3qijmaxse_loc)
