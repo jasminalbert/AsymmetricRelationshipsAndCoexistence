@@ -10,10 +10,10 @@ decomp <- function(etai, etaj, delta, Blist, dir="LEFT", qij=FALSE){
 	
 	#storage for epsilons and standard error
 	ei <- matrix(nrow=length(terms), ncol=1, dimnames=list(terms,"epsilon_i"))
-	sei <- matrix(ei, dimnames=list(terms,"stanErr(e_i)"))
+	sei <- matrix(ei, dimnames=list(terms,"stanErr_e_i"))
 	ej <- matrix(ei, dimnames=list(terms,"epsilon_j"))
-	sej <- matrix(sei, dimnames=list(terms,"stanErr(e_j)"))
-	seD <- matrix(sei, dimnames=list(terms,"stanErr(D_i)"))
+	sej <- matrix(sei, dimnames=list(terms,"stanErr_e_j"))
+	seD <- matrix(sei, dimnames=list(terms,"stanErr_D_i"))
 	
 	#B variables
 	if (dir=="RIGHT") {
