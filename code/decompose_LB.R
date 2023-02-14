@@ -60,7 +60,7 @@ decomp <- function(etai, etaj, delta, Blist, dir="LEFT", qij=FALSE){
 	ej["C",] <- rbar(etaj/2, etaj*Bjs/delta)
 	sej["C",] <- sd(r(etaj/2, etaj*Bjs/delta))/sqrt(M)
 
-	ej["EsC",] <- rbar(etaj*Bj, etaj*Bjs/delta) - ejC-ejE
+	ej["EsC",] <- rbar(etaj*Bj, etaj*Bjs/delta) - ej["C",]-ej["E",]
 	sej["EsC",] <- sd(r(etaj*Bj, etaj*Bjs/delta)- r(etaj*Bj, etaj/(2*delta)) - r(etaj/2, etaj*Bjs/delta))/sqrt(M)
 
 	ej["EpsC",] <- -rbar(etaj*Bj, etaj*Bjs/delta)
