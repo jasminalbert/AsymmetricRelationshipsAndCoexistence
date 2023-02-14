@@ -3,7 +3,7 @@ numRes_loc <- "../results_numeric/"
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 B<-readRDS(betanoise_loc)
 
-plotco <- function(lb_i,lb_j,ub_i,ub_j,delta, noise,Deltas_loc=0,...){
+plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,...){
 	
 	if (Deltas_loc!=0){ #check that file exists
 		
@@ -17,12 +17,12 @@ plotco <- function(lb_i,lb_j,ub_i,ub_j,delta, noise,Deltas_loc=0,...){
 		cat(message)
 		store <- vector(mode='list')
 
-		for (j in 1:length(ub_j)){
-    		store[[j]] <- decomposeB(lb_i,lb_j,ub_i,ub_j[j], delta,B,...)
+		for (j in 1:length(etaj)){
+    		store[[j]] <- decomp(etai,etaj[j], delta,B,...)
     		cat(".")
     	}
     	cat("done")
-    	Deltas <- data.frame(t(sapply(store, function(X){X$D})))
+    	Deltas <- data.frame(t(sapply(store, function(X){X$Delta_i})))
 		colnames(Deltas) <- rownames(store[[1]])
 	}
 	
@@ -31,8 +31,8 @@ plotco <- function(lb_i,lb_j,ub_i,ub_j,delta, noise,Deltas_loc=0,...){
     ylim <- c(-0.6,0.2)
     
     #ATA effect
-	res_vec <- ub_j[Deltas$r>0 & Deltas$'[EC]' > Deltas$r]
-	ex_vec <- ub_j[Deltas$r<0 & Deltas$'[EC]' < Deltas$r]
+	res_vec <- etaj[Deltas$r>0 & Deltas$'[EC]' > Deltas$r]
+	ex_vec <- etaj[Deltas$r<0 & Deltas$'[EC]' < Deltas$r]
 	
 	#plotting set up
 	rescol <- rgb(227/255, 211/255, 148/255,.5)
@@ -46,9 +46,9 @@ plotco <- function(lb_i,lb_j,ub_i,ub_j,delta, noise,Deltas_loc=0,...){
 	
 	##plot##
 	#box	
-	plot(ub_j, xlab="", ylab="", ylim=ylim, 			xlim=range(ub_j), type="n",xaxt="n", yaxt="n")
+	plot(etaj, xlab="", ylab="", ylim=ylim, 			xlim=range(etaj), type="n",xaxt="n", yaxt="n")
 	#zero line
-	lines(ub_j, rep(0, length(ub_j)), col="grey", lwd=0.5)
+	lines(etaj, rep(0, length(ub_j)), col="grey", lwd=0.5)
 	#ATA effects
 	if (length(res_vec)>0){ #rescue
 		res_points <- range(res_vec)
@@ -60,7 +60,7 @@ plotco <- function(lb_i,lb_j,ub_i,ub_j,delta, noise,Deltas_loc=0,...){
 	}
 	#lines
 	for (m in 1:(length(Deltas)-1)){
-		lines(ub_j, Deltas[,m], lwd=wid[m], lty=typ[m], col=col[m], xpd=F)
+		lines(etaj, Deltas[,m], lwd=wid[m], lty=typ[m], col=col[m], xpd=F)
 	}
 	
 	return(Deltas)
@@ -90,8 +90,8 @@ ltys <- c(1,2,3,4,2,1,1)
 lwds <- c(rep(1.5,4),2,2,3)
 
 #params
-ub_j <- seq(1,5,0.1)
-lb_i<-0; lb_j<-0; ub_i<-1; 
+etaj <- seq(1,5,0.1)
+etai<-1; 
 delta<-c(0.2,0.4,0.6)
 
 #start fig
@@ -102,7 +102,7 @@ par(mfrow=c(2,3), oma=c(3,4,4,7), mar=c(1,1,1,1), mgp=c(3,1,0), xpd=NA)
 for (d in seq_along(delta)){
 	
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_LT.RDS")
-	DeltasLT <- plotco(lb_i,lb_j,ub_i,ub_j,delta[d], B,Deltas_loc=file)
+	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file)
 	
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
 	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
@@ -126,7 +126,7 @@ for (d in seq_along(delta)){
 #d-f (right-tail)
 for (d in 1:length(delta)){
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_RT.RDS")
-	DeltasRT <- plotco(lb_i,lb_j,ub_i,ub_j,delta[d],B, Deltas_loc=file, dir="RIGHT")
+	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, dir="RIGHT")
 	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
 	if (d==1){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
