@@ -1007,12 +1007,13 @@ $k=1,\ldots,M$, where $(b_i^{(k)},b_j^{(k)})$ are left- or right-tail associated
 depending on whether one is currently considering the left- or right-tail associated case.
 \item Generate $M$ independent points $(\beta_i^{\shp,(k)},\beta_j^{\shp,(k)})=(F_\beta^{-1} \circ \varphi (b_i^{\shp,(k)}),
 F_\beta^{-1} \circ \varphi (b_j^{\shp,(k)}))$, $k=1,\ldots,M$, where $b_i^{\shp,(k)}$ and $b_j^{\shp,(k)}$ are standard normal and 
-independent.
+independent. Make these points also independent of the points $(\beta_i^{(k)},\beta_j^{(k)})$ generated above.
 \item Generate $M$ independent points 
 $(\beta_i^{\nat,(k)},\beta_j^{\nat,(k)})=(F_\beta^{-1} \circ \varphi (b_i^{\nat,(k)}),
 F_\beta^{-1} \circ \varphi (b_j^{\nat,(k)}))$, $k=1,\ldots,M$, where the points $(b_i^{\nat,(k)},b_j^{\nat,(k)})$
 come from a bivariate normal distribution with standard normal marginals and Pearson correlation the same
-as $(b_i^{(k)},b_j^{(k)})$ (see SI section \ref{sect:noise}). 
+as $(b_i^{(k)},b_j^{(k)})$ (see SI section \ref{sect:noise}). Make these points also independent of both sets of 
+points generated above.
 \end{enumerate}
 These data are stored and used repeatedly below.
 
