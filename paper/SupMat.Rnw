@@ -712,7 +712,7 @@ C_{j \bs i} = \frac{B_j}{\delta} = \frac{\eta_j \beta_j}{\delta}
 \end{equation}
 \begin{align}
 \olr_{j \bs i} &= \E\left[ \ln\left( 1-\delta+\frac{E_j}{C_{j \bs i}} \right) \right] \\
-&= \E\left[ \ln\left( 1-\delta+\frac{B_j}{B_j} \right) \right] \\
+&= \E\left[ \ln\left( 1-\delta+\delta\frac{B_j}{B_j} \right) \right] \\
 &= 0 \label{eq:119}
 \end{align}
 \begin{equation}
