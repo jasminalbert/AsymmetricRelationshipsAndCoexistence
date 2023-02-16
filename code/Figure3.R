@@ -74,7 +74,7 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   		saveRDS(Delts$se, file=sefile)
   	}
   	#standard error #need to get rid of NA col
-  	maxse[n] <- max(readRDS(sefile))
+  	maxse[n] <- max(readRDS(sefile),na.rm=T)
   	
   	#plot
   	plotco(file,sigma,ylim=ylims[[m]])
@@ -145,7 +145,7 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   		saveRDS(Delts$se, file=sefile)
   	}
   	#standard error #need to get rid of NA col
-  	maxse[n] <- max(readRDS(sefile))
+  	maxse[n] <- max(readRDS(sefile), na.rm=T)
   	
   	#plot
   	plotco(file,sigma,ylim=ylims[[m]])

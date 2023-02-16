@@ -24,31 +24,34 @@ plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,...){
     	cat("done")
     	Deltas <- data.frame(t(sapply(store, function(X){X$Delta_i})))
 		colnames(Deltas) <- rownames(store[[1]])
+		SE <- data.frame(t(sapply(store, function(X){X$stanErr_D_i})))
+		colnames(SE) <- colnames(Deltas)
+
 	}
 	
-    range <- range(Deltas[,1:7])
+    range <- range(Deltas)
     #ylim <- range*1.1
     ylim <- c(-0.6,0.2)
     
     #ATA effect
-	res_vec <- etaj[Deltas$r>0 & Deltas$'[EC]' > Deltas$r]
-	ex_vec <- etaj[Deltas$r<0 & Deltas$'[EC]' < Deltas$r]
+	res_vec <- etaj[Deltas$r>0 & Deltas$ATA > Deltas$r]
+	ex_vec <- etaj[Deltas$r<0 & Deltas$ATA < Deltas$r]
 	
 	#plotting set up
 	rescol <- rgb(227/255, 211/255, 148/255,.5)
 	excol <- rgb(38/255, 38/255, 38/255,.5)
 	wid <- c(2,2,2,2,4,4,5)
-	typ <- c(1,2,3,4,1,2,1)
+	typ <- c(1,2,3,4,2,1,1)
 	ncol <- 5
 	yor <- hcl.colors(ncol, palette = "YlOrRd")
-	col <- c("black","black","black","black", yor[2], yor[1], yor[3])
+	col <- c("black","black","black","black", yor[1], yor[2], yor[3])
 	
 	
 	##plot##
 	#box	
 	plot(etaj, xlab="", ylab="", ylim=ylim, 			xlim=range(etaj), type="n",xaxt="n", yaxt="n")
 	#zero line
-	lines(etaj, rep(0, length(ub_j)), col="grey", lwd=0.5)
+	lines(etaj, rep(0, length(etaj)), col="grey", lwd=0.5)
 	#ATA effects
 	if (length(res_vec)>0){ #rescue
 		res_points <- range(res_vec)
@@ -59,11 +62,11 @@ plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,...){
 		polygon(x=c(rep(ex_points[1],2), rep(ex_points[2],2)), y=c(ylim, rev(ylim))*2, xpd=FALSE, col=excol, border=NA)
 	}
 	#lines
-	for (m in 1:(length(Deltas)-1)){
+	for (m in 1:length(Deltas)){
 		lines(etaj, Deltas[,m], lwd=wid[m], lty=typ[m], col=col[m], xpd=F)
 	}
 	
-	return(Deltas)
+	return(list(D=Deltas, SE=SE))
 	#title(main=paste("mu_j=",params["mu_j"], "sigma_i=",params["sigma_i"], "sigma_j=",params["sigma_j"], "delta=",params["delta"]))
 }
 fig_loc <- "../results_figs/"
@@ -99,11 +102,13 @@ pdf(fig3_LB_loc, height=8, width=10)
 par(mfrow=c(2,3), oma=c(3,4,4,7), mar=c(1,1,1,1), mgp=c(3,1,0), xpd=NA)
 
 #panel a-c (left tail)
+maxseLT <- {}
 for (d in seq_along(delta)){
 	
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_LT.RDS")
+	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_LT.RDS")
 	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file)
-	
+	maxseLT[d] <- max(DeltasLT$SE,na.rm=T)
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
 	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
 	if (d==1){
@@ -118,15 +123,18 @@ for (d in seq_along(delta)){
 	}
 	
 	#save
-	if (file.exists(file)==FALSE){saveRDS(DeltasLT,file=file)}
-	
+	if (file.exists(file)==FALSE){saveRDS(DeltasLT$D,file=file)}
+	if (file.exists(sefile)==FALSE){saveRDS(DeltasLT$SE,file=sefile)}
 }
 #text("LEFT-TAILED ASYMMETRY", x=5.4, y=-0.2, font=2, srt=-90, cex=1.5)
 
 #d-f (right-tail)
+maxseRT <- {}
 for (d in 1:length(delta)){
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_RT.RDS")
+	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_RT.RDS")	
 	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, dir="RIGHT")
+	maxseRT[d] <- max(DeltasRT$SE,na.rm=T)
 	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
 	if (d==1){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
@@ -138,7 +146,8 @@ for (d in 1:length(delta)){
 		text("RIGHT-TAILED", x=5.4, y=-0.62, font=2, srt=-90, cex=1.8,adj=1, col="grey")
 	}
 	#save
-	if (file.exists(file)==FALSE){saveRDS(DeltasRT,file=file)}
+	if (file.exists(file)==FALSE){saveRDS(DeltasRT$D,file=file)}
+	if (file.exists(sefile)==FALSE){saveRDS(DeltasRT$SE,file=sefile)}
 }
 #text("RIGHT-TAILED ASYMMETRY", x=5.4, y=-0.2, font=2, srt=-90, cex=1.5)
 
@@ -155,54 +164,8 @@ mtext("contribution to coexistence", side=2, outer=TRUE, line=2, font=2, cex=1.7
 #mtext("variance metric", side=1, outer=T, line=1, font=2, cex=1.5)
 dev.off()
 
-
-
-
-
-
-
-
-
-
-
-
-#pdf("jstronger_ubfactr.pdf", height=5, width=11)
-#par(mfrow=c(1,3))
-#for (d in 1:length(delta)){
-	#plotco(lb_i,lb_j,ub_i,ub_j,delta[d],b)
-	#title(sub=paste('delta=',delta[d]))
-#}
-#dev.off()
-
-#pdf("jstronger_ubfactrRIGHT.pdf", height=5, width=11)
-#par(mfrow=c(1,3))
-#for (d in 1:length(delta)){#
-#	plotco(lb_i,lb_j,ub_i,ub_j,delta[d],b, dir="RIGHT")
-#	title(sub=paste('delta=',delta[d]))
-#}
-#dev.off()
-
-
-
-#delta=0.2
-#store <- vector(mode='list')
-#ub_j <- seq(1,5,0.1)
-#for (j in 1:length(ub_j)){
-#    store[[j]] <- decompose(0,0,1,ub_j[j], delta=delta, #blist=b)
-#  }
-
-#range <- range(unlist(lapply(store, function(X){(X$D)})))
-#Deltas <- data.frame(t(sapply(store, function(X){X$D})))
-#colnames(Deltas) <- rownames(store[[1]])
-
-#plot(0, xlab="", ylab="", ylim=range*1.1, xlim=range(ub_j), col="white")
-#abline(h=0, lwd=0.5)
-#wid <- c(1,1,1,1,2,2,3)
-#typ <- c(1,2,3,4,1,2,1)
-#col <- c(rep("black",4), "blue", "#fa9393", "orange")
-#for (m in 1:(length(Deltas)-1)){
-#	lines(ub_j, Deltas[,m], lwd=wid[m], lty=typ[m], col=col[m])
-#}
+maxSE_LBdecomp <- max(c(maxseLT, maxseRT))
+saveRDS(maxSE_LBdecomp,file=paste0(numRes_loc,"SE_LBdecomp.RDS"))
 
 
 
