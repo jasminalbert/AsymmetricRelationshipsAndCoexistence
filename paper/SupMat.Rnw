@@ -1116,7 +1116,7 @@ q_{ij}\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
 \widehat{\olep_j^{(E\shp C)}}$. This has standard error 
 $\se(\widehat{\Delta_i^{(E\shp C)}})=\sd_k[\ln(1-\delta+\delta\frac{\eta_i}{\eta_j}\frac{\beta_i^{\shp,(k)}}{\beta_j^{\shp,(k)}})-
 \ln(1-\delta+2\delta\frac{\eta_i}{\eta_j}\beta_i^{\shp,(k)})-\ln(1-\delta+\frac{\delta}{2}\frac{\eta_1}{\eta_2}\frac{1}{\beta_j^{\shp,(k)}})-
-q_{ij}\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})+q_{ij}\ln(1-\delta+2\delta\beta_i^{(k)})+
+q_{ij}\ln(1-\delta+\delta\frac{\beta_j^{(k)}}{\beta_j^{\shp,(k)}})+q_{ij}\ln(1-\delta+2\delta\beta_j^{(k)})+
 q_{ij}\ln(1-\delta+\frac{\delta}{2}\frac{1}{\beta_j^{\shp,(k)}})]/\sqrt{M}$.
 %E||C
 \item Estimate $\Delta_i^{[E\nat C]}$ as $\widehat{\Delta_i^{[E\nat C]}}=\widehat{\olep_i^{[E\nat C]}}-
