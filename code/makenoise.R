@@ -31,7 +31,8 @@ makenoise <- function(M){
   #bivariate standard normal
   b <- MASS::mvrnorm(M, mu_norm, Sigma_norm) #points
   colnames(b) <- c("i","j")
-  b_ti <- b
+  #b_ti <- b
+  b_ti <- MASS::mvrnorm(M, mu_norm, Sigma_norm)
   
   #half of points will be more than zero, 50%
   a1 <- b[,1]; a2 <- b[,2]
