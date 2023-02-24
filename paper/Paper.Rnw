@@ -123,13 +123,12 @@
 #system(paste("biber", sub("\\.Rnw$", "", current_input())))
 
 #place R code here for loading in necessary variables from Results
-#ordinarily this would be a readRDS command, but I'm just defining a variable here for now
-#allregres<-matrix(rnorm(10),2,5)
 res_loc <- "../results_numeric/"
-fig2 <- readRDS(file="../results_numeric/fig2data.RDS")
-M <- readRDS(file="../results_numeric/M.RDS")
-se3 <- readRDS(file="../results_numeric/fig3maxse.RDS")
-se4 <- readRDS(file="../results_numeric/fig4maxse.RDS")
+#fig2 <- readRDS(file=paste0(res_loc,"fig2data.RDS"))
+M <- readRDS(file=paste0(res_loc,"M.RDS"))
+se3 <- readRDS(file=paste0(res_loc,"fig3maxse.RDS"))
+#se4 <- readRDS(file=paste0(res_loc,"fig4maxse.RDS"))
+se4<-NA
 se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
 se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 @
