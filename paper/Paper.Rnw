@@ -474,17 +474,17 @@ and symmetrically (Fig. \ref{fig:pedagog1}b) tail associated alternatives for $(
 are in SI section \ref{SI-sect:noise}. 
 
 %the log-normal fecundities version
-The \emph{log-normal fecundities lottery model} used $B_i = \exp(\sigma+\mu_i b_i)$,
+The \emph{log-normal fecundities lottery model} used $B_i = \exp(\mu_i+\sigma b_i)$,
 and therefore had parameters $\sigma$, $\mu_1$ and $\mu_2$ in addition to the death rate parameter $\delta$
-(Introduction) that both versions of the lottery model used. The parameter $\sigma$ is the variance of the
+(Introduction) that both versions of the lottery model used. The parameter $\sigma$ is the standard deviation of the
 log-fecundities and $\mu_i$ is the mean log fecundity for species $i$. 
 
 %the beta fucundities version
-The \emph{beta-fecundities lottery model}
+The \emph{beta fecundities lottery model}
 used $B_i = \eta_i F_\beta^{-1} \circ \varphi(b_i)$, where $\varphi$ is the CDF of the standard normal
 distribution and $F_\beta$ is the CDF of a beta distribution 
 with shape and scale parameters $0.5$ (probability density function proportional to $x^{-05}(1-x)^{-0.5}$ on
-the unit interval). So the beta-fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
+the unit interval). So the beta fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
 and produced fecundities with $U$-shaped, beta distributions between $0$ and $\eta_1$, for $B_1$, and
 $\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$, and larger $\eta_i$ also 
 corresponded to more variable fecundities for species $i$. The parameter $\eta_i$ represents the upper
@@ -519,9 +519,14 @@ So we plotted against $\mu_1 - \mu_2$.
 Third, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
 for both our left- and right-tail associated noises (SI section \ref{SI-SIsect:TheoryForLottery}). 
 So we only generated plots 
-for left-tail associated noise. For each combination of $\delta=0.2, 0.4, 0.6$
-and $\mu_1-\mu_2=0,-0.5,-2,-4$,
-we plotted the components of (\ref{eq:full_decomp}) against $\sigma$. 
+for left-tail associated noise. 
+
+For each combination of $\delta=0.2, 0.4, 0.6$ and $\mu_1-\mu_2=0,-0.5,-2,-4$,
+we plotted the components of (\ref{eq:full_decomp}) against $\sigma$ for $\sigma$ ranging 
+from $0$ to $7$. Some of 
+the $\mu$ differences and $\sigma$ values we considered were very unrealistic (see Results),
+so we considered after plotting whether conclusions about the importance of ATAs depended 
+on realistic values of parameters.
 %***DAN: Jasmin mentioned that she only used \delta=0.2, .4, .6 because of a comment Ellner made where he 
 %said it was known that larger values of \delta made for very little storage effects. Read that comment 
 %again and then write something here to jstify the choice. I think I can probably then delete the section of
@@ -543,11 +548,13 @@ First, we assumed, without loss of generality, that $\eta_1 \leq \eta_2$. To und
 it was then sufficient to decompose GWR of the weaker competitor, species 1. 
 Second, we showed that, for the beta fecundities
 lottery model, none of the components of (\ref{eq:full_decomp}) depends independently on $\eta_1$ and $\eta_2$;
-instead they depend only on $\eta_1/\eta_2$ (SI section \ref{SI-SIsect:TheoryForLottery}). 
-So we plotted against $\eta_1/\eta_2$. 
+instead they depend only on $\eta_2/\eta_1$ (SI section \ref{SI-SIsect:TheoryForLottery}). 
+So we plotted against $\eta_2/\eta_1$. 
+
 For each combination of $\delta=0.2, 0.4, 0.6$
 and for left- and right-tail associated noise, we plotted 
-the components of (\ref{eq:full_decomp}) against the upper bound ratio $\eta_1/\eta_2$. 
+the components of (\ref{eq:full_decomp}) against the upper bound ratio $\eta_2/\eta_1$, using 
+the fairly realistic range $1 \leq \eta_2/\eta_1 \leq 5$. 
 The simulation methods of \cite{Ellner_2019} were again used.
 Computationally efficient means of performing these simulations are in 
 SI section \ref{SI-sect:efficient_computation}.
@@ -640,50 +647,54 @@ Complete computer codes for the project are stored at
 
 \section{Results}\label{section:results}
 
-%***DAN: made it to here, 2023 02 03, 4:11 pm. Resume from here.
-
-%***DAN: copy of goal from the Intro
-%G2) To explore, using the simple lottery model, the relative magnitudes of the contributions to coexistence that come
-%from ATAs compared to other, previously known mechanisms of coexistence; and to determine whether species may 
-%sometimes coexist with ATAs but not without, or vice versa. 
-
 %G2 
 To begin fulfilling goal G2 of the Introduction (to explore, using the lottery model, the relative magnitudes 
 of the contributions to coexistence that come from ATAs compared to other mechanisms; and to see if ATA rescue 
 or ATA exclusion can occur), Fig.
-\ref{fig:fig3} shows that the ATA term of (\ref{eq:full_decomp}) often, but not always, has 
+\ref{fig:fig3} shows that, for the log-normal fecundities lottery model, 
+the ATA term of (\ref{eq:full_decomp}) sometimes, but not always, has 
 magnitude comparable to the magnitudes of other terms of the extended MCT decomposition. 
 Magnitudes of $\Delta_i^{[EC]}$ tended to be larger, relative to the magnitudes of the 
 other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between $\mu_1$ and 
 $\mu_2$, i.e., for closer-to-equal competitors. 
-In the $\mu_1=\mu_2$ case (panels a-d), for which the two species were equal 
-competitors, storage effects (blue plus red
-lines on Fig. \ref{fig:fig3}) were the only means by which coexistence could occur, and ATA effects
-tended to be negative, weakening total storage effects.
+In the $\mu_1=\mu_2$ case (panels a-c), for which the two species were equal 
+competitors, storage effects ($\Delta_i^{[EC]}+\Delta_i^{[E\nat C]}$) 
+were the only means by which coexistence could occur, and ATA effects
+tended to be negative, weakening total storage effects. The ATA term 
+was also often comparable in magnitude to the other terms of 
+the decomposition (\ref{eq:full_decomp}) for the beta fecundities lottery model 
+(Fig. \ref{fig:fig4}).
 
-%G3
-Fulfilling goal G3 of the Introduction (to explore, using the lottery model, whether species
-can coexist with ATAs, but not without, or vice versa), our results show that ATAs can, indeed, sometimes
-make the difference between coexistence and exclusion: both ``ATA rescue'' and ``ATA
-exclusion'' (see Methods) are possible.
-For some of the panels on Fig. \ref{fig:fig3}, the GWR line falls between the ATA
-line and the $x$ axis for some values of $\sigma$, e.g., see panel h. 
+Our results also show that ATAs can make the difference between coexistence 
+and failure of two species to coexist: both ``ATA rescue'' and ``ATA
+exclusion'' (see Theory) are possible. Starting with the log-normal fecundities 
+lottery model, for some of the panels on Fig. \ref{fig:fig3}, the GWR line falls between the ATA
+line and the $x$ axis for some values of $\sigma$, e.g., see panel i.
 Such cases correspond to parameter combinations
 for which the presence or absence of ATAs determine whether the species coexist or not. In the 
-case of panel h, for values of $\sigma$ around $4$, 
+case of panel i, for values of $\sigma$ around $6$, 
 species 1 is excluded with ATAs but the two species can coexist without ATAs. 
-Fig. \ref{fig:fig4} highlights additional examples. Orange lines on Fig. \ref{fig:fig4}
-represent GWR when the effects of ATAs are included, and blue lines are GWR when
-the effects of ATAs are removed. These two lines frequently crossed the $x$ axis in 
-different places, showing that both ATA rescue space and ATA exclusion space can be non-empty
-subsets of our trait-difference space (see Methods). For the parameters we considered, 
-both ATA rescue and exclusion were more common for larger values of $\sigma$.
-ATA rescue appeared more likely for smaller $\delta$, whereas ATA exclusion appeared
-more common for larger $\delta$. Although some bands of ATA rescue or exclusion on Fig.
-\ref{fig:fig4} appear narrow, they nevertheless do occur, which means ATAs can mean the 
-difference between coexistence and extirpation of one species in some cases.
+Fig. \ref{fig:fig4} highlights additional examples using the beta fecundities lottery model.  
 
-%G4
+For the log-normal fecundities lottery model, the ATA term from (\ref{eq:full_decomp}) tended
+only to be comparable in magnitude to the other terms, and ATA exclusion or rescue tended only to
+occur, for unrealistic parameters values; but ATA terms were large and ATA rescue and exclusion occurred
+for realistic parameter values for the beta fecundities lottery model. For instance, the ATA in 
+Fig. \ref{fig:fig3} was fairly 
+small, compared to the other terms of (\ref{eq:full_decomp}), for values of $\sigma$ less than 
+about $3$. And ATA rescue and exclusion also only occurred for $\sigma$ greater than about $3$.
+The standard deviation of fecundity for species 1 when 
+$\mu_1=0$ and $\sigma=3$ was greater than $8000$, so values of $\sigma$ greater than $3$ are 
+probably unrealistic. Thus ATAs seem to be unimportant for coexistence
+for the log-normal fecundities lottery model using realistic parameter values. However, 
+all the $\eta_2/\eta_1$ ratio values we plotted were fairly realistic, corresponding to
+upper-bound fecundities that were up to $5$ times higher for species 2 than for species 1. And 
+the ATA term plotted in Fig. \ref{fig:fig4} was comparable in magnitude 
+to the other components of (\ref{eq:full_decomp}) across the whole range of $\eta_2/\eta_1$ values
+considered; and both ATA rescue and exclusion occurred for values of this ratio between $1$ and $2$.
+Apparently the question of whether ATAs are important for realistic parameter values depends on model specifics.
+
+%G4 ***DAN: Dan, this will have to be edited after Jasmin gets done editing the corresponding figures
 Fulfilling goal G4 of the Introduction (to provide an empirical example of species coexistence 
 which highlights the role ATAs can play), Fig. \ref{fig:fig5} and Fig. \ref{fig:fig6} 
 show that ATA contributions to coexistence often have magnitudes comparable to the 
@@ -880,46 +891,65 @@ $\log_{10}$ of probability density on all panels.
 \label{fig:pedagog2}}
 \end{figure}
 
+%***DAN: Jasmin, this figure looks really great. Here are a few minor things I would like to ask you to
+%do to further optimize:
+%1) Currently there are axis labels and numbers only on the bottom and left panels, which makes sense.
+%But the axis tick marks needs to occur on all panels. I noticed that this would be an imporvement
+%when I found myself wanting to see where the ATA line was between the x axis and the GWR line, but it was 
+%a little hard to see where the x axis was becuase there were no tick marks. It is possible to have tick marks
+%but no numbers of labels in R, and that's what we need here.
+%2) The font of the x axis label, "log fcundity standard deviation, \sigma" seems slightly different from the 
+%other textual labels. Can you please make it consistent? Perhaps it is not bold and the others are bold, or 
+%something.
 \begin{figure}
-\includegraphics[width=\textwidth]{../results_figs/fig3.pdf}
-\caption{The contribution of ATAs to species coexistence is often meaningfully large compared to 
-other components of the MCT decomposition. All panels show GWR and the decomposition of
+\includegraphics[width=\textwidth]{../results_figs/decompFigLLN.pdf}
+\caption{The contribution of ATAs to species coexistence was often meaningfully large compared to 
+other components of the MCT decomposition for the log-normal fecundities lottery model.
+All panels show GWR and the decomposition of
 GWR provided by the extended MCT, equation (\ref{eq:full_decomp}). For each panel, 
 $\delta$ and $\mu_1-\mu_2$ 
 are fixed at values specified in the margins, and GWR and components of the decomposition
-are plotted against $\sigma$. The contribution of ATAs (red line) frequently 
+are plotted against $\sigma$. The contribution of ATAs ($\Delta_i^{[EC]}$) frequently 
 has magnitude comparable to other components, indicating that ATAs can contribute meaningfully
-to species coexistence or failure to coexist. In some instances, the GWR line (orange) falls 
-between the ATA line (red)
-and the $x$ axis, indicating that, for those parameter values, ATAs make the difference between species
-coexistence and exclusion of the weaker competitor. Standard errors of plotted quantities 
+to species coexistence or failure to coexist. In some instances, the GWR line falls 
+between the ATA line and the $x$ axis, indicating that, for those parameter values, ATAs 
+make the difference between species
+coexistence and exclusion of the weaker competitor. These instances, which are shaded, correspond to
+ATA rescue or exclusion (Theory). Standard errors of plotted quantities 
 were never greater than \Sexpr{round(se3,5)}, so are not displayed. This plot uses $q_{ij}=1$. An 
 analogous plot (SI Fig. \ref{SI-fig:fig3_alt}) was generated 
 using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$. Though results differed
-in some details, main conclusions were the same. \label{fig:fig3}}
+in detail, main conclusions were the same. \label{fig:fig3}}
 \end{figure}
 
+%***DAN: Jasmin, panel labels(a, b, c, etc.) need to be added. Please use the same format for these labels
+%as you do in the other figures.
 \begin{figure}
-\includegraphics[width=\textwidth]{../results_figs/fig4.pdf}
-\caption{ATAs can sometimes make the difference between species coexistence and exclusion of the weaker
-competitor: both ``ATA rescue'' and ``ATA exclusion'' (see Methods) are possible. 
-All panels show GWR, the ATA term of the extended MCT [$\Delta_i^{[EC]}$ in equation 
-(\ref{eq:full_decomp})], and the difference of these quantities. 
-For each panel, $\delta$ and $\sigma$ are fixed at values specified in the 
-margins, and the three quantities are plotted against $\mu_1-\mu_2$ to isolate points in the
-``trait-difference space'' corresponding to ATA rescue 
-($\psi_{\text{ATA}}(\delta,\sigma) \setminus \psi_{\lnot\text{ATA}}(\delta,\sigma)$) 
-or ATA exclusion ($\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$; 
-see Methods). Values of $\mu_1-\mu_2$ for which GWR is positive but 
-$\text{GWR}-\Delta_i^{[EC]}$ is negative correspond to ATA rescue (shaded yellow), whereas
-values of $\mu_1-\mu_2$ for which GWR is negative but $\text{GWR}-\Delta_i^{[EC]}$ is positive 
-correspond to ATA exclusion (shaded violet). Top panels also include domains
-of ATA rescue or exclusion, but they were too narrow to be highlighted by shading and are
-probably of minimal importance. 
-Standard errors of plotted quantities were never greater than \Sexpr{round(se4,5)}, 
-so are not displayed. The dashed red line on panel (l) corresponds to the parameters
-used for Fig. \ref{fig:pedagog}. This plot uses $q_{ij}=1$. An analogous plot was generated 
-using $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$, but it looked exactly the same, by mathematical necessity (see SI section \ref{SI-sect:F4andqij}).}\label{fig:fig4}
+\includegraphics[width=\textwidth]{../results_figs/decompFigLB.pdf}
+\caption{The contribution of ATAs to species coexistence was often meaningfully large compared to 
+other components of the MCT decomposition for the beta fecundities lottery model.
+All panels show GWR and the decomposition of
+GWR provided by the extended MCT, equation (\ref{eq:full_decomp}). For each panel,
+$\delta$ is fixed at the value specified in the upper margin, 
+and GWR and components of the decomposition
+are plotted against $\eta_2/\eta_1$. The contribution of ATAs ($\Delta_i^{[EC]}$) frequently 
+has magnitude comparable to other components, indicating that ATAs can contribute meaningfully
+to species coexistence or failure to coexist. In some instances, the GWR line falls 
+between the ATA line and the $x$ axis, indicating that, for those parameter values, ATAs make 
+the difference between species
+coexistence and exclusion of the weaker competitor. These instances, which are shaded, correspond to
+ATA rescue or exclusion (Theory). Standard errors of plotted quantities 
+were never greater than \Sexpr{round(NA,5)}, so are not displayed. 
+%***DAN: Jasmin, we need to replace the NA in the above line by a variable names, which your code should have saved.
+%The variable needs to be loaded in the R chunk near the top of this file, and then refereced here, please.
+This plot uses $q_{ij}=1$. 
+%***DAN: Right, Jasmin?
+An analogous plot (SI Fig. \ref{SI-fig:fig4_alt}) was generated 
+using $q_{ij}=\eta_i/(\eta_j(1-\delta)+\eta_i \delta)$. 
+%***DAN: Jasmin, I believe the code does not produce the alternate-qij plot yet, but eventually it needs to.
+Though results differed in detail, main conclusions were the same.
+%***DAN: make sure this is indeed the case once the plot is generated.
+}\label{fig:fig4}
 \end{figure}
 
 \begin{figure}
