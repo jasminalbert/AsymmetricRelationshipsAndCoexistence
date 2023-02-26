@@ -165,7 +165,7 @@ mtext("contribution to coexistence", side=2, outer=TRUE, line=2, font=2, cex=1.7
 dev.off()
 
 maxSE_LBdecomp <- max(c(maxseLT, maxseRT))
-saveRDS(maxSE_LBdecomp,file=paste0(numRes_loc,"SE_LBdecomp.RDS"))
+saveRDS(maxSE_LBdecomp,file=paste0(numRes_loc,"fig4maxse.RDS"))
 
 
 
