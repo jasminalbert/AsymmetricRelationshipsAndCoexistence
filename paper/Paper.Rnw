@@ -127,8 +127,7 @@ res_loc <- "../results_numeric/"
 #fig2 <- readRDS(file=paste0(res_loc,"fig2data.RDS"))
 M <- readRDS(file=paste0(res_loc,"M.RDS"))
 se3 <- readRDS(file=paste0(res_loc,"fig3maxse.RDS"))
-#se4 <- readRDS(file=paste0(res_loc,"fig4maxse.RDS"))
-se4<-NA
+se4 <- readRDS(file=paste0(res_loc,"fig4maxse.RDS"))
 se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
 se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 @
@@ -939,7 +938,7 @@ between the ATA line and the $x$ axis, indicating that, for those parameter valu
 the difference between species
 coexistence and exclusion of the weaker competitor. These instances, which are shaded, correspond to
 ATA rescue or exclusion (Theory). Standard errors of plotted quantities 
-were never greater than \Sexpr{round(NA,5)}, so are not displayed. 
+were never greater than \Sexpr{round(se4,5)}, so are not displayed. 
 %***DAN: Jasmin, we need to replace the NA in the above line by a variable names, which your code should have saved.
 %The variable needs to be loaded in the R chunk near the top of this file, and then refereced here, please.
 This plot uses $q_{ij}=1$. 
