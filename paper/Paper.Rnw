@@ -234,7 +234,7 @@ for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundity o
 The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles 
 in proportion to the reproductive outputs of the two species that year. Note that $N$ is constant through time. 
 Notation for the whole paper is summarized in Table X.
-%***DAN: make the table
+%***DAN: Dan to make the table
 For each $i$, we assume for simplicity that the random variables $B_i(t)$ are independent and identically 
 distributed (iid) through time. In three distinct similations (Fig. \ref{fig:pedagog1}d-f), 
 $B_1$ and $B_2$ were, respectively, 
