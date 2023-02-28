@@ -72,6 +72,14 @@ fig5 <- function(filename, dat_loc, invader){
   #colors and line styles
   col <- c(rep("black",4), "red", "blue", "orange")
   line <- c(1,2,4,3,1,1,1); lwd <- c(rep(2,6),3)
+  #plotting set up
+	rescol <- rgb(227/255, 211/255, 148/255,.5)
+	excol <- rgb(38/255, 38/255, 38/255,.5)
+	lwd <- c(2,2,2,2,4,4,5)
+	line <- c(1,2,3,4,1,2,1)
+	ncol <- 5
+	yor <- hcl.colors(ncol, palette = "YlOrRd")
+	col <- c("black","black","black","black", yor[2], yor[1], yor[3])
   
   #get range for y axis
   range <- sapply(varylist, function(X){range(X[,1:7])})
@@ -100,14 +108,14 @@ fig5 <- function(filename, dat_loc, invader){
       graphics::lines(vdat$var, vdat[,j], col=col[j], lty=line[j], lwd=lwd[j])	
     }
     graphics::abline(h=0, col="lightgrey") #zero
-    graphics::abline(v=orig[i], col='magenta', lty=3, lwd=2)
+    graphics::abline(v=orig[i], col='darkgrey', lty=3, lwd=2)
     
     #ATA effect blocking
     resc <- varylist[[i]][varylist[[i]]$epsECbrk>varylist[[i]]$IGR & varylist[[i]]$IGR>0,]
-    graphics::rect(resc[1,10], ymin*1.2, tail(resc,1)[1,10], ymax*1.2, col="darkgoldenrod2", border=NA, density=40, lty=3)
+    graphics::rect(resc[1,10], ymin*1.2, tail(resc,1)[1,10], ymax*1.2, col=rescol, border=NA)
     
     excl <- varylist[[i]][varylist[[i]]$epsECbrk<varylist[[i]]$IGR & varylist[[i]]$IGR<0,]
-    graphics::rect(excl[1,10], ymin, tail(excl,1)[1,10], ymax, col="hotpink2", border=NA, density=40, lty=3)
+    graphics::rect(excl[1,10], ymin, tail(excl,1)[1,10], ymax, col=excol, border=NA)
     
     #label
     graphics::mtext(paste0("(", letters[i],")"), 3, -3, adj=0.985, cex=2.3)
@@ -115,11 +123,11 @@ fig5 <- function(filename, dat_loc, invader){
     if (i==1){
       graphics::legend("topleft", legend=c(expression(Delta[i]^0), expression(Delta[i]^E), expression(Delta[i]^C), expression(Delta[i]^"(E#C)")), 
              col ="black",lty = line[1:4], bty="n", cex=2.5, inset=c(-0.02,-0.03), 
-             y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=2)
-      graphics::legend("topleft", legend=c(expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]") ,expression(GWR)), col = c("blue", "red", "orange"), lty=line[5:7], bty='n', cex=2.5, inset=c(0.12, -0.035), x.intersp=0.1, seg.len=0.8, lwd=c(2, 2, 2.8), y.intersp=1.1)	
+             y.intersp = 1.1, x.intersp = 0.1, seg.len=0.8, lwd=1.5)
+      graphics::legend("topleft", legend=c(expression(Delta[i]^"[E||C]"), expression(Delta[i]^"[EC]") ,expression(GWR)), col = yor[1:3], lty=c(2,1,1), bty='n', cex=2.5, inset=c(0.12, -0.035), x.intersp=0.1, seg.len=0.8, lwd=c(2, 2, 3), y.intersp=1.1)	
     }
   }
-  graphics::title(ylab="contribution to coexistence", outer=T, line=2.8, cex.lab=3.5, font.lab=2)
+  graphics::title(ylab="contribution to coexistence", outer=T, line=2.8, cex.lab=3.5, font.lab=2, col.lab="gray40")
   grDevices::dev.off()
 }
 
