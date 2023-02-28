@@ -1048,11 +1048,11 @@ since $\olr_{j \bs i}=0$.
 
 %The Q, K and V functions
 Estimates of the temperature dependence functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$, 
-produced by earlier authors \cite{Descamps_2005,Ellner_2016,Ellner_2019} and which are part of the parameterization
+produced by earlier authors \citep{Descamps_2005,Ellner_2016,Ellner_2019} and which are part of the parameterization
 of the diatom competition model described in the main text, are now described.
 \cite{Descamps_2005} estimated values for $Q_i(t)$, $V_i(t)$, and $K_i(t)$ from 
 single-species, nine-day batch experiments at four different temperatures ($6^\circ$C, 
-$12^\circ$C, $18^\circ$C, $24^\circ$C) (see Table 1 of \cite{Descamps_2005}) and 
+$12^\circ$C, $18^\circ$C, $24^\circ$C) (see Table 1 of \citealp{Descamps_2005}) and 
 used linear interpolations for the
 functions $Q_i(t)$, $V_i(t)$, and $K_i(t)$. Their values and functions are 
 pictured in Fig. \ref{fig:VKQ} using open circles and dashed lines.
@@ -1064,7 +1064,8 @@ uses their modified functions.
 %Defintions of E and C
 Our decomposition of GWR is defined by the choices $E_i(t)=\theta(t)$, 
 $C_{i}(t)=(K_i(t)+S(t))/S(t)$, which then imply $r_i(E_i,C_{i})=\frac{V_i(E_i)}{C_{i}} -D$. 
-This choice follows one of the choices made in the R computer code provided by \citep{Ellner_2016,Ellner_2019}.
+This choice follows one of the choices made in the R computer code provided by \cite{Ellner_2016} and 
+\cite{Ellner_2019}.
 Other choices are possible. For instance, in addition to this choice, 
 \cite{Ellner_2016} also considers an alternative choice $E_i(t)=V_i(t)$,
 as well as some other possibilities discussed in their supporting materials and 
@@ -1073,7 +1074,7 @@ represented in their computer code.
 %Outline how the quantities E_i and C_i\i were obtained from simulations. 
 To obtain $E_i$ and $C_{i \bs i}$, the competition model was simulated for $T=3000$ time steps.
 Environmental temperature fluctuations were defined by the paramters $a$, $P$, and $\theta_0$ using 
-$\theta(t)=asin(2\pi t/P)+\theta_0$, and this determined $E_i(t)$ for $i=1,2$. To obtain 
+$\theta(t)=a\sin(2\pi t/P)+\theta_0$, and this determined $E_i(t)$ for $i=1,2$. To obtain 
 $C_{i \bs i}$, a simulation was carried out starting from $x_i=0$ and $x_j=20$.
 Dilution was set to $D=0.09$ and inflow silicate concentration was set at $S_0=35$. A burn in time 
 of $\frac{2}{3}T$ was cut from the simulation and the $S(t)$ time series from the remainder of the simulation,
@@ -1087,7 +1088,7 @@ $(E_i,C_{i \bs i})$, while maintaining its correlation and marginal distribution
 random variable $(E_i^\nat,C_{i \bs i}^\nat)$.
 In the Theory section of the main text, we decribed this removal process
 when the distributions of $E_i$ and $C_{i \bs i}$ are known exactly, but for the 
-diatom example explored for goal G4 of the main text (see also SI section \ref{sect:diatom_model}), 
+diatom example, 
 we only had samples from $(E_i,C_{i \bs i})$, based on simulations. We here describe how to
 produce a sample from $(E_i^\nat,C_{i \bs i}^\nat)$ in this modified context. 
 Let $(E_{i,k},C_{i \bs i,k})$, $k=1,\ldots,T$ denote the samples from $(E_i,C_{i \bs i})$.
