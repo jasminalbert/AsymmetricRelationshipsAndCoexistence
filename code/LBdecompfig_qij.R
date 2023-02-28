@@ -1,76 +1,12 @@
+#qij !=1 version for beta distributed fecundities lottery model
 source("./decompose_LB.R")
 numRes_loc <- "../results_numeric/"
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 B<-readRDS(betanoise_loc)
 
-plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,...){
-	
-	if (Deltas_loc!=0){ #check that file exists
-		
-		if (file.exists(Deltas_loc)==FALSE){ 
-			Deltas_loc<-0
-			} else {Deltas <- readRDS(Deltas_loc)}
-		}
-		
-	if (Deltas_loc==0){
-		message <- "computing coexistence mechanisms..."
-		cat(message)
-		store <- vector(mode='list')
 
-		for (j in 1:length(etaj)){
-    		store[[j]] <- decomp(etai,etaj[j], delta,B,...)
-    		cat(".")
-    	}
-    	cat("done")
-    	Deltas <- data.frame(t(sapply(store, function(X){X$Delta_i})))
-		colnames(Deltas) <- rownames(store[[1]])
-		SE <- data.frame(t(sapply(store, function(X){X$stanErr_D_i})))
-		colnames(SE) <- colnames(Deltas)
-
-	}
-	
-    range <- range(Deltas)
-    #ylim <- range*1.1
-    ylim <- c(-0.6,0.2)
-    
-    #ATA effect
-	res_vec <- etaj[Deltas$r>0 & Deltas$ATA > Deltas$r]
-	ex_vec <- etaj[Deltas$r<0 & Deltas$ATA < Deltas$r]
-	
-	#plotting set up
-	rescol <- rgb(227/255, 211/255, 148/255,.5)
-	excol <- rgb(38/255, 38/255, 38/255,.5)
-	wid <- c(2,2,2,2,4,4,5)
-	typ <- c(1,2,3,4,2,1,1)
-	ncol <- 5
-	yor <- hcl.colors(ncol, palette = "YlOrRd")
-	col <- c("black","black","black","black", yor[1], yor[2], yor[3])
-	
-	
-	##plot##
-	#box	
-	plot(etaj, xlab="", ylab="", ylim=ylim, 			xlim=range(etaj), type="n",xaxt="n", yaxt="n")
-	#zero line
-	lines(etaj, rep(0, length(etaj)), col="grey", lwd=0.5)
-	#ATA effects
-	if (length(res_vec)>0){ #rescue
-		res_points <- range(res_vec)
-		polygon(x=c(rep(res_points[1],2), rep(res_points[2],2)), y=c(ylim, rev(ylim))*2, xpd=FALSE, col=rescol, border=NA)
-	}
-	if (length(ex_vec)>0){ #exclusion
-		ex_points <- range(ex_vec)
-		polygon(x=c(rep(ex_points[1],2), rep(ex_points[2],2)), y=c(ylim, rev(ylim))*2, xpd=FALSE, col=excol, border=NA)
-	}
-	#lines
-	for (m in 1:length(Deltas)){
-		lines(etaj, Deltas[,m], lwd=wid[m], lty=typ[m], col=col[m], xpd=F)
-	}
-	
-	return(list(D=Deltas, SE=SE))
-
-}
 fig_loc <- "../results_figs/"
-res_loc <- paste0(numRes_loc,"LBfigdat/")
+res_loc <- paste0(numRes_loc,"LBqij_figdat/")
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
@@ -78,7 +14,7 @@ if(dir.exists(res_loc)==FALSE){
   dir.create(res_loc)
 }
 
-fig3_LB_loc <- paste0(fig_loc,"decompFigLB.pdf")
+fig3_LB_loc <- paste0(fig_loc,"decompFigLB_qij.pdf")
 fig3_LB_dat_loc <- paste0(res_loc,"Deltas_dr")
 
 ### setting up legend ###
@@ -107,7 +43,7 @@ for (d in seq_along(delta)){
 	
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_LT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_LT.RDS")
-	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file)
+	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file, qij=T)
 	maxseLT[d] <- max(DeltasLT$SE,na.rm=T)
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
 	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
@@ -133,7 +69,7 @@ maxseRT <- {}
 for (d in 1:length(delta)){
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_RT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_RT.RDS")	
-	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, dir="RIGHT")
+	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, dir="RIGHT", qij=T)
 	maxseRT[d] <- max(DeltasRT$SE,na.rm=T)
 	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
 	if (d==1){
