@@ -232,8 +232,7 @@ N_i(t+1)=(1-\delta)N_i(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)
 for $i=1,2$. Here, $\delta$ is a mortality rate, and $B_i(t)$ is the fecundity of species $i$ at time $t$. 
 The model postulates that individuals die at rate $\delta$ at each time step, and are replaced by juveniles 
 in proportion to the reproductive outputs of the two species that year. Note that $N$ is constant through time. 
-Notation for the whole paper is summarized in Table X.
-%***DAN: Dan to make the table
+Notation for the whole paper is summarized in Table \ref{tab:notation}.
 For each $i$, we assume for simplicity that the random variables $B_i(t)$ are independent and identically 
 distributed (iid) through time. In three distinct similations (Fig. \ref{fig:pedagog1}d-f), 
 $B_1$ and $B_2$ were, respectively, 
@@ -694,7 +693,7 @@ considered. And both ATA rescue and exclusion occurred for values of $\eta_2/\et
 Apparently the question of whether ATAs are important for realistic parameter values depends on specifics.
 
 %G4 ***DAN: Dan, this will have to be edited after Jasmin gets done editing the corresponding figures
-Fulfilling goal G4 of the Introduction (to provide an empirical example of species coexistence 
+Fulfilling goal G3 of the Introduction (to provide an empirical example of species coexistence 
 which highlights the role ATAs can play), Fig. \ref{fig:fig5} and Fig. \ref{fig:fig6} 
 show that ATA contributions to coexistence often have magnitudes comparable to the 
 magnitudes of other terms of the extended MCT decomposition (Fig. \ref{fig:fig5}), and that 
@@ -830,8 +829,11 @@ such as predation and facilitation that can also mediate coexistence, and other 
 
 \section{Acknowledgments}
 
+%***DAN: Jasmin, please add to the list anyone you talked to at UO about this, and anyone who read it and commented 
+%for you. Be generous here - even short convos merit an acknowlegement.
 The authors thank Shyamolina Ghosh for suggesting the research problem, and Lawrence Sheppard, Max Castorani,
-Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, and Robin Snyder for helpful discussions. 
+Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, Laurn Hallett, and 
+Robin Snyder for helpful discussions. 
 The authors especially thank Steve Ellner for key advice at several watershed moments in the devlopment of the project. 
 The authors were partly supported by US National
 Science Foundation grants 1714195 and 2023474, the James S McDonnell Foundation, the California Department of Fish and
@@ -839,6 +841,66 @@ Wildlife Delta Science Program, and the Alexander von Humboldt Foundation.
 
 \bibliographystyle{ecology_letters2}
 \bibliography{refs}
+
+\clearpage
+\newpage
+
+\begin{table}[!h]
+\caption{Summary of frequently used notation and abbreviations.}\label{tab:notation}
+\begin{center}
+\begin{tabular}{l|l}
+Notation & Meaning \\
+\hline 
+\hline
+\multicolumn{2}{c}{General} \\
+\hline
+ATA & Asymmetric tail associations \\
+MCT & Modern coexistence theory \\
+GWR & Growth rate when rare \\
+E, C & Environment, competition \\
+$\E$ & Expected value \\ 
+ATA rescue & Coexistence occurs, but not after ATA effects are removed \\
+ATA exclusion & Coexistence does not occur, but does after ATA effects are removed \\
+ \hline
+\multicolumn{2}{c}{Lottery model} \\
+\hline
+$N_i(t)$ & Population density of species $i$, time $t$ \\
+$N$ & $N_1(t)+N_2(t)$ \\
+$B_i(t)$ & Fecundity of species $i$, time $t$ \\
+$\delta$ & Mortality rate \\
+$\sigma$ & Standard deviation of log fecundities for the log-normal fecundities model \\
+$\mu_i$ & Mean log fecundity, species $i$, log-normal fecundities model \\
+$\eta_i$ & Upper bound fecundity, species $i$, log-normal fecundities model \\
+\hline
+\multicolumn{2}{c}{Theory} \\
+\hline
+$r_i(t)$ & Species $i$ growth rate, $\ln(N_i(t+1)/N_i(t))$ \\
+$E_i(t)$ & Environment experienced by the $i^{\text{th}}$ species \\
+$C_i(t)$ & Competition experienced by the $i^{\text{th}}$ species \\
+$\olr_{i \bs i}$ & Mean GWR of species $i$ \\
+$\olr_{j \bs i}$ & Mean growth of $j$ when $i$ is absent \\
+$i \bs i$ & As subscript, refers to computing a quantity for $i$ when $i$ is rare \\
+$j \bs i$ & As subscript, refers to computing a quantity for $j$ when $i$ is absent \\
+$\shp$ & As superscript, refers to computing a quantity after rendering E and C independent \\
+$\nat$ & As superscript, refers to computing a quantity after removing ATAs between E and C \\
+$q_{ij}$ & Scaling factor \\
+$\Delta_i^{(EC)}$ & Storage effects, species $i$ \\
+$\Delta_i^{[EC]}$ & ATA effect to coexistence, species $i$ \\
+$\Delta_i^{[E \nat C]}$ & Component of storage effects due to EC correlation \emph{per se}, species $i$ \\
+\hline
+\multicolumn{2}{c}{Diatom chemostat system} \\
+\hline
+$S$ & Extracellular silicate concentration \\
+$x_1$ & Population density of \emph{F. crotonensis} \\
+$x_2$ & Population density of \emph{C. pseudostelligera} \\
+$\Theta$ & Temperature \\
+$\Theta_0$ & Average temperature \\
+$a$ & Amplitude of temperature fluctuations \\
+$P$ & Period of temperature fluctuations \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 \clearpage
 \newpage
