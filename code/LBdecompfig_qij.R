@@ -6,7 +6,7 @@ B<-readRDS(betanoise_loc)
 
 
 fig_loc <- "../results_figs/"
-res_loc <- paste0(numRes_loc,"fig3LB/")
+res_loc <- paste0(numRes_loc,"LBqij_figdat/")
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
@@ -14,8 +14,8 @@ if(dir.exists(res_loc)==FALSE){
   dir.create(res_loc)
 }
 
-fig3_LB_loc <- paste0(fig_loc,"decompFigLB.pdf")
-fig3_LB_dat_loc <- paste0(res_loc,"fig3LB_Deltas_dr")
+fig3_LB_loc <- paste0(fig_loc,"decompFigLB_qij.pdf")
+fig3_LB_dat_loc <- paste0(res_loc,"Deltas_dr")
 
 ### setting up legend ###
 terms <- c(expression(Delta[i]^0), expression(Delta[i]^E),

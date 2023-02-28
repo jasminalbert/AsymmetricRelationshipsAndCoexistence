@@ -67,10 +67,10 @@ plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,...){
 	}
 	
 	return(list(D=Deltas, SE=SE))
-	#title(main=paste("mu_j=",params["mu_j"], "sigma_i=",params["sigma_i"], "sigma_j=",params["sigma_j"], "delta=",params["delta"]))
+
 }
 fig_loc <- "../results_figs/"
-res_loc <- paste0(numRes_loc,"fig3LB/")
+res_loc <- paste0(numRes_loc,"LBfigdat/")
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
@@ -79,7 +79,7 @@ if(dir.exists(res_loc)==FALSE){
 }
 
 fig3_LB_loc <- paste0(fig_loc,"decompFigLB.pdf")
-fig3_LB_dat_loc <- paste0(res_loc,"fig3LB_Deltas_dr")
+fig3_LB_dat_loc <- paste0(res_loc,"Deltas_dr")
 
 ### setting up legend ###
 terms <- c(expression(Delta[i]^0), expression(Delta[i]^E),
@@ -126,7 +126,7 @@ for (d in seq_along(delta)){
 	if (file.exists(file)==FALSE){saveRDS(DeltasLT$D,file=file)}
 	if (file.exists(sefile)==FALSE){saveRDS(DeltasLT$SE,file=sefile)}
 }
-#text("LEFT-TAILED ASYMMETRY", x=5.4, y=-0.2, font=2, srt=-90, cex=1.5)
+
 
 #d-f (right-tail)
 maxseRT <- {}
@@ -149,7 +149,6 @@ for (d in 1:length(delta)){
 	if (file.exists(file)==FALSE){saveRDS(DeltasRT$D,file=file)}
 	if (file.exists(sefile)==FALSE){saveRDS(DeltasRT$SE,file=sefile)}
 }
-#text("RIGHT-TAILED ASYMMETRY", x=5.4, y=-0.2, font=2, srt=-90, cex=1.5)
 
 
 #7
@@ -159,9 +158,8 @@ excol <- rgb(38/255, 38/255, 38/255,.5)
 graphics::legend("topright", legend=terms, col = cols, lty = ltys, bty="n", cex=2, inset=c(-.36,-.72), y.intersp = 1.35, x.intersp = 0.1, seg.len=0.8, lwd=lwds)
 graphics::legend("topright",legend=c("ATA \nexlusion", "ATA \nrescue"), fill=c(excol,rescol), cex=1.8, bty="n",border=NA, inset=c(-.427,0.15), x.intersp = 0.1,y.intersp = 1.7)
 
-#mtext("adult death rate", side=3, outer=T, line=0.2, font=2, cex=1.5)
 mtext("contribution to coexistence", side=2, outer=TRUE, line=2, font=2, cex=1.7, col="gray40")
-#mtext("variance metric", side=1, outer=T, line=1, font=2, cex=1.5)
+
 dev.off()
 
 maxSE_LBdecomp <- max(c(maxseLT, maxseRT))
