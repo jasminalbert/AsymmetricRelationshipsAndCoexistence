@@ -61,7 +61,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_ECi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif))) - mean(log(1-delta+delta*exp(sigma*(bi_um-bj_um)+mudif)))   
   #standard error
-  s3 <- sd(log(1-delta+delta*exp((bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
+  s3 <- sd(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
   e_ECi_se <-sqrt(s3^2 + s1^2)
   
   
