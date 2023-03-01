@@ -99,7 +99,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_ECpipj_hat <- mean(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
   #standard error
-  e_ECpipj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
+  e_ECpipj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M)
   
   #6. epsilon^[EC] bar (eq 91)
   e_ECj <- 0
