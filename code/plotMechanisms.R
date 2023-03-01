@@ -57,7 +57,10 @@ plotco <- function(Deltas_loc,xvar,ylim,...){
 	} else {Deltas <- readRDS(Deltas_loc)}
 	
     range <- range(Deltas[,1:7])
-    ylim <- range*1.1
+    if (ylim[1] == "range"){
+    	ylim <- range*1.1	
+    }
+    
     #ylim <- c(-0.6,0.2)
     
     #ATA effect
