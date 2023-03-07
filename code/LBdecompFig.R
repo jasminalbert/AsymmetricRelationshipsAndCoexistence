@@ -3,13 +3,14 @@ numRes_loc <- "../results_numeric/"
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 B<-readRDS(betanoise_loc)
 
-plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,...){
+plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,SE_loc=0,...){
 	
 	if (Deltas_loc!=0){ #check that file exists
 		
-		if (file.exists(Deltas_loc)==FALSE){ 
+		if (file.exists(SE_loc)==FALSE){ 
 			Deltas_loc<-0
-			} else {Deltas <- readRDS(Deltas_loc)}
+			SE_loc <- 0
+			} else {Deltas <- readRDS(Deltas_loc); SE <- readRDS(Deltas_loc)}
 		}
 		
 	if (Deltas_loc==0){
@@ -23,9 +24,9 @@ plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,...){
     	}
     	cat("done")
     	Deltas <- data.frame(t(sapply(store, function(X){X$Delta_i})))
-		colnames(Deltas) <- rownames(store[[1]])
-		SE <- data.frame(t(sapply(store, function(X){X$stanErr_D_i})))
-		colnames(SE) <- colnames(Deltas)
+	colnames(Deltas) <- rownames(store[[1]])
+	SE <- data.frame(t(sapply(store, function(X){X$stanErr_D_i})))
+	colnames(SE) <- colnames(Deltas)
 
 	}
 	
@@ -107,7 +108,7 @@ for (d in seq_along(delta)){
 	
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_LT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_LT.RDS")
-	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file)
+	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file, SE_loc=sefile)
 	maxseLT[d] <- max(DeltasLT$SE,na.rm=T)
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
 	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
@@ -133,7 +134,7 @@ maxseRT <- {}
 for (d in 1:length(delta)){
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_RT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_RT.RDS")	
-	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, dir="RIGHT")
+	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, SE_loc=sefile, dir="RIGHT")
 	maxseRT[d] <- max(DeltasRT$SE,na.rm=T)
 	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
 	if (d==1){
