@@ -97,8 +97,8 @@ for (m in seq_along(mudif)){ #iterates across mudif values
       graphics::text(paste(mudif[m]), srt=-90, x=7.8,y=mean(ylims[[m]]),  font=2, cex=2, col="gray30")
     }
     if (n==6){
-    	graphics::text("mean log fecundity difference, ", x=9,y=2.2, font=2, cex=2.5, srt=-90, adj=0, col="gray40")
-    	graphics::text(expression(mu[1]-mu[2]), x=9,y=-3.3, font=2, cex=3, srt=-90, adj=1, col="gray40")
+    	graphics::text("mean log fecundity difference, ", x=9,y=2.45, font=2, cex=2.5, srt=-90, adj=0, col="gray40")
+    	graphics::text(expression(mu[1]-mu[2]), x=9,y=-3.95, font=2, cex=3, srt=-90, adj=1, col="gray40")
     }
     if (n==11){
     	graphics::mtext("log fecundity standard deviation, ",side=1, line=2.8, cex=1.25, at=-3.25, adj=0,col="gray40")
@@ -168,8 +168,8 @@ for (m in seq_along(mudif)){ #iterates across mudif values
       graphics::text(paste(mudif[m]), srt=-90, x=7.8,y=mean(ylims[[m]]),  font=2, cex=2, col="gray30")
     }
     if (n==6){
-    	graphics::text("mean log fecundity difference, ", x=9,y=2.2, font=2, cex=2.5, srt=-90, adj=0, col="gray40")
-    	graphics::text(expression(mu[1]-mu[2]), x=9,y=-3.3, font=2, cex=3, srt=-90, adj=1, col="gray40")
+    	graphics::text("mean log fecundity difference, ", x=9,y=2.45, font=2, cex=2.5, srt=-90, adj=0, col="gray40")
+    	graphics::text(expression(mu[1]-mu[2]), x=9,y=-3.95, font=2, cex=3, srt=-90, adj=1, col="gray40")
     }
     if (n==11){
     	graphics::mtext("log fecundity standard deviation, ",side=1, line=2.8, cex=1.25, at=-3.25, adj=0,col="gray40")
