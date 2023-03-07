@@ -14,7 +14,7 @@ if(dir.exists(res_loc)==FALSE){
   dir.create(res_loc)
 }
 
-fig3_LB_loc <- paste0(fig_loc,"decompFigLB_qij.pdf")
+fig3_LB_loc <- paste0(fig_loc,"decompFigLBqij.pdf")
 fig3_LB_dat_loc <- paste0(res_loc,"Deltas_dr")
 
 ### setting up legend ###

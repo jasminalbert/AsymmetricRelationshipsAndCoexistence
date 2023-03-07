@@ -21,8 +21,8 @@ decomp <- function(etai, etaj, delta, Blist, dir="LEFT", qij=FALSE){
 	} else{
 		Bi <- Blist$l[,1]; Bj <- Blist$l[,2]
 	}
-	Bis <- Blist$til[,1]; Bjs <- Blist$til[,2]
-	Bips <- Blist$s[,1]; Bjps <- Blist$s[,2]
+	Bis <- Blist$til[,1]; Bjs <- Blist$til[,2] #sharp
+	Bips <- Blist$s[,1]; Bjps <- Blist$s[,2] #partial sharp
 
 	M <- length(Bi)
 	

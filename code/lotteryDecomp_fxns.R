@@ -61,7 +61,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_ECi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif))) - mean(log(1-delta+delta*exp(sigma*(bi_um-bj_um)+mudif)))   
   #standard error
-  s3 <- sd(log(1-delta+delta*exp((bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
+  s3 <- sd(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
   e_ECi_se <-sqrt(s3^2 + s1^2)
   
   
@@ -99,7 +99,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_ECpipj_hat <- mean(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
   #standard error
-  e_ECpipj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
+  e_ECpipj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M)
   
   #6. epsilon^[EC] bar (eq 91)
   e_ECj <- 0
@@ -140,6 +140,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DCq <- e_Ci_hat - qij*e_Cj_hat
   DECsharpq <- e_ECsharpi_hat - qij*e_ECsharpj_hat
   DECq <- e_ECi_hat - qij*e_ECj
+  DECpipq <- e_ECpipj_hat-qij*e_ECpipj_hat
   
   #standard error of Delta estimates:
   DEq_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
@@ -164,7 +165,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   ej_se <- c(0, e_Ej_se, e_Cj_se, e_ECsharpj_se, 0, e_ECpipj_se, 0, NA)
   D <- c(D0, DE, DC, DECsharp, DEC, DECpip, Dr, DrwoATA)
   D_se <- c(0, DE_se, DC_se, DECsharp_se, DEC_se, DECpip_se, Dr_se, NA)
-  Dq <- c(D0, DEq, DCq, DECsharpq, DECq, DECpip, Dr, DrwoATA)
+  Dq <- c(D0, DEq, DCq, DECsharpq, DECq, DECpipq, Dr, DrwoATA)
   Dq_se <- c(0, DEq_se, DCq_se, DECsharpq_se, DECq_se, DECpip_se, Dr_se, NA)
   
   res <- data.frame(ei=ei, ei_se=ei_se, ej=ej, ej_se=ej_se, D=D, D_se=D_se, Dq=Dq, Dq_se=Dq_se)

@@ -40,6 +40,7 @@ source("./Figure3.R")
 
 #FIGURE 4
 source("./LBdecompFig.R")
+source("./LBdecompfig_qij.R")
 
 #FIGURE 5
 source("./diatom/Figure5.R")
