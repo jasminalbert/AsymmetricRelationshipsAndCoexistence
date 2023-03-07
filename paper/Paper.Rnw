@@ -692,7 +692,7 @@ to the other components of (\ref{eq:full_decomp}) across the whole range of para
 considered. And both ATA rescue and exclusion occurred for values of $\eta_2/\eta_1$ between $1$ and $2$.
 Apparently the question of whether ATAs are important for realistic parameter values depends on specifics.
 
-%G4 ***DAN: Dan, this will have to be edited after Jasmin gets done editing the corresponding figures
+%G3 ***DAN: Dan, this will have to be edited after Jasmin gets done editing the corresponding figures
 Fulfilling goal G3 of the Introduction (to provide an empirical example of species coexistence 
 which highlights the role ATAs can play), Fig. \ref{fig:fig5} and Fig. \ref{fig:fig6} 
 show that ATA contributions to coexistence often have magnitudes comparable to the 
