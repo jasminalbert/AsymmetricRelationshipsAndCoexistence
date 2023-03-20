@@ -122,6 +122,7 @@
 M <- readRDS(file="../results_numeric/M.RDS")
 rho <- readRDS(file="../results_numeric/rho.RDS")
 se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
+#se4qij <- readRDS(file="../results_numeric/fig4qijmaxse.RDS")
 @
 
 \linenumbers
@@ -1140,13 +1141,7 @@ the resulting distribution of values should be used.
 \clearpage
 \newpage
 
-%***DAN: Jasmin, panels d-l of this figure are difficult to read because the y axis extent is such that
-%you can't really see what any of the lines are doing except for the ditted and dot-dashed lines. I think we
-%need to present 2 versions of the figure, this one and another one. For the other one, the y-axis limits 
-%should be determined from the y axis extents of all the lines other than the dotted and dot-dashed lines. 
-%Can you please mak this alternative version and let me know when it is made and what the pdf file is, so I 
-%insert it? It is possible you will also need two versions of the figure below, but we won't know that 
-%until you make that figure.
+%***DAN: Jasmin, please fix the collision of text that occurs in the text near the legend
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/decompFigLLNqij.pdf}
 \caption[Analogous to Fig. \ref{MT-fig:fig3} but making a different choice for $q_{ij}$]
@@ -1159,11 +1154,8 @@ were never greater than \Sexpr{round(se3qij,5)}, so are not displayed.}\label{fi
 \clearpage
 \newpage
 
-%***DAN: The code does not yet produce this figure. Eventually it needs to.
-%NOTE: I have assumed this figure will look substantially the same as the corresponding main text 
-%figure when I wrote the Results. If it does not, then some revisions will be needed.
 \begin{figure}
-%\includegraphics[width=\textwidth]{../results_figs/decompFigLBqij.pdf}
+\includegraphics[width=\textwidth]{../results_figs/decompFigLBqij.pdf}
 \caption[Analogous to Fig. \ref{MT-fig:fig4} but making a different choice for $q_{ij}$]
 {Analogous to Fig. \ref{MT-fig:fig4} of the main text, but using 
 $q_{ij}=\eta_i/(\eta_j(1-\delta)+\eta_i \delta)$. See the caption of

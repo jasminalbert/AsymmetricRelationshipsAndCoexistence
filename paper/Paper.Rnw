@@ -618,10 +618,16 @@ SI section \ref{SI-sect:Empircal_app}.
 
 \subsection{How results were plotted for goal G3}
 
-%***DAN: This para will likely have to be revised depending on how Jasmin revises the diatom figure presentation
-To display results for goal G3, we plotted the terms of (\ref{eq:full_decomp}) against one of the parameters 
+%One-parameters plots
+To display results for goal G3, we started by plotting the terms of 
+(\ref{eq:full_decomp}) against one of the parameters 
 $\theta_0$, $a$ and $P$ at a time, while keeping the other two fixed at the values
-used by \cite{Descamps_2005}. We also generated two-dimensional plots, where
+used by \cite{Descamps_2005}. We again labelled regions of parameters space corresponding to
+ATA rescue or exclusion. 
+
+%Two-parameter plots
+%***DAN: This para will likely have to be revised depending on how Jasmin revises the diatom figure presentation
+We also generated two-dimensional plots, where
 two of the parameters $\theta_0$, $a$ and $P$ were varied and the third was kept fixed
 at the value used by \cite{Descamps_2005}. For the two-dimensional plots, the quantity  
 $\Delta_i^{[EC]}/\text{GWR}$ was displayed using color, to convey the 
@@ -692,13 +698,15 @@ to the other components of (\ref{eq:full_decomp}) across the whole range of para
 considered. And both ATA rescue and exclusion occurred for values of $\eta_2/\eta_1$ between $1$ and $2$.
 Apparently the question of whether ATAs are important for realistic parameter values depends on specifics.
 
-%G3 ***DAN: Dan, this will have to be edited after Jasmin gets done editing the corresponding figures
-Fulfilling goal G3 of the Introduction (to provide an empirical example of species coexistence 
-which highlights the role ATAs can play), Fig. \ref{fig:fig5} and Fig. \ref{fig:fig6} 
+%G3 ***DAN: check this again after Jasmin gets done making the new version of Fig. 5
+Starting to fulfill goal G3 of the Introduction (to provide an empirical example of species coexistence 
+which highlights the role ATAs can play), Fig. \ref{fig:fig5}a-c 
 show that ATA contributions to coexistence often have magnitudes comparable to the 
-magnitudes of other terms of the extended MCT decomposition (Fig. \ref{fig:fig5}), and that 
-ATA rescue occurs for many combinations of parameters for this system (Fig. \ref{fig:fig5},
-but especially Fig. \ref{fig:fig6}).
+magnitudes of other terms of the extended MCT decomposition, and that 
+ATA rescue occurs for some combinations of parameters for this system (Fig. \ref{fig:fig5}a-c).
+
+%***DAN: finish it once Jasmin finishes d-f
+Plotting against two parameters at a time, Fig. \ref{fig:fig5}d-f show that...
 
 \section{Discussion}\label{section:discussion}
 
@@ -1012,45 +1020,52 @@ though results differed in detail, main conclusions were the same.
 }\label{fig:fig4}
 \end{figure}
 
+%***DAN: Jasmin, can you please ensure that ATA enclusion and rescue are 
+%shaded and keyed in the legend for panels a-c in the same way as the earlier figures?
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig5.pdf}
-\caption{The contribution of ATAs to GWR of \emph{F. crotonensis}
+\caption{ATA effects and ATA rescue and exclusion in the diatom system. 
+The contribution of ATAs to the GWR of \emph{F. crotonensis}
 in the diatom system of \cite{Descamps_2005} was often meaningfully large compared to 
-other components of the MCT decomposition. All panels show GWR and the decomposition of
+other components of the MCT decomposition (a-c). Panels a-c show GWR and the decomposition of
 GWR provided by the extended MCT, equation (\ref{eq:full_decomp}). 
 For each panel, 
 two of the three parameters defining the temperature oscillation (the amplitude, $a$; period, $P$; 
 and mean, $\theta_0$; see Methods) were fixed at the values used by 
 \cite{Descamps_2005} ($a=6^\circ$C, $P=60$d, $\theta_0=18^\circ$C), and 
 GWR and components of the MCT decomposition
-were then plotted against the third parameter. The original values of the varying parameters 
-are indicated by vertical dashed magenta lines. ATA contributions 
+were plotted against the third parameter. The original values of the varying parameters 
+are indicated by vertical dotted lines. 
+%***DAN: Change the above sentence if Jasmin changes the font of the line
+ATA contributions 
 had magnitude comparable to other components, 
 indicating that ATAs can contribute meaningfully
-to diatom coexistence in this system. In some instances, the GWR line (orange) falls 
-between the ATA line (red)
-and the horizontal axis, indicating that, for those parameter values, ATAs make the difference between species
-coexistence and exclusion of \emph{F. crotonensis}. 
+to diatom coexistence in this system. In some instances, the GWR line falls 
+between the ATA line
+and the horizontal axis, indicating that, for those parameter values, ATA rescue occurs. 
 Standard errors of plotted quantities were always less then \Sexpr{round(se5,5)}, so are not shown.
 For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, 
 was always positive both including and
 excluding the effects of ATAs, so GWR for \emph{F. crotonensis}, decomposed here, is a 
-sufficient coexistence metric.}  \label{fig:fig5}
+sufficient coexistence metric.
+%***DAN: Once Jasmin is done with the other part of the figure (the part that used to be Fig. 6), 
+%finish this caption. Use the below caption, currently commented, to help. 
+}  \label{fig:fig5}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=.38\textwidth]{../results_figs/fig6.pdf}
-\caption{The contribution of ATAs to GWR of \emph{F. crotonensis}
-in the diatom system of \cite{Descamps_2005} was often meaningfully large compared to 
-the GWR itself. The ratio $\Delta_i^{[EC]}/\text{GWR}$ is shown, larger magnitudes
-indicating greater importance of ATAs and values greater than $1$ corresponding to either
-ATA rescue or ATA exclusion (Methods). For this system and the plotted parameters, 
-$\Delta_i^{[EC]}$ was always positive, so cyan indicates exclusion of \emph{F. crotonensis} and
-magenta indicates coexistence of the two diatom species. Values greater than 1 or less than -1
-were remapped to 1 and -1, respectively, for readability.
-For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, was always positive both including and
-excluding ATAs, so GWR for \emph{F. crotonensis} is a sufficient coexistence metric.
-Standard errors of plotted quantities were always less then \Sexpr{round(se6,5)}, so are not shown.} \label{fig:fig6}
-\end{figure}
+% \begin{figure}
+% \includegraphics[width=.38\textwidth]{../results_figs/fig6.pdf}
+% \caption{The contribution of ATAs to GWR of \emph{F. crotonensis}
+% in the diatom system of \cite{Descamps_2005} was often meaningfully large compared to 
+% the GWR itself. The ratio $\Delta_i^{[EC]}/\text{GWR}$ is shown, larger magnitudes
+% indicating greater importance of ATAs and values greater than $1$ corresponding to either
+% ATA rescue or ATA exclusion (Methods). For this system and the plotted parameters, 
+% $\Delta_i^{[EC]}$ was always positive, so cyan indicates exclusion of \emph{F. crotonensis} and
+% magenta indicates coexistence of the two diatom species. Values greater than 1 or less than -1
+% were remapped to 1 and -1, respectively, for readability.
+% For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, was always positive both including and
+% excluding ATAs, so GWR for \emph{F. crotonensis} is a sufficient coexistence metric.
+% Standard errors of plotted quantities were always less then \Sexpr{round(se6,5)}, so are not shown.} \label{fig:fig6}
+% \end{figure}
 
 \end{document}
