@@ -43,7 +43,7 @@ for (d in seq_along(delta)){
 	
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_LT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_LT.RDS")
-	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file, qij=T)
+	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file, SE_loc=sefile, qij=T)
 	maxseLT[d] <- max(DeltasLT$SE,na.rm=T)
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
 	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
@@ -69,7 +69,7 @@ maxseRT <- {}
 for (d in 1:length(delta)){
 	file <- paste0(fig3_LB_dat_loc,delta[d],"_RT.RDS")
 	sefile <- paste0(fig3_LB_dat_loc,delta[d],"SE_RT.RDS")	
-	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, dir="RIGHT", qij=T)
+	DeltasRT <- plotco(etai,etaj,delta[d],B, Deltas_loc=file, SE_loc=sefile, dir="RIGHT", qij=T)
 	maxseRT[d] <- max(DeltasRT$SE,na.rm=T)
 	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
 	if (d==1){
@@ -98,8 +98,8 @@ mtext("contribution to coexistence", side=2, outer=TRUE, line=2, font=2, cex=1.7
 
 dev.off()
 
-maxSE_LBdecomp <- max(c(maxseLT, maxseRT))
-saveRDS(maxSE_LBdecomp,file=paste0(numRes_loc,"fig4maxse.RDS"))
+maxSE_LBqijdecomp <- max(c(maxseLT, maxseRT))
+saveRDS(maxSE_LBqijdecomp,file=paste0(numRes_loc,"fig4qijmaxse.RDS"))
 
 
 

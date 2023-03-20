@@ -122,7 +122,7 @@
 M <- readRDS(file="../results_numeric/M.RDS")
 rho <- readRDS(file="../results_numeric/rho.RDS")
 se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
-#se4qij <- readRDS(file="../results_numeric/fig4qijmaxse.RDS")
+se4qij <- readRDS(file="../results_numeric/fig4qijmaxse.RDS")
 @
 
 \linenumbers
@@ -1160,10 +1160,11 @@ were never greater than \Sexpr{round(se3qij,5)}, so are not displayed.}\label{fi
 {Analogous to Fig. \ref{MT-fig:fig4} of the main text, but using 
 $q_{ij}=\eta_i/(\eta_j(1-\delta)+\eta_i \delta)$. See the caption of
 that figure for details. Standard errors of plotted quantities 
-were never greater than \Sexpr{round(0,5)}, so are not displayed.}\label{fig:fig4_alt}
+were never greater than \Sexpr{round(se4qij,5)}, so are not displayed.}\label{fig:fig4_alt}
 %***DAN: jasmin, once the se is generated and saved by your code, the chunk at the outset of this 
 %document needs to be modified to load that quantity, and then the 0 in the above expression 
 %needs to be replaced by the variable name used.
+%***JAS:done
 \end{figure}
 
 \clearpage
