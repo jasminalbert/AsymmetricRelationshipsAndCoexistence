@@ -1138,6 +1138,26 @@ the resulting distribution of values should be used.
 % so it suffices to show $\olr_{j \bs i}=0$ and $\olep_j^{[EC]}=0$. The first of these is known true, \emph{a priori}, 
 % and the second was demonstrated in section \ref{sect:math_simplifications}.
 
+\section{    Three-way decompositions}\label{sect:threeway}
+
+As mentioned in the Discussion in the main text, \cite{Ellner_2019} elaborated 
+a general theory in which more and different varying factors than
+$E$ and $C$ can be considered and used to produce a decomposition of GWR. For instance, if $X$, $Y$ and 
+$Z$ are temporally varying factors, \cite{Ellner_2019} produced, for the $i^{\text{th}}$ species, the decomposition
+\begin{align}
+\text{GWR}_i &= \Delta_i^0+\Delta_i^X+\Delta_i^Y+\Delta_i^Z \label{eq:9}\\
+&+\Delta_i^{(X \shp Y)} +\Delta_i^{(XY)} + \Delta_i^{(Y \shp Z)} + \Delta_i^{(YZ)} +\Delta_i^{(X \shp Z)}+\Delta_i^{(XZ)} \label{eq:10}\\
+&+ \Delta_i^{(XYZ)}+\Delta_i^{(XY \shp Z)}+\Delta_i^{(X \shp YZ)}+\Delta_i^{(XZ \shp Y)}+\Delta_i^{(X \shp Y \shp Z)}.\label{eq:11}
+\end{align}
+The terms in (\ref{eq:9}) and (\ref{eq:10}) are analogous to those of main text equations (\ref{MT-eq:previous_decomp}).
+The new terms in (\ref{eq:11}) result from rendering one or 
+more of $X$, $Y$, and $Z$ independent of the others.
+We simply comment that this general decomposition should also be extendable to consider the effects of
+ATAs in the same way main text equation (\ref{MT-eq:full_decomp}) extends main text equation (\ref{MT-eq:previous_decomp}), 
+though the complexity
+of such a decomposition may present challenges.
+For example, $\Delta^{(XY \shp Z)}$ can be decomposed as $\Delta^{[XY \shp Z]} + \Delta^{[X \nat Y \shp Z]}$.
+
 \clearpage
 \newpage
 
