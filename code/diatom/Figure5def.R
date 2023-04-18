@@ -5,7 +5,7 @@
 ### source diatom model coexistence decomposition functions ###
 source('./diatom/diatomDecomp_fxns.R')
 ### source functions for computing data and plotting of figure 6 ###
-source('./diatom/fig6_fxns.R')
+source('./diatom/fig5def_fxns.R')
 
 #define original parameters
 parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
