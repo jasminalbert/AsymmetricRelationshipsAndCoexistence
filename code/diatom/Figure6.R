@@ -26,24 +26,24 @@ if (dir.exists(dat_loc)==FALSE){
   P <- seq(50,120,length.out=101)
   
   #function that makes and saves results
-  dat6(dat_loc, a_vec=a[1:8], P_vec=P[1:8], T_vec=Tbar[1:8], parms)
+  dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
 }
 
 #### location to store figure ###
-fig_loc <- "../results_figs/"
-if(dir.exists(fig_loc)==FALSE){
-  dir.create(fig_loc)
-}
-Fig6 <- paste0(fig_loc,"fig6.pdf")
+#fig_loc <- "../results_figs/"
+#if(dir.exists(fig_loc)==FALSE){
+#  dir.create(fig_loc)
+#}
+#Fig6 <- paste0(fig_loc,"fig6.pdf")
 
 ### function that makes figure ###
-fig6(Fig6, dat_loc, invader=1) 
+#fig6(Fig6, dat_loc, invader=1) 
 
 ### get and save standard error ###
-fig6se <- getSE(dat_loc)
-fig6maxse <- max(fig6se)
-cat("\nmaximum standard error in figure six is", fig6maxse)
-fig6maxse_loc <- paste0(numeric_results_loc, "fig6maxse.RDS")
-saveRDS(fig6maxse, file=fig6maxse_loc)
+#fig6se <- getSE(dat_loc)
+#fig6maxse <- max(fig6se)
+#cat("\nmaximum standard error in figure six is", fig6maxse)
+#fig6maxse_loc <- paste0(numeric_results_loc, "fig6maxse.RDS")
+#saveRDS(fig6maxse, file=fig6maxse_loc)
 
 
