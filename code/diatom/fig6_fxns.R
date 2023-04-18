@@ -7,7 +7,7 @@
 ### mapDat ###
 # description
 #ARGS:
-  #parmlist   list length three containing a, P, and Tbar, intended that one element is a single numeric
+  #parmlist   list length three containing a, P, and Tbar, intended that one element of the three is a single numeric
   #sims       number of simulations for gerating partial sharp noise and ATA contribution
   #time       length of competition simulation
   #invader    1 or 2; which species is the rare species?
@@ -50,6 +50,59 @@ mapDat <- function(parmlist, sims, time, invader){
   return(res)
 }
 
+### dat6_wrap ###
+# a wrapper function *to use* in dat6
+# combines mapDat and cmMap, get mapping matrix from list of parameters
+#ARGS:
+  #argsList   a list of parameters *made inside dat6 function
+              #argsList = list(a_vec, P_vec, T_vec, sims, time)
+#OUT:
+  #mapping matrix 
+dat6_wrap <- function(argsList, SEfilename, loc){
+  mapdf <- mapDat(parmlist=argsList[1:3], sims=argsList[[5]], time=argsList[[4]], invader=argsList[[6]])
+  SE <- mapdf$SE
+  mapmat <- cmMap(mapdf)
+  return(list(map=mapmat, SE=SE))
+}
+
+### dat6 ###
+# uses above functions to generate and save results for making figure 6
+#ARGS:
+  #dat_loc    folder to put data
+  #a_vec      vector containing set of amplitudes
+  #P_vec      vector containing set of Periods
+  #T_vec      vector containing set of mean temperatures
+  #parms      named vector of original diatom coexistence parameters and such
+              #parms = c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
+#OUT:
+  #folder containg .RDS files each containg data for fig 6
+dat6 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
+  
+  #a,P, and T vectors should be same length
+  if((length(a_vec)==length(P_vec) & length(P_vec)==length(T_vec)) == FALSE){
+    paste("vectors are not equal length")
+  }
+  plots <- 1:3
+  aPT <- list(a=a_vec, P=P_vec, Tb=T_vec)
+  varcom <- list(c(1,2), c(1,3), c(2,3))
+  names <- c('a','P','Tb')
+  
+  for (p in plots){ #for each panel of figure
+    cat("making data for panel",p,"...")
+    List <- as.list(parms)
+    
+    #replace two of the constant variables with two varying sets
+    List[varcom[[p]]] <- aPT[varcom[[p]]]
+    
+    #get mapping matrix from those parametrs
+    map <- dat6_wrap(argsList=List)
+    
+    #save
+    saveRDS(map,paste0(dat_loc,paste0(names[varcom[[p]]], collapse=''),parms['invader'],'.RDS'))
+  }
+}
+
+#### plotting functions ####
 ### cmMap ###
 # puts mapping values (ATA/GWR) in matrix for contour color map plotting 
 #ARGS:
@@ -108,58 +161,6 @@ cmContour <- function(map, ncolor=51, colkey=NULL,...){
   
   #contour lines
   graphics::contour(z=t(map), y=as.numeric(y[[1]]), x=as.numeric(x[[1]]),add=TRUE, col='grey50')
-}
-
-### dat6_wrap ###
-# a wrapper function *to use* in dat6
-# combines mapDat and cmMap, get mapping matrix from list of parameters
-#ARGS:
-  #argsList   a list of parameters *made inside dat6 function
-              #argsList = list(a_vec, P_vec, T_vec, sims, time)
-#OUT:
-  #mapping matrix 
-dat6_wrap <- function(argsList, SEfilename, loc){
-  mapdf <- mapDat(parmlist=argsList[1:3], sims=argsList[[5]], time=argsList[[4]], invader=argsList[[6]])
-  SE <- mapdf$SE
-  mapmat <- cmMap(mapdf)
-  return(list(map=mapmat, SE=SE))
-}
-
-### dat6 ###
-# uses above functions to generate and save results for making figure 6
-#ARGS:
-  #dat_loc    folder to put data
-  #a_vec      vector containing set of amplitudes
-  #P_vec      vector containing set of Periods
-  #T_vec      vector containing set of mean temperatures
-  #parms      named vector of original diatom coexistence parameters and such
-              #parms = c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
-#OUT:
-  #folder containg .RDS files each containg data for fig 6
-dat6 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
-  
-  #a,P, and T vectors should be same length
-  if((length(a_vec)==length(P_vec) & length(P_vec)==length(T_vec)) == FALSE){
-    paste("vectors are not equal length")
-  }
-  plots <- 1:3
-  aPT <- list(a=a_vec, P=P_vec, Tb=T_vec)
-  varcom <- list(c(1,2), c(1,3), c(2,3))
-  names <- c('a','P','Tb')
-  
-  for (p in plots){ #for each panel of figure
-    cat("making data for panel",p,"...")
-    List <- as.list(parms)
-    
-    #replace two of the constant variables with two varying sets
-    List[varcom[[p]]] <- aPT[varcom[[p]]]
-    
-    #get mapping matrix from those parametrs
-    map <- dat6_wrap(argsList=List)
-    
-    #save
-    saveRDS(map,paste0(dat_loc,paste0(names[varcom[[p]]], collapse=''),parms['invader'],'.RDS'))
-  }
 }
 
 ### fig6 ###
