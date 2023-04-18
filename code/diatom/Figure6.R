@@ -21,9 +21,9 @@ if (dir.exists(dat_loc)==FALSE){
   dir.create(dat_loc)
   
   #define sets of variables
-  a <- seq(1,6,length.out=100)
-  Tbar <- seq(16,18,length.out = 100)
-  P <- seq(51,199.5,length.out=100)
+  a <- seq(4,6,length.out=101)
+  Tbar <- seq(16,18,length.out = 101)
+  P <- seq(50,120,length.out=101)
   
   #function that makes and saves results
   dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
