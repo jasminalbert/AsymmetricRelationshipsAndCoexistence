@@ -46,7 +46,11 @@ getep <- function(a, P, Tbar, time, reps, sp, invader=1, method=1, fig6=FALSE){
   R <- out[,2]
   
   #make sure simulation length after burning is a multiple of P
-  if (length(temp)%%P!=0){stop("dims are not an integer multiple of P")}
+  if (length(temp)%%P!=0){
+  	if (isFALSE(all.equal(length(temp)%%P,P))) {
+  		stop(paste("dims are not an integer multiple of P\nTbar:", parms[1], "\n a:", parms[2], "\n P:", parms[3], "\n dim:", length(temp)))
+  	}
+  }
   
   if (sp==2){ #species specific responses to temperature
     Vfun <- V2modfun; Kfun <- K2flatfun
