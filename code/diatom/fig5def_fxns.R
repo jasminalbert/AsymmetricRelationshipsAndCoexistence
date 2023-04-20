@@ -88,17 +88,20 @@ dat6 <- function(dat_loc, a_vec, P_vec, T_vec, parms){
   names <- c('a','P','Tb')
   
   for (p in plots){ #for each panel of figure
-    cat("making data for panel",p,"...")
-    List <- as.list(parms)
+    if (!file.exists(paste0(dat_loc,paste0(names[varcom[[p]]], collapse=''),parms['invader'],'.RDS')))
+    {
+      cat("making data for panel",p,"...")
+      List <- as.list(parms)
     
-    #replace two of the constant variables with two varying sets
-    List[varcom[[p]]] <- aPT[varcom[[p]]]
+      #replace two of the constant variables with two varying sets
+      List[varcom[[p]]] <- aPT[varcom[[p]]]
     
-    #get mapping matrix from those parametrs
-    map <- dat6_wrap(argsList=List)
+      #get mapping matrix from those parametrs
+      map <- dat6_wrap(argsList=List)
     
-    #save
-    saveRDS(map,paste0(dat_loc,paste0(names[varcom[[p]]], collapse=''),parms['invader'],'.RDS'))
+      #save
+      saveRDS(map,paste0(dat_loc,paste0(names[varcom[[p]]], collapse=''),parms['invader'],'.RDS'))
+    }
   }
 }
 

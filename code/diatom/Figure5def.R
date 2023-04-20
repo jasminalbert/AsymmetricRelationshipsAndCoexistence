@@ -14,20 +14,19 @@ parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
 numRes_loc <- "../results_numeric/"
 dat_loc <- paste0(numeric_results_loc,"fig6dat/")
 
-#if data is missing, make them
+#if folder is missing, make it
 if (dir.exists(dat_loc)==FALSE){
-  
   #make folder
   dir.create(dat_loc)
-  
-  #define sets of variables
-  a <- seq(4,6,length.out=101)
-  Tbar <- seq(16,18,length.out = 101)
-  P <- seq(50,120,length.out=101)
-  
-  #function that makes and saves results
-  dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
 }
+
+#define sets of variables
+a <- seq(4,6,length.out=101)
+Tbar <- seq(16,18,length.out = 101)
+P <- seq(50,120,length.out=101)
+
+#function that makes and saves results
+dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
 
 #### location to store figure ###
 #fig_loc <- "../results_figs/"
