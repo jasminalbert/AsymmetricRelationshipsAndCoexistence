@@ -1,6 +1,6 @@
 #source("./mappingfig6.R")
 #source("./Figure5.R")
-#source("./diatom/plotdiatomdecomp.R")
+source("./diatom/plotdiatomdecomp.R")
 
 ### location of results ###
 numeric_results_loc <- "../results_numeric/"
@@ -12,12 +12,12 @@ if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
 Fig5 <- paste(fig_loc,"fig5..new.pdf",sep="")
-xat <- list(a=c(4,5,6), P=c(60, 80, 100, 120), T=c(16, 16.5, 17, 17.5, 18))
-xlabs <- list(a=c(4,NA,6), P=c(60, NA, NA, 100), T=c(16, NA, NA, NA, 18))
+xat <- list(a=c(4,5,6), P=seq(50, 120, len=5), T=c(16, 16.5, 17, 17.5, 18))
+xlabs <- list(a=c(4,NA,6), P=c(50, NA, NA, NA, 120), T=c(16, NA, NA, NA, 18))
 labs <- c("amplitude (a)", "Period (P)", expression(paste("mean temperature (",theta[0],")" ) ))
 
 pdf(Fig5)
-par(mfcol=c(1,1), mar=c(1,3,1.5,0), oma=c(1,1,0,1.5),mgp=c(2,.7,0), cex.axis=1.3, tck=-0.03)
+par(mfcol=c(1,1), mar=c(1,3,1.5,0), oma=c(1,1,0,1.5),mgp=c(2,.7,0), cex.axis=1.3, tck=-0.03, lheight=.7)
 layout(matrix(c(1,4,7,
 				2,5,7,
 				3,6,7),ncol=3,byrow=T),widths=c(.7,1,.2))
@@ -54,13 +54,13 @@ graphics::mtext(paste0("(", letters[4],")"), 3, -1.5, adj=0.985, cex=1.1)
 map1(ATAmat2, GWRmat2, col=col2) #all postive 
 graphics::title(ylab=labs[1], cex.lab=1.3, line=.8, xpd=NA)
 graphics::title(xlab=labs[2], cex.lab=1.3, line=1.1, xpd=NA)
-axis(1, lwd.ticks=2, at=xat$P, labels=xlabs$P); axis(2, lwd.ticks=2,mgp=c(2,.5,0), at=xat$a, labels=xlabs$a)
+axis(1, lwd.ticks=2, at=seq(4,6,len=5),labels=xlabs$P); axis(2, lwd.ticks=2,mgp=c(2,.5,0), at=seq(50,120,len=3), labels=c(4,NA,6))
 graphics::mtext(paste0("(", letters[5],")"), 3, -1.5, adj=0.985, cex=1.1)
 
 map1(ATAmat3, GWRmat3, col=col3) #all positive
 graphics::title(ylab=labs[3], cex.lab=1.3, line=.8, xpd=NA)
 graphics::title(xlab=labs[2], cex.lab=1.3, line=1.1, xpd=NA)
-axis(1, lwd.ticks=2, at=xat$P, labels=xlabs$P); axis(2, lwd.ticks=2,mgp=c(2,.5,0), at=xat$T, labels=xlabs$T)
+axis(1, lwd.ticks=2, at=xat$T, labels=xlabs$P); axis(2, lwd.ticks=2,mgp=c(2,.5,0), at=xat$P, labels=xlabs$T)
 graphics::mtext(paste0("(", letters[6],")"), 3, -1.5, adj=0.985, cex=1.1)
 
 par(mar=c(0,0,0,0))
