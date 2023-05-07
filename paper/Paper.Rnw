@@ -95,11 +95,12 @@
 %Extreme [climatic] events and their implications for biodiversity
 %Coexistence and relationships between environmental variables in their extremes
 
-\author[a]{Pimsupa Jasmin Albert}
-\author[a,b,*]{Daniel C. Reuman}
+\author[a,b]{Pimsupa Jasmin Albert}
+\author[a,c,*]{Daniel C. Reuman}
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
-\affil[b]{Laboratory of Populations, Rockefeller University}
+\affil[b]{Environmental Studies Program and Department of Biology, Universit of Oregon}
+\affil[c]{Laboratory of Populations, Rockefeller University}
 \affil[*]{Corresponding author, reuman@ku.edu}
 
 %for dealing with line numbers bugs having to do with equations
@@ -135,6 +136,25 @@ se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 \linenumbers
 \maketitle
 
+\noindent \textbf{Running head:} Asymmetric relationships and coexistence \\
+\noindent \textbf{Key words:} asymmetric tail association, biodiversity, coexistence, competition, copula, modern coexistence theory, niche differentiation, storage effects \\
+\noindent \textbf{Type of article:} Letter\\
+\noindent \textbf{Words in Abstract:} 150; \textbf{Words in main text:} 5518; \textbf{Words in text boxes:} 0\\
+\noindent \textbf{Number of references:} 39; \textbf{Number of figures:} 5; \textbf{Number of tables:} 1; \textbf{Number of text boxes:} 0\\
+\noindent \textbf{Corresponding author:}
+Daniel C. Reuman,
+Department of Ecology and Evolutionary Biology,
+University of Kansas,
+2101 Constant Ave,
+Lawrence, KS 66047;
+Phone: 626-560-7084 \\
+\noindent \textbf{Author emails:} pimsupaa@uoregon.edu, reuman@ku.edu\\
+\noindent \textbf{Statement of Authorship:} The authors jointly carried out all parts of the study.\\
+\noindent \textbf{Data accessibility statement:} All codes associated with this study will be released
+in a Zenodo repository prior to publication.
+
+\doublespacing
+
 %Currently 150 of an allowed 150 words for Ecology Letters
 \begin{abstract}
 \noindent Species coexistence attracts wide 
@@ -156,8 +176,6 @@ mechanisms of coexistence, and that ATAs can make the
 difference between species coexistence and competitive exclusion. 
 ATA influences are an important new mechanism of coexistence. 
 \end{abstract}
-
-\keywords{asymmetric tail association, biodiversity, coexistence, competition, competitive exclusion, modern coexistence theory, niche differentiation, storage effects}
 
 \section{Introduction}\label{section:introduction}
 
@@ -181,7 +199,7 @@ impact various ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovi
 Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_AER} show that ATAs are common in ecology
 and can influence Taylor's law and Moran effects; \cite{Ghosh_2020_Eco} argue that extinction risks can become elevated 
 when metapopulations are subject to ATAs; and \cite{Ghosh_2021} show that ATAs can alter the stability of 
-ecosystem functioning. Fig. \ref{fig:pedagog1}g,h show contrasting examples of ATAs in nature using 
+ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
 plankton population density time series. To our knowledge, the implications of ATAs for competition and coexistence have
 not yet been investigated. Doing so is the overarching goal of this study. 
 
@@ -235,13 +253,13 @@ The model postulates that adults die at rate $\delta$ at each time step, and are
 in proportion to the reproductive outputs of the two species that year. Note that $N$ is constant through time. 
 Notation for the whole paper is summarized in Table \ref{tab:notation}.
 We assume for simplicity that the random variables $(B_1(t),B_2(t))$ are independent and identically 
-distributed (iid) through time. In three distinct simulations (Fig. \ref{fig:pedagog1}d-f), 
+distributed (iid) through time. In three distinct simulations (Fig. \ref{fig:pedagog1}f-h), 
 $B_1$ and $B_2$ were, respectively, 
 left- (Fig. \ref{fig:pedagog1}a), right- (Fig. \ref{fig:pedagog1}c) and symmetrically (Fig. \ref{fig:pedagog1}b)
 tail associated, while the same marginal distributions for these fecundities were used in all 
 simulations (see Methods
 for details). Thus, the model setup was identical in the three simulations except for different ATAs. 
-ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}d-f).
+ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}f-h).
 
 %Goal para
 We previously demonstrated that ATAs are common in nature can influence ecological phenomena
@@ -266,8 +284,6 @@ The example is a diatom system in a chemostat. In the Discussion, we consider wh
 ATAs of environmental variables and thereby influence competition and coexistence.
 Overall, our study presents a new mechanism of species coexistence
 and a means of understanding its theoretical and empirical importance.
-
-%***DAN: Dan made it to here on 2022 04 26
 
 \section{Theory}\label{section:theory}
 
@@ -389,22 +405,21 @@ The other mechanisms in MCT that apply in our modelling context of purely tempor
 make no reference to covariation between quantities, whereas ATAs are 
 strictly about covariation. Therefore, storage effects are the only mechanism of coexistence
 for which ATAs are relevant. Mathematical details supporting this claim are in SI section 
-\ref{SI-SIsect:other_mechanisms}, but we here provide a conceptual understanding. \cite{Ellner_2016} and
+\ref{SI-SIsect:other_mechanisms}. \cite{Ellner_2016} and
 \cite{Ellner_2019} provide a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$,
 which equals GWR of species $i$. The decomposition, which we use below, is similar to and motivated by the 
-original decomposition of \cite{Chesson_1994}; the decomposition is how the mechanisms of 
-coexistence operating in a given case are illuminated. The decomposition is 
+original decomposition of \cite{Chesson_1994}, 
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{(EC)},\label{eq:previous_decomp}
 \end{equation}
 where: $\Delta_i^0$ is a baseline;
 $\Delta_i^E$ is a contribution to coexistence of environmental variation;
 $\Delta_i^C$ is a contribution to coexistence of variation in competition;
-$\Delta_i^{(E\shp C)}$ is a contribution to coexistence of having simultaneous variation in both environment and competition, but not including the effects 
+$\Delta_i^{(E\shp C)}$ is a contribution to coexistence of having simultaneous variation 
+in both environment and competition, but not including the effects 
 of covariation in these quantities; and
 $\Delta_i^{(EC)}$ is a contribution to coexistence of $EC$ covariation itself -- storage effects. 
-Only storage effects involve $EC$ covariation,
-so the only mechanism of coexistence influenced by ATA between $E$ and $C$ is storage effects. Combining our decomposition 
+Combining our decomposition 
 (\ref{eq:storage_effects_further}) with the decomposition (\ref{eq:previous_decomp}) of \cite{Ellner_2019} gives 
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
@@ -454,7 +469,7 @@ log-fecundities and $\mu_i$ is the mean log fecundity for species $i$.
 The \emph{beta fecundities lottery model}
 used $B_i = \eta_i F_\beta^{-1} \circ \varphi(b_i)$, where $\varphi$ is the CDF of the standard normal
 distribution and $F_\beta$ is the CDF of a beta distribution 
-with shape and scale parameters $0.5$ (probability density function proportional to $x^{-05}(1-x)^{-0.5}$ on
+with shape and scale parameters $0.5$ (probability density function proportional to $x^{-0.5}(1-x)^{-0.5}$ on
 the unit interval). So the beta fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
 and produced fecundities with $U$-shaped distributions between $0$ and $\eta_1$, for $B_1$, and
 $\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$, and larger $\eta_i$ also 
@@ -567,7 +582,7 @@ competition model. The model is
 \frac{dS}{dt} &= D(S_0 - S) - Q_1x_1 \frac{V_1 S}{K_1 + S} - Q_2 x_2 \frac{V_2 S}{K_2 + S} \\
 \frac{dx_j}{dt} &= x_j \frac{V_j S}{K_j+S}-D x_j, 
 \end{align}
-for $j=1,2$, where $S$ is a extracellular silicate concentration in the chemostat, $x_1$ is the population density
+for $j=1,2$, where $S$ is an extracellular silicate concentration in the chemostat, $x_1$ is the population density
 of \emph{F. crotonensis} and $x_2$ is that of \emph{C. pseudostelligera}, 
 $D$ is the chemostat outflow rate, $S_0$ is concentration of silicates in the chemostat
 inflow, the $Q_j$ are amounts of silicate per cell, the $V_j$ are maximum population growth rates, and
@@ -595,7 +610,7 @@ SI section \ref{SI-sect:Empircal_app}.
 To display results for goal G3, we started by plotting the terms of 
 (\ref{eq:full_decomp}) against one of the parameters 
 $\theta_0$, $a$ and $P$ at a time, while keeping the other two fixed at the values
-used by \cite{Descamps_2005}. We again labelled regions of parameters space corresponding to
+used by \cite{Descamps_2005}. We again labelled regions of parameter space corresponding to
 ATA rescue or exclusion. 
 
 %Two-parameter plots
@@ -693,7 +708,7 @@ parameter ranges we considered.
 
 %Summary-type paragraph of main results
 We produced and applied a new extension of modern coexistence theory (MCT) that 
-quantifies the impact of asymmetric tail associations (ATAs) on species coexistence and the maintenance of biodiversity. 
+quantifies the impact of asymmetric tail associations (ATAs) on species coexistence. 
 Building upon a recent, simulation-based approach to MCT \citep{Ellner_2016, Ellner_2019},
 we decomposed storage effects into two new mechanisms, the contribution of ATAs to coexistence,
 and the contribution of $EC$ correlation \emph{per se}.
@@ -826,8 +841,6 @@ such as predation and facilitation that can also mediate coexistence, and other 
 
 \section{Acknowledgments}
 
-%***DAN: Jasmin, please add to the list anyone you talked to at UO about this, and anyone who read it and commented 
-%for you. Be generous here - even short convos merit an acknowlegement.
 The authors thank Shyamolina Ghosh for suggesting the research problem, and Lawrence Sheppard, Max Castorani,
 Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, Laurn Hallett, and 
 Robin Snyder for helpful discussions. 
@@ -902,13 +915,6 @@ $P$ & Period of temperature fluctuations \\
 \clearpage
 \newpage
 
-%***DAN: Jasmin, could you, with reasonable effort, move panels around? Specifically, put the panels which
-%are now g ang h in the middle instead of on the right (and they will then be called panels d and e) and 
-%put what are now panels d-f on the right (and thwill then be called f-h)? The reason is, we refer to
-%g-h before we refer to d-f, and the reader may become confused by this, including possibly havig trouble 
-%finding the parts of the caption that refer to g-h while getting confused about the parts of the caption 
-%that refer to d-e, which are about something that has not even been introduced at the point at which the 
-%reader first is referred th panels g-h. 
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig1_a-h.pdf}
 \caption{Examples motivating our study of the effects of asymmetric tail associations (ATAs) on competition
@@ -922,19 +928,22 @@ the same Pearson correlation, $\rho$, up to sampling variation, so Pearson corre
 very different patterns of association. For (a, c), we used asymmetrically tail associated cases which are perfectly 
 correlated in the lower or upper halves of the distributions, though it is also possible to generate asymmetrically 
 tail associated noise with imperfect correlations in both halves of the distributions [\citealp{Nelsen2006,Ghosh_2020_AER};
-see also (g,h)]. 
+see also (d,e)]. 
 The variables $(B_1,B_2)$ described in the Introduction and Methods were obtained by generating noise as 
 pictured and then transforming the marginals as specified in Methods.
-(d-f) Lottery model population simulations using $(B_1,B_2)$ obtained by transforming the 
-respectively corresponding variables (a-c; see Introduction).
-(g,h) Two examples of ATAs found in nature. Axes are population densities of two plankton species, 
+(d,e) Two examples of ATAs found in nature. Axes are population densities of two plankton species, 
 \emph{Ceratium fusus} and \emph{Ceratium furca}, sampled in successive years in two of the 15 locations 
-in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by location, with (g) showing 
-left-tail association and (h) showing right-tail association. \label{fig:pedagog1}}
+in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by location, with (d) showing 
+left-tail association and (e) showing right-tail association.
+(f-h) Lottery model population simulations using $(B_1,B_2)$ obtained by transforming the 
+respectively corresponding variables (a-c; see Introduction).
+\label{fig:pedagog1}}
 \end{figure}
 
-%***DAN: This looks pretty good except the histograms for some marginals do not really look like the plotted
+%***DAN: This looks pretty good except one of the histograms on c does not look like the plotted
 %pdfs of the marginals. I think Jasmin said in an email she was fixing this.
+%***DAN: Jasmin, also, we use \varphi in the text, but \phi here. These need to be made consistent, since they are different to
+%a math person. The easiest way will be to change it in the figure, so I hope that can straightforwardly be done.
 \begin{figure}
 \includegraphics[width=1.025\textwidth]{../results_figs/theory_fig_col.pdf}
 \caption{Illustration of how asymmetric tail associations are removed while retaining marginal distributions and correlation 
@@ -946,7 +955,7 @@ each variable's CDF, $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively.
 (c) A newly generated bivariate normal distribution, $(e_i,c_{i \bs i})$, with correlation $\ddot{\rho}=\rho$
 selected to match that of the original distribution (see Theory). (d) Two new variables, 
 $E_i^{||}$ and  $C_{i \bs i}^{||}$,
-%***DAN: I replaced \nat in the above two expressions by || because for some reason the \nat does not
+%Dan replaced \nat in the above two expressions by || because for some reason the \nat does not
 %compile when it occurs within a caption. Not sure how to deal with that, but leaving it alone for now.
 which have the same marginals and correlation as the original $E_i$ and $C_{i \bs i}$ variables of (a) but 
 which have symmetric association structure. These variables are obtained by transforming the marginals from (c), 
@@ -999,7 +1008,7 @@ All panels show GWR and the decomposition of
 GWR provided by the extended MCT, equation (\ref{eq:full_decomp}). For each panel,
 $\delta$ is fixed at the value specified in the upper margin, 
 and GWR and components of the decomposition
-are plotted against $\eta_2/\eta_1$. The contribution of ATAs ($\Delta_i^{[EC]}$) frequently 
+are plotted against the upper bound ratio, $\eta_2/\eta_1$. The contribution of ATAs ($\Delta_i^{[EC]}$) frequently 
 has magnitude comparable to other components, indicating that ATAs can contribute meaningfully
 to species coexistence or failure to coexist. In some instances, the GWR line falls 
 between the ATA line and the $x$ axis, indicating that, for those parameter values, ATAs make 
@@ -1008,14 +1017,17 @@ coexistence and exclusion of the weaker competitor. These instances, which are s
 ATA rescue or exclusion (Theory). Standard errors of plotted quantities 
 were never greater than \Sexpr{round(se4,5)}, so are not displayed. 
 This plot uses $q_{ij}=1$. 
-%***DAN: Right, Jasmin?
 An analogous plot (SI Fig. \ref{SI-fig:fig4_alt}) uses 
 $q_{ij}=\eta_i/(\eta_j(1-\delta)+\eta_i \delta)$; 
-%***DAN: Jasmin, I believe the code does not produce the alternate-qij plot yet, but eventually it needs to.
 though results differed in detail, main conclusions were the same.
 %***DAN: make sure this is indeed the case once the plot is generated.
 }\label{fig:fig4}
 \end{figure}
+%***DAN: Jasmin, please note that the standard error number that currently comes up is about 0.27, which
+%is actually really big compared to the plotted values. Is this a temporary value based on a limited set 
+%of sims, and you're planing to do a larger number? If this is the actual value based on the final number 
+%of sims that you plan to do, then we may have to figure out a way to plot standard errors. Let's discuss
+%The same problem occurs for the accompany SI figure.
 
 \begin{figure}
 %\includegraphics[width=\textwidth]{../results_figs/fig5.pdf}

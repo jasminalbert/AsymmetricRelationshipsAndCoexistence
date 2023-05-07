@@ -366,22 +366,6 @@ This expression is made specific to the log-normal decundities and beta fecundit
 model in the subsequent sections. We alternatively also consider $q_{ij}=1$, for reasons explained in SI 
 section \ref{SIsect:scaling_factors}.
 
-%***DAN: We might need this text somewhere, but not sure where. Just saving it out of caution.
-% For the lottery model, recall that $E_i=B_i$ and $C_{i \bs i} = B_j/\delta$. So 
-% $\varphi^{-1} \circ F_{E_i}(E_i) = \frac{b_i-\mu_i}{\sigma}$ and 
-% $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})=\frac{b_j - \mu_j}{\sigma}$.  
-% Also, $\rho_i = \cov(\frac{b_i-\mu_i}{\sigma},\frac{b_j-\mu_j}{\sigma})$, which equals the 
-% Pearson correlation of $b_i$ and $b_j$. For the lottery model, it seems natural to make the choice
-% $\ddot{\rho}_i=\rho_i$, which straightforwardly implies that $(E_i^\nat,C_{i \bs i}^\nat)$
-% can be written as $(\exp(\ddot{b}_i),\exp(\ddot{b}_j))$, where $(\ddot{b}_i,\ddot{b}_j)$
-% is bivariate-normally distributed with mean $(\mu_i,\mu_j)$, $\var(\ddot{b}_i)=\var(\ddot{b}_j)=\sigma$,
-% and $\cov(\ddot{b}_i,\ddot{b}_j)=\cov(b_i,b_j)$. So $(\ddot{b}_i,\ddot{b}_j)$ has the same
-% marginal distributions and covariance matrix as $(b_i,b_j)$, but it is bivariate normal, whereas
-% $(b_i,b_j)$ itself was not required to be. Given these definitions, it is straightforward to compute the 
-% component $\olrn_{i \bs i}$ of main text equation (\ref{MT-eq:storage_effects_further1}) for the lottery model using the simulation 
-% approach of \cite{Ellner_2016,Ellner_2019}. Note that $E_j$ and $C_{j \bs i}$ are linearly related for the lottery model,
-% so $E_j^\nat=E_j$, $C_{j \bs i}^\nat = C_{j \bs i}$, and $\olrn_{j \bs i}=\olr_{j \bs i}$.
-
 \subsection{Theory and plotting simplifications for the log-normal fecundities lottery model}\label{SIsect:TheoryForLotteryLogNorm}
 
 %The first of the two growth rate decompositions
@@ -1122,16 +1106,6 @@ $(E_{i,k}^\nat,C_{i \bs i,k}^\nat)$, $k=1,\ldots,T$ should be recomputed for
 multiple such samples, all computed via the same process, and a median of 
 the resulting distribution of values should be used.
 
-%***DAN: I think I do not need this section anymore, but just keeping it around to be safe.
-% \section{      Fig. \ref{MT-fig:fig4} does not depend on the value of $q_{ij}$ used}\label{sect:F4andqij}
-% 
-% In Fig. \ref{MT-fig:fig4} of the main text we plotted GWR , $\Delta_i^{[EC]}$, and $\text{GWR}-\Delta_i^{[EC]}$ 
-% (see equation \ref{eq:decomp_overall_delta} and the text below it) for the lottery model. We here show
-% the resulting plot does not depend on which of the two choices for the scaling factors $q_{ij}$ is used.
-% But $\text{GWR} = \olr_{i \bs i} - q_{ij} \olr_{j \bs i}$ and $\Delta_i^{[EC]}=\olep_i^{[EC]}-q_{ij}\olep_j^{[EC]}$,
-% so it suffices to show $\olr_{j \bs i}=0$ and $\olep_j^{[EC]}=0$. The first of these is known true, \emph{a priori}, 
-% and the second was demonstrated in section \ref{sect:math_simplifications}.
-
 \section{    Three-way decompositions}\label{sect:threeway}
 
 As mentioned in the Discussion in the main text, \cite{Ellner_2019} elaborated 
@@ -1155,7 +1129,6 @@ For example, $\Delta^{(XY \shp Z)}$ can be decomposed as $\Delta^{[XY \shp Z]} +
 \clearpage
 \newpage
 
-%***DAN: Jasmin, please fix the collision of text that occurs in the text near the legend
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/decompFigLLNqij.pdf}
 \caption[Analogous to Fig. \ref{MT-fig:fig3} but making a different choice for $q_{ij}$]
@@ -1176,6 +1149,12 @@ $q_{ij}=\eta_i/(\eta_j(1-\delta)+\eta_i \delta)$. See the caption of
 that figure for details. Standard errors of plotted quantities 
 were never greater than \Sexpr{round(se4qij,5)}, so are not displayed.}\label{fig:fig4_alt}
 \end{figure}
+%***DAN: Jasmin, the value of se4 quoted in the main text was the same, to 5 digits, as the 
+%value of se4qij quoted here. This made me suspicious so I checked the values to 9 digits
+%and they were the same to 9 digits. This seems like it must be an error in the code. Please
+%check. The standard error expressions in SI S5.2 DO depend on qij, so this seems like it
+%should not happen. The standard errors listed in Fig. 3 and Fig. S1 are different, so that's
+%good.
 
 \clearpage
 \newpage
