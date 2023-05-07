@@ -1132,7 +1132,38 @@ $(E_{i,k}^\nat,C_{i \bs i,k}^\nat)$, $k=1,\ldots,T$ should be recomputed for
 multiple such samples, all computed via the same process, and a median of 
 the resulting distribution of values should be used.
 
+\section{   Asymmetric associations between population vital rates}\label{sect:vital_rates}
+
+Whereas the ``$E$'' of ``$EC$-covariance'' is often conceptualized as ``environment'', 
+in fact it is often instead a 
+species response to the environment. Because a directly measurable aspect of the 
+environment and a species response to it may be nonlinearly related, it may be 
+important, in future work, 
+to also study the nature of tail associations between species vital rates.
+In the lottery model, it was assumed that fecundity of species $i$ tracks the
+environment directly, $B_i(t)=E_i(t)$. But vital rates such as fecundity are 
+more likely related to commonly measured environmental variables according to a nonlinear
+function which may often be threshold-like or sigmoidal, and thus the $E_i=B_i$
+of the lottery model is probably better conceptualized as a species response.
+Likewise, one of the choices of $E_i$ considered by \cite{Ellner_2016} for the
+diatom model was $E_i=V_i$, the maximum population growth rate, a response
+to the environment rather than a direct environmental measurement. 
+It was demonstrated elsewhere that nonlinear transformations can produce or alter 
+asymmetries of tail association \citep{Ghosh_2020_AER,Walter_2022}.
+So the nature of ATAs between directly measured environmental variables may differ from the
+nature of ATAs between the population responses which matter for coexistence.
+Vital rates are measured directly in demographic studies, so ATAs between vital rates could,
+in principle, be studied. To our knowledge, this has not been done. 
+
 \section{    Three-way decompositions}\label{sect:threeway}
+
+\cite{Ellner_2019} elaborated a general theory in which more and different varying factors than
+$E$ and $C$ can be considered and used to produce a decomposition of GWR. For instance, if $X$, $Y$ and 
+$Z$ are temporally varying factors, \cite{Ellner_2019} produced, for the $i^{\text{th}}$ species, a decomposition
+of the GWR of $i$ for which some terms were based on rendering one or 
+more of $X$, $Y$, and $Z$ independent of the others. 
+We comment that this general decomposition should also be extendable to consider the effects of
+ATAs in the same way (\ref{eq:full_decomp}) extends (\ref{eq:previous_decomp}). Details follow.
 
 As mentioned in the Discussion in the main text, \cite{Ellner_2019} elaborated 
 a general theory in which more and different varying factors than

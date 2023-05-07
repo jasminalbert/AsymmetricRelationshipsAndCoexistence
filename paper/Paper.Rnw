@@ -139,8 +139,8 @@ se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 \noindent \textbf{Running head:} Asymmetric relationships and coexistence \\
 \noindent \textbf{Key words:} asymmetric tail association, biodiversity, coexistence, competition, copula, modern coexistence theory, niche differentiation, storage effects \\
 \noindent \textbf{Type of article:} Letter\\
-\noindent \textbf{Words in Abstract:} 150; \textbf{Words in main text:} 5518; \textbf{Words in text boxes:} 0\\
-\noindent \textbf{Number of references:} 39; \textbf{Number of figures:} 5; \textbf{Number of tables:} 1; \textbf{Number of text boxes:} 0\\
+\noindent \textbf{Words in Abstract:} 150; \textbf{Words in main text:} 5013; \textbf{Words in text boxes:} 0\\
+\noindent \textbf{Number of references:} 39; \textbf{Number of figures:} 4; \textbf{Number of tables:} 1; \textbf{Number of text boxes:} 0\\
 \noindent \textbf{Corresponding author:}
 Daniel C. Reuman,
 Department of Ecology and Evolutionary Biology,
@@ -757,28 +757,6 @@ consider here, because ATAs pertain to \emph{relationships} between environmenta
 variables in the extremes, which are distinct from and can be altered independently
 of changes in the extremes of the univariate marginal distributions themselves \citep{Nelsen2006,Ghosh_2020_AER}.
 
-%E and vital rates
-Whereas the ``$E$'' of ``$EC$-covariance'' is often conceptualized as ``environment'', 
-in fact it is often instead a 
-species response to the environment. Because a directly measurable aspect of the 
-environment and a species response to it may be nonlinearly related, it may be 
-important, in future work, 
-to also study the nature of tail associations between species vital rates.
-In the lottery model, it was assumed that fecundity of species $i$ tracks the
-environment directly, $B_i(t)=E_i(t)$. But vital rates such as fecundity are 
-more likely related to commonly measured environmental variables according to a nonlinear
-function which may often be threshold-like or sigmoidal, and thus the $E_i=B_i$
-of the lottery model is probably better conceptualized as a species response.
-Likewise, one of the choices of $E_i$ considered by \cite{Ellner_2016} for the
-diatom model was $E_i=V_i$, the maximum population growth rate, a response
-to the environment rather than a direct environmental measurement. 
-It was demonstrated elsewhere that nonlinear transformations can produce or alter 
-asymmetries of tail association \citep{Ghosh_2020_AER,Walter_2022}.
-So the nature of ATAs between directly measured environmental variables may differ from the
-nature of ATAs between the population responses which matter for coexistence.
-Vital rates are measured directly in demographic studies, so ATAs between vital rates could,
-in principle, be studied. To our knowledge, this has not been done. 
-
 %Differences with the original, analytic version of the MCT
 Our approach to exploring the influence of ATAs on coexistence relies on the computational
 extension of the MCT of \cite{Ellner_2019},
@@ -794,15 +772,7 @@ the major strengths of the
 original, analytic approach, which are well known and also elaborated by \cite{Ellner_2019};
 one such strength is the generality that analytic approaches provide.
 It may be possible to expand the mathematics of the original MCT to consider ATAs.
-
-%multispecies models and multifactor models
-\cite{Ellner_2019} elaborated a general theory in which more and different varying factors than
-$E$ and $C$ can be considered and used to produce a decomposition of GWR. For instance, if $X$, $Y$ and 
-$Z$ are temporally varying factors, \cite{Ellner_2019} produced, for the $i^{\text{th}}$ species, a decomposition
-of the GWR of $i$ for which some terms were based on rendering one or 
-more of $X$, $Y$, and $Z$ independent of the others. 
-We simply comment that this general decomposition should also be extendable to consider the effects of
-ATAs in the same way (\ref{eq:full_decomp}) extends (\ref{eq:previous_decomp}). See SI section \ref{SI-sect:threeway} for details.
+Additional discussion points are in SI sections \ref{SI-sect:vital_rates}-\ref{SI-sect:threeway}.
 
 %close
 It seems reasonable to suppose that ATAs will play an increasingly important role in systems of 
@@ -979,9 +949,20 @@ though results differed in detail, main conclusions were the same.
 %of sims that you plan to do, then we may have to figure out a way to plot standard errors. Let's discuss
 %The same problem occurs for the accompany SI figure.
 
+%***DAN: Jasmin, this currently pulls in a pdf you sent me, stored temporarily on my drive in the indicated 
+%location. Once the code produces fig 5 on a normal run, we'll have to change the below to suck that
+%version of the figure up instead of this one.
 \begin{figure}
-%\includegraphics[width=\textwidth]{../results_figs/fig5.pdf}
-\caption{ATA effects and ATA rescue in the diatom system. 
+\includegraphics[width=\textwidth]{fig5_new.pdf}
+\caption{See next page for caption.}  \label{fig:fig5}
+\end{figure}
+
+\clearpage
+\newpage
+
+\singlespacing
+
+\noindent Figure 4. ATA effects and ATA rescue in the diatom system. 
 The contribution of ATAs to the GWR of \emph{F. crotonensis}
 in the diatom system of \cite{Descamps_2005} was often meaningfully large compared to 
 other components of the MCT decomposition (a-c). Panels a-c show GWR and the decomposition of
@@ -1008,8 +989,6 @@ For the parameters we considered, GWR of the other diatom species in the system,
 \emph{C. pseudostelligera}, was always positive both including and
 excluding the effects of ATAs, so GWR for \emph{F. crotonensis}, decomposed here, is a 
 sufficient coexistence metric.
-}  \label{fig:fig5}
-\end{figure}
 
 % \begin{figure}
 % \includegraphics[width=.38\textwidth]{../results_figs/fig6.pdf}
