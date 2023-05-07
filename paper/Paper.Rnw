@@ -990,19 +990,4 @@ For the parameters we considered, GWR of the other diatom species in the system,
 excluding the effects of ATAs, so GWR for \emph{F. crotonensis}, decomposed here, is a 
 sufficient coexistence metric.
 
-% \begin{figure}
-% \includegraphics[width=.38\textwidth]{../results_figs/fig6.pdf}
-% \caption{The contribution of ATAs to GWR of \emph{F. crotonensis}
-% in the diatom system of \cite{Descamps_2005} was often meaningfully large compared to 
-% the GWR itself. The ratio $\Delta_i^{[EC]}/\text{GWR}$ is shown, larger magnitudes
-% indicating greater importance of ATAs and values greater than $1$ corresponding to either
-% ATA rescue or ATA exclusion (Methods). For this system and the plotted parameters, 
-% $\Delta_i^{[EC]}$ was always positive, so cyan indicates exclusion of \emph{F. crotonensis} and
-% magenta indicates coexistence of the two diatom species. Values greater than 1 or less than -1
-% were remapped to 1 and -1, respectively, for readability.
-% For the parameters we considered, GWR of the other species, \emph{C. pseudostelligera}, was always positive both including and
-% excluding ATAs, so GWR for \emph{F. crotonensis} is a sufficient coexistence metric.
-% Standard errors of plotted quantities were always less then \Sexpr{round(se6,5)}, so are not shown.} \label{fig:fig6}
-% \end{figure}
-
 \end{document}
