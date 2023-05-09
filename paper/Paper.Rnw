@@ -99,7 +99,7 @@
 \author[a,c,*]{Daniel C. Reuman}
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
-\affil[b]{Environmental Studies Program and Department of Biology, Universit of Oregon}
+\affil[b]{Environmental Studies Program and Department of Biology, University of Oregon}
 \affil[c]{Laboratory of Populations, Rockefeller University}
 \affil[*]{Corresponding author, reuman@ku.edu}
 
