@@ -150,12 +150,12 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	
   	#plot
   	plotco(file,sigma,ylim=ylims[[m]])
+  	#axes
   	if (d==1){
-  		graphics::axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
-  	}
+  		graphics::axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)} else {graphics::axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2, labels=F)}
   	if (n>9){
-  		graphics::axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
-  	}
+  		graphics::axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)} else {graphics::axis(1, cex.axis=1.8, tck=-0.028, lwd.ticks=2, labels=F)}
+	#panel labels
     graphics::mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
     if (n==2){
