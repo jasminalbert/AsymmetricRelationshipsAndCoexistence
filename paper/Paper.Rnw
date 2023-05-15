@@ -9,7 +9,7 @@
 \usepackage{longtable}
 \usepackage{subfig}
 \usepackage{float}
-\usepackage{setspace}
+\usepackage{setspace}ƒ
 \usepackage{lineno}
 \usepackage{natbib}
 \usepackage{amsmath}
@@ -787,7 +787,7 @@ such as predation and facilitation that can also mediate coexistence, and other 
 \section{Acknowledgments}
 
 The authors thank Shyamolina Ghosh for suggesting the research problem, and Lawrence Sheppard, Max Castorani,
-Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, Laurn Hallett, and 
+Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Jordan Rodriguez, Lauren Hallett, and 
 Robin Snyder for helpful discussions. 
 The authors especially thank Steve Ellner for key advice at several watershed moments in the development of the project. 
 The authors were partly supported by US National
@@ -895,6 +895,7 @@ respectively corresponding variables (a-c; see Introduction).
 %2) The font of the x axis label, "log fecundity standard deviation, \sigma" seems slightly different from the 
 %other textual labels. Can you please make it consistent? Perhaps it is not bold and the others are bold, or 
 %something.
+%***JASMIN: Done. Added ticks to other panels and make x label bold
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/decompFigLLN.pdf}
 \caption{The contribution of ATAs to species coexistence was sometimes, but not always, 
@@ -920,6 +921,7 @@ in detail, main conclusions were the same. \label{fig:fig3}}
 %***DAN: Jasmin, panel labels(a, b, c, etc.) need to be added. Please use the same format for these labels
 %as you do in the other figures.
 %Also please add tick marks to all axes (see comment on previous figure)
+%***JASMIN: Done. Labels and ticks.
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/decompFigLB.pdf}
 \caption{The contribution of ATAs to species coexistence was often meaningfully large compared to 
