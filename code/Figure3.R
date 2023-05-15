@@ -78,12 +78,12 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	
   	#plot
   	plotco(file,sigma,ylim=ylims[[m]])
+  	#axes
   	if (d==1){
-  		graphics::axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
-  	}
+  		graphics::axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)} else {graphics::axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2, labels=F)}
   	if (n>9){
-  		graphics::axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)
-  	}
+  		graphics::axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)} else {graphics::axis(1, cex.axis=1.8, tck=-0.028, lwd.ticks=2, labels=F)}
+  	#panel labels
     graphics::mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
     if (n==2){
@@ -101,13 +101,14 @@ for (m in seq_along(mudif)){ #iterates across mudif values
     	graphics::text(expression(mu[1]-mu[2]), x=9,y=-3.95, font=2, cex=3, srt=-90, adj=1, col="gray40")
     }
     if (n==11){
-    	graphics::mtext("log fecundity standard deviation, ",side=1, line=2.8, cex=1.25, at=-3.25, adj=0,col="gray40")
-    	graphics::mtext(expression(sigma),side=1, line=2.8, cex=1.5, at=10.15, adj=1,col="gray40")
+    	graphics::mtext("log fecundity standard deviation, ",side=1, line=2.8, cex=1.25, at=-3.85, adj=0,col="gray40", font=2)
+    	graphics::mtext(expression(sigma),side=1, line=2.8, cex=1.5, at=10.75, adj=1,col="gray40", font=2)
     }
     n <- n+1
   }
-} 
+}
 graphics::mtext("contribution to coexistence", side=2, outer=TRUE, line=2, font=2, cex=1.7, col="gray40")
+#legend
 graphics::legend("topright", legend=terms, col = cols, lty = ltys, bty="n", cex=2, inset=c(-0.83,-2.75), y.intersp = 1.35, x.intersp = 0.1, seg.len=0.8, lwd=lwds)
 graphics::legend("topright",legend=c("ATA \nexcl.", "ATA \nresc."), fill=c(excol,rescol), cex=1.8, bty="n",border=NA, inset=c(-0.76,-0.8), x.intersp = 0.1,y.intersp = 1.7)
 grDevices::dev.off() #finish plotting
