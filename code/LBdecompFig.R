@@ -111,10 +111,13 @@ for (d in seq_along(delta)){
 	DeltasLT <- plotco(etai,etaj,delta[d], B,Deltas_loc=file, SE_loc=sefile)
 	maxseLT[d] <- max(DeltasLT$SE,na.rm=T)
 	mtext(paste(delta[d]), side=3, line=0.2, font=2, cex=1.5, col="gray30")
-	#axis(1, cex.axis=2,tck=-0.028, lwd.ticks=2)
+	#axis
+	axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2, labels=F)
 	if (d==1){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
-	}
+	} else {axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2, labels=F)}
+	#panel labels
+    graphics::mtext(paste0("(", letters[d],")"), side=3, line=-1.7, at=4.6, cex=1.3, adj=0)
 	if (d==2){
 		graphics::mtext("adult death rate, ", line=2.5, font=2, cex=1.5, col="gray40", at=1.25, adj=0)
     	graphics::mtext(expression(delta), line=2.5, font=2, cex=2.3, col="gray40", side=3, at=5, adj=1)
@@ -128,7 +131,6 @@ for (d in seq_along(delta)){
 	if (file.exists(sefile)==FALSE){saveRDS(DeltasLT$SE,file=sefile)}
 }
 
-
 #d-f (right-tail)
 maxseRT <- {}
 for (d in 1:length(delta)){
@@ -140,6 +142,8 @@ for (d in 1:length(delta)){
 	if (d==1){
 		axis(2, cex.axis=1.8, tck=-0.035, lwd.ticks=2)
 	}
+	#panel labels
+    graphics::mtext(paste0("(", letters[d+3],")"), side=3, line=-1.7, at=4.6, cex=1.3, adj=0)
 	if (d==2){
 		title(xlab="upper bound ratio", line=2.75, font.lab=2, cex.lab=2, col.lab="gray40")
 	}	
@@ -150,7 +154,6 @@ for (d in 1:length(delta)){
 	if (file.exists(file)==FALSE){saveRDS(DeltasRT$D,file=file)}
 	if (file.exists(sefile)==FALSE){saveRDS(DeltasRT$SE,file=sefile)}
 }
-
 
 #7
 rescol <- rgb(227/255, 211/255, 148/255,.5)
