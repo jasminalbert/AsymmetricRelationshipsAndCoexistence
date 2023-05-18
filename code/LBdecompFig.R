@@ -10,7 +10,7 @@ plotco <- function(etai,etaj,delta, noise,Deltas_loc=0,SE_loc=0,...){
 		if (file.exists(SE_loc)==FALSE){ 
 			Deltas_loc<-0
 			SE_loc <- 0
-			} else {Deltas <- readRDS(Deltas_loc); SE <- readRDS(Deltas_loc)}
+			} else {Deltas <- readRDS(Deltas_loc); SE <- readRDS(SE_loc)}
 		}
 		
 	if (Deltas_loc==0){
