@@ -1240,6 +1240,7 @@ were never greater than \Sexpr{round(se4qij,5)}, so are not displayed.}\label{fi
 %check. The standard error expressions in SI S5.2 DO depend on qij, so this seems like it
 %should not happen. The standard errors listed in Fig. 3 and Fig. S1 are different, so that's
 %good.
+%JASMIN: I think its okay that they are the same.
 
 \clearpage
 \newpage
