@@ -950,6 +950,7 @@ though results differed in detail, main conclusions were the same.
 %of sims, and you're planing to do a larger number? If this is the actual value based on the final number 
 %of sims that you plan to do, then we may have to figure out a way to plot standard errors. Let's discuss
 %The same problem occurs for the accompany SI figure.
+%***JASMIN: Fixed code. SE is small now. 
 
 %***DAN: Jasmin, this currently pulls in a pdf you sent me, stored temporarily on my drive in the indicated 
 %location. Once the code produces fig 5 on a normal run, we'll have to change the below to suck that
