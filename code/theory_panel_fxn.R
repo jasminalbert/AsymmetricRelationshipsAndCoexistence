@@ -59,12 +59,12 @@ tdis <- function(q, oldp, samps){
 }
 
 pdfhist <- function(samps,x,y,d, horiz=FALSE,xpd=FALSE){
+	if (sum(x==y)!=length(x)){stop("x!=y")}
+	
 	nbrks <- 15
-	if (horiz==TRUE){
-		breaks <- seq(min(y), max(y), length.out=nbrks)
-	} else {
-		breaks <- seq(min(x), max(x), length.out=nbrks)
-	}
+	breaks <- seq(min(x), max(x), length.out=nbrks)
+	
+	if (min(samps) < min(x)){samps[samps==min(samps)] <- min(x)}
 	h <- hist(samps, breaks, plot=FALSE)
 	
 	ylines <- d(x)*length(samps)* diff(h$breaks)[1]

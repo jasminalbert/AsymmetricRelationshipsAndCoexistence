@@ -1,5 +1,4 @@
-source("./theory_panel_fxn.R")
-library(latex2exp)
+#library(latex2exp)
 
 nx<-seq(from=-4,to=4,by=0.02)
 ny<-seq(from=-4,to=4,by=0.02)
