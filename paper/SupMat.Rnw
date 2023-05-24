@@ -1188,8 +1188,10 @@ For example, $\Delta^{(XY \shp Z)}$ can be decomposed as $\Delta^{[XY \shp Z]} +
 
 %***DAN: This looks pretty good except one of the histograms on c does not look like the plotted
 %pdfs of the marginals. I think Jasmin said in an email she was fixing this.
+%***JASMIN: fixed!!
 %***DAN: Jasmin, also, we use \varphi in the text, but \phi here. These need to be made consistent, since they are different to
 %a math person. The easiest way will be to change it in the figure, so I hope that can straightforwardly be done.
+%***JASMIN: we said this is OK. Operating system thing - renders the same in Windows. 
 \begin{figure}
 \includegraphics[width=1.025\textwidth]{../results_figs/theory_fig_col.pdf}
 \caption[Visual guide to removing asymmetries of association]{Illustration of how asymmetric tail associations are removed while retaining marginal distributions and correlation 
