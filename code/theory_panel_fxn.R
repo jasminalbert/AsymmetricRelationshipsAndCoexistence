@@ -59,19 +59,28 @@ tdis <- function(q, oldp, samps){
 }
 
 pdfhist <- function(samps,x,y,d, horiz=FALSE,xpd=FALSE){
-	min <- min(x)
-	max <- max(y)
-	h <- hist(samps, seq(min(samps),max(samps),length.out=10), plot=FALSE)
+	nbrks <- 15
+	if (horiz==TRUE){
+		breaks <- seq(min(y), max(y), length.out=nbrks)
+	} else {
+		breaks <- seq(min(x), max(x), length.out=nbrks)
+	}
+	h <- hist(samps, breaks, plot=FALSE)
 	
 	ylines <- d(x)*length(samps)* diff(h$breaks)[1]
-	xlines <- seq(0, length(h$counts), len=length(x))
+	#xlines <- seq(0, length(h$counts), len=length(x))
+	xlines <-x
 	
 	if(max(x)>1){xpd <- NA}
-	barplot(h$counts, space=0, horiz=horiz, col = rgb(.74,.74,.74,.4), border="white", xlab='', ylab='', main='', yaxt='n', xaxt='n', xpd=NA)
 
 	if (horiz==TRUE){
+		plot(c(0,max(h$counts)), range(x), type="n",xlab='', ylab='', main='', yaxt='n', xaxt='n', xpd=NA, bty="n")
+		rect(0, h$breaks[-1], h$counts, h$breaks[-nbrks],col = rgb(.74,.74,.74,.4), border="white", lwd=0.5)
 		lines(ylines,xlines,xpd=xpd)
 	} else{
+		plot(range(x), c(0,max(h$counts)), type="n",xlab='', ylab='', main='', yaxt='n', xaxt='n', xpd=NA, bty="n")
+		rect(h$breaks[-nbrks], 0, h$breaks[-1], h$counts,col = rgb(.74,.74,.74,.4), border="white", lwd=0.5)
+		#barplot(h$counts, space=0, horiz=horiz, col = rgb(.74,.74,.74,.4), border="white", xlab='', ylab='', main='', yaxt='n', xaxt='n', xpd=NA)
 		lines(xlines, ylines,xpd=xpd)
 		}
 }
