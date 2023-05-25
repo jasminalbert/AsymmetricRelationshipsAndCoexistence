@@ -47,7 +47,7 @@ source("./LBdecompfig_qij.R")
 source("./diatom/Figure5def.R")
 
 #SI versions of 5&6 - not used in paper but created in support of statements in text
-source("./diatom/SuppFigs5and6.R")
+#source("./diatom/SuppFigs5and6.R")
 
 #VKQ figure (SI), shows assumptions of how V, K and Q depend on temperature 
 source("./diatom/VKQplots.R")
