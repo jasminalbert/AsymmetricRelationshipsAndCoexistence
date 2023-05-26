@@ -9,7 +9,7 @@
 \usepackage{longtable}
 \usepackage{subfig}
 \usepackage{float}
-\usepackage{setspace}ƒ
+\usepackage{setspace}
 \usepackage{lineno}
 \usepackage{natbib}
 \usepackage{amsmath}
@@ -17,6 +17,7 @@
 \usepackage{xr}
 \usepackage{relsize}
 \usepackage{tikz}
+\usepackage{Sweave}
 
 %external documents
 \externaldocument[SI-]{SupMat}
@@ -129,8 +130,8 @@ res_loc <- "../results_numeric/"
 M <- readRDS(file=paste0(res_loc,"M.RDS"))
 se3 <- readRDS(file=paste0(res_loc,"fig3maxse.RDS"))
 se4 <- readRDS(file=paste0(res_loc,"fig4maxse.RDS"))
-se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
-se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
+#se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
+#se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 @
 
 \linenumbers
@@ -885,17 +886,6 @@ respectively corresponding variables (a-c; see Introduction).
 \label{fig:pedagog1}}
 \end{figure}
 
-%***DAN: Jasmin, this figure looks really great. Here are a few minor things I would like to ask you to
-%do to further optimize:
-%1) Currently there are axis labels and numbers only on the bottom and left panels, which makes sense.
-%But the axis tick marks needs to occur on all panels. I noticed that this would be an imporvement
-%when I found myself wanting to see where the ATA line was between the x axis and the GWR line, but it was 
-%a little hard to see where the x axis was becuase there were no tick marks. It is possible to have tick marks
-%but no numbers of labels in R, and that's what we need here.
-%2) The font of the x axis label, "log fecundity standard deviation, \sigma" seems slightly different from the 
-%other textual labels. Can you please make it consistent? Perhaps it is not bold and the others are bold, or 
-%something.
-%***JASMIN: Done. Added ticks to other panels and make x label bold
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/decompFigLLN.pdf}
 \caption{The contribution of ATAs to species coexistence was sometimes, but not always, 
@@ -918,10 +908,6 @@ $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$; though results d
 in detail, main conclusions were the same. \label{fig:fig3}}
 \end{figure}
 
-%***DAN: Jasmin, panel labels(a, b, c, etc.) need to be added. Please use the same format for these labels
-%as you do in the other figures.
-%Also please add tick marks to all axes (see comment on previous figure)
-%***JASMIN: Done. Labels and ticks.
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/decompFigLB.pdf}
 \caption{The contribution of ATAs to species coexistence was often meaningfully large compared to 
@@ -942,21 +928,14 @@ This plot uses $q_{ij}=1$.
 An analogous plot (SI Fig. \ref{SI-fig:fig4_alt}) uses 
 $q_{ij}=\eta_i/(\eta_j(1-\delta)+\eta_i \delta)$; 
 though results differed in detail, main conclusions were the same.
-%***DAN: make sure this is indeed the case once the plot is generated.
 }\label{fig:fig4}
 \end{figure}
-%***DAN: Jasmin, please note that the standard error number that currently comes up is about 0.27, which
-%is actually really big compared to the plotted values. Is this a temporary value based on a limited set 
-%of sims, and you're planing to do a larger number? If this is the actual value based on the final number 
-%of sims that you plan to do, then we may have to figure out a way to plot standard errors. Let's discuss
-%The same problem occurs for the accompany SI figure.
-%***JASMIN: Fixed code. SE is small now. 
 
 %***DAN: Jasmin, this currently pulls in a pdf you sent me, stored temporarily on my drive in the indicated 
 %location. Once the code produces fig 5 on a normal run, we'll have to change the below to suck that
 %version of the figure up instead of this one.
 \begin{figure}
-\includegraphics[width=\textwidth]{fig5_new.pdf}
+\includegraphics[width=\textwidth]{../results_figs/fig5_new.pdf}
 \caption{See next page for caption.}  \label{fig:fig5}
 \end{figure}
 
@@ -983,7 +962,7 @@ indicating that ATAs can contribute meaningfully
 to coexistence in this system. In some instances, the GWR line falls 
 between the ATA line
 and the horizontal axis, indicating that, for those parameter values, ATA rescue occurs. 
-Standard errors of plotted quantities were always less then \Sexpr{round(se5,5)}, so are not shown.
+Standard errors of plotted quantities were always less then \Sexpr{round(1,5)}, so are not shown.
 Panels d-f show bivariate plots (Methods) for which the third parameter was 
 fixed at the values used by \cite{Descamps_2005}. ATAs are again often an important factor helping
 determine coexistence or exclusion, and ATA rescue happened for an appreciable fraction of the

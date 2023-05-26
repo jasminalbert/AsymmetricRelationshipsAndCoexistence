@@ -1163,7 +1163,7 @@ $Z$ are temporally varying factors, \cite{Ellner_2019} produced, for the $i^{\te
 of the GWR of $i$ for which some terms were based on rendering one or 
 more of $X$, $Y$, and $Z$ independent of the others. 
 We comment that this general decomposition should also be extendable to consider the effects of
-ATAs in the same way (\ref{eq:full_decomp}) extends (\ref{eq:previous_decomp}). Details follow.
+ATAs in the same way (\ref{MT-eq:full_decomp}) extends (\ref{MT-eq:previous_decomp}). Details follow.
 
 As mentioned in the Discussion in the main text, \cite{Ellner_2019} elaborated 
 a general theory in which more and different varying factors than
