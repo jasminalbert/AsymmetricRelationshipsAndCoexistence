@@ -130,7 +130,7 @@ res_loc <- "../results_numeric/"
 M <- readRDS(file=paste0(res_loc,"M.RDS"))
 se3 <- readRDS(file=paste0(res_loc,"fig3maxse.RDS"))
 se4 <- readRDS(file=paste0(res_loc,"fig4maxse.RDS"))
-#se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
+se5 <- 1 #readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
 #se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 @
 
@@ -962,7 +962,7 @@ indicating that ATAs can contribute meaningfully
 to coexistence in this system. In some instances, the GWR line falls 
 between the ATA line
 and the horizontal axis, indicating that, for those parameter values, ATA rescue occurs. 
-Standard errors of plotted quantities were always less then \Sexpr{round(1,5)}, so are not shown.
+Standard errors of plotted quantities were always less then \Sexpr{round(se5,5)}, so are not shown.
 Panels d-f show bivariate plots (Methods) for which the third parameter was 
 fixed at the values used by \cite{Descamps_2005}. ATAs are again often an important factor helping
 determine coexistence or exclusion, and ATA rescue happened for an appreciable fraction of the
