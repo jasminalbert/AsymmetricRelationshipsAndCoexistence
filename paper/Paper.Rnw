@@ -130,7 +130,7 @@ res_loc <- "../results_numeric/"
 M <- readRDS(file=paste0(res_loc,"M.RDS"))
 se3 <- readRDS(file=paste0(res_loc,"fig3maxse.RDS"))
 se4 <- readRDS(file=paste0(res_loc,"fig4maxse.RDS"))
-se5 <- 1 #readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
+se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
 #se6 <- readRDS(file=paste0(res_loc, "fig6maxse.RDS"))
 @
 
@@ -141,7 +141,7 @@ se5 <- 1 #readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
 \noindent \textbf{Key words:} asymmetric tail association, biodiversity, coexistence, competition, copula, modern coexistence theory, niche differentiation, storage effects \\
 \noindent \textbf{Type of article:} Letter\\
 \noindent \textbf{Words in Abstract:} 150; \textbf{Words in main text:} 5013; \textbf{Words in text boxes:} 0\\
-\noindent \textbf{Number of references:} 39; \textbf{Number of figures:} 4; \textbf{Number of tables:} 1; \textbf{Number of text boxes:} 0\\
+\noindent \textbf{Number of references:} 37; \textbf{Number of figures:} 4; \textbf{Number of tables:} 1; \textbf{Number of text boxes:} 0\\
 \noindent \textbf{Corresponding author:}
 Daniel C. Reuman,
 Department of Ecology and Evolutionary Biology,
