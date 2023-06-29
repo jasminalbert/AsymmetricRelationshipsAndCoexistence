@@ -1,0 +1,89 @@
+\documentclass[letterpaper,11pt]{article}
+
+%packages
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=1.5cm,head=.5cm,foot=.5cm]{geometry}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{authblk}
+\usepackage{xr}
+\usepackage{relsize}
+\usepackage{tikz}
+\usepackage{Sweave}
+
+%new commands and so on
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+\DeclareMathOperator{\E}{\mathbb{E}}% expected value
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\cor}{cor}
+\DeclareMathOperator{\mean}{mean}
+\DeclareMathOperator{\se}{se}
+\DeclareMathOperator{\sd}{sd}
+\DeclareMathOperator{\prob}{P}
+
+%attempt 1 at nat and sharp
+%\newcommand{\nat}{\mathlarger{\natural}}
+%\newcommand{\shp}{\mathlarger{\sharp}}
+
+%attempt 2 at nat and sharp
+%\newcommand{\nat}{\raisebox{1pt}{\mathsmaller{\mathsmaller{/\hspace{-2pt}/}}}}
+%\newcommand{\shp}{\#}
+
+%attempt 3 at nat and sharp
+\newcommand{\nat}{%
+\text{\hspace{-1.5pt}
+\begin{tikzpicture}[scale=1.8]%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+\newcommand{\shp}{%
+\text{\hspace{-1.5pt}
+\begin{tikzpicture}[scale=1.8]%
+\draw (0,.333ex) -- (1ex,.333ex);%
+\draw (0,.666ex) -- (1ex,.666ex);%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+\newcommand{\test}{%
+\text{
+\begin{tikzpicture}[scale=1.8]%
+\draw (0,0) -- (1ex,0ex);
+\draw (0,0) -- (0ex,1ex);
+\draw (0,1ex) -- (1ex,1ex);
+\draw (1ex,0) -- (1ex,1ex);
+\draw (0,.333ex) -- (2ex,.333ex);%
+\draw (0,.666ex) -- (1ex,.666ex);%
+\draw (.333ex,0) -- (.333ex,1ex);%
+\draw (.666ex,0) -- (.666ex,1ex);
+\end{tikzpicture}%
+}}
+
+\newcommand{\olr}{\overline{r}}
+\newcommand{\olrs}{\overline{r}^{\shp}}
+\newcommand{\olrn}{\overline{r}^{\nat}}
+\newcommand{\bs}{\backslash}
+
+%header material for paper
+\title{Responses to referees for ``Asymmetric relationships and their effects on coexistence''}
+\date{July 2023}
+
+\begin{document}
+
+
+\end{document}
