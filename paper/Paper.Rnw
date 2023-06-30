@@ -181,7 +181,7 @@ ATA influences are an important new mechanism of coexistence.
 \section{Introduction}\label{section:introduction}
 
 %Intro the paper by intro'ing ATAs
-At the core of ecology is the study of relationships - between organisms and between organisms and their environments. 
+At the core of ecology is the study of relationships between organisms and their environments.
 Ecologists may ask, for instance, how local environment relates to 
 population growth rate. To study such relationships and to understand how two variables interact, ecologists 
 very commonly use metrics such as correlation and covariance. But these standard measures of the strength 
@@ -189,7 +189,7 @@ and direction of association between variables often do not tell the whole story
 \citep{Ghosh_2020_AER}.
 To illustrate, the three pairs of variables in Fig. \ref{fig:pedagog1}a-c all have the same 
 Pearson correlation despite striking differences in association structure: Fig. \ref{fig:pedagog1}b shows a 
-symmetric type of association, while Fig. \ref{fig:pedagog1}a,c exhibit what we have previously referred to as 
+symmetric type of association, while Fig. \ref{fig:pedagog1}a,c exhibit what has previously been referred to as 
 ``asymmetric tail association'' [ATA; \citealp{Ghosh_2020_AER}]. 
 Metrics of association other than correlations and covariance are also often used (e.g., various forms of 
 regression), but correlations are extremely common, and other common methods also reveal only a small portion 
@@ -197,8 +197,7 @@ of the information content of the relationship between variables \citep{Nelsen20
 ATAs and related ideas had previously been seldom considered in ecology, but recently several 
 insights have been gained by studying how features of associations beyond standard measures 
 impact various ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovic_2019, Ghosh_2020_AER, Ghosh_2020_Eco,
-Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_AER} show that ATAs are common in ecology
-and can influence Taylor's law and Moran effects; \cite{Ghosh_2020_Eco} argue that extinction risks can become elevated 
+Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argue that extinction risks can become elevated 
 when metapopulations are subject to ATAs; and \cite{Ghosh_2021} show that ATAs can alter the stability of 
 ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
 plankton population density time series. To our knowledge, the implications of ATAs for competition and coexistence have
@@ -212,8 +211,7 @@ instead outcompete the other and drive it extinct \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems,
 through the niche partitioning effects of environmental variation.
-MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``relative nonlinearity
-in competition'' and ``storage effects'' \citep{Chesson_1994} which will be familiar to many readers. MCT has been
+MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``storage effects'' \citep{Chesson_1994} which will be familiar to some readers (storage effects are also defined below). MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
 Although MCT is somewhat mathematically complex, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
