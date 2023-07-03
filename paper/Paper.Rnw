@@ -211,7 +211,8 @@ instead outcompete the other and drive it extinct \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems,
 through the niche partitioning effects of environmental variation.
-MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``storage effects'' \citep{Chesson_1994} which will be familiar to some readers (storage effects are also defined below). MCT has been
+MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``storage effects'' \citep{Chesson_1994} which will be familiar to some readers (storage effects are also reviewed conceptually below and 
+defined formally in Theory). MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
 Although MCT is somewhat mathematically complex, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
@@ -224,8 +225,8 @@ may be relevant to them. Storage effects allow competing species to fluctuate in
 by providing a relative benefit to whichever species is currently rare \citep{Chesson_2000}.
 Storage effects hinge on positive covariation between the fluctuating quality of the environment
 for a species (E) and the strength of competition (C) experienced by that species (called EC covariance);
-and on the assumption that optimal environmental conditions for distinct species are also distinct,
-so that no two species find the same conditions to be optimal. Then, good environmental
+and on the assumption that environmental responses for distinct species are also distinct,
+so that no two species respond in the same way to environmental variation. Then, good environmental
 conditions for a currently common species are paired with strong intraspecific competition, because of
 positive EC covariance and the commonness of the species. But good environmental conditions for 
 a currently rare species are not as closely accompanied by strong competition because the rarity of
@@ -249,7 +250,8 @@ N_i(t+1)=(1-\delta)N_i(t)+\delta N \frac{B_i(t)N_i(t)}{B_1(t)N_1(t)+B_2(t)N_2(t)
 \end{equation}
 for $i=1,2$. Here, $\delta$ is an adult mortality rate, and $B_i(t)$ is the fecundity of species $i$ at time $t$. 
 The model postulates that adults die at rate $\delta$ at each time step, and are replaced by juveniles 
-in proportion to the reproductive outputs of the two species that year. Note that $N$ is constant through time. 
+in proportion to the reproductive outputs of the two species that year. Note that $N = N_1(t)+N_2(t)$ 
+is constant through time. 
 Notation for the whole paper is summarized in Table \ref{tab:notation}.
 We assume for simplicity that the random variables $(B_1(t),B_2(t))$ are independent and identically 
 distributed (iid) through time. In three distinct simulations (Fig. \ref{fig:pedagog1}f-h), 
@@ -297,7 +299,7 @@ of species $i$ can be written as an increasing function of
 an environment-dependent factor $E_i(t)$ and as a decreasing function of a quantity representing
 competitive pressure on species $i$, $C_i(t)$, i.e., $r_i(E_i,C_i)$. We also assume, for simplicity, 
 that the $E_i(t)$ are iid through time, and likewise for the
-$C_i(t)$. Though the iid assumption is not necessary, it simplifies the
+$C_i(t)$. Though the iid assumption is probably not necessary, it simplifies the
 presentation of new ideas. 
 
 \subsection{The storage effect}
@@ -365,6 +367,8 @@ ATAs between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$. We wi
 the \emph{ATA effect on coexistence}. 
 The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to $EC$ 
 correlation \emph{per se}, remaining after having removed the effects of ATAs.
+Note that brackets, $[\cdot]$, and parentheses, $(\cdot)$, are used distinctly in our notation,
+throughout the paper - they are not interchangeable.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
 corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
 The new symbol should correspondingly be pronounced ``partial sharp''.
@@ -786,8 +790,8 @@ such as predation and facilitation that can also mediate coexistence, and other 
 \section{Acknowledgments}
 
 The authors thank Shyamolina Ghosh for suggesting the research problem, and Lawrence Sheppard, Max Castorani,
-Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Jordan Rodriguez, Lauren Hallett, and 
-Robin Snyder for helpful discussions. 
+Jon Walter, Jude Kastens, Vadim Karatayev, Emily Arsenault, Jordan Rodriguez, Lauren Hallett, 
+Robin Snyder, and three anonymous referees and the editor for helpful feedback. 
 The authors especially thank Steve Ellner for key advice at several watershed moments in the development of the project. 
 The authors were partly supported by US National
 Science Foundation grants 1714195 and 2023474, the James S McDonnell Foundation, the California Department of Fish and
