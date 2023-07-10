@@ -110,6 +110,8 @@
 
 \maketitle
 
+\section{Initial thinking}
+
 This approach is nothing analogous to attempts I have seen to intuitively explain storage effects. Part of the
 reason for that is that those attempts may be rooted at least partly in the Chesson theory, which assumes
 small noise. We no longer make that assumption, and we already know (or strongly suspect, based on the 
@@ -133,8 +135,9 @@ of $C_i$. Then ATA effects are defined as
 \end{align}
 The third term in (\ref{eq:ATAeffects2}) is $0$ because that represents growth of $j$ in a steady-state scenario,
 and the fourth term is $0$, for the lottery model, because of reasoning in S5.1. So here is where we are 
-getting specific to the lottery model, as warned above. DAN: Maybe the next iteration of this thinking should 
-consider what happens when that fourth term does not vanish. Can we generalize?
+getting specific to the lottery model, as warned above. Maybe the next iteration of this thinking should 
+consider what happens when that fourth term does not vanish. Can we generalize? I think we can - see below for
+some efforts to generalize which were added later.
 
 For the lottery model, we have 
 \begin{align}
@@ -176,7 +179,7 @@ Viewing $\Delta_i^{[EC]}$ as an average of a function over a set of points distr
 (with ATAs removed) makes it clear why we would expect to commonly see substantial ATA effects 
 on coexistence: removing ATAs really changes the way points in a bivairate distribution are 
 distributed, in a way that can interact strongly with averaging over a function representing growth of
-a potential invader. In fact, it seems clear that only very special functions will give the same results 
+a potential invader. In fact, it seems clear that only very special functions will give the exact same results 
 when averaged over a typical distribution with ATAs or with ATAs removed.
 
 Growth from rarity, $\olr_{i \bs i}$ is an average of the individual growth rates which pertain across
@@ -185,7 +188,34 @@ $E_i$ and $C_{i \bs i}$, well then of course we will tend to get different value
 from if we use $E_i^\nat$ and $C_{i \bs i}^\nat$. The question is just how much different, which is what 
 we have sought to answer with this paper for lottery model and experimental examples. 
 
+\section{Efforts to generalize}
 
+Equation (\ref{eq:ATAeffects2}) is what we had prior to specifying to the lottery model. 
+Above, we've considered the first two terms, which are the average of $r_i(E_i,C_i)$ over 
+the distribution $(E_i,C_{i \bs i})$ minus the average of the same function
+over $(E_i^\nat,C_{i \bs i}^\nat)$. But the last two terms of (\ref{eq:ATAeffects2})
+are the average of $r_i(E_j,C_j)$ over the distribution $(E_j,C_{j \bs i})$ minus the 
+average of the same function over $(E_j^\nat,C_{j \bs i}^\nat)$. So the same basic
+ideas apply here as in the lottery model case, it's just that we have to make two comparisons 
+of growth functions averaged over distributions, one comparison for the invader, $i$,
+and the other for the resident, $j$. Again, essentially any model will have 
+non-zero value of (\ref{eq:ATAeffects2}) -- only models designed as counterexamples
+should typically have a precisely zero value for that expression. So ATAs will always
+matter to some extent for coexistence. It's just a question of how much, for real systems. 
+And, as far as can tell, that can only be answered by computing these quantities for
+several real systems. We've shown that, at least for some systems, the quantities 
+can be meaningfully large.
+
+\section{Additional commentary/thinking by writing}
+
+OK, it seems clear to me that basically any meanigful change to the distribution 
+$(E,C)$ will typically alter the average value of the nonlinear function $r(E,C)$ 
+over that distribution. There are many ways to decompose the growth rate 
+$\olr_{i \bs i}$ through a series of alterations of the distribution $(E,C)$. 
+Ellner et al. also make this point in their 2019 paper. The original Chesson 
+theory is probably the most natural decomposition under a weak noise assumption,
+but Ellner et al. and our paper make it clear there are other ways that may make
+more sense, in some circumstances, if noise is not weak. 
 
 
 
