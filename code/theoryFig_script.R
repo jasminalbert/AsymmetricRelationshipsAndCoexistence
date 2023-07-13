@@ -22,12 +22,12 @@ text(x=lblc["lab","x"], y=lblc["lab","y"],labels=paste0("(",letters[1],")"),cex=
 sampsB2 <- theoryfigpanel(dbmarg, pbmarg, qbmarg, shcop, bx, by, samps=sampsA, method="var_perse",col=T,log_points=T, plot=reviwer)
 if (reviwer){
 text(x=lblc["E","x"], y=lblc["E","y"], labels=c(expression('E'['i']^'#')), cex=2)
-text(x=lblc["C","x"], y=lblc["C","y"], labels=c(expression('C'['i\\i']^'#'), srt=90, cex=2))
+text(x=lblc["C","x"], y=lblc["C","y"], labels=c(expression('C'['i\\i']^'#')), srt=90, cex=2)
 text(x=lblc["lab","x"], y=lblc["lab","y"],labels=paste0("(",letters[2],")"), cex=2)
 }
 # B NORM MARGS CLAY COP
 # EC marginals individially normalized
-sampsB <- theoryfigpanel(dnmarg, pnmarg, qnmarg, ccop, nx, ny, samps=sampsA, method="inv_cdf",oldp=pbmarg,xpd=NA,col=T, log_points=FALSE, plot=!reviwer)
+sampsB <- theoryfigpanel(dnmarg, pnmarg, qnmarg, ccop, nx, ny, samps=sampsA,oldp=pbmarg,xpd=NA,col=T, log_points=FALSE, plot=!reviwer)
 if (!reviwer){
 text(x=lblc["E","x"], y=lblc["E","y"], labels=c(expression(varphi^-1*('F'['E'['i']]("E"["i"])) )), cex=2)
 text(x=lblc["C","x"], y=lblc["C","y"], labels=c(expression(varphi^-1*('F'['C'['i\\i']]("C"["i\\i"])) )), srt=90, cex=2)
@@ -48,11 +48,13 @@ text(x=lblc["lab","x"], y=lblc["lab","y"],labels=paste0("(",letters[3],")"), cex
 # D BETA MARGS NORM COP
 #same marginals and rho as EC but association structure is symmetric (correlation per se)
 sampsD<-theoryfigpanel(dbmarg, pbmarg, qbmarg, ncop, bx, by,samps=sampsC, oldp=pnmarg,col=T,log_points=T)
-text(x=lblc["E","x"], y=lblc["E","y"], labels=c(expression('E'['i']^'||'=='F'['E'['i']]^-1*(varphi('e'['i'])) )), cex=2)
-text(x=lblc["C","x"], y=lblc["C","y"], labels=c(expression('C'['i\\i']^'||'=='F'['C'['i\\i']]^-1*(varphi('c'['i/i'])) )), srt=90, cex=2)
+text(x=lblc["E","x"], y=lblc["E","y"], labels=c(expression('E'['i']^'||')), cex=2)
+#=='F'['E'['i']]^-1*(varphi('e'['i'])) ))
+text(x=lblc["C","x"], y=lblc["C","y"], labels=c(expression('C'['i\\i']^'||')), srt=90, cex=2)
+#=='F'['C'['i\\i']]^-1*(varphi('c'['i/i'])) ))
 #TeX('($E_i^{||} = F_{E_i}^{-1}\circ \varphi(e_i)$)')
 #TeX(r'($C_{i\setminus i}^{||} = F_{C_{i\setminus i}}^{-1}\circ \varphi(c_{i\setminus i})$)')
-text(x=lblc["lab","x"], y=lblc["lab","y"],labels=paste0("(",letters[4],")"), cex=2)
+text(x=lblc["lab","x"], y=lblc["lab","y"],labels=paste0("(",letters[3],")"), cex=2)
 
 
 
