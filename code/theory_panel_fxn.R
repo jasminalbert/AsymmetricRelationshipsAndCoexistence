@@ -12,23 +12,21 @@ theoryfigpanel <- function(d,p,q,cop,x,y, method="inv_cdf", samps=NULL, oldp=NUL
 	xy <- expand.grid(x,y)
 	z <- probdisf(xy)
 	z <- matrix(z, length(x), length(y))
+	if (plot==T){plot(x,y,type="n", xlab="",ylab="", bty="l")}
 	
 
 	if (method == "gnrt_var"){
 		#make new random vars for points
 		rand_var <- makerandgenrtr(cop,q,q)
 		samps <- rand_var(1000)
-	} else if (method=="inv_cf"){
+	} else if (method=="inv_cdf"){
 		#or use inv cdf to transform from existing rvs
 		samps <- tdis(q, oldp, samps)
 	} else if (method=="var_perse"){
 		samps <- expand.grid(samps[,1], samps[,2])
 		samps <- apply(samps,2,sample,1000)
 	}
-	
-	if (plot==TRUE){
-		plot(x,y,type="n", xlab="",ylab="", bty="l")
-	
+	if (plot==T){
 		if (col==TRUE){
 	  		ncol <- 100
 	  	if (log_points==T){
