@@ -164,32 +164,6 @@ We consider both approaches because the above-mentioned shortcomings do not appl
 possible that future applications will often set scaling factors to $1$, and we want our ideas to also be considered 
 by researchers making that choice. 
 
-\section{Removing asymmetries of association}\label{sect:remove_asymmetries}
-
-How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
-correlation unchanged? Fig. \ref{fig:pedagog2} provides an illustration of the steps we describe here. 
-We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
-$C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively, are strictly monotonic and continuous. 
-Letting $\varphi$ be the CDF of a standard normal distribution, we consider the random variables
-$\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
-distributed, although they are not necessarily jointly bivariate normal (Fig. \ref{fig:pedagog2}a,b).  
-Let $\rho_i$ be the covariance of
-these random variables. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
-$\E(e_i)=\E(c_{i \bs i})=0$ and $\var(e_i)=\var(c_{i \bs i})=1$, and we denote 
-$\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$ (Fig. \ref{fig:pedagog2}c). We define 
-$E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
-and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$ (Fig. \ref{fig:pedagog2}d). 
-The value of $\ddot{\rho}_i$ is then determined in one of 
-four alternative ways: either by setting $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
-$E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
-$(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
-For those familiar with copula statistics (see, e.g., \citealp{Genest_2007} and \citealp{Ghosh_2020_AER}), 
-we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
-The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
-$E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
-$C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
-as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
-
 \section{Mechanisms other than storage effects}\label{SIsect:other_mechanisms}
 
 We first review the decompositions of \cite{Ellner_2016} and \cite{Ellner_2019}, which are similar to and motivated by the 
@@ -1182,36 +1156,6 @@ ATAs in the same way main text equation (\ref{MT-eq:full_decomp}) extends main t
 though the complexity
 of such a decomposition may present challenges.
 For example, $\Delta^{(XY \shp Z)}$ can be decomposed as $\Delta^{[XY \shp Z]} + \Delta^{[X \nat Y \shp Z]}$.
-
-\clearpage
-\newpage
-
-%***DAN: This looks pretty good except one of the histograms on c does not look like the plotted
-%pdfs of the marginals. I think Jasmin said in an email she was fixing this.
-%***JASMIN: fixed!!
-%***DAN: Jasmin, also, we use \varphi in the text, but \phi here. These need to be made consistent, since they are different to
-%a math person. The easiest way will be to change it in the figure, so I hope that can straightforwardly be done.
-%***JASMIN: we said this is OK. Operating system thing - renders the same in Windows. 
-\begin{figure}
-\includegraphics[width=1.025\textwidth]{../results_figs/theory_fig_col.pdf}
-\caption[Visual guide to removing asymmetries of association]{Illustration of how asymmetric tail associations are removed while retaining marginal distributions and correlation 
-between variables (see Theory). (a) An example original bivariate distribution $(E_i,C_{i \bs i})$, with ATA present. 
-(b) Marginals are now normalized. The variables $E_i$ and $C_{i \bs i}$ are individually transformed to have standard normal 
-marginals through a composition of the inverse of the standard normal cumulative distribution function (CDF), 
-$\varphi^{-1}$, and 
-each variable's CDF, $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively.  
-(c) A newly generated bivariate normal distribution, $(e_i,c_{i \bs i})$, with correlation $\ddot{\rho}=\rho$
-selected to match that of the original distribution (see Theory). (d) Two new variables, 
-$E_i^{||}$ and  $C_{i \bs i}^{||}$,
-%Dan replaced \nat in the above two expressions by || because for some reason the \nat does not
-%compile when it occurs within a caption. Not sure how to deal with that, but leaving it alone for now.
-which have the same marginals and correlation as the original $E_i$ and $C_{i \bs i}$ variables of (a) but 
-which have symmetric association structure. These variables are obtained by transforming the marginals from (c), 
-$e_i$ and $c_{i \bs i}$, using the inverses of the functions used in (b).
-For illustration purposes we started with beta distributed $E_i$ and $C_{i \bs i}$. Contour lines are 
-$\log_{10}$ of probability density on all panels. 
-\label{fig:pedagog2}}
-\end{figure}
 
 \clearpage
 \newpage
