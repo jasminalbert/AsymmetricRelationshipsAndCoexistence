@@ -263,7 +263,7 @@ for details). Thus, the model setup was identical in the three simulations excep
 ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}f-h).
 
 %Goal para
-We previously demonstrated that ATAs are common in nature can influence ecological phenomena
+We previously demonstrated that ATAs are common in nature and can influence ecological phenomena
 \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}; and our arguments above
 indicate that ATAs may influence species coexistence. Thus, we here seek to quantify the consequences 
 of ATAs for competition, coexistence, and the maintenance of biodiversity, by means of the 
