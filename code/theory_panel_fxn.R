@@ -5,51 +5,56 @@
 # x		x values
 # y 	y values
 		
-theoryfigpanel <- function(d,p,q,cop,x,y, gnrt_var=FALSE, samps=NULL, oldp=NULL,col=F,log_points=F,...){
+theoryfigpanel <- function(d,p,q,cop,x,y, method="inv_cdf", samps=NULL, oldp=NULL,col=F,log_points=F,plot=T,...){
 	
 	#makepdf with some copula structure and marginals
 	probdisf <- makepdf(cop,d,d,p,p) 
 	xy <- expand.grid(x,y)
 	z <- probdisf(xy)
 	z <- matrix(z, length(x), length(y))
+	if (plot==T){plot(x,y,type="n", xlab="",ylab="", bty="l")}
 	
-	
-	plot(x,y,type="n", xlab="",ylab="", bty="l")
-	if (gnrt_var == TRUE){
+
+	if (method == "gnrt_var"){
 		#make new random vars for points
 		rand_var <- makerandgenrtr(cop,q,q)
 		samps <- rand_var(1000)
-	} else{
+	} else if (method=="inv_cdf"){
 		#or use inv cdf to transform from existing rvs
 		samps <- tdis(q, oldp, samps)
+	} else if (method=="var_perse"){
+		samps <- expand.grid(samps[,1], samps[,2])
+		samps <- apply(samps,2,sample,1000)
 	}
-	if (col==TRUE){
-	  ncol <- 100
-	  if (log_points==T){
-	    z[z==0]<-NA; zvar <- log10(z)
-	  } else { zvar <- z }
+	if (plot==T){
+		if (col==TRUE){
+	  		ncol <- 100
+	  	if (log_points==T){
+	   		z[z==0]<-NA; zvar <- log10(z)
+	  	} else { zvar <- z }
 	  
-	  z_ran <- range(zvar, na.rm=T)
-	  zbin <- .bincode(zvar, breaks=seq(z_ran[1],z_ran[2],len=ncol+1),TRUE,TRUE)
-	  zbin <- matrix(zbin, length(x), length(y))
-	  cols <- hcl.colors(ncol, palette = "YlOrRd",rev=T)
-	  xbin <- .bincode(samps[,1], breaks=seq(min(x),max(x),len=nrow(z)+1),TRUE,TRUE)
-	  ybin <- .bincode(samps[,2], breaks=seq(min(y),max(y),len=ncol(z)+1),TRUE,TRUE)
+	  	z_ran <- range(zvar, na.rm=T)
+	  	zbin <- .bincode(zvar, breaks=seq(z_ran[1],z_ran[2],len=ncol+1),TRUE,TRUE)
+	  	zbin <- matrix(zbin, length(x), length(y))
+	  	cols <- hcl.colors(ncol, palette = "YlOrRd",rev=T)
+	  	xbin <- .bincode(samps[,1], breaks=seq(min(x),max(x),len=nrow(z)+1),TRUE,TRUE)
+	  	ybin <- .bincode(samps[,2], breaks=seq(min(y),max(y),len=ncol(z)+1),TRUE,TRUE)
 	  
-	  colindex <- {}
-	  for (i in 1:nrow(samps)) {colindex[i]<-zbin[xbin[i],ybin[i]]}
-	  rgb<-sapply(cols[colindex],FUN=col2rgb)
-	  rgba<-rbind(rgb/255,.5)
-    rgbcols <- apply(rgba,2,function(X){rgb(X[1],X[2],X[3],X[4])})
+	  	colindex <- {}
+	  	for (i in 1:nrow(samps)) {colindex[i]<-zbin[xbin[i],ybin[i]]}
+	  	rgb<-sapply(cols[colindex],FUN=col2rgb)
+	 	rgba<-rbind(rgb/255,.5)
+    	rgbcols <- apply(rgba,2,function(X){rgb(X[1],X[2],X[3],X[4])})
 	  #points(samps[,1],samps[,2], col=cols[colindex],pch=20, cex=1)
-	  points(samps[,1],samps[,2],col=rgbcols,pch=20,cex=1)
-	} else {
+	  	points(samps[,1],samps[,2], col=rgbcols,pch=20,cex=1)
+		} else {
 	  points(samps[,1],samps[,2],type="p",pch=20, cex=1, col=rgb(.74,.74,.74,.4))
 	}
 	contour(x,y,log10(z),nlevels=10, bty='l', add=T)
 	pdfhist(samps[,1],x,y,d)
 	pdfhist(samps[,2],x,y,d,horiz=TRUE)
 	plot.new() 
+	}
 	return(samps)
 }
 

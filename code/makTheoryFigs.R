@@ -15,12 +15,15 @@ if (dir.exists(fig_loc)==F){
   dir.create(fig_loc)
 }
 theoryfig_col <- paste0(fig_loc,"/theory_fig_col.pdf")
+theoryfig_col2 <- paste0(fig_loc,"/theory_fig_col2.pdf")
 
 
 #copulas
 ncop<-normalCopula(.7)
-ccop<-claytonCopula(2)
-ccop<-claytonCopula(iRho(ccop,rho(ncop)))
+shcop <- normalCopula(0.001)
+ccop0<-claytonCopula(2)
+ccop<-claytonCopula(iRho(ccop0,rho(ncop)))
+shcop <-claytonCopula(iRho(ccop0,rho(shcop)))
 
 #distribution functions
 ##beta
@@ -46,8 +49,23 @@ ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
 
 #colored points
 #### start pdf ####
-pdf(theoryfig_col, height=4, width=15)
-layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
+#pdf(theoryfig_col, height=4, width=15)
+#layout(ly_mat, heights=hts, widths=wds)#;layout.show(n=16)
+#par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
+#source("./theoryFig_script.R")
+#dev.off() 
+########
+
+#new fig for reviewers
+#### start pdf ####
+new <- TRUE
+ly_mat <- cbind(ly_mat, c(17,17), c(19,18), c(21,20))
+lblc[2:3,"x"] <- lblc[2:3,"x"]+.17
+lblc["E","y"] <- lblc["E","y"]+.1  
+lblc["C","y"] <- lblc["C","y"]-.18  
+wds[(1:3)*3] <- 0.2
+pdf(theoryfig_col2, height=4, width=19)
+layout(ly_mat, heights=hts, widths=c(wds,wds[3:5]))#;layout.show(n=16)
 par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
 source("./theoryFig_script.R")
 dev.off() 
