@@ -200,8 +200,9 @@ impact various ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovi
 Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argue that extinction risks can become elevated 
 when metapopulations are subject to ATAs; and \cite{Ghosh_2021} show that ATAs can alter the stability of 
 ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
-plankton population density time series. To our knowledge, the implications of ATAs for competition and coexistence have
-not yet been investigated. Doing so is the overarching goal of this study. 
+plankton population density time series; and many other examples have also been previously explored 
+\citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
+competition and coexistence have not yet been investigated. Doing so is the overarching goal of this study. 
 
 %Intro to competition, coexistence, MCT, etc.
 Competition, coexistence, and the maintenance of biodiversity are research topics at the core of modern ecology 
@@ -372,6 +373,7 @@ throughout the paper - they are not interchangeable.
 The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
 corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
 The new symbol should correspondingly be pronounced ``partial sharp''.
+See SI section \ref{SI-SIsect:techcomm} for technical comments on the new notation. 
 The brackets in $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
 of storage effects, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
@@ -399,11 +401,13 @@ we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
 $C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
-as desired. The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
+as desired. The question of the uniqueness of the distribution $(E_i^\nat,C_{i \bs i}^\nat)$ 
+is addressed in SI section \ref{SI-SIsect:uniqueness}.
+The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
 For comparison, Fig. \ref{fig:pedagog2} also shows, for the example explored by that figure, 
 the distribution $(E_i^\shp,C_{i \bs i}^\shp)$
 defined in the previous section (following \cite{Ellner_2016}).
-%DAN: Jasmin will be adding that panel.
+
 
 \subsection{Our decomposition as an extention of modern coexistence theory}
 
@@ -917,9 +921,9 @@ respectively corresponding variables (a-c; see Introduction).
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{../results_figs/theory_fig_col.pdf}
+\includegraphics[width=\textwidth]{../results_figs/theory_fig_col2.pdf}
 \caption[Visual guide to removing asymmetries of association]{Illustration of how asymmetric tail associations are removed while retaining marginal distributions and correlation 
-between variables (see Theory). (a) An example original bivariate distribution $(E_i,C_{i \bs i})$, with ATA present. 
+between variables (see Theory). (a) An example original bivariate distribution $(E_i,C_{i \bs i})$, with ATAs present. 
 (b) Marginals are now normalized. The variables $E_i$ and $C_{i \bs i}$ are individually transformed to have standard normal 
 marginals through a composition of the inverse of the standard normal cumulative distribution function (CDF), 
 $\varphi^{-1}$, and 
@@ -928,11 +932,13 @@ each variable's CDF, $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively.
 selected to match that of the original distribution (see Theory). (d) Two new variables, 
 $E_i^{\nat}$ and  $C_{i \bs i}^{\nat}$,
 which have the same marginals and correlation as the original $E_i$ and $C_{i \bs i}$ variables of (a) but 
-which have symmetric association structure. These variables are obtained by transforming the marginals from (c), 
+which have symmetric association structure. These are the distributions used to compute ATA effects, 
+$\Delta_i^{[EC]}$ (Theory). 
+These variables are obtained by transforming the marginals from (c), 
 $e_i$ and $c_{i \bs i}$, using the inverses of the functions used in (b).
-Panel (e) show the distribution $(E_i^\shp,C_{i \bs i}^\shp)$, defined in Theory
-following \citep{Ellner_2016}, for comparison.
-%DAN: jasmin is adding this new panel
+Panel (e) shows the distribution $(E_i^\shp,C_{i \bs i}^\shp)$, defined in Theory
+following \cite{Ellner_2016}, for comparison. These are the distributions used to compute storage effects,
+$\Delta_i^{(EC)}$ (Theory).
 For illustration purposes we started with beta distributed $E_i$ and $C_{i \bs i}$. Contour lines are 
 $\log_{10}$ of probability density on all panels. 
 \label{fig:pedagog2}}

@@ -164,6 +164,37 @@ We consider both approaches because the above-mentioned shortcomings do not appl
 possible that future applications will often set scaling factors to $1$, and we want our ideas to also be considered 
 by researchers making that choice. 
 
+\section{Technical comments on notation}\label{SIsect:techcomm}
+
+The quantities $E_i$, $C_{i \bs i}$, $E_i^\shp$, $C_{i \bs i}^\shp$, $E_i^\nat$, $C_{i \bs i}^\nat$
+and related quantities are random variables, and hence notational conventions for random variables 
+which are standard in fields of applied probability are used throughout the paper.
+Relationships are considered intrinsic to random variable notation; for instance, though  
+$E_i$, $E_i^\shp$, and $E_i^\nat$ have the same distribution, they are not the same as random variables
+because of their different relationships with other random variables specified in the paper, e.g.,
+$C_{i \bs i}$,  $C_{i \bs i}^\shp$, and $C_{i \bs i}^\nat$. Therefore the distributions
+of the bivariate random variables $(E_i,C_{i \bs i})$, $(E_i^\shp,C_{i \bs i}^\shp)$, and
+$(E_i^\nat,C_{i \bs i}^\nat)$ are all distinct, as are the random variables
+$r(E_i,C_{i \bs i})$, $r(E_i^\shp,C_{i \bs i}^\shp)$, and $r(E_i^\nat,C_{i \bs i}^\nat)$. 
+
+\section{Uniqueness of our definition of ATA effects}\label{SIsect:uniqueness}
+
+The description in the main text of how the distribution $(E_j^\nat, C_{j \bs i}^\nat)$
+is constructed already reveals that a choice 
+is made as to what type of correlation (e.g., Pearson, Spearman, etc.) is to be preserved
+in the new distribution. Another choice is also made, though it is quite a canonical choice.
+The choice involves the use of a bivariate normal distribution $(e_i,c_{i \bs i})$ 
+with standard normal marginals (see Theory). Any other symmetrically tail associated bivariate 
+distribution with standard normal marginals could also be used, instead, as $(e_i,c_{i \bs i})$ 
+in our construction. For instance, one could form  $(e_i,c_{i \bs i})$ by using a
+Frank copula \citep{Nelsen2006} to unite two standard normal univariate distributions. 
+The bivariate normal distribution is a very natural choice, however, and other choices may 
+be somewhat esoteric. We note that choices were present in MCT prior to our work. For instance, 
+choices are often made in the definitions of $E$ and $C$ used \citep{Ellner_2019}. 
+Our overall research point, that ATAs
+\emph{can} be important for coexistence, is successfully made regardless of such choices, as long as 
+reasonable choices were made, which they were. 
+
 \section{Mechanisms other than storage effects}\label{SIsect:other_mechanisms}
 
 We first review the decompositions of \cite{Ellner_2016} and \cite{Ellner_2019}, which are similar to and motivated by the 
