@@ -101,5 +101,24 @@ for (panel in 1:2){
 grDevices::dev.off()
 
 
+#plankton ATA stats
+partCor <- function(x,y, b, ties){
+	Tot <- length(x)
+	u <- rank(x, ties=ties)/(Tot+1); v <- rank(y, ties=ties)/(Tot+1)
+	left <- (u+v) > 0 & (u+v) < b*2
+	right <- (u+v) > b*2 & (u+v) < 2 
+	corl <- sum((u[left]-mean(u))*(v[left]-mean(v)))/((Tot-1)*sqrt(var(u)*var(v)))
+	corr <- sum((u[right]-mean(u))*(v[right]-mean(v)))/((Tot-1)*sqrt(var(u)*var(v)))	
+	return(c(left=corl, right=corr, diff=corl-corr, Sh=corl+corr, S=cor(u,v, method="spearman")))
+}
+cerfus23 <- ceratium1x2$loc23$cerfus
+cerfur23 <- ceratium1x2$loc23$cerfur
+cerfus40 <- ceratium1x2$loc40$cerfus
+cerfur40 <- ceratium1x2$loc40$cerfur
+partCor(cerfus23, cerfur23, 1/2, "average")
+partCor(cerfus40, cerfur40, 1/2, "average")
+partCor(cerfus23, cerfur23, 1/3, "average")
+partCor(cerfus40, cerfur40, 1/3, 'average')
+cor(cerfus40, cerfur40, method="spearman")
 
 
