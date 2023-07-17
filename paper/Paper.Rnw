@@ -126,6 +126,7 @@
 
 #place R code here for loading in necessary variables from Results
 res_loc <- "../results_numeric/"
+plankStats <- readRDS(file=paste0(res_loc, "plankStats.RDS"))
 #fig2 <- readRDS(file=paste0(res_loc,"fig2data.RDS"))
 M <- readRDS(file=paste0(res_loc,"M.RDS"))
 se3 <- readRDS(file=paste0(res_loc,"fig3maxse.RDS"))
@@ -913,8 +914,9 @@ The variables $(B_1,B_2)$ described in the Introduction and Methods were obtaine
 pictured and then transforming the marginals as specified in Methods.
 (d,e) Two examples of ATAs found in nature. Axes are population densities of two plankton species, 
 \emph{Ceratium fusus} and \emph{Ceratium furca}, sampled in successive years in two of the 15 locations 
-in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by location, with (d) showing 
-left-tail association and (e) showing right-tail association.
+in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by location: 
+(d) has a partial Spearman correlation of  \Sexpr{round(plankStats$d,3)}, indicating left-tail association
+ and (e) has a partial Spearman correlation of  \Sexpr{round(plankStats$e,3)}, indicating right-tail association.
 (f-h) Lottery model population simulations using $(B_1,B_2)$ obtained by transforming the 
 respectively corresponding variables (a-c; see Introduction).
 \label{fig:pedagog1}}

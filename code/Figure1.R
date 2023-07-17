@@ -11,6 +11,7 @@ numRes_loc <- "../results_numeric/"
 noise_loc <- paste0(numRes_loc,"noise.RData") #from makenoise_LB.R
 popsim_loc <- paste0(numRes_loc,"betapopsim.RData") #from beta_popsims.R
 plankton_loc <- paste0(numRes_loc,"ceratium1x2.RData") #from plankton.R
+plankStats_loc <- paste0(numRes_loc, "plankStats.RDS")
 
 #locations where result figs are stored
 fig_loc <- "../results_figs/"
@@ -115,10 +116,11 @@ cerfus23 <- ceratium1x2$loc23$cerfus
 cerfur23 <- ceratium1x2$loc23$cerfur
 cerfus40 <- ceratium1x2$loc40$cerfus
 cerfur40 <- ceratium1x2$loc40$cerfur
-partCor(cerfus23, cerfur23, 1/2, "average")
-partCor(cerfus40, cerfur40, 1/2, "average")
-partCor(cerfus23, cerfur23, 1/3, "average")
-partCor(cerfus40, cerfur40, 1/3, 'average')
-cor(cerfus40, cerfur40, method="spearman")
+ceratiumPartCorD <- partCor(cerfus23, cerfur23, 1/2, "average")
+ceratiumPartCorE <- partCor(cerfus40, cerfur40, 1/2, "average")
+saveRDS(list(d=ceratiumPartCorD, d=ceratiumPartCorE),plankStats_loc)
+#partCor(cerfus23, cerfur23, 1/3, "average")
+#partCor(cerfus40, cerfur40, 1/3, 'average')
+#cor(cerfus40, cerfur40, method="spearman")
 
 
