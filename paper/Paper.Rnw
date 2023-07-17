@@ -916,7 +916,7 @@ pictured and then transforming the marginals as specified in Methods.
 \emph{Ceratium fusus} and \emph{Ceratium furca}, sampled in successive years in two of the 15 locations 
 in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by location: 
 (d) has a partial Spearman correlation of  \Sexpr{round(plankStats$d,3)}, indicating left-tail association
- and (e) has a partial Spearman correlation of  \Sexpr{round(plankStats$e,3)}, indicating right-tail association.
+ and (e) has a partial Spearman correlation of  \Sexpr{round(plankStats$e,3)}, indicating right-tail association \cite{Ghosh_2020_AER}.
 (f-h) Lottery model population simulations using $(B_1,B_2)$ obtained by transforming the 
 respectively corresponding variables (a-c; see Introduction).
 \label{fig:pedagog1}}
