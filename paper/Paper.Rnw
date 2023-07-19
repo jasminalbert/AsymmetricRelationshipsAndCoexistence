@@ -175,7 +175,7 @@ and an empirical example using diatoms
 illustrate that ATA influences can be comparable in magnitude to other
 mechanisms of coexistence, and that ATAs can make the 
 difference between species coexistence and competitive exclusion. 
-ATA influences are an important new mechanism of coexistence. 
+ATA influences may be an important new mechanism of coexistence. 
 \end{abstract}
 
 \section{Introduction}\label{section:introduction}
@@ -198,7 +198,10 @@ ATAs and related ideas had previously been seldom considered in ecology, but rec
 insights have been gained by studying how features of associations beyond standard measures 
 impact various ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovic_2019, Ghosh_2020_AER, Ghosh_2020_Eco,
 Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argue that extinction risks can become elevated 
-when metapopulations are subject to ATAs; and \cite{Ghosh_2021} show that ATAs can alter the stability of 
+when metapopulations are subject to ATAs, e.g., if environmental ``catastrophes'' are more spatially synchronous 
+across component populations
+than are years of good environment, limiting the potential for rescue effects; 
+and \cite{Ghosh_2021} show that ATAs can alter the stability of 
 ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
 plankton population density time series; and many other examples have also been previously explored 
 \citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
@@ -737,8 +740,9 @@ as reflecting the linear relationship between variables, ignoring complexities o
 such as ATAs, which we now know can be important. ATAs contributions to coexistence were less important than other mechanisms 
 in some contexts (the log-normal fecundities lottery model), but were very important in other contexts
 (the beta fecundities lottery model), including our empirically
-based example (the diatom system). Though future work should seek to understand precisely when ATAs are or are not important
-for coexistence, our work demonstrates the overall importance of this new mechanism.
+based example (the diatom system). 
+Future work should seek to understand precisely when ATAs are or are not important
+for coexistence. Our work demonstrates the potential for ATAs to be an important mechanism of coexistence, generally.
 
 %ATA specialists
 Contributions of ATAs to species coexistence open the possibility that
@@ -807,7 +811,7 @@ the major strengths of the
 original, analytic approach, which are well known and also elaborated by \cite{Ellner_2019};
 one such strength is the generality that analytic approaches provide.
 It may be possible to expand the mathematics of the original MCT to consider ATAs.
-Additional discussion points are in SI sections \ref{SI-sect:vital_rates}-\ref{SI-sect:threeway}.
+Additional discussion points are in SI sections \ref{SI-sect:vital_rates}-\ref{SI-sect:storage_importance}.
 
 %close
 It seems reasonable to suppose that ATAs will play an increasingly important role in systems of 

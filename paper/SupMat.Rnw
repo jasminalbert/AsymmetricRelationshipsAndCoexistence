@@ -1188,6 +1188,53 @@ though the complexity
 of such a decomposition may present challenges.
 For example, $\Delta^{(XY \shp Z)}$ can be decomposed as $\Delta^{[XY \shp Z]} + \Delta^{[X \nat Y \shp Z]}$.
 
+\section{   Diverse viewpoints on the potential general importance of storage effects and ATAs for coexistence}\label{sect:storage_importance}
+
+Some researchers have the opinion that storage effects are likely to be unimportant for 
+coexistence, generally, in field systems, though evidence is still insufficient to know for sure,
+and other researchers have the reverse opinion. Regardless of how that debate is eventually resolved, 
+ATAs can, \emph{a priori}, be important for coexistence even if storage effects are not. 
+
+Opinions differ on the likely general importance of storage effects for coexistence, and 
+evidence so far is insufficient to clearly determine their importance.  
+\cite{Zapeda_2019} states that ``evidence for the relative importance of the different mechanisms 
+that promote species coexistence is lacking,'' though they went on to address this lack by showing that 
+niche differentiation and relative nonlinearity were more important for species coexistence 
+in a grassland system than were storage effects.   
+\cite{ChuAdler2015} argued that ``Niche differences and average fitness differences jointly determine 
+coexistence. However, little empirical information about the magnitude of these two mechanisms is available.''
+They then went on to show strong niche differences and modest average fitness differences in five 
+North American grassland and shrubland plant communities. During this process they found little 
+contribution of fluctuation-dependent stabilization mechanisms such as storage effects to coexistence,
+but they also stated that ``The temptation is to conclude that fluctuation-dependent mechanisms 
+are weak in these ecosystems (e.g., Adler et al. 2010). However, we now believe that the models 
+we fit may not be appropriate for rigorously quantifying fluctuation-dependent mechanisms.'' 
+In a very recent and thorough paper, \cite{StumpVasseur2023} state that they know of only four studies that
+used empirically quantified models to measure the relative importance of storage effects versus other 
+coexistence mechanisms \citep{Descamps_2005,Letten2018,Hallett_2019,Zapeda_2019}. \cite{StumpVasseur2023} 
+state that ``In all of these studies, the stabilizing contribution of the storage effect was on par 
+with the contribution of relative nonlinearity.'' \cite{StumpVasseur2023} interpret this to be
+evidence that storage effects are typically unimportant, because relative nonlinearity has been 
+thought to be weak -- and they spend most of their paper giving 
+a theoretical/conceptual explanation for the unimportance of storage effects. 
+But they also admit the possibility that relative nonlinearity is 
+stronger than has previously been appreciated, and that both storage effects and relative nonlinearity
+provide appreciable contributions to coexistence. \cite{StumpVasseur2023} also state that all studies
+that have measured both storage effect and variation-independent mechanisms have found that the latter
+overshadow the former, though there have only been two such studies \citep{Hallett_2019,Zapeda_2019}.
+
+Regardless of the general importance of storage effects for coexistence,  
+ATAs can, \emph{a priori}, be important for coexistence even if storage effects are not.  
+Storage effects are ATA effects plus what we have called the effects of $EC$ correlation \emph{per se} 
+($\Delta_i^{[E \nat C]}$ in our notation). Either of these two summands can be negative or positive.
+So if the two effects are opposite in sign and similar in magnitude, storage effects will be unimportant for 
+coexistence, but ATA effects will be important. 
+This is precisely what we observed in some of our lottery model results (e.g., the beta-fecundities model 
+with left-tail associations).
+It seems to us that only further research can 
+clearly resolve the question of the general
+relative importance of storage effects, ATA effects, and other mechanisms of coexistence.
+
 \clearpage
 \newpage
 
