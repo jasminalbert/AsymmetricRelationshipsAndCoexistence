@@ -11,6 +11,7 @@ numRes_loc <- "../results_numeric/"
 noise_loc <- paste0(numRes_loc,"noise.RData") #from makenoise_LB.R
 popsim_loc <- paste0(numRes_loc,"betapopsim.RData") #from beta_popsims.R
 plankton_loc <- paste0(numRes_loc,"ceratium1x2.RData") #from plankton.R
+plankStats_loc <- paste0(numRes_loc, "plankStats.RDS")
 
 #locations where result figs are stored
 fig_loc <- "../results_figs/"
@@ -25,6 +26,32 @@ load(popsim_loc) #list called popsim with three kinds of popsim from beta noise
 load(plankton_loc) #list called ceratium1x2 from two locations
 
 ####
+#### Plankton Stats ####
+#plankton ATA stats
+partCor <- function(x,y, b, ties){
+	Tot <- length(x)
+	u <- rank(x, ties=ties)/(Tot+1); v <- rank(y, ties=ties)/(Tot+1)
+	left <- (u+v) > 0 & (u+v) < b*2
+	right <- (u+v) > b*2 & (u+v) < 2 
+	corl <- sum((u[left]-mean(u))*(v[left]-mean(v)))/((Tot-1)*sqrt(var(u)*var(v)))
+	corr <- sum((u[right]-mean(u))*(v[right]-mean(v)))/((Tot-1)*sqrt(var(u)*var(v)))	
+	return(list(left=corl, right=corr, diff=corl-corr, Sh=corl+corr, S=cor(u,v, method="spearman"), uv=cbind(u,v), bounds=cbind(left, right)))
+}
+cerfus23 <- ceratium1x2$loc23$cerfus
+cerfur23 <- ceratium1x2$loc23$cerfur
+cerfus40 <- ceratium1x2$loc40$cerfus
+cerfur40 <- ceratium1x2$loc40$cerfur
+#ceratium partial correlation for panel D
+cPCD <- partCor(cerfus23, cerfur23, 1/2, "average")
+#ceratium partial correlation for panel E
+cPCE <- partCor(cerfus40, cerfur40, 1/2, "average")
+plankStats <- list(d=cPCD, e=cPCE)
+plankStatsATA <- list(d=cPCD$diff, e=cPCE$diff)
+saveRDS(plankStatsATA ,plankStats_loc)
+#partCor(cerfus23, cerfur23, 1/3, "average")
+#partCor(cerfus40, cerfur40, 1/3, 'average')
+#cor(cerfus40, cerfur40, method="spearman")
+
 
 #### Make the figure ###
 
@@ -89,17 +116,24 @@ plot.new();plot.new()
 # plankton example - ranked density
 title(ylab="C. furca density", line=17)
 for (panel in 1:2){
-	cerfus <- ceratium1x2[[panel]]$cerfus
-	cerfur <- ceratium1x2[[panel]]$cerfur
-	Tot <- dim(ceratium1x2[[panel]])[1]
-	graphics::plot(rank(cerfus)/Tot, rank(cerfur)/Tot, bty="n",pch=20, col="darkgrey", cex=2, ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
+	#cerfus <- ceratium1x2[[panel]]$cerfus
+	#cerfur <- ceratium1x2[[panel]]$cerfur
+	#Tot <- dim(ceratium1x2[[panel]])[1]
+	pStats <- plankStats[[panel]]
+	plankton <- pStats$uv
+	plot(plankton, type="n", bty="n", ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
+	abline(v=0.5, col="lightgrey", lwd=0.5, xpd=F)
+	abline(h=0.5, col="lightgrey", lwd=0.5, xpd=F)
+	lines(0:1,0:1, lwd=0.5, col="darkgrey")
+	points(plankton[pStats$bounds[,"left"],], col="darkgrey")
+	points(plankton[pStats$bounds[,"right"],], col="darkgrey", pch=19)
+	#graphics::plot(rank(cerfus)/Tot, rank(cerfur)/Tot, bty="n",pch=20, col="darkgrey", cex=2, ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
 	graphics::mtext(paste0("(",letters[panel+3],")"), side=3, line=-1.5, at=0.05)
 }
 #mtext("C. furca density", side=4,outer=T, line=-14, cex=1)
 
 
 grDevices::dev.off()
-
 
 
 
