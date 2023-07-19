@@ -170,7 +170,7 @@ when they are strong than when weak, or vice versa.
 Recent work showed that such `asymmetric tail associations' (ATAs) are common
 between ecological variables, and are important for 
 extinction risk, ecosystem stability, and other phenomena. 
-We extend the MCT, decomposing storage effects to show the influence of ATAs.
+We extend MCT, decomposing storage effects to show the influence of ATAs.
 Analysis of a simple model
 and an empirical example using diatoms
 illustrate that ATA influences can be comparable in magnitude to other
@@ -184,16 +184,16 @@ ATA influences may be an important new mechanism of coexistence.
 %Intro the paper by intro'ing ATAs
 At the core of ecology is the study of relationships between organisms and their environments.
 Ecologists may ask, for instance, how local environment relates to 
-population growth rate. To study such relationships and to understand how two variables interact, ecologists 
+population growth rate. To study such relationships, ecologists 
 very commonly use metrics such as correlation and covariance. But these standard measures of the strength 
 and direction of association between variables often do not tell the whole story 
 \citep{Ghosh_2020_AER}.
 To illustrate, the three pairs of variables in Fig. \ref{fig:pedagog1}a-c all have the same 
 Pearson correlation despite striking differences in association structure: Fig. \ref{fig:pedagog1}b shows a 
-symmetric type of association, while Fig. \ref{fig:pedagog1}a,c exhibit what has previously been referred to as 
+symmetric type of association, while Fig. \ref{fig:pedagog1}a,c exhibit what has previously been called 
 ``asymmetric tail association'' [ATA; \citealp{Ghosh_2020_AER}]. 
 Metrics of association other than correlations and covariance are also often used (e.g., various forms of 
-regression), but correlations are extremely common, and other common methods also reveal only a small portion 
+regression), but correlations are common, and other common methods also reveal only a small portion 
 of the information content of the relationship between variables \citep{Nelsen2006}.
 ATAs and related ideas had previously been seldom considered in ecology, but recently several 
 insights have been gained by studying how features of associations beyond standard measures 
@@ -201,12 +201,12 @@ impact various ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovi
 Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argue that extinction risks can become elevated 
 when metapopulations are subject to ATAs, e.g., if environmental ``catastrophes'' are more spatially synchronous 
 across component populations
-than are years of good environment, limiting the potential for rescue effects; 
-and \cite{Ghosh_2021} show that ATAs can alter the stability of 
+than are years of good environment, limiting the potential for rescue effects. 
+And \cite{Ghosh_2021} show that ATAs can alter the stability of 
 ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
-plankton population density time series; and many other examples have also been previously explored 
+plankton population density time series; many other examples have also been previously explored 
 \citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
-competition and coexistence have not yet been investigated. Doing so is the overarching goal of this study. 
+competition and coexistence have not been investigated. Doing so is the goal of this study. 
 
 %Intro to competition, coexistence, MCT, etc.
 Competition, coexistence, and the maintenance of biodiversity are research topics at the core of modern ecology 
@@ -273,18 +273,18 @@ We previously demonstrated that ATAs are common in nature and can influence ecol
 indicate that ATAs may influence species coexistence. Thus, we here seek to quantify the consequences 
 of ATAs for competition, coexistence, and the maintenance of biodiversity, by means of the 
 following specific goals. 
-G1) We will augment MCT to show formally how ATAs play a role in coexistence. 
+G1) We augment MCT to show formally how ATAs play a role in coexistence. 
 MCT decomposes a measure of coexistence into components due to each of several mechanisms. 
 We address how ATAs contribute to these components. 
 We examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; 
 spatial variation can be considered in future work.
-G2) We will explore, using the simple lottery model, the relative magnitudes 
+G2) We explore, using the simple lottery model, the relative magnitudes 
 of the contributions to coexistence that come
 from ATAs compared to other, previously known mechanisms of coexistence; and to determine whether species may 
 sometimes coexist with ATAs but not without, or vice versa. This is to help 
 illuminate whether ATA contributions to coexistence and biodiversity maintenance
 are likely to be negligible or meaningfully large. 
-G3) We will provide an empirical example of species coexistence which highlights the role ATAs can play and the
+G3) We provide an empirical example of species coexistence which highlights the role ATAs can play and the
 potential importance of ATAs relative to other mechanisms of coexistence.
 The example is a diatom system in a chemostat. In the Discussion, we consider whether climate change may alter
 ATAs of environmental variables and thereby influence competition and coexistence.
@@ -448,13 +448,13 @@ the magnitude of the new ATA effect term, $\Delta_i^{[EC]}$, relative to the mag
 scenario.  One typically (but see below) must examine this quantity for each species, $i$,
 to obtain complete information about coexistence, since coexistence requires both species populations to 
 be able to grow when rare. We also defined scenarios of ``ATA rescue''
-and ``ATA exclusion''. \emph{ATA rescue} was considered to have occurred for a given scenario if coexistence
-was possible when ATAs were taken into account, i.e., GWR$>0$ for both species, but impossible otherwise, i.e.,
-the sum of the non-ATA terms in (\ref{eq:full_decomp}) was negative for at least one species. \emph{ATA exclusion} was 
-considered to have occurred if the species did not coexist when ATAs
-were taken into account, i.e., GWR$<0$ for at least one species, but would have coexisted were it not for ATAs, 
+and ``ATA exclusion''. \emph{ATA rescue} is considered to have occurred for a given scenario if coexistence
+is possible when ATAs are taken into account, i.e., GWR$>0$ for both species, but impossible otherwise, i.e.,
+the sum of the non-ATA terms in (\ref{eq:full_decomp}) is negative for at least one species. \emph{ATA exclusion} is 
+considered to have occurred if the species do not coexist when ATAs
+are taken into account, i.e., GWR$<0$ for at least one species, but would coexist were it not for ATAs, 
 i.e., the sum of the non-ATA terms in (\ref{eq:full_decomp})
-was positive for both species.
+is positive for both species.
 
 \section{Methods}\label{section:methods}
 
@@ -465,8 +465,8 @@ To achieve goal G2 of the Introduction, we applied the framework of Theory to th
 comparing the magnitude of the ATA effect on coexistance, $\Delta_i^{[EC]}$, to the magnitudes 
 of the other terms of 
 the decomposition (\ref{eq:full_decomp}) for various model parameterizations. We used two versions 
-of the lottery model which we now specify. The versions both used the same dynamical equations
-(Introduction) and assumed temporally independent and identically distributed (iid) fecundities, but the
+of the lottery model. The versions both used the same dynamical equations
+(Introduction) and assumed temporally iid fecundities, but the
 versions differed in the distributions of $(B_1,B_2)$ used. Both distributions were based on 
 transformations of the distributions $(b_1,b_2)$ pictured in Fig. \ref{fig:pedagog1}a-c;
 the details of how the left- (Fig. \ref{fig:pedagog1}a), right- (Fig. \ref{fig:pedagog1}c), 
@@ -799,7 +799,7 @@ of changes in the extremes of the univariate marginal distributions themselves \
 
 %Differences with the original, analytic version of the MCT
 Our approach to exploring the influence of ATAs on coexistence relies on the computational
-extension of the MCT of \cite{Ellner_2019},
+extension of MCT of \cite{Ellner_2019},
 and our results help demonstrate strengths of that approach.
 Storage effects as computed using the original, analytic approach to MCT 
 \citep{Chesson_1994,Chesson_2000} should equal our term $\Delta^{[E \nat C]}$, 
