@@ -78,6 +78,7 @@
 \newcommand{\olrs}{\overline{r}^{\shp}}
 \newcommand{\olrn}{\overline{r}^{\nat}}
 \newcommand{\bs}{\backslash}
+\newcommand{\olep}{\overline{\epsilon}}
 
 %header material for paper
 \title{Responses to referees for ``Asymmetric relationships and their effects on coexistence''}
@@ -418,7 +419,7 @@ paper broadly accessible.} \\
 \noindent C21) L64: Narwani 2013 is actually not a good reference because it did not include any temporal variation, a better one would be Letten et al. 2019 in PNAS. \\
 
 \noindent ***\emph{We replaced the reference.} \\
-%Jasmin can you please do this?
+%Jasmin can you please do this?   %%REPLACED  
 
 \noindent C22) L74: The optimum might actually be the same, but they need different responses. \\
 
@@ -453,6 +454,7 @@ benefit the field by challenging assumptions and biases such as categorically no
 in the Introduction.} \\
 %Jasmin to read the above and let Dan know if it's convincing or not, and how it can be improved.
 %It's done except for any improvements or revisions that Jasmin may suggest.
+%Jasmin: I really like this response and don't think its too harsh or needs to be toned down. 
 
 \noindent C24) L93: I suggest ``Note that $N = N_1(t) + N_2(T)$ is constant through time''. \\
 
@@ -482,7 +484,36 @@ with rigorous mathematics, we rephrased to say the iid assumption is
 
 \noindent ***\emph{No, the equation is correct as is. Please see equation 10 and related equations of 
 Ellner et al, 2019, Ecology Letters. Yes, the effects of $C$ and $E$ varying are included in 
-the $\#$ term because that terms involves both of them varying (though independently).} \\
+the $\#$ term because that terms involves both of them varying (though independently).
+
+Also, see S3 "Mechanisms other than storage effect" of our Supporting information. 
+%can delete if not needed
+Since,
+\begin{align}
+\olep_i^{EC} &= \E[r_i(E_i,C_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
+\end{align}
+and 
+\begin{equation}
+\olep_i^{(E\shp C)}=\E[r_i(E_i^\shp,C^\shp_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0
+&= \olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
+\end{equation}
+then,
+\begin{align}
+\olep_i^{(EC)} = \olep_i^{EC}-\olep_i^{(E\shp C)}
+&= (\olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0) - (\olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0)
+&= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0 - \olrs_{i \bs i} + \olep_i^E + \olep_i^C + \epsilon_i^0
+&= \olr_{i \bs i} - \olrs_{i \bs i}. 
+\end{align}
+So,
+\begin{align}
+\Delta_i^{(EC)}=\olep_i^{(EC)} - q_{ij}\olep_j^{(EC)}
+&= (\olr_{i \bs i} - \olrs_{i \bs i}) - q_{ij}(\olr_{j \bs i} - \olrs_{j \bs i})
+&= \olr_{i \bs i} - \olrs_{i \bs i} - q_{ij}\olr_{j \bs i} + q_{ij}\olrs_{j \bs i}
+&= \olr_{i \bs i} - q_{ij}\olr_{j \bs i} - \olrs_{i \bs i} + q_{ij}\olrs_{j \bs i}
+&= (\olr_{i \bs i} - q_{ij}\olr_{j \bs i}) - (\olrs_{i \bs i} - q_{ij}\olrs_{j \bs i}).
+\end{align}
+} \\
 %Jasmin to check and make sure Dan is right , here. Maybe there is a better place to refer them to to support our claim?
 
 \noindent C28) Eq. 6: Maybe highlight that you use different brackets ([EC] versus (EC)), or probably even better, make 5 and 6 one equation using curly under brackets. \\

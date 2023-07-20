@@ -219,7 +219,8 @@ through the niche partitioning effects of environmental variation.
 MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``storage effects'' \citep{Chesson_1994} which will be familiar to some readers (storage effects are also reviewed conceptually below and 
 defined formally in Theory). MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
-tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Narawani_2013}, and corals \citep{Alvarez-Noriega_2020}. 
+tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Letten2018}, and corals \citep{Alvarez-Noriega_2020}. 
+%Narawani_2013
 Although MCT is somewhat mathematically complex, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
 
 %Intro to storage effects and why they might be influenced by ATAs
