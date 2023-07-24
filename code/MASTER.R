@@ -53,5 +53,6 @@ source("./diatom/fig5NEW.R")
 #VKQ figure (SI), shows assumptions of how V, K and Q depend on temperature 
 source("./diatom/VKQplots.R")
 
-
+#Stats the referee asked us to add regarding Fig 1d, e
+source("Fig1de_stats.R")
 

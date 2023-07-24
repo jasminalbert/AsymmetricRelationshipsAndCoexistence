@@ -82,6 +82,7 @@
 \newcommand{\olep}{\overline{\epsilon}}
 \newcommand{\olE}{\overline{E}}
 \newcommand{\olC}{\overline{C}}
+\newcommand{\cor}{\text{cor}}
 
 %external documents
 \externaldocument[MT-]{Paper}
@@ -117,12 +118,21 @@
 #system(paste("biber", sub("\\.Rnw$", "", current_input())))
 
 #place R code here for loading in necessary variables from Results
-#ordinarily this would be a readRDS command, but I'm just defining a variable here for now
 #allregres<-matrix(rnorm(10),2,5)
+
 M <- readRDS(file="../results_numeric/M.RDS")
 rho <- readRDS(file="../results_numeric/rho.RDS")
 se3qij <- readRDS(file="../results_numeric/fig3qijmaxse.RDS")
 se4qij <- readRDS(file="../results_numeric/fig4qijmaxse.RDS")
+
+res_loc<-"../results_numeric/"
+panD_stat <- readRDS(file=paste0(res_loc, "DiffPartialSpearmanPanelD.Rds"))
+panE_stat <- readRDS(file=paste0(res_loc, "DiffPartialSpearmanPanelE.Rds"))
+panD_pval <- readRDS(file=paste0(res_loc, "DiffPartialSpearman_pval_PanelD.Rds"))
+panE_pval <- readRDS(file=paste0(res_loc, "DiffPartialSpearman_pval_PanelE.Rds"))
+panD_parm <- readRDS(file=paste0(res_loc, "DiffPartialSpearman_parm_PanelD.Rds"))
+panE_parm <- readRDS(file=paste0(res_loc, "DiffPartialSpearman_parm_PanelE.Rds"))
+nsims<-readRDS(file=paste0(res_loc,"DiffPartialSpearmannsims.Rds"))
 @
 
 \linenumbers
@@ -130,6 +140,53 @@ se4qij <- readRDS(file="../results_numeric/fig4qijmaxse.RDS")
 
 \tableofcontents
 \listoffigures
+
+\section{Statistical significance of the plankton example of ATAs of main text Fig. \ref{MT-fig:pedagog1}}\label{SIsect:planktonstats}
+
+For scatterplot data showing positive associations, such as those pictured in Fig. \ref{MT-fig:pedagog1}d-e, 
+\cite{Ghosh_2020_AER} defined an index which takes positive values when association
+is primarily in the left halves of the distributions, and negative values when association
+is primarily in the right halves of the distributions. See below for a restatement of the definition
+of the index of \cite{Ghosh_2020_AER}. Values of the index were \Sexpr{round(panD_stat,3)} for panel
+d, and \Sexpr{round(panE_stat,3)} for panel e. These values were both statistically different from 
+$0$ according to one-tailed tests based on an appropriate null hypothesis, $p=$\Sexpr{round(panD_pval,4)}
+and $p=$\Sexpr{round(panE_pval,4)}, respectively. See below for details of the test.
+
+Given scatterplot data, $(x_i,y_i)$ for $i=1,\ldots,N$, \cite{Ghosh_2020_AER} defined the 
+\emph{normalized rank} $u_i$ of $x_i$ as the rank of $x_i$ in the set 
+$\{x_1,\ldots,x_N\}$ divided by $N+1$, where the smallest value is taken to have rank $1$. 
+The normalized ranks $v_i$ were defined for $y_i$ in a likewise manner. 
+Then, the \emph{partial
+Spearman correlation} for the left halves of the distributions, $\cor_{\text{left}}$, was defined as 
+\begin{equation}
+\frac{\sum(u_i-\mean(u))(v_i-\mean{v})}{(N-1)\sqrt{\var(u)\var(v)}},
+\end{equation}
+where the sum is over all indices $i$ for which $u_i+v_i<1$ (though the means and variances
+in the above formula are computed over all the data). The indices satisfying $u_i+v_i<1$
+are those corresponding to points falling under the dashed diagonal lines in Fig. \ref{MT-fig:pedagog1}d-e.
+%***DAN: Note I mentioned a feature which Jasmin has not yet added, so make sure she 
+%adds it to those panels.
+The partial Spearman correlation for the right halves of the distributions,
+$\cor_{\text{right}}$, was defined using the same formula but where the sum is 
+now over all indices $i$ for which $u_i+v_i>1$. These are the points falling above the
+dashed diagonal lines in Fig. \ref{MT-fig:pedagog1}d-e. The left and right partial Spearman
+correlations typically add up to the Spearman correlation. The index 
+$\cor_{\text{left}}-\cor_{\text{right}}$ is the index used by \cite{Ghosh_2020_AER}
+mentioned in the previous paragraph. 
+
+To calculate whether the index of \cite{Ghosh_2020_AER} was significantly positive for 
+Fig. \ref{MT-fig:pedagog1}d,
+we compared the index value computed for the data of that panel to values computed for an appropriate 
+symmetric distribution. We used the function `iRho' in the R package `copula'
+to determine that the Spearman correlation of a bivariate normal distribution with
+standard normal marginals and covariance parameter \Sexpr{round(panD_parm,4)}
+is the same as the Spearman correlation of the data in Fig. \ref{MT-fig:pedagog1}d.
+We simulated \Sexpr{nsims} data sets from such a distribution, each of size the same as 
+that of the data set pictured in Fig. \ref{MT-fig:pedagog1}d. For each simulated data set,
+we computed the index $\cor_{\text{left}}-\cor_{\text{right}}$ of \cite{Ghosh_2020_AER}.
+The $p$-value quoted above is the fraction of values so obtained that were 
+greater than the value $\cor_{\text{left}}-\cor_{\text{right}}$=\Sexpr{round(panD_stat,3)}
+obtained for the real data. A similar approach was used for Fig. \ref{MT-fig:pedagog1}e.
 
 \section{Scaling factors}\label{SIsect:scaling_factors}
 

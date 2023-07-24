@@ -126,7 +126,7 @@
 
 #place R code here for loading in necessary variables from Results
 res_loc <- "../results_numeric/"
-plankStats <- readRDS(file=paste0(res_loc, "plankStats.RDS"))
+
 #fig2 <- readRDS(file=paste0(res_loc,"fig2data.RDS"))
 M <- readRDS(file=paste0(res_loc,"M.RDS"))
 se3 <- readRDS(file=paste0(res_loc,"fig3maxse.RDS"))
@@ -919,9 +919,12 @@ The variables $(B_1,B_2)$ described in the Introduction and Methods were obtaine
 pictured and then transforming the marginals as specified in Methods.
 (d,e) Two examples of ATAs found in nature. Axes are population densities of two plankton species, 
 \emph{Ceratium fusus} and \emph{Ceratium furca}, sampled in successive years in two of the 15 locations 
-in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs differed by location: 
-(d) has a partial Spearman correlation of  \Sexpr{round(plankStats$d$diff,3)}, indicating left-tail association
- and (e) has a partial Spearman correlation of  \Sexpr{round(plankStats$e$diff,3)}, indicating right-tail association \cite{Ghosh_2020_AER}.
+in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs were statistically
+significant and differed by location, with associations being primarily in the left tails in 
+panel d, and primarily in the right tails in panel e (SI section \ref{SI-SIsect:planktonstats}). 
+One can see these asymmetries by noting that the open points in panel d, which are in the left halves of the
+distributions, are more tightly clustered around the line $y=x$ than are the closed points,
+which are in the right halves of the distributions; and \emph{vice versa} for panel e.
 (f-h) Lottery model population simulations using $(B_1,B_2)$ obtained by transforming the 
 respectively corresponding variables (a-c; see Introduction).
 \label{fig:pedagog1}}
