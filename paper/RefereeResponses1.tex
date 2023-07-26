@@ -484,9 +484,9 @@ with rigorous mathematics, we rephrased to say the iid assumption is
 
 \noindent ***\emph{No, the equation is correct as is. Please see equation 10 and related equations of 
 Ellner et al, 2019, Ecology Letters. Yes, the effects of $C$ and $E$ varying are included in 
-the $\#$ term because that terms involves both of them varying (though independently).
+the $\#$ term because that terms involves both of them varying (though independently).}
 
-Also, see S3 "Mechanisms other than storage effect" of our Supporting information. 
+\emph{Also, see our SI section ``Mechanisms other than storage effects". 
 %can delete if not needed
 Since,
 \begin{align}
@@ -494,27 +494,27 @@ Since,
 &= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
 \end{align}
 and 
-\begin{equation}
-\olep_i^{(E\shp C)}=\E[r_i(E_i^\shp,C^\shp_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0
-&= \olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
-\end{equation}
-then,
 \begin{align}
-\olep_i^{(EC)} = \olep_i^{EC}-\olep_i^{(E\shp C)}
-&= (\olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0) - (\olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0)
-&= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0 - \olrs_{i \bs i} + \olep_i^E + \olep_i^C + \epsilon_i^0
+\olep_i^{(E\shp C)} &= \E[r_i(E_i^\shp,C^\shp_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
+\end{align}
+we have
+\begin{align}
+\olep_i^{(EC)} &= \olep_i^{EC}-\olep_i^{(E\shp C)} \\
+&= (\olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0) - (\olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0) \\
+&= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0 - \olrs_{i \bs i} + \olep_i^E + \olep_i^C + \epsilon_i^0 \\
 &= \olr_{i \bs i} - \olrs_{i \bs i}. 
 \end{align}
 So,
 \begin{align}
-\Delta_i^{(EC)}=\olep_i^{(EC)} - q_{ij}\olep_j^{(EC)}
-&= (\olr_{i \bs i} - \olrs_{i \bs i}) - q_{ij}(\olr_{j \bs i} - \olrs_{j \bs i})
-&= \olr_{i \bs i} - \olrs_{i \bs i} - q_{ij}\olr_{j \bs i} + q_{ij}\olrs_{j \bs i}
-&= \olr_{i \bs i} - q_{ij}\olr_{j \bs i} - \olrs_{i \bs i} + q_{ij}\olrs_{j \bs i}
-&= (\olr_{i \bs i} - q_{ij}\olr_{j \bs i}) - (\olrs_{i \bs i} - q_{ij}\olrs_{j \bs i}).
-\end{align}
-} \\
-%Jasmin to check and make sure Dan is right , here. Maybe there is a better place to refer them to to support our claim?
+\Delta_i^{(EC)} &= \olep_i^{(EC)} - q_{ij}\olep_j^{(EC)} \\
+&= (\olr_{i \bs i} - \olrs_{i \bs i}) - q_{ij}(\olr_{j \bs i} - \olrs_{j \bs i}) \\
+&= \olr_{i \bs i} - \olrs_{i \bs i} - q_{ij}\olr_{j \bs i} + q_{ij}\olrs_{j \bs i} \\
+&= \olr_{i \bs i} - q_{ij}\olr_{j \bs i} - \olrs_{i \bs i} + q_{ij}\olrs_{j \bs i} \\
+&= (\olr_{i \bs i} - q_{ij}\olr_{j \bs i}) - (\olrs_{i \bs i} - q_{ij}\olrs_{j \bs i}),.
+\end{align} 
+which is the equation the referee is asking about.} \\
+%DONE
 
 \noindent C28) Eq. 6: Maybe highlight that you use different brackets ([EC] versus (EC)), or probably even better, make 5 and 6 one equation using curly under brackets. \\
 
@@ -529,7 +529,7 @@ in response to that part of this comment.} \\
 
 \noindent ***\emph{Well, we can do this if the editor insists, but to us, avoiding the use of
 negative numbers is insufficient reason to have to undertake the substantial and time-consuming 
-work (and potential for error) 
+work, and potential for error, 
 of re-doing several figures, and revising many formulas (in the main text and SI) which currently use the other convention.
 After all, negative numbers are basic, and represent no impediment to the average ecologist understanding the 
 paper.} \\
