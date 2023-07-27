@@ -251,4 +251,179 @@ I think this related to the subadditivity criteria of storage effect, i.e., buff
 
 \emph{Pollinator competition}. When environmental conditions are bad, specialized pollinators are less abundant. Two plant species may have to depend more on the generalist species, thus niches become less different.  (Niche overlap in bad environment leading to left tailed ATA)
 
+\subsection{Dan thoughts 2023 07 26}
+
+% %Attempt 1 - not as good, Dan thinks. May be slightly misleading. See below for attempt 2.
+% %
+% %I have in mind that the following paragraph will go i the Discussion, with maybe a sentence
+% %or two in the Intro as a preview of coming attractions.
+% Just as for storage effects, temporal niche differentiation is necessary in order for ATA
+% effects to materialize. This makes intuitive sense because temporal niche differentiation is 
+% also a prerequistite of storage effects [\cite{Chesson_1994} and Box 2 of \cite{StumpVasseur2023}],
+% and ATA effects are a part of storage effects, but see
+% SI section X for a detailed explanation. 
+% %Topic sentence follows. Possibly we can state something like this in the Intro and say
+% %we explain it in the Discussion after formalizing the extent to which ATAs are important.
+% If temporal niche differentiation occurs, ATA effects essentially capture the influence of asymmetries 
+% in the extent to which storage effects can occur in environmentally good versus bad years,
+% as we here explain.
+% %
+% These asymmetries can make a big difference to total storage effects and coexistence,
+% as some of our analyses showed.
+% %
+% If temporal niche differentiation occurs
+% but is partial (as will be typical), the quantities $E$ and $C$ experienced by a currently scarce 
+% species (i.e., $E_i$ and $C_{i \bs i})$ will be positively but imperfectly correlated. 
+% %
+% Storage effects can occur if some buffering mechanism reduces losses in bad years so that
+% gains in good years can more than make up for them. 
+% %
+% Bad years happen whenever the negative effects of $C$ outweigh any 
+% positive effects of $E$; but this can occur
+% both when 1) $E$ is moderately favorable but $C$ is very strong, as well as when 2) $E$ is very unfavorable,
+% or moderately unfavorable and $C$ is not too weak.
+% Conversely, good years happen whenever positive effects of $E$ outweigh negative effects of $C$;
+% but this can occur when 1) $E$ is very favorable, or moderately favorable and $C$ is not too strong,
+% as well as when 2) $E$ is moderately unfavorable but $C$ is very weak. 
+% %
+% ATA effects essentially quantify the asymmetry of storage that occurs when 
+% $E$ and $C$ are both higher than average (the cases 1, above); versus storage that occurs 
+% when $E$ and $C$ are
+% both lower than average (the cases 2, above). 
+% %
+% The distinction is an important one because it corresponds to temporal niche differentiation
+% which occurs under two very different sets of environmental conditions, possibly via
+% different ecological or physiological mechanisms.
+% %
+% Details, applications, and examples of this intuition 
+% are in SI section X, and these ideas are also used there to provide 
+% intuitive explanations for the relative differences in the importance
+% of ATA effects between our log-normal and beta fecundities lottery models.
+% %DAN: You ought to also mention explaining differences with the diatom system,
+% %if you figure out an explanation.
+
+%Attempt 2 below - better than the above, but may need to be simplified a bit more,
+%if possible
+%
+Just as for storage effects, temporal niche differentiation is necessary for ATA
+effects. This makes intuitive sense because temporal niche differentiation is 
+also a prerequistite of storage effects [\cite{Chesson_1994} and Box 2 of \cite{StumpVasseur2023}],
+and ATA effects are a part of storage effects, but see
+SI section X for a detailed explanation. 
+%
+Assuming that temporal niche differentiation is present, how do ATA effects then happen?
+We here offer an intuitive explanation. 
+%
+If temporal niche differentiation occurs
+but is partial, the $E$ and $C$ experienced by a currently scarce 
+species (i.e., $E_i$ and $C_{i \bs i})$ will be positively but imperfectly associated, 
+and the association may be asymmetric. 
+%
+Storage effects can occur if some buffering mechanism reduces losses in bad years so that
+gains in good years can more than make up for them. 
+%
+Bad years happen when the negative effects of $C$ outweigh any 
+positive effects of $E$; but this can occur
+both 1) when $E$ is moderately favorable but $C$ is very strong, as well as 2) when $E$ is very unfavorable,
+or moderately unfavorable and $C$ is not too weak.
+Conversely, good years happen when positive effects of $E$ outweigh negative effects of $C$;
+but this can occur 1) when $E$ is very favorable, or moderately favorable and $C$ is not too strong,
+as well as 2) when $E$ is moderately unfavorable but $C$ is very weak. 
+%
+It turns out that the potential for storage to occur when 
+$E$ and $C$ are both higher than average (the cases 1, above); versus the potential  
+when $E$ and $C$ are
+both lower than average (the cases 2) are not necessarily equivalent.
+Depending on the growth rate function, $r(E,C)$, storage potential may differ
+across the spectrum from 1 to 2.
+%
+ATA effects are the extent to which asymmetries of association between $E$ and 
+$C$ are aligned with the potential for storage across the dichotomy 1 versus 2.
+A comparison is made to a benchmark of symmetric association between $E$ and $C$.
+%
+ATA effects therefore help quantify different degrees of temporal niche differentiation 
+occuring under different sets of environmental conditions (such as cases 1 and 2), possibly via
+different ecological or physiological mechanisms.
+%
+Details, applications, and examples of this intuition 
+are in SI section X, and these ideas are also used there to provide 
+intuitive explanations for the relative differences in the importance
+of ATA effects between our log-normal and beta fecundities lottery models.
+%DAN: You ought to also mention explaining differences with the diatom system,
+%if you figure out an explanation.
+
+\subsection{SI section X corresponding to the thoughts above}
+
+Just as for storage effects [see \cite{Chesson_1994} and Box 2 of \cite{StumpVasseur2023}], 
+temporal niche differentiation is necessary in order for ATA
+effects to materialize; we here explain why in detail. ``Lack of temporal niche differentiation'' can be interpreted
+to mean that species respond in identical ways to environmental fluctuations. 
+In a two-species model such as those we consider, this should mean a monotonically
+increasing relationship between $E_i$ and $C_{i \bs i}$. The former is the environment
+as perceived by species $i$. The latter is competition that a scarce invader $i$ experiences
+in a monoculture of $j$, and that competition comes only from $j$ (because $i$ itself
+is scarce), so should correspond to the environmental response of $j$. If 
+$E_i$ and $C_{i \bs i}$ are monotonically related, then $(E_i,C_{i \bs i})$
+and $(E_i^\nat,C_{i \bs i}^\nat)$ are distributed in the same way, so 
+$\E[r_i(E_i,c_{i \bs i})]-\E[r_i(E_i^\nat,c_{i \bs i}^\nat)]=0$.
+Therefore, 
+\begin{align}
+\Delta_i^{[EC]} &= (\olr_{i \bs i}-\olr_{j \bs i})-(\olr_{i \bs i}^\nat - \olr_{j \bs i}^\nat) \\
+&= \olr_{i \bs i}-(\olr_{i \bs i}^\nat - \olr_{j \bs i}^\nat) \\
+&= \E[r_i(E_i,C_{i \bs i})]-\E[r_i(E_i^\nat,C_{i \bs i}^\nat)]+\E[r_j(E_j^\nat,C_{j \bs i}^\nat)] \label{eq:expri}\\
+&= \E[r_j(E_j^\nat,C_{j \bs i}^\nat)].
+\end{align}
+But we already know $\E[r_j(E_j^\nat,C_{j \bs i}^\nat)]=0$
+because there is no niche differentiation between $j$ and itself, so 
+$E_i$ and $C_{j \bs i}$ should be monotonically related. So 
+$\E[r_j(E_j^\nat,C_{j \bs i}^\nat)] = \E[r_j(E_j,C_{j \bs i})]=0$, giving
+$\Delta_i^{[EC]}=0$. So temporal
+niche differentiation is necessary for ATA effects on coexistence to 
+materialize.
+
+If temporal niche differentiation occurs but is partial, 
+then $E_i$ and $C_{i \bs i}$ will be positively but imperfectly correlated with
+each other, corresponding to similar but non-identical responses of species to
+environmental fluctuation; but how do ATA effects then happen? We here extend the intuition
+introduced in the Discussion and add detail. 
+
+Storage can occur if population
+increases during good years outweigh decreases during bad years. For instance,
+if $r_i(E_i,C_{i \bs i})$ is very large when the balance of $E_i$ and 
+$C_{i \bs i}$ is favorable, but only moderately small when this balance is
+unfavorable, the expected value $\E[r_i(E_i,C_{i \bs i})]$ in (\ref{eq:expri})
+will be positive. But the potential for such storage of population growth
+may differ between when $E_i$ and $C_{i \bs i}$ are both high compared
+to when they are both low. 
+For instance, for the beta fecundities lottery model, $E_i/C_{i \bs i}$, a quantity
+which features prominently in $\E[r_i(E_i,C_{i \bs i})]=\log(1-\delta+E_i/C_{i \bs i})$,
+takes values bounded above by $\frac{2\eta_i \delta}{\eta_j}$ 
+and bounded below by $\frac{\eta_i \delta}{2 \eta_j}$ when $E_i$ and $C_{i \bs i}$
+are both in the upper halves of their assumed beta distribtions (recall that 
+these quantities were assumed to be distributed, respectively, as $\eta_1 \beta$
+and $\eta_2 \beta/\delta$ for $\beta$ a beta-distributed random variable with parameters 
+$0.5$ and $0.5$). These bounds are separated only by a factor of four. 
+On the other hand, when $E_i$ and $C_{i \bs i}$ are both in the lower halves 
+of their distributions, $E_i/C_{i \bs i}$ can take any positive value because
+then either $E_i$ or $C_{i \bs i}$ can take values arbitrarily close to $0$. 
+Because values of $E_i/C_{i \bs i}$ have the potential to be much larger when 
+$E_i$ and $C_{i \bs i}$ are both in the lower halves of their distributions
+than when these quantities are both in their upper halves, and because
+the growth rate, $\log(1-\delta+E_i/C_{i \bs i})$, buffers low values of 
+$E_i/C_{i \bs i}$ (the infemum of the growth rate is $\log(1-\delta)$, whereas the supremum is
+infinite), the storage effects contributed by the left tails of 
+$E_i$ and $C_{i \bs i}$ have the potential to be much greater than those contributed
+by the right tails. Essentially, values of $\log(1-\delta+E_i/C_{i \bs i})$
+occurring when $E_i$ and $C_{i \bs i}$ are both in the upper halves of their
+distributions can never exceed $\log(1-\delta+\frac{2\eta_i \delta}{\eta_j})$,
+whereas values ocurring when $E_i$ and $C_{i \bs i}$ are both in the lower
+halves of their distributions can be arbitrarily large (though with decreasing 
+probability for larger values).
+
+
+
+
+\bibliographystyle{ecology_letters2}
+\bibliography{refs}
+
 \end{document}
