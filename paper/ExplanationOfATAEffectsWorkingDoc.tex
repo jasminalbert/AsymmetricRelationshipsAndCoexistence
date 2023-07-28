@@ -390,10 +390,15 @@ examples for ATAs}\label{SIsect:intuition_examples}
 If temporal niche differentiation occurs but is partial, 
 then $E_i$ and $C_{i \bs i}$ will be positively but imperfectly correlated with
 each other, corresponding to similar but non-identical responses of species to
-environmental fluctuation (see SI section \ref{SIsect:temporal_niche_diff}); 
-but how do ATA effects then happen? We here extend the intuition
+environmental fluctuation (SI section \ref{SIsect:temporal_niche_diff}). 
+But how do ATA effects then happen? We here extend the intuition
 introduced in the Discussion and provide examples. 
 
+First, we illustrate using the beta fecundities lottery model that
+the potential for storage to occur when 
+$E$ and $C$ are both higher than average, versus the potential  
+when $E$ and $C$ are
+both lower than average, are not necessarily equivalent.
 Storage can occur if population
 increases during good years outweigh decreases during bad years. For instance,
 if $r_i(E_i,C_{i \bs i})$ is very large when the balance of $E_i$ and 
@@ -420,29 +425,27 @@ the growth rate, $\log(1-\delta+E_i/C_{i \bs i})$, buffers low values of
 $E_i/C_{i \bs i}$ (the infemum of the growth rate is $\log(1-\delta)$, whereas the supremum is
 infinite), the storage effects contributed by the left tails of 
 $E_i$ and $C_{i \bs i}$ have the potential to be much greater than those contributed
-by the right tails. Essentially, values of $\log(1-\delta+E_i/C_{i \bs i})$
-occurring when $E_i$ and $C_{i \bs i}$ are both in the upper halves of their
+by the right tails. Essentially, annual growth-when-rare rates for species $i$
+that occur when $E_i$ and $C_{i \bs i}$ are both in the upper halves of their
 distributions can never exceed $\log(1-\delta+\frac{2\eta_i \delta}{\eta_j})$,
-whereas values ocurring when $E_i$ and $C_{i \bs i}$ are both in the lower
-halves of their distributions can be arbitrarily large (though with decreasing 
-probability for larger values). Apparently, the years with the most potential to 
+whereas rates ocurring when $E_i$ and $C_{i \bs i}$ are both in the lower
+halves of their distributions can be arbitrarily large. 
+Apparently, the years with the most potential to 
 contribute to storage
 effects for the beta-fecundities lottery model are those for which the environment
 is actually poorer than average, because, for those years, competition can be very low,
-so that the ratio $E/C$ is large. Years for which the
+so that the ratio $E_i/C_{i \bs i}$ is large. Years for which the
 environment is exceptionally good actually cannot contribute much to storage effects for 
-this model, because for those years, $E/C$ cannot be large.
-It is the imbalance between $E$ and $C$ that allows for storage effects. 
-Counterintuitively, for this model, that imbalance is greatest when the environment is 
-poor. This result is counterintuitive because one may be used to thinking of storage effects
-occuring when reproductive pulses from environmentally good years sustain the population
-through environmentally poor years. But, in fact, good years for population growth may
-happen principally when the environment is poor, if those are also the times when 
-competition is very low, as for this model.
+this model, because for those years, $E_i/C_{i \bs i}$ cannot be very large.
+It is the \emph{imbalance} between $E$ and $C$ that allows for storage effects,
+not solely the quality of environment. 
+Counterintuitively, that imbalance can be greater for this model when the environment is 
+sub-optimal. 
 
 Fig. \ref{fig:beta_fecundidities_explanatory} provides quantitative backing to
-the ideas of the prior paragraph. The growth function $\ln(1-\delta+E/C)$ that pertains 
-to the lottery model
+the ideas of the prior paragraph, so we orient the reader 
+to the figure before using it below to further explain
+ATAs. The growth function $\ln(1-\delta+E/C)$ that pertains to the lottery model
 is plotted with colors and contours on Fig. \ref{fig:beta_fecundidities_explanatory}A-C.
 Samples were taken from the distribution $(E_i,C_{i \bs i})$ for the beta 
 fecundities lottery model for left- and right-tailed 
@@ -453,11 +456,11 @@ Samples were also taken from the distribution $(E_i^\nat,C_{i \bs i}^\nat)$
 distribution showed left- or right-tail association) and are plotted on 
 Fig. \ref{fig:beta_fecundidities_explanatory}B. 
 The dashed lines labelled $L_2$ on A-C separate the upper-right $50\%$
-of each distribution from the lower-left $50\%$. The dashed lines labeled
-$L_1$ separate the upper-left $50\%$ from the lower-right $50\%$.
+of each distribution from the lower-left $50\%$, and those portions are labelled. 
 The quantity $\E \left[ \ln \left( 1-\delta+\frac{E_i}{C_{i \bs i}} \right) \right]$ can be
-well approximated for left- and right-tail associations by averaging function 
-values, depicted with color and contours, over the points on panels A and C, respectively. The quantity
+well approximated, for left- and right-tail association cases, by averaging values of the
+function depicted with color and contours over the points on panels A and C, 
+respectively. The quantity
 $\E \left[ \ln \left( 1-\delta+\frac{E_i^{||}}{C_{i \bs i}^{||}} \right) \right]$
 can be well approximated by averaging function 
 values over the points on B. So ATA effects for the model with left-tail association
@@ -471,18 +474,62 @@ points in that region; likewise storage contributions of points in the
 ``right'' region can be estimated by averaging function values over 
 points in that region. 
 
-The details of the averaging process described above are pictured in 
-Fig. \ref{fig:beta_fecundidities_explanatory}, panels D-F;
-we now describe how. 
+The details of the averaging processes described above are pictured in 
+Fig. \ref{fig:beta_fecundidities_explanatory}, panels D-F. 
 Signed distances of points on Fig. \ref{fig:beta_fecundidities_explanatory} 
 A-C from the lines $L_1$ correspond to 
 the quantities $\log_{10}(E_1/C_{1 \bs 1})$ on A, C and to 
 $\log_{10}(E_1^\nat/C_{1 \bs 1}^\nat)$ on B. The distributions of these 
-quantities across points to the left of $L_2$ are pictured 
-in the lower horizontal-axis historgrams on panels D-F, respectively;
-and distributions for points to the right of $L_2$ are 
+quantities across points in the ``left'' region are pictured 
+in the lower horizontal-axis histograms on panels D-F, respectively;
+and distributions for points in the ``right'' region are 
 pictured in the upper horizontal-axis histograms. 
-For the left-tailed case (A, D), distributions to the  
+``Right'' histograms on the horizontal axis of D,F are always highly 
+concentrated, corresponding to the fact that, for the beta fecundities
+lottery model, $E_i/C_{i \bs i}$ cannot vary much when $E_i$ and 
+$C_{i \bs i}$ are in the upper portions of their distributions. 
+Likewise, the ``right'' histogram on E is highly concentrated because
+$E_i^\nat/C_{i \bs i}^\nat$ cannot vary much when $E_i^\nat$ and 
+$C_{i \bs i}^\nat$ are in the upper portions of their distributions.
+In contrast, ``left'' histograms on the horizontal axis of D-F
+can be highly variable, though only when $E_i$ and $C_{i \bs i}$
+(or $E_i^\nat$ and $C_{i \bs i}^\nat$) are not tightly 
+correlated in the left portions of their distributions.
+The function pictured with a black line on panels D-F is simply the function
+$z \rightarrow \ln(1-\delta+10^z)$ that takes $z=\log_{10}(E_1,C_{1 \bs 1})$
+to $\ln(1-\delta+E_1/C_{1 \bs 1})$, representing growth rate for the model.
+Storage effects are manifest by this function, because it is flat on the left and 
+upward sloping on the right, so highly variable horizontal-axis inputs to the function
+can translate into higher average vertical-axis values than can concentrated
+horizontal-axis inputs of the same mean; e.g., the histograms labeled ``left'' on
+E,F. Red dots indicate the mean values of
+each histogram. The average vertical-axis values of the two red dots on each panel
+equal the GWR of species $i$ for the model (value displayed numerically). 
+
+We now use Fig. \ref{fig:beta_fecundidities_explanatory} to explain ATAs. Coexistence is possible for 
+right-tail association (panel F, positive GWR) but impossible for left-tail association (D,
+negative GWR). Coexistence is possible for the right-tail case essentially
+because the points on the ``left'' region in C produce highly variable
+annual growth rates; the same effect does not occur for the left-tail case because 
+points in the ``left'' region on panel A are concentrated on line $L_1$ because of the
+strong left-tail association of $E_i$ and $C_{i \bs i}$ on that panel. 
+Association, or lack thereof, in right tails makes essentially no difference 
+to growth rates because $E_i/C_{i \bs i}$ cannot vary much. Overall, ATA effects 
+are positive for the right-tail case because strong association between 
+$E_i$ and $C_{i \bs i}$ is concentrated in the right tails, where there 
+is little potential for storage effects; and so disassociation between
+$E_i$ and $C_{i \bs i}$ in the left tails, where there is much potential for
+storage effects, can be stronger. For the actual quantification of ATA effects,
+a comparison is made to the case of symmetric association 
+(panels B, E), as a benchmark. What is assessed by our quantification of ATA
+effects is essentially the degree to which patterns of disassociations between 
+$E$ and $C$, which can cause storage effects, align with the portions of 
+the $E,C$ distribution for which the potential for storage effects is highest,
+with larger ATA effects indicating better alignment, such as in panels C, F
+of Fig. \ref{fig:beta_fecundidities_explanatory}.
+
+
+
 
 
 
@@ -494,17 +541,13 @@ The figure gives a pictorial representation of the calculation of
 $\E \left[ \ln \left( 1-\delta+\frac{E_i}{C_{i \bs i}} \right) \right]$ (A, C, D, F) and 
 $\E \left[ \ln \left( 1-\delta+\frac{E_i^{||}}{C_{i \bs i}^{||}} \right) \right]$ (B, E)
 for the model, considering both left- (A, D) and right-tail (C, F) associations
-between $E_i$ and $C_{i \bs i}$.
-The colors and contours on A-C $\ln(1-\delta+E/C)$, whereas the points show a sample
-from the distribution $(E_i,C_{i \bs i})$ (A, C) or $(E_i^{||},C_{i \bs i}^{||})$ (B).
-The quantity $\E \left[ \ln \left( 1-\delta+\frac{E_i}{C_{i \bs i}} \right) \right]$ can be
-well approximated for left- and right-tail associations by averaging function 
-values over the points on panels A and C, respectively. The quantity
-$\E \left[ \ln \left( 1-\delta+\frac{E_i^{||}}{C_{i \bs i}^{||}} \right) \right]$
-can be well approximated by averaging function 
-values over the points on B. Values of $\log_{10}(E/C)$ for the points on A-C correspond 
-to signed distances of the points from the upward sloping dashed lines. 
-We used parameters $\eta_1 = 1$, $\eta_2 = 1.2$, and and $\delta=0.6$. }\label{fig:beta_fecundidities_explanatory}
+between $E_i$ and $C_{i \bs i}$. ATA effects are the difference of these two values.
+The figure also illustrates how ATAs reflect the degree of alignment between where 
+in the $EC$ distributions associations are allocated and which parts of that distribution
+have high potential for storage effects. See SI section X2
+%***DAN: fix this link when you put the text into the paper
+for details. We used model parameters $\eta_1 = 1$, $\eta_2 = 1.2$, and $\delta=0.6$
+for this example.}\label{fig:beta_fecundidities_explanatory}
 \end{figure}
 
 
