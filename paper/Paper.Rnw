@@ -779,8 +779,7 @@ We return to the task, begun in the Introduction, of building intuition for how
 ATA effects work. 
 Just as for storage effects [\cite{Chesson_1994}, Box 2 of \cite{StumpVasseur2023}], 
 temporal niche differentiation is necessary for ATA
-effects (SI section X1). 
-%DAN: fix reference
+effects (SI section \ref{SI-SIsect:temporal_niche_diff}). 
 If temporal niche differentiation occurs
 but is partial, as will be typical, $E_i$ and $C_{i \bs i}$ for a 
 species $i$ will be positively but imperfectly associated, 
@@ -806,10 +805,9 @@ ATA effects help quantify different degrees of temporal niche differentiation
 occurring under different sets of environmental conditions, possibly via
 different mechanisms.
 Details and examples of this intuition 
-are in SI section X2, 
-%DAN: Fix reference
-where comparisons are also made between our beta and log-normal fecundities 
-lottery models. 
+are in SI section \ref{SI-SIsect:intuition_examples} and SI 
+Figs \ref{SI-fig:beta_fecundidities_explanatory}-\ref{SI-fig:lognormal_fecundidities_explanatory}, 
+where comparisons are also made between our two lottery models. 
 
 %ATA specialists
 Contributions of ATAs to species coexistence open the possibility that
