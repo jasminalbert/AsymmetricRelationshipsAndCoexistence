@@ -268,18 +268,17 @@ for details). Thus, the model setup was identical in the three simulations excep
 ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}f-h).
 Notation for the whole paper is summarized in Table \ref{tab:notation}.
 Typesetting procedures used by publishers of ecological journals render mathematics sub-optimally,
-so we have appended a version of this main text rendered using latex to the end of the 
-Supporting Information (SI); we recommend that readers interested in the mathematical content
-of the study read that version.
+so we have appended a latex version of this main text to the end of the 
+Supporting Information (SI). Readers interested in the mathematical content
+of the study should read that version.
 %***DAN: Don't forget to do this
 
 %Some intuition
-We next give some initial intuition about how ATA effects on coexistence work, with a fuller understanding
-necessarily coming only later in the paper.
-It is known that storage effects can occur if some buffering mechanism reduces population 
+We next give some initial intuition about how ATA effects on coexistence work, 
+providing additional intuition in the Discussion.
+It is known that storage effects can occur if a buffering mechanism reduces population 
 losses in bad years so that
 gains in good years can more than make up for them. 
-%
 Bad years happen when the negative effects of $C$ outweigh any 
 positive effects of $E$; but this can occur
 both 1) when $E$ is moderately favorable but $C$ is very strong, as well as 2) when $E$ is 
@@ -287,18 +286,15 @@ unfavorable and $C$ is not too weak.
 Conversely, good years happen when positive effects of $E$ outweigh negative effects of $C$;
 but this can occur 1) when $E$ is favorable and $C$ is not too strong,
 as well as 2) when $E$ is moderately unfavorable but $C$ is very weak. 
-%
 It turns out that the potential for storage events to occur when 
 $E$ and $C$ are both higher than average (the cases 1, above); versus the potential  
 when $E$ and $C$ are
-both lower than average (the cases 2) are not necessarily equal.
-Depending on the nature of population growth, storage potential may differ
+both lower than average (the cases 2) are not necessarily equal -- storage potential may differ
 across the spectrum from 1 to 2.
-%
-ATA effects are essentially the extent to which asymmetries of association between $E$ and 
+ATA effects quantify the extent to which asymmetries of association between $E$ and 
 $C$ are aligned with differences in the potential for storage across the spectrum from 1 to 2.
-If $E$ and $C$ are strongly associated in the parts of their distribution where
-storage potential is high, ATA effects will be low, and vice versa.
+If $E$ and $C$ are largely unassociated in the parts of their distribution where
+storage potential is high, ATA effects will be high, and vice versa.
 
 %Goal para
 We previously demonstrated that ATAs are common in nature and can influence ecological phenomena
@@ -321,8 +317,6 @@ G3) We provide an empirical example of species coexistence which highlights the 
 potential importance of ATAs relative to other mechanisms of coexistence.
 The example is a diatom system in a chemostat. In the Discussion, we consider whether climate change may alter
 ATAs of environmental variables and thereby influence competition and coexistence.
-And we return in the Discussion to the task
-of building intuition for how ATAs work. 
 Overall, our study presents a new mechanism of species coexistence
 and a means of understanding its theoretical and empirical importance.
 
@@ -779,6 +773,43 @@ in some contexts (the log-normal fecundities lottery model), but were very impor
 based example (the diatom system). 
 Future work should seek to understand precisely when ATAs are or are not important
 for coexistence. Our work demonstrates the potential for ATAs to be an important mechanism of coexistence, generally.
+
+%Para continuing to try to build intuition about how ATAs work
+We return to the task, begun in the Introduction, of building intuition for how
+ATA effects work. 
+Just as for storage effects [\cite{Chesson_1994}, Box 2 of \cite{StumpVasseur2023}], 
+temporal niche differentiation is necessary for ATA
+effects (SI section X1). 
+%DAN: fix reference
+If temporal niche differentiation occurs
+but is partial, as will be typical, $E_i$ and $C_{i \bs i}$ for a 
+species $i$ will be positively but imperfectly associated, 
+and the association may be asymmetric. 
+Storage events occur for species $i$ when the positive effects of $E_i$ overwhelm the negative 
+effects of $C_{i \bs i}$, producing large values of $r_i(E_i,C_{i \bs i})$
+which are not completely offset by declines at other times. 
+For instance, for the lottery model,
+$r_i(E_i,C_{i \bs i})=\log(1-\delta+E_i/C_{i \bs i})$ can get large whenever
+$C_{i \bs i}$ is a small fraction of $E_i$, but can never get smaller
+than $\log(1-\delta)$. 
+The potential for storage events can differ when $E_i$ and $C_{i \bs i}$ are both
+above their median values compared to when they are both below median. For instance,
+the ratio $E_i/C_{i \bs i}$, and therefore the growth rate 
+$\log(1-\delta+E_i/C_{i \bs i})$, can both get very big, corresponding to
+rapid growth, if $C_{i \bs i}$ is close to $0$, even if $E_i$ is fairly small.
+In contrast, if $E_i$ and $C_{i \bs i}$ are both in the right portions of their distributions, 
+so that $C_{i \bs i}$ is bounded away from $0$, there may be much sharper limits on the 
+ratio $E_i/C_{i \bs i}$ and the corresponding growth rate.
+ATA effects quantify the extent to which asymmetries of association between $E$ and 
+$C$ are aligned with varying potential for storage across the $E,C$ distribution. 
+ATA effects help quantify different degrees of temporal niche differentiation 
+occurring under different sets of environmental conditions, possibly via
+different mechanisms.
+Details and examples of this intuition 
+are in SI section X2, 
+%DAN: Fix reference
+where comparisons are also made between our beta and log-normal fecundities 
+lottery models. 
 
 %ATA specialists
 Contributions of ATAs to species coexistence open the possibility that
