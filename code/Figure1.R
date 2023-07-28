@@ -115,8 +115,8 @@ for (panel in 1:2){
 	pStats <- plankStats[[panel]]
 	plankton <- pStats$uv
 	plot(plankton, type="n", bty="n", ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
-	abline(v=0.5, col="lightgrey", lwd=0.5, xpd=F)
-	abline(h=0.5, col="lightgrey", lwd=0.5, xpd=F)
+	#abline(v=0.5, col="lightgrey", lwd=0.5, xpd=F)
+	#abline(h=0.5, col="lightgrey", lwd=0.5, xpd=F)
 	lines(0:1,0:1, lwd=0.5, col="darkgrey")
 	points(plankton[pStats$bounds[,"left"],], col="darkgrey")
 	points(plankton[pStats$bounds[,"right"],], col="darkgrey", pch=19)
