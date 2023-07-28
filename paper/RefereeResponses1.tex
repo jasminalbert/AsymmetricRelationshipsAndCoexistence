@@ -484,9 +484,9 @@ with rigorous mathematics, we rephrased to say the iid assumption is
 
 \noindent ***\emph{No, the equation is correct as is. Please see equation 10 and related equations of 
 Ellner et al, 2019, Ecology Letters. Yes, the effects of $C$ and $E$ varying are included in 
-the $\#$ term because that terms involves both of them varying (though independently).
+the $\#$ term because that terms involves both of them varying (though independently).}
 
-Also, see S3 "Mechanisms other than storage effect" of our Supporting information. 
+\emph{Also, see our SI section ``Mechanisms other than storage effects". 
 %can delete if not needed
 Since,
 \begin{align}
@@ -494,27 +494,27 @@ Since,
 &= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
 \end{align}
 and 
-\begin{equation}
-\olep_i^{(E\shp C)}=\E[r_i(E_i^\shp,C^\shp_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0
-&= \olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
-\end{equation}
-then,
 \begin{align}
-\olep_i^{(EC)} = \olep_i^{EC}-\olep_i^{(E\shp C)}
-&= (\olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0) - (\olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0)
-&= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0 - \olrs_{i \bs i} + \olep_i^E + \olep_i^C + \epsilon_i^0
+\olep_i^{(E\shp C)} &= \E[r_i(E_i^\shp,C^\shp_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
+&= \olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0,
+\end{align}
+we have
+\begin{align}
+\olep_i^{(EC)} &= \olep_i^{EC}-\olep_i^{(E\shp C)} \\
+&= (\olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0) - (\olrs_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0) \\
+&= \olr_{i \bs i} - \olep_i^E - \olep_i^C - \epsilon_i^0 - \olrs_{i \bs i} + \olep_i^E + \olep_i^C + \epsilon_i^0 \\
 &= \olr_{i \bs i} - \olrs_{i \bs i}. 
 \end{align}
 So,
 \begin{align}
-\Delta_i^{(EC)}=\olep_i^{(EC)} - q_{ij}\olep_j^{(EC)}
-&= (\olr_{i \bs i} - \olrs_{i \bs i}) - q_{ij}(\olr_{j \bs i} - \olrs_{j \bs i})
-&= \olr_{i \bs i} - \olrs_{i \bs i} - q_{ij}\olr_{j \bs i} + q_{ij}\olrs_{j \bs i}
-&= \olr_{i \bs i} - q_{ij}\olr_{j \bs i} - \olrs_{i \bs i} + q_{ij}\olrs_{j \bs i}
-&= (\olr_{i \bs i} - q_{ij}\olr_{j \bs i}) - (\olrs_{i \bs i} - q_{ij}\olrs_{j \bs i}).
-\end{align}
-} \\
-%Jasmin to check and make sure Dan is right , here. Maybe there is a better place to refer them to to support our claim?
+\Delta_i^{(EC)} &= \olep_i^{(EC)} - q_{ij}\olep_j^{(EC)} \\
+&= (\olr_{i \bs i} - \olrs_{i \bs i}) - q_{ij}(\olr_{j \bs i} - \olrs_{j \bs i}) \\
+&= \olr_{i \bs i} - \olrs_{i \bs i} - q_{ij}\olr_{j \bs i} + q_{ij}\olrs_{j \bs i} \\
+&= \olr_{i \bs i} - q_{ij}\olr_{j \bs i} - \olrs_{i \bs i} + q_{ij}\olrs_{j \bs i} \\
+&= (\olr_{i \bs i} - q_{ij}\olr_{j \bs i}) - (\olrs_{i \bs i} - q_{ij}\olrs_{j \bs i}),.
+\end{align} 
+which is the equation the referee is asking about.} \\
+%DONE
 
 \noindent C28) Eq. 6: Maybe highlight that you use different brackets ([EC] versus (EC)), or probably even better, make 5 and 6 one equation using curly under brackets. \\
 
@@ -529,7 +529,7 @@ in response to that part of this comment.} \\
 
 \noindent ***\emph{Well, we can do this if the editor insists, but to us, avoiding the use of
 negative numbers is insufficient reason to have to undertake the substantial and time-consuming 
-work (and potential for error) 
+work, and potential for error, 
 of re-doing several figures, and revising many formulas (in the main text and SI) which currently use the other convention.
 After all, negative numbers are basic, and represent no impediment to the average ecologist understanding the 
 paper.} \\
@@ -550,19 +550,17 @@ matters for continuing to explore when ATAs are important and when not is probab
 of the noise impacting the system. Finally, whether a value of $\sigma$ is ``unrealistic'' is 
 a bit of judgement call rather than a formal cutoff, to we hesitate to censor results 
 based on such a thing.}
-%DONE
 
 \emph{Regarding the second part of the referee comment, pertaining to Figure 1d and e, it is perplexing to us that 
 this is mentioned here,
 as the paragraph at L316 is not directly related to Fig. 1d-e. That figure
-shows motivational empirical examples, distinct from the lottery model work discussed around L316. Nevertheless, we take
-seriously the referee's comment that they are are not convinced there are ATAs in Fig. 1d-e, and ...
-%Jasmin, let's discuss what to do here. We could work back to what specific result this is in 
-%the original paper and extract from p-value info, or we could come up with a better example,
-%or something else, not sure, let's discuss. Maybe also augment the figure to make it clearer?
-%How about if Jasmin: 1) adds statistical support to caption; 2) adds to the figure some means of
-%hopefully drawing people's attention to the right features of this thing.
-} \\
+shows motivational empirical examples, distinct from the lottery model work discussed around L316. Nevertheless, we took
+seriously the referee's comment that they were apparently not convinced there are ATAs in Fig. 1d-e.
+In fact, one can significance test these results and they are solidly significant - we added
+those results, along with the methods used to get them, to a new SI section which is now cited from the
+figure caption. We also added some text to the figure caption which we hope will focus the 
+readers attention on the aspects of these panels which clearly show asymmetries of tail association. } \\
+%DONE
 
 \noindent C31) Figure 2: I recommend to add a line at $y = 0$. Also the different subgraphs have different $y$-scales which I’m not sure is beneficial, but unsure myself. \\
 
