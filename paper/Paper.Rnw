@@ -258,7 +258,6 @@ for $i=1,2$. Here, $\delta$ is an adult mortality rate, and $B_i(t)$ is the fecu
 The model postulates that adults die at rate $\delta$ at each time step, and are replaced by juveniles 
 in proportion to the reproductive outputs of the two species that year. Note that $N = N_1(t)+N_2(t)$ 
 is constant through time. 
-Notation for the whole paper is summarized in Table \ref{tab:notation}.
 We assume for simplicity that the random variables $(B_1(t),B_2(t))$ are independent and identically 
 distributed (iid) through time. In three distinct simulations (Fig. \ref{fig:pedagog1}f-h), 
 $B_1$ and $B_2$ were, respectively, 
@@ -267,22 +266,29 @@ tail associated, while the same marginal distributions for these fecundities wer
 simulations (see Methods
 for details). Thus, the model setup was identical in the three simulations except for different ATAs. 
 ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}f-h).
+Notation for the whole paper is summarized in Table \ref{tab:notation}.
+Typesetting procedures used by publishers of ecological journals render mathematics sub-optimally,
+so we have appended a version of this main text rendered using latex to the end of the 
+Supporting Information (SI); we recommend that readers interested in the mathematical content
+of the study read that version.
+%***DAN: Don't forget to do this
 
 %Some intuition
-We next give the beginnings of some intuition about how ATA effects work, with a fuller understanding
+We next give some initial intuition about how ATA effects on coexistence work, with a fuller understanding
 necessarily coming only later in the paper.
-It is known that storage effects can occur if some buffering mechanism reduces losses in bad years so that
+It is known that storage effects can occur if some buffering mechanism reduces population 
+losses in bad years so that
 gains in good years can more than make up for them. 
 %
 Bad years happen when the negative effects of $C$ outweigh any 
 positive effects of $E$; but this can occur
-both 1) when $E$ is moderately favorable but $C$ is very strong, as well as 2) when $E$ is very unfavorable,
-or moderately unfavorable and $C$ is not too weak.
+both 1) when $E$ is moderately favorable but $C$ is very strong, as well as 2) when $E$ is 
+unfavorable and $C$ is not too weak.
 Conversely, good years happen when positive effects of $E$ outweigh negative effects of $C$;
-but this can occur 1) when $E$ is very favorable, or moderately favorable and $C$ is not too strong,
+but this can occur 1) when $E$ is favorable and $C$ is not too strong,
 as well as 2) when $E$ is moderately unfavorable but $C$ is very weak. 
 %
-It turns out that the potential for storage to occur when 
+It turns out that the potential for storage events to occur when 
 $E$ and $C$ are both higher than average (the cases 1, above); versus the potential  
 when $E$ and $C$ are
 both lower than average (the cases 2) are not necessarily equal.
@@ -290,12 +296,9 @@ Depending on the nature of population growth, storage potential may differ
 across the spectrum from 1 to 2.
 %
 ATA effects are essentially the extent to which asymmetries of association between $E$ and 
-$C$ are aligned with the differences in the potential for storage across the dichotomy 1 versus 2.
+$C$ are aligned with differences in the potential for storage across the spectrum from 1 to 2.
 If $E$ and $C$ are strongly associated in the parts of their distribution where
-storage potential is high, ATA effects will be relatively low, and vice versa.
-We spend most of the paper formalizing ATA effects in MCT and demonstrating to what 
-extent ATA effects can be strong versus weak, but we return in the Discussion to the task
-of building an intuition for how ATAs work. 
+storage potential is high, ATA effects will be low, and vice versa.
 
 %Goal para
 We previously demonstrated that ATAs are common in nature and can influence ecological phenomena
@@ -306,11 +309,11 @@ following specific goals.
 G1) We augment MCT to show formally how ATAs play a role in coexistence. 
 MCT decomposes a measure of coexistence into components due to each of several mechanisms. 
 We address how ATAs contribute to these components. 
-We examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; 
-spatial variation can be considered in future work.
+%We examine mechanisms of coexistence that apply in models exhibiting solely temporal variation; 
+%spatial variation can be considered in future work.
 G2) We explore, using the simple lottery model, the relative magnitudes 
 of the contributions to coexistence that come
-from ATAs compared to other, previously known mechanisms of coexistence; and to determine whether species may 
+from ATAs compared to other, previously known mechanisms of coexistence; and we determine whether species may 
 sometimes coexist with ATAs but not without, or vice versa. This is to help 
 illuminate whether ATA contributions to coexistence and biodiversity maintenance
 are likely to be negligible or meaningfully large. 
@@ -318,6 +321,8 @@ G3) We provide an empirical example of species coexistence which highlights the 
 potential importance of ATAs relative to other mechanisms of coexistence.
 The example is a diatom system in a chemostat. In the Discussion, we consider whether climate change may alter
 ATAs of environmental variables and thereby influence competition and coexistence.
+And we return in the Discussion to the task
+of building intuition for how ATAs work. 
 Overall, our study presents a new mechanism of species coexistence
 and a means of understanding its theoretical and empirical importance.
 
