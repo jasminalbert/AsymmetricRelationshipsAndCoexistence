@@ -56,3 +56,6 @@ source("./diatom/VKQplots.R")
 #Stats the referee asked us to add regarding Fig 1d, e
 source("Fig1de_stats.R")
 
+#Figurs supporting new explanatory material referee asked for
+source("ATAEffectIntuitionDemo_betaFecund.R")
+source("ATAEffectIntuitionDemo_lognormalFecund.R")
