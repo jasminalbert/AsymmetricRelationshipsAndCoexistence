@@ -506,27 +506,26 @@ E,F. Red dots indicate the mean values of
 each histogram. The average vertical-axis values of the two red dots on each panel
 equal the GWR of species $i$ for the model (value displayed numerically). 
 
-We now use Fig. \ref{fig:beta_fecundidities_explanatory} to explain ATAs. Coexistence is possible for 
-right-tail association (panel F, positive GWR) but impossible for left-tail association (D,
+We now relate Fig. \ref{fig:beta_fecundidities_explanatory} back to ATAs. Coexistence is possible for 
+right-tail association (panel F, positive GWR) but impossible for left-tail association (panel D,
 negative GWR). Coexistence is possible for the right-tail case essentially
-because the points on the ``left'' region in C produce highly variable
-annual growth rates; the same effect does not occur for the left-tail case because 
+because the points in the ``left'' region in C produce highly variable
+annual growth rates, which lead to storage effects; the same effect does 
+not occur for the left-tail case because 
 points in the ``left'' region on panel A are concentrated on line $L_1$ because of the
 strong left-tail association of $E_i$ and $C_{i \bs i}$ on that panel. 
-Association, or lack thereof, in right tails makes essentially no difference 
-to growth rates because $E_i/C_{i \bs i}$ cannot vary much. Overall, ATA effects 
+Association, or lack thereof, in right tails makes little difference 
+to mean growth rates because $E_i/C_{i \bs i}$ cannot vary much. Overall, ATA effects 
 are positive for the right-tail case because strong association between 
 $E_i$ and $C_{i \bs i}$ is concentrated in the right tails, where there 
-is little potential for storage effects; and so disassociation between
-$E_i$ and $C_{i \bs i}$ in the left tails, where there is much potential for
-storage effects, can be stronger. For the actual quantification of ATA effects,
+is little potential for storage effects anyway; and so disassociation between
+$E_i$ and $C_{i \bs i}$ occurs in the left tails, where there is much potential for
+storage effects. For the actual quantification of ATA effects,
 a comparison is made to the case of symmetric association 
-(panels B, E), as a benchmark. What is assessed by our quantification of ATA
-effects is essentially the degree to which patterns of disassociations between 
-$E$ and $C$, which can cause storage effects, align with the portions of 
-the $E,C$ distribution for which the potential for storage effects is highest,
-with larger ATA effects indicating better alignment, such as in panels C, F
-of Fig. \ref{fig:beta_fecundidities_explanatory}.
+(panels B, E), as a benchmark. What is assessed by ATA
+effects is the degree to which patterns of disassociation between 
+$E$ and $C$ align with the portions of $E,C$ distribution for which the potential
+for storage effects is high. Larger ATA effects indicate better alignment.
 
 
 
@@ -550,6 +549,16 @@ for details. We used model parameters $\eta_1 = 1$, $\eta_2 = 1.2$, and $\delta=
 for this example.}\label{fig:beta_fecundidities_explanatory}
 \end{figure}
 
+\begin{figure}
+\includegraphics[width=\textwidth]{../results_figs/PostHocExplanatoryFig_lognormalFecund.jpg}
+\caption{A detailed look at ATA effects for the log-normal fecundities lottery model.
+Similar to Fig. \ref{fig:beta_fecundidities_explanatory}, but for the 
+log-normal fecundities lottery model instead of the beta fecundities
+lottery model. See SI section X2
+%***DAN: fix this link when you put the text into the paper
+for details. We used model parameters $\sigma = 1$, $\mu_1 = 0$, $\mu_2=0.5$, 
+and $\delta=0.6$ for this example.}\label{fig:lognormal_fecundidities_explanatory}
+\end{figure}
 
 \bibliographystyle{ecology_letters2}
 \bibliography{refs}
