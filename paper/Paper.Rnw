@@ -198,11 +198,11 @@ of the information content of the relationship between variables \citep{Nelsen20
 ATAs and related ideas had previously been seldom considered in ecology, but recently several 
 insights have been gained by studying how features of associations beyond standard measures 
 impact various ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovic_2019, Ghosh_2020_AER, Ghosh_2020_Eco,
-Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argue that extinction risks can become elevated 
+Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argued that extinction risks can become elevated 
 when metapopulations are subject to ATAs, e.g., if environmental ``catastrophes'' are more spatially synchronous 
 across component populations
 than are years of good environment, limiting the potential for rescue effects. 
-And \cite{Ghosh_2021} show that ATAs can alter the stability of 
+And \cite{Ghosh_2021} showed that ATAs can alter the stability of 
 ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
 plankton population density time series; many other examples have also been previously explored 
 \citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
@@ -224,12 +224,12 @@ tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_20
 Although MCT is somewhat mathematically complex, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
 
 %Intro to storage effects and why they might be influenced by ATAs
-It is possible to see, intuitively, 
-why ATAs may influence one mechanism of coexistence in particular, storage effects. We review, conceptually, 
+It is possible to see why it is plausible that
+ATAs may influence one mechanism of coexistence in particular, storage effects. We review, conceptually, 
 what storage effects are \citep{Chesson_1994,Chesson_2012,Ellner_2016,Barabas_2018}, and explain why ATAs 
 may be relevant to them. Storage effects allow competing species to fluctuate in abundance, without any going extinct,
 by providing a relative benefit to whichever species is currently rare \citep{Chesson_2000}.
-Storage effects hinge on positive covariation between the fluctuating quality of the environment
+Storage effects hinge on covariation between the fluctuating quality of the environment
 for a species (E) and the strength of competition (C) experienced by that species (called EC covariance);
 and on the assumption that environmental responses for distinct species are also distinct,
 so that no two species respond in the same way to environmental variation. Then, good environmental
@@ -267,6 +267,35 @@ tail associated, while the same marginal distributions for these fecundities wer
 simulations (see Methods
 for details). Thus, the model setup was identical in the three simulations except for different ATAs. 
 ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}f-h).
+
+%Some intuition
+We next give the beginnings of some intuition about how ATA effects work, with a fuller understanding
+necessarily coming only later in the paper.
+It is known that storage effects can occur if some buffering mechanism reduces losses in bad years so that
+gains in good years can more than make up for them. 
+%
+Bad years happen when the negative effects of $C$ outweigh any 
+positive effects of $E$; but this can occur
+both 1) when $E$ is moderately favorable but $C$ is very strong, as well as 2) when $E$ is very unfavorable,
+or moderately unfavorable and $C$ is not too weak.
+Conversely, good years happen when positive effects of $E$ outweigh negative effects of $C$;
+but this can occur 1) when $E$ is very favorable, or moderately favorable and $C$ is not too strong,
+as well as 2) when $E$ is moderately unfavorable but $C$ is very weak. 
+%
+It turns out that the potential for storage to occur when 
+$E$ and $C$ are both higher than average (the cases 1, above); versus the potential  
+when $E$ and $C$ are
+both lower than average (the cases 2) are not necessarily equal.
+Depending on the nature of population growth, storage potential may differ
+across the spectrum from 1 to 2.
+%
+ATA effects are essentially the extent to which asymmetries of association between $E$ and 
+$C$ are aligned with the differences in the potential for storage across the dichotomy 1 versus 2.
+If $E$ and $C$ are strongly associated in the parts of their distribution where
+storage potential is high, ATA effects will be relatively low, and vice versa.
+We spend most of the paper formalizing ATA effects in MCT and demonstrating to what 
+extent ATA effects can be strong versus weak, but we return in the Discussion to the task
+of building an intuition for how ATAs work. 
 
 %Goal para
 We previously demonstrated that ATAs are common in nature and can influence ecological phenomena
