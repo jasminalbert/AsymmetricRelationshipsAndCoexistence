@@ -204,7 +204,7 @@ across component populations
 than are years of good environment, limiting the potential for rescue effects. 
 And \cite{Ghosh_2021} showed that ATAs can alter the stability of 
 ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
-plankton population density time series; many other examples have also been previously explored 
+plankton population density time series; many other ecological examples of ATAs have also been explored 
 \citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
 competition and coexistence have not been investigated. Doing so is the goal of this study. 
 
@@ -216,8 +216,8 @@ instead outcompete the other and drive it extinct \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems,
 through the niche partitioning effects of environmental variation.
-MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``storage effects'' \citep{Chesson_1994} which will be familiar to some readers (storage effects are also reviewed conceptually below and 
-defined formally in Theory). MCT has been
+MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``storage effects'' \citep{Chesson_1994}; storage effects are reviewed conceptually below and will be
+defined formally in the Theory section. MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Letten2018}, and corals \citep{Alvarez-Noriega_2020}. 
 %Narawani_2013
@@ -267,10 +267,9 @@ simulations (see Methods
 for details). Thus, the model setup was identical in the three simulations except for different ATAs. 
 ATAs substantially influenced aspects of species coexistence in these simulations (Fig. \ref{fig:pedagog1}f-h).
 Notation for the whole paper is summarized in Table \ref{tab:notation}.
-Typesetting procedures used by publishers of ecological journals render mathematics sub-optimally,
-so we have appended a latex version of this main text to the end of the 
-Supporting Information (SI). Readers interested in the mathematical content
-of the study should read that version.
+Typesetting of mathematics by ecological journals is sub-optimal,
+so we appended a latex version of this main text to the end of the 
+Supporting Information (SI). Readers interested in the mathematical aspects should read that version.
 %***DAN: Don't forget to do this
 
 %Some intuition
@@ -294,7 +293,8 @@ across the spectrum from 1 to 2.
 ATA effects quantify the extent to which asymmetries of association between $E$ and 
 $C$ are aligned with differences in the potential for storage across the spectrum from 1 to 2.
 If $E$ and $C$ are largely unassociated in the parts of their distribution where
-storage potential is high, ATA effects will be high, and vice versa.
+storage potential is high, ATA effects will be high. ATA effects quantify how temporal niche partitioning
+varies across $EC$ spectrum spanned by the cases 1-2 sketched above.
 
 %Goal para
 We previously demonstrated that ATAs are common in nature and can influence ecological phenomena
@@ -786,7 +786,7 @@ species $i$ will be positively but imperfectly associated,
 and the association may be asymmetric. 
 Storage events occur for species $i$ when the positive effects of $E_i$ overwhelm the negative 
 effects of $C_{i \bs i}$, producing large values of $r_i(E_i,C_{i \bs i})$
-which are not completely offset by declines at other times. 
+which are not completely offset by population declines at other times. 
 For instance, for the lottery model,
 $r_i(E_i,C_{i \bs i})=\log(1-\delta+E_i/C_{i \bs i})$ can get large whenever
 $C_{i \bs i}$ is a small fraction of $E_i$, but can never get smaller
@@ -804,7 +804,7 @@ $C$ are aligned with varying potential for storage across the $E,C$ distribution
 ATA effects help quantify different degrees of temporal niche differentiation 
 occurring under different sets of environmental conditions, possibly via
 different mechanisms.
-Details and examples of this intuition 
+Further details and examples of this intuition 
 are in SI section \ref{SI-SIsect:intuition_examples} and SI 
 Figs \ref{SI-fig:beta_fecundidities_explanatory}-\ref{SI-fig:lognormal_fecundidities_explanatory}, 
 where comparisons are also made between our two lottery models. 
