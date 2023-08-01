@@ -420,12 +420,10 @@ as possible, given the subject matter, and we have gone through the paper and re
 paper broadly accessible.} \\
 %DONE
 
-%DAN: made it to here 2023 08 01, 609am
-
 \noindent C21) L64: Narwani 2013 is actually not a good reference because it did not include any temporal variation, a better one would be Letten et al. 2019 in PNAS. \\
 
 \noindent ***\emph{We replaced the reference.} \\
-%Jasmin can you please do this?   %%REPLACED  
+%DONE
 
 \noindent C22) L74: The optimum might actually be the same, but they need different responses. \\
 
@@ -458,9 +456,7 @@ Finally, we firmly believe that ecology as a discipline gets stronger as it cont
 trend of the last few decades of incorporating more quantitative approaches. We believe we
 benefit the field by challenging assumptions and biases such as categorically not putting equations 
 in the Introduction.} \\
-%Jasmin to read the above and let Dan know if it's convincing or not, and how it can be improved.
-%It's done except for any improvements or revisions that Jasmin may suggest.
-%Jasmin: I really like this response and don't think its too harsh or needs to be toned down. 
+%DONE 
 
 \noindent C24) L93: I suggest ``Note that $N = N_1(t) + N_2(T)$ is constant through time''. \\
 
@@ -480,8 +476,10 @@ benefits and basically no costs of including it there. } \\
 
 \noindent C26) L126: Do you do this in the appendix? \\
 
-\noindent ***\emph{No. We can see how it would be done, but we have not formalized the mathematics. 
-To avoid making claims that we have not fully supported
+\noindent ***\emph{No. We know how it would be done, but we have not formalized the mathematics
+in the write-up anywhere. And given length limits and a desire to retain as much simplicity as possible,
+we think it's best not to add such mathematics, even to the SI. 
+Therefore, to avoid making claims that we have not fully supported
 with rigorous mathematics, we rephrased to say the iid assumption is 
 ``probably not necessary''. Thanks for spurring us to do this.} \\
 %DONE
@@ -492,7 +490,8 @@ with rigorous mathematics, we rephrased to say the iid assumption is
 Ellner et al, 2019, Ecology Letters. Yes, the effects of $C$ and $E$ varying are included in 
 the $\#$ term because that terms involves both of them varying (though independently).}
 
-\emph{Also, see our SI section ``Mechanisms other than storage effects". 
+\emph{Also, see our SI section ``Mechanisms other than storage effects" section in SI,
+where the following mathematics are presented. 
 Since,
 \begin{align}
 \olep_i^{EC} &= \E[r_i(E_i,C_{i \bs i})]-\olep_i^E-\olep_i^C-\epsilon_i^0 \\
@@ -516,7 +515,7 @@ So,
 &= (\olr_{i \bs i} - \olrs_{i \bs i}) - q_{ij}(\olr_{j \bs i} - \olrs_{j \bs i}) \\
 &= \olr_{i \bs i} - \olrs_{i \bs i} - q_{ij}\olr_{j \bs i} + q_{ij}\olrs_{j \bs i} \\
 &= \olr_{i \bs i} - q_{ij}\olr_{j \bs i} - \olrs_{i \bs i} + q_{ij}\olrs_{j \bs i} \\
-&= (\olr_{i \bs i} - q_{ij}\olr_{j \bs i}) - (\olrs_{i \bs i} - q_{ij}\olrs_{j \bs i}),.
+&= (\olr_{i \bs i} - q_{ij}\olr_{j \bs i}) - (\olrs_{i \bs i} - q_{ij}\olrs_{j \bs i}),
 \end{align} 
 which is the equation the referee is asking about.} \\
 %DONE
@@ -534,10 +533,10 @@ in response to that part of this comment.} \\
 
 \noindent ***\emph{Well, we can do this if the editor insists, but to us, avoiding the use of
 negative numbers is insufficient reason to have to undertake the substantial and time-consuming 
-work, and potential for error, 
-of re-doing several figures, and revising many formulas (in the main text and SI) which currently use the other convention.
+work, and, more importantly, potential for error, 
+of re-doing several figures, and revising many formulas (in the main text and SI).
 After all, negative numbers are basic, and represent no impediment to the average ecologist understanding the 
-paper.} \\
+paper. } \\
 %DONE
 
 \noindent C30) L316: So why do you show values of $\sigma >6$? And also maybe highlight this in the figure Figure 1d and e: I’m semi convinced by these distributions showing ATA. In 1d it simply appears that the variance scales with the density. 1e is quite unconvincing to me. That’s generally fine, but figure 1 seems to be a conceptual figure, so I wonder whether you don’t have a better example? \\
@@ -545,15 +544,16 @@ paper.} \\
 \noindent ***\emph{Regarding the first referee question listed above, well, what we are 
 trying to do here is accurately portray our results about
 when ATAs were important and when they were not. To us, the most forthright way of doing that is to
-show \textbf{all} the results, including the values of $\sigma$ which are probably unrealistic, and mention
+show \textbf{all} the results we generated, including the values of $\sigma$ which are probably unrealistic, and mention
 (as we do) that some values are unrealistic. The point of this paragraph is to outline the circumstances
 we have explored, using our lottery-model approaches, for which ATAs were important or not, and including all
 our results seems important when such is our goal. Furthermore, there's no real cost to showing
 all the $\sigma$'s we explored, it does not take up more manuscript space to do so.
 Some readers may also take the lesson, for future work, from these explorations that one of the things that probably 
 matters for continuing to explore when ATAs are important and when not is probably the strength
-of the noise impacting the system. Finally, whether a value of $\sigma$ is ``unrealistic'' is 
-a bit of judgement call rather than a formal cutoff, to we hesitate to censor results 
+of the noise impacting the system. Which seems accurate since Chesson's weak-noise approximations are more likely
+to work when noise is weaker. Finally, whether a value of $\sigma$ is ``unrealistic'' is 
+a bit of judgement call rather than a formal cutoff, so we hesitate to censor results 
 based on such a thing.}
 
 \emph{Regarding the second part of the referee comment, pertaining to Figure 1d and e, it is perplexing to us that 
@@ -564,7 +564,7 @@ seriously the referee's comment that they were apparently not convinced there ar
 In fact, one can significance test these results and they are solidly significant - we added
 those results, along with the methods used to get them, to a new SI section which is now cited from the
 figure caption. We also added some text to the figure caption which we hope will focus the 
-readers attention on the aspects of these panels which clearly show asymmetries of tail association. } \\
+readers attention on the visual aspects of these panels which reveal asymmetries of tail association. } \\
 %DONE
 
 \noindent C31) Figure 2: I recommend to add a line at $y = 0$. Also the different subgraphs have different $y$-scales which I’m not sure is beneficial, but unsure myself. \\
@@ -582,16 +582,20 @@ useful to be aware of.} \\
 \noindent C32) Figure 2 and 3: It appears that ATA is almost never the relevant factor, however I wonder whether this is because ATA is relatively weak, or whether the same analysis of say $\delta_i$ would lead to a similar pattern, it might be worth creating these graphs in the appendix to strengthen your case. \\
 
 \noindent ***\emph{For Fig. 2, the referee is right that ATAs are only rarely important, as explained in the text 
-(see first paragraph of section 4.1). However, for Fig 3, the referee is incorrect. In that figure, the ATA term
+(see first and last paragraphs of section 4.1). However, for Fig 3, the referee is incorrect. In that figure, the ATA term
 is usually one of the largest-magnitude contributions to coexistence. Our results as to the importance of ATAs for coexistence 
 contrast between our log-normal and beta funcundities lottery models, as explained in the last paragraph
-of section 4.1. That's one of the points we are making.} \\
+of section 4.1. The contrast is one of the points we are making -- that ATAs are sometimes, but not always, important,
+and we need additional work to determine when they are important across a larger collection of systems/models once
+those are available.} \\
 %DONE
 
 \noindent C33) Figure 2: ATA is always positive, so how can it lead to ATA exclusion? (or ATA rescue in case I misunderstood). \\
 
 \noindent ***\emph{The referee appears to have misinterpreted the figure. The ATA terms is, in fact, usually
-negative for this figure. The colors of lines corresponding to different terms are in the legend, and, in the caption,
+negative for this figure, when it is appreciably different from $0$ (the figure used to be Figure 1 in the 
+prior submission, but is now figure 3). 
+The colors of lines corresponding to different terms are in the legend. And, in the caption,
 it is reviewed which of these corresponds to the ATA term. Since these items are clearly labelled, and since 
 the $y=0$ line is also already present, we are unsure how to reduce the chances for other readers to make
 such errors. But we're happy to hear specific suggestions.} \\
@@ -612,19 +616,8 @@ such errors. But we're happy to hear specific suggestions.} \\
 \noindent C36) However in order to reach a broad audience of ecologists, the manuscript needs to reach a balance between mathematical definitions and simple explanations. Otherwise, it can remain to technical and of little importance to ecologists interested in the role of environmental variability of community dynamics. I will give some examples where the message can be improved, but I would suggest the authors to do the same effort themselves in other parts of the manuscript. \\
 
 \noindent ***\emph{We have gone to great lengths to address the referee's specific suggestions below, and we have also redoubled our
-efforts to make the manuscript as accessible as possible, generally. We appreciate being spurred to do so, thanks. } \\
-%We have to redouble our efforts, as it says. Maybe we also want to point out somewhere that this particular
-%sub-field is already a very technical one, but is nevertheless considered a mainstream and very important
-%area in ecology? %food webs? networks
-
-%I wrote the following, but decided not to include it here. Might include it elsewhere:
-%The research field
-%surrounding the MCT and mechanisms of coexistence is very important within ecology, but is nevertheless technical - see, for instance, the
-%papers of Chesson, which have had enormous positive impact on the field, as well as the recent papers of Ellner which helped inspire
-%our paper. All those papers, and many other papers in the field, are unavoidably technical, but have frequently been published
-%in mainstream journals (the Ellner papers are in Ecology Letters) because of their importance and the importance of the subject
-%matter they investigate. Though we agree with all efforts to make research results as clear as possible to non-technical audiences,
-%we beg the referee
+efforts to make the manuscript as accessible as possible, throughout. We appreciate being spurred to do so, thanks. } \\
+%DONE
 
 \noindent C37) At the beginning of the introduction the authors cite previous work to show the prevalence and importance of ATAs for population dynamics, and the stability of ecological communities, and Fig.1 illustrate what ATAs mean in a clear example, yet it is not well explained or at least it was not clear to me how ATA can either promote or hinder coexistence in these initial sentences. \\
 
@@ -634,11 +627,11 @@ be interpreted to suggest that they wanted us
 to add such an explanation to first paragraph of the paper, the reader is not equiped to understand the explanation at that 
 point, so we added a new paragraph later in the Introduction (it is now the
 second-to-last paragraph in the Introduction) that begins establishing such an intuition. We also added some text to the end of
-the second paragraph that adds to the intuitive understanding of how ATAs can influence coexistence through a concrete 
-example. We also added a new paragraph to the 
-Discussion (the second paragraph of the Discussion). These new Discussion 
-paragraphs are also supported by two new SI sections and two new SI figures which 
-explain, in detail, how the intuition established in the two new main text paragraphs emerges from the modelling (SI sections S11 
+the third paragraph of the Introduction that adds to the intuitive understanding of how ATAs can influence coexistence through a concrete 
+example (water limitation). We also added a new paragraph to the 
+Discussion (the second paragraph of the Discussion). The new Discussion 
+paragraph is also supported by two new SI sections and two new SI figures which 
+explain how the intuition established in the new main text paragraphs emerges from the modelling (SI sections S11 
 and S12, SI Figs S4 and S5).
 %DAN: make sure these are the final numbers of these SI sections
 We believe that intuition such as the new material establishes should always be based in formal theoretical and 
@@ -649,9 +642,10 @@ improvement in the manuscript, so we thank the referee for spurring us to make t
 
 \noindent C38) Then the explanation of the importance of ATAs is done in relationship with the explanation of the storage effect. In detail, the explanation of the storage effect is superb, ... \\
 
-\noindent ***\emph{Thank you for the positive feedback! We have also added some text to the end of that paragraph giving a 
+\noindent ***\emph{Thank you for the positive feedback! We have also added some text to the end of that paragraph 
+(now the third paragraph of the Introduction) giving a 
 concrete case (water limitation) in which one may expect an influence of ATAs. We think the new text definitely
-makes it more intuitive reasonable to explore ATA contributions to conexistence.} \\
+makes it more intuitively reasonable to explore ATA contributions to conexistence.} \\
 %DONE
 
 \noindent C39) ...but how ATAs enter in play is not well solved. It is just mentioned that ATAs can modify the EC covariation, which I believe is not enough, a reader might not understand later the explanation when the lottery model is presented. \\
@@ -668,7 +662,7 @@ referee found this material to be compelling.} \\
 \noindent C40) ATAs can not only modify the importance of the storage effect but also of other mechanisms such as relative non-linearity, which is based on how competition fluctuates in ways that favor the competitor. Could the authors briefly indicate how this could occur? \\
 
 \noindent ***\emph{This cannot occur. ATAs can only influence storage effects, not the other mechanisms, as stated at
-the top of section 2.4 and explained mathematically in the SI section cited there. Basically, as explained in 2.4, 
+the top of section 2.4 and explained mathematically in the SI section cited at the end of section 2.4. Basically, as explained in 2.4, 
 this is because ATAs are about covariation between $E$ and $C$, whereas the mechanisms other than storage effects
 do not pertain at all to covariation. For instance, relative nonlinearity is about the effects of variation 
 in $E$ or $C$, not covariation between them.} \\
@@ -681,26 +675,32 @@ The model used for the chemostat is in its formulation quite different compared 
 details are left for the supplementary material, can the authors explain more in the detail in the main text how the 
 importance of ATAs can be used for this particular model.\\
 
-\noindent ***\emph{This is certainly a valid question, and we have gone to substantial lengths to address it. 
+\noindent ***\emph{This is certainly a good question, and we have gone to substantial lengths to address it. 
 Partly in response to this comment and partly in response to earlier comments of referee 3, 
 we added substantial new material providing intuitive explanations of ATA effects in the Introduction,
 Discussion, and SI (see above responses). That new material also has information comparing the models
 and explaining why ATA effects are substantial for the beta-fecundities lottery model and not as strong
 for the log-normal fecundities lottery model. These are very positive additions to the manuscript, so we 
-thank the referee for spurring us to add them. We also believe this is only a start -- additional explanations and intuitive 
-explorations of ATA effects could and should be the subject of future papers. We've added as much material 
-as possible on these topics to the current manuscript, given length limits and
-requests from the referees to both simplify and add a variety of other content.} \\
+thank the referee for spurring us to add them. } \\
 %DONE
 
 \noindent C42) The chemostat model is parameterized with information from a previous study, but does this model reproduce observed dynamics of the diatom system? this needs to be shown otherwise the importance of ATAs will be considered for another dynamics that do not correspond to the observed ones. \\
 
-\noindent ***\emph{response} \\
-%I think the earlier papers already showed that, at least for the parameters used there? Check. And the other parameters
-%are experimentally manipulable, so this should be OK, but is worth discussing the extent to which ATAs were important
-%for the original parameters. The it would be worth noting that the strongest ATA contributions come for parameters
-%which were not imposed in the original experiment, so it may be worth repeating the experiment but with these other
-%parameters.
+\noindent ***\emph{This was addressed already by the earlier study (Descamps-Julien and Gonzalez, 2005). 
+The only parameters we manipulated were the ones pertaining
+to the experimentally imposed temperature fluctuations; biological parameters determined, validated and used by Descamps-Julien and Gonzalez
+were the same as the biological parameters we used. Descamps-Julien and Gonzalez include results on the extent to
+which dynamics predicted by the model were validated by experiment; the validation was not perfect (it could
+never be), but was judged to be sufficient, and we agree - see the earlier study for details. 
+Outcomes of coexistence/exclusion were 
+correctly predicted by the model, among other validations, as described in the earlier paper. 
+All we've done is consider, in silico, fluctuations of 
+experimentally controlled temperature that sometimes
+differ from those actually imposed, in vitro, by the earlier authors. However, the temperature sensitivities of 
+biological rates determined and used by the earlier authors (reproduced in SI Fig. S3) span temperatures from 
+6-24 degrees C, and all the temperature fluctuations we considered remain within that range. So we
+have also not extrapolated beyond the temperature ranges already considered by the earlier paper.} \\
+%DONE
 
 \noindent \textbf{Comments of the editor:} \\
 
@@ -710,14 +710,34 @@ requests from the referees to both simplify and add a variety of other content.}
 
 \noindent C44) The manuscript is very theoretical with a highly technical language hard to follow by a broad range of ecologists. My main suggestion is that the authors need to rewrite it in several parts to make it accessible and convincing. The authors have to make an effort to use a more biological/ecological language with reference to real world potential examples/cases/systems. Some mathematical material could be moved to Supplementary material. \\
 
-%Need to address. However, this papers seems no more technical than the earlier Ellner paper. And, furthermore, 
-%one of the referees (ref 1) actually asked us to put BACK technical content in the main text which we had 
-%moved to the SI before submission to keep it less technical. Also, this research area is technical, though it
-%is still central to ecology as a discipline. Recycle some of your arguments above about technical aspects. 
-%That said, we do need to do a pass thu and figure out what technical content we can reduce, so we can make it
-%as clear as it can be. Note also they say the math *could* be moved, suggesting less importance than 
-%using ``a more biological/ecological language...''. So maybe let's try to do more of that, some of which
-%I've alreday done thru answering the referee comments.
-\noindent ***\emph{response} \\
+\noindent ***\emph{We have now undertaken major additional efforts to make the paper as accessible as possible.
+Some of these efforts are summarized in responses to individual referees, above. For instance, we
+heavily revised the Introduction to include: a substantial new paragraph that introduces the intuition behind
+ATA effects (the second-to-last paragraph of the Intro); and some new material at the end of the third paragraph
+of the Intro making it clearer where ATAs can come from using a concrete example based on water limitation.
+Efforts to better present the ecological intuition behind ATA effects now also continue in the Discussion, with a new 
+paragraph there (now the second paragraph in the Discussion), which is also supported by new some SI sections. }
+
+\emph{We've also made many smaller, but important, changes to the Intro to avoid making readers think they needed
+more background knowledge to understand the paper than they actually do. In fact, not much background is
+needed. The referees made us aware of, and we have now corrected, a few places early in the Introduction that
+made it seem as though readers were expected to know all about storage effects and relative nonlinearity in
+competition in order to proceed with the paper. In fact, the readers never needed to know anything about relative 
+nonlinearity in competition (that's not needed for the paper at all), and storage effects are explained conceptually
+in the Introduction and defined perecisely in Theory, so readers also do not have to have prior knowledge about
+storage effects. We apologize for the sentences in the earlier version of the paper which made it seem as though
+this was required - we have eliminated those sentences. We have also made explanations of ATAs more accessible,
+and eliminated any passages that could be construed as an indication that prior experience with ATAs is 
+necessary to understand the paper - it is not.}
+
+\emph{We have also moved to the SI a good deal of content from the Discussion that may have been of interest
+more to specialists than generalists,
+replacing it with the new paterial helping establish an intuitive sense for how ATAs work (see above).}
+
+\emph{We thank the referees and editor for spurring us to make these changes, as the paper is improved in
+its accessibility. The paper is certainly now no less accessible than many other papers I've read recently in 
+Ecology Letters, including the two Ellner et al. papers (cited in our study) which helped inspire this 
+work and which were published in Ecology Letters.} 
+%DONE
 
 \end{document}
