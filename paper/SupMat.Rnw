@@ -1397,7 +1397,7 @@ then the weaker competitor can only persist in patches for which ATAs are presen
 The weaker competitor can therefore perhaps be regarded as an ``ATA specialist'' in the landscape. EC-associations
 can boil down to associations between two environmental variables, as was the case
 for the lottery model. For the lottery model, $B_i(t)=E_i(t)$ was assumed, and $C_{i \bs i}$ simplified to $E_j(t)/\delta$ (see SI section 
-\ref{SIsect:TheoryForLotteryBoth}). Thus, EC-associations parallel associations between the two
+\ref{SIsect:TheoryForLotteryBoth}). Thus, $EC$-associations parallel associations between the two
 environmental variables $E_i(t)$ and $E_j(t)$ for the lottery model, and ATA specialists may exist. 
 Mechanisms of coexistence should correspond to
 means by which niche differentiation is possible. Thinking about our new mechanism of 

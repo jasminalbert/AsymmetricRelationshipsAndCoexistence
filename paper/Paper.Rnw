@@ -512,7 +512,7 @@ corresponded to more variable fecundities for species $i$.
 
 %more stuff that applies to both
 For both versions of the lottery model, 
-fecundities were taken to directly reflect 
+fecundities directly reflected 
 the environment, i.e., the $E_i$ of Theory was set equal to $B_i$. 
 Competition, $C_i(t)$, in the lottery model occurs at the stage of juveniles occupying open sites:
 $C_i$ was taken to be the number of new offspring
@@ -525,44 +525,41 @@ that $r_i(t)$ is an increasing function of $E_i(t)$ and a decreasing function of
 
 %Plotting shortcuts for the log-normal fecundities model
 To explore, using the log-normal fecundities lottery model, the relative magnitudes of the contributions 
-to coexistence that come from ATAs versus other mechanisms, we plotted the terms of the decomposition 
-(\ref{eq:full_decomp}) for that model against the model parameters $\mu_1$, $\mu_2$, $\sigma$ and $\delta$.
+to coexistence of ATAs versus other mechanisms, we plotted the terms of the decomposition 
+(\ref{eq:full_decomp}) against model parameters $\mu_1$, $\mu_2$, $\sigma$ and $\delta$.
 We labeled regions of the plot which corresponded to ATA rescue or exclusion, i.e., regions for which
 GWR and GWR-$\Delta_i^{[EC]}$ had opposite signs.
 Some mathematical shortcuts, summarized here, simplified plotting. 
 First, we assumed, without loss of generality, that $\mu_1 \leq \mu_2$. To understand coexistence, 
 it was then sufficient to decompose GWR of the weaker competitor, species 1. 
-Second, we showed that, for the log-normal fecundities
-lottery model, none of the components of (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
+Second, we showed that none of the components of (\ref{eq:full_decomp}) depends independently on $\mu_1$ and $\mu_2$;
 instead they depend only on $\mu_1-\mu_2$ (SI section \ref{SI-SIsect:TheoryForLottery}). 
 So we plotted against $\mu_1 - \mu_2$. 
 Third, we showed that the values of all components in (\ref{eq:full_decomp}) were the same 
 for both our left- and right-tail associated noises (SI section \ref{SI-SIsect:TheoryForLottery}). 
-So we only generated plots 
-for left-tail associated noise. 
+So we only generated plots for left-tail associated noise. 
 
 For each combination of $\delta=0.2, 0.4, 0.6$ and $\mu_1-\mu_2=0,-0.5,-2,-4$,
-we plotted the components of (\ref{eq:full_decomp}) against $\sigma$ for $\sigma$ ranging 
+we plotted the components of (\ref{eq:full_decomp}) against $\sigma$ for $\sigma$ 
 from $0$ to $7$. \cite{Chesson_1981} showed that coexistence is impossible for $\delta=1$, and it
-is known that the storage effect (and therefore its ATA component) is weak for larger $\delta$, so we 
-only considered values of $\delta$ up to $0.6$. Some of 
-the $\mu$ differences and $\sigma$ values we considered were very unrealistic (see Results),
-so we considered after plotting whether conclusions about the importance of ATAs depended 
+is known that the storage effect is weak for larger $\delta$, so we 
+only considered $\delta$ up to $0.6$. Some of 
+the $\mu$ differences and $\sigma$ values we considered were unrealistic (see Results),
+so we considered after plotting whether conclusions depended 
 on realistic values of parameters.
-The simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
+Simulation methods of \cite{Ellner_2019} were used to compute the components of (\ref{eq:full_decomp}).
 Computationally efficient means of performing those simulations are in 
 SI section \ref{SI-sect:efficient_computation}.
 
 %Then a similar para for the beta-fecundity lottery model.
 To explore, using the beta fecundities lottery model, the relative magnitudes of the contributions 
-to coexistence that come from ATAs versus other mechanisms, we plotted the terms of the decomposition 
-(\ref{eq:full_decomp}) for that model against the model parameters $\eta_1$, $\eta_2$, and $\delta$,
-again labelling regions corresponding to ATA rescue or exclusion.
-Some mathematical shortcuts, summarized here, simplified plotting. 
-First, we assumed, without loss of generality, that $\eta_1 \leq \eta_2$. To understand coexistence, 
-it was then sufficient to decompose GWR of the weaker competitor, species 1. 
-Second, we showed that, for the beta fecundities
-lottery model, none of the components of (\ref{eq:full_decomp}) depends independently on $\eta_1$ and $\eta_2$;
+to coexistence of ATAs versus other mechanisms, we plotted the terms of the decomposition 
+(\ref{eq:full_decomp}) against model parameters $\eta_1$, $\eta_2$, and $\delta$,
+again labelling regions of ATA rescue or exclusion.
+Mathematical shortcuts, summarized here, simplified plotting. 
+First, we assumed, without loss of generality, that $\eta_1 \leq \eta_2$. 
+It was then sufficient to decompose GWR of the weaker competitor, species 1. 
+Second, we showed that none of the components of (\ref{eq:full_decomp}) depends independently on $\eta_1$ and $\eta_2$;
 instead they depend only on $\eta_2/\eta_1$ (SI section \ref{SI-SIsect:TheoryForLottery}). 
 So we plotted against $\eta_2/\eta_1$. 
 
@@ -570,39 +567,9 @@ For each combination of $\delta=0.2, 0.4, 0.6$
 and for left- and right-tail associated noise, we plotted 
 the components of (\ref{eq:full_decomp}) against the upper bound ratio $\eta_2/\eta_1$, using 
 the fairly realistic (see Results) range $1 \leq \eta_2/\eta_1 \leq 5$. 
-The simulation methods of \cite{Ellner_2019} were again used.
-Computationally efficient means of performing these simulations are in 
+Simulation methods of \cite{Ellner_2019} were again used, with 
+computationally efficient means of simulating in 
 SI section \ref{SI-sect:efficient_computation}.
-
-%Trait different space stuff. I don't think I need it anymore but keeping around until I finish writing the Discussion,
-%in case some of it turns out to be useful there.
-% To achieve goal G3 from the Introduction, i.e., to explore, using the lottery model, the likelihood that species can coexist with
-% ATAs but not without, or vice versa, we plotted GWR, $\olr_{i \bs i}=\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$, 
-% as well as
-% GWR minus its ATA contribution, $\olr_{i \bs i} -\Delta_i^{[EC]}$, again for species $i=1$, the weaker competitor. 
-% For fixed values of $\sigma$ and $\delta$ and for left-tail associated noise, 
-% we were interested in the values of $\mu_1-\mu_2$ for which one of these
-% quantities is positive and the other is negative; this set of values characterizes the species which can coexist
-% with ATAs, but not without, or vice versa. We define the ``trait-difference space'' of values $\mu_1-\mu_2$. 
-% Points of the trait-difference space characterize possible combinations of traits of the two 
-% competing species in our model. For fixed values of 
-% $\delta$ and $\sigma$, we defined the subset, $\psi_{\text{ATA}}(\delta,\sigma)$, of 
-% trait-difference space to be the
-% values $\mu_1 - \mu_2$ for which GWR, $\olr_{i \bs i}$, is positive. This 
-% is the subspace for which the two lottery model species coexist in the presence of ATAs.
-% We also defined the subset, $\psi_{\lnot\text{ATA}}(\delta,\sigma)$, of trait-difference space to be the values
-% $\mu_1 - \mu_2$ for which the metric $\olr_{i \bs i} -\Delta_i^{[EC]}$ is positive.
-% This is the subspace for which the two lottery model species coexist in the absence of 
-% ATAs. The symbol $\lnot$ denotes logical negation, so $\lnot \text{ATA}$ indicates the
-% absence of ATAs. We defined the ``ATA rescue space" associated with given values of $\delta$ and $\sigma$ to be the 
-% set difference $\psi_{\text{ATA}}(\delta,\sigma) \setminus \psi_{\lnot\text{ATA}}(\delta,\sigma)$, i.e., the
-% values $\mu_1 - \mu_2$ for which species coexist in the presence of ATAs, but not in their absence. 
-% We define ``ATA exclusion space'' to be the set difference 
-% $\psi_{\lnot\text{ATA}}(\delta,\sigma) \setminus \psi_{\text{ATA}}(\delta,\sigma)$,
-% i.e., $\mu_1 - \mu_2$ values for which coexistence occurs in the absence, but not the presence, of ATAs.
-% On plots of $\olr_{i \bs i}$ and $\olr_{i \bs i} -\Delta_i^{[EC]}$
-% against $\mu_1 - \mu_2$, we highlighted the ATA rescue and exclusion spaces. We plotted against
-% $\mu_1 - \mu_2$ for all combinations of $\delta=0.2, 0.4, 0.6, 0.8$ and $\sigma=2,4,5,6$. 
 
 \subsection{Diatom chemostat system}
 
@@ -610,7 +577,7 @@ To achieve goal G3 from the Introduction, i.e., to provide an empirical example 
 coexistence which highlights the role ATAs can play, we used a laboratory chemostat
 system of freshwater diatoms explored by \cite{Descamps_2005}.
 Those authors used measurements of growth rates of \emph{Fragilaria crotonensis} and 
-\emph{Cyclotella pseudostelligera} over a range of temperatures to parametrize a resource
+\emph{Cyclotella pseudostelligera} over a range of temperatures to parameterize a resource
 competition model. The model is 
 \begin{align}
 \frac{dS}{dt} &= D(S_0 - S) - Q_1x_1 \frac{V_1 S}{K_1 + S} - Q_2 x_2 \frac{V_2 S}{K_2 + S} \\
@@ -634,30 +601,29 @@ coexistence according to (\ref{eq:full_decomp}), and we do so for ranges of valu
 of $\theta_0$, $a$ and $P$. In contrast to the lottery model case, for which simplifying assumptions
 made it sufficient to decompose only the GWR of species 1, for this
 example we considered $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$ for both $i=1$, $j=2$ and for
-$i=2$, $j=1$. Further details of the model setup are in SI section \ref{SI-sect:diatom_model}
-and specifics of how our decomposition extends to this empirical case are in 
+$i=2$, $j=1$. Details of the model setup are in SI section \ref{SI-sect:diatom_model}
+and specifics of how our decomposition was computed are in 
 SI section \ref{SI-sect:Empircal_app}.
 
 \subsection{How results were plotted for goal G3}
 
 %One-parameters plots
-To display results for goal G3, we started by plotting the terms of 
+To display results for G3, we started by plotting the terms of 
 (\ref{eq:full_decomp}) against one of the parameters 
-$\theta_0$, $a$ and $P$ at a time, while keeping the other two fixed at the values
+$\theta_0$, $a$ and $P$ at a time, keeping the other two fixed at the values
 used by \cite{Descamps_2005}. We again labelled regions of parameter space corresponding to
 ATA rescue or exclusion. 
 
 %Two-parameter plots
 We also generated two-dimensional plots, where
-two of the parameters $\theta_0$, $a$ and $P$ were varied and the third was kept fixed
-at the value used by \cite{Descamps_2005}. For the two-dimensional plots, the quantity  
-$\Delta_i^{[EC]}/|\text{GWR}|$ was displayed using color, to convey the 
-importance of the ATA contribution relative to the whole GWR. Larger magnitudes
+two of the parameters $\theta_0$, $a$ and $P$ were varied and the third was kept fixed. 
+For those plots, the quantity  
+$\Delta_i^{[EC]}/|\text{GWR}|$ was displayed using color. Larger magnitudes
 of this quantity indicate greater importance of ATAs. The case
 $\Delta_i^{[EC]}>\text{GWR}>0$ (which produces $\Delta_i^{[EC]}/|\text{GWR}|>1$)
-corresponds to ATA rescue, and the case $\Delta_i^{[EC]}<\text{GWR}<0$
+corresponds to ATA rescue, and $\Delta_i^{[EC]}<\text{GWR}<0$
 (which produces $\Delta_i^{[EC]}/|\text{GWR}| < -1$) corresponds to ATA exclusion.
-Thus the value of $\Delta_i^{[EC]}/|\text{GWR}|$ indicates the importance of ATAs
+Thus $\Delta_i^{[EC]}/|\text{GWR}|$ indicates the importance of ATAs
 and also whether ATA rescue or exclusion occurred.
 
 All computations were done in R on a laptop running Ubuntu Linux. 
@@ -669,54 +635,52 @@ Complete computer codes for the project are stored at (link to be added).
 \subsection{Goal G2, lottery model results}
 
 To begin fulfilling goal G2 of the Introduction (to explore, using the lottery model, the relative magnitudes 
-of the contributions to coexistence that come from ATAs compared to other mechanisms; and to see if ATA rescue 
-or ATA exclusion can occur), Fig.
+of the contributions of ATAs compared to other coexistence mechanisms; and to see if ATA rescue 
+or exclusion occur), Fig.
 \ref{fig:fig3} shows that, for the log-normal fecundities lottery model, 
 the ATA term of (\ref{eq:full_decomp}) sometimes, but not always, has 
-magnitude comparable to the magnitudes of other terms of the extended MCT decomposition. 
+magnitude comparable to the magnitudes of other terms. 
 Magnitudes of $\Delta_i^{[EC]}$ tended to be larger, relative to the magnitudes of the 
 other terms of (\ref{eq:full_decomp}), for smaller-magnitude differences between $\mu_1$ and 
 $\mu_2$, i.e., for closer-to-equal competitors. 
 In the $\mu_1=\mu_2$ case (panels a-c), for which the two species were equal 
 competitors, storage effects ($\Delta_i^{[EC]}+\Delta_i^{[E\nat C]}$) 
 were the only means by which coexistence could occur, and ATA effects
-tended to be negative, weakening total storage effects. 
+tended to be negative, weakening storage effects. 
 
-The ATA term 
-was also often, or always (for the parameters we considered), comparable in magnitude to the other terms of 
-the decomposition (\ref{eq:full_decomp}) for the beta fecundities lottery model 
-(Fig. \ref{fig:fig4}). The term contributed negatively to coexistence for environmental noise/fecundities
-showing left-tailed association, and contributed positively for noise/fecundities showing right-tailed 
+For the beta fecundities lottery model, the ATA term 
+was often or always, for the parameters we considered, comparable in magnitude to the other terms of 
+the decomposition (\ref{eq:full_decomp}) (Fig. \ref{fig:fig4}). The term contributed negatively to 
+coexistence for environmental noise/fecundities
+showing left-tailed association, and positively for right-tailed 
 association. 
 
 Our results also show that ATAs can make the difference between coexistence 
-and failure of two species to coexist: both ``ATA rescue'' and ``ATA
+and competitive exclusion: both ``ATA rescue'' and ``ATA
 exclusion'' (see Theory) are possible. Starting with the log-normal fecundities 
 lottery model, for some of the panels on Fig. \ref{fig:fig3}, the GWR line falls between the ATA
-line and the $x$ axis for some values of $\sigma$, e.g., see panel i.
-Such cases correspond to parameter combinations
-for which the presence or absence of ATAs determine whether the species coexist or not. In the 
-case of panel i, for values of $\sigma$ around $6$, 
-species 1 is excluded with ATAs but the two species can coexist without ATAs. 
-Fig. \ref{fig:fig4} highlights additional examples using the beta fecundities lottery model; 
-examples were more common than for the log-normal fecundities model.  
+line and the $x$ axis for some values of $\sigma$, e.g., panel i.
+For such cases, the presence or absence of ATAs determine whether the species coexist or not. 
+For panel i, for values of $\sigma$ around $6$, 
+species 1 is excluded with ATAs but the two species coexist without ATAs. 
+Fig. \ref{fig:fig4} highlights additional examples using the beta fecundities lottery model,
+where examples were more common than for the log-normal fecundities model.  
 
-For the log-normal fecundities lottery model, the ATA term from (\ref{eq:full_decomp}) tended
-only to be comparable in magnitude to the other terms, and ATA exclusion or rescue tended only to
-occur, for unrealistic parameters values; but ATA terms were large and ATA rescue and exclusion occurred
-for many realistic parameter values for the beta fecundities lottery model. For instance, the ATA term in 
-Fig. \ref{fig:fig3} had fairly 
-small magnitude, compared to the other terms of (\ref{eq:full_decomp}), for values of $\sigma$ less than 
-about $3$. And ATA rescue and exclusion only occurred for $\sigma$ greater than about $3$.
+Contrasting the two models, ATAs were only important for the log-normal fecundities lottery model 
+when that model was parameterized unrealistically; but ATAs were important for a wide range of 
+realistic parameter values for the beta fecundities model.
+For instance, the ATA term in Fig. \ref{fig:fig3} had large magnitude compared to the other
+terms of (\ref{eq:full_decomp}), and ATA rescue and exclusion occurred, only for 
+$\sigma$ greater than about $3$. 
 The standard deviation of fecundity for species 1 when 
 $\mu_1=0$ and $\sigma=3$ was greater than $8000$, so values of $\sigma$ greater than $3$ are 
-probably unrealistic. Thus ATAs seem to be unimportant for coexistence
-for the log-normal fecundities lottery model with realistic parameter values. However, 
-all the $\eta_2/\eta_1$ ratio values we plotted were fairly realistic, corresponding to
-upper-bound fecundities that were up to $5$ times higher for species 2 than for species 1. And 
-the ATA term plotted in Fig. \ref{fig:fig4} was comparable in magnitude 
-to the other components of (\ref{eq:full_decomp}) across the whole range of parameters
-considered. And both ATA rescue and exclusion occurred for values of $\eta_2/\eta_1$ between $1$ and $2$.
+probably unrealistic. 
+However, all the $\eta_2/\eta_1$ ratio values we plotted for the beta fecundities model 
+were fairly realistic, corresponding to
+upper-bound fecundities that were up to $5$ times higher for species 2 than for species 1.  
+The ATA term in Fig. \ref{fig:fig4} was comparable in magnitude 
+to other components of (\ref{eq:full_decomp}) across the whole range of parameters
+considered. And ATA rescue and exclusion occurred for values of $\eta_2/\eta_1$ between $1$ and $2$.
 Apparently the question of whether ATAs are important for realistic parameter 
 values depends on specifics.
 
@@ -724,46 +688,46 @@ values depends on specifics.
 
 Starting to fulfill goal G3 of the Introduction (to provide an empirical example of species coexistence 
 which highlights the role ATAs can play), Fig. \ref{fig:fig5}a-c 
-show that ATA contributions to coexistence often have magnitudes comparable to the 
-magnitudes of other terms of the extended MCT decomposition, and that 
-ATA rescue occurs for some combinations of parameters for this system.
+show that ATA contributions to coexistence often have magnitudes comparable to those 
+of other terms of the extended MCT decomposition, and that 
+ATA rescue occurs for some parameters for this system.
 
 Plotting against two parameters at a time, Fig. \ref{fig:fig5}d-f reinforce the 
-same conclusions. The plotted quantity $\Delta_i^{[EC]}/|\text{GWR}|$ was often large,
-indicating that ATAs were often a substantial contributor to whether the diatom species 
-coexist. For instance, well over half the area of Fig. \ref{fig:fig5}f showed values of 
+same conclusions. The quantity $\Delta_i^{[EC]}/|\text{GWR}|$ was often large,
+indicating that ATAs were a substantial contributor to coexistence. 
+For instance, well over half the area of Fig. \ref{fig:fig5}f showed values of 
 $\Delta_i^{[EC]}/|\text{GWR}|$ bigger than $1/4$, with large portions of
 Fig. \ref{fig:fig5}d-e satisfying the same criterion. Substantial portions of 
 panels d-f also show values of $\Delta_i^{[EC]}/|\text{GWR}|$ bigger than $1$,
 corresponding to ATA rescue. ATA exclusion did not occur for this system for the 
-parameter ranges we considered.
+parameters we considered.
 
 \section{Discussion}\label{section:discussion}
 
 %Summary-type paragraph of main results
-We produced and applied a new extension of modern coexistence theory (MCT) that 
+We developed and applied a new extension of modern coexistence theory (MCT) that 
 quantifies the impact of asymmetric tail associations (ATAs) on species coexistence. 
 Building upon a recent, simulation-based approach to MCT \citep{Ellner_2016, Ellner_2019},
 we decomposed storage effects into two new mechanisms, the contribution of ATAs to coexistence,
 and the contribution of $EC$ correlation \emph{per se}.
 Applications of our extended theory to the lottery model and to a laboratory diatom system demonstrated that  
 ATA contributions to storage effects and to species coexistence 
-can often be comparable in magnitude to the contributions of previously recognized mechanisms.
+can be comparable in magnitude to contributions of previously recognized mechanisms.
 Our results add
-coexistence and biodiversity maintenance to the list of ecological theories and phenomena on which 
+coexistence to the list of ecological phenomena on which 
 ATAs have been shown to have an important impact \citep{Ghosh_2020_AER, Ghosh_2020_Eco, Ghosh_2020_ecolevol, Ghosh_2021}.  
 Though storage effects are typically described as the contribution
 of $EC$ \emph{covariance} to coexistence \citep{Chesson_2012, Ellner_2016, Ellner_2019},
-our results suggest that storage effects should be redefined to constitute the 
-contribution of \emph{associations} between $E$ and $C$, generally, including both ATA effects and
+our results suggest that storage effects should be redefined as the 
+contribution of \emph{associations} between $E$ and $C$, generally, including ATA effects and
 correlation \emph{per se}. The prior terminology, \emph{covariance}, is typically construed 
-as reflecting the linear relationship between variables, ignoring complexities of the association,
+as reflecting the linear relationship between variables, ignoring complexities of the association
 such as ATAs, which we now know can be important. ATAs contributions to coexistence were less important than other mechanisms 
-in some contexts (the log-normal fecundities lottery model), but were very important in other contexts
-(the beta fecundities lottery model), including our empirically
-based example (the diatom system). 
+in some contexts, but were very important in other contexts, including our empirically
+based example (the diatom system).
+Our work therefore demonstrates the potential for ATAs to be an important mechanism of coexistence, generally.
 Future work should seek to understand precisely when ATAs are or are not important
-for coexistence. Our work demonstrates the potential for ATAs to be an important mechanism of coexistence, generally.
+for coexistence. 
 
 %Para continuing to try to build intuition about how ATAs work
 We return to the task, begun in the Introduction, of building intuition for how
@@ -789,7 +753,7 @@ $\log(1-\delta+E_i/C_{i \bs i})$, can both get very big, corresponding to
 rapid growth, if $C_{i \bs i}$ is close to $0$, even if $E_i$ is fairly small.
 In contrast, if $E_i$ and $C_{i \bs i}$ are both in the right portions of their distributions, 
 so that $C_{i \bs i}$ is bounded away from $0$, there may be much sharper limits on the 
-ratio $E_i/C_{i \bs i}$ and the corresponding growth rate.
+ratio $E_i/C_{i \bs i}$ and the growth rate.
 ATA effects quantify the extent to which asymmetries of association between $E$ and 
 $C$ are aligned with varying potential for storage across the $E,C$ distribution. 
 ATA effects help quantify different degrees of temporal niche differentiation 
@@ -801,7 +765,7 @@ Figs \ref{SI-fig:beta_fecundidities_explanatory}-\ref{SI-fig:lognormal_fecundidi
 where comparisons are also made between our two lottery models. 
 
 %Climate change may alter ATAs of coexistence-relevant ATAs
-An additional motivation for quantifying the importance of ATAs for species coexistence 
+An additional motivation for quantifying the importance of ATAs for coexistence 
 is that there is reason to believe climate change may
 alter ATAs of environmental variables which impact coexistence, as follows.
 It is well known that climate change can alter the intensity of extreme environmental events, including
@@ -811,16 +775,15 @@ are not only hotter but also last longer, \citealp{Meehl_2004,Lyon2019,Keelings2
 then the nature of the covariation between phenologically separated environmental signals
 may be modified by these changes; in particular, ATAs between such variables may be altered.
 For instance, imagine a case in which early spring temperature influences the growth of a plant species, A,
-whereas late spring temperature influences plant species B. If these species are competitors, then EC covariation
-contributing to their coexistence, or failure to coexist, could boil down to covariation
+whereas late spring temperature influences species B. If these species are competitors, then $EC$ covariation
+influencing their potential coexistence could boil down to covariation
 between early and late spring temperatures (e.g., if competitive dynamics are governed by the lottery model with $E_i$ representing
-early spring temperature and $E_j$ representing late spring temperature, see previous paragraph). 
+early spring temperature and $E_j$ representing late spring temperature, see SI section \ref{SI-SIsect:ATA_specialists}). 
 Because longer lasting heat waves are more likely to contribute
 to both early and late spring temperature, a tendency for heat waves to become both more extreme and
-longer lasting increases the degree of right-tail association between early and late spring temperature.
-Likewise, a tendency for cold snaps to become both more intense (i.e., colder temperatures) and longer lasting can increase
-left-tail association between early- and late-spring temperatures. As we showed in this study, changes in ATAs can then
-result in different competitive outcomes between species.
+longer lasting increases the right-tail association between early and late spring temperature.
+As we showed in this study, changes in ATAs can then
+result in different competitive outcomes.
 To our knowledge, the potential importance of climatic changes in ATAs for species coexistence has
 not been studied, though the importance for coexistence of changes
 in means and variability of environmental variables has been studied in many systems
@@ -832,14 +795,14 @@ of changes in the extremes of the univariate marginal distributions themselves \
 Additional discussion points are in SI sections \ref{SI-SIsect:ATA_specialists}-\ref{SI-sect:storage_importance}.
 
 %close
-It seems reasonable to suppose that ATAs will play an increasingly important role in systems of 
+It seems reasonable to suppose that ATAs may play an increasingly important role in systems of 
 greater complexity because such systems have more pairs of temporally variable quantities that
-may exhibit asymmetries of association. Our prior work shows that ATAs are common in 
-ecological and environmental variables \citep{Ghosh_2020_AER}. We have here used simple mathematical
+may exhibit ATAs. Our prior work shows that ATAs are common in 
+ecological and environmental variables \citep{Ghosh_2020_AER}. We have here used mathematical
 and laboratory models to provide an initial exploration of the potential importance of ATAs
 for coexistence. Future work should attempt to generalize lessons learned here to 
 field systems with multiple species, stage structure, spatial extent, non-competitive interactions 
-such as predation and facilitation that can also mediate coexistence, and other complexities.
+such as predation and facilitation, and other complexities.
 
 \section{Acknowledgments}
 
