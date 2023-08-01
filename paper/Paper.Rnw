@@ -194,10 +194,10 @@ symmetric type of association, while Fig. \ref{fig:pedagog1}a,c exhibit what has
 ``asymmetric tail association'' [ATA; \citealp{Ghosh_2020_AER}]. 
 Metrics of association other than correlations are also often used (e.g., various forms of 
 regression), but other common methods also reveal only a small portion 
-of the information content of the relationship between variables \citep{Nelsen2006}.
+of the information content of the relationship \citep{Nelsen2006}.
 ATAs and related ideas had previously been seldom considered in ecology, but recently 
 insights have been gained by studying how features of associations beyond standard measures 
-impact various ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovic_2019, Ghosh_2020_AER, Ghosh_2020_Eco,
+impact ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovic_2019, Ghosh_2020_AER, Ghosh_2020_Eco,
 Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argued that extinction risks can become elevated 
 when metapopulations are subject to ATAs, e.g., if environmental ``catastrophes'' are more spatially synchronous 
 across component populations
@@ -206,7 +206,7 @@ And \cite{Ghosh_2021} showed that ATAs can alter the stability of
 ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
 plankton population density time series; many other examples of ATAs in nature have also been explored 
 \citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
-competition have not been investigated. Doing so is our goal. 
+competition have not been investigated. Doing so is our goal here. 
 
 %Intro to competition, coexistence, MCT, etc.
 Competition and coexistence are research topics at the core of modern ecology 
@@ -216,7 +216,8 @@ instead drive the other extinct \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems,
 through the niche partitioning effects of environmental variation.
-MCT breaks down coexistence into the contributions of various mechanisms, with names such as ``storage effects'' \citep{Chesson_1994}; storage effects are reviewed conceptually below and 
+MCT breaks down coexistence into the contributions of various mechanisms, with names such as 
+``storage effects'' \citep{Chesson_1994}; storage effects are reviewed conceptually below and 
 defined formally in Theory. MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Letten2018}, and corals \citep{Alvarez-Noriega_2020}. 
@@ -242,8 +243,8 @@ ATAs may, in principle, influence storage effects simply because storage effects
 and ATAs can be an aspect of $EC$ covariation. One scenario in which it is reasonable to imagine that
 ATAs may be present in $EC$ covariation pertains to water limitation. Suppose two plants compete primarily for 
 water, when water is scarce, but their niches become more differentiated when water is abundant.
-Then the quality of the environment, $E$, as experienced by whichever plant is scarce, may only correspond closely to the 
-competition, $C$, imposed on it by the other, currently abundant plant, when water is scarce and $E$ is low.   
+Then the quality of the environment, $E$, as experienced by whichever plant is currently rare may only correspond closely to the 
+competition, $C$, imposed on it by the currently abundant plant when water is scarce and $E$ is low.   
 
 %Lottery model and results based on it
 To further demonstrate the plausibility of ATAs altering coexistence, we carried out 
@@ -297,7 +298,7 @@ ATA effects quantify the extent to which asymmetries of association between $E$ 
 $C$ are aligned with differences in the potential for storage across the spectrum from 1 to 2.
 If $E$ and $C$ are largely unassociated in the parts of their distribution where
 storage potential is high, ATA effects will be high. ATA effects quantify how temporal niche partitioning
-varies across $EC$ spectrum spanned by the cases 1-2 sketched above.
+varies across the $EC$ spectrum spanned by the cases 1-2 sketched above.
 
 %Goal para
 We previously demonstrated that ATAs are common in nature and can influence ecological phenomena
@@ -324,24 +325,24 @@ and a means of understanding its importance.
 
 We here pursue goal G1 from the Introduction: to augment MCT to show the role of ATAs for coexistence. 
 
-\subsection{Theoretical setup}
+\subsection{Setup}
 
-We first develop our new theory for a general two-species model.
+We first develop our theory for a general two-species model.
 Our notation parallels
 that of \cite{Ellner_2016,Ellner_2019}. It is assumed that the growth rate $r_i(t)=\ln(N_i(t+1)/N_i(t))$ 
 of species $i$ can be written as an increasing function of
 an environmental factor $E_i(t)$ and as a decreasing function of 
 competitive pressure on species $i$, $C_i(t)$, i.e., $r_i(E_i,C_i)$. We also assume, for simplicity, 
 that the $E_i(t)$ are iid through time, and likewise for the
-$C_i(t)$. Though the iid assumption is probably unnecessary, it simplifies the
+$C_i(t)$. Though this assumption is probably unnecessary, it simplifies the
 presentation of new ideas. 
 
 \subsection{The storage effect}
 
-MCT and its recent computational extensions \citep{Ellner_2016,Ellner_2019} 
+MCT and its computational extensions \citep{Ellner_2016,Ellner_2019} 
 quantify the contributions of 
 multiple mechanisms to coexistence. But we show below
-that, for purely temporal variation, only one mechanism relates to tail associations: storage effects. 
+that only one mechanism relates to ATAs: storage effects. 
 So we begin by defining storage effects. 
 The storage effect for species $i$ is the contribution of covariation between $E$ and 
 $C$ to a difference between rare and common species mean growth rates, when $i$ is rare.
@@ -349,19 +350,19 @@ Specifically, storage effects for species $i$ are
 \begin{equation}
 \Delta_i^{(EC)} = (\olr_{i\bs i} - q_{ij} \olr_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i}),\label{eq:storage_effects_gen}
 \end{equation}
-where: $\olr_{i \bs i}$ refers to the mean ``growth when rare'' (GWR) of species $i$, that is, the mean growth rate of 
+where: $\olr_{i \bs i}$ is the mean ``growth when rare'' (GWR) of species $i$, that is, the mean growth rate of 
 species $i$ when it is at negligible abundance and species $j$ (the other species) is at stochastic steady state;
-$\olr_{j \bs i}$ refers to the mean steady-state 
+$\olr_{j \bs i}$ is the mean steady-state 
 growth rate of species $j$ when species $i$ is absent or at negligible abundance (this is $0$, \emph{a priori});
 and $\olrs_{i \bs i}$ and $\olrs_{j \bs i}$ are analogous quantities, but for an alternative modelling scenario, identical except that
-influences of environment and competition on either species have been rendered independent.  
+influences of environment and competition have been rendered independent.  
 A subscript 
 $i \bs i$ always indicates a quantity computed for species $i$ when that species is at negligible abundance, and 
 a subscript $j \bs i$ indicates a quantity computed for $j$ when $i$ is absent.
 The \emph{scaling factor}
 $q_{ij}$ measures the relative sensitivities to competition of the two species. See \cite{Chesson_1994},
 \cite{Ellner_2016} and SI section \ref{SI-SIsect:scaling_factors} for the two
-alternative definitions of $q_{ij}$ that we use, but one definition is $q_{ij}=1$, and to understand the new
+alternative definitions of $q_{ij}$ that we use; but one definition is $q_{ij}=1$, and to understand the new
 ideas presented here it is sufficient to use that definition. 
 Since it was assumed that $r_i=r_i(E_i,C_i)$, we can write $\olr_{i \bs i}=\E[r_i(E_i,C_{i \bs i})]$, where
 $\E(\cdot)$ denotes expected value just as does an overbar, but we use $\E$ for longer expressions.
@@ -378,17 +379,16 @@ contributions due to ATAs and due
 to $EC$ correlation \emph{per se}. 
 Storage effects for species $i$ were computed by comparing
 differences between rare and common species mean growth rates for the original model and for a 
-modified model for which the components of $(E_i,C_{i \bs i})$ and those of $(E_j,C_{j \bs i})$
-were rendered independent of each other [see (\ref{eq:storage_effects_gen})]. 
-Because these components were rendered 
+modified model for which $E$ and $C$
+were rendered independent [see (\ref{eq:storage_effects_gen})]. 
+Because components were rendered 
 completely independent in the modified model, storage effects quantify the contribution of the 
-whole $EC$ relationship, in all its aspects, to the rare/common species growth rate
+whole $EC$ relationship to the rare/common species growth rate
 difference. But we can instead consider distributions $(E_i^\nat,C_{i \bs i}^\nat)$ and 
 $(E_j^\nat,C_{j \bs i}^\nat)$ with the same
 marginal distributions, respectively, as $(E_i,C_{i \bs i})$ and $(E_j,C_{j \bs i})$,
-and with some but not all aspects of the relationship 
-between the components altered relative to the original distributions. Specifically, asymmetries of 
-tail association are removed -- see below for how this is done. We then define 
+and with some but not all aspects of the $EC$ relationship 
+altered. Specifically, ATAs are removed -- see below for how. We then define 
 $\olrn_{i \bs i}$ and $\olrn_{j \bs i}$ based on a modified model using  $(E_i^\nat,C_{i \bs i}^\nat)$
 and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition 
 \begin{align}
@@ -396,62 +396,55 @@ and $(E_j^\nat,C_{j \bs i}^\nat)$, and we consider the decomposition
 [(\olrn_{i \bs i}-q_{ij} \olrn_{j \bs i})-(\olrs_{i \bs i}-q_{ij} \olrs_{j \bs i})] \label{eq:storage_effects_further1}\\
 &= \Delta_i^{[EC]} + \Delta_i^{[E \nat C]}.\label{eq:storage_effects_further}
 \end{align}
-The term $\Delta_i^{[EC]}$ is the component of storage effects due to 
-ATAs between $E_i$ and $C_{i \bs i}$, and between $E_j$ and $C_{j \bs i}$. We will refer to this term as 
-the \emph{ATA effect on coexistence}. 
+The term $\Delta_i^{[EC]}$ is the \emph{ATA effect on coexistence}. 
 The term $\Delta_i^{[E \nat C]}$ is the component of storage effects due to $EC$ 
 correlation \emph{per se}, remaining after having removed the effects of ATAs.
-Note that brackets, $[\cdot]$, and parentheses, $(\cdot)$, are used distinctly in our notation,
+Note that brackets, $[\cdot]$, and parentheses, $(\cdot)$, are used distinctly
 throughout the paper - they are not interchangeable.
-The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (i.e., two of its four lines), 
-corresponding to the removal of part of the relationship between $E$ and $C$ components (namely, ATAs).
-The new symbol should correspondingly be pronounced ``partial sharp''.
-See SI section \ref{SI-SIsect:techcomm} for technical comments on the new notation. 
+The notation $\nat$ was chosen because this new symbol is part of the symbol $\shp$ (two of its four lines), 
+corresponding to the removal of part of the relationship between $E$ and $C$ components (ATAs).
+The symbol should correspondingly be pronounced ``partial sharp''.
+See SI section \ref{SI-SIsect:techcomm} for technical comments on the notation. 
 The brackets in $\Delta_i^{[E \nat C]}$ and $\Delta_i^{[EC]}$ are intended to indicate that 
 (\ref{eq:storage_effects_further}) is a decomposition within a decomposition, i.e., (\ref{eq:storage_effects_further}) is a decomposition
-of storage effects, which are themselves a term in the MCT decomposition \citep{Ellner_2019} -- see 
+of storage effects, which are a term in the MCT decomposition \citep{Ellner_2019} -- see 
 below for additional details.
 
 How are asymmetries of tail association removed while leaving $E$ and $C$ marginal distributions and overall 
 correlation unchanged? Fig. \ref{fig:pedagog2} provides an illustration of the steps we describe here. 
 We assume, for simplicity, that the cumulative distribution functions (CDFs) of $E_i$ and 
-$C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, respectively, are strictly monotonic and continuous. 
+$C_{i \bs i}$, which we denote $F_{E_i}$ and $F_{C_{i \bs i}}$, are strictly monotonic and continuous. 
 Letting $\varphi$ be the CDF of a standard normal distribution, we consider the random variables
 $\varphi^{-1} \circ F_{E_i} (E_i)$ and $\varphi^{-1} \circ F_{C_{i \bs i}}(C_{i \bs i})$, which are standard normally
 distributed, although they are not necessarily jointly bivariate normal (Fig. \ref{fig:pedagog2}a,b).  
-Let $\rho_i$ be the covariance of
-these random variables. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
+Let $\rho_i$ be their covariance. We then define a bivariate normal random variable $(e_i,c_{i \bs i})$ such that
 $\E(e_i)=\E(c_{i \bs i})=0$ and $\var(e_i)=\var(c_{i \bs i})=1$, and we denote 
 $\cov(e_i,c_{i \bs i})$ by $\ddot{\rho}_i$ (Fig. \ref{fig:pedagog2}c). We define 
 $E_i^\nat = F_{E_i}^{-1} \circ \varphi(e_i)$
 and $C_{i \bs i}^\nat=F_{C_{i \bs i}}^{-1} \circ \varphi(c_{i \bs i})$ (Fig. \ref{fig:pedagog2}d). 
-The value of $\ddot{\rho}_i$ is then determined in one of 
+The value of $\ddot{\rho}_i$ is determined in one of 
 four alternative ways: either by setting $\ddot{\rho}_i = \rho_i$; or so that the Pearson, Spearman or Kendall correlation of 
 $E_i^\nat$ and $C_{i \bs i}^\nat$ matches that of $E_i$ and $C_{i \bs i}$. The choice of bivariate normal 
 $(e_i,c_{i \bs i})$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are symmetrically tail associated.
 For those familiar with copula statistics (see, e.g., \citealp{Genest_2007} and \citealp{Ghosh_2020_AER}), 
 we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i^\nat,C_{i \bs i}^\nat)$.
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
-$E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is considered preferable. Thus $E_i^\nat$ and 
-$C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se},
-as desired. The question of the uniqueness of the distribution $(E_i^\nat,C_{i \bs i}^\nat)$ 
+$E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is preferable. Thus $E_i^\nat$ and 
+$C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se}. 
+The question of uniqueness of the distribution $(E_i^\nat,C_{i \bs i}^\nat)$ 
 is addressed in SI section \ref{SI-SIsect:uniqueness}.
 The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
 For comparison, Fig. \ref{fig:pedagog2} also shows, for the example explored by that figure, 
 the distribution $(E_i^\shp,C_{i \bs i}^\shp)$
-defined in the previous section (following \cite{Ellner_2016}).
-
+defined above (following \cite{Ellner_2016}).
 
 \subsection{Our decomposition as an extention of modern coexistence theory}
 
-The other mechanisms in MCT that apply in our modelling context of purely temporal variation
-make no reference to covariation between quantities, whereas ATAs are 
+The other mechanisms in MCT make no reference to covariation between quantities, whereas ATAs are 
 strictly about covariation. Therefore, storage effects are the only mechanism of coexistence
-for which ATAs are relevant. Mathematical details supporting this claim are in SI section 
-\ref{SI-SIsect:other_mechanisms}. \cite{Ellner_2016} and
-\cite{Ellner_2019} provide a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$,
-which equals GWR of species $i$. The decomposition, which we use below, is similar to and motivated by the 
-original decomposition of \cite{Chesson_1994}, 
+for which ATAs are relevant. The \cite{Ellner_2019} version of MCT comprises 
+a decomposition of the coexistence metric $\olr_{i \bs i} -q_{ij}\olr_{j \bs i}$,
+which equals GWR of species $i$, as 
 \begin{equation}
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{(EC)},\label{eq:previous_decomp}
 \end{equation}
@@ -468,16 +461,16 @@ Combining our decomposition
 \olr_{i \bs i} -q_{ij}\olr_{j \bs i}=\Delta_i^0+\Delta_i^E+\Delta_i^C+\Delta_i^{(E\shp C)}+\Delta_i^{[E \nat C]} + \Delta_i^{[EC]},\label{eq:full_decomp}
 \end{equation}
 which is the extension of MCT that was goal G1 of the Introduction. 
+The derivation of this overall decomposition is in SI section 
+\ref{SI-SIsect:other_mechanisms}. 
 
 \subsection{ATA rescue and exclusion}
 
 To evaluate the importance of ATAs for a given scenario,
-one can quantify
+we quantified
 the magnitude of the new ATA effect term, $\Delta_i^{[EC]}$, relative to the magnitudes of the other terms for the 
-scenario.  One typically (but see below) must examine this quantity for each species, $i$,
-to obtain complete information about coexistence, since coexistence requires both species populations to 
-be able to grow when rare. We also defined scenarios of ``ATA rescue''
-and ``ATA exclusion''. \emph{ATA rescue} is considered to have occurred for a given scenario if coexistence
+scenario (see Methods). But we also defined scenarios of ``ATA rescue''
+and ``ATA exclusion''. \emph{ATA rescue} is considered to have occurred if coexistence
 is possible when ATAs are taken into account, i.e., GWR$>0$ for both species, but impossible otherwise, i.e.,
 the sum of the non-ATA terms in (\ref{eq:full_decomp}) is negative for at least one species. \emph{ATA exclusion} is 
 considered to have occurred if the species do not coexist when ATAs
@@ -490,14 +483,14 @@ is positive for both species.
 \subsection{Versions of the lottery model}
 
 %Setup - two versions, and basics which apply to both
-To achieve goal G2 of the Introduction, we applied the framework of Theory to the lottery model, 
+For goal G2 of the Introduction, we applied our theory to the lottery model, 
 comparing the magnitude of the ATA effect on coexistance, $\Delta_i^{[EC]}$, to the magnitudes 
 of the other terms of 
-the decomposition (\ref{eq:full_decomp}) for various model parameterizations. We used two versions 
+(\ref{eq:full_decomp}) for various model parameterizations. We used two versions 
 of the lottery model. The versions both used the same dynamical equations
-(Introduction) and assumed temporally iid fecundities, but the
-versions differed in the distributions of $(B_1,B_2)$ used. Both distributions were based on 
-transformations of the distributions $(b_1,b_2)$ pictured in Fig. \ref{fig:pedagog1}a-c;
+(Introduction), but 
+differed in the distributions of $(B_1,B_2)$ used. Both distributions were based on 
+transformations of the distributions $(b_1,b_2)$ of Fig. \ref{fig:pedagog1}a-c;
 the details of how the left- (Fig. \ref{fig:pedagog1}a), right- (Fig. \ref{fig:pedagog1}c), 
 and symmetrically (Fig. \ref{fig:pedagog1}b) tail associated alternatives for $(b_1,b_2)$ were generated 
 are in SI section \ref{SI-sect:noise}. 
@@ -505,30 +498,28 @@ are in SI section \ref{SI-sect:noise}.
 %the log-normal fecundities version
 The \emph{log-normal fecundities lottery model} used $B_i = \exp(\mu_i+\sigma b_i)$,
 and therefore had parameters $\sigma$, $\mu_1$ and $\mu_2$ in addition to the death rate parameter $\delta$
-(Introduction) that both versions of the lottery model used. The parameter $\sigma$ is the standard deviation of the
+(Introduction). The parameter $\sigma$ is the standard deviation of the
 log-fecundities and $\mu_i$ is the mean log fecundity for species $i$. 
 
 %the beta fucundities version
 The \emph{beta fecundities lottery model}
 used $B_i = \eta_i F_\beta^{-1} \circ \varphi(b_i)$, where $\varphi$ is the CDF of the standard normal
 distribution and $F_\beta$ is the CDF of a beta distribution 
-with shape and scale parameters $0.5$ (probability density function proportional to $x^{-0.5}(1-x)^{-0.5}$ on
-the unit interval). So the beta fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
+with shape and scale parameters $0.5$. So the beta fecundities model had parameters $\eta_1$, $\eta_2$ and $\delta$,
 and produced fecundities with $U$-shaped distributions between $0$ and $\eta_1$, for $B_1$, and
-$\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$, and larger $\eta_i$ also 
-corresponded to more variable fecundities for species $i$. The parameter $\eta_i$ represents the upper
-bound on what fecundities could occur for species $i$.
+between $0$ and $\eta_2$, for $B_2$. The mean fecundity for species $i$ was $\eta_i/2$, and larger $\eta_i$ also 
+corresponded to more variable fecundities for species $i$. 
 
 %more stuff that applies to both
 For both versions of the lottery model, 
 fecundities were taken to directly reflect 
 the environment, i.e., the $E_i$ of Theory was set equal to $B_i$. 
-Competition, $C_i(t)$, in the lottery model occurs at the stage of juveniles occupying open sites.
-For both model versions, $C_i$ was therefore taken to be the number of new offspring
+Competition, $C_i(t)$, in the lottery model occurs at the stage of juveniles occupying open sites:
+$C_i$ was taken to be the number of new offspring
 divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
 does not depend on $i$. These choices for $E_i(t)$ and $C_i(t)$ fulfill the assumption of Theory 
-that the growth rate, $r_i(t)$ is an increasing function of $E_i(t)$ and a decreasing function of $C_i(t)$ 
-(see SI section \ref{SI-SIsect:TheoryForLottery} for details).
+that $r_i(t)$ is an increasing function of $E_i(t)$ and a decreasing function of $C_i(t)$ 
+(SI section \ref{SI-SIsect:TheoryForLottery}).
 
 \subsection{How results were plotted for goal G2}
 
