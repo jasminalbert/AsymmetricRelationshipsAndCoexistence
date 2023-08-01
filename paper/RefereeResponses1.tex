@@ -93,25 +93,17 @@ the opportunity to resubmit a revised version. We have addressed all referee com
 the manuscript, and hope the paper can now be rapidly accepted. } \\
 
 \noindent \emph{We have replied to referee comments below in italic, with each response preceded
-by ``***'', to make our responses easier to find.} \\
-
-\noindent \emph{We submit the following pdf files: ...} \\
-%DAN: Fill in ...
-
-\noindent \emph{We additionally submit the following latex files, necessary for compiling the
-main text latex: ...} \\
-%DAN: Fill in ...
-
-\noindent \emph{The document showing the changes we made does not include links such as citations and
-references to figures, but it does accurately represent the changes made to the text. 
-If all latex files are deposited into the same folder, it should then be possible to 
-compile the main text latex from that folder.} \\
+by ``***'', to make our responses easier to find. We submit the following pdf files: The main text pdf, including all figures; 
+the Supporting Information; and a version of the main text with changes tracked. The document showing 
+the changes we made does not include links such as citations and
+references to figures, but it does accurately represent the changes made to the text.} \\
 
 \noindent \emph{We again thank the referees and editors for their feedback and positive reviews!} \\
 
 \noindent \emph{Yours,}
 
 \noindent \emph{Dan Reuman and Jasmin Albert} \\
+%DONE with cover letter
 
 \noindent \textbf{Comments of referee 1:} \\
 
@@ -150,21 +142,21 @@ we have also added a panel to the figure in response to the related comment C13,
 
 \noindent ***\emph{This is a good question, thanks for asking it. The extent to which the process is 
 unique is now covered in a new SI section, refered to from the main text at the end of section 2.3, 
-right at the end of the text the referee asked us to move to the main text. There is a choice involved,
-but it is pretty canonical -- certainly more canonical than the kinds of choices which are often made
-in MCT, e.g., $E$ and $C$ can sometimes be defined in more than one way. Basically the choice involves 
+near the end of the text the referee asked us to move to the main text. There is a choice involved,
+but it is a pretty canonical choice -- certainly more canonical than the kinds of choices which are often made
+in MCT, e.g., $E$ and $C$ can often be defined in more than one way. Basically the choice involves 
 using a bivariate normal distribution instead of another, more esoteric 
 distribution with standard normal marginals and symmetric tail association. The bivariate normal is by far the 
 most natural example of such a distribution. See the new SI section for further explanations. }
 
 \emph{We are reticent, at this time, to launch into a lot of robustness explorations with regard to this choice, 
 as the referee may be suggesting, for several reasons. First, other referees and the editor have urged us to
-simplify, and such explorations would complexify instead. Second, as mentioned above, the choice we made is very
-natural and quite standard, so exploring other possible choices seems therefore of 
+simplify, and such explorations would complexify. Second, as mentioned above, the choice we made is very
+natural and standard, so exploring other possible choices seems of 
 secondary importance. Finally, our overall goal in writing this paper
 was to show that ATAs may be important for coexistence and, as such, deserve additional exploration in this
-context by the wider research community. As long as any choices we made are reasonable (they are), our point is
-made, regardless of whether making some more esoteric choices might have altered outcomes. As we already argue in the
+context by the wider research community. As long as any choices we made are reasonable (they are, very much so), our point is
+made, regardless of whether making some esoteric choice might have altered outcomes. As we already argue in the
 Discussion, since we have now showed that ATAs \textbf{can} be important, future work should explore \textbf{when} 
 they are important, and part of 
 that exploration could be whether some more esoteric choice for $(e_i c_{i \bs i})$ might alter our results. }\\
@@ -177,7 +169,8 @@ $E[r(E,C)]$ and $E[r(E^{||},C^{||})]$, what is really changing is the distributi
 so thanks for making the comment.} 
 
 \emph{We use notational conventions of random variables which are formally correct and standard, 
-as we now explain in more detail in the SI. 
+as we now explain in more detail in the SI. The alternatives the referee seems to suggest would be misleading to certain audiences 
+because they would be somewhat in conflict with existing conventions of probabilistic notation.
 $E_i$, $C_{i \bs i}$, $E_i^{\nat}$, $C_{i \bs i}^\nat$ and the earlier 
 notation $E_i^\shp$ and $C_{i \bs i}^\shp$ all denote \textbf{random variables}, using a 
 notational approach which is standard in applications of probability. 
@@ -185,31 +178,35 @@ Whereas the \textbf{distributions} of the random variables $E_i$, $E_i^{\nat}$ a
 these things are \textbf{not} the same \textbf{as random variables} because their relationships with other random variables 
 differ. The relationships between random variables are considered instrinsic
 to the notation. Thus it's not that somehow the expected value in $\E[r(E,C)]$ is a different definition of expected
-value than the one in $\E[r(E^{||},C^{||})]$ -- there is only one expected value operator. 
+value than the one in $\E[r(E^{||},C^{||})]$ -- there is only one expected value operator, and we dare not 
+introduce different versions because we do not want to confuse all those who already know the commonly
+accepted definition of expected value. 
 Instead, $r(E,C)$, $r(E^{||},C^{||})$ and $r(E^\shp,C^\shp)$ differ from each other 
 as random variables because of the distinct relationships between their
 different $E$ and $C$ constituents. It would be formally 
 incorrect, and confusing to readers familiar with probability, to try to define multiple expected value 
-operators, as the referee seems to suggest, when what fundamentally differs, here, is the random variables 
+operators, when what fundamentally differs, here, is the bivariate random variables 
 themselves. Readers familiar with
-probability already know what the one accepted definition of expected value is, would typically
-not be comfortable with providing additional definitions, and are comfortable handling these concepts
-with the notational conventions we have used. To remind the referee of some concepts from basic probability
-which illustrate these conventions, recall that if $X$ and $Y$ are random variables, the expectation of the 
+probability already know what the one accepted definition of expected value is, and would typically
+not be comfortable with providing additional definitions. Some concepts from probability
+which illustrate these conventions are as follows. Recall that if $X$ and $Y$ are random variables, the expectation of the 
 product, $\E(XY)$, depends not only on the univariate distributions of $X$ and $Y$, but also on the relationship
 between $X$ and $Y$, namely their joint distribution. In particular, $\E(XY)=\E(X)\E(Y)$ if $X$ and 
-$Y$ are independent, but not necessarily otherwise. These definitons and notation are completely 
+$Y$ are independent, but not necessarily otherwise. These definitons and notation are 
 standard in probability theory; notice that we use the same definition of $\E$ regardless of 
 whether $X$ and $Y$ are independent or nonindependent, it's just that the product random variable
-$XY$ differs accordingly so you get different results of $\E(XY)$ in those distinct cases.}
+$XY$ differs accordingly so you get different results of $\E(XY)$ in those distinct cases.
+One should not attempt to instead view the difference between $\E(XY)$ for $X$ and $Y$ independent
+as distinct from $\E(XY)$ for $X$ and $Y$ non-independent by looking at two different versions
+of expected value and considering $X$ and $Y$ to be ``dummy variables'', somehow.}
 
 \emph{Our notation also parallels that of Ellner et al (2016, 2019). To make it
 easier for readers to understand and to reduce the potential for future confusion, it makes sense to continue
-using existing notation whenever that notation is formally correct and otherwise effective (it is, as explained above).}
+using existing notation whenever that notation is formally correct and otherwise effective (Ellner's notation is 
+both of these, as explained above).}
 
 \emph{Nevertheless, the referee's comment has made us understand that some readers unfamiliar with random variable 
-notation may benefit from putting some
-of these explanations in the SI, so we have done so.} \\
+notation may benefit from putting these explanations in the SI, so we have done so.} \\
 %DONE
 
 \noindent C7) It was not clear to me what the reasoning was for including the correlation and ATAs in abundance for the two planktonic species in Figure 1(d) and (e).  These ATAs in abundances don't in an obvious (to me) way translate into ATAs of the underlying environment and competition variables for each species. Is this really a demonstration that ATAs occur for C and E?  If not, then it seems to be like saying ATAs exist somewhere in nature, and therefore might be present in our focal situation, which is not such a very strong reason to show (d) and (e).  Maybe I am missing something. \\
@@ -219,33 +216,37 @@ paper - the reader would anyway not be equiped to handle that at this stage, sin
 $E$ and $C$ at the point this figure is first cited (in the very first paragraph). 
 We were asked to include this kind of empirical illustration 
 by poeple who read the manuscript before we submitted it, so it seems important to some readers to have this. 
-The value is not only in showing that ATAs occur in nature, but is priarily  
-in helping people understand more fully what they look like when they occur by giving real examples. 
+The value is not only in showing that ATAs occur in nature, but is primarily  
+in helping people understand more fully what ATAs look like when they occur, by giving a real example. 
 We appreciate what the referee is saying,
 here, that perhaps one non-$EC$ example of ATAs from nature is not going
 to give much motivation for looking for ATAs in $E$ and $C$. However, we have published droves of other examples of
 ATAs in nature, and we now cite these (changing what used to be ``Fig. 1d,e show contrasting examples of ATAs in nature
 using plankton population density time series'' to ``Fig. 1d,e show contrasting examples of ATAs in nature
-using plankton population density time series; and many other examples have also been previously explored (Ghosh et al 2020)''). 
-And anyway we cannot produce a prior example of ATAs between $E$ and $C$ because there are no prior examples - this paper 
-is, to our
+using plankton population density time series; many other examples of ATAs in nature have also been explored (Ghosh et al 2020)''). 
+And anyway we cannot produce a prior example of ATAs between $E$ and $C$ at this early point in the manuscript, 
+as the referee may be suggesting, because there are no prior examples - this paper is, to our
 knowledge, the first time anyone has looked at ATAs between $E$ and $C$. Fortunately, we think the other motivational
 content of the Introduction is strong, and should stand on its own to motivate readers to spend their mental 
-energy reading this paper. In partcular, we show in the Introduction, for one simple simulation, that ATAs between E and
-C make a visually striking difference between simulation outcomes that appears clearly to influence coexistence.} \\
+energy reading this paper. This motivational content has also been strengthened since the prior version - see other replies. 
+In partcular, we show in the Introduction, for one simple simulation, that ATAs between E and
+C make a visually striking difference between simulation outcomes that appears clearly to influence coexistence.
+We also provide an intuitive example with water limitation of why one might expect ATAs between $E$ and $C$, 
+a bit later in the Introduction from the point to which the referee's comment pertains.
+And we also provide a new paragraph explaining, intuitively, how ATAs work. } \\
 %DONE
 
 \noindent C8) The authors mention that $r_{i \bs i}$ indicates growth rate of species when $i$ is rare and $j$ is at steady state.  I think $r_{j \bs i}$ must also assume that $j$ is at steady state, but this isn't mentioned. Perhaps that could be added for completeness. \\
 
 \noindent ***\emph{This was done already, the referee appears to have missed it. It was line 136 in the original submission,
-now line XXX in the resubmitted version.} \\
-%Don't forget to add the new line numbers at the end.
+now line 147 in the resubmitted version.} \\
+%Don't forget to check line numbers at the end.
 
 \noindent C9) E.g. line 100 needs removal of the word "are" or the addition of the word "and" somewhere to make sense. I'd consider going through the paper carefully for any typos or small corrections of this kind. \\
 
 \noindent ***\emph{We changed the wording as requested, and went through the entire manuscript again looking for typos
 and grammatical errors.} \\
-%Jasmin to look at line 100 and revise as needed. 
+%DONE
 
 \noindent \textbf{Comments of referee 2:} \\
 
@@ -260,7 +261,7 @@ and grammatical errors.} \\
 is their opinion, and that data are insufficient for a clear conclusion to be reached at this point. We find that 
 such an acknowledgment is both rare from a referee and very useful for causing us, as authors, to most usefully revise our 
 paper. We have added new discussion material covering these topics and find that the new material improves the paper.
-We tried to represent both viewpoints in the new material, and we cited the papers the referee mentions.}
+We tried to robustly represent the referee's viewpoints in the new material, and we cited the papers the referee mentions.}
 
 \emph{We point out that we worked not only
 with the lottery model, but also with an empirical diatom system. That system definitely supported the importance of 
@@ -271,7 +272,7 @@ differentiation can happen when you don't expect it. It seems to us
 the first step in assessing the importance of a newly recognized phenomenon has to be examining it in simple systems
 such as we have used, prior to examing it in field systems, in all their complexity, where niche differentiation
 by resources and predators can more readily occur. But once our paper is published we hope and expect that we and
-others will more broadly assess the potential importance of ATAs.}
+others will more broadly assess the potential importance of ATAs in such ``in the wild'' systems.}
 
 \emph{We also point
 out (and the referee already seems to accept this) that it is possible, \emph{a priori}, for ATAs to be 
@@ -289,7 +290,8 @@ We won't know for sure if ATAs (or storage effects) \textbf{are} important until
 Future work can assess, broadly, how important ATAs are by looking across a larger number of systems, once
 available. These are two different goals. It seems crucial to us not to allow insufficiently tested 
 opinions about the second set of goals to obstruct the publication of results pertinent to the first set of 
-goals, so we thank the referee for not doing that. We modified a few key points in the text to clarify 
+goals, since doing so would keep a lid on the basic ideas and precent their later broad testing.
+So we thank the referee for not doing that. We modified a few key points in the text to clarify 
 our viewpoint that we do not think our work definitively indicates that ATAs will certainly be a crucial
 mechanism of coexistence; instead we just think our work opens that possibility, for future exploration.
 For instance, we replaced the last sentence of the first paragraph of the Discussion, which used to be
@@ -308,7 +310,7 @@ that in future work, rather than a definitive conclusion that they are important
 
 \emph{The new Discussion material is in an SI section which is cited from the main text Discussion section. 
 We would have liked to put some of the new material into the main text. But length limits, together with
-clear requests from other referees to add a variety of content to the main text, made doing so impossible.} \\
+clear requests from other referees to add a variety of explanatory content to the main text, made doing so impossible.} \\
 %DONE
 
 \noindent C12) I like the conceptual idea of removing the long tail. \\
@@ -370,9 +372,10 @@ is interested in our approach to the extent that they are generating potential i
 \noindent ***\emph{There is no space to intro these things, so we limited this text to just mentioning 
 extinction risks and stability of ecosystem functioning. Whereas some ecologists may not have heard of 
 Taylor's law, we feel confident that extinction risks and stability of ecosystem functioning will ring
-a bell for most ecologists. It was not actually necessary to link to Taylor's law, we just though it 
+a bell for most ecologists. It was not actually necessary to link to Taylor's law, we just thought it 
 would provide an additional tie-in to another part of the literature. But that won't work if the referee is right 
-that most ecologists will become confused, so we were happy to drop that connection here.} \\
+that most ecologists will become confused, so we were happy to drop that connection here, leaving this
+section of the text to stand on the connections to extinction risk and ecosystem stability.} \\
 %DONE
 
 \noindent C18) L49: This is not immediately clear to me why (obviously, you’ve shown this in the other paper). Is it possible to briefly state why? \\
@@ -381,7 +384,7 @@ that most ecologists will become confused, so we were happy to drop that connect
 paper in order to understand this current paper, we were just trying to tie the current work in to 
 another area of research in ecology, for the sake of contextualizing it a bit and motivating studies of ATAs generally. 
 So an explanation, here, is not 
-strictly necessary to the current paper. Nevertheless, we tried to satisfy the referee's request of adding a bit of explanation
+strictly necessary to the current paper. Nevertheless, we tried to satisfy the referee's request of adding a short bit of explanation
 without disrupting the flow too much. Thanks for your interest, by the way, we encourage you to have a look at the
 other paper if you haven't already.} \\
 %DONE
@@ -392,14 +395,14 @@ other paper if you haven't already.} \\
 in fact, the reader does not need to understand what relative nonlinearity is at all for the main text
 and main ideas of the paper. We apologize for giving the false impression, here, that more background knowledge was needed
 than is actually the case. We eliminated the reference to relative nonlinearity and indicated to the 
-reader that storage effects would be conceptually reviewed below (a couple paragraphs down) and then 
+reader that storage effects would be conceptually reviewed below (in the very next paragraph) and then 
 defined in Theory, which they are.} \\
 %DONE
 
 \noindent C20) Sidenote: After writing these few comments it appears to me that you seem to have a very knowledgeable reader in mind, which may not be the case for a general journal as Ecology letters. \\
 
 \noindent ***\emph{Well, we appreciate the referee's effort to spur us to produce the clearest 
-paper possible, and we have used the comments to clarify. But, of the comments 
+paper possible, and we have used their comments to clarify the paper. But, of the comments 
 C16-C19 above, only C19 relates at all to whether this paper is written for a general ecological audience,
 and we have revised the text C19 mentions so as to robustly address that comment (see response above). 
 The manuscript text mentioned in C17-C18 was just linking this paper to other prior work on ATAs. 
@@ -409,12 +412,15 @@ and to show that ATAs have been found to be important in ecology, generally, to 
 Furthermore, we don't think our paper is any more specialized or mathematical than the papers Ellner et al (2016, 2019) which
 we cite, and which inspired our paper, and which were published in Ecology Letters. Nor is it more 
 specialized than many other papers we have read in Ecology Letters. Quantitive approaches are absolutely 
-central in ecology these days, and increasingly so. So comments which would tend to sideline such paper
+central in ecology these days, and increasingly so. So comments which would tend to sideline such papers to
 "specialist journals", which fewer people read, seem outdated to us, especially when the papers in question 
 are about mainstream topics such
-as coexistence. Nevertheless, we have gone through the paper and redoubled our efforts to make the 
+as coexistence. Nevertheless, we do robustly agree that every individual paper should be made as accessible
+as possible, given the subject matter, and we have gone through the paper and redoubled our efforts to make the 
 paper broadly accessible.} \\
-%We have to go through the paper and redoubled our efforts to make the paper broadly accessible.
+%DONE
+
+%DAN: made it to here 2023 08 01, 609am
 
 \noindent C21) L64: Narwani 2013 is actually not a good reference because it did not include any temporal variation, a better one would be Letten et al. 2019 in PNAS. \\
 
