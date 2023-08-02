@@ -195,7 +195,7 @@ symmetric type of association, while Fig. \ref{fig:pedagog1}a,c exhibit what has
 Metrics of association other than correlations are also often used (e.g., various forms of 
 regression), but other common methods also reveal only a small portion 
 of the information content of the relationship \citep{Nelsen2006}.
-ATAs and related ideas had previously been seldom considered in ecology, but recently 
+ATAs and related ideas had previously been seldom considered in ecology, but recent 
 insights have been gained by studying how features of associations beyond standard measures 
 impact ecological phenomena \citep{deValpine_2014, Anderson_2019, Popovic_2019, Ghosh_2020_AER, Ghosh_2020_Eco,
 Ghosh_2020_ecolevol, Ghosh_2021}. For instance, \cite{Ghosh_2020_Eco} argued that extinction risks can become elevated 
@@ -243,7 +243,7 @@ ATAs may, in principle, influence storage effects simply because storage effects
 and ATAs can be an aspect of $EC$ covariation. One scenario in which it is reasonable to imagine that
 ATAs may be present in $EC$ covariation pertains to water limitation. Suppose two plants compete primarily for 
 water, when water is scarce, but their niches become more differentiated when water is abundant.
-Then the quality of the environment, $E$, as experienced by whichever plant is currently rare may only correspond closely to the 
+Then the quality of the environment, $E$, as experienced by whichever plant i. s currently rare may only correspond closely to the 
 competition, $C$, imposed on it by the currently abundant plant when water is scarce and $E$ is low.   
 
 %Lottery model and results based on it
@@ -438,7 +438,7 @@ For comparison, Fig. \ref{fig:pedagog2} also shows, for the example explored by 
 the distribution $(E_i^\shp,C_{i \bs i}^\shp)$
 defined above (following \cite{Ellner_2016}).
 
-\subsection{Our decomposition as an extention of modern coexistence theory}
+\subsection{Our decomposition as an extension of modern coexistence theory}
 
 The other mechanisms in MCT make no reference to covariation between quantities, whereas ATAs are 
 strictly about covariation. Therefore, storage effects are the only mechanism of coexistence
@@ -484,7 +484,7 @@ is positive for both species.
 
 %Setup - two versions, and basics which apply to both
 For goal G2 of the Introduction, we applied our theory to the lottery model, 
-comparing the magnitude of the ATA effect on coexistance, $\Delta_i^{[EC]}$, to the magnitudes 
+comparing the magnitude of the ATA effect on coexistence, $\Delta_i^{[EC]}$, to the magnitudes 
 of the other terms of 
 (\ref{eq:full_decomp}) for various model parameterizations. We used two versions 
 of the lottery model. The versions both used the same dynamical equations
