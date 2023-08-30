@@ -1,9 +1,16 @@
+#This script makes uses beta distributed fecundities, B, made in beta_transform.R, for population simulations plotted in Figure1.R.
 
+##libraries used (invoked with ::): graphics, 
+
+### location to pull and save results ###
 numRes_loc <- "../results_numeric/"
+
+#load Beta fecundities
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 B <-readRDS(betanoise_loc)
 
-### popsim ###
+### popsim ### 
+#simulates lottery model for beta distributed fecundities
 #ARGS:
 #bnoise	2 column matrix of species noise
 #N      total abundance (N1 + N2), numeric
@@ -46,7 +53,7 @@ popsim <- function(N,N1,up_i,up_j,delta,bnoise,plot=TRUE, len=100) {
   }
   #
   if (plot==TRUE){
-    plot(N1[1:len], type='l', ylim=c(0,N), xaxt='n', ylab='', yaxt='n',xlab='')
+    graphics::plot(N1[1:len], type='l', ylim=c(0,N), xaxt='n', ylab='', yaxt='n',xlab='')
   }
   N2<-N2[-1000001]
   N1<-N1[-1000001]
