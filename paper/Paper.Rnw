@@ -217,8 +217,11 @@ Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] i
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems,
 through the niche partitioning effects of environmental variation.
 MCT breaks down coexistence into the contributions of various mechanisms, with names such as 
-``storage effects'' \citep{Chesson_1994}; storage effects are reviewed conceptually below and 
-defined formally in Theory. MCT has been
+``storage effects'' \citep{Chesson_1994}. 
+Storage effects refer to ... and are reviewed conceptually below and 
+defined formally in Theory. 
+
+MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Letten2018}, and corals \citep{Alvarez-Noriega_2020}. 
 %Narawani_2013
@@ -895,8 +898,8 @@ very different patterns of association. For (a, c), we used asymmetrically tail 
 correlated in the lower or upper halves of the distributions, though it is also possible to generate asymmetrically 
 tail associated noise with imperfect correlations in both halves of the distributions [\citealp{Nelsen2006,Ghosh_2020_AER};
 see also (d,e)]. 
-The variables $(B_1,B_2)$ described in the Introduction and Methods were obtained by generating noise as 
-pictured and then transforming the marginals as specified in Methods.
+%The variables $(B_1,B_2)$ described in the Introduction and Methods were obtained by generating noise as 
+%pictured and then transforming the marginals as specified in Methods.
 (d,e) Two examples of ATAs found in nature. Axes are population densities of two plankton species, 
 \emph{Ceratium fusus} and \emph{Ceratium furca}, sampled in successive years in two of the 15 locations 
 in the North Sea considered by \citep{Ghosh_2020_ecolevol}. ATAs were statistically
@@ -905,8 +908,9 @@ panel d, and primarily in the right tails in panel e (SI section \ref{SI-SIsect:
 One can see these asymmetries by noting that the open points in panel d, which are in the left halves of the
 distributions, are more tightly clustered around the line $y=x$ than are the closed points,
 which are in the right halves of the distributions; and \emph{vice versa} for panel e.
-(f-h) Lottery model population simulations using $(B_1,B_2)$ obtained by transforming the 
-respectively corresponding variables (a-c; see Introduction).
+(f-h) Lottery model population simulations% using $(B_1,B_2)$ 
+obtained by transforming the respectively corresponding variables (a-c; see Introduction).
+See Table 1 for used annotations and abbreviations.
 \label{fig:pedagog1}}
 \end{figure}
 
@@ -931,6 +935,7 @@ following \cite{Ellner_2016}, for comparison. These are the distributions used t
 $\Delta_i^{(EC)}$ (Theory).
 For illustration purposes we started with beta distributed $E_i$ and $C_{i \bs i}$. Contour lines are 
 $\log_{10}$ of probability density on all panels. 
+See Table 1 for used annotations and abbreviations.
 \label{fig:pedagog2}}
 \end{figure}
 
@@ -953,7 +958,8 @@ ATA rescue or exclusion (Theory). Standard errors of plotted quantities
 were never greater than \Sexpr{round(se3,5)}, so are not displayed. This plot uses $q_{ij}=1$. An 
 analogous plot (SI Fig. \ref{SI-fig:fig3_alt}) uses 
 $q_{ij}=\exp(\mu_i)/[(1-\delta)\exp(\mu_j)+\delta\exp(\mu_i)]$; though results differed
-in detail, main conclusions were the same. \label{fig:fig3}}
+in detail, main conclusions were the same. 
+See Table 1 for used annotations and abbreviations. \label{fig:fig3}}
 \end{figure}
 
 \begin{figure}
@@ -976,7 +982,7 @@ This plot uses $q_{ij}=1$.
 An analogous plot (SI Fig. \ref{SI-fig:fig4_alt}) uses 
 $q_{ij}=\eta_i/(\eta_j(1-\delta)+\eta_i \delta)$; 
 though results differed in detail, main conclusions were the same.
-}\label{fig:fig4}
+See Table 1 for used annotations and abbreviations. }\label{fig:fig4}
 \end{figure}
 
 %***DAN: Jasmin, this currently pulls in a pdf you sent me, stored temporarily on my drive in the indicated 
@@ -1018,6 +1024,6 @@ explored parameter space.
 For the parameters we considered, GWR of the other diatom species in the system, 
 \emph{C. pseudostelligera}, was always positive both including and
 excluding the effects of ATAs, so GWR for \emph{F. crotonensis}, decomposed here, is a 
-sufficient coexistence metric.
+sufficient coexistence metric. See Table 1 for used annotations and abbreviations.
 
 \end{document}
