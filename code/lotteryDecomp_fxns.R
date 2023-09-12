@@ -2,6 +2,8 @@
 #	decompose
 	#	for coexistence decomposition of lottery model
 
+##libraries used (invoked with ::): stats
+
 ### decompose ###
 # compute estimates for epsilons and Deltas of coexistence decomposition
 # using two alternatives for qij
@@ -35,19 +37,19 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_Ei_hat <- mean(log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))) - e_0i
   #standard error
-  e_Ei_se <- sd(log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)))/sqrt(M)
+  e_Ei_se <- stats::sd(log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)))/sqrt(M)
   
   #3. epsilon^C_i bar (eq 45)
   #estimate
   e_Ci_hat <- mean(log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2))) - e_0i
   #standard error
-  e_Ci_se <- sd(log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)))/sqrt(M)
+  e_Ci_se <- stats::sd(log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)))/sqrt(M)
   
   #4. epsilon^(E#C) bar (eq 51)
   #estimate
   e_ECsharpi_hat <- mean(log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif))) - e_Ei_hat - e_Ci_hat - e_0i
   #standard error
-  e_ECsharpi_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) 
+  e_ECsharpi_se <- stats::sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) 
                        - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) 
                        - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) )/sqrt(M)  
   
@@ -55,15 +57,15 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_ECpipi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))-mean(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))
   #standard error
-  s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M)
-  s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))/sqrt(M)
+  s1 <- stats::sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M)
+  s2 <- stats::sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)))/sqrt(M)
   e_ECpipi_se <- sqrt(s1^2 + s2^2)
   
   #5. epsilon^[EC] bar (eq 54)
   #estimate
   e_ECi_hat <- mean(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif))) - mean(log(1-delta+delta*exp(sigma*(bi_um-bj_um)+mudif)))   
   #standard error
-  s3 <- sd(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
+  s3 <- stats::sd(log(1-delta+delta*exp(sigma*(bi_til-bj_til)+mudif)))/sqrt(M) #need sigma here?
   e_ECi_se <-sqrt(s3^2 + s1^2)
   
   
@@ -81,19 +83,19 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_Ej_hat <- mean(log(1-delta+delta*exp(sigma*u - (sigma^2)/2))) - e_0j
   #standard error
-  e_Ej_se <- sd(log(1-delta+delta*exp(sigma*u - (sigma^2)/2)))/sqrt(M)
+  e_Ej_se <- stats::sd(log(1-delta+delta*exp(sigma*u - (sigma^2)/2)))/sqrt(M)
   
   #3. epsilon^C_j bar (eq 77)
   #estimate
   e_Cj_hat <- mean(log(1-delta+delta*exp(-sigma*u + (sigma^2)/2))) - e_0j
   #standard error
-  e_Cj_se <- sd(log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)))/sqrt(M)
+  e_Cj_se <- stats::sd(log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)))/sqrt(M)
   
   #4. epsilon^(E#C)j bar (eq 85)
   #estimate
   e_ECsharpj_hat <- mean(log(1-delta+delta*exp(sigma*sqrt(2)*u))) - e_Ej_hat - e_Cj_hat - e_0j
   #standard error
-  e_ECsharpj_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u)) 
+  e_ECsharpj_se <- stats::sd( log(1-delta+delta*exp(sigma*sqrt(2)*u)) 
                        - log(1-delta+delta*exp(u - (sigma^2)/2)) #need sigma here?
                        - log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)  
   
@@ -101,7 +103,7 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   #estimate
   e_ECpipj_hat <- mean(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))
   #standard error
-  e_ECpipj_se <- sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M)
+  e_ECpipj_se <- stats::sd(-log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M)
   
   #6. epsilon^[EC] bar (eq 91)
   e_ECj <- 0
@@ -122,14 +124,14 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DrwoATA <- r_i_hat - DECpip
   
   #standard error of Delta estimates:
-  DE_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
-  DC_se <- sd( log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) - log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
-  DECsharp_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))
+  DE_se <- stats::sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
+  DC_se <- stats::sd( log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) - log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
+  DECsharp_se <- stats::sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))
                      - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) 
                      - log(1-delta+delta*exp(sigma*sqrt(2)*u)) + log(1-delta+delta*exp(sigma*u - (sigma^2)/2))
                      + log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
-  s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) 
-  s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
+  s1 <- stats::sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) 
+  s2 <- stats::sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
   DEC_se <- sqrt(s1^2 + s2^2)
   DECpip_se <- e_ECpipi_se 
   Dr_se <- r_i_se
@@ -145,14 +147,14 @@ decompose <- function(mudif,sigma,delta,b_tilde,u) {
   DECpipq <- e_ECpipj_hat-qij*e_ECpipj_hat
   
   #standard error of Delta estimates:
-  DEq_se <- sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
-  DCq_se <- sd( log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) - qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
-  DECsharpq_se <- sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))
+  DEq_se <- stats::sd( log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2)) - qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2)) )/sqrt(M)
+  DCq_se <- stats::sd( log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) - qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
+  DECsharpq_se <- stats::sd( log(1-delta+delta*exp(sigma*sqrt(2)*u + mudif)) - log(1-delta+delta*exp(sigma*u + mudif - (sigma^2)/2))
                       - log(1-delta+delta*exp(-sigma*u + mudif + (sigma^2)/2)) 
                       - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)) + qij*log(1-delta+delta*exp(sigma*u - (sigma^2)/2))
                       + qij*log(1-delta+delta*exp(-sigma*u + (sigma^2)/2)) )/sqrt(M)
-  s1 <- sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) 
-  s2 <- sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
+  s1 <- stats::sd(log(1-delta+delta*exp(sigma*(bi_um - bj_um)+mudif)))/sqrt(M) 
+  s2 <- stats::sd(log(1-delta+delta*exp(sigma*sqrt(2)*u+mudif)) - qij*log(1-delta+delta*exp(sigma*sqrt(2)*u)))/sqrt(M) 
   DECq_se <- sqrt(s1^2 + s2^2)
   
   #return:
