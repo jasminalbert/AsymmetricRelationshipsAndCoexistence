@@ -3,6 +3,8 @@
 #	b2p
 #	decomposeB
 
+##libraries used (invoked with ::): graphics
+
 #numeric_results_loc <- "../results_numeric"
 #betanoise_loc <- paste0(numeric_results_loc, "/betanoise.RDS")
 #B<-readRDS(betanoise_loc)
@@ -281,7 +283,7 @@ decomposeB <- function(lb_i,lb_j,ub_i,ub_j, delta,blist,dir="LEFT",plot=FALSE) {
   res <- data.frame(ei=ei, ej=ej, D=D, Dq=Dq)
   row.names(res) <- c("0","E","C","(E#C)","[EC]","[E||C]","r", "rwoATA")
     if (plot==TRUE){
-  		par(mfrow=c(2,1))
+  		graphics::par(mfrow=c(2,1))
   		graphics::hist(b$i*sigma_i+mu_i, main='', xlab='',sub=paste("mu_i=",mu_i,",mu_j=",mu_j,",sigma_i=",sigma_i,",sigma_j=",sigma_j), col="black", xlim=c(0,ifelse(ub_i>ub_j, ub_i, ub_j)))
   		graphics::hist(b$j*sigma_j+mu_j, add=TRUE)
   		graphics::barplot(res$D[1:7],names.arg=rownames(res[1:7,]), main=paste("delta=",delta))
