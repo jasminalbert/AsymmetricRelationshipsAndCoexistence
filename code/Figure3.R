@@ -7,6 +7,7 @@
 ### source function ###
 #lottery model decomposition and plotting
 source("./plotMechanisms.R")
+	#contains functions: makeDeltas, plotco
 
 
 ### location to save results ###
