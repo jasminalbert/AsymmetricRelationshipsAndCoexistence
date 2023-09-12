@@ -11,6 +11,10 @@ if (!dir.exists("./.checkpoint/")){
 }
 checkpoint::checkpoint("2020-12-31",checkpoint_location = "./")
 
+### libraries used (invoked with ::):
+  # MASS, stats, graphics, grDevices, 
+  # copula, parallel, plot3D, deSolve
+
 #Make standard environmental noise (transformed to use in different simulations), change M=length of 
 #simulations here, if desired 
 source("./makenoise.R") 
