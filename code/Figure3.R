@@ -5,7 +5,7 @@
 ##libraries used (invoked with ::): graphics, grDevices
 
 ### source function ###
-#lottery model decomposition
+#lottery model decomposition and plotting
 source("./plotMechanisms.R")
 
 
@@ -70,13 +70,14 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	#make files?
   	if(file.exists(file)==FALSE){
   		Delts <- makeDeltas(noise_loc, sigma, mudif[m], delta[d], qij=FALSE)
+  		#from plotMechanisms.R
   		saveRDS(Delts$D, file=file)
   		saveRDS(Delts$se, file=sefile)
   	}
   	#standard error #need to get rid of NA col
   	maxse[n] <- max(readRDS(sefile),na.rm=T)
   	
-  	#plot
+  	#plot (from plotMechanisms.R)
   	plotco(file,sigma,ylim=ylims[[m]])
   	#axes
   	if (d==1){
@@ -142,13 +143,14 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	#make files?
   	if(file.exists(file)==FALSE){
   		Delts <- makeDeltas(noise_loc, sigma, mudif[m], delta[d], qij=TRUE)
+  		#from plotMechanims.R
   		saveRDS(Delts$D, file=file)
   		saveRDS(Delts$se, file=sefile)
   	}
   	#standard error #need to get rid of NA col
   	maxse[n] <- max(readRDS(sefile), na.rm=T)
   	
-  	#plot
+  	#plot (from plotMechanism.R)
   	plotco(file,sigma,ylim=ylims[[m]])
   	#axes
   	if (d==1){

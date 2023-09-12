@@ -1,4 +1,6 @@
-#function for coexistence decomposition of lottery model
+#This script contains the function:
+#	decompose
+	#	for coexistence decomposition of lottery model
 
 ### decompose ###
 # compute estimates for epsilons and Deltas of coexistence decomposition
