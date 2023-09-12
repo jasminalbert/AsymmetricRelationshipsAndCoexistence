@@ -1,3 +1,12 @@
+#This script makes figure 4 in main text: 
+#plotting BETA FECUNDITIES LOTTERY MODEL (qij=1)
+#decomposed mechanisms contributions to coexistence
+#against etaj for different deltas
+
+##libraries used (invoked with ::): graphics, grDevices
+
+### source function ###
+#lottery model decomposition and plotting
 source("./decompose_LB.R")
 numRes_loc <- "../results_numeric/"
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")

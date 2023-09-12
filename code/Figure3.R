@@ -1,5 +1,6 @@
-#This script makes figure 3 in main text: 
-#plotting lognormal fecundity lottery model
+#This script makes figure 3 in main text and S1 in supplement: 
+#plotting LOGNORMAL FECUNDITIES LOTTERY MODEL
+#both qij=1 (main) and qij!=1 (supplement)
 #decomposed mechanisms contributions to coexistence
 #against sigma values
 #for different deltas and mu1-mu2

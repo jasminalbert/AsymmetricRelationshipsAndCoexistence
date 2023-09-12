@@ -1,4 +1,12 @@
-#qij !=1 version for beta distributed fecundities lottery model
+#This script makes figure S2 in supplement: 
+#plotting qij !=1 BETA FECUNDITIES LOTTERY MODEL
+#decomposed mechanisms contributions to coexistence
+#against etaj for different deltas
+
+##libraries used (invoked with ::): graphics, grDevices
+
+### source function ###
+#lottery model decomposition and plotting
 source("./decompose_LB.R")
 numRes_loc <- "../results_numeric/"
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
