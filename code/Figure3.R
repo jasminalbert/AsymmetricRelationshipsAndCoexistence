@@ -1,5 +1,7 @@
 #This script makes figure 3 in main text: 
-#plotting decomposed mechanisms contributions against sigma
+#plotting lognormal fecundity lottery model
+#decomposed mechanisms contributions to coexistence
+#against sigma values
 #for different deltas and mu1-mu2
 
 ##libraries used (invoked with ::): graphics, grDevices
