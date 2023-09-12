@@ -74,12 +74,12 @@ fig5 <- function(dat_loc, invader){
   col <- c(rep("black",4), "red", "blue", "orange")
   line <- c(1,2,4,3,1,1,1); lwd <- c(rep(2,6),3)
   #plotting set up
-	rescol <- rgb(227/255, 211/255, 148/255,.5)
-	excol <- rgb(38/255, 38/255, 38/255,.5)
+	rescol <- grDevices::rgb(227/255, 211/255, 148/255,.5)
+	excol <- grDevices::rgb(38/255, 38/255, 38/255,.5)
 	lwd <- c(2,2,2,2,4,4,5)
 	line <- c(1,2,3,4,1,2,1)
 	ncol <- 5
-	yor <- hcl.colors(ncol, palette = "YlOrRd")
+	yor <- grDevices::hcl.colors(ncol, palette = "YlOrRd")
 	col <- c("black","black","black","black", yor[2], yor[1], yor[3])
   
   #get range for y axis

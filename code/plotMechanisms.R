@@ -86,8 +86,8 @@ makeDeltasB <- function(noise_loc,lb_i,lb_j,ub_i,ub_j,delta,...){
 	return(Deltas)
 }
 
-### makeDeltasB function ###
-# loops through Delta dataframe to plot coexistence mechanisms for Beta fecundity
+### plotco function ###
+# loops through Delta dataframe to plot coexistence mechanisms for lognormal fec
 #ARGS:
 # Deltas_loc	location of Deltas
 # xvar			variable on x axis, vector length nrow Deltas dataframe 
