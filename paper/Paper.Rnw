@@ -203,7 +203,9 @@ when metapopulations are subject to ATAs, e.g., if environmental ``catastrophes'
 across component populations
 than are years of good environment, limiting rescue effects. 
 And \cite{Ghosh_2021} showed that ATAs can alter the stability of 
-ecosystem functioning. Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
+ecosystem functioning. 
+%Though not directly related to our questions at hand, and for illustrative purposes,
+Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
 plankton population density time series; many other examples of ATAs in nature have also been explored 
 \citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
 competition have not been investigated. Doing so is our goal here. 
@@ -218,8 +220,9 @@ framework for understanding how species nevertheless coexist, and biodiversity i
 through the niche partitioning effects of environmental variation.
 MCT breaks down coexistence into the contributions of various mechanisms, with names such as 
 ``storage effects'' \citep{Chesson_1994}. 
-Storage effects refer to ... and are reviewed conceptually below and 
-defined formally in Theory. 
+Storage effects refer to ... 
+%effects of [temporal] niche partitioning which allow species to "store" benefits from favorable conditions to persists in unfavorable conditions
+ and are reviewed conceptually below and defined formally in Theory. 
 
 MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
@@ -731,6 +734,8 @@ based example (the diatom system).
 Our work therefore demonstrates the potential for ATAs to be an important mechanism of coexistence, generally.
 Future work should seek to understand precisely when ATAs are or are not important
 for coexistence. 
+%For example, the robustness of our choice in specifying a bivariate normal partial sharp distribution,
+%though a natural and canonical one, to other more esoteric specifications. 
 
 %Para continuing to try to build intuition about how ATAs work
 We return to the task, begun in the Introduction, of building intuition for how
