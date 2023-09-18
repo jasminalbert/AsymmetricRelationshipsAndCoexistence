@@ -7,7 +7,7 @@
 ### sourcing ###
 source("./diatom/diatomDecomp_fxns.R")
 source("./diatom/fig5_fxns.R")
-source("./diatom/fig6_fxns.R")
+source("./diatom/fig5def_fxns.R")
 
 ### location to save figs ###
 fig_loc <- "../results_figs/"
@@ -22,8 +22,8 @@ parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=2)
 ### supplemental version of fig 5 ###
 
 ## location of numeric results ## 
-numeric_results_loc <- "../results_numeric/"
-dat_loc <- paste0(numeric_results_loc, "fig5dat2/")
+numRes_loc <- "../results_numeric/"
+dat_loc <- paste0(numRes_loc, "fig5dat2/")
 
 #if data is missing, make them
 if (dir.exists(dat_loc)==FALSE){
@@ -54,7 +54,7 @@ saveRDS(fig5_2maxse, file=fig5_2maxse_loc)
 ### supplemental version of fig 6 ###
 
 ## location of numeric results ## 
-dat_loc <- paste0(numeric_results_loc, "fig6dat2/")
+dat_loc <- paste0(numRes_loc, "fig6dat2/")
 
 #if data is missing, make them
 if (dir.exists(dat_loc)==FALSE){
@@ -68,11 +68,57 @@ if (dir.exists(dat_loc)==FALSE){
    #makes results as folder of .RDS files
   dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
 }
+
+#setting up figure
+
+xat <- list(c(16, 16.5, 17, 17.5, 18), seq(4,6,len=5),c(16, 16.5, 17, 17.5, 18))
+xlab <- list(c(16, NA, NA, NA, 18), c(50, 67.5, NA, 102.5, 120),c(50, 67.5, NA, 102.5, 120))
+yat <- list(c(4,5,6), seq(50,120,len=3),seq(50, 120, len=5))
+ylab <- list(c(4,NA,6), c(4,NA,6),T=c(16, NA, NA, NA, 18))
+
+labs <- c("amplitude (a)", "Period (P)", expression(paste("mean temperature (",theta[0],")" ) ))
+ncol <- 100
+col1 <- hcl.colors(ncol,"YlOrRd", rev=T, alpha=.8)
 ## name of figure file ##
 fig6_2 <- paste0(fig_loc,"fig6_2.pdf")
 
+
+files <- list.files(dat_loc)
+mats <- list()
+rmats <- list()
+for (f in seq_along(files)){
+	dat <- readRDS(paste0(dat_loc,files[f]))$dat
+	GWRmat <- MAT(dat, dat$GWR)
+	ATAmat <- MAT(dat, dat$ATA)
+	mat <- ATAmat/abs(GWRmat)
+	rmats[[f]] <- mat
+	mats[[f]] <- list(ATA=ATAmat, GWR=GWRmat)
+}
+ranges <- log(rbind(sapply(rmats, min), rep(10,3)))
+diffs <- apply(ranges, 2, diff)
+standiff <- round(diffs/max(diffs),2)
+stanRan <- rbind(ranges[1,]/min(ranges[1,]), ranges[2,]/max(ranges[2,]))
+stanRan <- round(stanRan,2)
+col1 <- col1
+col2 <- col1[(ncol*(1-standiff[2])):ncol]
+col3 <- col1[(ncol*(1-standiff[3])):ncol]
+cols <- list(col1,col2,col3)
+pdf(fig6_2)
+par(mfrow=c(3,1))
+for (m in 1:length(mats)){
+	mat <- mats[[m]]
+	#map(mat$GWR)
+	map1(t(mat$ATA), t(mat$GWR), col=cols[[m]]) 
+	#graphics::title(ylab=labs[1], cex.lab=1.3, line=.8, xpd=NA)
+	#graphics::title(xlab=labs[2], cex.lab=1.3, line=1.1, xpd=NA)
+	graphics::axis(1, lwd.ticks=2); 
+	graphics::axis(2, lwd.ticks=2,mgp=c(2,.5,0))
+	graphics::mtext(paste0("(", letters[5],")"), 3, -1.5, adj=0.985, cex=1.1)
+}
+dev.off()
+
 ## makes figure ##
-fig6(fig6_2, dat_loc, invader=2) 
+#fig6(fig6_2, dat_loc, invader=2) 
 
 ### get and save standard error ###
 fig6_2se <- getSE(dat_loc)
