@@ -141,8 +141,8 @@ se5 <- readRDS(file=paste0(res_loc, "fig5maxse.RDS"))
 \noindent \textbf{Running head:} Asymmetric relationships and coexistence \\
 \noindent \textbf{Key words:} asymmetric tail association, biodiversity, coexistence, competition, copula, modern coexistence theory, niche differentiation, storage effects \\
 \noindent \textbf{Type of article:} Letter\\
-\noindent \textbf{Words in Abstract:} 150; \textbf{Words in main text:} 5013; \textbf{Words in text boxes:} 0\\
-\noindent \textbf{Number of references:} 37; \textbf{Number of figures:} 4; \textbf{Number of tables:} 1; \textbf{Number of text boxes:} 0\\
+\noindent \textbf{Words in Abstract:} 150; \textbf{Words in main text:} 4975; \textbf{Words in text boxes:} 0\\
+\noindent \textbf{Number of references:} 39; \textbf{Number of figures:} 5; \textbf{Number of tables:} 1; \textbf{Number of text boxes:} 0\\
 \noindent \textbf{Corresponding author:}
 Daniel C. Reuman,
 Department of Ecology and Evolutionary Biology,
