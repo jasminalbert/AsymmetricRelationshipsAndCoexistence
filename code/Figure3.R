@@ -69,6 +69,9 @@ n <- 1
 for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
   	
+  	panel <- letters[n]
+  	cat("panel (",panel,"): mu_1-mu_2=", mudif[m],";delta=",delta[d],"\n")
+  	
   	file <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],".RDS")
   	sefile <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],"_SE.RDS")
   	#make files?
@@ -89,7 +92,7 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	if (n>9){
   		graphics::axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)} else {graphics::axis(1, cex.axis=1.8, tck=-0.028, lwd.ticks=2, labels=F)}
   	#panel labels
-    graphics::mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
+    graphics::mtext(paste0("(", panel,")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
     if (n==2){
     	graphics::mtext("adult death rate, ", line=2.5, font=2, cex=1.5, col="gray40", at=-1, adj=0)
