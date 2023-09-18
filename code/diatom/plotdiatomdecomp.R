@@ -113,10 +113,10 @@ fig5 <- function(dat_loc, invader){
     
     #ATA effect blocking
     resc <- vdat[vdat$ECbrk>vdat$GWR & vdat$GWR>0,]
-    graphics::rect(resc[1,10], ymin*1.2, tail(resc,1)[1,10], ymax*1.2, col=rescol, border=NA)
+    graphics::rect(resc$var[1], ymin*1.2, tail(resc$var,1), ymax*1.2, col=rescol, border=NA)
     
     excl <- vdat[vdat$ECbrk<vdat$GWR & vdat$GWR<0,]
-    graphics::rect(excl[1,10], ymin, tail(excl,1)[1,10], ymax, col=excol, border=NA)
+    graphics::rect(excl$var[1], ymin, tail(excl$var,1), ymax, col=excol, border=NA)
     
     #label
     graphics::mtext(paste0("(", letters[i],")"), 3, -1.5, adj=0.985, cex=1.1)
