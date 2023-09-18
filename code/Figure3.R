@@ -40,6 +40,7 @@ delta <- delta[-4]
 ### setting dimensions ###
 nd <- length(delta) 
 nm <- length(mudif)
+NP <- nm*nd #number of panels
 ph <- 3 #panel height
 pw <- 2.5 #panel widht
 ht <- c(1,rep(ph, nm)) #vector of panel heights
@@ -70,7 +71,7 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
   	
   	panel <- letters[n]
-  	cat("panel (",panel,"): mu_1-mu_2=", mudif[m],";delta=",delta[d],"\n")
+  	cat(n"/",NP,". panel (",panel,"): mu_1-mu_2=", mudif[m],";delta=",delta[d],"\n")
   	
   	file <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],".RDS")
   	sefile <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],"_SE.RDS")
