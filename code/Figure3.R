@@ -66,7 +66,7 @@ graphics::par(mfrow=c(4,3), oma=c(3.2,4,4,10), mar=c(1,1,1,1), mgp=c(3,1,0), xpd
 ylims <- list(c(-0.5,1.25),c(-0.5,1.25),c(-2,1.5), c(-4,2.5))
 maxse <- {}
 
-cat("making fig 3:" fig3_loc, "\n")
+cat("making fig 3:" ,fig3_loc, "\n")
 n <- 1
 for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
@@ -143,7 +143,7 @@ graphics::par(mfrow=c(4,3), oma=c(3.2,4,4,10), mar=c(1,1,1,1), mgp=c(3,1,0), xpd
 ylims <- list(c(-0.5,1.25),c(-0.5,1.25),c(-2,1.5), c(-4,2.5))
 maxse <- {}
 
-cat("making fig S1:" fig3qij_loc, "\n")
+cat("making fig S1:" ,fig3qij_loc, "\n")
 n <- 1
 for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
