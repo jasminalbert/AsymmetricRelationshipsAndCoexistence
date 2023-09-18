@@ -71,7 +71,7 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
   	
   	panel <- letters[n]
-  	cat(n"/",NP,". panel (",panel,"): mu_1-mu_2=", mudif[m],";delta=",delta[d],"\n")
+  	cat(n,"/",NP,". panel (",panel,"): mu_1-mu_2=", mudif[m],";delta=",delta[d],"\n")
   	
   	file <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],".RDS")
   	sefile <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],"_SE.RDS")
