@@ -1,5 +1,7 @@
 #This script makes transforms b made in makenoise.R to beta distributed fecundities, B
 
+##libraries used (invoked with ::): stats
+
 ### location of results ###
 numRes_loc <- "../results_numeric/"
 
@@ -20,38 +22,40 @@ load(noise_loc) #list of noise, b, containing:
 
 #transforming normal noise to beta
 norm2beta <- function(noise,...){
-	qbeta(pnorm(noise),...)
+	stats::qbeta(stats::pnorm(noise),...)
 }
 
-#looking at b
-hist(b$l[,1]); mean(b$l[,1]); sd(b$l[,1])
-hist(b$l[,2]); mean(b$l[,2]); sd(b$l[,2])
-hist(b$r[,1]); mean(b$r[,1]); sd(b$r[,1])
-hist(b$r[,2]); mean(b$r[,2]); sd(b$r[,2])
-hist(b$til[,1]); mean(b$til[,1]); sd(b$til[,1])
-hist(b$til[,2]); mean(b$til[,2]); sd(b$til[,2])
-hist(b$s[,1]); mean(b$s[,1]); sd(b$s[,1])
-hist(b$s[,2]); mean(b$s[,2]); sd(b$s[,2])
-plot(b$l[1:10000,1], b$l[1:10000,2]); cov(b$l)
-plot(b$r[1:10000,1], b$r[1:10000,2]); cov(b$r)
-plot(b$til[1:10000,1], b$til[1:10000,2]); cov(b$til)
-plot(b$s[1:10000,1], b$s[1:10000,2]); cov(b$s)
+### looking at b
+ ## should have normal marginals
+# hist(b$l[,1]); mean(b$l[,1]); sd(b$l[,1])
+# hist(b$l[,2]); mean(b$l[,2]); sd(b$l[,2])
+# hist(b$r[,1]); mean(b$r[,1]); sd(b$r[,1])
+# hist(b$r[,2]); mean(b$r[,2]); sd(b$r[,2])
+# hist(b$til[,1]); mean(b$til[,1]); sd(b$til[,1])
+# hist(b$til[,2]); mean(b$til[,2]); sd(b$til[,2])
+# hist(b$s[,1]); mean(b$s[,1]); sd(b$s[,1])
+# hist(b$s[,2]); mean(b$s[,2]); sd(b$s[,2])
+# plot(b$l[1:10000,1], b$l[1:10000,2]); cov(b$l)
+# plot(b$r[1:10000,1], b$r[1:10000,2]); cov(b$r)
+# plot(b$til[1:10000,1], b$til[1:10000,2]); cov(b$til)
+# plot(b$s[1:10000,1], b$s[1:10000,2]); cov(b$s)
 
-#transform
+### transform to be beta distributed
 betaB <- lapply(b, FUN=norm2beta, shape1=0.5, shape2=0.5)
-#check
-hist(betaB$l[,1]); mean(betaB$l[,1]); sd(betaB$l[,1])
-hist(betaB$l[,2]); mean(betaB$l[,2]); sd(betaB$l[,2])
-hist(betaB$r[,1]); mean(betaB$r[,1]); sd(betaB$r[,1])
-hist(betaB$r[,2]); mean(betaB$r[,2]); sd(betaB$r[,2])
-hist(betaB$til[,1]); mean(betaB$til[,1]); sd(betaB$til[,1])
-hist(betaB$til[,2]); mean(betaB$til[,2]); sd(betaB$til[,2])
-hist(betaB$s[,1]); mean(betaB$s[,1]); sd(betaB$s[,1])
-hist(betaB$s[,2]); mean(betaB$s[,2]); sd(betaB$s[,2])
-plot(betaB$l[1:10000,1], betaB$l[1:10000,2]); cov(betaB$l)
-plot(betaB$r[1:10000,1], betaB$r[1:10000,2]); cov(betaB$r)
-plot(betaB$til[1:10000,1], betaB$til[1:10000,2]); cov(betaB$til)
-plot(betaB$s[1:10000,1], betaB$s[1:10000,2]); cov(betaB$s)
+
+### check
+# hist(betaB$l[,1]); mean(betaB$l[,1]); sd(betaB$l[,1])
+# hist(betaB$l[,2]); mean(betaB$l[,2]); sd(betaB$l[,2])
+# hist(betaB$r[,1]); mean(betaB$r[,1]); sd(betaB$r[,1])
+# hist(betaB$r[,2]); mean(betaB$r[,2]); sd(betaB$r[,2])
+# hist(betaB$til[,1]); mean(betaB$til[,1]); sd(betaB$til[,1])
+# hist(betaB$til[,2]); mean(betaB$til[,2]); sd(betaB$til[,2])
+# hist(betaB$s[,1]); mean(betaB$s[,1]); sd(betaB$s[,1])
+# hist(betaB$s[,2]); mean(betaB$s[,2]); sd(betaB$s[,2])
+# plot(betaB$l[1:10000,1], betaB$l[1:10000,2]); cov(betaB$l)
+# plot(betaB$r[1:10000,1], betaB$r[1:10000,2]); cov(betaB$r)
+# plot(betaB$til[1:10000,1], betaB$til[1:10000,2]); cov(betaB$til)
+# plot(betaB$s[1:10000,1], betaB$s[1:10000,2]); cov(betaB$s)
 #good; save
 betanoise_loc <- paste0(numRes_loc, "betanoise.RDS")
 saveRDS(betaB, file=betanoise_loc)

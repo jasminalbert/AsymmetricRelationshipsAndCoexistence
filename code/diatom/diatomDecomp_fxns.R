@@ -5,7 +5,10 @@
 
 ### sourcing ###
 source("diatom/diatomModel_andVKQ.R")
+	#diatom model for ode solver and V,K and Q functions for each sp
 source("diatom/partialSharp_fxns.R")
+	#functions for generating new EC that is perfectly symmetric while
+	#maintaining marginals and association
 
 ### getep ###
 # computes epsilons given parameters and definitions

@@ -1,13 +1,26 @@
+# script for making figure in paper. 
 #this figure will:
-	# have four panels A-D
+	# have four panels A-E
 	#A) E and C with ATA
 	#B) E and C transformed to standard normal but still has ATA
 	#C) remove ATA by replacing [E,C] with biv normal with same parms
-	#D) invert marginals to [E||,C||]
+	#D) invert marginals to get (E||,C||)
+	#E) decoupled E and C, (E#, C#)
 	 
+##libraries used (invoked with ::): 
+ #copula, stats, grDevices, graphics 
 
 source("./CopulaToolForPedagogFig.R")
+	# contains functions needed for making 
+	# probability distribution functions and 
+	# random variables with desired copula and marginals
 source("./theory_panel_fxn.R")
+	# plotting function used for each panel of figure
+	# uses functions sourced from CopulaToolForPedagog.R
+
+#in line 82 source("./theoryFig_script.R")
+	# calls plotting function from theory_panel_fxn.R for each panel
+	# and additional graphical settings 
 
 #figure file location and names
 fig_loc <- "../results_figs"
@@ -19,29 +32,28 @@ theoryfig_col2 <- paste0(fig_loc,"/theory_fig_col2.pdf")
 
 
 #copulas
-ncop<-normalCopula(.7)
-shcop <- normalCopula(0.001)
-ccop0<-claytonCopula(2)
-ccop<-claytonCopula(iRho(ccop0,rho(ncop)))
-shcop <-claytonCopula(iRho(ccop0,rho(shcop)))
+ncop <- copula::normalCopula(.7)
+shcop <- copula::normalCopula(0.001)
+ccop0 <- copula::claytonCopula(2)
+ccop <- copula::claytonCopula(copula::iRho(ccop0,copula::rho(ncop)))
+shcop <- copula::claytonCopula(copula::iRho(ccop0,copula::rho(shcop)))
 
 #distribution functions
 ##beta
-dbmarg<-function(x){return(dbeta(x,shape1=shape1,shape2=shape2))}
-pbmarg<-function(x){return(pbeta(x,shape1=shape1,shape2=shape2))}
-qbmarg<-function(x){return(qbeta(x,shape1=shape1,shape2=shape2))}
+dbmarg<-function(x){return(stats::dbeta(x,shape1=shape1,shape2=shape2))}
+pbmarg<-function(x){return(stats::pbeta(x,shape1=shape1,shape2=shape2))}
+qbmarg<-function(x){return(stats::qbeta(x,shape1=shape1,shape2=shape2))}
 ##normal
-dnmarg<-function(x){return(dnorm(x,mean=0,sd=1))}
-pnmarg<-function(x){return(pnorm(x,mean=0,sd=1))}
-qnmarg<-function(x){return(qnorm(x,mean=0,sd=1))}
-
+dnmarg<-function(x){return(stats::dnorm(x,mean=0,sd=1))}
+pnmarg<-function(x){return(stats::pnorm(x,mean=0,sd=1))}
+qnmarg<-function(x){return(stats::qnorm(x,mean=0,sd=1))}
 
 shape1<-0.55;shape2<-0.55
 
-### set up ###
-hts <- c(.3,1)
-wds <- c(rep(c(1,.3,.3),3), c(1,.3))
-lblc <- matrix(c(-2.1,-4.8,-4.3,-4.4,-1.7,0.2), nrow=3,dimnames=list(c("E","C","lab"),c("x","y")))
+### figure set up ###
+hts <- c(.3,1) #heights
+wds <- c(rep(c(1,.3,.3),3), c(1,.3)) #widths
+lblc <- matrix(c(-2.1,-4.8,-4.3,-4.4,-1.7,0.2), nrow=3,dimnames=list(c("E","C","lab"),c("x","y"))) #labelLocation
 
 #single row layout
 ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
@@ -56,7 +68,7 @@ ly_mat<- matrix(c (	2,4,17,6,8,17,10,12,17,14,16,
 #dev.off() 
 ########
 
-#new fig for reviewers
+#newest version
 #### start pdf ####
 new <- TRUE
 ly_mat <- cbind(ly_mat, c(17,17), c(19,18), c(21,20))
@@ -64,11 +76,11 @@ lblc[2:3,"x"] <- lblc[2:3,"x"]+.17
 lblc["E","y"] <- lblc["E","y"]+.1  
 lblc["C","y"] <- lblc["C","y"]-.18  
 wds[(1:3)*3] <- 0.2
-pdf(theoryfig_col2, height=4, width=19)
-layout(ly_mat, heights=hts, widths=c(wds,wds[3:5]))#;layout.show(n=16)
-par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
+grDevices::pdf(theoryfig_col2, height=4, width=19)
+graphics::layout(ly_mat, heights=hts, widths=c(wds,wds[3:5]))#;layout.show(n=16)
+graphics::par(mar=c(0,0.25,0,0.25), oma=c(6,5,2,3), xpd=NA)
 source("./theoryFig_script.R")
-dev.off() 
+grDevices::dev.off() 
 ########
 
 #quad layout
@@ -97,17 +109,6 @@ dev.off()
 #source("./theoryfig_meat.R")
 #dev.off() 
 ########
-
-
-
-
-
-
-
-
-
-
-
 
 #pdf("panelA_0.5_filled.pdf") #issue - filled.con not going into layout
 #layout(matrix(c(2,4,1,3), byrow=T, nrow=2), heights=c(.3,1), widths=c(1,.3))

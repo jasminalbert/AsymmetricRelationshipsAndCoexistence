@@ -1,17 +1,18 @@
-#looking at Ceratium species time series
+#This script is an exploration of the plankton time series data used in Sheppard2019 and Ghosh2020 to show an example of ATAs in empirical data. The directory contains time series of: four Ceratium species: fusus, furca, tripos, macroceros; predator, Calanus finmarchicus; and seasonal temperature averages. 
+#Exploratory plotting is commented out. Ultimately decided on area 40 cerfus x cerfur (23 in gosh) for right tail ATA and area 23 cerfus x cerfur (10 in gosh) for left tail. See both papers' supplemental materials for location details and more. 
+
+
 dat_loc <- "../plankton/planktontimeseries"
 
-#extract C. fusus data and temp from region 25 of link data*
+#extract C. fusus data and temp from region 25 of data*
 #plot against negative temp
 #temp =E. C. fusus= competition
-#n=12 in Gosh2020 is area 25 in Sheppard2019
+#n=12 in Gosh2020 is area 25 in Sheppard2019*
 
 #C. fusus data (sp1)
 Cerfus_loc <- paste0(dat_loc, "/Ceratium_fusus.csv")
 cerfus <- read.csv(Cerfus_loc)
-#head(cerfus)
-#str(cerfus)
-#nrow(cerfus)
+#head(cerfus); str(cerfus); nrow(cerfus)
 
 #C. furca (sp2)
 Cerfur_loc <- paste0(dat_loc, "/Ceratium_furca.csv")
@@ -42,8 +43,7 @@ tempSp <- read.csv(tempSp_loc)
 tempSpSu <- read.csv(tempSpSu_loc)
 tempSu <- read.csv(tempSu_loc)
 tempF <- read.csv(tempF_loc)
-#head(temp)
-#dim(temp)==dim(cerfus)
+#head(temp); dim(temp)==dim(cerfus)
 dim_t <- dim(temp)
 dimnames <- list(n=1:26, year=1:57, season=c("all","Sp","SpSu","Su","F"))
 
@@ -51,6 +51,17 @@ tempdat <- unlist(c(temp, tempSp, tempSpSu, tempSu, tempF))
 tmps <- array(tempdat, dim = c(dim_t[1], dim_t[2],5), dimnames=dimnames)
 
 n <- 25
+
+#best RT: cerfus x cerfur 40 (23 in gosh)
+loc40 <- data.frame(cerfus=unlist(cerfus[,-1][cerfus[,1]==40,]),cerfur=unlist(cerfur[,-1][cerfur[,1]==40,]))
+#best LT: cerfus x cerfur 23 (10 in gosh)
+loc23 <- data.frame(cerfus=unlist(cerfus[,-1][cerfus[,1]==23,]),cerfur=unlist(cerfur[,-1][cerfur[,1]==23,]))
+
+ceratium1x2<-list(loc23=loc23,loc40=loc40)
+
+numRes_loc <- "../results_numeric/"
+goodCerDat_loc <- paste0(numRes_loc,"ceratium1x2.RData")
+save(ceratium1x2, file=goodCerDat_loc)
 
 #pdf("cerfus_temp.pdf")
 #par(mar=(rep(0.8,4)),mfrow=c(5,2),mgp=c(1.5,0.2,0))
@@ -160,15 +171,7 @@ n <- 25
 #	plot(rank(x)/T, rank(y)/T, pch=20, col="darkgrey", cex=2, ylim=c(-.15,1.15),xlim=c(-.15,1.15), xlab=names(xlist)[p], ylab=names(ylist)[p])
 #}
 
-#best RT: cerfus x cerfur 40 (23 in gosh)
-loc40 <- data.frame(cerfus=unlist(cerfus[,-1][cerfus[,1]==40,]),cerfur=unlist(cerfur[,-1][cerfur[,1]==40,]))
-#best LT: cerfus x cerfur 23 (10 in gosh)
-loc23 <- data.frame(cerfus=unlist(cerfus[,-1][cerfus[,1]==23,]),cerfur=unlist(cerfur[,-1][cerfur[,1]==23,]))
-ceratium1x2<-list(loc23=loc23,loc40=loc40)
 
-numRes_loc <- "../results_numeric/"
-goodCerDat_loc <- paste0(numRes_loc,"ceratium1x2.RData")
-save(ceratium1x2, file=goodCerDat_loc)
 
 
 

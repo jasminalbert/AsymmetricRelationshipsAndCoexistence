@@ -1,5 +1,7 @@
-#figure 6 plotting
-library(plot3D)
+#figure 5 panels e-f plotting
+
+##libraries used (invoked with ::): plot3D, graphics
+
 numRes_loc <- "../results_numeric/"
 dat_loc <- paste0(numRes_loc,"fig6dat/")
 
@@ -30,14 +32,14 @@ MAT <- function(dat, vals){
 map <- function(mat, add=F, col=hcl.colors(2, "Light Grays"), ck=list(plot=FALSE), ct=F){
 	z <- t(mat); 
 	x <- dimnames(mat)[2];y <- dimnames(mat)[1]
-	image2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=F, xlab='', ylab='', col=col, add=add,NAcol=rgb(0,0,0,0), colkey=ck, xaxt='n', yaxt='n', bty='n')
+	plot3D::image2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=F, xlab='', ylab='', col=col, add=add,NAcol=rgb(0,0,0,0), colkey=ck, xaxt='n', yaxt='n', bty='n')
 	if (ct==T){
 		nlvl <- 8
 		zlim <- range(z, finite=T)
 		lvls <- pretty(zlim, nlvl)
-		contour2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), add=T, col="black", drawlabels=F, nlevels=nlvl, colkey=list(plot=F), lwd=par("lwd")+0.2)
-		contour2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), add=T, col=col[round(seq(1,length(col), len=length(lvls)))], drawlabels=F, nlevels=nlvl,colkey=F)#list(cex.axis=0.8, mgp=c(3,.7,0))
-		contour2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), add=T, col="black", labels=round(exp(lvls),5), nlevels=nlvl, colkey=list(plot=F), lty=0)
+		plot3D::contour2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), add=T, col="black", drawlabels=F, nlevels=nlvl, colkey=list(plot=F), lwd=par("lwd")+0.2)
+		plot3D::contour2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), add=T, col=col[round(seq(1,length(col), len=length(lvls)))], drawlabels=F, nlevels=nlvl,colkey=F)#list(cex.axis=0.8, mgp=c(3,.7,0))
+		plot3D::contour2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), add=T, col="black", labels=round(exp(lvls),5), nlevels=nlvl, colkey=list(plot=F), lty=0)
 	} 
 }; 
 
@@ -107,8 +109,8 @@ map1 <- function(ATAmat, GWRmat, col, cob=T){
 	
 	map(log(mat1), col=col, ct=T, ck=F)
 	if(cob==T){
-		polygon(coex, border=rgb(0,0,1,0.6), lwd=2)
-		polygon(ATA, density=15, border=NA, col=rgb(0,0,0,0.6))
+		graphics::polygon(coex, border=rgb(0,0,1,0.6), lwd=2)
+		graphics::polygon(ATA, density=15, border=NA, col=rgb(0,0,0,0.6))
 	}
 	#if(sum(is.na(mat2))<length(mat2)){
 	#	map(labsmat2, T, col=col2, ct=T, ck=F)

@@ -1,12 +1,12 @@
 #This script generates figure 1 from the paper
 #combines ATA examples and lottery pop sims using that noise
 #and plankton ATA examples
+#Also computes plankton partial correlation stats (see Ghosh2020)
 
-### Preamble ###
 
 ##libraries used (invoked with ::): stats, graphics, grDevices
 
-#locations of inputs needed for this script
+### locations of inputs and outputs needed for this script
 numRes_loc <- "../results_numeric/"
 noise_loc <- paste0(numRes_loc,"noise.RData") #from makenoise_LB.R
 popsim_loc <- paste0(numRes_loc,"betapopsim.RData") #from beta_popsims.R
@@ -18,13 +18,13 @@ fig_loc <- "../results_figs/"
 if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
-fig1_loc <- paste(fig_loc,"fig1_a-h.pdf",sep="")
+fig1_loc <- paste0(fig_loc,"fig1_a-h.pdf")
 
-#load the noise we'll need
-load(noise_loc) #this loads an obtect called b which has noise in it
-load(popsim_loc) #list called popsim with three kinds of popsim from beta noise
-load(plankton_loc) #list called ceratium1x2 from two locations
-
+ ##load the noise and data we'll need
+load(noise_loc) #loads list called b which has noise in it
+load(popsim_loc) #list, popsim, w 3 kinds of popsim from beta noise
+load(plankton_loc) #list, ceratium1x2, from 2 locations
+####
 ####
 #### Plankton Stats ####
 #plankton ATA stats
@@ -85,7 +85,7 @@ for (panel in 1:3){
   graphics::par(mar=c(0.5,0.25,0,0))
   graphics::plot(noise[1:800,1], noise[1:800,2], col=blue, 
   ylab=NA, xlab=ifelse(panel==3,"variable 2",NA), xlim=c(-4,4), ylim=c(-4,4), pch=16, cex=1.5, col.lab="darkblue", xaxt=ifelse(panel==3,"s","n"))
-  title(ylab=ifelse(panel==2,"variable 1",NA), col.lab="darkblue", line=1.8)
+  graphics::title(ylab=ifelse(panel==2,"variable 1",NA), col.lab="darkblue", line=1.8)
   graphics::text(x=4,y=-3.8,labels=bquote(~ rho == .(round(P,5))), adj=1)
   graphics::mtext(paste0("(",letters[panel],")"), side=3, line=-1.3, at=-3)
   
@@ -105,21 +105,21 @@ for (panel in 1:3){
 }
 
 graphics::par(mar=c(0.5,0.25,0.3,0))
-plot.new();plot.new()
+graphics::plot.new();graphics::plot.new()
 # plankton example - ranked density
-title(ylab="C. furca density", line=17)
+graphics::title(ylab="C. furca density", line=17)
 for (panel in 1:2){
 	#cerfus <- ceratium1x2[[panel]]$cerfus
 	#cerfur <- ceratium1x2[[panel]]$cerfur
 	#Tot <- dim(ceratium1x2[[panel]])[1]
 	pStats <- plankStats[[panel]]
 	plankton <- pStats$uv
-	plot(plankton, type="n", bty="n", ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
+	graphics::plot(plankton, type="n", bty="n", ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
 	#abline(v=0.5, col="lightgrey", lwd=0.5, xpd=F)
 	#abline(h=0.5, col="lightgrey", lwd=0.5, xpd=F)
-	lines(0:1,0:1, lwd=0.5, col="darkgrey")
-	points(plankton[pStats$bounds[,"left"],], col="darkgrey")
-	points(plankton[pStats$bounds[,"right"],], col="darkgrey", pch=19)
+	graphics::lines(0:1,0:1, lwd=0.5, col="darkgrey")
+	graphics::points(plankton[pStats$bounds[,"left"],], col="darkgrey")
+	graphics::points(plankton[pStats$bounds[,"right"],], col="darkgrey", pch=19)
 	#graphics::plot(rank(cerfus)/Tot, rank(cerfur)/Tot, bty="n",pch=20, col="darkgrey", cex=2, ylim=c(0,1),xlim=c(0,1), xlab=ifelse(panel==2,"C. fusus density",NA), ylab=NA, xaxt=ifelse(panel==2,"s","n"))
 	graphics::mtext(paste0("(",letters[panel+3],")"), side=3, line=-1.5, at=0.05)
 }

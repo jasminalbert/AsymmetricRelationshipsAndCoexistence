@@ -1,12 +1,16 @@
-#This script makes figure 3 in main text: 
-#plotting decomposed mechanisms contributions against sigma
+#This script makes figure 3 in main text and S1 in supplement: 
+#plotting LOGNORMAL FECUNDITIES LOTTERY MODEL
+#both qij=1 (main) and qij!=1 (supplement)
+#decomposed mechanisms contributions to coexistence
+#against sigma values
 #for different deltas and mu1-mu2
 
 ##libraries used (invoked with ::): graphics, grDevices
 
 ### source function ###
-#lottery model decomposition
+#lottery model decomposition and plotting
 source("./plotMechanisms.R")
+	#contains functions: makeDeltas, plotco
 
 
 ### location to save results ###
@@ -70,13 +74,14 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	#make files?
   	if(file.exists(file)==FALSE){
   		Delts <- makeDeltas(noise_loc, sigma, mudif[m], delta[d], qij=FALSE)
+  		#from plotMechanisms.R
   		saveRDS(Delts$D, file=file)
   		saveRDS(Delts$se, file=sefile)
   	}
   	#standard error #need to get rid of NA col
   	maxse[n] <- max(readRDS(sefile),na.rm=T)
   	
-  	#plot
+  	#plot (from plotMechanisms.R)
   	plotco(file,sigma,ylim=ylims[[m]])
   	#axes
   	if (d==1){
@@ -142,13 +147,14 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	#make files?
   	if(file.exists(file)==FALSE){
   		Delts <- makeDeltas(noise_loc, sigma, mudif[m], delta[d], qij=TRUE)
+  		#from plotMechanims.R
   		saveRDS(Delts$D, file=file)
   		saveRDS(Delts$se, file=sefile)
   	}
   	#standard error #need to get rid of NA col
   	maxse[n] <- max(readRDS(sefile), na.rm=T)
   	
-  	#plot
+  	#plot (from plotMechanism.R)
   	plotco(file,sigma,ylim=ylims[[m]])
   	#axes
   	if (d==1){

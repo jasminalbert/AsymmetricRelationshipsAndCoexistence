@@ -1,4 +1,5 @@
-#This script makes figure 6 in main text:
+#This script computes results for 
+#panels d-f of figure 5 in main text:
 
 ##libraries used (invoked with ::): none
 
@@ -10,7 +11,7 @@ source('./diatom/fig5def_fxns.R')
 #define original parameters
 parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
 
-#location of data files
+### location to save results ##
 numRes_loc <- "../results_numeric/"
 dat_loc <- paste0(numeric_results_loc,"fig6dat/")
 
