@@ -36,7 +36,7 @@ makeDeltas <- function(noise_loc, sigma, mudif, delta,qij=FALSE){
     	#from lotteryDecomp_fxns.R
     	cat(".")
     }
-    cat("done")
+    cat("done\n")
     
     if (qij == TRUE){
     	Deltas <- data.frame(t(sapply(store, function(X){X$Dq})))

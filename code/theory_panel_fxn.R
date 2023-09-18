@@ -77,7 +77,7 @@ theoryfigpanel <- function(d,p,q,cop,x,y, method="inv_cdf", samps=NULL, oldp=NUL
 	graphics::contour(x,y,log10(z),nlevels=10, bty='l', add=T)
 	pdfhist(samps[,1],x,y,d) #coded below
 	pdfhist(samps[,2],x,y,d,horiz=TRUE) #coded below
-	graphcis::plot.new() 
+	graphics::plot.new() 
 	}
 	return(samps)
 }

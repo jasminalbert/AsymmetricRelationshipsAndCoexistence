@@ -40,6 +40,7 @@ delta <- delta[-4]
 ### setting dimensions ###
 nd <- length(delta) 
 nm <- length(mudif)
+NP <- nm*nd #number of panels
 ph <- 3 #panel height
 pw <- 2.5 #panel widht
 ht <- c(1,rep(ph, nm)) #vector of panel heights
@@ -65,9 +66,13 @@ graphics::par(mfrow=c(4,3), oma=c(3.2,4,4,10), mar=c(1,1,1,1), mgp=c(3,1,0), xpd
 ylims <- list(c(-0.5,1.25),c(-0.5,1.25),c(-2,1.5), c(-4,2.5))
 maxse <- {}
 
+cat("making fig 3:" ,fig3_loc, "\n")
 n <- 1
 for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
+  	
+  	panel <- letters[n]
+  	cat(n,"/",NP,". panel (",panel,"): mu_1-mu_2=", mudif[m],";delta=",delta[d],"\n")
   	
   	file <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],".RDS")
   	sefile <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],"_SE.RDS")
@@ -89,7 +94,7 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	if (n>9){
   		graphics::axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)} else {graphics::axis(1, cex.axis=1.8, tck=-0.028, lwd.ticks=2, labels=F)}
   	#panel labels
-    graphics::mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
+    graphics::mtext(paste0("(", panel,")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
     if (n==2){
     	graphics::mtext("adult death rate, ", line=2.5, font=2, cex=1.5, col="gray40", at=-1, adj=0)
@@ -138,9 +143,13 @@ graphics::par(mfrow=c(4,3), oma=c(3.2,4,4,10), mar=c(1,1,1,1), mgp=c(3,1,0), xpd
 ylims <- list(c(-0.5,1.25),c(-0.5,1.25),c(-2,1.5), c(-4,2.5))
 maxse <- {}
 
+cat("making fig S1:" ,fig3qij_loc, "\n")
 n <- 1
 for (m in seq_along(mudif)){ #iterates across mudif values
   for (d in seq_along(delta)){ #iterates across delta values
+  	
+  	panel <- letters[n]
+  	cat(n,"/",NP,". panel (",panel,"): mu_1-mu_2=", mudif[m],";delta=",delta[d],"\n")
   	
   	file <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],".RDS")
   	sefile <- paste0(fig3_dat_loc,delta[d],"_md",mudif[m],"_SE.RDS")
@@ -162,7 +171,7 @@ for (m in seq_along(mudif)){ #iterates across mudif values
   	if (n>9){
   		graphics::axis(1, cex.axis=1.8,tck=-0.028, lwd.ticks=2)} else {graphics::axis(1, cex.axis=1.8, tck=-0.028, lwd.ticks=2, labels=F)}
 	#panel labels
-    graphics::mtext(paste0("(", letters[n],")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
+    graphics::mtext(paste0("(", panel,")"), side=3, line=-1.7, at=0, cex=1.3, adj=0)
     
     if (n==2){
     	graphics::mtext("adult death rate, ", line=2.5, font=2, cex=1.5, col="gray40", at=-1, adj=0)

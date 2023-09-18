@@ -13,7 +13,7 @@ parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
 
 ### location to save results ##
 numRes_loc <- "../results_numeric/"
-dat_loc <- paste0(numeric_results_loc,"fig6dat/")
+dat_loc <- paste0(numRes_loc,"fig6dat/")
 
 #if folder is missing, make it
 if (dir.exists(dat_loc)==FALSE){
