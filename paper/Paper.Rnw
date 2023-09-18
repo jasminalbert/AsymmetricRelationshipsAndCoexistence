@@ -152,8 +152,8 @@ Lawrence, KS 66047;
 Phone: 626-560-7084 \\
 \noindent \textbf{Author emails:} pimsupaa@uoregon.edu, reuman@ku.edu\\
 \noindent \textbf{Statement of Authorship:} The authors jointly carried out all parts of the study.\\
-\noindent \textbf{Data accessibility statement:} All codes associated with this study will be released
-in a Zenodo repository prior to publication.
+\noindent \textbf{Data accessibility statement:} All codes associated with this study have been released in a 
+public repsitory.
 
 \doublespacing
 
@@ -204,9 +204,11 @@ across component populations
 than are years of good environment, limiting rescue effects. 
 And \cite{Ghosh_2021} showed that ATAs can alter the stability of 
 ecosystem functioning. 
-%Though not directly related to our questions at hand, and for illustrative purposes,
-Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs in nature using 
-plankton population density time series; many other examples of ATAs in nature have also been explored 
+Fig. \ref{fig:pedagog1}d,e show contrasting examples of ATAs using 
+plankton population density time series;
+these examples are intended only to empirically illustrate what ATAs look like, as they
+use data of a different type from what we focus on in this paper.
+Many other examples of ATAs in nature have also been explored 
 \citep{Ghosh_2020_AER,Ghosh_2020_ecolevol,Ghosh_2021}. To our knowledge, the implications of ATAs for 
 competition have not been investigated. Doing so is our goal here. 
 
@@ -218,17 +220,17 @@ instead drive the other extinct \citep{Hardin_1960}.
 Modern coexistence theory [MCT; \cite{Chesson_1994,Chesson_2000,Barabas_2018}] is a 
 framework for understanding how species nevertheless coexist, and biodiversity is maintained, in real ecosystems,
 through the niche partitioning effects of environmental variation.
-MCT breaks down coexistence into the contributions of various mechanisms, with names such as 
-``storage effects'' \citep{Chesson_1994}. 
-Storage effects refer to ... 
-%effects of [temporal] niche partitioning which allow species to "store" benefits from favorable conditions to persists in unfavorable conditions
- and are reviewed conceptually below and defined formally in Theory. 
-
+%moved the following two sentences from below
 MCT has been
 applied to several systems, including annual \citep{Angert_2009, Hallett_2019} and perennial plants \citep{Adler_2006, Adler_2010}, 
 tropical trees \citep{Usinowicz_2012}, plankton \citep{Caceres_1997, Descamps_2005, Letten2018}, and corals \citep{Alvarez-Noriega_2020}. 
-%Narawani_2013
 Although MCT is somewhat mathematically complex, recent extensions make it more accessible \citep{Ellner_2016,Ellner_2019}.
+%
+MCT breaks down coexistence into the contributions of various mechanisms, with names such as 
+``storage effects'' \citep{Chesson_1994}. 
+Storage effects, which are reviewed conceptually below and defined formally in Theory, refer to
+a type of niche partitioning which allows species to effectively ``store" population growth 
+benefits from favorable time periods in order to persist through unfavorable periods. 
 
 %Intro to storage effects and why they might be influenced by ATAs
 We indicate why it is plausible that
@@ -437,12 +439,21 @@ we replaced the copula of $(E_i,C_{i \bs i})$ with a normal copula to form $(E_i
 The choice of $\ddot{\rho}_i$ ensures that $E_i^\nat$ and $C_{i \bs i}^\nat$ are correlated to the same extent as 
 $E_i$ and $C_{i \bs i}$, according to whichever definition of correlation is preferable. Thus $E_i^\nat$ and 
 $C_{i \bs i}^\nat$ have had their tail association rendered symmetric while retaining their correlation \emph{per se}. 
-The question of uniqueness of the distribution $(E_i^\nat,C_{i \bs i}^\nat)$ 
-is addressed in SI section \ref{SI-SIsect:uniqueness}.
 The random variable $(E_j^\nat, C_{j \bs i}^\nat)$ is created similarly.  
 For comparison, Fig. \ref{fig:pedagog2} also shows, for the example explored by that figure, 
 the distribution $(E_i^\shp,C_{i \bs i}^\shp)$
 defined above (following \cite{Ellner_2016}).
+
+The question of uniqueness of the distribution $(E_i^\nat,C_{i \bs i}^\nat)$ 
+is addressed fully in SI section \ref{SI-SIsect:uniqueness}.
+Briefly, a choice 
+is made as to what type of correlation (e.g., Pearson, Spearman, etc.) is to be preserved. 
+Additionally, another choice involves the use of a bivariate normal distribution $(e_i,c_{i \bs i})$; 
+any other symmetrically tail associated bivariate 
+distribution with standard normal marginals could be used instead.
+But the normal distribution is a natural choice, and other choices may 
+be somewhat esoteric (SI section \ref{SI-SIsect:uniqueness}). 
+Future work could explore the consequences of this choice.
 
 \subsection{Our decomposition as an extension of modern coexistence theory}
 
@@ -633,8 +644,8 @@ Thus $\Delta_i^{[EC]}/|\text{GWR}|$ indicates the importance of ATAs
 and also whether ATA rescue or exclusion occurred.
 
 All computations were done in R on a laptop running Ubuntu Linux. 
-Complete computer codes for the project are stored at (link to be added).
-%\url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence.git}.
+Complete computer codes for the project are stored at 
+\url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence.git}.
 
 \section{Results}\label{section:results}
 
@@ -734,8 +745,6 @@ based example (the diatom system).
 Our work therefore demonstrates the potential for ATAs to be an important mechanism of coexistence, generally.
 Future work should seek to understand precisely when ATAs are or are not important
 for coexistence. 
-%For example, the robustness of our choice in specifying a bivariate normal partial sharp distribution,
-%though a natural and canonical one, to other more esoteric specifications. 
 
 %Para continuing to try to build intuition about how ATAs work
 We return to the task, begun in the Introduction, of building intuition for how
@@ -915,7 +924,6 @@ distributions, are more tightly clustered around the line $y=x$ than are the clo
 which are in the right halves of the distributions; and \emph{vice versa} for panel e.
 (f-h) Lottery model population simulations% using $(B_1,B_2)$ 
 obtained by transforming the respectively corresponding variables (a-c; see Introduction).
-See Table 1 for used annotations and abbreviations.
 \label{fig:pedagog1}}
 \end{figure}
 
