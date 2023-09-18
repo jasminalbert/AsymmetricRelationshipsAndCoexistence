@@ -112,10 +112,10 @@ fig5 <- function(dat_loc, invader){
     graphics::abline(v=orig[i], col='darkgrey', lty=3, lwd=2)
     
     #ATA effect blocking
-    resc <- varylist[[i]][varylist[[i]]$epsECbrk>varylist[[i]]$IGR & varylist[[i]]$IGR>0,]
+    resc <- vdat[vdat$ECbrk>vdat$GWR & vdat$GWR>0,]
     graphics::rect(resc[1,10], ymin*1.2, tail(resc,1)[1,10], ymax*1.2, col=rescol, border=NA)
     
-    excl <- varylist[[i]][varylist[[i]]$epsECbrk<varylist[[i]]$IGR & varylist[[i]]$IGR<0,]
+    excl <- vdat[vdat$ECbrk<vdat$GWR & vdat$GWR<0,]
     graphics::rect(excl[1,10], ymin, tail(excl,1)[1,10], ymax, col=excol, border=NA)
     
     #label
