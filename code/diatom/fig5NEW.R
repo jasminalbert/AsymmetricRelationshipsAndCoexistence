@@ -74,6 +74,7 @@ labs <- c("amplitude (a)", "Period (P)", expression(paste("mean temperature (",t
 
 ### start fig ###
 grDevices::pdf(Fig5)
+#pdf("../testFig5.pdf")
 graphics::par(mfcol=c(1,1), mar=c(1,3,1.5,0), oma=c(1,1,0,1.5),mgp=c(2,.7,0), cex.axis=1.3, tck=-0.03, lheight=.7)
 graphics::layout(matrix(c(1,4,7,
 				2,5,7,
@@ -106,10 +107,17 @@ stanRan <- rbind(ranges[1,]/min(ranges[1,]), ranges[2,]/max(ranges[2,])); stanRa
 col1 <- col1; col2 <- col1[(ncol*(1-standiff[2])):ncol]; col3 <- col1[(ncol*(1-standiff[3])):ncol]
 
 atmap <- map1(ATAmat1, GWRmat1, col=col1)
-graphics::title(ylab=labs[1], cex.lab=1.3, line=.8, xpd=NA)
-graphics::title(xlab=labs[3], cex.lab=1.3, line=1.1, xpd=NA)
-graphics::axis(1, lwd.ticks=2, at=xat$T, labels=xlabs$T); 
-graphics::axis(2, lwd.ticks=2,mgp=c(2,.5,0), at=xat$a, labels=xlabs$a)
+#graphics::title(ylab=labs[1], cex.lab=1.3, line=.8, xpd=NA)
+#graphics::title(xlab=labs[3], cex.lab=1.3, line=1.1, xpd=NA)
+#possible correction
+graphics::title(ylab=labs[3], cex.lab=1.3, line=.8, xpd=NA)
+graphics::title(xlab=labs[1], cex.lab=1.3, line=1.1, xpd=NA)
+#graphics::axis(1, lwd.ticks=2, at=xat$T, labels=xlabs$T); 
+#graphics::axis(2, lwd.ticks=2,mgp=c(2,.5,0), at=xat$a, labels=xlabs$a)
+#possible correction
+graphics::axis(1, lwd.ticks=2, at=seq(16,18,len=3), labels=xlabs$a); 
+graphics::axis(2, lwd.ticks=2,mgp=c(2,.5,0), at=seq(4,6,len=5), labels=xlabs$T)
+
 graphics::mtext(paste0("(", letters[4],")"), 3, -1.5, adj=0.985, cex=1.1)
 
 map1(ATAmat2, GWRmat2, col=col2) #all postive 
