@@ -29,6 +29,13 @@ P <- seq(50,120,length.out=101)
 #function that makes and saves results
 dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
 
+dat_loc <- paste0(numRes_loc,"fig6dat/")
+
+aTb <- readRDS(paste0(dat_loc,"aTb1.RDS"))$dat
+#names(aTb)[2:3] <- rev(names(aTb)[2:3])
+aP <- readRDS(paste0(dat_loc,"aP1.RDS"))$dat
+PTb <- readRDS(paste0(dat_loc,"PTb1.RDS"))$dat
+rm(dat_loc)
 #### location to store figure ###
 #fig_loc <- "../results_figs/"
 #if(dir.exists(fig_loc)==FALSE){

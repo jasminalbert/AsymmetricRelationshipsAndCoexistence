@@ -2,14 +2,7 @@
 
 ##libraries used (invoked with ::): plot3D, graphics
 
-numRes_loc <- "../results_numeric/"
-dat_loc <- paste0(numRes_loc,"fig6dat/")
 
-aTb <- readRDS(paste0(dat_loc,"aTb1.RDS"))$dat
-#names(aTb)[2:3] <- rev(names(aTb)[2:3])
-aP <- readRDS(paste0(dat_loc,"aP1.RDS"))$dat
-PTb <- readRDS(paste0(dat_loc,"PTb1.RDS"))$dat
-rm(dat_loc)
 #par(mar=c(2,2.2,2,2.2), mgp=c(2,.8,0))
 #par(mar=c(3,4,3,2))
 
@@ -29,10 +22,11 @@ MAT <- function(dat, vals){
 #GWRmat <- MAT(aTb, aTb$GWR)
 #ATAmat <- MAT(aTb, aTb$ATA)
 
+#ck	plot colkey?
 map <- function(mat, add=F, col=hcl.colors(2, "Light Grays"), ck=list(plot=FALSE), ct=F){
 	z <- t(mat); 
 	x <- dimnames(mat)[2];y <- dimnames(mat)[1]
-	plot3D::image2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=F, xlab='', ylab='', col=col, add=add,NAcol=rgb(0,0,0,0), colkey=ck, xaxt='n', yaxt='n', bty='n')
+	plot3D::image2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), contour=F, xlab='', ylab='', col=col, add=add,NAcol=rgb(0,0,0,0), colkey=ck, xaxt='n', yaxt='n')
 	if (ct==T){
 		nlvl <- 8
 		zlim <- range(z, finite=T)
@@ -42,7 +36,7 @@ map <- function(mat, add=F, col=hcl.colors(2, "Light Grays"), ck=list(plot=FALSE
 		plot3D::contour2D(z=z, y=as.numeric(y[[1]]), x=as.numeric(x[[1]]), add=T, col="black", labels=round(exp(lvls),5), nlevels=nlvl, colkey=list(plot=F), lty=0)
 	} 
 }; 
-
+#coex	T:draw coexistence, F:draw ATA rescue
 draw <- function(ATAmat, GWRmat, coex=T){
 	Effmat <- GWRmat
 	
@@ -53,40 +47,46 @@ draw <- function(ATAmat, GWRmat, coex=T){
 	
 	rows <- as.numeric(dimnames(Effmat)[[1]]);
 	cols <- as.numeric(dimnames(Effmat)[[2]])
-	xu <- NA; xl <- NA; xr <- NA; xlft <- NA 
-	yu <- NA; yl <- NA; yr <- NA; ylft <- NA
-	cu <- 1; cl <- 1; cr <- 1; clft <- 1
-	nr <- nrow(Effmat); nc <- ncol(Effmat)
-	for (j in nc:1){
-		for(i in nr:1){
-			if(!is.na(Effmat[i,j])){
-				if(j==1){
-					ylft[clft] <- i; 
-					xlft[clft] <- j; clft<-clft+1
-				}
-				if(j==nc){
-					yr[cr] <- i; 
-					xr[cr] <- j; cr<-cr+1
-				}
-				if(i==nr){
-					yu[cu] <- i; 
-					xu[cu] <- j; cu<-cu+1
-				} else if(is.na(Effmat[i+1,j])){
-					yu[cu] <- i; 
-					xu[cu] <- j; cu<-cu+1
-				} else if(i==1){
-					yu[cu] <- i; 
-					xu[cu] <- j; cu<-cu+1
-				} else if(is.na(Effmat[i-1,j])){
-					yl[cl] <- i; 
-					xl[cl] <- j; cl<-cl+1
+	if ( !sum(is.na(Effmat)) ){
+		verts <- expand.grid(range(cols),range(rows))
+		verts[3:4,] <- verts[4:3,]
+		pl <- as.matrix(verts)
+	} else {
+		xu <- NA; xl <- NA; xr <- NA; xlft <- NA 
+		yu <- NA; yl <- NA; yr <- NA; ylft <- NA
+		cu <- 1; cl <- 1; cr <- 1; clft <- 1
+		nr <- nrow(Effmat); nc <- ncol(Effmat)
+		for (j in nc:1){
+			for(i in nr:1){
+				if(!is.na(Effmat[i,j])){
+					if(j==1){
+						ylft[clft] <- i; 
+						xlft[clft] <- j; clft<-clft+1
+					}
+					if(j==nc){
+						yr[cr] <- i; 
+						xr[cr] <- j; cr<-cr+1
+					}
+					if(i==nr){
+						yu[cu] <- i; 
+						xu[cu] <- j; cu<-cu+1
+					} else if(is.na(Effmat[i+1,j])){
+						yu[cu] <- i; 
+						xu[cu] <- j; cu<-cu+1
+					} else if(i==1){
+						yu[cu] <- i; 
+						xu[cu] <- j; cu<-cu+1
+					} else if(is.na(Effmat[i-1,j])){
+						yl[cl] <- i; 
+						xl[cl] <- j; cl<-cl+1
+					}
 				}
 			}
 		}
-	}
 	#pl <- matrix(c(cols[xu], rev(cols[xlft]), rev(cols[xl]), cols[xr], rows[yu], rev(rows[ylft]), rev(rows[yl]), rows[yr]), ncol=2)
-	pl <- matrix(c(cols[xu], NA, rev(cols[xl]), cols[xr], rows[yu], NA, rev(rows[yl]), rows[yr]), ncol=2)
-	pl <- pl[!is.na(pl)[,1],]
+		pl <- matrix(c(cols[xu], NA, rev(cols[xl]), cols[xr], rows[yu], NA, rev(rows[yl]), rows[yr]), ncol=2)
+		pl <- pl[!is.na(pl)[,1],]
+	}
 	return(pl)
 }
 #maps ATA effect / abs GWR
