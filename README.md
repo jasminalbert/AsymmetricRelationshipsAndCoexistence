@@ -1,13 +1,11 @@
-# Code repository for the paper ``Relationships in the extremes and their influence on competition and coexistence''
+# Code repository for the paper ``Asymmetric relationships and their effects on coexistence''
 
 Pimsupa Jasmin Albert, University of Kansas 
-Stephen P. Ellner, Cornell University
 Daniel C. Reuman, University of Kansas  
 
 ## Introduction
 
-This repository can be used to reproduce the complete analyses behind the paper "Relationships in the extremes and their 
-influence on competition and coexistence" and to recompile the latex for the paper itself.
+This repository can be used to reproduce the complete analyses behind the paper ``Asymmetric relationships and their effects on coexistence" and to recompile the latex for the paper itself.
 
 ## How to run analyses and compile paper
 
