@@ -48,7 +48,7 @@ source("./LBdecompfig_qij.R")
 
 #FIGURE 5
 #source("./diatom/Figure5.R")
-source("./diatom/Figure5def.R")
+#source("./diatom/Figure5def.R")
 source("./diatom/fig5NEW.R")
 
 #SI versions of 5&6 - not used in paper but created in support of statements in text

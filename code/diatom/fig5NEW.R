@@ -10,8 +10,13 @@ source('./diatom/diatomDecomp_fxns.R')
 ### source functions for computing data for and plotting panels a-c
 source("./diatom/plotdiatomdecomp.R")
 ### source functions for computing data for and plotting panels d-f
+source('./diatom/fig5def_fxns.R')
 source("./mapping_fig6.R")
 
+### define original parameters
+parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
+
+### for panels a-c (univariate) ###
 ### location of results ###
 numRes_loc <- "../results_numeric/"
 dat_loc <- paste0(numRes_loc, "fig5dat/")
@@ -22,9 +27,6 @@ if (dir.exists(dat_loc)==FALSE){
   #make folder
   dir.create(dat_loc)
   
-  #define original parameters
-  parms <- c('a'=6, 'P'=60, 'Tbar'=18, 'time'=3000, 'reps'=200, 'invader'=1)
-  
   #define sets of variables
   a <- seq(1,6,length.out=100)
   Tbar <- seq(16,18,length.out = 100)
@@ -34,6 +36,29 @@ if (dir.exists(dat_loc)==FALSE){
   #from plotdiatomdecomp.R
   dat5(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms=parms)
 }
+rm(dat_loc)
+
+### for panels d-f (bivariate) ###
+### location of results ###
+dat_loc <- paste0(numRes_loc,"fig6dat/")
+#if folder is missing, make it
+if (dir.exists(dat_loc)==FALSE){
+  #make folder
+  dir.create(dat_loc)
+}
+
+#define sets of variables
+a <- seq(4,6,length.out=101)
+Tbar <- seq(16,18,length.out = 101)
+P <- seq(50,120,length.out=101)
+
+#function that makes and saves results
+dat6(dat_loc, a_vec=a, P_vec=P, T_vec=Tbar, parms)
+#load
+aTb <- readRDS(paste0(dat_loc,"aTb1.RDS"))$dat
+aP <- readRDS(paste0(dat_loc,"aP1.RDS"))$dat
+PTb <- readRDS(paste0(dat_loc,"PTb1.RDS"))$dat
+rm(dat_loc)
 
 ### location to save figure ###
 fig_loc <- "../results_figs/"
@@ -41,6 +66,8 @@ if(dir.exists(fig_loc)==FALSE){
   dir.create(fig_loc)
 }
 Fig5 <- paste0(fig_loc,"fig5_new.pdf")
+
+#set up 
 xat <- list(a=c(4,5,6), P=seq(50, 120, len=5), T=c(16, 16.5, 17, 17.5, 18))
 xlabs <- list(a=c(4,NA,6), P=c(50, 67.5, NA, 102.5, 120), T=c(16, NA, NA, NA, 18))
 labs <- c("amplitude (a)", "Period (P)", expression(paste("mean temperature (",theta[0],")" ) ))
@@ -53,13 +80,13 @@ graphics::layout(matrix(c(1,4,7,
 				3,6,7),ncol=3,byrow=T),widths=c(.7,1,.2))
 
 ## first, panels a-c ##
+dat_loc <- paste0(numRes_loc, "fig5dat/")
 fig5(dat_loc, invader=1) #plotdiatomdecomp.R 
 graphics::title(ylab="contribution to coexistence", outer=T, line=-0.6, cex.lab=2, font.lab=2, col.lab="gray40")
 
 ## now make panels e-f ##
-# data read in (aTb, aP, PTb) and functions (MAT and map1) in mapping_fig6.R
+#functions (MAT and map1) in mapping_fig6.R
 ncol <- 100
-#col <- hcl.colors(n,"Geyser");col1 <- col[(n/2 + 1):n]
 col1 <- hcl.colors(ncol,"YlOrRd", rev=T, alpha=.8)
 GWRmat1 <- MAT(aTb, aTb$GWR)#[60:100,]
 ATAmat1 <- MAT(aTb, aTb$ATA)#[60:100,]
