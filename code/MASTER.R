@@ -3,15 +3,6 @@
 
 rm(list=ls())
 
-#checkpoint - uses the checkpoint package, sets up a local installation of all packages as they existed 
-#on the date specified, in the same directory as this file, then runs code from those installations
-#of the packages. Helps ensure reproducibility through time. 
-#if (!dir.exists("./.checkpoint/")){
-#  dir.create("./.checkpoint/")
-#}
-#checkpoint::checkpoint("2020-12-31",checkpoint_location = "./")
-#checkpoint no longer works, libraries listed below
-
 ### libraries used (invoked with ::):
   # MASS, stats, graphics, grDevices, 
   # copula, parallel, plot3D, deSolve
