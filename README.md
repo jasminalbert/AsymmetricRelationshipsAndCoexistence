@@ -23,8 +23,9 @@ grDevices (4.2.1), copula (1.1-1), parallel (4.2.1), plot3D (1.4) and deSolve (1
 
 ### Core dependencies
 
-R, R studio configured to compile Sweave documents, latex and bibtex. We used R 
-version 3.6.3 running on Ubuntu Linux 16.04.7.
+R, R studio configured to compile Sweave documents, latex and bibtex. 
+We used R version 3.6.3 running on Ubuntu Linux 16.04.7 and
+R version 4.2.1 on macOS Monterey 12.6.1.
 
 To ensure that re-compiling the document uses 
 the same code that was originally used, cross-check package
