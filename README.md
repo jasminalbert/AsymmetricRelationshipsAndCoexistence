@@ -53,9 +53,12 @@ Delete these at your own risk.
 ## Acknowlegements
 
 The authors thank Shyamolina Ghosh for suggesting the research problem, and Lawrence Sheppard, Max Castorani, Jon Walter, 
-Jude Kastens, Vadim Karatayev, Emily Arsenault, Neil Thimmesch, Steve Ellner, and Robin Snyder for helpful discussions.
+Jude Kastens, Vadim Karatayev, Emily Arsenault, 
+Jordan Rodriguez, Lauren Hallett, Madelon Case, Chhaya Werner, Lina Aoyama, Steven Haring, Carmen Watkins, 
+Robin Snyder, and three anonymous referees and the editor for helpful discussions and feedback. 
+The authors especially thank Steve Ellner for key advice at several watershed moments in the development of the project. 
 This material is based upon work supported by the National Science Foundation under Grant Numbers 17114195 and 
 2023474. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) 
 and do not necessarily reflect the views of the National Science Foundation. The work was also supported by the 
-James S McDonnell Foundation and the California Department of Fish and Wildlife, and the work does not represent
-their opinions or finding or official viewpoints, either. 
+James S McDonnell Foundation, the California Department of Fish and Wildlife and the Alexander von Humboldt Foundation.
+The work does not represent their opinions or finding or official viewpoints, either. 
