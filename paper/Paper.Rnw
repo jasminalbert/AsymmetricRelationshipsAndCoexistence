@@ -532,7 +532,7 @@ the environment, i.e., the $E_i$ of Theory was set equal to $B_i$.
 Competition, $C_i(t)$, in the lottery model occurs at the stage of juveniles occupying open sites:
 $C_i$ was taken to be the number of new offspring
 divided by the number of open sites, $C_i(t)=( B_1(t)N_1(t)+B_2(t)N_2(t) )/(\delta N$), which
-does not depend on $i$. These choices for fulfill the assumption of Theory 
+does not depend on $i$. These choices fulfill the assumption of Theory 
 that $r_i(t)$ is an increasing function of $E_i(t)$ and a decreasing function of $C_i(t)$ 
 (SI section \ref{SI-SIsect:TheoryForLottery}).
 
