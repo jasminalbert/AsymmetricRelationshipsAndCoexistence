@@ -920,7 +920,7 @@ panel d, and primarily in the right tails in panel e (SI section \ref{SI-SIsect:
 One can see these asymmetries by noting that the open points in panel d, which are in the left halves of the
 distributions, are more tightly clustered around the line $y=x$ than are the closed points,
 which are in the right halves of the distributions; and \emph{vice versa} for panel e.
-(f-h) Lottery model population simulations% using $(B_1,B_2)$ 
+(f-h) Lottery model population simulations % using $(B_1,B_2)$ 
 obtained by transforming the respectively corresponding variables (a-c; see Introduction).
 \label{fig:pedagog1}}
 \end{figure}
