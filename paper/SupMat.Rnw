@@ -91,11 +91,11 @@
 \title{Asymmetric relationships and their effects on coexistence: Supporting information}
 \date{}
 
-\author[a]{Pimsupa Jasmin Albert}
-\author[a,b,*]{Daniel C. Reuman}
+\author[a,b]{Pimsupa Jasmin Albert}
+\author[a,*]{Daniel C. Reuman}
 
 \affil[a]{Department of Ecology and Evolutionary Biology and Center for Ecological Research, University of Kansas}
-\affil[b]{Laboratory of Populations, Rockefeller University}
+\affil[b]{Environmental Studies Program and Department of Biology, University of Oregon}
 \affil[*]{Corresponding author, reuman@ku.edu}
 
 %for dealing with line numbers bugs having to do with equations
