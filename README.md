@@ -1,4 +1,4 @@
-# Code repository for the paper ``Asymmetric relationships and their effects on coexistence''
+# Code repository for the paper "Asymmetric relationships and their effects on coexistence"
 
 Pimsupa Jasmin Albert, University of Kansas and University of Oregon
 Daniel C. Reuman, University of Kansas  
