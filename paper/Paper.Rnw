@@ -996,9 +996,6 @@ though results differed in detail, main conclusions were the same.
 See Table 1 for used annotations and abbreviations. }\label{fig:fig4}
 \end{figure}
 
-%***DAN: Jasmin, this currently pulls in a pdf you sent me, stored temporarily on my drive in the indicated 
-%location. Once the code produces fig 5 on a normal run, we'll have to change the below to suck that
-%version of the figure up instead of this one.
 \begin{figure}
 \includegraphics[width=\textwidth]{../results_figs/fig5_new.pdf}
 \caption{See next page for caption.}  \label{fig:fig5}
