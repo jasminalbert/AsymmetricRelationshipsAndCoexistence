@@ -11,7 +11,7 @@ This repository can be used to reproduce the complete analyses behind the paper 
 
 To reproduce the analyses: 1) make your R working directory the `code` directory; 2) run `MASTER.R`. If all dependencies 
 are in place (see next section) then all results supporting the paper will be saved to the results directories. This 
-will take some time (a day or two, depending on your computer speed). Multiple cores may be needed, and things will, of course, be slower if your machine does not have those cores available.
+will take some time (a day or two, possibly longer, depending on your computer speed). Multiple cores will be needed, and things will, of course, be slower if your machine does not have those cores available.
 
 To compile the paper latex, open `paper/Paper.Rnw` and `paper/SupMat.Rnw` and compile them using Sweave. If you are using
 Rstudio and if it is configured to work with Sweave, this will just be a button in Rstudio entitled ``Compile PDF''.
@@ -26,7 +26,7 @@ R, R studio configured to compile Sweave documents, latex and bibtex. We used R
 version 4.3.0 running on Ubuntu Linux 18.04.6 and R version 4.2.1 on macOS Monterey 12.6.1.
 
 Required libraries include: MASS (7.3-59), stats (4.3.0), graphics (4.3.0),
-grDevices (4.3.0), copula (1.1-2), parallel (4.3.0), plot3D (1.4) and deSolve (1.36).   
+grDevices (4.3.0), copula (1.1-2), parallel (4.3.0), plot3D (1.4) and deSolve (1.36). 
 To ensure that re-compiling the document uses 
 the same code that was originally used, use the same R and package versions.
 
