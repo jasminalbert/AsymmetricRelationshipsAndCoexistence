@@ -30,7 +30,7 @@ grDevices (4.3.0), copula (1.1-2), parallel (4.3.0), plot3D (1.4) and deSolve (1
 To ensure that re-compiling the document uses 
 the same code that was originally used, use the same R and package versions.
 
-Certain intensive bits of the code make use of the `mclapply` function in the `parallel` package to utilize mutliple 
+Certain intensive bits of the code make use of the `mclapply` function in the `parallel` package to utilize multiple 
 compute cores. Seven cores are used. Search for `parallel::mclapply` in diatom/fig5def_fxns.R where you can change this number
 if you want to devote more or fewer cores. This approach to multicore processing only works on linux. If you are 
 running Windows or Mac, it may work very slowly (with one core only, for instance) or not at all, no guarantees, good luck!
