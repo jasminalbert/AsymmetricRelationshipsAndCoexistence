@@ -1,3 +1,9 @@
+The plankton data were those studied by Sheppard et al (2019, Plos Comp Biol 15, e1006744), and by
+Ghosh et al (2020, Ecology and Evolution 10, 12764-12776), archived at https://doi.org/10.5061/dryad.rq3jc84.
+For accessibility, the data are also stored here. The "readme" file from 
+https://doi.org/10.5061/dryad.rq3jc84 is copied below.
+
+
 This data set comprises 43 sets of annualised timeseries, including Plankton Colour Index (PCI) and 22 simultaneously measured plankton abundance timeseries, and seasonal cloud cover, salinity, sea surface temperature, and wind speed, for 26 areas of British seas recorded between 1958 and 2013 inclusive.
 
 Data was obtained, aggregated and annualised as described in 
