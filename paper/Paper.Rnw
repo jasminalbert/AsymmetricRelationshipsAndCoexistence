@@ -840,7 +840,7 @@ Wildlife Delta Science Program, and the Alexander von Humboldt Foundation.
 
 \section{Data availability statement}
 
-All code and data for the project are available at \url{https://zenodo.org/record/XXX}
+All code and data for the project are available at \url{https://zenodo.org/record/8386993}
 %DAN: update when you know
 and \url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence}.
 
