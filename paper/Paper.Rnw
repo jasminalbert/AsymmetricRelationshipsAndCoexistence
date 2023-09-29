@@ -151,8 +151,9 @@ Lawrence, KS 66047;
 Phone: 626-560-7084 \\
 \noindent \textbf{Author emails:} pimsupaa@uoregon.edu, reuman@ku.edu\\
 \noindent \textbf{Statement of Authorship:} The authors jointly carried out all parts of the study.\\
-\noindent \textbf{Data accessibility statement:} All codes associated with this study have been released in a 
-public repository.
+\noindent \textbf{Data accessibility statement:} All code and data for the project are available 
+at \url{https://zenodo.org/record/8386993} and 
+\url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence}.
 
 \doublespacing
 
@@ -837,12 +838,6 @@ The authors especially thank Steve Ellner for key advice at several watershed mo
 The authors were partly supported by US National
 Science Foundation grants 1714195 and 2023474, the James S McDonnell Foundation, the California Department of Fish and
 Wildlife Delta Science Program, and the Alexander von Humboldt Foundation. 
-
-\section{Data availability statement}
-
-All code and data for the project are available at \url{https://zenodo.org/record/8386993}
-%DAN: update when you know
-and \url{https://github.com/jasminalbert/AsymmetricRelationshipsAndCoexistence}.
 
 \bibliographystyle{ecology_letters2}
 \bibliography{refs}
