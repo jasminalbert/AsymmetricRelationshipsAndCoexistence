@@ -5,7 +5,7 @@ Daniel C. Reuman, University of Kansas
 
 ## Introduction
 
-This repository can be used to reproduce the complete analyses behind the paper ``Asymmetric relationships and their effects on coexistence" and to recompile the latex for the paper itself.
+This repository can be used to reproduce the complete analyses behind the paper ``Asymmetric relationships and their effects on coexistence" and to recompile the latex for the paper itself. The paper is now published in Ecology Letters.
 
 ## How to run analyses and compile paper
 
